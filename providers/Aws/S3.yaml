@@ -1,0 +1,3 @@
+---
+Gem: aws-sdk-s3
+Class: Aws::S3::Client
