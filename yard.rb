@@ -6,7 +6,7 @@ require 'pp'
 # auto-vivify hash
 hash = Hash.new { |h, k| h[k] = Hash.new(&h.default_proc) }
 
-@registry = YARD::Registry.load(['/Users/aabdeldayem12/Projects/coding/k8s-comet/vendor/bundle/ruby/2.4.0/gems/aws-sdk-s3-1.8.0/lib/aws-sdk-s3/client.rb'])
+@registry = YARD::Registry.load([__dir__ + '/vendor/bundle/ruby/2.4.0/gems/aws-sdk-s3-1.8.0/lib/aws-sdk-s3/client.rb'])
 
 @registry.each do |object|
   pp object
