@@ -23,8 +23,7 @@ hash = Hash.new { |h, k| h[k] = Hash.new(&h.default_proc) }
     klass, method = tag.object.to_s.split('#')
     pp klass
     pp method
-    # hash[klass] = {} unless hash.key?(klass)
-    # hash[klass][method]  = {} unless hash[klass].key?(method)
+
     parameter = tag.pair.name.start_with?(':') ? tag.pair.name[1..-1] : tag.pair.name
     hash[klass][method]['parameters'][parameter]['types'] = tag.pair.types.select { |i| i != 'required' }
     hash[klass][method]['parameters'][parameter]['required'] = tag.pair.types.include?('required')
