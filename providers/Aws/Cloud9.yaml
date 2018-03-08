@@ -1,0 +1,240 @@
+---
+class: Aws::Cloud9::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_environment_ec2:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: true
+        count: 1
+      subnet_id:
+        types:
+        - String
+        required: false
+        count: 1
+      automatic_stop_time_minutes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      owner_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  create_environment_membership:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      permissions:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_environment:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_environment_membership:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_environment_memberships:
+    parameters:
+      user_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      environment_id:
+        types:
+        - String
+        required: false
+        count: 1
+      permissions:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_environment_status:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_environments:
+    parameters:
+      environment_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  list_environments:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  update_environment:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+  update_environment_membership:
+    parameters:
+      environment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      permissions:
+        types:
+        - String
+        required: true
+        count: 1

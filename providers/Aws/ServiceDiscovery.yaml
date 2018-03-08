@@ -1,0 +1,329 @@
+---
+class: Aws::ServiceDiscovery::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_private_dns_namespace:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      creator_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      vpc:
+        types:
+        - String
+        required: true
+        count: 1
+  create_public_dns_namespace:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      creator_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+  create_service:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      creator_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      dns_config:
+        types:
+        - Types::DnsConfig
+        required: true
+        count: 1
+      health_check_config:
+        types:
+        - Types::HealthCheckConfig
+        required: false
+        count: 1
+  delete_namespace:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_instances_health_status:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instances:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_namespace:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_operation:
+    parameters:
+      operation_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_instances:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_namespaces:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filters:
+        types:
+        - Array<Types::NamespaceFilter>
+        required: false
+        count: 1
+  list_operations:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filters:
+        types:
+        - Array<Types::OperationFilter>
+        required: false
+        count: 1
+  list_services:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filters:
+        types:
+        - Array<Types::ServiceFilter>
+        required: false
+        count: 1
+  register_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      creator_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  update_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      service:
+        types:
+        - Types::ServiceChange
+        required: true
+        count: 1

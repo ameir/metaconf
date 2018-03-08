@@ -1,0 +1,229 @@
+---
+class: Aws::Firehose::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      delivery_stream_type:
+        types:
+        - String
+        required: false
+        count: 1
+      kinesis_stream_source_configuration:
+        types:
+        - Types::KinesisStreamSourceConfiguration
+        required: false
+        count: 1
+      s3_destination_configuration:
+        types:
+        - Types::S3DestinationConfiguration
+        required: false
+        count: 1
+      extended_s3_destination_configuration:
+        types:
+        - Types::ExtendedS3DestinationConfiguration
+        required: false
+        count: 1
+      redshift_destination_configuration:
+        types:
+        - Types::RedshiftDestinationConfiguration
+        required: false
+        count: 1
+      elasticsearch_destination_configuration:
+        types:
+        - Types::ElasticsearchDestinationConfiguration
+        required: false
+        count: 1
+      splunk_destination_configuration:
+        types:
+        - Types::SplunkDestinationConfiguration
+        required: false
+        count: 1
+  delete_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      exclusive_start_destination_id:
+        types:
+        - String
+        required: false
+        count: 1
+  list_delivery_streams:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delivery_stream_type:
+        types:
+        - String
+        required: false
+        count: 1
+      exclusive_start_delivery_stream_name:
+        types:
+        - String
+        required: false
+        count: 1
+  put_record:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      record:
+        types:
+        - Types::Record
+        required: true
+        count: 1
+  put_record_batch:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      records:
+        types:
+        - Array<Types::Record>
+        required: true
+        count: 1
+  update_destination:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      current_delivery_stream_version_id:
+        types:
+        - String
+        required: true
+        count: 1
+      destination_id:
+        types:
+        - String
+        required: true
+        count: 1
+      s3_destination_update:
+        types:
+        - Types::S3DestinationUpdate
+        required: false
+        count: 1
+      extended_s3_destination_update:
+        types:
+        - Types::ExtendedS3DestinationUpdate
+        required: false
+        count: 1
+      redshift_destination_update:
+        types:
+        - Types::RedshiftDestinationUpdate
+        required: false
+        count: 1
+      elasticsearch_destination_update:
+        types:
+        - Types::ElasticsearchDestinationUpdate
+        required: false
+        count: 1
+      splunk_destination_update:
+        types:
+        - Types::SplunkDestinationUpdate
+        required: false
+        count: 1

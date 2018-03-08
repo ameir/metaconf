@@ -1,0 +1,395 @@
+---
+class: Aws::OpsWorksCM::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  associate_node:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      node_name:
+        types:
+        - String
+        required: true
+        count: 1
+      engine_attributes:
+        types:
+        - Array<Types::EngineAttribute>
+        required: true
+        count: 1
+  create_backup:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+  create_server:
+    parameters:
+      associate_public_ip_address:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      disable_automated_backup:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      engine:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_model:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_version:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_attributes:
+        types:
+        - Array<Types::EngineAttribute>
+        required: false
+        count: 1
+      backup_retention_count:
+        types:
+        - Integer
+        required: false
+        count: 1
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_profile_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: true
+        count: 1
+      key_pair:
+        types:
+        - String
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+        count: 1
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      backup_id:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_backup:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_server:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_backups:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: false
+        count: 1
+      server_name:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_events:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_node_association_status:
+    parameters:
+      node_association_status_token:
+        types:
+        - String
+        required: true
+        count: 1
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_servers:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  disassociate_node:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      node_name:
+        types:
+        - String
+        required: true
+        count: 1
+      engine_attributes:
+        types:
+        - Array<Types::EngineAttribute>
+        required: false
+        count: 1
+  restore_server:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
+        count: 1
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: false
+        count: 1
+      key_pair:
+        types:
+        - String
+        required: false
+        count: 1
+  start_maintenance:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      engine_attributes:
+        types:
+        - Array<Types::EngineAttribute>
+        required: false
+        count: 1
+  update_server:
+    parameters:
+      disable_automated_backup:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      backup_retention_count:
+        types:
+        - Integer
+        required: false
+        count: 1
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+        count: 1
+  update_server_engine_attributes:
+    parameters:
+      server_name:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_name:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_value:
+        types:
+        - String
+        required: false
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

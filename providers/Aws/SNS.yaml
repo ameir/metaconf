@@ -1,0 +1,420 @@
+---
+class: Aws::SNS::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_permission:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      label:
+        types:
+        - String
+        required: true
+        count: 1
+      aws_account_id:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      action_name:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  check_if_phone_number_is_opted_out:
+    parameters:
+      phone_number:
+        types:
+        - String
+        required: true
+        count: 1
+  confirm_subscription:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      token:
+        types:
+        - String
+        required: true
+        count: 1
+      authenticate_on_unsubscribe:
+        types:
+        - String
+        required: false
+        count: 1
+  create_platform_application:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      platform:
+        types:
+        - String
+        required: true
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  create_platform_endpoint:
+    parameters:
+      platform_application_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      token:
+        types:
+        - String
+        required: true
+        count: 1
+      custom_user_data:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+  create_topic:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_endpoint:
+    parameters:
+      endpoint_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_platform_application:
+    parameters:
+      platform_application_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_topic:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_endpoint_attributes:
+    parameters:
+      endpoint_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_platform_application_attributes:
+    parameters:
+      platform_application_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_sms_attributes:
+    parameters:
+      attributes:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  get_subscription_attributes:
+    parameters:
+      subscription_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_topic_attributes:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  list_endpoints_by_platform_application:
+    parameters:
+      platform_application_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_phone_numbers_opted_out:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_platform_applications:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_subscriptions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_subscriptions_by_topic:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_topics:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  opt_in_phone_number:
+    parameters:
+      phone_number:
+        types:
+        - String
+        required: true
+        count: 1
+  publish:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      target_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      phone_number:
+        types:
+        - String
+        required: false
+        count: 1
+      message:
+        types:
+        - String
+        required: true
+        count: 1
+      subject:
+        types:
+        - String
+        required: false
+        count: 1
+      message_structure:
+        types:
+        - String
+        required: false
+        count: 1
+      message_attributes:
+        types:
+        - Hash<String,Types::MessageAttributeValue>
+        required: false
+        count: 1
+  remove_permission:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      label:
+        types:
+        - String
+        required: true
+        count: 1
+  set_endpoint_attributes:
+    parameters:
+      endpoint_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  set_platform_application_attributes:
+    parameters:
+      platform_application_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  set_sms_attributes:
+    parameters:
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  set_subscription_attributes:
+    parameters:
+      subscription_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_name:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_value:
+        types:
+        - String
+        required: false
+        count: 1
+  set_topic_attributes:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_name:
+        types:
+        - String
+        required: true
+        count: 1
+      attribute_value:
+        types:
+        - String
+        required: false
+        count: 1
+  subscribe:
+    parameters:
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      protocol:
+        types:
+        - String
+        required: true
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+  unsubscribe:
+    parameters:
+      subscription_arn:
+        types:
+        - String
+        required: true
+        count: 1

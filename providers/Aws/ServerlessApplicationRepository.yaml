@@ -1,0 +1,300 @@
+---
+class: Aws::ServerlessApplicationRepository::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_application:
+    parameters:
+      author:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      home_page_url:
+        types:
+        - String
+        required: false
+        count: 1
+      labels:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      license_body:
+        types:
+        - String
+        required: false
+        count: 1
+      license_url:
+        types:
+        - String
+        required: false
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      readme_body:
+        types:
+        - String
+        required: false
+        count: 1
+      readme_url:
+        types:
+        - String
+        required: false
+        count: 1
+      semantic_version:
+        types:
+        - String
+        required: false
+        count: 1
+      source_code_url:
+        types:
+        - String
+        required: false
+        count: 1
+      spdx_license_id:
+        types:
+        - String
+        required: false
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+  create_application_version:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      semantic_version:
+        types:
+        - String
+        required: true
+        count: 1
+      source_code_url:
+        types:
+        - String
+        required: false
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+  create_cloud_formation_change_set:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      parameter_overrides:
+        types:
+        - Array<Types::ParameterValue>
+        required: false
+        count: 1
+      semantic_version:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      semantic_version:
+        types:
+        - String
+        required: false
+        count: 1
+  get_application_policy:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_application_versions:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_applications:
+    parameters:
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  put_application_policy:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      statements:
+        types:
+        - Array<Types::ApplicationPolicyStatement>
+        required: false
+        count: 1
+  update_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+        count: 1
+      author:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      home_page_url:
+        types:
+        - String
+        required: false
+        count: 1
+      labels:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      readme_body:
+        types:
+        - String
+        required: false
+        count: 1
+      readme_url:
+        types:
+        - String
+        required: false
+        count: 1

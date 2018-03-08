@@ -1,0 +1,223 @@
+---
+class: Aws::ACM::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags_to_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  delete_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  import_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      certificate:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1
+      private_key:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1
+      certificate_chain:
+        types:
+        - String
+        - IO
+        required: false
+        count: 1
+  list_certificates:
+    parameters:
+      certificate_statuses:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      includes:
+        types:
+        - Types::Filters
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_tags_for_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  remove_tags_from_certificate:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  request_certificate:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      validation_method:
+        types:
+        - String
+        required: false
+        count: 1
+      subject_alternative_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      idempotency_token:
+        types:
+        - String
+        required: false
+        count: 1
+      domain_validation_options:
+        types:
+        - Array<Types::DomainValidationOption>
+        required: false
+        count: 1
+  resend_validation_email:
+    parameters:
+      certificate_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      domain:
+        types:
+        - String
+        required: true
+        count: 1
+      validation_domain:
+        types:
+        - String
+        required: true
+        count: 1

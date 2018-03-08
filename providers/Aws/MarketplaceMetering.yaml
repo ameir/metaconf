@@ -1,0 +1,130 @@
+---
+class: Aws::MarketplaceMetering::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  batch_meter_usage:
+    parameters:
+      usage_records:
+        types:
+        - Array<Types::UsageRecord>
+        required: true
+        count: 1
+      product_code:
+        types:
+        - String
+        required: true
+        count: 1
+  meter_usage:
+    parameters:
+      product_code:
+        types:
+        - String
+        required: true
+        count: 1
+      timestamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+      usage_dimension:
+        types:
+        - String
+        required: true
+        count: 1
+      usage_quantity:
+        types:
+        - Integer
+        required: true
+        count: 1
+      dry_run:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  resolve_customer:
+    parameters:
+      registration_token:
+        types:
+        - String
+        required: true
+        count: 1

@@ -1,0 +1,343 @@
+---
+class: Aws::CodeBuild::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  batch_delete_builds:
+    parameters:
+      ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_builds:
+    parameters:
+      ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_projects:
+    parameters:
+      names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  create_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      source:
+        types:
+        - Types::ProjectSource
+        required: true
+        count: 1
+      artifacts:
+        types:
+        - Types::ProjectArtifacts
+        required: true
+        count: 1
+      cache:
+        types:
+        - Types::ProjectCache
+        required: false
+        count: 1
+      environment:
+        types:
+        - Types::ProjectEnvironment
+        required: true
+        count: 1
+      service_role:
+        types:
+        - String
+        required: false
+        count: 1
+      timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      encryption_key:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+        count: 1
+      badge_enabled:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_webhook:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_webhook:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+        count: 1
+  invalidate_project_cache:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_builds:
+    parameters:
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_builds_for_project:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_projects:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  start_build:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+        count: 1
+      source_version:
+        types:
+        - String
+        required: false
+        count: 1
+      artifacts_override:
+        types:
+        - Types::ProjectArtifacts
+        required: false
+        count: 1
+      environment_variables_override:
+        types:
+        - Array<Types::EnvironmentVariable>
+        required: false
+        count: 1
+      git_clone_depth_override:
+        types:
+        - Integer
+        required: false
+        count: 1
+      buildspec_override:
+        types:
+        - String
+        required: false
+        count: 1
+      timeout_in_minutes_override:
+        types:
+        - Integer
+        required: false
+        count: 1
+  stop_build:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  update_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      source:
+        types:
+        - Types::ProjectSource
+        required: false
+        count: 1
+      artifacts:
+        types:
+        - Types::ProjectArtifacts
+        required: false
+        count: 1
+      cache:
+        types:
+        - Types::ProjectCache
+        required: false
+        count: 1
+      environment:
+        types:
+        - Types::ProjectEnvironment
+        required: false
+        count: 1
+      service_role:
+        types:
+        - String
+        required: false
+        count: 1
+      timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      encryption_key:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+        count: 1
+      badge_enabled:
+        types:
+        - Boolean
+        required: false
+        count: 1

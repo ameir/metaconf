@@ -1,0 +1,188 @@
+---
+class: Aws::XRay::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  batch_get_traces:
+    parameters:
+      trace_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_service_graph:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_trace_graph:
+    parameters:
+      trace_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_trace_summaries:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+      sampling:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      filter_expression:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  put_telemetry_records:
+    parameters:
+      telemetry_records:
+        types:
+        - Array<Types::TelemetryRecord>
+        required: true
+        count: 1
+      ec2_instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      hostname:
+        types:
+        - String
+        required: false
+        count: 1
+      resource_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  put_trace_segments:
+    parameters:
+      trace_segment_documents:
+        types:
+        - Array<String>
+        required: true
+        count: 1

@@ -1,0 +1,238 @@
+---
+class: Aws::WorkSpaces::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_tags:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  create_workspaces:
+    parameters:
+      workspaces:
+        types:
+        - Array<Types::WorkspaceRequest>
+        required: true
+        count: 1
+  delete_tags:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  describe_tags:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_workspace_bundles:
+    parameters:
+      bundle_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      owner:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_workspace_directories:
+    parameters:
+      directory_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_workspaces:
+    parameters:
+      workspace_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      directory_id:
+        types:
+        - String
+        required: false
+        count: 1
+      user_name:
+        types:
+        - String
+        required: false
+        count: 1
+      bundle_id:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_workspaces_connection_status:
+    parameters:
+      workspace_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  modify_workspace_properties:
+    parameters:
+      workspace_id:
+        types:
+        - String
+        required: true
+        count: 1
+      workspace_properties:
+        types:
+        - Types::WorkspaceProperties
+        required: true
+        count: 1
+  reboot_workspaces:
+    parameters:
+      reboot_workspace_requests:
+        types:
+        - Array<Types::RebootRequest>
+        required: true
+        count: 1
+  rebuild_workspaces:
+    parameters:
+      rebuild_workspace_requests:
+        types:
+        - Array<Types::RebuildRequest>
+        required: true
+        count: 1
+  start_workspaces:
+    parameters:
+      start_workspace_requests:
+        types:
+        - Array<Types::StartRequest>
+        required: true
+        count: 1
+  stop_workspaces:
+    parameters:
+      stop_workspace_requests:
+        types:
+        - Array<Types::StopRequest>
+        required: true
+        count: 1
+  terminate_workspaces:
+    parameters:
+      terminate_workspace_requests:
+        types:
+        - Array<Types::TerminateRequest>
+        required: true
+        count: 1

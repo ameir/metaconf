@@ -1,0 +1,688 @@
+---
+class: Aws::CodeCommit::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  batch_get_repositories:
+    parameters:
+      repository_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  create_branch:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      branch_name:
+        types:
+        - String
+        required: true
+        count: 1
+      commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+  create_pull_request:
+    parameters:
+      title:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  create_repository:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      repository_description:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_branch:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      branch_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_comment_content:
+    parameters:
+      comment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_repository:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_pull_request_events:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      pull_request_event_type:
+        types:
+        - String
+        required: false
+        count: 1
+      actor_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  get_blob:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      blob_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_branch:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: false
+        count: 1
+      branch_name:
+        types:
+        - String
+        required: false
+        count: 1
+  get_comment:
+    parameters:
+      comment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_comments_for_compared_commit:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      before_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      after_commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  get_comments_for_pull_request:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: false
+        count: 1
+      before_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      after_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  get_commit:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_differences:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      before_commit_specifier:
+        types:
+        - String
+        required: false
+        count: 1
+      after_commit_specifier:
+        types:
+        - String
+        required: true
+        count: 1
+      before_path:
+        types:
+        - String
+        required: false
+        count: 1
+      after_path:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_merge_conflicts:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      destination_commit_specifier:
+        types:
+        - String
+        required: true
+        count: 1
+      source_commit_specifier:
+        types:
+        - String
+        required: true
+        count: 1
+      merge_option:
+        types:
+        - String
+        required: true
+        count: 1
+  get_pull_request:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_repository:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_repository_triggers:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_branches:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_pull_requests:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      author_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      pull_request_status:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_repositories:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      order:
+        types:
+        - String
+        required: false
+        count: 1
+  merge_pull_request_by_fast_forward:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      source_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+  post_comment_for_compared_commit:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      before_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      after_commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      location:
+        types:
+        - Types::Location
+        required: false
+        count: 1
+      content:
+        types:
+        - String
+        required: true
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  post_comment_for_pull_request:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      before_commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      after_commit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      location:
+        types:
+        - Types::Location
+        required: false
+        count: 1
+      content:
+        types:
+        - String
+        required: true
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  post_comment_reply:
+    parameters:
+      in_reply_to:
+        types:
+        - String
+        required: true
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+      content:
+        types:
+        - String
+        required: true
+        count: 1
+  put_file:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      branch_name:
+        types:
+        - String
+        required: true
+        count: 1
+      file_content:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1
+      file_path:
+        types:
+        - String
+        required: true
+        count: 1
+      file_mode:
+        types:
+        - String
+        required: false
+        count: 1
+      parent_commit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      commit_message:
+        types:
+        - String
+        required: false
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      email:
+        types:
+        - String
+        required: false
+        count: 1
+  put_repository_triggers:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      triggers:
+        types:
+        - Array<Types::RepositoryTrigger>
+        required: true
+        count: 1
+  test_repository_triggers:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      triggers:
+        types:
+        - Array<Types::RepositoryTrigger>
+        required: true
+        count: 1
+  update_comment:
+    parameters:
+      comment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      content:
+        types:
+        - String
+        required: true
+        count: 1
+  update_default_branch:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      default_branch_name:
+        types:
+        - String
+        required: true
+        count: 1
+  update_pull_request_description:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+  update_pull_request_status:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      pull_request_status:
+        types:
+        - String
+        required: true
+        count: 1
+  update_pull_request_title:
+    parameters:
+      pull_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      title:
+        types:
+        - String
+        required: true
+        count: 1
+  update_repository_description:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      repository_description:
+        types:
+        - String
+        required: false
+        count: 1
+  update_repository_name:
+    parameters:
+      old_name:
+        types:
+        - String
+        required: true
+        count: 1
+      new_name:
+        types:
+        - String
+        required: true
+        count: 1

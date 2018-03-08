@@ -1,0 +1,313 @@
+---
+class: Aws::States::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_activity:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  create_state_machine:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      definition:
+        types:
+        - String
+        required: true
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_activity:
+    parameters:
+      activity_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_state_machine:
+    parameters:
+      state_machine_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_activity:
+    parameters:
+      activity_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_execution:
+    parameters:
+      execution_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_state_machine:
+    parameters:
+      state_machine_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_state_machine_for_execution:
+    parameters:
+      execution_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_activity_task:
+    parameters:
+      activity_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      worker_name:
+        types:
+        - String
+        required: false
+        count: 1
+  get_execution_history:
+    parameters:
+      execution_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      reverse_order:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_activities:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_executions:
+    parameters:
+      state_machine_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      status_filter:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_state_machines:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  send_task_failure:
+    parameters:
+      task_token:
+        types:
+        - String
+        required: true
+        count: 1
+      error:
+        types:
+        - String
+        required: false
+        count: 1
+      cause:
+        types:
+        - String
+        required: false
+        count: 1
+  send_task_heartbeat:
+    parameters:
+      task_token:
+        types:
+        - String
+        required: true
+        count: 1
+  send_task_success:
+    parameters:
+      task_token:
+        types:
+        - String
+        required: true
+        count: 1
+      output:
+        types:
+        - String
+        required: true
+        count: 1
+  start_execution:
+    parameters:
+      state_machine_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      input:
+        types:
+        - String
+        required: false
+        count: 1
+  stop_execution:
+    parameters:
+      execution_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      error:
+        types:
+        - String
+        required: false
+        count: 1
+      cause:
+        types:
+        - String
+        required: false
+        count: 1
+  update_state_machine:
+    parameters:
+      state_machine_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      definition:
+        types:
+        - String
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1

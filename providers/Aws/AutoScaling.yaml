@@ -1,0 +1,1147 @@
+---
+class: Aws::AutoScaling::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  attach_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  attach_load_balancer_target_groups:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      target_group_arns:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  attach_load_balancers:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  complete_lifecycle_action:
+    parameters:
+      lifecycle_hook_name:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_action_token:
+        types:
+        - String
+        required: false
+        count: 1
+      lifecycle_action_result:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_auto_scaling_group:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      launch_configuration_name:
+        types:
+        - String
+        required: false
+        count: 1
+      launch_template:
+        types:
+        - Types::LaunchTemplateSpecification
+        required: false
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      min_size:
+        types:
+        - Integer
+        required: true
+        count: 1
+      max_size:
+        types:
+        - Integer
+        required: true
+        count: 1
+      desired_capacity:
+        types:
+        - Integer
+        required: false
+        count: 1
+      default_cooldown:
+        types:
+        - Integer
+        required: false
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      target_group_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      health_check_type:
+        types:
+        - String
+        required: false
+        count: 1
+      health_check_grace_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      placement_group:
+        types:
+        - String
+        required: false
+        count: 1
+      vpc_zone_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      termination_policies:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      new_instances_protected_from_scale_in:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      lifecycle_hook_specification_list:
+        types:
+        - Array<Types::LifecycleHookSpecification>
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      service_linked_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  create_launch_configuration:
+    parameters:
+      launch_configuration_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_id:
+        types:
+        - String
+        required: false
+        count: 1
+      key_name:
+        types:
+        - String
+        required: false
+        count: 1
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      classic_link_vpc_id:
+        types:
+        - String
+        required: false
+        count: 1
+      classic_link_vpc_security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      user_data:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: false
+        count: 1
+      kernel_id:
+        types:
+        - String
+        required: false
+        count: 1
+      ramdisk_id:
+        types:
+        - String
+        required: false
+        count: 1
+      block_device_mappings:
+        types:
+        - Array<Types::BlockDeviceMapping>
+        required: false
+        count: 1
+      instance_monitoring:
+        types:
+        - Types::InstanceMonitoring
+        required: false
+        count: 1
+      spot_price:
+        types:
+        - String
+        required: false
+        count: 1
+      iam_instance_profile:
+        types:
+        - String
+        required: false
+        count: 1
+      ebs_optimized:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      associate_public_ip_address:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      placement_tenancy:
+        types:
+        - String
+        required: false
+        count: 1
+  create_or_update_tags:
+    parameters:
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  delete_auto_scaling_group:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      force_delete:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  delete_launch_configuration:
+    parameters:
+      launch_configuration_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_lifecycle_hook:
+    parameters:
+      lifecycle_hook_name:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_notification_configuration:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_policy:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_scheduled_action:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_tags:
+    parameters:
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  describe_auto_scaling_groups:
+    parameters:
+      auto_scaling_group_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_auto_scaling_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_launch_configurations:
+    parameters:
+      launch_configuration_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_lifecycle_hooks:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_hook_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_load_balancer_target_groups:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_load_balancers:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_notification_configurations:
+    parameters:
+      auto_scaling_group_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_policies:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      policy_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      policy_types:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_scaling_activities:
+    parameters:
+      activity_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_scheduled_actions:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      scheduled_action_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_tags:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+  detach_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      should_decrement_desired_capacity:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  detach_load_balancer_target_groups:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      target_group_arns:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  detach_load_balancers:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  disable_metrics_collection:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      metrics:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  enable_metrics_collection:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      metrics:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      granularity:
+        types:
+        - String
+        required: true
+        count: 1
+  enter_standby:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      should_decrement_desired_capacity:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  execute_policy:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+      honor_cooldown:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      metric_value:
+        types:
+        - Float
+        required: false
+        count: 1
+      breach_threshold:
+        types:
+        - Float
+        required: false
+        count: 1
+  exit_standby:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  put_lifecycle_hook:
+    parameters:
+      lifecycle_hook_name:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_transition:
+        types:
+        - String
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_target_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_metadata:
+        types:
+        - String
+        required: false
+        count: 1
+      heartbeat_timeout:
+        types:
+        - Integer
+        required: false
+        count: 1
+      default_result:
+        types:
+        - String
+        required: false
+        count: 1
+  put_notification_configuration:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      notification_types:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  put_scaling_policy:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_type:
+        types:
+        - String
+        required: false
+        count: 1
+      adjustment_type:
+        types:
+        - String
+        required: false
+        count: 1
+      min_adjustment_step:
+        types:
+        - Integer
+        required: false
+        count: 1
+      min_adjustment_magnitude:
+        types:
+        - Integer
+        required: false
+        count: 1
+      scaling_adjustment:
+        types:
+        - Integer
+        required: false
+        count: 1
+      cooldown:
+        types:
+        - Integer
+        required: false
+        count: 1
+      metric_aggregation_type:
+        types:
+        - String
+        required: false
+        count: 1
+      step_adjustments:
+        types:
+        - Array<Types::StepAdjustment>
+        required: false
+        count: 1
+      estimated_instance_warmup:
+        types:
+        - Integer
+        required: false
+        count: 1
+      target_tracking_configuration:
+        types:
+        - Types::TargetTrackingConfiguration
+        required: false
+        count: 1
+  put_scheduled_update_group_action:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+        count: 1
+      time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      recurrence:
+        types:
+        - String
+        required: false
+        count: 1
+      min_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+      max_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+      desired_capacity:
+        types:
+        - Integer
+        required: false
+        count: 1
+  record_lifecycle_action_heartbeat:
+    parameters:
+      lifecycle_hook_name:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_action_token:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+  resume_processes:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scaling_processes:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  set_desired_capacity:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      desired_capacity:
+        types:
+        - Integer
+        required: true
+        count: 1
+      honor_cooldown:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  set_instance_health:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      health_status:
+        types:
+        - String
+        required: true
+        count: 1
+      should_respect_grace_period:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  set_instance_protection:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      protected_from_scale_in:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  suspend_processes:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scaling_processes:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  terminate_instance_in_auto_scaling_group:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      should_decrement_desired_capacity:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  update_auto_scaling_group:
+    parameters:
+      auto_scaling_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      launch_configuration_name:
+        types:
+        - String
+        required: false
+        count: 1
+      launch_template:
+        types:
+        - Types::LaunchTemplateSpecification
+        required: false
+        count: 1
+      min_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+      max_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+      desired_capacity:
+        types:
+        - Integer
+        required: false
+        count: 1
+      default_cooldown:
+        types:
+        - Integer
+        required: false
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      health_check_type:
+        types:
+        - String
+        required: false
+        count: 1
+      health_check_grace_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      placement_group:
+        types:
+        - String
+        required: false
+        count: 1
+      vpc_zone_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      termination_policies:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      new_instances_protected_from_scale_in:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      service_linked_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

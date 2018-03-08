@@ -1,0 +1,339 @@
+---
+class: Aws::CloudTrail::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tags_list:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_trail:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      s3_bucket_name:
+        types:
+        - String
+        required: true
+        count: 1
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      sns_topic_name:
+        types:
+        - String
+        required: false
+        count: 1
+      include_global_service_events:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      is_multi_region_trail:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      enable_log_file_validation:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      cloud_watch_logs_log_group_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      cloud_watch_logs_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_trail:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_trails:
+    parameters:
+      trail_name_list:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      include_shadow_trails:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  get_event_selectors:
+    parameters:
+      trail_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_trail_status:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_public_keys:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_tags:
+    parameters:
+      resource_id_list:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  lookup_events:
+    parameters:
+      lookup_attributes:
+        types:
+        - Array<Types::LookupAttribute>
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  put_event_selectors:
+    parameters:
+      trail_name:
+        types:
+        - String
+        required: true
+        count: 1
+      event_selectors:
+        types:
+        - Array<Types::EventSelector>
+        required: true
+        count: 1
+  remove_tags:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tags_list:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  start_logging:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  stop_logging:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  update_trail:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      s3_bucket_name:
+        types:
+        - String
+        required: false
+        count: 1
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      sns_topic_name:
+        types:
+        - String
+        required: false
+        count: 1
+      include_global_service_events:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      is_multi_region_trail:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      enable_log_file_validation:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      cloud_watch_logs_log_group_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      cloud_watch_logs_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1

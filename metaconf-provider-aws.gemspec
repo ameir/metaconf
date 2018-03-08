@@ -8,5 +8,6 @@ Gem::Specification.new do |s|
   s.email       = 'ameirh@gmail.com'
   s.files       = Dir['lib/**/*.rb', 'lib/**/*.yaml']
   s.add_runtime_dependency 'aws-sdk', '~> 3'
+  s.add_runtime_dependency 'yard'
   s.license = 'MIT'
 end

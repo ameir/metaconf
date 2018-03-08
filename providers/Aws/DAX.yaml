@@ -1,0 +1,475 @@
+---
+class: Aws::DAX::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_cluster:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+      node_type:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      replication_factor:
+        types:
+        - Integer
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      subnet_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_topic_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      iam_role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+  create_subnet_group:
+    parameters:
+      subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  decrease_replication_factor:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+      new_replication_factor:
+        types:
+        - Integer
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      node_ids_to_remove:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  delete_cluster:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_subnet_group:
+    parameters:
+      subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_clusters:
+    parameters:
+      cluster_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_default_parameters:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_events:
+    parameters:
+      source_name:
+        types:
+        - String
+        required: false
+        count: 1
+      source_type:
+        types:
+        - String
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      duration:
+        types:
+        - Integer
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_parameter_groups:
+    parameters:
+      parameter_group_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_parameters:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      source:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_subnet_groups:
+    parameters:
+      subnet_group_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  increase_replication_factor:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+      new_replication_factor:
+        types:
+        - Integer
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  list_tags:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  reboot_node:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+      node_id:
+        types:
+        - String
+        required: true
+        count: 1
+  tag_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  untag_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  update_cluster:
+    parameters:
+      cluster_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_topic_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_topic_status:
+        types:
+        - String
+        required: false
+        count: 1
+      parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  update_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      parameter_name_values:
+        types:
+        - Array<Types::ParameterNameValue>
+        required: true
+        count: 1
+  update_subnet_group:
+    parameters:
+      subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1

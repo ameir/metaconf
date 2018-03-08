@@ -1,0 +1,641 @@
+---
+class: Aws::CloudWatchLogs::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  associate_kms_key:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: true
+        count: 1
+  cancel_export_task:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: true
+        count: 1
+  create_export_task:
+    parameters:
+      task_name:
+        types:
+        - String
+        required: false
+        count: 1
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      from:
+        types:
+        - Integer
+        required: true
+        count: 1
+      to:
+        types:
+        - Integer
+        required: true
+        count: 1
+      destination:
+        types:
+        - String
+        required: true
+        count: 1
+      destination_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+  create_log_group:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+  create_log_stream:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_destination:
+    parameters:
+      destination_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_log_group:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_log_stream:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_metric_filter:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_resource_policy:
+    parameters:
+      policy_name:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_retention_policy:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_subscription_filter:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_destinations:
+    parameters:
+      destination_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_export_tasks:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: false
+        count: 1
+      status_code:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_log_groups:
+    parameters:
+      log_group_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_log_streams:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      order_by:
+        types:
+        - String
+        required: false
+        count: 1
+      descending:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_metric_filters:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      filter_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      metric_name:
+        types:
+        - String
+        required: false
+        count: 1
+      metric_namespace:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_resource_policies:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_subscription_filters:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_name_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  disassociate_kms_key:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  filter_log_events:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Integer
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filter_pattern:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      interleaved:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  get_log_events:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      start_time:
+        types:
+        - Integer
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      start_from_head:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  list_tags_log_group:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  put_destination:
+    parameters:
+      destination_name:
+        types:
+        - String
+        required: true
+        count: 1
+      target_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  put_destination_policy:
+    parameters:
+      destination_name:
+        types:
+        - String
+        required: true
+        count: 1
+      access_policy:
+        types:
+        - String
+        required: true
+        count: 1
+  put_log_events:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_stream_name:
+        types:
+        - String
+        required: true
+        count: 1
+      log_events:
+        types:
+        - Array<Types::InputLogEvent>
+        required: true
+        count: 1
+      sequence_token:
+        types:
+        - String
+        required: false
+        count: 1
+  put_metric_filter:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_pattern:
+        types:
+        - String
+        required: true
+        count: 1
+      metric_transformations:
+        types:
+        - Array<Types::MetricTransformation>
+        required: true
+        count: 1
+  put_resource_policy:
+    parameters:
+      policy_name:
+        types:
+        - String
+        required: false
+        count: 1
+      policy_document:
+        types:
+        - String
+        required: false
+        count: 1
+  put_retention_policy:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      retention_in_days:
+        types:
+        - Integer
+        required: true
+        count: 1
+  put_subscription_filter:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_name:
+        types:
+        - String
+        required: true
+        count: 1
+      filter_pattern:
+        types:
+        - String
+        required: true
+        count: 1
+      destination_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      distribution:
+        types:
+        - String
+        required: false
+        count: 1
+  tag_log_group:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  test_metric_filter:
+    parameters:
+      filter_pattern:
+        types:
+        - String
+        required: true
+        count: 1
+      log_event_messages:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  untag_log_group:
+    parameters:
+      log_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<String>
+        required: true
+        count: 1

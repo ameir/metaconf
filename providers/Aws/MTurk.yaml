@@ -1,0 +1,860 @@
+---
+class: Aws::MTurk::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  accept_qualification_request:
+    parameters:
+      qualification_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      integer_value:
+        types:
+        - Integer
+        required: false
+        count: 1
+  approve_assignment:
+    parameters:
+      assignment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      requester_feedback:
+        types:
+        - String
+        required: false
+        count: 1
+      override_rejection:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  associate_qualification_with_worker:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      integer_value:
+        types:
+        - Integer
+        required: false
+        count: 1
+      send_notification:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_additional_assignments_for_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      number_of_additional_assignments:
+        types:
+        - Integer
+        required: true
+        count: 1
+      unique_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  create_hit:
+    parameters:
+      max_assignments:
+        types:
+        - Integer
+        required: false
+        count: 1
+      auto_approval_delay_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      lifetime_in_seconds:
+        types:
+        - Integer
+        required: true
+        count: 1
+      assignment_duration_in_seconds:
+        types:
+        - Integer
+        required: true
+        count: 1
+      reward:
+        types:
+        - String
+        required: true
+        count: 1
+      title:
+        types:
+        - String
+        required: true
+        count: 1
+      keywords:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      question:
+        types:
+        - String
+        required: false
+        count: 1
+      requester_annotation:
+        types:
+        - String
+        required: false
+        count: 1
+      qualification_requirements:
+        types:
+        - Array<Types::QualificationRequirement>
+        required: false
+        count: 1
+      unique_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+      assignment_review_policy:
+        types:
+        - Types::ReviewPolicy
+        required: false
+        count: 1
+      hit_review_policy:
+        types:
+        - Types::ReviewPolicy
+        required: false
+        count: 1
+      hit_layout_id:
+        types:
+        - String
+        required: false
+        count: 1
+      hit_layout_parameters:
+        types:
+        - Array<Types::HITLayoutParameter>
+        required: false
+        count: 1
+  create_hit_type:
+    parameters:
+      auto_approval_delay_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      assignment_duration_in_seconds:
+        types:
+        - Integer
+        required: true
+        count: 1
+      reward:
+        types:
+        - String
+        required: true
+        count: 1
+      title:
+        types:
+        - String
+        required: true
+        count: 1
+      keywords:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      qualification_requirements:
+        types:
+        - Array<Types::QualificationRequirement>
+        required: false
+        count: 1
+  create_hit_with_hit_type:
+    parameters:
+      hit_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      max_assignments:
+        types:
+        - Integer
+        required: false
+        count: 1
+      lifetime_in_seconds:
+        types:
+        - Integer
+        required: true
+        count: 1
+      question:
+        types:
+        - String
+        required: false
+        count: 1
+      requester_annotation:
+        types:
+        - String
+        required: false
+        count: 1
+      unique_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+      assignment_review_policy:
+        types:
+        - Types::ReviewPolicy
+        required: false
+        count: 1
+      hit_review_policy:
+        types:
+        - Types::ReviewPolicy
+        required: false
+        count: 1
+      hit_layout_id:
+        types:
+        - String
+        required: false
+        count: 1
+      hit_layout_parameters:
+        types:
+        - Array<Types::HITLayoutParameter>
+        required: false
+        count: 1
+  create_qualification_type:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      keywords:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      qualification_type_status:
+        types:
+        - String
+        required: true
+        count: 1
+      retry_delay_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      test:
+        types:
+        - String
+        required: false
+        count: 1
+      answer_key:
+        types:
+        - String
+        required: false
+        count: 1
+      test_duration_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      auto_granted:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_granted_value:
+        types:
+        - Integer
+        required: false
+        count: 1
+  create_worker_block:
+    parameters:
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      reason:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_qualification_type:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_worker_block:
+    parameters:
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      reason:
+        types:
+        - String
+        required: false
+        count: 1
+  disassociate_qualification_from_worker:
+    parameters:
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      reason:
+        types:
+        - String
+        required: false
+        count: 1
+  get_assignment:
+    parameters:
+      assignment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_file_upload_url:
+    parameters:
+      assignment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      question_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  get_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_qualification_score:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_qualification_type:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_assignments_for_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      assignment_statuses:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  list_bonus_payments:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: false
+        count: 1
+      assignment_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_hits:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_hits_for_qualification_type:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_qualification_requests:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_qualification_types:
+    parameters:
+      query:
+        types:
+        - String
+        required: false
+        count: 1
+      must_be_requestable:
+        types:
+        - Boolean
+        required: true
+        count: 1
+      must_be_owned_by_caller:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_review_policy_results_for_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_levels:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      retrieve_actions:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      retrieve_results:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_reviewable_hits:
+    parameters:
+      hit_type_id:
+        types:
+        - String
+        required: false
+        count: 1
+      status:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_worker_blocks:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_workers_with_qualification_type:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      status:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  notify_workers:
+    parameters:
+      subject:
+        types:
+        - String
+        required: true
+        count: 1
+      message_text:
+        types:
+        - String
+        required: true
+        count: 1
+      worker_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  reject_assignment:
+    parameters:
+      assignment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      requester_feedback:
+        types:
+        - String
+        required: true
+        count: 1
+  reject_qualification_request:
+    parameters:
+      qualification_request_id:
+        types:
+        - String
+        required: true
+        count: 1
+      reason:
+        types:
+        - String
+        required: false
+        count: 1
+  send_bonus:
+    parameters:
+      worker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      bonus_amount:
+        types:
+        - String
+        required: true
+        count: 1
+      assignment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      reason:
+        types:
+        - String
+        required: true
+        count: 1
+      unique_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  send_test_event_notification:
+    parameters:
+      notification:
+        types:
+        - Types::NotificationSpecification
+        required: true
+        count: 1
+      test_event_type:
+        types:
+        - String
+        required: true
+        count: 1
+  update_expiration_for_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      expire_at:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+        count: 1
+  update_hit_review_status:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      revert:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  update_hit_type_of_hit:
+    parameters:
+      hit_id:
+        types:
+        - String
+        required: true
+        count: 1
+      hit_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+  update_notification_settings:
+    parameters:
+      hit_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      notification:
+        types:
+        - Types::NotificationSpecification
+        required: false
+        count: 1
+      active:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  update_qualification_type:
+    parameters:
+      qualification_type_id:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      qualification_type_status:
+        types:
+        - String
+        required: false
+        count: 1
+      test:
+        types:
+        - String
+        required: false
+        count: 1
+      answer_key:
+        types:
+        - String
+        required: false
+        count: 1
+      test_duration_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      retry_delay_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      auto_granted:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_granted_value:
+        types:
+        - Integer
+        required: false
+        count: 1

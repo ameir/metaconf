@@ -1,0 +1,152 @@
+---
+class: Aws::Shield::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_protection:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_protection:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_attack:
+    parameters:
+      attack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_protection:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_attacks:
+    parameters:
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Types::TimeRange
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Types::TimeRange
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_protections:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1

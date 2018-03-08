@@ -1,0 +1,575 @@
+---
+class: Aws::AppSync::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_api_key:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      expires:
+        types:
+        - Integer
+        required: false
+        count: 1
+  create_data_source:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      type:
+        types:
+        - String
+        required: true
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      dynamodb_config:
+        types:
+        - Types::DynamodbDataSourceConfig
+        required: false
+        count: 1
+      lambda_config:
+        types:
+        - Types::LambdaDataSourceConfig
+        required: false
+        count: 1
+      elasticsearch_config:
+        types:
+        - Types::ElasticsearchDataSourceConfig
+        required: false
+        count: 1
+  create_graphql_api:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      authentication_type:
+        types:
+        - String
+        required: true
+        count: 1
+      user_pool_config:
+        types:
+        - Types::UserPoolConfig
+        required: false
+        count: 1
+  create_resolver:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      field_name:
+        types:
+        - String
+        required: true
+        count: 1
+      data_source_name:
+        types:
+        - String
+        required: true
+        count: 1
+      request_mapping_template:
+        types:
+        - String
+        required: true
+        count: 1
+      response_mapping_template:
+        types:
+        - String
+        required: false
+        count: 1
+  create_type:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      definition:
+        types:
+        - String
+        required: true
+        count: 1
+      format:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_api_key:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_data_source:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_graphql_api:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_resolver:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      field_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_type:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_data_source:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_graphql_api:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_introspection_schema:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      format:
+        types:
+        - String
+        required: true
+        count: 1
+  get_resolver:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      field_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_schema_creation_status:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_type:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      format:
+        types:
+        - String
+        required: true
+        count: 1
+  list_api_keys:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_data_sources:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_graphql_apis:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_resolvers:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_types:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      format:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  start_schema_creation:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      definition:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1
+  update_api_key:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      expires:
+        types:
+        - Integer
+        required: false
+        count: 1
+  update_data_source:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      type:
+        types:
+        - String
+        required: true
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      dynamodb_config:
+        types:
+        - Types::DynamodbDataSourceConfig
+        required: false
+        count: 1
+      lambda_config:
+        types:
+        - Types::LambdaDataSourceConfig
+        required: false
+        count: 1
+      elasticsearch_config:
+        types:
+        - Types::ElasticsearchDataSourceConfig
+        required: false
+        count: 1
+  update_graphql_api:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      authentication_type:
+        types:
+        - String
+        required: false
+        count: 1
+      user_pool_config:
+        types:
+        - Types::UserPoolConfig
+        required: false
+        count: 1
+  update_resolver:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      field_name:
+        types:
+        - String
+        required: true
+        count: 1
+      data_source_name:
+        types:
+        - String
+        required: true
+        count: 1
+      request_mapping_template:
+        types:
+        - String
+        required: true
+        count: 1
+      response_mapping_template:
+        types:
+        - String
+        required: false
+        count: 1
+  update_type:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+        count: 1
+      type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      definition:
+        types:
+        - String
+        required: false
+        count: 1
+      format:
+        types:
+        - String
+        required: true
+        count: 1

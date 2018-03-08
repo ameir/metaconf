@@ -1,0 +1,911 @@
+---
+class: Aws::Route53::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  associate_vpc_with_hosted_zone:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc:
+        types:
+        - Types::VPC
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: false
+        count: 1
+  change_resource_record_sets:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_batch:
+        types:
+        - Types::ChangeBatch
+        required: true
+        count: 1
+  change_tags_for_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+        count: 1
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      add_tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      remove_tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  create_health_check:
+    parameters:
+      caller_reference:
+        types:
+        - String
+        required: true
+        count: 1
+      health_check_config:
+        types:
+        - Types::HealthCheckConfig
+        required: true
+        count: 1
+  create_hosted_zone:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc:
+        types:
+        - Types::VPC
+        required: false
+        count: 1
+      caller_reference:
+        types:
+        - String
+        required: true
+        count: 1
+      hosted_zone_config:
+        types:
+        - Types::HostedZoneConfig
+        required: false
+        count: 1
+      delegation_set_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_query_logging_config:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      cloud_watch_logs_log_group_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  create_reusable_delegation_set:
+    parameters:
+      caller_reference:
+        types:
+        - String
+        required: true
+        count: 1
+      hosted_zone_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_traffic_policy:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      document:
+        types:
+        - String
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: false
+        count: 1
+  create_traffic_policy_instance:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      ttl:
+        types:
+        - Integer
+        required: true
+        count: 1
+      traffic_policy_id:
+        types:
+        - String
+        required: true
+        count: 1
+      traffic_policy_version:
+        types:
+        - Integer
+        required: true
+        count: 1
+  create_traffic_policy_version:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      document:
+        types:
+        - String
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: false
+        count: 1
+  create_vpc_association_authorization:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc:
+        types:
+        - Types::VPC
+        required: true
+        count: 1
+  delete_health_check:
+    parameters:
+      health_check_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_hosted_zone:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_query_logging_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_reusable_delegation_set:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_traffic_policy:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      version:
+        types:
+        - Integer
+        required: true
+        count: 1
+  delete_traffic_policy_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_vpc_association_authorization:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc:
+        types:
+        - Types::VPC
+        required: true
+        count: 1
+  disassociate_vpc_from_hosted_zone:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc:
+        types:
+        - Types::VPC
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: false
+        count: 1
+  get_account_limit:
+    parameters:
+      type:
+        types:
+        - String
+        required: true
+        count: 1
+  get_change:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_geo_location:
+    parameters:
+      continent_code:
+        types:
+        - String
+        required: false
+        count: 1
+      country_code:
+        types:
+        - String
+        required: false
+        count: 1
+      subdivision_code:
+        types:
+        - String
+        required: false
+        count: 1
+  get_health_check:
+    parameters:
+      health_check_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_health_check_last_failure_reason:
+    parameters:
+      health_check_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_health_check_status:
+    parameters:
+      health_check_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_hosted_zone:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_hosted_zone_limit:
+    parameters:
+      type:
+        types:
+        - String
+        required: true
+        count: 1
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_query_logging_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_reusable_delegation_set:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_reusable_delegation_set_limit:
+    parameters:
+      type:
+        types:
+        - String
+        required: true
+        count: 1
+      delegation_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_traffic_policy:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      version:
+        types:
+        - Integer
+        required: true
+        count: 1
+  get_traffic_policy_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_geo_locations:
+    parameters:
+      start_continent_code:
+        types:
+        - String
+        required: false
+        count: 1
+      start_country_code:
+        types:
+        - String
+        required: false
+        count: 1
+      start_subdivision_code:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_health_checks:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_hosted_zones:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delegation_set_id:
+        types:
+        - String
+        required: false
+        count: 1
+  list_hosted_zones_by_name:
+    parameters:
+      dns_name:
+        types:
+        - String
+        required: false
+        count: 1
+      hosted_zone_id:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_query_logging_configs:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - String
+        required: false
+        count: 1
+  list_resource_record_sets:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      start_record_name:
+        types:
+        - String
+        required: false
+        count: 1
+      start_record_type:
+        types:
+        - String
+        required: false
+        count: 1
+      start_record_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_reusable_delegation_sets:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_tags_for_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+        count: 1
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_tags_for_resources:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+        count: 1
+      resource_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  list_traffic_policies:
+    parameters:
+      traffic_policy_id_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_traffic_policy_instances:
+    parameters:
+      hosted_zone_id_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      traffic_policy_instance_name_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      traffic_policy_instance_type_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_traffic_policy_instances_by_hosted_zone:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      traffic_policy_instance_name_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      traffic_policy_instance_type_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_traffic_policy_instances_by_policy:
+    parameters:
+      traffic_policy_id:
+        types:
+        - String
+        required: true
+        count: 1
+      traffic_policy_version:
+        types:
+        - Integer
+        required: true
+        count: 1
+      hosted_zone_id_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      traffic_policy_instance_name_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      traffic_policy_instance_type_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_traffic_policy_versions:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      traffic_policy_version_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_vpc_association_authorizations:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - String
+        required: false
+        count: 1
+  test_dns_answer:
+    parameters:
+      hosted_zone_id:
+        types:
+        - String
+        required: true
+        count: 1
+      record_name:
+        types:
+        - String
+        required: true
+        count: 1
+      record_type:
+        types:
+        - String
+        required: true
+        count: 1
+      resolver_ip:
+        types:
+        - String
+        required: false
+        count: 1
+      edns0_client_subnet_ip:
+        types:
+        - String
+        required: false
+        count: 1
+      edns0_client_subnet_mask:
+        types:
+        - String
+        required: false
+        count: 1
+  update_health_check:
+    parameters:
+      health_check_id:
+        types:
+        - String
+        required: true
+        count: 1
+      health_check_version:
+        types:
+        - Integer
+        required: false
+        count: 1
+      ip_address:
+        types:
+        - String
+        required: false
+        count: 1
+      port:
+        types:
+        - Integer
+        required: false
+        count: 1
+      resource_path:
+        types:
+        - String
+        required: false
+        count: 1
+      fully_qualified_domain_name:
+        types:
+        - String
+        required: false
+        count: 1
+      search_string:
+        types:
+        - String
+        required: false
+        count: 1
+      failure_threshold:
+        types:
+        - Integer
+        required: false
+        count: 1
+      inverted:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      health_threshold:
+        types:
+        - Integer
+        required: false
+        count: 1
+      child_health_checks:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      enable_sni:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      regions:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      alarm_identifier:
+        types:
+        - Types::AlarmIdentifier
+        required: false
+        count: 1
+      insufficient_data_health_status:
+        types:
+        - String
+        required: false
+        count: 1
+      reset_elements:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  update_hosted_zone_comment:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: false
+        count: 1
+  update_traffic_policy_comment:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      version:
+        types:
+        - Integer
+        required: true
+        count: 1
+      comment:
+        types:
+        - String
+        required: true
+        count: 1
+  update_traffic_policy_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+        count: 1
+      ttl:
+        types:
+        - Integer
+        required: true
+        count: 1
+      traffic_policy_id:
+        types:
+        - String
+        required: true
+        count: 1
+      traffic_policy_version:
+        types:
+        - Integer
+        required: true
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

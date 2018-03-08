@@ -1,0 +1,120 @@
+---
+class: Aws::IoTDataPlane::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  delete_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+        count: 1
+  publish:
+    parameters:
+      topic:
+        types:
+        - String
+        required: true
+        count: 1
+      qos:
+        types:
+        - Integer
+        required: false
+        count: 1
+      payload:
+        types:
+        - String
+        - IO
+        required: false
+        count: 1
+  update_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+        count: 1
+      payload:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1

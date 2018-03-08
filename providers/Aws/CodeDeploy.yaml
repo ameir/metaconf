@@ -1,0 +1,757 @@
+---
+class: Aws::CodeDeploy::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags_to_on_premises_instances:
+    parameters:
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_application_revisions:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      revisions:
+        types:
+        - Array<Types::RevisionLocation>
+        required: true
+        count: 1
+  batch_get_applications:
+    parameters:
+      application_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_deployment_groups:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_group_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_deployment_instances:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_deployments:
+    parameters:
+      deployment_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_get_on_premises_instances:
+    parameters:
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  continue_deployment:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      compute_platform:
+        types:
+        - String
+        required: false
+        count: 1
+  create_deployment:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      revision:
+        types:
+        - Types::RevisionLocation
+        required: false
+        count: 1
+      deployment_config_name:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      ignore_application_stop_failures:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      target_instances:
+        types:
+        - Types::TargetInstances
+        required: false
+        count: 1
+      auto_rollback_configuration:
+        types:
+        - Types::AutoRollbackConfiguration
+        required: false
+        count: 1
+      update_outdated_instances_only:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      file_exists_behavior:
+        types:
+        - String
+        required: false
+        count: 1
+  create_deployment_config:
+    parameters:
+      deployment_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+      minimum_healthy_hosts:
+        types:
+        - Types::MinimumHealthyHosts
+        required: false
+        count: 1
+      traffic_routing_config:
+        types:
+        - Types::TrafficRoutingConfig
+        required: false
+        count: 1
+      compute_platform:
+        types:
+        - String
+        required: false
+        count: 1
+  create_deployment_group:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_config_name:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_tag_filters:
+        types:
+        - Array<Types::EC2TagFilter>
+        required: false
+        count: 1
+      on_premises_instance_tag_filters:
+        types:
+        - Array<Types::TagFilter>
+        required: false
+        count: 1
+      auto_scaling_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      trigger_configurations:
+        types:
+        - Array<Types::TriggerConfig>
+        required: false
+        count: 1
+      alarm_configuration:
+        types:
+        - Types::AlarmConfiguration
+        required: false
+        count: 1
+      auto_rollback_configuration:
+        types:
+        - Types::AutoRollbackConfiguration
+        required: false
+        count: 1
+      deployment_style:
+        types:
+        - Types::DeploymentStyle
+        required: false
+        count: 1
+      blue_green_deployment_configuration:
+        types:
+        - Types::BlueGreenDeploymentConfiguration
+        required: false
+        count: 1
+      load_balancer_info:
+        types:
+        - Types::LoadBalancerInfo
+        required: false
+        count: 1
+      ec2_tag_set:
+        types:
+        - Types::EC2TagSet
+        required: false
+        count: 1
+      on_premises_tag_set:
+        types:
+        - Types::OnPremisesTagSet
+        required: false
+        count: 1
+  delete_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_deployment_config:
+    parameters:
+      deployment_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_deployment_group:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_git_hub_account_token:
+    parameters:
+      token_name:
+        types:
+        - String
+        required: false
+        count: 1
+  deregister_on_premises_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_application_revision:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      revision:
+        types:
+        - Types::RevisionLocation
+        required: true
+        count: 1
+  get_deployment:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_deployment_config:
+    parameters:
+      deployment_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_deployment_group:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployment_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_deployment_instance:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_on_premises_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_application_revisions:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      s3_bucket:
+        types:
+        - String
+        required: false
+        count: 1
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+      deployed:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_applications:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_deployment_configs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_deployment_groups:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_deployment_instances:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_status_filter:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      instance_type_filter:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  list_deployments:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: false
+        count: 1
+      deployment_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      include_only_statuses:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      create_time_range:
+        types:
+        - Types::TimeRange
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_git_hub_account_token_names:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_on_premises_instances:
+    parameters:
+      registration_status:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_filters:
+        types:
+        - Array<Types::TagFilter>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  put_lifecycle_event_hook_execution_status:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: false
+        count: 1
+      lifecycle_event_hook_execution_id:
+        types:
+        - String
+        required: false
+        count: 1
+      status:
+        types:
+        - String
+        required: false
+        count: 1
+  register_application_revision:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      revision:
+        types:
+        - Types::RevisionLocation
+        required: true
+        count: 1
+  register_on_premises_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+      iam_session_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      iam_user_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  remove_tags_from_on_premises_instances:
+    parameters:
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  skip_wait_time_for_instance_termination:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: false
+        count: 1
+  stop_deployment:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_rollback_enabled:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  update_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: false
+        count: 1
+      new_application_name:
+        types:
+        - String
+        required: false
+        count: 1
+  update_deployment_group:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+        count: 1
+      current_deployment_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      new_deployment_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      deployment_config_name:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_tag_filters:
+        types:
+        - Array<Types::EC2TagFilter>
+        required: false
+        count: 1
+      on_premises_instance_tag_filters:
+        types:
+        - Array<Types::TagFilter>
+        required: false
+        count: 1
+      auto_scaling_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      trigger_configurations:
+        types:
+        - Array<Types::TriggerConfig>
+        required: false
+        count: 1
+      alarm_configuration:
+        types:
+        - Types::AlarmConfiguration
+        required: false
+        count: 1
+      auto_rollback_configuration:
+        types:
+        - Types::AutoRollbackConfiguration
+        required: false
+        count: 1
+      deployment_style:
+        types:
+        - Types::DeploymentStyle
+        required: false
+        count: 1
+      blue_green_deployment_configuration:
+        types:
+        - Types::BlueGreenDeploymentConfiguration
+        required: false
+        count: 1
+      load_balancer_info:
+        types:
+        - Types::LoadBalancerInfo
+        required: false
+        count: 1
+      ec2_tag_set:
+        types:
+        - Types::EC2TagSet
+        required: false
+        count: 1
+      on_premises_tag_set:
+        types:
+        - Types::OnPremisesTagSet
+        required: false
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

@@ -1,0 +1,1599 @@
+---
+class: Aws::Redshift::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  authorize_cluster_security_group_ingress:
+    parameters:
+      cluster_security_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      cidrip:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_security_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_security_group_owner_id:
+        types:
+        - String
+        required: false
+        count: 1
+  authorize_snapshot_access:
+    parameters:
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      account_with_restore_access:
+        types:
+        - String
+        required: true
+        count: 1
+  copy_cluster_snapshot:
+    parameters:
+      source_snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      source_snapshot_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      target_snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  create_cluster:
+    parameters:
+      db_name:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      cluster_type:
+        types:
+        - String
+        required: false
+        count: 1
+      node_type:
+        types:
+        - String
+        required: true
+        count: 1
+      master_username:
+        types:
+        - String
+        required: true
+        count: 1
+      master_user_password:
+        types:
+        - String
+        required: true
+        count: 1
+      cluster_security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      availability_zone:
+        types:
+        - String
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      automated_snapshot_retention_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      port:
+        types:
+        - Integer
+        required: false
+        count: 1
+      cluster_version:
+        types:
+        - String
+        required: false
+        count: 1
+      allow_version_upgrade:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      number_of_nodes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      encrypted:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      elastic_ip:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      enhanced_vpc_routing:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      additional_info:
+        types:
+        - String
+        required: false
+        count: 1
+      iam_roles:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  create_cluster_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      parameter_group_family:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_cluster_security_group:
+    parameters:
+      cluster_security_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_cluster_snapshot:
+    parameters:
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_cluster_subnet_group:
+    parameters:
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_event_subscription:
+    parameters:
+      subscription_name:
+        types:
+        - String
+        required: true
+        count: 1
+      sns_topic_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      source_type:
+        types:
+        - String
+        required: false
+        count: 1
+      source_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      event_categories:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      severity:
+        types:
+        - String
+        required: false
+        count: 1
+      enabled:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_hsm_client_certificate:
+    parameters:
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_hsm_configuration:
+    parameters:
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+      hsm_ip_address:
+        types:
+        - String
+        required: true
+        count: 1
+      hsm_partition_name:
+        types:
+        - String
+        required: true
+        count: 1
+      hsm_partition_password:
+        types:
+        - String
+        required: true
+        count: 1
+      hsm_server_public_certificate:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_snapshot_copy_grant:
+    parameters:
+      snapshot_copy_grant_name:
+        types:
+        - String
+        required: true
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_tags:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  delete_cluster:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      skip_final_cluster_snapshot:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      final_cluster_snapshot_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_cluster_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_cluster_security_group:
+    parameters:
+      cluster_security_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_cluster_snapshot:
+    parameters:
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_cluster_subnet_group:
+    parameters:
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_event_subscription:
+    parameters:
+      subscription_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_hsm_client_certificate:
+    parameters:
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_hsm_configuration:
+    parameters:
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_snapshot_copy_grant:
+    parameters:
+      snapshot_copy_grant_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_tags:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  describe_cluster_parameter_groups:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_cluster_parameters:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      source:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_cluster_security_groups:
+    parameters:
+      cluster_security_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_cluster_snapshots:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      snapshot_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      snapshot_type:
+        types:
+        - String
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      owner_account:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_cluster_subnet_groups:
+    parameters:
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_cluster_versions:
+    parameters:
+      cluster_version:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_parameter_group_family:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_clusters:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_default_cluster_parameters:
+    parameters:
+      parameter_group_family:
+        types:
+        - String
+        required: true
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_event_categories:
+    parameters:
+      source_type:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_event_subscriptions:
+    parameters:
+      subscription_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_events:
+    parameters:
+      source_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      source_type:
+        types:
+        - String
+        required: false
+        count: 1
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      duration:
+        types:
+        - Integer
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_hsm_client_certificates:
+    parameters:
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_hsm_configurations:
+    parameters:
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_logging_status:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_orderable_cluster_options:
+    parameters:
+      cluster_version:
+        types:
+        - String
+        required: false
+        count: 1
+      node_type:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_reserved_node_offerings:
+    parameters:
+      reserved_node_offering_id:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_reserved_nodes:
+    parameters:
+      reserved_node_id:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_resize:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_snapshot_copy_grants:
+    parameters:
+      snapshot_copy_grant_name:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_table_restore_status:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      table_restore_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_tags:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: false
+        count: 1
+      resource_type:
+        types:
+        - String
+        required: false
+        count: 1
+      max_records:
+        types:
+        - Integer
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  disable_logging:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  disable_snapshot_copy:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  enable_logging:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      bucket_name:
+        types:
+        - String
+        required: true
+        count: 1
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+        count: 1
+  enable_snapshot_copy:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      destination_region:
+        types:
+        - String
+        required: true
+        count: 1
+      retention_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      snapshot_copy_grant_name:
+        types:
+        - String
+        required: false
+        count: 1
+  get_cluster_credentials:
+    parameters:
+      db_user:
+        types:
+        - String
+        required: true
+        count: 1
+      db_name:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+      auto_create:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      db_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  modify_cluster:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      cluster_type:
+        types:
+        - String
+        required: false
+        count: 1
+      node_type:
+        types:
+        - String
+        required: false
+        count: 1
+      number_of_nodes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      cluster_security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      master_user_password:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      automated_snapshot_retention_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_version:
+        types:
+        - String
+        required: false
+        count: 1
+      allow_version_upgrade:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      new_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      elastic_ip:
+        types:
+        - String
+        required: false
+        count: 1
+      enhanced_vpc_routing:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  modify_cluster_iam_roles:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      add_iam_roles:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      remove_iam_roles:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  modify_cluster_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: true
+        count: 1
+  modify_cluster_subnet_group:
+    parameters:
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  modify_event_subscription:
+    parameters:
+      subscription_name:
+        types:
+        - String
+        required: true
+        count: 1
+      sns_topic_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      source_type:
+        types:
+        - String
+        required: false
+        count: 1
+      source_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      event_categories:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      severity:
+        types:
+        - String
+        required: false
+        count: 1
+      enabled:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  modify_snapshot_copy_retention_period:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      retention_period:
+        types:
+        - Integer
+        required: true
+        count: 1
+  purchase_reserved_node_offering:
+    parameters:
+      reserved_node_offering_id:
+        types:
+        - String
+        required: true
+        count: 1
+      node_count:
+        types:
+        - Integer
+        required: false
+        count: 1
+  reboot_cluster:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  reset_cluster_parameter_group:
+    parameters:
+      parameter_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      reset_all_parameters:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+  restore_from_cluster_snapshot:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      port:
+        types:
+        - Integer
+        required: false
+        count: 1
+      availability_zone:
+        types:
+        - String
+        required: false
+        count: 1
+      allow_version_upgrade:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      cluster_subnet_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      owner_account:
+        types:
+        - String
+        required: false
+        count: 1
+      hsm_client_certificate_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      hsm_configuration_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      elastic_ip:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      cluster_security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+        count: 1
+      automated_snapshot_retention_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      node_type:
+        types:
+        - String
+        required: false
+        count: 1
+      enhanced_vpc_routing:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      additional_info:
+        types:
+        - String
+        required: false
+        count: 1
+      iam_roles:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  restore_table_from_cluster_snapshot:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      source_database_name:
+        types:
+        - String
+        required: true
+        count: 1
+      source_schema_name:
+        types:
+        - String
+        required: false
+        count: 1
+      source_table_name:
+        types:
+        - String
+        required: true
+        count: 1
+      target_database_name:
+        types:
+        - String
+        required: false
+        count: 1
+      target_schema_name:
+        types:
+        - String
+        required: false
+        count: 1
+      new_table_name:
+        types:
+        - String
+        required: true
+        count: 1
+  revoke_cluster_security_group_ingress:
+    parameters:
+      cluster_security_group_name:
+        types:
+        - String
+        required: true
+        count: 1
+      cidrip:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_security_group_name:
+        types:
+        - String
+        required: false
+        count: 1
+      ec2_security_group_owner_id:
+        types:
+        - String
+        required: false
+        count: 1
+  revoke_snapshot_access:
+    parameters:
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+      snapshot_cluster_identifier:
+        types:
+        - String
+        required: false
+        count: 1
+      account_with_restore_access:
+        types:
+        - String
+        required: true
+        count: 1
+  rotate_encryption_key:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

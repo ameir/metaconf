@@ -1,0 +1,1014 @@
+---
+class: Aws::CloudFormation::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  cancel_update_stack:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  continue_update_rollback:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      resources_to_skip:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  create_change_set:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      use_previous_template:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      rollback_configuration:
+        types:
+        - Types::RollbackConfiguration
+        required: false
+        count: 1
+      notification_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      change_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      client_token:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      change_set_type:
+        types:
+        - String
+        required: false
+        count: 1
+  create_stack:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      disable_rollback:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      rollback_configuration:
+        types:
+        - Types::RollbackConfiguration
+        required: false
+        count: 1
+      timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+        count: 1
+      notification_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      on_failure:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_policy_body:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_policy_url:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+      enable_termination_protection:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_stack_instances:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      accounts:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      regions:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      parameter_overrides:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      operation_preferences:
+        types:
+        - Types::StackSetOperationPreferences
+        required: false
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_stack_set:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_change_set:
+    parameters:
+      change_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_stack:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      retain_resources:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_stack_instances:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      accounts:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      regions:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      operation_preferences:
+        types:
+        - Types::StackSetOperationPreferences
+        required: false
+        count: 1
+      retain_stacks:
+        types:
+        - Boolean
+        required: true
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_stack_set:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_account_limits:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_change_set:
+    parameters:
+      change_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_stack_events:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_stack_instance:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_instance_account:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_instance_region:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stack_resource:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      logical_resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stack_resources:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      logical_resource_id:
+        types:
+        - String
+        required: false
+        count: 1
+      physical_resource_id:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_stack_set:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stack_set_operation:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stacks:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  estimate_template_cost:
+    parameters:
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+  execute_change_set:
+    parameters:
+      change_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_stack_policy:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_template:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      change_set_name:
+        types:
+        - String
+        required: false
+        count: 1
+      template_stage:
+        types:
+        - String
+        required: false
+        count: 1
+  get_template_summary:
+    parameters:
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_set_name:
+        types:
+        - String
+        required: false
+        count: 1
+  list_change_sets:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_exports:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_imports:
+    parameters:
+      export_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_stack_instances:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      stack_instance_account:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_instance_region:
+        types:
+        - String
+        required: false
+        count: 1
+  list_stack_resources:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_stack_set_operation_results:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_stack_set_operations:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_stack_sets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      status:
+        types:
+        - String
+        required: false
+        count: 1
+  list_stacks:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_status_filter:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  set_stack_policy:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_policy_body:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_policy_url:
+        types:
+        - String
+        required: false
+        count: 1
+  signal_resource:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      logical_resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      unique_id:
+        types:
+        - String
+        required: true
+        count: 1
+      status:
+        types:
+        - String
+        required: true
+        count: 1
+  stop_stack_set_operation:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: true
+        count: 1
+  update_stack:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      use_previous_template:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stack_policy_during_update_body:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_policy_during_update_url:
+        types:
+        - String
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      rollback_configuration:
+        types:
+        - Types::RollbackConfiguration
+        required: false
+        count: 1
+      stack_policy_body:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_policy_url:
+        types:
+        - String
+        required: false
+        count: 1
+      notification_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      client_request_token:
+        types:
+        - String
+        required: false
+        count: 1
+  update_stack_instances:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      accounts:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      regions:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      parameter_overrides:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      operation_preferences:
+        types:
+        - Types::StackSetOperationPreferences
+        required: false
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: false
+        count: 1
+  update_stack_set:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+      use_previous_template:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+        count: 1
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      operation_preferences:
+        types:
+        - Types::StackSetOperationPreferences
+        required: false
+        count: 1
+      operation_id:
+        types:
+        - String
+        required: false
+        count: 1
+  update_termination_protection:
+    parameters:
+      enable_termination_protection:
+        types:
+        - Boolean
+        required: true
+        count: 1
+      stack_name:
+        types:
+        - String
+        required: true
+        count: 1
+  validate_template:
+    parameters:
+      template_body:
+        types:
+        - String
+        required: false
+        count: 1
+      template_url:
+        types:
+        - String
+        required: false
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

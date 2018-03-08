@@ -1,0 +1,185 @@
+---
+class: Aws::Mobile::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      region:
+        types:
+        - String
+        required: false
+        count: 1
+      contents:
+        types:
+        - String
+        - IO
+        required: false
+        count: 1
+      snapshot_id:
+        types:
+        - String
+        required: false
+        count: 1
+  delete_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_bundle:
+    parameters:
+      bundle_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+        count: 1
+      sync_from_resources:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  export_bundle:
+    parameters:
+      bundle_id:
+        types:
+        - String
+        required: true
+        count: 1
+      project_id:
+        types:
+        - String
+        required: false
+        count: 1
+      platform:
+        types:
+        - String
+        required: false
+        count: 1
+  export_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_bundles:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_projects:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  update_project:
+    parameters:
+      contents:
+        types:
+        - String
+        - IO
+        required: false
+        count: 1
+      project_id:
+        types:
+        - String
+        required: true
+        count: 1

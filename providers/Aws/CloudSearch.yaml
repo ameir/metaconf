@@ -1,0 +1,341 @@
+---
+class: Aws::CloudSearch::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  build_suggesters:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  create_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  define_analysis_scheme:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      analysis_scheme:
+        types:
+        - Types::AnalysisScheme
+        required: true
+        count: 1
+  define_expression:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      expression:
+        types:
+        - Types::Expression
+        required: true
+        count: 1
+  define_index_field:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      index_field:
+        types:
+        - Types::IndexField
+        required: true
+        count: 1
+  define_suggester:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      suggester:
+        types:
+        - Types::Suggester
+        required: true
+        count: 1
+  delete_analysis_scheme:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      analysis_scheme_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_expression:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      expression_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_index_field:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      index_field_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_suggester:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      suggester_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_analysis_schemes:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      analysis_scheme_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  describe_availability_options:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  describe_domains:
+    parameters:
+      domain_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_expressions:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      expression_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  describe_index_fields:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      field_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  describe_scaling_parameters:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_service_access_policies:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  describe_suggesters:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      suggester_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      deployed:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  index_documents:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  update_availability_options:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      multi_az:
+        types:
+        - Boolean
+        required: true
+        count: 1
+  update_scaling_parameters:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scaling_parameters:
+        types:
+        - Types::ScalingParameters
+        required: true
+        count: 1
+  update_service_access_policies:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      access_policies:
+        types:
+        - String
+        required: true
+        count: 1

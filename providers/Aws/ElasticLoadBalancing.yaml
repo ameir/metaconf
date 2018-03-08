@@ -1,0 +1,490 @@
+---
+class: Aws::ElasticLoadBalancing::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags:
+    parameters:
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  apply_security_groups_to_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      security_groups:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  attach_load_balancer_to_subnets:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      subnets:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  configure_health_check:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      health_check:
+        types:
+        - Types::HealthCheck
+        required: true
+        count: 1
+  create_app_cookie_stickiness_policy:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+      cookie_name:
+        types:
+        - String
+        required: true
+        count: 1
+  create_lb_cookie_stickiness_policy:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+      cookie_expiration_period:
+        types:
+        - Integer
+        required: false
+        count: 1
+  create_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      listeners:
+        types:
+        - Array<Types::Listener>
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      subnets:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      scheme:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_load_balancer_listeners:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      listeners:
+        types:
+        - Array<Types::Listener>
+        required: true
+        count: 1
+  create_load_balancer_policy:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_type_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_attributes:
+        types:
+        - Array<Types::PolicyAttribute>
+        required: false
+        count: 1
+  delete_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_load_balancer_listeners:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_ports:
+        types:
+        - Array<Integer>
+        required: true
+        count: 1
+  delete_load_balancer_policy:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_name:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_instances_from_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instances:
+        types:
+        - Array<Types::Instance>
+        required: true
+        count: 1
+  describe_account_limits:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      page_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_instance_health:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instances:
+        types:
+        - Array<Types::Instance>
+        required: false
+        count: 1
+  describe_load_balancer_attributes:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_load_balancer_policies:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: false
+        count: 1
+      policy_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_load_balancer_policy_types:
+    parameters:
+      policy_type_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_load_balancers:
+    parameters:
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      marker:
+        types:
+        - String
+        required: false
+        count: 1
+      page_size:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_tags:
+    parameters:
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  detach_load_balancer_from_subnets:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      subnets:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  disable_availability_zones_for_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  enable_availability_zones_for_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      availability_zones:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  modify_load_balancer_attributes:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_attributes:
+        types:
+        - Types::LoadBalancerAttributes
+        required: true
+        count: 1
+  register_instances_with_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instances:
+        types:
+        - Array<Types::Instance>
+        required: true
+        count: 1
+  remove_tags:
+    parameters:
+      load_balancer_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::TagKeyOnly>
+        required: true
+        count: 1
+  set_load_balancer_listener_ssl_certificate:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_port:
+        types:
+        - Integer
+        required: true
+        count: 1
+      ssl_certificate_id:
+        types:
+        - String
+        required: true
+        count: 1
+  set_load_balancer_policies_for_backend_server:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_port:
+        types:
+        - Integer
+        required: true
+        count: 1
+      policy_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  set_load_balancer_policies_of_listener:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      load_balancer_port:
+        types:
+        - Integer
+        required: true
+        count: 1
+      policy_names:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

@@ -1,5 +1,5 @@
 ---
-class: Aws::S3::Client
+class: Aws::OpsWorks::Client
 methods:
   initialize:
     parameters:
@@ -18,11 +18,6 @@ methods:
         - String
         required: false
         count: 1
-      compute_checksums:
-        types:
-        - Boolean
-        required: false
-        count: 1
       convert_params:
         types:
         - Boolean
@@ -31,16 +26,6 @@ methods:
       endpoint:
         types:
         - String
-        required: false
-        count: 1
-      follow_redirects:
-        types:
-        - Boolean
-        required: false
-        count: 1
-      force_path_style:
-        types:
-        - Boolean
         required: false
         count: 1
       log_formatter:
@@ -63,11 +48,6 @@ methods:
         - String
         required: false
         count: 1
-      require_https_for_sse_cpk:
-        types:
-        - Boolean
-        required: false
-        count: 1
       retry_limit:
         types:
         - Integer
@@ -83,17 +63,12 @@ methods:
         - String
         required: false
         count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
       stub_responses:
-        types:
-        - Boolean
-        required: false
-        count: 1
-      use_accelerate_endpoint:
-        types:
-        - Boolean
-        required: false
-        count: 1
-      use_dualstack_endpoint:
         types:
         - Boolean
         required: false
@@ -103,1921 +78,1566 @@ methods:
         - Boolean
         required: false
         count: 1
-  abort_multipart_upload:
+  assign_instance:
     parameters:
-      bucket:
+      instance_id:
         types:
         - String
         required: true
         count: 1
-      key:
+      layer_ids:
         types:
-        - String
+        - Array<String>
         required: true
         count: 1
-      upload_id:
-        types:
-        - String
-        required: true
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  complete_multipart_upload:
+  assign_volume:
     parameters:
-      bucket:
+      volume_id:
         types:
         - String
         required: true
         count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      multipart_upload:
-        types:
-        - Types::CompletedMultipartUpload
-        required: false
-        count: 1
-      upload_id:
-        types:
-        - String
-        required: true
-        count: 1
-      request_payer:
+      instance_id:
         types:
         - String
         required: false
         count: 1
-  copy_object:
+  associate_elastic_ip:
     parameters:
-      acl:
-        types:
-        - String
-        required: false
-        count: 1
-      bucket:
+      elastic_ip:
         types:
         - String
         required: true
         count: 1
-      cache_control:
+      instance_id:
         types:
         - String
         required: false
         count: 1
-      content_disposition:
-        types:
-        - String
-        required: false
-        count: 1
-      content_encoding:
-        types:
-        - String
-        required: false
-        count: 1
-      content_language:
-        types:
-        - String
-        required: false
-        count: 1
-      content_type:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source:
+  attach_elastic_load_balancer:
+    parameters:
+      elastic_load_balancer_name:
         types:
         - String
         required: true
         count: 1
-      copy_source_if_match:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_if_modified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      copy_source_if_none_match:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_if_unmodified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      expires:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      grant_full_control:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
+      layer_id:
         types:
         - String
         required: true
         count: 1
-      metadata:
+  clone_stack:
+    parameters:
+      source_stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      region:
+        types:
+        - String
+        required: false
+        count: 1
+      vpc_id:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
         types:
         - Hash<String,String>
         required: false
         count: 1
-      metadata_directive:
-        types:
-        - String
-        required: false
-        count: 1
-      tagging_directive:
-        types:
-        - String
-        required: false
-        count: 1
-      server_side_encryption:
-        types:
-        - String
-        required: false
-        count: 1
-      storage_class:
-        types:
-        - String
-        required: false
-        count: 1
-      website_redirect_location:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      ssekms_key_id:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-      tagging:
-        types:
-        - String
-        required: false
-        count: 1
-  create_bucket:
-    parameters:
-      acl:
-        types:
-        - String
-        required: false
-        count: 1
-      bucket:
+      service_role_arn:
         types:
         - String
         required: true
         count: 1
-      create_bucket_configuration:
+      default_instance_profile_arn:
         types:
-        - Types::CreateBucketConfiguration
-        required: false
-        count: 1
-      grant_full_control:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-  create_multipart_upload:
-    parameters:
-      acl:
-        types:
-        - String
-        required: false
-        count: 1
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      cache_control:
-        types:
-        - String
-        required: false
-        count: 1
-      content_disposition:
-        types:
-        - String
-        required: false
-        count: 1
-      content_encoding:
-        types:
-        - String
-        required: false
-        count: 1
-      content_language:
-        types:
-        - String
-        required: false
-        count: 1
-      content_type:
-        types:
-        - String
-        required: false
-        count: 1
-      expires:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      grant_full_control:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      metadata:
-        types:
-        - Hash<String,String>
-        required: false
-        count: 1
-      server_side_encryption:
-        types:
-        - String
-        required: false
-        count: 1
-      storage_class:
-        types:
-        - String
-        required: false
-        count: 1
-      website_redirect_location:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      ssekms_key_id:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-      tagging:
-        types:
-        - String
-        required: false
-        count: 1
-  delete_bucket:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_analytics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_cors:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_encryption:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_inventory_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_lifecycle:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_metrics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_policy:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_replication:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_tagging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_bucket_website:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  delete_object:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      mfa:
-        types:
-        - String
-        required: false
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  delete_object_tagging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-  delete_objects:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      delete:
-        types:
-        - Types::Delete
-        required: true
-        count: 1
-      mfa:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  get_bucket_accelerate_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_acl:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_analytics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_cors:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_encryption:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_inventory_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_lifecycle:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_lifecycle_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_location:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_logging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_metrics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_notification:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_notification_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_policy:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_replication:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_request_payment:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_tagging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_versioning:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_bucket_website:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  get_object:
-    parameters:
-      response_target:
-        types:
-        - String
-        - IO
-        required: false
-        count: 1
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      if_match:
-        types:
-        - String
-        required: false
-        count: 1
-      if_modified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      if_none_match:
-        types:
-        - String
-        required: false
-        count: 1
-      if_unmodified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      range:
-        types:
-        - String
-        required: false
-        count: 1
-      response_cache_control:
-        types:
-        - String
-        required: false
-        count: 1
-      response_content_disposition:
-        types:
-        - String
-        required: false
-        count: 1
-      response_content_encoding:
-        types:
-        - String
-        required: false
-        count: 1
-      response_content_language:
-        types:
-        - String
-        required: false
-        count: 1
-      response_content_type:
-        types:
-        - String
-        required: false
-        count: 1
-      response_expires:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-      part_number:
-        types:
-        - Integer
-        required: false
-        count: 1
-  get_object_acl:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  get_object_tagging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-  get_object_torrent:
-    parameters:
-      response_target:
-        types:
-        - String
-        - IO
-        required: false
-        count: 1
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  head_bucket:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-  head_object:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      if_match:
-        types:
-        - String
-        required: false
-        count: 1
-      if_modified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      if_none_match:
-        types:
         - String
         required: false
         count: 1
-      if_unmodified_since:
+      default_os:
         types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
         - String
         required: false
         count: 1
-      key:
+      hostname_theme:
         types:
         - String
-        required: true
-        count: 1
-      range:
-        types:
-        - String
-        required: false
-        count: 1
-      version_id:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-      part_number:
-        types:
-        - Integer
-        required: false
-        count: 1
-  list_bucket_analytics_configurations:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      continuation_token:
-        types:
-        - String
-        required: false
-        count: 1
-  list_bucket_inventory_configurations:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      continuation_token:
-        types:
-        - String
-        required: false
-        count: 1
-  list_bucket_metrics_configurations:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      continuation_token:
-        types:
-        - String
-        required: false
-        count: 1
-  list_multipart_uploads:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      delimiter:
-        types:
-        - String
-        required: false
-        count: 1
-      encoding_type:
-        types:
-        - String
-        required: false
-        count: 1
-      key_marker:
-        types:
-        - String
-        required: false
-        count: 1
-      max_uploads:
-        types:
-        - Integer
-        required: false
-        count: 1
-      prefix:
-        types:
-        - String
-        required: false
-        count: 1
-      upload_id_marker:
-        types:
-        - String
-        required: false
-        count: 1
-  list_object_versions:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      delimiter:
-        types:
-        - String
-        required: false
-        count: 1
-      encoding_type:
-        types:
-        - String
-        required: false
-        count: 1
-      key_marker:
-        types:
-        - String
-        required: false
-        count: 1
-      max_keys:
-        types:
-        - Integer
-        required: false
-        count: 1
-      prefix:
-        types:
-        - String
-        required: false
-        count: 1
-      version_id_marker:
-        types:
-        - String
-        required: false
-        count: 1
-  list_objects:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      delimiter:
-        types:
-        - String
-        required: false
-        count: 1
-      encoding_type:
-        types:
-        - String
-        required: false
-        count: 1
-      marker:
-        types:
-        - String
-        required: false
-        count: 1
-      max_keys:
-        types:
-        - Integer
-        required: false
-        count: 1
-      prefix:
-        types:
-        - String
         required: false
         count: 1
-      request_payer:
+      default_availability_zone:
         types:
         - String
         required: false
-        count: 1
-  list_objects_v2:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
         count: 1
-      delimiter:
+      default_subnet_id:
         types:
         - String
         required: false
         count: 1
-      encoding_type:
+      custom_json:
         types:
         - String
         required: false
         count: 1
-      max_keys:
+      configuration_manager:
         types:
-        - Integer
+        - Types::StackConfigurationManager
         required: false
         count: 1
-      prefix:
+      chef_configuration:
         types:
-        - String
-        required: false
-        count: 1
-      continuation_token:
-        types:
-        - String
+        - Types::ChefConfiguration
         required: false
         count: 1
-      fetch_owner:
+      use_custom_cookbooks:
         types:
         - Boolean
         required: false
         count: 1
-      start_after:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  list_parts:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      max_parts:
-        types:
-        - Integer
-        required: false
-        count: 1
-      part_number_marker:
-        types:
-        - Integer
-        required: false
-        count: 1
-      upload_id:
-        types:
-        - String
-        required: true
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  put_bucket_accelerate_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      accelerate_configuration:
-        types:
-        - Types::AccelerateConfiguration
-        required: true
-        count: 1
-  put_bucket_acl:
-    parameters:
-      acl:
-        types:
-        - String
-        required: false
-        count: 1
-      access_control_policy:
-        types:
-        - Types::AccessControlPolicy
-        required: false
-        count: 1
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_full_control:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-  put_bucket_analytics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-      analytics_configuration:
-        types:
-        - Types::AnalyticsConfiguration
-        required: true
-        count: 1
-  put_bucket_cors:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      cors_configuration:
-        types:
-        - Types::CORSConfiguration
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-  put_bucket_encryption:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      server_side_encryption_configuration:
-        types:
-        - Types::ServerSideEncryptionConfiguration
-        required: true
-        count: 1
-  put_bucket_inventory_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-      inventory_configuration:
-        types:
-        - Types::InventoryConfiguration
-        required: true
-        count: 1
-  put_bucket_lifecycle:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      lifecycle_configuration:
-        types:
-        - Types::LifecycleConfiguration
-        required: false
-        count: 1
-  put_bucket_lifecycle_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      lifecycle_configuration:
-        types:
-        - Types::BucketLifecycleConfiguration
-        required: false
-        count: 1
-  put_bucket_logging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      bucket_logging_status:
-        types:
-        - Types::BucketLoggingStatus
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-  put_bucket_metrics_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      id:
-        types:
-        - String
-        required: true
-        count: 1
-      metrics_configuration:
-        types:
-        - Types::MetricsConfiguration
-        required: true
-        count: 1
-  put_bucket_notification:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      notification_configuration:
-        types:
-        - Types::NotificationConfigurationDeprecated
-        required: true
-        count: 1
-  put_bucket_notification_configuration:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      notification_configuration:
-        types:
-        - Types::NotificationConfiguration
-        required: true
-        count: 1
-  put_bucket_policy:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      confirm_remove_self_bucket_access:
+      use_opsworks_security_groups:
         types:
         - Boolean
         required: false
         count: 1
-      policy:
+      custom_cookbooks_source:
+        types:
+        - Types::Source
+        required: false
+        count: 1
+      default_ssh_key_name:
         types:
         - String
-        required: true
+        required: false
         count: 1
-  put_bucket_replication:
+      clone_permissions:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      clone_app_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      default_root_device_type:
+        types:
+        - String
+        required: false
+        count: 1
+      agent_version:
+        types:
+        - String
+        required: false
+        count: 1
+  create_app:
     parameters:
-      bucket:
+      stack_id:
         types:
         - String
         required: true
         count: 1
-      content_md5:
+      shortname:
         types:
         - String
         required: false
         count: 1
-      replication_configuration:
-        types:
-        - Types::ReplicationConfiguration
-        required: true
-        count: 1
-  put_bucket_request_payment:
-    parameters:
-      bucket:
+      name:
         types:
         - String
         required: true
         count: 1
-      content_md5:
+      description:
         types:
         - String
         required: false
         count: 1
-      request_payment_configuration:
+      data_sources:
         types:
-        - Types::RequestPaymentConfiguration
-        required: true
-        count: 1
-  put_bucket_tagging:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
+        - Array<Types::DataSource>
         required: false
         count: 1
-      tagging:
-        types:
-        - Types::Tagging
-        required: true
-        count: 1
-  put_bucket_versioning:
-    parameters:
-      bucket:
+      type:
         types:
         - String
         required: true
         count: 1
-      content_md5:
+      app_source:
         types:
-        - String
+        - Types::Source
         required: false
         count: 1
-      mfa:
+      domains:
         types:
-        - String
+        - Array<String>
         required: false
         count: 1
-      versioning_configuration:
+      enable_ssl:
         types:
-        - Types::VersioningConfiguration
-        required: true
-        count: 1
-  put_bucket_website:
-    parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      content_md5:
-        types:
-        - String
+        - Boolean
         required: false
         count: 1
-      website_configuration:
+      ssl_configuration:
         types:
-        - Types::WebsiteConfiguration
-        required: true
-        count: 1
-  put_object:
-    parameters:
-      acl:
-        types:
-        - String
+        - Types::SslConfiguration
         required: false
         count: 1
-      body:
-        types:
-        - String
-        - IO
-        required: false
-        count: 1
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      cache_control:
-        types:
-        - String
-        required: false
-        count: 1
-      content_disposition:
-        types:
-        - String
-        required: false
-        count: 1
-      content_encoding:
-        types:
-        - String
-        required: false
-        count: 1
-      content_language:
-        types:
-        - String
-        required: false
-        count: 1
-      content_length:
-        types:
-        - Integer
-        required: false
-        count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      content_type:
-        types:
-        - String
-        required: false
-        count: 1
-      expires:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      grant_full_control:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_read_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      metadata:
+      attributes:
         types:
         - Hash<String,String>
         required: false
         count: 1
-      server_side_encryption:
+      environment:
         types:
-        - String
+        - Array<Types::EnvironmentVariable>
         required: false
         count: 1
-      storage_class:
-        types:
-        - String
-        required: false
-        count: 1
-      website_redirect_location:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      ssekms_key_id:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-      tagging:
-        types:
-        - String
-        required: false
-        count: 1
-  put_object_acl:
+  create_deployment:
     parameters:
-      acl:
-        types:
-        - String
-        required: false
-        count: 1
-      access_control_policy:
-        types:
-        - Types::AccessControlPolicy
-        required: false
-        count: 1
-      bucket:
+      stack_id:
         types:
         - String
         required: true
         count: 1
-      content_md5:
+      app_id:
         types:
         - String
         required: false
         count: 1
-      grant_full_control:
+      instance_ids:
         types:
-        - String
+        - Array<String>
         required: false
         count: 1
-      grant_read:
+      layer_ids:
         types:
-        - String
+        - Array<String>
         required: false
         count: 1
-      grant_read_acp:
+      command:
         types:
-        - String
-        required: false
-        count: 1
-      grant_write:
-        types:
-        - String
-        required: false
-        count: 1
-      grant_write_acp:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
-        types:
-        - String
+        - Types::DeploymentCommand
         required: true
         count: 1
-      request_payer:
+      comment:
         types:
         - String
         required: false
         count: 1
-      version_id:
+      custom_json:
         types:
         - String
         required: false
         count: 1
-  put_object_tagging:
+  create_instance:
     parameters:
-      bucket:
+      stack_id:
         types:
         - String
         required: true
         count: 1
-      key:
+      layer_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      instance_type:
         types:
         - String
         required: true
         count: 1
-      version_id:
+      auto_scaling_type:
         types:
         - String
         required: false
         count: 1
-      content_md5:
+      hostname:
         types:
         - String
         required: false
         count: 1
-      tagging:
+      os:
         types:
-        - Types::Tagging
-        required: true
+        - String
+        required: false
         count: 1
-  restore_object:
+      ami_id:
+        types:
+        - String
+        required: false
+        count: 1
+      ssh_key_name:
+        types:
+        - String
+        required: false
+        count: 1
+      availability_zone:
+        types:
+        - String
+        required: false
+        count: 1
+      virtualization_type:
+        types:
+        - String
+        required: false
+        count: 1
+      subnet_id:
+        types:
+        - String
+        required: false
+        count: 1
+      architecture:
+        types:
+        - String
+        required: false
+        count: 1
+      root_device_type:
+        types:
+        - String
+        required: false
+        count: 1
+      block_device_mappings:
+        types:
+        - Array<Types::BlockDeviceMapping>
+        required: false
+        count: 1
+      install_updates_on_boot:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      ebs_optimized:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      agent_version:
+        types:
+        - String
+        required: false
+        count: 1
+      tenancy:
+        types:
+        - String
+        required: false
+        count: 1
+  create_layer:
     parameters:
-      bucket:
+      stack_id:
         types:
         - String
         required: true
         count: 1
-      key:
+      type:
         types:
         - String
         required: true
         count: 1
-      version_id:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      shortname:
+        types:
+        - String
+        required: true
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      cloud_watch_logs_configuration:
+        types:
+        - Types::CloudWatchLogsConfiguration
+        required: false
+        count: 1
+      custom_instance_profile_arn:
         types:
         - String
         required: false
         count: 1
-      restore_request:
-        types:
-        - Types::RestoreRequest
-        required: false
-        count: 1
-      request_payer:
+      custom_json:
         types:
         - String
         required: false
         count: 1
-  upload_part:
+      custom_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      packages:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      volume_configurations:
+        types:
+        - Array<Types::VolumeConfiguration>
+        required: false
+        count: 1
+      enable_auto_healing:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_assign_elastic_ips:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_assign_public_ips:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      custom_recipes:
+        types:
+        - Types::Recipes
+        required: false
+        count: 1
+      install_updates_on_boot:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      use_ebs_optimized_instances:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      lifecycle_event_configuration:
+        types:
+        - Types::LifecycleEventConfiguration
+        required: false
+        count: 1
+  create_stack:
     parameters:
-      body:
-        types:
-        - String
-        - IO
-        required: false
-        count: 1
-      bucket:
+      name:
         types:
         - String
         required: true
         count: 1
-      content_length:
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc_id:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      default_instance_profile_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      default_os:
+        types:
+        - String
+        required: false
+        count: 1
+      hostname_theme:
+        types:
+        - String
+        required: false
+        count: 1
+      default_availability_zone:
+        types:
+        - String
+        required: false
+        count: 1
+      default_subnet_id:
+        types:
+        - String
+        required: false
+        count: 1
+      custom_json:
+        types:
+        - String
+        required: false
+        count: 1
+      configuration_manager:
+        types:
+        - Types::StackConfigurationManager
+        required: false
+        count: 1
+      chef_configuration:
+        types:
+        - Types::ChefConfiguration
+        required: false
+        count: 1
+      use_custom_cookbooks:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      use_opsworks_security_groups:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      custom_cookbooks_source:
+        types:
+        - Types::Source
+        required: false
+        count: 1
+      default_ssh_key_name:
+        types:
+        - String
+        required: false
+        count: 1
+      default_root_device_type:
+        types:
+        - String
+        required: false
+        count: 1
+      agent_version:
+        types:
+        - String
+        required: false
+        count: 1
+  create_user_profile:
+    parameters:
+      iam_user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      ssh_username:
+        types:
+        - String
+        required: false
+        count: 1
+      ssh_public_key:
+        types:
+        - String
+        required: false
+        count: 1
+      allow_self_management:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  delete_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      delete_elastic_ip:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      delete_volumes:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  delete_layer:
+    parameters:
+      layer_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_stack:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_user_profile:
+    parameters:
+      iam_user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_ecs_cluster:
+    parameters:
+      ecs_cluster_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_elastic_ip:
+    parameters:
+      elastic_ip:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_rds_db_instance:
+    parameters:
+      rds_db_instance_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  deregister_volume:
+    parameters:
+      volume_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_agent_versions:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      configuration_manager:
+        types:
+        - Types::StackConfigurationManager
+        required: false
+        count: 1
+  describe_apps:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      app_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_commands:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      command_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_deployments:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      app_id:
+        types:
+        - String
+        required: false
+        count: 1
+      deployment_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_ecs_clusters:
+    parameters:
+      ecs_cluster_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
         types:
         - Integer
         required: false
         count: 1
-      content_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
-        types:
-        - String
-        required: true
-        count: 1
-      part_number:
-        types:
-        - Integer
-        required: true
-        count: 1
-      upload_id:
-        types:
-        - String
-        required: true
-        count: 1
-      sse_customer_algorithm:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key:
-        types:
-        - String
-        required: false
-        count: 1
-      sse_customer_key_md5:
-        types:
-        - String
-        required: false
-        count: 1
-      request_payer:
-        types:
-        - String
-        required: false
-        count: 1
-  upload_part_copy:
+  describe_elastic_ips:
     parameters:
-      bucket:
-        types:
-        - String
-        required: true
-        count: 1
-      copy_source:
-        types:
-        - String
-        required: true
-        count: 1
-      copy_source_if_match:
+      instance_id:
         types:
         - String
         required: false
         count: 1
-      copy_source_if_modified_since:
+      stack_id:
         types:
-        - Time
-        - DateTime
-        - Date
+        - String
+        required: false
+        count: 1
+      ips:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_elastic_load_balancers:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      layer_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_instances:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      layer_id:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_layers:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      layer_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_load_based_auto_scaling:
+    parameters:
+      layer_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  describe_permissions:
+    parameters:
+      iam_user_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_raid_arrays:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      raid_array_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_rds_db_instances:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      rds_db_instance_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_service_errors:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      service_error_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_stack_provisioning_parameters:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stack_summary:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_stacks:
+    parameters:
+      stack_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_time_based_auto_scaling:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  describe_user_profiles:
+    parameters:
+      iam_user_arns:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_volumes:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: false
+        count: 1
+      stack_id:
+        types:
+        - String
+        required: false
+        count: 1
+      raid_array_id:
+        types:
+        - String
+        required: false
+        count: 1
+      volume_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  detach_elastic_load_balancer:
+    parameters:
+      elastic_load_balancer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      layer_id:
+        types:
+        - String
+        required: true
+        count: 1
+  disassociate_elastic_ip:
+    parameters:
+      elastic_ip:
+        types:
+        - String
+        required: true
+        count: 1
+  get_hostname_suggestion:
+    parameters:
+      layer_id:
+        types:
+        - String
+        required: true
+        count: 1
+  grant_access:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      valid_for_in_minutes:
+        types:
         - Integer
-        - String
         required: false
         count: 1
-      copy_source_if_none_match:
-        types:
-        - String
-        required: false
-        count: 1
-      copy_source_if_unmodified_since:
-        types:
-        - Time
-        - DateTime
-        - Date
-        - Integer
-        - String
-        required: false
-        count: 1
-      copy_source_range:
-        types:
-        - String
-        required: false
-        count: 1
-      key:
+  list_tags:
+    parameters:
+      resource_arn:
         types:
         - String
         required: true
         count: 1
-      part_number:
+      max_results:
         types:
         - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  reboot_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
         required: true
         count: 1
-      upload_id:
+  register_ecs_cluster:
+    parameters:
+      ecs_cluster_arn:
         types:
         - String
         required: true
         count: 1
-      sse_customer_algorithm:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  register_elastic_ip:
+    parameters:
+      elastic_ip:
+        types:
+        - String
+        required: true
+        count: 1
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  register_instance:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      hostname:
         types:
         - String
         required: false
         count: 1
-      sse_customer_key:
+      public_ip:
         types:
         - String
         required: false
         count: 1
-      sse_customer_key_md5:
+      private_ip:
         types:
         - String
         required: false
         count: 1
-      copy_source_sse_customer_algorithm:
+      rsa_public_key:
         types:
         - String
         required: false
         count: 1
-      copy_source_sse_customer_key:
+      rsa_public_key_fingerprint:
         types:
         - String
         required: false
         count: 1
-      copy_source_sse_customer_key_md5:
+      instance_identity:
+        types:
+        - Types::InstanceIdentity
+        required: false
+        count: 1
+  register_rds_db_instance:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      rds_db_instance_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      db_user:
+        types:
+        - String
+        required: true
+        count: 1
+      db_password:
+        types:
+        - String
+        required: true
+        count: 1
+  register_volume:
+    parameters:
+      ec2_volume_id:
         types:
         - String
         required: false
         count: 1
-      request_payer:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  set_load_based_auto_scaling:
+    parameters:
+      layer_id:
+        types:
+        - String
+        required: true
+        count: 1
+      enable:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      up_scaling:
+        types:
+        - Types::AutoScalingThresholds
+        required: false
+        count: 1
+      down_scaling:
+        types:
+        - Types::AutoScalingThresholds
+        required: false
+        count: 1
+  set_permission:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      iam_user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      allow_ssh:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      allow_sudo:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      level:
+        types:
+        - String
+        required: false
+        count: 1
+  set_time_based_auto_scaling:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      auto_scaling_schedule:
+        types:
+        - Types::WeeklyAutoScalingSchedule
+        required: false
+        count: 1
+  start_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  start_stack:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  stop_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      force:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  stop_stack:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  unassign_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+  unassign_volume:
+    parameters:
+      volume_id:
+        types:
+        - String
+        required: true
+        count: 1
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  update_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      data_sources:
+        types:
+        - Array<Types::DataSource>
+        required: false
+        count: 1
+      type:
+        types:
+        - String
+        required: false
+        count: 1
+      app_source:
+        types:
+        - Types::Source
+        required: false
+        count: 1
+      domains:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      enable_ssl:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      ssl_configuration:
+        types:
+        - Types::SslConfiguration
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      environment:
+        types:
+        - Array<Types::EnvironmentVariable>
+        required: false
+        count: 1
+  update_elastic_ip:
+    parameters:
+      elastic_ip:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+  update_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+        count: 1
+      layer_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: false
+        count: 1
+      auto_scaling_type:
+        types:
+        - String
+        required: false
+        count: 1
+      hostname:
+        types:
+        - String
+        required: false
+        count: 1
+      os:
+        types:
+        - String
+        required: false
+        count: 1
+      ami_id:
+        types:
+        - String
+        required: false
+        count: 1
+      ssh_key_name:
+        types:
+        - String
+        required: false
+        count: 1
+      architecture:
+        types:
+        - String
+        required: false
+        count: 1
+      install_updates_on_boot:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      ebs_optimized:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      agent_version:
+        types:
+        - String
+        required: false
+        count: 1
+  update_layer:
+    parameters:
+      layer_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      shortname:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      cloud_watch_logs_configuration:
+        types:
+        - Types::CloudWatchLogsConfiguration
+        required: false
+        count: 1
+      custom_instance_profile_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      custom_json:
+        types:
+        - String
+        required: false
+        count: 1
+      custom_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      packages:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      volume_configurations:
+        types:
+        - Array<Types::VolumeConfiguration>
+        required: false
+        count: 1
+      enable_auto_healing:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_assign_elastic_ips:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      auto_assign_public_ips:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      custom_recipes:
+        types:
+        - Types::Recipes
+        required: false
+        count: 1
+      install_updates_on_boot:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      use_ebs_optimized_instances:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      lifecycle_event_configuration:
+        types:
+        - Types::LifecycleEventConfiguration
+        required: false
+        count: 1
+  update_my_user_profile:
+    parameters:
+      ssh_public_key:
+        types:
+        - String
+        required: false
+        count: 1
+  update_rds_db_instance:
+    parameters:
+      rds_db_instance_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      db_user:
+        types:
+        - String
+        required: false
+        count: 1
+      db_password:
+        types:
+        - String
+        required: false
+        count: 1
+  update_stack:
+    parameters:
+      stack_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      service_role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      default_instance_profile_arn:
+        types:
+        - String
+        required: false
+        count: 1
+      default_os:
+        types:
+        - String
+        required: false
+        count: 1
+      hostname_theme:
+        types:
+        - String
+        required: false
+        count: 1
+      default_availability_zone:
+        types:
+        - String
+        required: false
+        count: 1
+      default_subnet_id:
+        types:
+        - String
+        required: false
+        count: 1
+      custom_json:
+        types:
+        - String
+        required: false
+        count: 1
+      configuration_manager:
+        types:
+        - Types::StackConfigurationManager
+        required: false
+        count: 1
+      chef_configuration:
+        types:
+        - Types::ChefConfiguration
+        required: false
+        count: 1
+      use_custom_cookbooks:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      custom_cookbooks_source:
+        types:
+        - Types::Source
+        required: false
+        count: 1
+      default_ssh_key_name:
+        types:
+        - String
+        required: false
+        count: 1
+      default_root_device_type:
+        types:
+        - String
+        required: false
+        count: 1
+      use_opsworks_security_groups:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      agent_version:
+        types:
+        - String
+        required: false
+        count: 1
+  update_user_profile:
+    parameters:
+      iam_user_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      ssh_username:
+        types:
+        - String
+        required: false
+        count: 1
+      ssh_public_key:
+        types:
+        - String
+        required: false
+        count: 1
+      allow_self_management:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  update_volume:
+    parameters:
+      volume_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+      mount_point:
         types:
         - String
         required: false

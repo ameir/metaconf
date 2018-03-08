@@ -1,0 +1,941 @@
+---
+class: Aws::WAF::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_byte_match_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_geo_match_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_ip_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_rate_based_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      metric_name:
+        types:
+        - String
+        required: true
+        count: 1
+      rate_key:
+        types:
+        - String
+        required: true
+        count: 1
+      rate_limit:
+        types:
+        - Integer
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_regex_match_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_regex_pattern_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      metric_name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_rule_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      metric_name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_size_constraint_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_sql_injection_match_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_web_acl:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      metric_name:
+        types:
+        - String
+        required: true
+        count: 1
+      default_action:
+        types:
+        - Types::WafAction
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  create_xss_match_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_byte_match_set:
+    parameters:
+      byte_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_geo_match_set:
+    parameters:
+      geo_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_ip_set:
+    parameters:
+      ip_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_rate_based_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_regex_match_set:
+    parameters:
+      regex_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_regex_pattern_set:
+    parameters:
+      regex_pattern_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_rule_group:
+    parameters:
+      rule_group_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_size_constraint_set:
+    parameters:
+      size_constraint_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_sql_injection_match_set:
+    parameters:
+      sql_injection_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_web_acl:
+    parameters:
+      web_acl_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_xss_match_set:
+    parameters:
+      xss_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  get_byte_match_set:
+    parameters:
+      byte_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_change_token_status:
+    parameters:
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  get_geo_match_set:
+    parameters:
+      geo_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_ip_set:
+    parameters:
+      ip_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+  get_rate_based_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_rate_based_rule_managed_keys:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+  get_regex_match_set:
+    parameters:
+      regex_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_regex_pattern_set:
+    parameters:
+      regex_pattern_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_rule_group:
+    parameters:
+      rule_group_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_sampled_requests:
+    parameters:
+      web_acl_id:
+        types:
+        - String
+        required: true
+        count: 1
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      time_window:
+        types:
+        - Types::TimeWindow
+        required: true
+        count: 1
+      max_items:
+        types:
+        - Integer
+        required: true
+        count: 1
+  get_size_constraint_set:
+    parameters:
+      size_constraint_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_sql_injection_match_set:
+    parameters:
+      sql_injection_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_web_acl:
+    parameters:
+      web_acl_id:
+        types:
+        - String
+        required: true
+        count: 1
+  get_xss_match_set:
+    parameters:
+      xss_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_activated_rules_in_rule_group:
+    parameters:
+      rule_group_id:
+        types:
+        - String
+        required: false
+        count: 1
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_byte_match_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_geo_match_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_ip_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_rate_based_rules:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_regex_match_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_regex_pattern_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_rule_groups:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_rules:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_size_constraint_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_sql_injection_match_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_subscribed_rule_groups:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_web_acls:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_xss_match_sets:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  put_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      policy:
+        types:
+        - String
+        required: true
+        count: 1
+  update_byte_match_set:
+    parameters:
+      byte_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::ByteMatchSetUpdate>
+        required: true
+        count: 1
+  update_geo_match_set:
+    parameters:
+      geo_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::GeoMatchSetUpdate>
+        required: true
+        count: 1
+  update_ip_set:
+    parameters:
+      ip_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::IPSetUpdate>
+        required: true
+        count: 1
+  update_rate_based_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::RuleUpdate>
+        required: true
+        count: 1
+      rate_limit:
+        types:
+        - Integer
+        required: true
+        count: 1
+  update_regex_match_set:
+    parameters:
+      regex_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::RegexMatchSetUpdate>
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  update_regex_pattern_set:
+    parameters:
+      regex_pattern_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::RegexPatternSetUpdate>
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  update_rule:
+    parameters:
+      rule_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::RuleUpdate>
+        required: true
+        count: 1
+  update_rule_group:
+    parameters:
+      rule_group_id:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::RuleGroupUpdate>
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+  update_size_constraint_set:
+    parameters:
+      size_constraint_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::SizeConstraintSetUpdate>
+        required: true
+        count: 1
+  update_sql_injection_match_set:
+    parameters:
+      sql_injection_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::SqlInjectionMatchSetUpdate>
+        required: true
+        count: 1
+  update_web_acl:
+    parameters:
+      web_acl_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::WebACLUpdate>
+        required: false
+        count: 1
+      default_action:
+        types:
+        - Types::WafAction
+        required: false
+        count: 1
+  update_xss_match_set:
+    parameters:
+      xss_match_set_id:
+        types:
+        - String
+        required: true
+        count: 1
+      change_token:
+        types:
+        - String
+        required: true
+        count: 1
+      updates:
+        types:
+        - Array<Types::XssMatchSetUpdate>
+        required: true
+        count: 1

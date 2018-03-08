@@ -1,0 +1,364 @@
+---
+class: Aws::MQ::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_broker:
+    parameters:
+      auto_minor_version_upgrade:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      broker_name:
+        types:
+        - String
+        required: false
+        count: 1
+      configuration:
+        types:
+        - Types::ConfigurationId
+        required: false
+        count: 1
+      creator_request_id:
+        types:
+        - String
+        required: false
+        count: 1
+      deployment_mode:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_type:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_version:
+        types:
+        - String
+        required: false
+        count: 1
+      host_instance_type:
+        types:
+        - String
+        required: false
+        count: 1
+      maintenance_window_start_time:
+        types:
+        - Types::WeeklyStartTime
+        required: false
+        count: 1
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      users:
+        types:
+        - Array<Types::User>
+        required: false
+        count: 1
+  create_configuration:
+    parameters:
+      engine_type:
+        types:
+        - String
+        required: false
+        count: 1
+      engine_version:
+        types:
+        - String
+        required: false
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+  create_user:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      console_access:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: false
+        count: 1
+      username:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_broker:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_user:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      username:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_broker:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_configuration:
+    parameters:
+      configuration_id:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_configuration_revision:
+    parameters:
+      configuration_id:
+        types:
+        - String
+        required: true
+        count: 1
+      configuration_revision:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_user:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      username:
+        types:
+        - String
+        required: true
+        count: 1
+  list_brokers:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_configuration_revisions:
+    parameters:
+      configuration_id:
+        types:
+        - String
+        required: true
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  list_users:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  reboot_broker:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+  update_broker:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      configuration:
+        types:
+        - Types::ConfigurationId
+        required: false
+        count: 1
+  update_configuration:
+    parameters:
+      configuration_id:
+        types:
+        - String
+        required: true
+        count: 1
+      data:
+        types:
+        - String
+        required: false
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+  update_user:
+    parameters:
+      broker_id:
+        types:
+        - String
+        required: true
+        count: 1
+      console_access:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      groups:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: false
+        count: 1
+      username:
+        types:
+        - String
+        required: true
+        count: 1

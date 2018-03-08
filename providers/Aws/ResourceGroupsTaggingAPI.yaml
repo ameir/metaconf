@@ -1,0 +1,150 @@
+---
+class: Aws::ResourceGroupsTaggingAPI::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  get_resources:
+    parameters:
+      pagination_token:
+        types:
+        - String
+        required: false
+        count: 1
+      tag_filters:
+        types:
+        - Array<Types::TagFilter>
+        required: false
+        count: 1
+      resources_per_page:
+        types:
+        - Integer
+        required: false
+        count: 1
+      tags_per_page:
+        types:
+        - Integer
+        required: false
+        count: 1
+      resource_type_filters:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  get_tag_keys:
+    parameters:
+      pagination_token:
+        types:
+        - String
+        required: false
+        count: 1
+  get_tag_values:
+    parameters:
+      pagination_token:
+        types:
+        - String
+        required: false
+        count: 1
+      key:
+        types:
+        - String
+        required: true
+        count: 1
+  tag_resources:
+    parameters:
+      resource_arn_list:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+        count: 1
+  untag_resources:
+    parameters:
+      resource_arn_list:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1

@@ -1,0 +1,719 @@
+---
+class: Aws::SageMaker::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  create_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+        count: 1
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+      production_variants:
+        types:
+        - Array<Types::ProductionVariant>
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+  create_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+        count: 1
+      primary_container:
+        types:
+        - Types::ContainerDefinition
+        required: true
+        count: 1
+      execution_role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: true
+        count: 1
+      subnet_id:
+        types:
+        - String
+        required: false
+        count: 1
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      kms_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  create_presigned_notebook_instance_url:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+      session_expiration_duration_in_seconds:
+        types:
+        - Integer
+        required: false
+        count: 1
+  create_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+        count: 1
+      hyper_parameters:
+        types:
+        - Hash<String,String>
+        required: false
+        count: 1
+      algorithm_specification:
+        types:
+        - Types::AlgorithmSpecification
+        required: true
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      input_data_config:
+        types:
+        - Array<Types::Channel>
+        required: true
+        count: 1
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+        count: 1
+      resource_config:
+        types:
+        - Types::ResourceConfig
+        required: true
+        count: 1
+      stopping_condition:
+        types:
+        - Types::StoppingCondition
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+        count: 1
+  delete_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  describe_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_endpoint_configs:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      name_contains:
+        types:
+        - String
+        required: false
+        count: 1
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+  list_endpoints:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      name_contains:
+        types:
+        - String
+        required: false
+        count: 1
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      status_equals:
+        types:
+        - String
+        required: false
+        count: 1
+  list_models:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      name_contains:
+        types:
+        - String
+        required: false
+        count: 1
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+  list_notebook_instances:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+      name_contains:
+        types:
+        - String
+        required: false
+        count: 1
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      status_equals:
+        types:
+        - String
+        required: false
+        count: 1
+  list_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_training_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+        count: 1
+      name_contains:
+        types:
+        - String
+        required: false
+        count: 1
+      status_equals:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_by:
+        types:
+        - String
+        required: false
+        count: 1
+      sort_order:
+        types:
+        - String
+        required: false
+        count: 1
+  start_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  stop_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+  stop_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+        count: 1
+  update_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+        count: 1
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+        count: 1
+  update_endpoint_weights_and_capacities:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+        count: 1
+      desired_weights_and_capacities:
+        types:
+        - Array<Types::DesiredWeightAndCapacity>
+        required: true
+        count: 1
+  update_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+        count: 1
+      instance_type:
+        types:
+        - String
+        required: false
+        count: 1
+      role_arn:
+        types:
+        - String
+        required: false
+        count: 1
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+        count: 1
+      delay:
+        types:
+        - Integer
+        required: false
+        count: 1
+      before_attempt:
+        types:
+        - Proc
+        required: false
+        count: 1
+      before_wait:
+        types:
+        - Proc
+        required: false
+        count: 1

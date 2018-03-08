@@ -1,0 +1,698 @@
+---
+class: Aws::DirectoryService::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_ip_routes:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      ip_routes:
+        types:
+        - Array<Types::IpRoute>
+        required: true
+        count: 1
+      update_security_group_for_directory_controllers:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  add_tags_to_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+        count: 1
+  cancel_schema_extension:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      schema_extension_id:
+        types:
+        - String
+        required: true
+        count: 1
+  connect_directory:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      short_name:
+        types:
+        - String
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      size:
+        types:
+        - String
+        required: true
+        count: 1
+      connect_settings:
+        types:
+        - Types::DirectoryConnectSettings
+        required: true
+        count: 1
+  create_alias:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      alias:
+        types:
+        - String
+        required: true
+        count: 1
+  create_computer:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      computer_name:
+        types:
+        - String
+        required: true
+        count: 1
+      password:
+        types:
+        - String
+        required: true
+        count: 1
+      organizational_unit_distinguished_name:
+        types:
+        - String
+        required: false
+        count: 1
+      computer_attributes:
+        types:
+        - Array<Types::Attribute>
+        required: false
+        count: 1
+  create_conditional_forwarder:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      remote_domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      dns_ip_addrs:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  create_directory:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      short_name:
+        types:
+        - String
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      size:
+        types:
+        - String
+        required: true
+        count: 1
+      vpc_settings:
+        types:
+        - Types::DirectoryVpcSettings
+        required: false
+        count: 1
+  create_microsoft_ad:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+        count: 1
+      short_name:
+        types:
+        - String
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: false
+        count: 1
+      vpc_settings:
+        types:
+        - Types::DirectoryVpcSettings
+        required: true
+        count: 1
+      edition:
+        types:
+        - String
+        required: false
+        count: 1
+  create_snapshot:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      name:
+        types:
+        - String
+        required: false
+        count: 1
+  create_trust:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      remote_domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      trust_password:
+        types:
+        - String
+        required: true
+        count: 1
+      trust_direction:
+        types:
+        - String
+        required: true
+        count: 1
+      trust_type:
+        types:
+        - String
+        required: false
+        count: 1
+      conditional_forwarder_ip_addrs:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  delete_conditional_forwarder:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      remote_domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_directory:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_snapshot:
+    parameters:
+      snapshot_id:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_trust:
+    parameters:
+      trust_id:
+        types:
+        - String
+        required: true
+        count: 1
+      delete_associated_conditional_forwarder:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  deregister_event_topic:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      topic_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_conditional_forwarders:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      remote_domain_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_directories:
+    parameters:
+      directory_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_domain_controllers:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      domain_controller_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_event_topics:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: false
+        count: 1
+      topic_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  describe_snapshots:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: false
+        count: 1
+      snapshot_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  describe_trusts:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: false
+        count: 1
+      trust_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  disable_radius:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+  disable_sso:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      user_name:
+        types:
+        - String
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: false
+        count: 1
+  enable_radius:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      radius_settings:
+        types:
+        - Types::RadiusSettings
+        required: true
+        count: 1
+  enable_sso:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      user_name:
+        types:
+        - String
+        required: false
+        count: 1
+      password:
+        types:
+        - String
+        required: false
+        count: 1
+  get_snapshot_limits:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+  list_ip_routes:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_schema_extensions:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  list_tags_for_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+  register_event_topic:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      topic_name:
+        types:
+        - String
+        required: true
+        count: 1
+  remove_ip_routes:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      cidr_ips:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  remove_tags_from_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+        count: 1
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  restore_from_snapshot:
+    parameters:
+      snapshot_id:
+        types:
+        - String
+        required: true
+        count: 1
+  start_schema_extension:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      create_snapshot_before_schema_extension:
+        types:
+        - Boolean
+        required: true
+        count: 1
+      ldif_content:
+        types:
+        - String
+        required: true
+        count: 1
+      description:
+        types:
+        - String
+        required: true
+        count: 1
+  update_conditional_forwarder:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      remote_domain_name:
+        types:
+        - String
+        required: true
+        count: 1
+      dns_ip_addrs:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  update_number_of_domain_controllers:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      desired_number:
+        types:
+        - Integer
+        required: true
+        count: 1
+  update_radius:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+        count: 1
+      radius_settings:
+        types:
+        - Types::RadiusSettings
+        required: true
+        count: 1
+  verify_trust:
+    parameters:
+      trust_id:
+        types:
+        - String
+        required: true
+        count: 1

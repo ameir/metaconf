@@ -1,0 +1,158 @@
+---
+class: Aws::AutoScalingPlans::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  create_scaling_plan:
+    parameters:
+      scaling_plan_name:
+        types:
+        - String
+        required: true
+        count: 1
+      application_source:
+        types:
+        - Types::ApplicationSource
+        required: true
+        count: 1
+      scaling_instructions:
+        types:
+        - Array<Types::ScalingInstruction>
+        required: true
+        count: 1
+  delete_scaling_plan:
+    parameters:
+      scaling_plan_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scaling_plan_version:
+        types:
+        - Integer
+        required: true
+        count: 1
+  describe_scaling_plan_resources:
+    parameters:
+      scaling_plan_name:
+        types:
+        - String
+        required: true
+        count: 1
+      scaling_plan_version:
+        types:
+        - Integer
+        required: true
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+  describe_scaling_plans:
+    parameters:
+      scaling_plan_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      scaling_plan_version:
+        types:
+        - Integer
+        required: false
+        count: 1
+      application_sources:
+        types:
+        - Array<Types::ApplicationSource>
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1

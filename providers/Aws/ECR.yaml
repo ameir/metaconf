@@ -1,0 +1,490 @@
+---
+class: Aws::ECR::Client
+methods:
+  initialize:
+    parameters:
+      credentials:
+        types:
+        - Aws::CredentialProvider
+        required: true
+        count: 1
+      region:
+        types:
+        - String
+        required: true
+        count: 1
+      access_key_id:
+        types:
+        - String
+        required: false
+        count: 1
+      convert_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      endpoint:
+        types:
+        - String
+        required: false
+        count: 1
+      log_formatter:
+        types:
+        - Aws::Log::Formatter
+        required: false
+        count: 1
+      log_level:
+        types:
+        - Symbol
+        required: false
+        count: 1
+      logger:
+        types:
+        - Logger
+        required: false
+        count: 1
+      profile:
+        types:
+        - String
+        required: false
+        count: 1
+      retry_limit:
+        types:
+        - Integer
+        required: false
+        count: 1
+      secret_access_key:
+        types:
+        - String
+        required: false
+        count: 1
+      session_token:
+        types:
+        - String
+        required: false
+        count: 1
+      simple_json:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      stub_responses:
+        types:
+        - Boolean
+        required: false
+        count: 1
+      validate_params:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  batch_check_layer_availability:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      layer_digests:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  batch_delete_image:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_ids:
+        types:
+        - Array<Types::ImageIdentifier>
+        required: true
+        count: 1
+  batch_get_image:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_ids:
+        types:
+        - Array<Types::ImageIdentifier>
+        required: true
+        count: 1
+      accepted_media_types:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  complete_layer_upload:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      upload_id:
+        types:
+        - String
+        required: true
+        count: 1
+      layer_digests:
+        types:
+        - Array<String>
+        required: true
+        count: 1
+  create_repository:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_lifecycle_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  delete_repository:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      force:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  delete_repository_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  describe_images:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_ids:
+        types:
+        - Array<Types::ImageIdentifier>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filter:
+        types:
+        - Types::DescribeImagesFilter
+        required: false
+        count: 1
+  describe_repositories:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_names:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+  get_authorization_token:
+    parameters:
+      registry_ids:
+        types:
+        - Array<String>
+        required: false
+        count: 1
+  get_download_url_for_layer:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      layer_digest:
+        types:
+        - String
+        required: true
+        count: 1
+  get_lifecycle_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  get_lifecycle_policy_preview:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_ids:
+        types:
+        - Array<Types::ImageIdentifier>
+        required: false
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filter:
+        types:
+        - Types::LifecyclePolicyPreviewFilter
+        required: false
+        count: 1
+  get_repository_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  initiate_layer_upload:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+  list_images:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      next_token:
+        types:
+        - String
+        required: false
+        count: 1
+      max_results:
+        types:
+        - Integer
+        required: false
+        count: 1
+      filter:
+        types:
+        - Types::ListImagesFilter
+        required: false
+        count: 1
+  put_image:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      image_manifest:
+        types:
+        - String
+        required: true
+        count: 1
+      image_tag:
+        types:
+        - String
+        required: false
+        count: 1
+  put_lifecycle_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_policy_text:
+        types:
+        - String
+        required: true
+        count: 1
+  set_repository_policy:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      policy_text:
+        types:
+        - String
+        required: true
+        count: 1
+      force:
+        types:
+        - Boolean
+        required: false
+        count: 1
+  start_lifecycle_policy_preview:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      lifecycle_policy_text:
+        types:
+        - String
+        required: false
+        count: 1
+  upload_layer_part:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+        count: 1
+      repository_name:
+        types:
+        - String
+        required: true
+        count: 1
+      upload_id:
+        types:
+        - String
+        required: true
+        count: 1
+      part_first_byte:
+        types:
+        - Integer
+        required: true
+        count: 1
+      part_last_byte:
+        types:
+        - Integer
+        required: true
+        count: 1
+      layer_part_blob:
+        types:
+        - String
+        - IO
+        required: true
+        count: 1
