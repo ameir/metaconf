@@ -7,252 +7,207 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   delete_rule:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_rule:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   disable_rule:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   enable_rule:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   list_rule_names_by_target:
     parameters:
       target_arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   list_rules:
     parameters:
       name_prefix:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   list_targets_by_rule:
     parameters:
       rule:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   put_events:
     parameters:
       entries:
         types:
         - Array<Types::PutEventsRequestEntry>
         required: true
-        count: 1
   put_permission:
     parameters:
       action:
         types:
         - String
         required: true
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
       statement_id:
         types:
         - String
         required: true
-        count: 1
   put_rule:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       schedule_expression:
         types:
         - String
         required: false
-        count: 1
       event_pattern:
         types:
         - String
         required: false
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
   put_targets:
     parameters:
       rule:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: true
-        count: 1
   remove_permission:
     parameters:
       statement_id:
         types:
         - String
         required: true
-        count: 1
   remove_targets:
     parameters:
       rule:
         types:
         - String
         required: true
-        count: 1
       ids:
         types:
         - Array<String>
         required: true
-        count: 1
   test_event_pattern:
     parameters:
       event_pattern:
         types:
         - String
         required: true
-        count: 1
       event:
         types:
         - String
         required: true
-        count: 1

@@ -7,216 +7,177 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   batch_detect_dominant_language:
     parameters:
       text_list:
         types:
         - Array<String>
         required: true
-        count: 1
   batch_detect_entities:
     parameters:
       text_list:
         types:
         - Array<String>
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   batch_detect_key_phrases:
     parameters:
       text_list:
         types:
         - Array<String>
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   batch_detect_sentiment:
     parameters:
       text_list:
         types:
         - Array<String>
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   describe_topics_detection_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
   detect_dominant_language:
     parameters:
       text:
         types:
         - String
         required: true
-        count: 1
   detect_entities:
     parameters:
       text:
         types:
         - String
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   detect_key_phrases:
     parameters:
       text:
         types:
         - String
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   detect_sentiment:
     parameters:
       text:
         types:
         - String
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
   list_topics_detection_jobs:
     parameters:
       filter:
         types:
         - Types::TopicsDetectionJobFilter
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   start_topics_detection_job:
     parameters:
       input_data_config:
         types:
         - Types::InputDataConfig
         required: true
-        count: 1
       output_data_config:
         types:
         - Types::OutputDataConfig
         required: true
-        count: 1
       data_access_role_arn:
         types:
         - String
         required: true
-        count: 1
       job_name:
         types:
         - String
         required: false
-        count: 1
       number_of_topics:
         types:
         - Integer
         required: false
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1

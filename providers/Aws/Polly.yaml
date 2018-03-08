@@ -7,151 +7,123 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   delete_lexicon:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_voices:
     parameters:
       language_code:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_lexicon:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   list_lexicons:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   put_lexicon:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       content:
         types:
         - String
         required: true
-        count: 1
   synthesize_speech:
     parameters:
       lexicon_names:
         types:
         - Array<String>
         required: false
-        count: 1
       output_format:
         types:
         - String
         required: true
-        count: 1
       sample_rate:
         types:
         - String
         required: false
-        count: 1
       speech_mark_types:
         types:
         - Array<String>
         required: false
-        count: 1
       text:
         types:
         - String
         required: true
-        count: 1
       text_type:
         types:
         - String
         required: false
-        count: 1
       voice_id:
         types:
         - String
         required: true
-        count: 1

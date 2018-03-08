@@ -7,206 +7,167 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   assume_role:
     parameters:
       role_arn:
         types:
         - String
         required: true
-        count: 1
       role_session_name:
         types:
         - String
         required: true
-        count: 1
       policy:
         types:
         - String
         required: false
-        count: 1
       duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
       external_id:
         types:
         - String
         required: false
-        count: 1
       serial_number:
         types:
         - String
         required: false
-        count: 1
       token_code:
         types:
         - String
         required: false
-        count: 1
   assume_role_with_saml:
     parameters:
       role_arn:
         types:
         - String
         required: true
-        count: 1
       principal_arn:
         types:
         - String
         required: true
-        count: 1
       saml_assertion:
         types:
         - String
         required: true
-        count: 1
       policy:
         types:
         - String
         required: false
-        count: 1
       duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
   assume_role_with_web_identity:
     parameters:
       role_arn:
         types:
         - String
         required: true
-        count: 1
       role_session_name:
         types:
         - String
         required: true
-        count: 1
       web_identity_token:
         types:
         - String
         required: true
-        count: 1
       provider_id:
         types:
         - String
         required: false
-        count: 1
       policy:
         types:
         - String
         required: false
-        count: 1
       duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
   decode_authorization_message:
     parameters:
       encoded_message:
         types:
         - String
         required: true
-        count: 1
   get_federation_token:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       policy:
         types:
         - String
         required: false
-        count: 1
       duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
   get_session_token:
     parameters:
       duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
       serial_number:
         types:
         - String
         required: false
-        count: 1
       token_code:
         types:
         - String
         required: false
-        count: 1

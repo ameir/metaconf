@@ -7,349 +7,287 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
       verify_checksums:
         types:
         - Boolean
         required: false
-        count: 1
   add_permission:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       label:
         types:
         - String
         required: true
-        count: 1
       aws_account_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       actions:
         types:
         - Array<String>
         required: true
-        count: 1
   change_message_visibility:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       receipt_handle:
         types:
         - String
         required: true
-        count: 1
       visibility_timeout:
         types:
         - Integer
         required: true
-        count: 1
   change_message_visibility_batch:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       entries:
         types:
         - Array<Types::ChangeMessageVisibilityBatchRequestEntry>
         required: true
-        count: 1
   create_queue:
     parameters:
       queue_name:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   delete_message:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       receipt_handle:
         types:
         - String
         required: true
-        count: 1
   delete_message_batch:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       entries:
         types:
         - Array<Types::DeleteMessageBatchRequestEntry>
         required: true
-        count: 1
   delete_queue:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
   get_queue_attributes:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
   get_queue_url:
     parameters:
       queue_name:
         types:
         - String
         required: true
-        count: 1
       queue_owner_aws_account_id:
         types:
         - String
         required: false
-        count: 1
   list_dead_letter_source_queues:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
   list_queue_tags:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
   list_queues:
     parameters:
       queue_name_prefix:
         types:
         - String
         required: false
-        count: 1
   purge_queue:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
   receive_message:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
       message_attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
       max_number_of_messages:
         types:
         - Integer
         required: false
-        count: 1
       visibility_timeout:
         types:
         - Integer
         required: false
-        count: 1
       wait_time_seconds:
         types:
         - Integer
         required: false
-        count: 1
       receive_request_attempt_id:
         types:
         - String
         required: false
-        count: 1
   remove_permission:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       label:
         types:
         - String
         required: true
-        count: 1
   send_message:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       message_body:
         types:
         - String
         required: true
-        count: 1
       delay_seconds:
         types:
         - Integer
         required: false
-        count: 1
       message_attributes:
         types:
         - Hash<String,Types::MessageAttributeValue>
         required: false
-        count: 1
       message_deduplication_id:
         types:
         - String
         required: false
-        count: 1
       message_group_id:
         types:
         - String
         required: false
-        count: 1
   send_message_batch:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       entries:
         types:
         - Array<Types::SendMessageBatchRequestEntry>
         required: true
-        count: 1
   set_queue_attributes:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Hash<String,String>
         required: true
-        count: 1
   tag_queue:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Hash<String,String>
         required: true
-        count: 1
   untag_queue:
     parameters:
       queue_url:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1

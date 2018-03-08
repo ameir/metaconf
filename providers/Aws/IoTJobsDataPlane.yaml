@@ -7,152 +7,123 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   describe_job_execution:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       thing_name:
         types:
         - String
         required: true
-        count: 1
       include_job_document:
         types:
         - Boolean
         required: false
-        count: 1
       execution_number:
         types:
         - Integer
         required: false
-        count: 1
   get_pending_job_executions:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
   start_next_pending_job_execution:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       status_details:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   update_job_execution:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       thing_name:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
       status_details:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       expected_version:
         types:
         - Integer
         required: false
-        count: 1
       include_job_execution_state:
         types:
         - Boolean
         required: false
-        count: 1
       include_job_document:
         types:
         - Boolean
         required: false
-        count: 1
       execution_number:
         types:
         - Integer
         required: false
-        count: 1

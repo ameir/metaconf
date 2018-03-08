@@ -7,293 +7,242 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   delete_config_rule:
     parameters:
       config_rule_name:
         types:
         - String
         required: true
-        count: 1
   delete_configuration_recorder:
     parameters:
       configuration_recorder_name:
         types:
         - String
         required: true
-        count: 1
   delete_delivery_channel:
     parameters:
       delivery_channel_name:
         types:
         - String
         required: true
-        count: 1
   delete_evaluation_results:
     parameters:
       config_rule_name:
         types:
         - String
         required: true
-        count: 1
   deliver_config_snapshot:
     parameters:
       delivery_channel_name:
         types:
         - String
         required: true
-        count: 1
   describe_compliance_by_config_rule:
     parameters:
       config_rule_names:
         types:
         - Array<String>
         required: false
-        count: 1
       compliance_types:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_compliance_by_resource:
     parameters:
       resource_type:
         types:
         - String
         required: false
-        count: 1
       resource_id:
         types:
         - String
         required: false
-        count: 1
       compliance_types:
         types:
         - Array<String>
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_config_rule_evaluation_status:
     parameters:
       config_rule_names:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   describe_config_rules:
     parameters:
       config_rule_names:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_configuration_recorder_status:
     parameters:
       configuration_recorder_names:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_configuration_recorders:
     parameters:
       configuration_recorder_names:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_delivery_channel_status:
     parameters:
       delivery_channel_names:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_delivery_channels:
     parameters:
       delivery_channel_names:
         types:
         - Array<String>
         required: false
-        count: 1
   get_compliance_details_by_config_rule:
     parameters:
       config_rule_name:
         types:
         - String
         required: true
-        count: 1
       compliance_types:
         types:
         - Array<String>
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_compliance_details_by_resource:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       compliance_types:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_compliance_summary_by_resource_type:
     parameters:
       resource_types:
         types:
         - Array<String>
         required: false
-        count: 1
   get_discovered_resource_counts:
     parameters:
       resource_types:
         types:
         - Array<String>
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_resource_config_history:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       later_time:
         types:
         - Time
@@ -302,7 +251,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       earlier_time:
         types:
         - Time
@@ -311,110 +259,91 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       chronological_order:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_discovered_resources:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       resource_name:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       include_deleted_resources:
         types:
         - Boolean
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   put_config_rule:
     parameters:
       config_rule:
         types:
         - Types::ConfigRule
         required: true
-        count: 1
   put_configuration_recorder:
     parameters:
       configuration_recorder:
         types:
         - Types::ConfigurationRecorder
         required: true
-        count: 1
   put_delivery_channel:
     parameters:
       delivery_channel:
         types:
         - Types::DeliveryChannel
         required: true
-        count: 1
   put_evaluations:
     parameters:
       evaluations:
         types:
         - Array<Types::Evaluation>
         required: false
-        count: 1
       result_token:
         types:
         - String
         required: true
-        count: 1
       test_mode:
         types:
         - Boolean
         required: false
-        count: 1
   start_config_rules_evaluation:
     parameters:
       config_rule_names:
         types:
         - Array<String>
         required: false
-        count: 1
   start_configuration_recorder:
     parameters:
       configuration_recorder_name:
         types:
         - String
         required: true
-        count: 1
   stop_configuration_recorder:
     parameters:
       configuration_recorder_name:
         types:
         - String
         required: true
-        count: 1

@@ -7,334 +7,270 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   create_endpoint:
     parameters:
       endpoint_identifier:
         types:
         - String
         required: true
-        count: 1
       endpoint_type:
         types:
         - String
         required: true
-        count: 1
       engine_name:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: false
-        count: 1
       password:
         types:
         - String
         required: false
-        count: 1
       server_name:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       extra_connection_attributes:
         types:
         - String
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       certificate_arn:
         types:
         - String
         required: false
-        count: 1
       ssl_mode:
         types:
         - String
         required: false
-        count: 1
       dynamo_db_settings:
         types:
         - Types::DynamoDbSettings
         required: false
-        count: 1
       s3_settings:
         types:
         - Types::S3Settings
         required: false
-        count: 1
       mongo_db_settings:
         types:
         - Types::MongoDbSettings
         required: false
-        count: 1
   create_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       sns_topic_arn:
         types:
         - String
         required: true
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       source_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_replication_instance:
     parameters:
       replication_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       allocated_storage:
         types:
         - Integer
         required: false
-        count: 1
       replication_instance_class:
         types:
         - String
         required: true
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       replication_subnet_group_identifier:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
   create_replication_subnet_group:
     parameters:
       replication_subnet_group_identifier:
         types:
         - String
         required: true
-        count: 1
       replication_subnet_group_description:
         types:
         - String
         required: true
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_replication_task:
     parameters:
       replication_task_identifier:
         types:
         - String
         required: true
-        count: 1
       source_endpoint_arn:
         types:
         - String
         required: true
-        count: 1
       target_endpoint_arn:
         types:
         - String
         required: true
-        count: 1
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
       migration_type:
         types:
         - String
         required: true
-        count: 1
       table_mappings:
         types:
         - String
         required: true
-        count: 1
       replication_task_settings:
         types:
         - String
         required: false
-        count: 1
       cdc_start_time:
         types:
         - Time
@@ -343,168 +279,140 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   delete_certificate:
     parameters:
       certificate_arn:
         types:
         - String
         required: true
-        count: 1
   delete_endpoint:
     parameters:
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1
   delete_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
   delete_replication_instance:
     parameters:
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
   delete_replication_subnet_group:
     parameters:
       replication_subnet_group_identifier:
         types:
         - String
         required: true
-        count: 1
   delete_replication_task:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
   describe_certificates:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_connections:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_endpoint_types:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_endpoints:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_event_categories:
     parameters:
       source_type:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   describe_event_subscriptions:
     parameters:
       subscription_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_events:
     parameters:
       source_identifier:
         types:
         - String
         required: false
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -513,7 +421,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -522,410 +429,335 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       duration:
         types:
         - Integer
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_orderable_replication_instances:
     parameters:
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_refresh_schemas_status:
     parameters:
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1
   describe_replication_instance_task_logs:
     parameters:
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_replication_instances:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_replication_subnet_groups:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_replication_task_assessment_results:
     parameters:
       replication_task_arn:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_replication_tasks:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_schemas:
     parameters:
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_table_statistics:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   import_certificate:
     parameters:
       certificate_identifier:
         types:
         - String
         required: true
-        count: 1
       certificate_pem:
         types:
         - String
         required: false
-        count: 1
       certificate_wallet:
         types:
         - String
         - IO
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
   modify_endpoint:
     parameters:
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1
       endpoint_identifier:
         types:
         - String
         required: false
-        count: 1
       endpoint_type:
         types:
         - String
         required: false
-        count: 1
       engine_name:
         types:
         - String
         required: false
-        count: 1
       username:
         types:
         - String
         required: false
-        count: 1
       password:
         types:
         - String
         required: false
-        count: 1
       server_name:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       extra_connection_attributes:
         types:
         - String
         required: false
-        count: 1
       certificate_arn:
         types:
         - String
         required: false
-        count: 1
       ssl_mode:
         types:
         - String
         required: false
-        count: 1
       dynamo_db_settings:
         types:
         - Types::DynamoDbSettings
         required: false
-        count: 1
       s3_settings:
         types:
         - Types::S3Settings
         required: false
-        count: 1
       mongo_db_settings:
         types:
         - Types::MongoDbSettings
         required: false
-        count: 1
   modify_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       sns_topic_arn:
         types:
         - String
         required: false
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
   modify_replication_instance:
     parameters:
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
       allocated_storage:
         types:
         - Integer
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
       replication_instance_class:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       allow_major_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       replication_instance_identifier:
         types:
         - String
         required: false
-        count: 1
   modify_replication_subnet_group:
     parameters:
       replication_subnet_group_identifier:
         types:
         - String
         required: true
-        count: 1
       replication_subnet_group_description:
         types:
         - String
         required: false
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   modify_replication_task:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
       replication_task_identifier:
         types:
         - String
         required: false
-        count: 1
       migration_type:
         types:
         - String
         required: false
-        count: 1
       table_mappings:
         types:
         - String
         required: false
-        count: 1
       replication_task_settings:
         types:
         - String
         required: false
-        count: 1
       cdc_start_time:
         types:
         - Time
@@ -934,67 +766,56 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   reboot_replication_instance:
     parameters:
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
       force_failover:
         types:
         - Boolean
         required: false
-        count: 1
   refresh_schemas:
     parameters:
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
   reload_tables:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
       tables_to_reload:
         types:
         - Array<Types::TableToReload>
         required: true
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   start_replication_task:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
       start_replication_task_type:
         types:
         - String
         required: true
-        count: 1
       cdc_start_time:
         types:
         - Time
@@ -1003,30 +824,25 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   start_replication_task_assessment:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
   stop_replication_task:
     parameters:
       replication_task_arn:
         types:
         - String
         required: true
-        count: 1
   test_connection:
     parameters:
       replication_instance_arn:
         types:
         - String
         required: true
-        count: 1
       endpoint_arn:
         types:
         - String
         required: true
-        count: 1

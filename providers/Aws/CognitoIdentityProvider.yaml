@@ -7,2020 +7,1654 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_custom_attributes:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       custom_attributes:
         types:
         - Array<Types::SchemaAttributeType>
         required: true
-        count: 1
   admin_add_user_to_group:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
   admin_confirm_sign_up:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_create_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       user_attributes:
         types:
         - Array<Types::AttributeType>
         required: false
-        count: 1
       validation_data:
         types:
         - Array<Types::AttributeType>
         required: false
-        count: 1
       temporary_password:
         types:
         - String
         required: false
-        count: 1
       force_alias_creation:
         types:
         - Boolean
         required: false
-        count: 1
       message_action:
         types:
         - String
         required: false
-        count: 1
       desired_delivery_mediums:
         types:
         - Array<String>
         required: false
-        count: 1
   admin_delete_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_delete_user_attributes:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       user_attribute_names:
         types:
         - Array<String>
         required: true
-        count: 1
   admin_disable_provider_for_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       user:
         types:
         - Types::ProviderUserIdentifierType
         required: true
-        count: 1
   admin_disable_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_enable_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_forget_device:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       device_key:
         types:
         - String
         required: true
-        count: 1
   admin_get_device:
     parameters:
       device_key:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_get_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_initiate_auth:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
       auth_flow:
         types:
         - String
         required: true
-        count: 1
       auth_parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       client_metadata:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       context_data:
         types:
         - Types::ContextDataType
         required: false
-        count: 1
   admin_link_provider_for_user:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       destination_user:
         types:
         - Types::ProviderUserIdentifierType
         required: true
-        count: 1
       source_user:
         types:
         - Types::ProviderUserIdentifierType
         required: true
-        count: 1
   admin_list_devices:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       pagination_token:
         types:
         - String
         required: false
-        count: 1
   admin_list_groups_for_user:
     parameters:
       username:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   admin_list_user_auth_events:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   admin_remove_user_from_group:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
   admin_reset_user_password:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   admin_respond_to_auth_challenge:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
       challenge_name:
         types:
         - String
         required: true
-        count: 1
       challenge_responses:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       session:
         types:
         - String
         required: false
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       context_data:
         types:
         - Types::ContextDataType
         required: false
-        count: 1
   admin_set_user_mfa_preference:
     parameters:
       sms_mfa_settings:
         types:
         - Types::SMSMfaSettingsType
         required: false
-        count: 1
       software_token_mfa_settings:
         types:
         - Types::SoftwareTokenMfaSettingsType
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   admin_set_user_settings:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       mfa_options:
         types:
         - Array<Types::MFAOptionType>
         required: true
-        count: 1
   admin_update_auth_event_feedback:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       event_id:
         types:
         - String
         required: true
-        count: 1
       feedback_value:
         types:
         - String
         required: true
-        count: 1
   admin_update_device_status:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       device_key:
         types:
         - String
         required: true
-        count: 1
       device_remembered_status:
         types:
         - String
         required: false
-        count: 1
   admin_update_user_attributes:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       user_attributes:
         types:
         - Array<Types::AttributeType>
         required: true
-        count: 1
   admin_user_global_sign_out:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
   associate_software_token:
     parameters:
       access_token:
         types:
         - String
         required: false
-        count: 1
       session:
         types:
         - String
         required: false
-        count: 1
   change_password:
     parameters:
       previous_password:
         types:
         - String
         required: true
-        count: 1
       proposed_password:
         types:
         - String
         required: true
-        count: 1
       access_token:
         types:
         - String
         required: true
-        count: 1
   confirm_device:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       device_key:
         types:
         - String
         required: true
-        count: 1
       device_secret_verifier_config:
         types:
         - Types::DeviceSecretVerifierConfigType
         required: false
-        count: 1
       device_name:
         types:
         - String
         required: false
-        count: 1
   confirm_forgot_password:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       secret_hash:
         types:
         - String
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       confirmation_code:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: true
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
   confirm_sign_up:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       secret_hash:
         types:
         - String
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       confirmation_code:
         types:
         - String
         required: true
-        count: 1
       force_alias_creation:
         types:
         - Boolean
         required: false
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
   create_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
       precedence:
         types:
         - Integer
         required: false
-        count: 1
   create_identity_provider:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       provider_name:
         types:
         - String
         required: true
-        count: 1
       provider_type:
         types:
         - String
         required: true
-        count: 1
       provider_details:
         types:
         - Hash<String,String>
         required: true
-        count: 1
       attribute_mapping:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       idp_identifiers:
         types:
         - Array<String>
         required: false
-        count: 1
   create_resource_server:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       identifier:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       scopes:
         types:
         - Array<Types::ResourceServerScopeType>
         required: false
-        count: 1
   create_user_import_job:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       cloud_watch_logs_role_arn:
         types:
         - String
         required: true
-        count: 1
   create_user_pool:
     parameters:
       pool_name:
         types:
         - String
         required: true
-        count: 1
       policies:
         types:
         - Types::UserPoolPolicyType
         required: false
-        count: 1
       lambda_config:
         types:
         - Types::LambdaConfigType
         required: false
-        count: 1
       auto_verified_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       alias_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       username_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       sms_verification_message:
         types:
         - String
         required: false
-        count: 1
       email_verification_message:
         types:
         - String
         required: false
-        count: 1
       email_verification_subject:
         types:
         - String
         required: false
-        count: 1
       verification_message_template:
         types:
         - Types::VerificationMessageTemplateType
         required: false
-        count: 1
       sms_authentication_message:
         types:
         - String
         required: false
-        count: 1
       mfa_configuration:
         types:
         - String
         required: false
-        count: 1
       device_configuration:
         types:
         - Types::DeviceConfigurationType
         required: false
-        count: 1
       email_configuration:
         types:
         - Types::EmailConfigurationType
         required: false
-        count: 1
       sms_configuration:
         types:
         - Types::SmsConfigurationType
         required: false
-        count: 1
       user_pool_tags:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       admin_create_user_config:
         types:
         - Types::AdminCreateUserConfigType
         required: false
-        count: 1
       schema:
         types:
         - Array<Types::SchemaAttributeType>
         required: false
-        count: 1
       user_pool_add_ons:
         types:
         - Types::UserPoolAddOnsType
         required: false
-        count: 1
   create_user_pool_client:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_name:
         types:
         - String
         required: true
-        count: 1
       generate_secret:
         types:
         - Boolean
         required: false
-        count: 1
       refresh_token_validity:
         types:
         - Integer
         required: false
-        count: 1
       read_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       write_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       explicit_auth_flows:
         types:
         - Array<String>
         required: false
-        count: 1
       supported_identity_providers:
         types:
         - Array<String>
         required: false
-        count: 1
       callback_urls:
         types:
         - Array<String>
         required: false
-        count: 1
       logout_urls:
         types:
         - Array<String>
         required: false
-        count: 1
       default_redirect_uri:
         types:
         - String
         required: false
-        count: 1
       allowed_o_auth_flows:
         types:
         - Array<String>
         required: false
-        count: 1
       allowed_o_auth_scopes:
         types:
         - Array<String>
         required: false
-        count: 1
       allowed_o_auth_flows_user_pool_client:
         types:
         - Boolean
         required: false
-        count: 1
       analytics_configuration:
         types:
         - Types::AnalyticsConfigurationType
         required: false
-        count: 1
   create_user_pool_domain:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   delete_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   delete_identity_provider:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       provider_name:
         types:
         - String
         required: true
-        count: 1
   delete_resource_server:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       identifier:
         types:
         - String
         required: true
-        count: 1
   delete_user:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
   delete_user_attributes:
     parameters:
       user_attribute_names:
         types:
         - Array<String>
         required: true
-        count: 1
       access_token:
         types:
         - String
         required: true
-        count: 1
   delete_user_pool:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   delete_user_pool_client:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
   delete_user_pool_domain:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   describe_identity_provider:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       provider_name:
         types:
         - String
         required: true
-        count: 1
   describe_resource_server:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       identifier:
         types:
         - String
         required: true
-        count: 1
   describe_risk_configuration:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
   describe_user_import_job:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       job_id:
         types:
         - String
         required: true
-        count: 1
   describe_user_pool:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   describe_user_pool_client:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
   describe_user_pool_domain:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
   forget_device:
     parameters:
       access_token:
         types:
         - String
         required: false
-        count: 1
       device_key:
         types:
         - String
         required: true
-        count: 1
   forgot_password:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       secret_hash:
         types:
         - String
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
   get_csv_header:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_device:
     parameters:
       device_key:
         types:
         - String
         required: true
-        count: 1
       access_token:
         types:
         - String
         required: false
-        count: 1
   get_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_identity_provider_by_identifier:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       idp_identifier:
         types:
         - String
         required: true
-        count: 1
   get_signing_certificate:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_ui_customization:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
   get_user:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
   get_user_attribute_verification_code:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: true
-        count: 1
   get_user_pool_mfa_config:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
   global_sign_out:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
   initiate_auth:
     parameters:
       auth_flow:
         types:
         - String
         required: true
-        count: 1
       auth_parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       client_metadata:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
   list_devices:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       pagination_token:
         types:
         - String
         required: false
-        count: 1
   list_groups:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_identity_providers:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_resource_servers:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_user_import_jobs:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: true
-        count: 1
       pagination_token:
         types:
         - String
         required: false
-        count: 1
   list_user_pool_clients:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_user_pools:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: true
-        count: 1
   list_users:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       attributes_to_get:
         types:
         - Array<String>
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       pagination_token:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - String
         required: false
-        count: 1
   list_users_in_group:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   resend_confirmation_code:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       secret_hash:
         types:
         - String
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
   respond_to_auth_challenge:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       challenge_name:
         types:
         - String
         required: true
-        count: 1
       session:
         types:
         - String
         required: false
-        count: 1
       challenge_responses:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
   set_risk_configuration:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
       compromised_credentials_risk_configuration:
         types:
         - Types::CompromisedCredentialsRiskConfigurationType
         required: false
-        count: 1
       account_takeover_risk_configuration:
         types:
         - Types::AccountTakeoverRiskConfigurationType
         required: false
-        count: 1
       risk_exception_configuration:
         types:
         - Types::RiskExceptionConfigurationType
         required: false
-        count: 1
   set_ui_customization:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
       css:
         types:
         - String
         required: false
-        count: 1
       image_file:
         types:
         - String
         - IO
         required: false
-        count: 1
   set_user_mfa_preference:
     parameters:
       sms_mfa_settings:
         types:
         - Types::SMSMfaSettingsType
         required: false
-        count: 1
       software_token_mfa_settings:
         types:
         - Types::SoftwareTokenMfaSettingsType
         required: false
-        count: 1
       access_token:
         types:
         - String
         required: true
-        count: 1
   set_user_pool_mfa_config:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       sms_mfa_configuration:
         types:
         - Types::SmsMfaConfigType
         required: false
-        count: 1
       software_token_mfa_configuration:
         types:
         - Types::SoftwareTokenMfaConfigType
         required: false
-        count: 1
       mfa_configuration:
         types:
         - String
         required: false
-        count: 1
   set_user_settings:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       mfa_options:
         types:
         - Array<Types::MFAOptionType>
         required: true
-        count: 1
   sign_up:
     parameters:
       client_id:
         types:
         - String
         required: true
-        count: 1
       secret_hash:
         types:
         - String
         required: false
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: true
-        count: 1
       user_attributes:
         types:
         - Array<Types::AttributeType>
         required: false
-        count: 1
       validation_data:
         types:
         - Array<Types::AttributeType>
         required: false
-        count: 1
       analytics_metadata:
         types:
         - Types::AnalyticsMetadataType
         required: false
-        count: 1
       user_context_data:
         types:
         - Types::UserContextDataType
         required: false
-        count: 1
   start_user_import_job:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       job_id:
         types:
         - String
         required: true
-        count: 1
   stop_user_import_job:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       job_id:
         types:
         - String
         required: true
-        count: 1
   update_auth_event_feedback:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       username:
         types:
         - String
         required: true
-        count: 1
       event_id:
         types:
         - String
         required: true
-        count: 1
       feedback_token:
         types:
         - String
         required: true
-        count: 1
       feedback_value:
         types:
         - String
         required: true
-        count: 1
   update_device_status:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       device_key:
         types:
         - String
         required: true
-        count: 1
       device_remembered_status:
         types:
         - String
         required: false
-        count: 1
   update_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
       precedence:
         types:
         - Integer
         required: false
-        count: 1
   update_identity_provider:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       provider_name:
         types:
         - String
         required: true
-        count: 1
       provider_details:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       attribute_mapping:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       idp_identifiers:
         types:
         - Array<String>
         required: false
-        count: 1
   update_resource_server:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       identifier:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       scopes:
         types:
         - Array<Types::ResourceServerScopeType>
         required: false
-        count: 1
   update_user_attributes:
     parameters:
       user_attributes:
         types:
         - Array<Types::AttributeType>
         required: true
-        count: 1
       access_token:
         types:
         - String
         required: true
-        count: 1
   update_user_pool:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       policies:
         types:
         - Types::UserPoolPolicyType
         required: false
-        count: 1
       lambda_config:
         types:
         - Types::LambdaConfigType
         required: false
-        count: 1
       auto_verified_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       sms_verification_message:
         types:
         - String
         required: false
-        count: 1
       email_verification_message:
         types:
         - String
         required: false
-        count: 1
       email_verification_subject:
         types:
         - String
         required: false
-        count: 1
       verification_message_template:
         types:
         - Types::VerificationMessageTemplateType
         required: false
-        count: 1
       sms_authentication_message:
         types:
         - String
         required: false
-        count: 1
       mfa_configuration:
         types:
         - String
         required: false
-        count: 1
       device_configuration:
         types:
         - Types::DeviceConfigurationType
         required: false
-        count: 1
       email_configuration:
         types:
         - Types::EmailConfigurationType
         required: false
-        count: 1
       sms_configuration:
         types:
         - Types::SmsConfigurationType
         required: false
-        count: 1
       user_pool_tags:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       admin_create_user_config:
         types:
         - Types::AdminCreateUserConfigType
         required: false
-        count: 1
       user_pool_add_ons:
         types:
         - Types::UserPoolAddOnsType
         required: false
-        count: 1
   update_user_pool_client:
     parameters:
       user_pool_id:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
       client_name:
         types:
         - String
         required: false
-        count: 1
       refresh_token_validity:
         types:
         - Integer
         required: false
-        count: 1
       read_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       write_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
       explicit_auth_flows:
         types:
         - Array<String>
         required: false
-        count: 1
       supported_identity_providers:
         types:
         - Array<String>
         required: false
-        count: 1
       callback_urls:
         types:
         - Array<String>
         required: false
-        count: 1
       logout_urls:
         types:
         - Array<String>
         required: false
-        count: 1
       default_redirect_uri:
         types:
         - String
         required: false
-        count: 1
       allowed_o_auth_flows:
         types:
         - Array<String>
         required: false
-        count: 1
       allowed_o_auth_scopes:
         types:
         - Array<String>
         required: false
-        count: 1
       allowed_o_auth_flows_user_pool_client:
         types:
         - Boolean
         required: false
-        count: 1
       analytics_configuration:
         types:
         - Types::AnalyticsConfigurationType
         required: false
-        count: 1
   verify_software_token:
     parameters:
       access_token:
         types:
         - String
         required: false
-        count: 1
       session:
         types:
         - String
         required: false
-        count: 1
       user_code:
         types:
         - String
         required: true
-        count: 1
       friendly_device_name:
         types:
         - String
         required: false
-        count: 1
   verify_user_attribute:
     parameters:
       access_token:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: true
-        count: 1
       code:
         types:
         - String
         required: true
-        count: 1

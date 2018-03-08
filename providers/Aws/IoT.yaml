@@ -7,1784 +7,1473 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   accept_certificate_transfer:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       set_as_active:
         types:
         - Boolean
         required: false
-        count: 1
   add_thing_to_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: false
-        count: 1
       thing_group_arn:
         types:
         - String
         required: false
-        count: 1
       thing_name:
         types:
         - String
         required: false
-        count: 1
       thing_arn:
         types:
         - String
         required: false
-        count: 1
   associate_targets_with_job:
     parameters:
       targets:
         types:
         - Array<String>
         required: true
-        count: 1
       job_id:
         types:
         - String
         required: true
-        count: 1
       comment:
         types:
         - String
         required: false
-        count: 1
   attach_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       target:
         types:
         - String
         required: true
-        count: 1
   attach_principal_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
   attach_thing_principal:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
   cancel_certificate_transfer:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
   cancel_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       comment:
         types:
         - String
         required: false
-        count: 1
   create_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
       authorizer_function_arn:
         types:
         - String
         required: true
-        count: 1
       token_key_name:
         types:
         - String
         required: true
-        count: 1
       token_signing_public_keys:
         types:
         - Hash<String,String>
         required: true
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   create_certificate_from_csr:
     parameters:
       certificate_signing_request:
         types:
         - String
         required: true
-        count: 1
       set_as_active:
         types:
         - Boolean
         required: false
-        count: 1
   create_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<String>
         required: true
-        count: 1
       document_source:
         types:
         - String
         required: false
-        count: 1
       document:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       presigned_url_config:
         types:
         - Types::PresignedUrlConfig
         required: false
-        count: 1
       target_selection:
         types:
         - String
         required: false
-        count: 1
       job_executions_rollout_config:
         types:
         - Types::JobExecutionsRolloutConfig
         required: false
-        count: 1
       document_parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   create_keys_and_certificate:
     parameters:
       set_as_active:
         types:
         - Boolean
         required: false
-        count: 1
   create_ota_update:
     parameters:
       ota_update_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       targets:
         types:
         - Array<String>
         required: true
-        count: 1
       target_selection:
         types:
         - String
         required: false
-        count: 1
       files:
         types:
         - Array<Types::OTAUpdateFile>
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
       additional_parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   create_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
   create_policy_version:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
       set_as_default:
         types:
         - Boolean
         required: false
-        count: 1
   create_role_alias:
     parameters:
       role_alias:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
       credential_duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
   create_stream:
     parameters:
       stream_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       files:
         types:
         - Array<Types::StreamFile>
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
   create_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       thing_type_name:
         types:
         - String
         required: false
-        count: 1
       attribute_payload:
         types:
         - Types::AttributePayload
         required: false
-        count: 1
   create_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: true
-        count: 1
       parent_group_name:
         types:
         - String
         required: false
-        count: 1
       thing_group_properties:
         types:
         - Types::ThingGroupProperties
         required: false
-        count: 1
   create_thing_type:
     parameters:
       thing_type_name:
         types:
         - String
         required: true
-        count: 1
       thing_type_properties:
         types:
         - Types::ThingTypeProperties
         required: false
-        count: 1
   create_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
       topic_rule_payload:
         types:
         - Types::TopicRulePayload
         required: true
-        count: 1
   delete_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
   delete_ca_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
   delete_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       force_delete:
         types:
         - Boolean
         required: false
-        count: 1
   delete_ota_update:
     parameters:
       ota_update_id:
         types:
         - String
         required: true
-        count: 1
   delete_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
   delete_policy_version:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_version_id:
         types:
         - String
         required: true
-        count: 1
   delete_role_alias:
     parameters:
       role_alias:
         types:
         - String
         required: true
-        count: 1
   delete_stream:
     parameters:
       stream_id:
         types:
         - String
         required: true
-        count: 1
   delete_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       expected_version:
         types:
         - Integer
         required: false
-        count: 1
   delete_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: true
-        count: 1
       expected_version:
         types:
         - Integer
         required: false
-        count: 1
   delete_thing_type:
     parameters:
       thing_type_name:
         types:
         - String
         required: true
-        count: 1
   delete_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
   delete_v2_logging_level:
     parameters:
       target_type:
         types:
         - String
         required: true
-        count: 1
       target_name:
         types:
         - String
         required: true
-        count: 1
   deprecate_thing_type:
     parameters:
       thing_type_name:
         types:
         - String
         required: true
-        count: 1
       undo_deprecate:
         types:
         - Boolean
         required: false
-        count: 1
   describe_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
   describe_ca_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
   describe_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
   describe_endpoint:
     parameters:
       endpoint_type:
         types:
         - String
         required: false
-        count: 1
   describe_index:
     parameters:
       index_name:
         types:
         - String
         required: true
-        count: 1
   describe_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
   describe_job_execution:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       thing_name:
         types:
         - String
         required: true
-        count: 1
       execution_number:
         types:
         - Integer
         required: false
-        count: 1
   describe_role_alias:
     parameters:
       role_alias:
         types:
         - String
         required: true
-        count: 1
   describe_stream:
     parameters:
       stream_id:
         types:
         - String
         required: true
-        count: 1
   describe_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
   describe_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: true
-        count: 1
   describe_thing_registration_task:
     parameters:
       task_id:
         types:
         - String
         required: true
-        count: 1
   describe_thing_type:
     parameters:
       thing_type_name:
         types:
         - String
         required: true
-        count: 1
   detach_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       target:
         types:
         - String
         required: true
-        count: 1
   detach_principal_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
   detach_thing_principal:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
   disable_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
   enable_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
   get_effective_policies:
     parameters:
       principal:
         types:
         - String
         required: false
-        count: 1
       cognito_identity_pool_id:
         types:
         - String
         required: false
-        count: 1
       thing_name:
         types:
         - String
         required: false
-        count: 1
   get_job_document:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
   get_ota_update:
     parameters:
       ota_update_id:
         types:
         - String
         required: true
-        count: 1
   get_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
   get_policy_version:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_version_id:
         types:
         - String
         required: true
-        count: 1
   get_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
   list_attached_policies:
     parameters:
       target:
         types:
         - String
         required: true
-        count: 1
       recursive:
         types:
         - Boolean
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   list_authorizers:
     parameters:
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   list_ca_certificates:
     parameters:
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_certificates:
     parameters:
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_certificates_by_ca:
     parameters:
       ca_certificate_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_indices:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_job_executions_for_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_job_executions_for_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_jobs:
     parameters:
       status:
         types:
         - String
         required: false
-        count: 1
       target_selection:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       thing_group_name:
         types:
         - String
         required: false
-        count: 1
       thing_group_id:
         types:
         - String
         required: false
-        count: 1
   list_ota_updates:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       ota_update_status:
         types:
         - String
         required: false
-        count: 1
   list_outgoing_certificates:
     parameters:
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_policies:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_policy_principals:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_policy_versions:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
   list_principal_policies:
     parameters:
       principal:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_principal_things:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       principal:
         types:
         - String
         required: true
-        count: 1
   list_role_aliases:
     parameters:
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_streams:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       ascending_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_targets_for_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   list_thing_groups:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       parent_group:
         types:
         - String
         required: false
-        count: 1
       name_prefix_filter:
         types:
         - String
         required: false
-        count: 1
       recursive:
         types:
         - Boolean
         required: false
-        count: 1
   list_thing_groups_for_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_thing_principals:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
   list_thing_registration_task_reports:
     parameters:
       task_id:
         types:
         - String
         required: true
-        count: 1
       report_type:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_thing_registration_tasks:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   list_thing_types:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       thing_type_name:
         types:
         - String
         required: false
-        count: 1
   list_things:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       attribute_name:
         types:
         - String
         required: false
-        count: 1
       attribute_value:
         types:
         - String
         required: false
-        count: 1
       thing_type_name:
         types:
         - String
         required: false
-        count: 1
   list_things_in_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: true
-        count: 1
       recursive:
         types:
         - Boolean
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_topic_rules:
     parameters:
       topic:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       rule_disabled:
         types:
         - Boolean
         required: false
-        count: 1
   list_v2_logging_levels:
     parameters:
       target_type:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   register_ca_certificate:
     parameters:
       ca_certificate:
         types:
         - String
         required: true
-        count: 1
       verification_certificate:
         types:
         - String
         required: true
-        count: 1
       set_as_active:
         types:
         - Boolean
         required: false
-        count: 1
       allow_auto_registration:
         types:
         - Boolean
         required: false
-        count: 1
       registration_config:
         types:
         - Types::RegistrationConfig
         required: false
-        count: 1
   register_certificate:
     parameters:
       certificate_pem:
         types:
         - String
         required: true
-        count: 1
       ca_certificate_pem:
         types:
         - String
         required: false
-        count: 1
       set_as_active:
         types:
         - Boolean
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   register_thing:
     parameters:
       template_body:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   reject_certificate_transfer:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       reject_reason:
         types:
         - String
         required: false
-        count: 1
   remove_thing_from_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: false
-        count: 1
       thing_group_arn:
         types:
         - String
         required: false
-        count: 1
       thing_name:
         types:
         - String
         required: false
-        count: 1
       thing_arn:
         types:
         - String
         required: false
-        count: 1
   replace_topic_rule:
     parameters:
       rule_name:
         types:
         - String
         required: true
-        count: 1
       topic_rule_payload:
         types:
         - Types::TopicRulePayload
         required: true
-        count: 1
   search_index:
     parameters:
       index_name:
         types:
         - String
         required: false
-        count: 1
       query_string:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       query_version:
         types:
         - String
         required: false
-        count: 1
   set_default_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
   set_default_policy_version:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_version_id:
         types:
         - String
         required: true
-        count: 1
   set_logging_options:
     parameters:
       logging_options_payload:
         types:
         - Types::LoggingOptionsPayload
         required: true
-        count: 1
   set_v2_logging_level:
     parameters:
       log_target:
         types:
         - Types::LogTarget
         required: true
-        count: 1
       log_level:
         types:
         - String
         required: true
-        count: 1
   set_v2_logging_options:
     parameters:
       role_arn:
         types:
         - String
         required: false
-        count: 1
       default_log_level:
         types:
         - String
         required: false
-        count: 1
       disable_all_logs:
         types:
         - Boolean
         required: false
-        count: 1
   start_thing_registration_task:
     parameters:
       template_body:
         types:
         - String
         required: true
-        count: 1
       input_file_bucket:
         types:
         - String
         required: true
-        count: 1
       input_file_key:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
   stop_thing_registration_task:
     parameters:
       task_id:
         types:
         - String
         required: true
-        count: 1
   test_authorization:
     parameters:
       principal:
         types:
         - String
         required: false
-        count: 1
       cognito_identity_pool_id:
         types:
         - String
         required: false
-        count: 1
       auth_infos:
         types:
         - Array<Types::AuthInfo>
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
       policy_names_to_add:
         types:
         - Array<String>
         required: false
-        count: 1
       policy_names_to_skip:
         types:
         - Array<String>
         required: false
-        count: 1
   test_invoke_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
       token:
         types:
         - String
         required: true
-        count: 1
       token_signature:
         types:
         - String
         required: true
-        count: 1
   transfer_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       target_aws_account:
         types:
         - String
         required: true
-        count: 1
       transfer_message:
         types:
         - String
         required: false
-        count: 1
   update_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
-        count: 1
       authorizer_function_arn:
         types:
         - String
         required: false
-        count: 1
       token_key_name:
         types:
         - String
         required: false
-        count: 1
       token_signing_public_keys:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   update_ca_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       new_status:
         types:
         - String
         required: false
-        count: 1
       new_auto_registration_status:
         types:
         - String
         required: false
-        count: 1
       registration_config:
         types:
         - Types::RegistrationConfig
         required: false
-        count: 1
       remove_auto_registration:
         types:
         - Boolean
         required: false
-        count: 1
   update_certificate:
     parameters:
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       new_status:
         types:
         - String
         required: true
-        count: 1
   update_event_configurations:
     parameters:
       event_configurations:
         types:
         - Hash<String,Types::Configuration>
         required: false
-        count: 1
   update_indexing_configuration:
     parameters:
       thing_indexing_configuration:
         types:
         - Types::ThingIndexingConfiguration
         required: false
-        count: 1
   update_role_alias:
     parameters:
       role_alias:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
       credential_duration_seconds:
         types:
         - Integer
         required: false
-        count: 1
   update_stream:
     parameters:
       stream_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       files:
         types:
         - Array<Types::StreamFile>
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
   update_thing:
     parameters:
       thing_name:
         types:
         - String
         required: true
-        count: 1
       thing_type_name:
         types:
         - String
         required: false
-        count: 1
       attribute_payload:
         types:
         - Types::AttributePayload
         required: false
-        count: 1
       expected_version:
         types:
         - Integer
         required: false
-        count: 1
       remove_thing_type:
         types:
         - Boolean
         required: false
-        count: 1
   update_thing_group:
     parameters:
       thing_group_name:
         types:
         - String
         required: true
-        count: 1
       thing_group_properties:
         types:
         - Types::ThingGroupProperties
         required: true
-        count: 1
       expected_version:
         types:
         - Integer
         required: false
-        count: 1
   update_thing_groups_for_thing:
     parameters:
       thing_name:
         types:
         - String
         required: false
-        count: 1
       thing_groups_to_add:
         types:
         - Array<String>
         required: false
-        count: 1
       thing_groups_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1

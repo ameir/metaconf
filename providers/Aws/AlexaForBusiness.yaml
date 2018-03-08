@@ -7,686 +7,563 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   associate_device_with_room:
     parameters:
       device_arn:
         types:
         - String
         required: false
-        count: 1
       room_arn:
         types:
         - String
         required: false
-        count: 1
   associate_skill_group_with_room:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
       room_arn:
         types:
         - String
         required: false
-        count: 1
   create_profile:
     parameters:
       profile_name:
         types:
         - String
         required: true
-        count: 1
       timezone:
         types:
         - String
         required: true
-        count: 1
       address:
         types:
         - String
         required: true
-        count: 1
       distance_unit:
         types:
         - String
         required: true
-        count: 1
       temperature_unit:
         types:
         - String
         required: true
-        count: 1
       wake_word:
         types:
         - String
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       setup_mode_disabled:
         types:
         - Boolean
         required: false
-        count: 1
       max_volume_limit:
         types:
         - Integer
         required: false
-        count: 1
       pstn_enabled:
         types:
         - Boolean
         required: false
-        count: 1
   create_room:
     parameters:
       room_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       profile_arn:
         types:
         - String
         required: false
-        count: 1
       provider_calendar_id:
         types:
         - String
         required: false
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_skill_group:
     parameters:
       skill_group_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
   create_user:
     parameters:
       user_id:
         types:
         - String
         required: true
-        count: 1
       first_name:
         types:
         - String
         required: false
-        count: 1
       last_name:
         types:
         - String
         required: false
-        count: 1
       email:
         types:
         - String
         required: false
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   delete_profile:
     parameters:
       profile_arn:
         types:
         - String
         required: false
-        count: 1
   delete_room:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
   delete_room_skill_parameter:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
       skill_id:
         types:
         - String
         required: true
-        count: 1
       parameter_key:
         types:
         - String
         required: true
-        count: 1
   delete_skill_group:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
   delete_user:
     parameters:
       user_arn:
         types:
         - String
         required: false
-        count: 1
       enrollment_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_device_from_room:
     parameters:
       device_arn:
         types:
         - String
         required: false
-        count: 1
   disassociate_skill_group_from_room:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
       room_arn:
         types:
         - String
         required: false
-        count: 1
   get_device:
     parameters:
       device_arn:
         types:
         - String
         required: false
-        count: 1
   get_profile:
     parameters:
       profile_arn:
         types:
         - String
         required: false
-        count: 1
   get_room:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
   get_room_skill_parameter:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
       skill_id:
         types:
         - String
         required: true
-        count: 1
       parameter_key:
         types:
         - String
         required: true
-        count: 1
   get_skill_group:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
   list_skills:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_tags:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   put_room_skill_parameter:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
       skill_id:
         types:
         - String
         required: true
-        count: 1
       room_skill_parameter:
         types:
         - Types::RoomSkillParameter
         required: true
-        count: 1
   resolve_room:
     parameters:
       user_id:
         types:
         - String
         required: true
-        count: 1
       skill_id:
         types:
         - String
         required: true
-        count: 1
   revoke_invitation:
     parameters:
       user_arn:
         types:
         - String
         required: false
-        count: 1
       enrollment_id:
         types:
         - String
         required: false
-        count: 1
   search_devices:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Array<Types::Sort>
         required: false
-        count: 1
   search_profiles:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Array<Types::Sort>
         required: false
-        count: 1
   search_rooms:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Array<Types::Sort>
         required: false
-        count: 1
   search_skill_groups:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Array<Types::Sort>
         required: false
-        count: 1
   search_users:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Array<Types::Sort>
         required: false
-        count: 1
   send_invitation:
     parameters:
       user_arn:
         types:
         - String
         required: false
-        count: 1
   start_device_sync:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
       device_arn:
         types:
         - String
         required: false
-        count: 1
       features:
         types:
         - Array<String>
         required: true
-        count: 1
   tag_resource:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   untag_resource:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   update_device:
     parameters:
       device_arn:
         types:
         - String
         required: false
-        count: 1
       device_name:
         types:
         - String
         required: false
-        count: 1
   update_profile:
     parameters:
       profile_arn:
         types:
         - String
         required: false
-        count: 1
       profile_name:
         types:
         - String
         required: false
-        count: 1
       timezone:
         types:
         - String
         required: false
-        count: 1
       address:
         types:
         - String
         required: false
-        count: 1
       distance_unit:
         types:
         - String
         required: false
-        count: 1
       temperature_unit:
         types:
         - String
         required: false
-        count: 1
       wake_word:
         types:
         - String
         required: false
-        count: 1
       setup_mode_disabled:
         types:
         - Boolean
         required: false
-        count: 1
       max_volume_limit:
         types:
         - Integer
         required: false
-        count: 1
       pstn_enabled:
         types:
         - Boolean
         required: false
-        count: 1
   update_room:
     parameters:
       room_arn:
         types:
         - String
         required: false
-        count: 1
       room_name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       provider_calendar_id:
         types:
         - String
         required: false
-        count: 1
       profile_arn:
         types:
         - String
         required: false
-        count: 1
   update_skill_group:
     parameters:
       skill_group_arn:
         types:
         - String
         required: false
-        count: 1
       skill_group_name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1

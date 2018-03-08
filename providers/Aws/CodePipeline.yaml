@@ -7,488 +7,401 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   acknowledge_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       nonce:
         types:
         - String
         required: true
-        count: 1
   acknowledge_third_party_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       nonce:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
   create_custom_action_type:
     parameters:
       category:
         types:
         - String
         required: true
-        count: 1
       provider:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
       settings:
         types:
         - Types::ActionTypeSettings
         required: false
-        count: 1
       configuration_properties:
         types:
         - Array<Types::ActionConfigurationProperty>
         required: false
-        count: 1
       input_artifact_details:
         types:
         - Types::ArtifactDetails
         required: true
-        count: 1
       output_artifact_details:
         types:
         - Types::ArtifactDetails
         required: true
-        count: 1
   create_pipeline:
     parameters:
       pipeline:
         types:
         - Types::PipelineDeclaration
         required: true
-        count: 1
   delete_custom_action_type:
     parameters:
       category:
         types:
         - String
         required: true
-        count: 1
       provider:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   delete_pipeline:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   disable_stage_transition:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       stage_name:
         types:
         - String
         required: true
-        count: 1
       transition_type:
         types:
         - String
         required: true
-        count: 1
       reason:
         types:
         - String
         required: true
-        count: 1
   enable_stage_transition:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       stage_name:
         types:
         - String
         required: true
-        count: 1
       transition_type:
         types:
         - String
         required: true
-        count: 1
   get_job_details:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
   get_pipeline:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - Integer
         required: false
-        count: 1
   get_pipeline_execution:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       pipeline_execution_id:
         types:
         - String
         required: true
-        count: 1
   get_pipeline_state:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   get_third_party_job_details:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
   list_action_types:
     parameters:
       action_owner_filter:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_pipeline_executions:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_pipelines:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   poll_for_jobs:
     parameters:
       action_type_id:
         types:
         - Types::ActionTypeId
         required: true
-        count: 1
       max_batch_size:
         types:
         - Integer
         required: false
-        count: 1
       query_param:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   poll_for_third_party_jobs:
     parameters:
       action_type_id:
         types:
         - Types::ActionTypeId
         required: true
-        count: 1
       max_batch_size:
         types:
         - Integer
         required: false
-        count: 1
   put_action_revision:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       stage_name:
         types:
         - String
         required: true
-        count: 1
       action_name:
         types:
         - String
         required: true
-        count: 1
       action_revision:
         types:
         - Types::ActionRevision
         required: true
-        count: 1
   put_approval_result:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       stage_name:
         types:
         - String
         required: true
-        count: 1
       action_name:
         types:
         - String
         required: true
-        count: 1
       result:
         types:
         - Types::ApprovalResult
         required: true
-        count: 1
       token:
         types:
         - String
         required: true
-        count: 1
   put_job_failure_result:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       failure_details:
         types:
         - Types::FailureDetails
         required: true
-        count: 1
   put_job_success_result:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       current_revision:
         types:
         - Types::CurrentRevision
         required: false
-        count: 1
       continuation_token:
         types:
         - String
         required: false
-        count: 1
       execution_details:
         types:
         - Types::ExecutionDetails
         required: false
-        count: 1
   put_third_party_job_failure_result:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
       failure_details:
         types:
         - Types::FailureDetails
         required: true
-        count: 1
   put_third_party_job_success_result:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
       current_revision:
         types:
         - Types::CurrentRevision
         required: false
-        count: 1
       continuation_token:
         types:
         - String
         required: false
-        count: 1
       execution_details:
         types:
         - Types::ExecutionDetails
         required: false
-        count: 1
   retry_stage_execution:
     parameters:
       pipeline_name:
         types:
         - String
         required: true
-        count: 1
       stage_name:
         types:
         - String
         required: true
-        count: 1
       pipeline_execution_id:
         types:
         - String
         required: true
-        count: 1
       retry_mode:
         types:
         - String
         required: true
-        count: 1
   start_pipeline_execution:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   update_pipeline:
     parameters:
       pipeline:
         types:
         - Types::PipelineDeclaration
         required: true
-        count: 1

@@ -7,990 +7,817 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   activate_gateway:
     parameters:
       activation_key:
         types:
         - String
         required: true
-        count: 1
       gateway_name:
         types:
         - String
         required: true
-        count: 1
       gateway_timezone:
         types:
         - String
         required: true
-        count: 1
       gateway_region:
         types:
         - String
         required: true
-        count: 1
       gateway_type:
         types:
         - String
         required: false
-        count: 1
       tape_drive_type:
         types:
         - String
         required: false
-        count: 1
       medium_changer_type:
         types:
         - String
         required: false
-        count: 1
   add_cache:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       disk_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   add_upload_buffer:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       disk_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   add_working_storage:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       disk_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   cancel_archival:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_arn:
         types:
         - String
         required: true
-        count: 1
   cancel_retrieval:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_arn:
         types:
         - String
         required: true
-        count: 1
   create_cached_iscsi_volume:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       volume_size_in_bytes:
         types:
         - Integer
         required: true
-        count: 1
       snapshot_id:
         types:
         - String
         required: false
-        count: 1
       target_name:
         types:
         - String
         required: true
-        count: 1
       source_volume_arn:
         types:
         - String
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
   create_nfs_file_share:
     parameters:
       client_token:
         types:
         - String
         required: true
-        count: 1
       nfs_file_share_defaults:
         types:
         - Types::NFSFileShareDefaults
         required: false
-        count: 1
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       kms_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key:
         types:
         - String
         required: false
-        count: 1
       role:
         types:
         - String
         required: true
-        count: 1
       location_arn:
         types:
         - String
         required: true
-        count: 1
       default_storage_class:
         types:
         - String
         required: false
-        count: 1
       object_acl:
         types:
         - String
         required: false
-        count: 1
       client_list:
         types:
         - Array<String>
         required: false
-        count: 1
       squash:
         types:
         - String
         required: false
-        count: 1
       read_only:
         types:
         - Boolean
         required: false
-        count: 1
       guess_mime_type_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       requester_pays:
         types:
         - Boolean
         required: false
-        count: 1
   create_snapshot:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
       snapshot_description:
         types:
         - String
         required: true
-        count: 1
   create_snapshot_from_volume_recovery_point:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
       snapshot_description:
         types:
         - String
         required: true
-        count: 1
   create_stored_iscsi_volume:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       disk_id:
         types:
         - String
         required: true
-        count: 1
       snapshot_id:
         types:
         - String
         required: false
-        count: 1
       preserve_existing_data:
         types:
         - Boolean
         required: true
-        count: 1
       target_name:
         types:
         - String
         required: true
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   create_tape_with_barcode:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_size_in_bytes:
         types:
         - Integer
         required: true
-        count: 1
       tape_barcode:
         types:
         - String
         required: true
-        count: 1
   create_tapes:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_size_in_bytes:
         types:
         - Integer
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: true
-        count: 1
       num_tapes_to_create:
         types:
         - Integer
         required: true
-        count: 1
       tape_barcode_prefix:
         types:
         - String
         required: true
-        count: 1
   delete_bandwidth_rate_limit:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       bandwidth_type:
         types:
         - String
         required: true
-        count: 1
   delete_chap_credentials:
     parameters:
       target_arn:
         types:
         - String
         required: true
-        count: 1
       initiator_name:
         types:
         - String
         required: true
-        count: 1
   delete_file_share:
     parameters:
       file_share_arn:
         types:
         - String
         required: true
-        count: 1
       force_delete:
         types:
         - Boolean
         required: false
-        count: 1
   delete_gateway:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   delete_snapshot_schedule:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
   delete_tape:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_arn:
         types:
         - String
         required: true
-        count: 1
   delete_tape_archive:
     parameters:
       tape_arn:
         types:
         - String
         required: true
-        count: 1
   delete_volume:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
   describe_bandwidth_rate_limit:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   describe_cache:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   describe_cached_iscsi_volumes:
     parameters:
       volume_arns:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_chap_credentials:
     parameters:
       target_arn:
         types:
         - String
         required: true
-        count: 1
   describe_gateway_information:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   describe_maintenance_start_time:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   describe_nfs_file_shares:
     parameters:
       file_share_arn_list:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_snapshot_schedule:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
   describe_stored_iscsi_volumes:
     parameters:
       volume_arns:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_tape_archives:
     parameters:
       tape_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   describe_tape_recovery_points:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   describe_tapes:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       tape_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   describe_upload_buffer:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   describe_vtl_devices:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       vtl_device_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   describe_working_storage:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   disable_gateway:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   list_file_shares:
     parameters:
       gateway_arn:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_gateways:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   list_local_disks:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   list_tapes:
     parameters:
       tape_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   list_volume_initiators:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
   list_volume_recovery_points:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   list_volumes:
     parameters:
       gateway_arn:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   notify_when_uploaded:
     parameters:
       file_share_arn:
         types:
         - String
         required: true
-        count: 1
   refresh_cache:
     parameters:
       file_share_arn:
         types:
         - String
         required: true
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   reset_cache:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   retrieve_tape_archive:
     parameters:
       tape_arn:
         types:
         - String
         required: true
-        count: 1
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   retrieve_tape_recovery_point:
     parameters:
       tape_arn:
         types:
         - String
         required: true
-        count: 1
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   set_local_console_password:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       local_console_password:
         types:
         - String
         required: true
-        count: 1
   shutdown_gateway:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   start_gateway:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   update_bandwidth_rate_limit:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       average_upload_rate_limit_in_bits_per_sec:
         types:
         - Integer
         required: false
-        count: 1
       average_download_rate_limit_in_bits_per_sec:
         types:
         - Integer
         required: false
-        count: 1
   update_chap_credentials:
     parameters:
       target_arn:
         types:
         - String
         required: true
-        count: 1
       secret_to_authenticate_initiator:
         types:
         - String
         required: true
-        count: 1
       initiator_name:
         types:
         - String
         required: true
-        count: 1
       secret_to_authenticate_target:
         types:
         - String
         required: false
-        count: 1
   update_gateway_information:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       gateway_name:
         types:
         - String
         required: false
-        count: 1
       gateway_timezone:
         types:
         - String
         required: false
-        count: 1
   update_gateway_software_now:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
   update_maintenance_start_time:
     parameters:
       gateway_arn:
         types:
         - String
         required: true
-        count: 1
       hour_of_day:
         types:
         - Integer
         required: true
-        count: 1
       minute_of_hour:
         types:
         - Integer
         required: true
-        count: 1
       day_of_week:
         types:
         - Integer
         required: true
-        count: 1
   update_nfs_file_share:
     parameters:
       file_share_arn:
         types:
         - String
         required: true
-        count: 1
       kms_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key:
         types:
         - String
         required: false
-        count: 1
       nfs_file_share_defaults:
         types:
         - Types::NFSFileShareDefaults
         required: false
-        count: 1
       default_storage_class:
         types:
         - String
         required: false
-        count: 1
       object_acl:
         types:
         - String
         required: false
-        count: 1
       client_list:
         types:
         - Array<String>
         required: false
-        count: 1
       squash:
         types:
         - String
         required: false
-        count: 1
       read_only:
         types:
         - Boolean
         required: false
-        count: 1
       guess_mime_type_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       requester_pays:
         types:
         - Boolean
         required: false
-        count: 1
   update_snapshot_schedule:
     parameters:
       volume_arn:
         types:
         - String
         required: true
-        count: 1
       start_at:
         types:
         - Integer
         required: true
-        count: 1
       recurrence_in_hours:
         types:
         - Integer
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   update_vtl_device_type:
     parameters:
       vtl_device_arn:
         types:
         - String
         required: true
-        count: 1
       device_type:
         types:
         - String
         required: true
-        count: 1

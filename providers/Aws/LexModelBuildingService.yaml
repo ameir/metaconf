@@ -7,707 +7,580 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_bot_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
   create_intent_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
   create_slot_type_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
   delete_bot:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_bot_alias:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       bot_name:
         types:
         - String
         required: true
-        count: 1
   delete_bot_channel_association:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       bot_name:
         types:
         - String
         required: true
-        count: 1
       bot_alias:
         types:
         - String
         required: true
-        count: 1
   delete_bot_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   delete_intent:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_intent_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   delete_slot_type:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_slot_type_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   delete_utterances:
     parameters:
       bot_name:
         types:
         - String
         required: true
-        count: 1
       user_id:
         types:
         - String
         required: true
-        count: 1
   get_bot:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version_or_alias:
         types:
         - String
         required: true
-        count: 1
   get_bot_alias:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       bot_name:
         types:
         - String
         required: true
-        count: 1
   get_bot_aliases:
     parameters:
       bot_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       name_contains:
         types:
         - String
         required: false
-        count: 1
   get_bot_channel_association:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       bot_name:
         types:
         - String
         required: true
-        count: 1
       bot_alias:
         types:
         - String
         required: true
-        count: 1
   get_bot_channel_associations:
     parameters:
       bot_name:
         types:
         - String
         required: true
-        count: 1
       bot_alias:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       name_contains:
         types:
         - String
         required: false
-        count: 1
   get_bot_versions:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_bots:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       name_contains:
         types:
         - String
         required: false
-        count: 1
   get_builtin_intent:
     parameters:
       signature:
         types:
         - String
         required: true
-        count: 1
   get_builtin_intents:
     parameters:
       locale:
         types:
         - String
         required: false
-        count: 1
       signature_contains:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_builtin_slot_types:
     parameters:
       locale:
         types:
         - String
         required: false
-        count: 1
       signature_contains:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_export:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: true
-        count: 1
       export_type:
         types:
         - String
         required: true
-        count: 1
   get_import:
     parameters:
       import_id:
         types:
         - String
         required: true
-        count: 1
   get_intent:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   get_intent_versions:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_intents:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       name_contains:
         types:
         - String
         required: false
-        count: 1
   get_slot_type:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   get_slot_type_versions:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_slot_types:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       name_contains:
         types:
         - String
         required: false
-        count: 1
   get_utterances_view:
     parameters:
       bot_name:
         types:
         - String
         required: true
-        count: 1
       bot_versions:
         types:
         - Array<String>
         required: true
-        count: 1
       status_type:
         types:
         - String
         required: true
-        count: 1
   put_bot:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       intents:
         types:
         - Array<Types::Intent>
         required: false
-        count: 1
       clarification_prompt:
         types:
         - Types::Prompt
         required: false
-        count: 1
       abort_statement:
         types:
         - Types::Statement
         required: false
-        count: 1
       idle_session_ttl_in_seconds:
         types:
         - Integer
         required: false
-        count: 1
       voice_id:
         types:
         - String
         required: false
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
       process_behavior:
         types:
         - String
         required: false
-        count: 1
       locale:
         types:
         - String
         required: true
-        count: 1
       child_directed:
         types:
         - Boolean
         required: true
-        count: 1
       create_version:
         types:
         - Boolean
         required: false
-        count: 1
   put_bot_alias:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       bot_version:
         types:
         - String
         required: true
-        count: 1
       bot_name:
         types:
         - String
         required: true
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
   put_intent:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       slots:
         types:
         - Array<Types::Slot>
         required: false
-        count: 1
       sample_utterances:
         types:
         - Array<String>
         required: false
-        count: 1
       confirmation_prompt:
         types:
         - Types::Prompt
         required: false
-        count: 1
       rejection_statement:
         types:
         - Types::Statement
         required: false
-        count: 1
       follow_up_prompt:
         types:
         - Types::FollowUpPrompt
         required: false
-        count: 1
       conclusion_statement:
         types:
         - Types::Statement
         required: false
-        count: 1
       dialog_code_hook:
         types:
         - Types::CodeHook
         required: false
-        count: 1
       fulfillment_activity:
         types:
         - Types::FulfillmentActivity
         required: false
-        count: 1
       parent_intent_signature:
         types:
         - String
         required: false
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
       create_version:
         types:
         - Boolean
         required: false
-        count: 1
   put_slot_type:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       enumeration_values:
         types:
         - Array<Types::EnumerationValue>
         required: false
-        count: 1
       checksum:
         types:
         - String
         required: false
-        count: 1
       value_selection_strategy:
         types:
         - String
         required: false
-        count: 1
       create_version:
         types:
         - Boolean
         required: false
-        count: 1
   start_import:
     parameters:
       payload:
@@ -715,14 +588,11 @@ methods:
         - String
         - IO
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: true
-        count: 1
       merge_strategy:
         types:
         - String
         required: true
-        count: 1

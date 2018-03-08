@@ -7,1494 +7,1216 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_role_to_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
   add_source_identifier_to_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       source_identifier:
         types:
         - String
         required: true
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   apply_pending_maintenance_action:
     parameters:
       resource_identifier:
         types:
         - String
         required: true
-        count: 1
       apply_action:
         types:
         - String
         required: true
-        count: 1
       opt_in_type:
         types:
         - String
         required: true
-        count: 1
   authorize_db_security_group_ingress:
     parameters:
       db_security_group_name:
         types:
         - String
         required: true
-        count: 1
       cidrip:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_name:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_id:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
   copy_db_cluster_parameter_group:
     parameters:
       source_db_cluster_parameter_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_cluster_parameter_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_cluster_parameter_group_description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   copy_db_cluster_snapshot:
     parameters:
       source_db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       pre_signed_url:
         types:
         - String
         required: false
-        count: 1
       copy_tags:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: false
-        count: 1
   copy_db_parameter_group:
     parameters:
       source_db_parameter_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_parameter_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_parameter_group_description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   copy_db_snapshot:
     parameters:
       source_db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       copy_tags:
         types:
         - Boolean
         required: false
-        count: 1
       pre_signed_url:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: false
-        count: 1
   copy_option_group:
     parameters:
       source_option_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_option_group_identifier:
         types:
         - String
         required: true
-        count: 1
       target_option_group_description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_cluster:
     parameters:
       availability_zones:
         types:
         - Array<String>
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       character_set_name:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       db_cluster_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: true
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       master_username:
         types:
         - String
         required: false
-        count: 1
       master_user_password:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       replication_source_identifier:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       storage_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       pre_signed_url:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: false
-        count: 1
   create_db_cluster_parameter_group:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       db_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_cluster_snapshot:
     parameters:
       db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_instance:
     parameters:
       db_name:
         types:
         - String
         required: false
-        count: 1
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       allocated_storage:
         types:
         - Integer
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: true
-        count: 1
       engine:
         types:
         - String
         required: true
-        count: 1
       master_username:
         types:
         - String
         required: false
-        count: 1
       master_user_password:
         types:
         - String
         required: false
-        count: 1
       db_security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       db_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       character_set_name:
         types:
         - String
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       db_cluster_identifier:
         types:
         - String
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       tde_credential_arn:
         types:
         - String
         required: false
-        count: 1
       tde_credential_password:
         types:
         - String
         required: false
-        count: 1
       storage_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       domain:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       monitoring_interval:
         types:
         - Integer
         required: false
-        count: 1
       monitoring_role_arn:
         types:
         - String
         required: false
-        count: 1
       domain_iam_role_name:
         types:
         - String
         required: false
-        count: 1
       promotion_tier:
         types:
         - Integer
         required: false
-        count: 1
       timezone:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       enable_performance_insights:
         types:
         - Boolean
         required: false
-        count: 1
       performance_insights_kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
         required: false
-        count: 1
   create_db_instance_read_replica:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       source_db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       monitoring_interval:
         types:
         - Integer
         required: false
-        count: 1
       monitoring_role_arn:
         types:
         - String
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       pre_signed_url:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       enable_performance_insights:
         types:
         - Boolean
         required: false
-        count: 1
       performance_insights_kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: false
-        count: 1
   create_db_parameter_group:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       db_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_security_group:
     parameters:
       db_security_group_name:
         types:
         - String
         required: true
-        count: 1
       db_security_group_description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_snapshot:
     parameters:
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_db_subnet_group:
     parameters:
       db_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
       db_subnet_group_description:
         types:
         - String
         required: true
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       sns_topic_arn:
         types:
         - String
         required: true
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       source_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_option_group:
     parameters:
       option_group_name:
         types:
         - String
         required: true
-        count: 1
       engine_name:
         types:
         - String
         required: true
-        count: 1
       major_engine_version:
         types:
         - String
         required: true
-        count: 1
       option_group_description:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   delete_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       skip_final_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       final_db_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
   delete_db_cluster_parameter_group:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_db_cluster_snapshot:
     parameters:
       db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
   delete_db_instance:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       skip_final_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       final_db_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
   delete_db_parameter_group:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_db_security_group:
     parameters:
       db_security_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_db_snapshot:
     parameters:
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
   delete_db_subnet_group:
     parameters:
       db_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
   delete_option_group:
     parameters:
       option_group_name:
         types:
         - String
         required: true
-        count: 1
   describe_certificates:
     parameters:
       certificate_identifier:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_cluster_parameter_groups:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_cluster_parameters:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       source:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_cluster_snapshot_attributes:
     parameters:
       db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
   describe_db_cluster_snapshots:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: false
-        count: 1
       db_cluster_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
       snapshot_type:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       include_shared:
         types:
         - Boolean
         required: false
-        count: 1
       include_public:
         types:
         - Boolean
         required: false
-        count: 1
   describe_db_clusters:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_engine_versions:
     parameters:
       engine:
         types:
         - String
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       db_parameter_group_family:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       default_only:
         types:
         - Boolean
         required: false
-        count: 1
       list_supported_character_sets:
         types:
         - Boolean
         required: false
-        count: 1
       list_supported_timezones:
         types:
         - Boolean
         required: false
-        count: 1
   describe_db_instances:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_log_files:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       filename_contains:
         types:
         - String
         required: false
-        count: 1
       file_last_written:
         types:
         - Integer
         required: false
-        count: 1
       file_size:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_parameter_groups:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_parameters:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       source:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_security_groups:
     parameters:
       db_security_group_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_db_snapshot_attributes:
     parameters:
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
   describe_db_snapshots:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: false
-        count: 1
       db_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
       snapshot_type:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       include_shared:
         types:
         - Boolean
         required: false
-        count: 1
       include_public:
         types:
         - Boolean
         required: false
-        count: 1
   describe_db_subnet_groups:
     parameters:
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_engine_default_cluster_parameters:
     parameters:
       db_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_engine_default_parameters:
     parameters:
       db_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_event_categories:
     parameters:
       source_type:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   describe_event_subscriptions:
     parameters:
       subscription_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_events:
     parameters:
       source_identifier:
         types:
         - String
         required: false
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -1503,7 +1225,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -1512,1063 +1233,864 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       duration:
         types:
         - Integer
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_option_group_options:
     parameters:
       engine_name:
         types:
         - String
         required: true
-        count: 1
       major_engine_version:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_option_groups:
     parameters:
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       engine_name:
         types:
         - String
         required: false
-        count: 1
       major_engine_version:
         types:
         - String
         required: false
-        count: 1
   describe_orderable_db_instance_options:
     parameters:
       engine:
         types:
         - String
         required: true
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       vpc:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_pending_maintenance_actions:
     parameters:
       resource_identifier:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
   describe_reserved_db_instances:
     parameters:
       reserved_db_instance_id:
         types:
         - String
         required: false
-        count: 1
       reserved_db_instances_offering_id:
         types:
         - String
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       duration:
         types:
         - String
         required: false
-        count: 1
       product_description:
         types:
         - String
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_db_instances_offerings:
     parameters:
       reserved_db_instances_offering_id:
         types:
         - String
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       duration:
         types:
         - String
         required: false
-        count: 1
       product_description:
         types:
         - String
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_source_regions:
     parameters:
       region_name:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   describe_valid_db_instance_modifications:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
   download_db_log_file_portion:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       log_file_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       number_of_lines:
         types:
         - Integer
         required: false
-        count: 1
   failover_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: false
-        count: 1
       target_db_instance_identifier:
         types:
         - String
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   modify_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       new_db_cluster_identifier:
         types:
         - String
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       db_cluster_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       master_user_password:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
   modify_db_cluster_parameter_group:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Array<Types::Parameter>
         required: true
-        count: 1
   modify_db_cluster_snapshot_attribute:
     parameters:
       db_cluster_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: true
-        count: 1
       values_to_add:
         types:
         - Array<String>
         required: false
-        count: 1
       values_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_db_instance:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       allocated_storage:
         types:
         - Integer
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       db_security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
       master_user_password:
         types:
         - String
         required: false
-        count: 1
       db_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       allow_major_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       new_db_instance_identifier:
         types:
         - String
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       tde_credential_arn:
         types:
         - String
         required: false
-        count: 1
       tde_credential_password:
         types:
         - String
         required: false
-        count: 1
       ca_certificate_identifier:
         types:
         - String
         required: false
-        count: 1
       domain:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       monitoring_interval:
         types:
         - Integer
         required: false
-        count: 1
       db_port_number:
         types:
         - Integer
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       monitoring_role_arn:
         types:
         - String
         required: false
-        count: 1
       domain_iam_role_name:
         types:
         - String
         required: false
-        count: 1
       promotion_tier:
         types:
         - Integer
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       enable_performance_insights:
         types:
         - Boolean
         required: false
-        count: 1
       performance_insights_kms_key_id:
         types:
         - String
         required: false
-        count: 1
       cloudwatch_logs_export_configuration:
         types:
         - Types::CloudwatchLogsExportConfiguration
         required: false
-        count: 1
   modify_db_parameter_group:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Array<Types::Parameter>
         required: true
-        count: 1
   modify_db_snapshot:
     parameters:
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
   modify_db_snapshot_attribute:
     parameters:
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: true
-        count: 1
       values_to_add:
         types:
         - Array<String>
         required: false
-        count: 1
       values_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_db_subnet_group:
     parameters:
       db_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
       db_subnet_group_description:
         types:
         - String
         required: false
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   modify_event_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       sns_topic_arn:
         types:
         - String
         required: false
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       event_categories:
         types:
         - Array<String>
         required: false
-        count: 1
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
   modify_option_group:
     parameters:
       option_group_name:
         types:
         - String
         required: true
-        count: 1
       options_to_include:
         types:
         - Array<Types::OptionConfiguration>
         required: false
-        count: 1
       options_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
   promote_read_replica:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
   promote_read_replica_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
   purchase_reserved_db_instances_offering:
     parameters:
       reserved_db_instances_offering_id:
         types:
         - String
         required: true
-        count: 1
       reserved_db_instance_id:
         types:
         - String
         required: false
-        count: 1
       db_instance_count:
         types:
         - Integer
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   reboot_db_instance:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       force_failover:
         types:
         - Boolean
         required: false
-        count: 1
   remove_role_from_db_cluster:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
   remove_source_identifier_from_subscription:
     parameters:
       subscription_name:
         types:
         - String
         required: true
-        count: 1
       source_identifier:
         types:
         - String
         required: true
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   reset_db_cluster_parameter_group:
     parameters:
       db_cluster_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       reset_all_parameters:
         types:
         - Boolean
         required: false
-        count: 1
       parameters:
         types:
         - Array<Types::Parameter>
         required: false
-        count: 1
   reset_db_parameter_group:
     parameters:
       db_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       reset_all_parameters:
         types:
         - Boolean
         required: false
-        count: 1
       parameters:
         types:
         - Array<Types::Parameter>
         required: false
-        count: 1
   restore_db_cluster_from_s3:
     parameters:
       availability_zones:
         types:
         - Array<String>
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       character_set_name:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       db_cluster_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: true
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       master_username:
         types:
         - String
         required: true
-        count: 1
       master_user_password:
         types:
         - String
         required: true
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       storage_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       source_engine:
         types:
         - String
         required: true
-        count: 1
       source_engine_version:
         types:
         - String
         required: true
-        count: 1
       s3_bucket_name:
         types:
         - String
         required: true
-        count: 1
       s3_prefix:
         types:
         - String
         required: false
-        count: 1
       s3_ingestion_role_arn:
         types:
         - String
         required: true
-        count: 1
   restore_db_cluster_from_snapshot:
     parameters:
       availability_zones:
         types:
         - Array<String>
         required: false
-        count: 1
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       engine:
         types:
         - String
         required: true
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
   restore_db_cluster_to_point_in_time:
     parameters:
       db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       restore_type:
         types:
         - String
         required: false
-        count: 1
       source_db_cluster_identifier:
         types:
         - String
         required: true
-        count: 1
       restore_to_time:
         types:
         - Time
@@ -2577,373 +2099,300 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       use_latest_restorable_time:
         types:
         - Boolean
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
   restore_db_instance_from_db_snapshot:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       db_snapshot_identifier:
         types:
         - String
         required: true
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       db_name:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       tde_credential_arn:
         types:
         - String
         required: false
-        count: 1
       tde_credential_password:
         types:
         - String
         required: false
-        count: 1
       domain:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       domain_iam_role_name:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
         required: false
-        count: 1
   restore_db_instance_from_s3:
     parameters:
       db_name:
         types:
         - String
         required: false
-        count: 1
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       allocated_storage:
         types:
         - Integer
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: true
-        count: 1
       engine:
         types:
         - String
         required: true
-        count: 1
       master_username:
         types:
         - String
         required: false
-        count: 1
       master_user_password:
         types:
         - String
         required: false
-        count: 1
       db_security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       vpc_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       db_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       backup_retention_period:
         types:
         - Integer
         required: false
-        count: 1
       preferred_backup_window:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       storage_encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       monitoring_interval:
         types:
         - Integer
         required: false
-        count: 1
       monitoring_role_arn:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       source_engine:
         types:
         - String
         required: true
-        count: 1
       source_engine_version:
         types:
         - String
         required: true
-        count: 1
       s3_bucket_name:
         types:
         - String
         required: true
-        count: 1
       s3_prefix:
         types:
         - String
         required: false
-        count: 1
       s3_ingestion_role_arn:
         types:
         - String
         required: true
-        count: 1
       enable_performance_insights:
         types:
         - Boolean
         required: false
-        count: 1
       performance_insights_kms_key_id:
         types:
         - String
         required: false
-        count: 1
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
         required: false
-        count: 1
   restore_db_instance_to_point_in_time:
     parameters:
       source_db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       target_db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       restore_time:
         types:
         - Time
@@ -2952,182 +2401,147 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       use_latest_restorable_time:
         types:
         - Boolean
         required: false
-        count: 1
       db_instance_class:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       db_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       multi_az:
         types:
         - Boolean
         required: false
-        count: 1
       publicly_accessible:
         types:
         - Boolean
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       license_model:
         types:
         - String
         required: false
-        count: 1
       db_name:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       option_group_name:
         types:
         - String
         required: false
-        count: 1
       copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       storage_type:
         types:
         - String
         required: false
-        count: 1
       tde_credential_arn:
         types:
         - String
         required: false
-        count: 1
       tde_credential_password:
         types:
         - String
         required: false
-        count: 1
       domain:
         types:
         - String
         required: false
-        count: 1
       domain_iam_role_name:
         types:
         - String
         required: false
-        count: 1
       enable_iam_database_authentication:
         types:
         - Boolean
         required: false
-        count: 1
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
         required: false
-        count: 1
   revoke_db_security_group_ingress:
     parameters:
       db_security_group_name:
         types:
         - String
         required: true
-        count: 1
       cidrip:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_name:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_id:
         types:
         - String
         required: false
-        count: 1
       ec2_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
   start_db_instance:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
   stop_db_instance:
     parameters:
       db_instance_identifier:
         types:
         - String
         required: true
-        count: 1
       db_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

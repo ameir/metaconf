@@ -7,317 +7,261 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tag_list:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   create_hapg:
     parameters:
       label:
         types:
         - String
         required: true
-        count: 1
   create_hsm:
     parameters:
       subnet_id:
         types:
         - String
         required: true
-        count: 1
       ssh_key:
         types:
         - String
         required: true
-        count: 1
       eni_ip:
         types:
         - String
         required: false
-        count: 1
       iam_role_arn:
         types:
         - String
         required: true
-        count: 1
       external_id:
         types:
         - String
         required: false
-        count: 1
       subscription_type:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       syslog_ip:
         types:
         - String
         required: false
-        count: 1
   create_luna_client:
     parameters:
       label:
         types:
         - String
         required: false
-        count: 1
       certificate:
         types:
         - String
         required: true
-        count: 1
   delete_hapg:
     parameters:
       hapg_arn:
         types:
         - String
         required: true
-        count: 1
   delete_hsm:
     parameters:
       hsm_arn:
         types:
         - String
         required: true
-        count: 1
   delete_luna_client:
     parameters:
       client_arn:
         types:
         - String
         required: true
-        count: 1
   describe_hapg:
     parameters:
       hapg_arn:
         types:
         - String
         required: true
-        count: 1
   describe_hsm:
     parameters:
       hsm_arn:
         types:
         - String
         required: false
-        count: 1
       hsm_serial_number:
         types:
         - String
         required: false
-        count: 1
   describe_luna_client:
     parameters:
       client_arn:
         types:
         - String
         required: false
-        count: 1
       certificate_fingerprint:
         types:
         - String
         required: false
-        count: 1
   get_config:
     parameters:
       client_arn:
         types:
         - String
         required: true
-        count: 1
       client_version:
         types:
         - String
         required: true
-        count: 1
       hapg_list:
         types:
         - Array<String>
         required: true
-        count: 1
   list_hapgs:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_hsms:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_luna_clients:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
   modify_hapg:
     parameters:
       hapg_arn:
         types:
         - String
         required: true
-        count: 1
       label:
         types:
         - String
         required: false
-        count: 1
       partition_serial_list:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_hsm:
     parameters:
       hsm_arn:
         types:
         - String
         required: true
-        count: 1
       subnet_id:
         types:
         - String
         required: false
-        count: 1
       eni_ip:
         types:
         - String
         required: false
-        count: 1
       iam_role_arn:
         types:
         - String
         required: false
-        count: 1
       external_id:
         types:
         - String
         required: false
-        count: 1
       syslog_ip:
         types:
         - String
         required: false
-        count: 1
   modify_luna_client:
     parameters:
       client_arn:
         types:
         - String
         required: true
-        count: 1
       certificate:
         types:
         - String
         required: true
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tag_key_list:
         types:
         - Array<String>
         required: true
-        count: 1

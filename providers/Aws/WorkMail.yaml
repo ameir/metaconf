@@ -7,520 +7,427 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   associate_delegate_to_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
   associate_member_to_group:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
       member_id:
         types:
         - String
         required: true
-        count: 1
   create_alias:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
       alias:
         types:
         - String
         required: true
-        count: 1
   create_group:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   create_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
   create_user:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       display_name:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: true
-        count: 1
   delete_alias:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
       alias:
         types:
         - String
         required: true
-        count: 1
   delete_group:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
   delete_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
   delete_user:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       user_id:
         types:
         - String
         required: true
-        count: 1
   deregister_from_work_mail:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
   describe_group:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
   describe_organization:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
   describe_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
   describe_user:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       user_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_delegate_from_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_member_from_group:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
       member_id:
         types:
         - String
         required: true
-        count: 1
   list_aliases:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_group_members:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_groups:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_organizations:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_resource_delegates:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_resources:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_users:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   register_to_work_mail:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
       email:
         types:
         - String
         required: true
-        count: 1
   reset_password:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       user_id:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: true
-        count: 1
   update_primary_email_address:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       entity_id:
         types:
         - String
         required: true
-        count: 1
       email:
         types:
         - String
         required: true
-        count: 1
   update_resource:
     parameters:
       organization_id:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       booking_options:
         types:
         - Types::BookingOptions
         required: false
-        count: 1

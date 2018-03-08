@@ -7,816 +7,665 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   count_closed_workflow_executions:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       start_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: false
-        count: 1
       close_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: false
-        count: 1
       execution_filter:
         types:
         - Types::WorkflowExecutionFilter
         required: false
-        count: 1
       type_filter:
         types:
         - Types::WorkflowTypeFilter
         required: false
-        count: 1
       tag_filter:
         types:
         - Types::TagFilter
         required: false
-        count: 1
       close_status_filter:
         types:
         - Types::CloseStatusFilter
         required: false
-        count: 1
   count_open_workflow_executions:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       start_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: true
-        count: 1
       type_filter:
         types:
         - Types::WorkflowTypeFilter
         required: false
-        count: 1
       tag_filter:
         types:
         - Types::TagFilter
         required: false
-        count: 1
       execution_filter:
         types:
         - Types::WorkflowExecutionFilter
         required: false
-        count: 1
   count_pending_activity_tasks:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       task_list:
         types:
         - Types::TaskList
         required: true
-        count: 1
   count_pending_decision_tasks:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       task_list:
         types:
         - Types::TaskList
         required: true
-        count: 1
   deprecate_activity_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       activity_type:
         types:
         - Types::ActivityType
         required: true
-        count: 1
   deprecate_domain:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   deprecate_workflow_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_type:
         types:
         - Types::WorkflowType
         required: true
-        count: 1
   describe_activity_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       activity_type:
         types:
         - Types::ActivityType
         required: true
-        count: 1
   describe_domain:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_workflow_execution:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       execution:
         types:
         - Types::WorkflowExecution
         required: true
-        count: 1
   describe_workflow_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_type:
         types:
         - Types::WorkflowType
         required: true
-        count: 1
   get_workflow_execution_history:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       execution:
         types:
         - Types::WorkflowExecution
         required: true
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_activity_types:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       registration_status:
         types:
         - String
         required: true
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_closed_workflow_executions:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       start_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: false
-        count: 1
       close_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: false
-        count: 1
       execution_filter:
         types:
         - Types::WorkflowExecutionFilter
         required: false
-        count: 1
       close_status_filter:
         types:
         - Types::CloseStatusFilter
         required: false
-        count: 1
       type_filter:
         types:
         - Types::WorkflowTypeFilter
         required: false
-        count: 1
       tag_filter:
         types:
         - Types::TagFilter
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_domains:
     parameters:
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       registration_status:
         types:
         - String
         required: true
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   list_open_workflow_executions:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       start_time_filter:
         types:
         - Types::ExecutionTimeFilter
         required: true
-        count: 1
       type_filter:
         types:
         - Types::WorkflowTypeFilter
         required: false
-        count: 1
       tag_filter:
         types:
         - Types::TagFilter
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
       execution_filter:
         types:
         - Types::WorkflowExecutionFilter
         required: false
-        count: 1
   list_workflow_types:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       registration_status:
         types:
         - String
         required: true
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   poll_for_activity_task:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       task_list:
         types:
         - Types::TaskList
         required: true
-        count: 1
       identity:
         types:
         - String
         required: false
-        count: 1
   poll_for_decision_task:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       task_list:
         types:
         - Types::TaskList
         required: true
-        count: 1
       identity:
         types:
         - String
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
       maximum_page_size:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   record_activity_task_heartbeat:
     parameters:
       task_token:
         types:
         - String
         required: true
-        count: 1
       details:
         types:
         - String
         required: false
-        count: 1
   register_activity_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       default_task_start_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
       default_task_heartbeat_timeout:
         types:
         - String
         required: false
-        count: 1
       default_task_list:
         types:
         - Types::TaskList
         required: false
-        count: 1
       default_task_priority:
         types:
         - String
         required: false
-        count: 1
       default_task_schedule_to_start_timeout:
         types:
         - String
         required: false
-        count: 1
       default_task_schedule_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
   register_domain:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       workflow_execution_retention_period_in_days:
         types:
         - String
         required: true
-        count: 1
   register_workflow_type:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       default_task_start_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
       default_execution_start_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
       default_task_list:
         types:
         - Types::TaskList
         required: false
-        count: 1
       default_task_priority:
         types:
         - String
         required: false
-        count: 1
       default_child_policy:
         types:
         - String
         required: false
-        count: 1
       default_lambda_role:
         types:
         - String
         required: false
-        count: 1
   request_cancel_workflow_execution:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_id:
         types:
         - String
         required: true
-        count: 1
       run_id:
         types:
         - String
         required: false
-        count: 1
   respond_activity_task_canceled:
     parameters:
       task_token:
         types:
         - String
         required: true
-        count: 1
       details:
         types:
         - String
         required: false
-        count: 1
   respond_activity_task_completed:
     parameters:
       task_token:
         types:
         - String
         required: true
-        count: 1
       result:
         types:
         - String
         required: false
-        count: 1
   respond_activity_task_failed:
     parameters:
       task_token:
         types:
         - String
         required: true
-        count: 1
       reason:
         types:
         - String
         required: false
-        count: 1
       details:
         types:
         - String
         required: false
-        count: 1
   respond_decision_task_completed:
     parameters:
       task_token:
         types:
         - String
         required: true
-        count: 1
       decisions:
         types:
         - Array<Types::Decision>
         required: false
-        count: 1
       execution_context:
         types:
         - String
         required: false
-        count: 1
   signal_workflow_execution:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_id:
         types:
         - String
         required: true
-        count: 1
       run_id:
         types:
         - String
         required: false
-        count: 1
       signal_name:
         types:
         - String
         required: true
-        count: 1
       input:
         types:
         - String
         required: false
-        count: 1
   start_workflow_execution:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_id:
         types:
         - String
         required: true
-        count: 1
       workflow_type:
         types:
         - Types::WorkflowType
         required: true
-        count: 1
       task_list:
         types:
         - Types::TaskList
         required: false
-        count: 1
       task_priority:
         types:
         - String
         required: false
-        count: 1
       input:
         types:
         - String
         required: false
-        count: 1
       execution_start_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
       tag_list:
         types:
         - Array<String>
         required: false
-        count: 1
       task_start_to_close_timeout:
         types:
         - String
         required: false
-        count: 1
       child_policy:
         types:
         - String
         required: false
-        count: 1
       lambda_role:
         types:
         - String
         required: false
-        count: 1
   terminate_workflow_execution:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
       workflow_id:
         types:
         - String
         required: true
-        count: 1
       run_id:
         types:
         - String
         required: false
-        count: 1
       reason:
         types:
         - String
         required: false
-        count: 1
       details:
         types:
         - String
         required: false
-        count: 1
       child_policy:
         types:
         - String
         required: false
-        count: 1

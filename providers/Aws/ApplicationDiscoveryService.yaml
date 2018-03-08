@@ -7,302 +7,248 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   associate_configuration_items_to_application:
     parameters:
       application_configuration_id:
         types:
         - String
         required: true
-        count: 1
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   create_application:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   create_tags:
     parameters:
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   delete_applications:
     parameters:
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_tags:
     parameters:
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   describe_agents:
     parameters:
       agent_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_configurations:
     parameters:
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_export_configurations:
     parameters:
       export_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_export_tasks:
     parameters:
       export_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::ExportFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_tags:
     parameters:
       filters:
         types:
         - Array<Types::TagFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   disassociate_configuration_items_from_application:
     parameters:
       application_configuration_id:
         types:
         - String
         required: true
-        count: 1
       configuration_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   list_configurations:
     parameters:
       configuration_type:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       order_by:
         types:
         - Array<Types::OrderByElement>
         required: false
-        count: 1
   list_server_neighbors:
     parameters:
       configuration_id:
         types:
         - String
         required: true
-        count: 1
       port_information_needed:
         types:
         - Boolean
         required: false
-        count: 1
       neighbor_configuration_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   start_data_collection_by_agent_ids:
     parameters:
       agent_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   start_export_task:
     parameters:
       export_data_format:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::ExportFilter>
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -311,7 +257,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -320,28 +265,23 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   stop_data_collection_by_agent_ids:
     parameters:
       agent_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   update_application:
     parameters:
       configuration_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1

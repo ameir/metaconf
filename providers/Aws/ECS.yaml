@@ -7,748 +7,610 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_cluster:
     parameters:
       cluster_name:
         types:
         - String
         required: false
-        count: 1
   create_service:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       service_name:
         types:
         - String
         required: true
-        count: 1
       task_definition:
         types:
         - String
         required: true
-        count: 1
       load_balancers:
         types:
         - Array<Types::LoadBalancer>
         required: false
-        count: 1
       desired_count:
         types:
         - Integer
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       launch_type:
         types:
         - String
         required: false
-        count: 1
       platform_version:
         types:
         - String
         required: false
-        count: 1
       role:
         types:
         - String
         required: false
-        count: 1
       deployment_configuration:
         types:
         - Types::DeploymentConfiguration
         required: false
-        count: 1
       placement_constraints:
         types:
         - Array<Types::PlacementConstraint>
         required: false
-        count: 1
       placement_strategy:
         types:
         - Array<Types::PlacementStrategy>
         required: false
-        count: 1
       network_configuration:
         types:
         - Types::NetworkConfiguration
         required: false
-        count: 1
       health_check_grace_period_seconds:
         types:
         - Integer
         required: false
-        count: 1
   delete_attributes:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       attributes:
         types:
         - Array<Types::Attribute>
         required: true
-        count: 1
   delete_cluster:
     parameters:
       cluster:
         types:
         - String
         required: true
-        count: 1
   delete_service:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       service:
         types:
         - String
         required: true
-        count: 1
   deregister_container_instance:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       container_instance:
         types:
         - String
         required: true
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
   deregister_task_definition:
     parameters:
       task_definition:
         types:
         - String
         required: true
-        count: 1
   describe_clusters:
     parameters:
       clusters:
         types:
         - Array<String>
         required: false
-        count: 1
       include:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_container_instances:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       container_instances:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_services:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       services:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_task_definition:
     parameters:
       task_definition:
         types:
         - String
         required: true
-        count: 1
   describe_tasks:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       tasks:
         types:
         - Array<String>
         required: true
-        count: 1
   discover_poll_endpoint:
     parameters:
       container_instance:
         types:
         - String
         required: false
-        count: 1
       cluster:
         types:
         - String
         required: false
-        count: 1
   list_attributes:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       target_type:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: false
-        count: 1
       attribute_value:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_clusters:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_container_instances:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
   list_services:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       launch_type:
         types:
         - String
         required: false
-        count: 1
   list_task_definition_families:
     parameters:
       family_prefix:
         types:
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_task_definitions:
     parameters:
       family_prefix:
         types:
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       sort:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_tasks:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       container_instance:
         types:
         - String
         required: false
-        count: 1
       family:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       started_by:
         types:
         - String
         required: false
-        count: 1
       service_name:
         types:
         - String
         required: false
-        count: 1
       desired_status:
         types:
         - String
         required: false
-        count: 1
       launch_type:
         types:
         - String
         required: false
-        count: 1
   put_attributes:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       attributes:
         types:
         - Array<Types::Attribute>
         required: true
-        count: 1
   register_container_instance:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       instance_identity_document:
         types:
         - String
         required: false
-        count: 1
       instance_identity_document_signature:
         types:
         - String
         required: false
-        count: 1
       total_resources:
         types:
         - Array<Types::Resource>
         required: false
-        count: 1
       version_info:
         types:
         - Types::VersionInfo
         required: false
-        count: 1
       container_instance_arn:
         types:
         - String
         required: false
-        count: 1
       attributes:
         types:
         - Array<Types::Attribute>
         required: false
-        count: 1
   register_task_definition:
     parameters:
       family:
         types:
         - String
         required: true
-        count: 1
       task_role_arn:
         types:
         - String
         required: false
-        count: 1
       execution_role_arn:
         types:
         - String
         required: false
-        count: 1
       network_mode:
         types:
         - String
         required: false
-        count: 1
       container_definitions:
         types:
         - Array<Types::ContainerDefinition>
         required: true
-        count: 1
       volumes:
         types:
         - Array<Types::Volume>
         required: false
-        count: 1
       placement_constraints:
         types:
         - Array<Types::TaskDefinitionPlacementConstraint>
         required: false
-        count: 1
       requires_compatibilities:
         types:
         - Array<String>
         required: false
-        count: 1
       cpu:
         types:
         - String
         required: false
-        count: 1
       memory:
         types:
         - String
         required: false
-        count: 1
   run_task:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       task_definition:
         types:
         - String
         required: true
-        count: 1
       overrides:
         types:
         - Types::TaskOverride
         required: false
-        count: 1
       count:
         types:
         - Integer
         required: false
-        count: 1
       started_by:
         types:
         - String
         required: false
-        count: 1
       group:
         types:
         - String
         required: false
-        count: 1
       placement_constraints:
         types:
         - Array<Types::PlacementConstraint>
         required: false
-        count: 1
       placement_strategy:
         types:
         - Array<Types::PlacementStrategy>
         required: false
-        count: 1
       launch_type:
         types:
         - String
         required: false
-        count: 1
       platform_version:
         types:
         - String
         required: false
-        count: 1
       network_configuration:
         types:
         - Types::NetworkConfiguration
         required: false
-        count: 1
   start_task:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       task_definition:
         types:
         - String
         required: true
-        count: 1
       overrides:
         types:
         - Types::TaskOverride
         required: false
-        count: 1
       container_instances:
         types:
         - Array<String>
         required: true
-        count: 1
       started_by:
         types:
         - String
         required: false
-        count: 1
       group:
         types:
         - String
         required: false
-        count: 1
       network_configuration:
         types:
         - Types::NetworkConfiguration
         required: false
-        count: 1
   stop_task:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       task:
         types:
         - String
         required: true
-        count: 1
       reason:
         types:
         - String
         required: false
-        count: 1
   submit_container_state_change:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       task:
         types:
         - String
         required: false
-        count: 1
       container_name:
         types:
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       exit_code:
         types:
         - Integer
         required: false
-        count: 1
       reason:
         types:
         - String
         required: false
-        count: 1
       network_bindings:
         types:
         - Array<Types::NetworkBinding>
         required: false
-        count: 1
   submit_task_state_change:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       task:
         types:
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       reason:
         types:
         - String
         required: false
-        count: 1
       containers:
         types:
         - Array<Types::ContainerStateChange>
         required: false
-        count: 1
       attachments:
         types:
         - Array<Types::AttachmentStateChange>
         required: false
-        count: 1
       pull_started_at:
         types:
         - Time
@@ -757,7 +619,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       pull_stopped_at:
         types:
         - Time
@@ -766,7 +627,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       execution_stopped_at:
         types:
         - Time
@@ -775,102 +635,83 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   update_container_agent:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       container_instance:
         types:
         - String
         required: true
-        count: 1
   update_container_instances_state:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       container_instances:
         types:
         - Array<String>
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   update_service:
     parameters:
       cluster:
         types:
         - String
         required: false
-        count: 1
       service:
         types:
         - String
         required: true
-        count: 1
       desired_count:
         types:
         - Integer
         required: false
-        count: 1
       task_definition:
         types:
         - String
         required: false
-        count: 1
       deployment_configuration:
         types:
         - Types::DeploymentConfiguration
         required: false
-        count: 1
       network_configuration:
         types:
         - Types::NetworkConfiguration
         required: false
-        count: 1
       platform_version:
         types:
         - String
         required: false
-        count: 1
       force_new_deployment:
         types:
         - Boolean
         required: false
-        count: 1
       health_check_grace_period_seconds:
         types:
         - Integer
         required: false
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

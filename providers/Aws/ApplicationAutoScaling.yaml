@@ -7,320 +7,260 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   delete_scaling_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: true
-        count: 1
   delete_scheduled_action:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       scheduled_action_name:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
   deregister_scalable_target:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: true
-        count: 1
   describe_scalable_targets:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_scaling_activities:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: false
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_scaling_policies:
     parameters:
       policy_names:
         types:
         - Array<String>
         required: false
-        count: 1
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: false
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_scheduled_actions:
     parameters:
       scheduled_action_names:
         types:
         - Array<String>
         required: false
-        count: 1
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: false
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   put_scaling_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: true
-        count: 1
       policy_type:
         types:
         - String
         required: false
-        count: 1
       step_scaling_policy_configuration:
         types:
         - Types::StepScalingPolicyConfiguration
         required: false
-        count: 1
       target_tracking_scaling_policy_configuration:
         types:
         - Types::TargetTrackingScalingPolicyConfiguration
         required: false
-        count: 1
   put_scheduled_action:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
       scheduled_action_name:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -329,7 +269,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -338,41 +277,33 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       scalable_target_action:
         types:
         - Types::ScalableTargetAction
         required: false
-        count: 1
   register_scalable_target:
     parameters:
       service_namespace:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       scalable_dimension:
         types:
         - String
         required: true
-        count: 1
       min_capacity:
         types:
         - Integer
         required: false
-        count: 1
       max_capacity:
         types:
         - Integer
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1

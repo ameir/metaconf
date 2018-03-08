@@ -7,202 +7,166 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_tags_to_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Hash<String,String>
         required: true
-        count: 1
   create_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_count:
         types:
         - Integer
         required: true
-        count: 1
   decrease_stream_retention_period:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       retention_period_hours:
         types:
         - Integer
         required: true
-        count: 1
   delete_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
   describe_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
       exclusive_start_shard_id:
         types:
         - String
         required: false
-        count: 1
   describe_stream_summary:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
   disable_enhanced_monitoring:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_level_metrics:
         types:
         - Array<String>
         required: true
-        count: 1
   enable_enhanced_monitoring:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_level_metrics:
         types:
         - Array<String>
         required: true
-        count: 1
   get_records:
     parameters:
       shard_iterator:
         types:
         - String
         required: true
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   get_shard_iterator:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_id:
         types:
         - String
         required: true
-        count: 1
       shard_iterator_type:
         types:
         - String
         required: true
-        count: 1
       starting_sequence_number:
         types:
         - String
         required: false
-        count: 1
       timestamp:
         types:
         - Time
@@ -211,41 +175,34 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   increase_stream_retention_period:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       retention_period_hours:
         types:
         - Integer
         required: true
-        count: 1
   list_shards:
     parameters:
       stream_name:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       exclusive_start_shard_id:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       stream_creation_timestamp:
         types:
         - Time
@@ -254,192 +211,158 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   list_streams:
     parameters:
       limit:
         types:
         - Integer
         required: false
-        count: 1
       exclusive_start_stream_name:
         types:
         - String
         required: false
-        count: 1
   list_tags_for_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       exclusive_start_tag_key:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   merge_shards:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_to_merge:
         types:
         - String
         required: true
-        count: 1
       adjacent_shard_to_merge:
         types:
         - String
         required: true
-        count: 1
   put_record:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       data:
         types:
         - String
         - IO
         required: true
-        count: 1
       partition_key:
         types:
         - String
         required: true
-        count: 1
       explicit_hash_key:
         types:
         - String
         required: false
-        count: 1
       sequence_number_for_ordering:
         types:
         - String
         required: false
-        count: 1
   put_records:
     parameters:
       records:
         types:
         - Array<Types::PutRecordsRequestEntry>
         required: true
-        count: 1
       stream_name:
         types:
         - String
         required: true
-        count: 1
   remove_tags_from_stream:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   split_shard:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       shard_to_split:
         types:
         - String
         required: true
-        count: 1
       new_starting_hash_key:
         types:
         - String
         required: true
-        count: 1
   start_stream_encryption:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       encryption_type:
         types:
         - String
         required: true
-        count: 1
       key_id:
         types:
         - String
         required: true
-        count: 1
   stop_stream_encryption:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       encryption_type:
         types:
         - String
         required: true
-        count: 1
       key_id:
         types:
         - String
         required: true
-        count: 1
   update_shard_count:
     parameters:
       stream_name:
         types:
         - String
         required: true
-        count: 1
       target_shard_count:
         types:
         - Integer
         required: true
-        count: 1
       scaling_type:
         types:
         - String
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

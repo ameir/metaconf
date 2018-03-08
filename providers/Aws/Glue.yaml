@@ -7,1410 +7,1159 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   batch_create_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partition_input_list:
         types:
         - Array<Types::PartitionInput>
         required: true
-        count: 1
   batch_delete_connection:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       connection_name_list:
         types:
         - Array<String>
         required: true
-        count: 1
   batch_delete_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partitions_to_delete:
         types:
         - Array<Types::PartitionValueList>
         required: true
-        count: 1
   batch_delete_table:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       tables_to_delete:
         types:
         - Array<String>
         required: true
-        count: 1
   batch_delete_table_version:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       version_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   batch_get_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partitions_to_get:
         types:
         - Array<Types::PartitionValueList>
         required: true
-        count: 1
   batch_stop_job_run:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       job_run_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   create_classifier:
     parameters:
       grok_classifier:
         types:
         - Types::CreateGrokClassifierRequest
         required: false
-        count: 1
       xml_classifier:
         types:
         - Types::CreateXMLClassifierRequest
         required: false
-        count: 1
       json_classifier:
         types:
         - Types::CreateJsonClassifierRequest
         required: false
-        count: 1
   create_connection:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       connection_input:
         types:
         - Types::ConnectionInput
         required: true
-        count: 1
   create_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       role:
         types:
         - String
         required: true
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       targets:
         types:
         - Types::CrawlerTargets
         required: true
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
       classifiers:
         types:
         - Array<String>
         required: false
-        count: 1
       table_prefix:
         types:
         - String
         required: false
-        count: 1
       schema_change_policy:
         types:
         - Types::SchemaChangePolicy
         required: false
-        count: 1
       configuration:
         types:
         - String
         required: false
-        count: 1
   create_database:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_input:
         types:
         - Types::DatabaseInput
         required: true
-        count: 1
   create_dev_endpoint:
     parameters:
       endpoint_name:
         types:
         - String
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       subnet_id:
         types:
         - String
         required: false
-        count: 1
       public_key:
         types:
         - String
         required: true
-        count: 1
       number_of_nodes:
         types:
         - Integer
         required: false
-        count: 1
       extra_python_libs_s3_path:
         types:
         - String
         required: false
-        count: 1
       extra_jars_s3_path:
         types:
         - String
         required: false
-        count: 1
   create_job:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       log_uri:
         types:
         - String
         required: false
-        count: 1
       role:
         types:
         - String
         required: true
-        count: 1
       execution_property:
         types:
         - Types::ExecutionProperty
         required: false
-        count: 1
       command:
         types:
         - Types::JobCommand
         required: true
-        count: 1
       default_arguments:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       connections:
         types:
         - Types::ConnectionsList
         required: false
-        count: 1
       max_retries:
         types:
         - Integer
         required: false
-        count: 1
       allocated_capacity:
         types:
         - Integer
         required: false
-        count: 1
   create_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partition_input:
         types:
         - Types::PartitionInput
         required: true
-        count: 1
   create_script:
     parameters:
       dag_nodes:
         types:
         - Array<Types::CodeGenNode>
         required: false
-        count: 1
       dag_edges:
         types:
         - Array<Types::CodeGenEdge>
         required: false
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
   create_table:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_input:
         types:
         - Types::TableInput
         required: true
-        count: 1
   create_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
       predicate:
         types:
         - Types::Predicate
         required: false
-        count: 1
       actions:
         types:
         - Array<Types::Action>
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   create_user_defined_function:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       function_input:
         types:
         - Types::UserDefinedFunctionInput
         required: true
-        count: 1
   delete_classifier:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_connection:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       connection_name:
         types:
         - String
         required: true
-        count: 1
   delete_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_database:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   delete_dev_endpoint:
     parameters:
       endpoint_name:
         types:
         - String
         required: true
-        count: 1
   delete_job:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
   delete_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partition_values:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_table:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   delete_table_version:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       version_id:
         types:
         - String
         required: true
-        count: 1
   delete_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_user_defined_function:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       function_name:
         types:
         - String
         required: true
-        count: 1
   get_catalog_import_status:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
   get_classifier:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   get_classifiers:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_connection:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   get_connections:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - Types::GetConnectionsFilter
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   get_crawler_metrics:
     parameters:
       crawler_name_list:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_crawlers:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_database:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   get_databases:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_dataflow_graph:
     parameters:
       python_script:
         types:
         - String
         required: false
-        count: 1
   get_dev_endpoint:
     parameters:
       endpoint_name:
         types:
         - String
         required: true
-        count: 1
   get_dev_endpoints:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_job:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
   get_job_run:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       run_id:
         types:
         - String
         required: true
-        count: 1
       predecessors_included:
         types:
         - Boolean
         required: false
-        count: 1
   get_job_runs:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_jobs:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_mapping:
     parameters:
       source:
         types:
         - Types::CatalogEntry
         required: true
-        count: 1
       sinks:
         types:
         - Array<Types::CatalogEntry>
         required: false
-        count: 1
       location:
         types:
         - Types::Location
         required: false
-        count: 1
   get_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partition_values:
         types:
         - Array<String>
         required: true
-        count: 1
   get_partitions:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       expression:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       segment:
         types:
         - Types::Segment
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_plan:
     parameters:
       mapping:
         types:
         - Array<Types::MappingEntry>
         required: true
-        count: 1
       source:
         types:
         - Types::CatalogEntry
         required: true
-        count: 1
       sinks:
         types:
         - Array<Types::CatalogEntry>
         required: false
-        count: 1
       location:
         types:
         - Types::Location
         required: false
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
   get_table:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   get_table_version:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       version_id:
         types:
         - String
         required: false
-        count: 1
   get_table_versions:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_tables:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       expression:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   get_triggers:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       dependent_job_name:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_user_defined_function:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       function_name:
         types:
         - String
         required: true
-        count: 1
   get_user_defined_functions:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       pattern:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   import_catalog_to_glue:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
   reset_job_bookmark:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
   start_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   start_crawler_schedule:
     parameters:
       crawler_name:
         types:
         - String
         required: true
-        count: 1
   start_job_run:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       job_run_id:
         types:
         - String
         required: false
-        count: 1
       arguments:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       allocated_capacity:
         types:
         - Integer
         required: false
-        count: 1
   start_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   stop_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   stop_crawler_schedule:
     parameters:
       crawler_name:
         types:
         - String
         required: true
-        count: 1
   stop_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   update_classifier:
     parameters:
       grok_classifier:
         types:
         - Types::UpdateGrokClassifierRequest
         required: false
-        count: 1
       xml_classifier:
         types:
         - Types::UpdateXMLClassifierRequest
         required: false
-        count: 1
       json_classifier:
         types:
         - Types::UpdateJsonClassifierRequest
         required: false
-        count: 1
   update_connection:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       connection_input:
         types:
         - Types::ConnectionInput
         required: true
-        count: 1
   update_crawler:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       role:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       targets:
         types:
         - Types::CrawlerTargets
         required: false
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
       classifiers:
         types:
         - Array<String>
         required: false
-        count: 1
       table_prefix:
         types:
         - String
         required: false
-        count: 1
       schema_change_policy:
         types:
         - Types::SchemaChangePolicy
         required: false
-        count: 1
       configuration:
         types:
         - String
         required: false
-        count: 1
   update_crawler_schedule:
     parameters:
       crawler_name:
         types:
         - String
         required: true
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
   update_database:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       database_input:
         types:
         - Types::DatabaseInput
         required: true
-        count: 1
   update_dev_endpoint:
     parameters:
       endpoint_name:
         types:
         - String
         required: true
-        count: 1
       public_key:
         types:
         - String
         required: false
-        count: 1
       custom_libraries:
         types:
         - Types::DevEndpointCustomLibraries
         required: false
-        count: 1
       update_etl_libraries:
         types:
         - Boolean
         required: false
-        count: 1
   update_job:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       job_update:
         types:
         - Types::JobUpdate
         required: true
-        count: 1
   update_partition:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_name:
         types:
         - String
         required: true
-        count: 1
       partition_value_list:
         types:
         - Array<String>
         required: true
-        count: 1
       partition_input:
         types:
         - Types::PartitionInput
         required: true
-        count: 1
   update_table:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       table_input:
         types:
         - Types::TableInput
         required: true
-        count: 1
       skip_archive:
         types:
         - Boolean
         required: false
-        count: 1
   update_trigger:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       trigger_update:
         types:
         - Types::TriggerUpdate
         required: true
-        count: 1
   update_user_defined_function:
     parameters:
       catalog_id:
         types:
         - String
         required: false
-        count: 1
       database_name:
         types:
         - String
         required: true
-        count: 1
       function_name:
         types:
         - String
         required: true
-        count: 1
       function_input:
         types:
         - Types::UserDefinedFunctionInput
         required: true
-        count: 1

@@ -7,226 +7,183 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   cancel_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1
   create_job:
     parameters:
       job_type:
         types:
         - String
         required: true
-        count: 1
       manifest:
         types:
         - String
         required: true
-        count: 1
       manifest_addendum:
         types:
         - String
         required: false
-        count: 1
       validate_only:
         types:
         - Boolean
         required: true
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1
   get_shipping_label:
     parameters:
       job_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       company:
         types:
         - String
         required: false
-        count: 1
       phone_number:
         types:
         - String
         required: false
-        count: 1
       country:
         types:
         - String
         required: false
-        count: 1
       state_or_province:
         types:
         - String
         required: false
-        count: 1
       city:
         types:
         - String
         required: false
-        count: 1
       postal_code:
         types:
         - String
         required: false
-        count: 1
       street1:
         types:
         - String
         required: false
-        count: 1
       street2:
         types:
         - String
         required: false
-        count: 1
       street3:
         types:
         - String
         required: false
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1
   get_status:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1
   list_jobs:
     parameters:
       max_jobs:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1
   update_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       manifest:
         types:
         - String
         required: true
-        count: 1
       job_type:
         types:
         - String
         required: true
-        count: 1
       validate_only:
         types:
         - Boolean
         required: true
-        count: 1
       api_version:
         types:
         - String
         required: false
-        count: 1

@@ -7,770 +7,635 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_device_pool:
     parameters:
       project_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       rules:
         types:
         - Array<Types::Rule>
         required: true
-        count: 1
   create_network_profile:
     parameters:
       project_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       uplink_bandwidth_bits:
         types:
         - Integer
         required: false
-        count: 1
       downlink_bandwidth_bits:
         types:
         - Integer
         required: false
-        count: 1
       uplink_delay_ms:
         types:
         - Integer
         required: false
-        count: 1
       downlink_delay_ms:
         types:
         - Integer
         required: false
-        count: 1
       uplink_jitter_ms:
         types:
         - Integer
         required: false
-        count: 1
       downlink_jitter_ms:
         types:
         - Integer
         required: false
-        count: 1
       uplink_loss_percent:
         types:
         - Integer
         required: false
-        count: 1
       downlink_loss_percent:
         types:
         - Integer
         required: false
-        count: 1
   create_project:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       default_job_timeout_minutes:
         types:
         - Integer
         required: false
-        count: 1
   create_remote_access_session:
     parameters:
       project_arn:
         types:
         - String
         required: true
-        count: 1
       device_arn:
         types:
         - String
         required: true
-        count: 1
       ssh_public_key:
         types:
         - String
         required: false
-        count: 1
       remote_debug_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       remote_record_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       remote_record_app_arn:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       client_id:
         types:
         - String
         required: false
-        count: 1
       configuration:
         types:
         - Types::CreateRemoteAccessSessionConfiguration
         required: false
-        count: 1
       interaction_mode:
         types:
         - String
         required: false
-        count: 1
   create_upload:
     parameters:
       project_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       content_type:
         types:
         - String
         required: false
-        count: 1
   delete_device_pool:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   delete_network_profile:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   delete_project:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   delete_remote_access_session:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   delete_run:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   delete_upload:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_device:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_device_pool:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_device_pool_compatibility:
     parameters:
       device_pool_arn:
         types:
         - String
         required: true
-        count: 1
       app_arn:
         types:
         - String
         required: false
-        count: 1
       test_type:
         types:
         - String
         required: false
-        count: 1
       test:
         types:
         - Types::ScheduleRunTest
         required: false
-        count: 1
   get_job:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_network_profile:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_offering_status:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_project:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_remote_access_session:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_run:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_suite:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_test:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   get_upload:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   install_to_remote_access_session:
     parameters:
       remote_access_session_arn:
         types:
         - String
         required: true
-        count: 1
       app_arn:
         types:
         - String
         required: true
-        count: 1
   list_artifacts:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_device_pools:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_devices:
     parameters:
       arn:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_jobs:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_network_profiles:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_offering_promotions:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_offering_transactions:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_offerings:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_projects:
     parameters:
       arn:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_remote_access_sessions:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_runs:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_samples:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_suites:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_tests:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_unique_problems:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_uploads:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   purchase_offering:
     parameters:
       offering_id:
         types:
         - String
         required: false
-        count: 1
       quantity:
         types:
         - Integer
         required: false
-        count: 1
       offering_promotion_id:
         types:
         - String
         required: false
-        count: 1
   renew_offering:
     parameters:
       offering_id:
         types:
         - String
         required: false
-        count: 1
       quantity:
         types:
         - Integer
         required: false
-        count: 1
   schedule_run:
     parameters:
       project_arn:
         types:
         - String
         required: true
-        count: 1
       app_arn:
         types:
         - String
         required: false
-        count: 1
       device_pool_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       test:
         types:
         - Types::ScheduleRunTest
         required: true
-        count: 1
       configuration:
         types:
         - Types::ScheduleRunConfiguration
         required: false
-        count: 1
       execution_configuration:
         types:
         - Types::ExecutionConfiguration
         required: false
-        count: 1
   stop_remote_access_session:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   stop_run:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
   update_device_pool:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       rules:
         types:
         - Array<Types::Rule>
         required: false
-        count: 1
   update_network_profile:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       uplink_bandwidth_bits:
         types:
         - Integer
         required: false
-        count: 1
       downlink_bandwidth_bits:
         types:
         - Integer
         required: false
-        count: 1
       uplink_delay_ms:
         types:
         - Integer
         required: false
-        count: 1
       downlink_delay_ms:
         types:
         - Integer
         required: false
-        count: 1
       uplink_jitter_ms:
         types:
         - Integer
         required: false
-        count: 1
       downlink_jitter_ms:
         types:
         - Integer
         required: false
-        count: 1
       uplink_loss_percent:
         types:
         - Integer
         required: false
-        count: 1
       downlink_loss_percent:
         types:
         - Integer
         required: false
-        count: 1
   update_project:
     parameters:
       arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       default_job_timeout_minutes:
         types:
         - Integer
         required: false
-        count: 1

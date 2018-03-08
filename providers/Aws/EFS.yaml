@@ -7,231 +7,189 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_file_system:
     parameters:
       creation_token:
         types:
         - String
         required: true
-        count: 1
       performance_mode:
         types:
         - String
         required: false
-        count: 1
       encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
   create_mount_target:
     parameters:
       file_system_id:
         types:
         - String
         required: true
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
       ip_address:
         types:
         - String
         required: false
-        count: 1
       security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
   create_tags:
     parameters:
       file_system_id:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   delete_file_system:
     parameters:
       file_system_id:
         types:
         - String
         required: true
-        count: 1
   delete_mount_target:
     parameters:
       mount_target_id:
         types:
         - String
         required: true
-        count: 1
   delete_tags:
     parameters:
       file_system_id:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_file_systems:
     parameters:
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       creation_token:
         types:
         - String
         required: false
-        count: 1
       file_system_id:
         types:
         - String
         required: false
-        count: 1
   describe_mount_target_security_groups:
     parameters:
       mount_target_id:
         types:
         - String
         required: true
-        count: 1
   describe_mount_targets:
     parameters:
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       file_system_id:
         types:
         - String
         required: false
-        count: 1
       mount_target_id:
         types:
         - String
         required: false
-        count: 1
   describe_tags:
     parameters:
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       file_system_id:
         types:
         - String
         required: true
-        count: 1
   modify_mount_target_security_groups:
     parameters:
       mount_target_id:
         types:
         - String
         required: true
-        count: 1
       security_groups:
         types:
         - Array<String>
         required: false
-        count: 1

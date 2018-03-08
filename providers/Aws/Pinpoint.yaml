@@ -7,749 +7,623 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_app:
     parameters:
       create_application_request:
         types:
         - Types::CreateApplicationRequest
         required: true
-        count: 1
   create_campaign:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       write_campaign_request:
         types:
         - Types::WriteCampaignRequest
         required: true
-        count: 1
   create_import_job:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       import_job_request:
         types:
         - Types::ImportJobRequest
         required: true
-        count: 1
   create_segment:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       write_segment_request:
         types:
         - Types::WriteSegmentRequest
         required: true
-        count: 1
   delete_adm_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_apns_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_apns_sandbox_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_apns_voip_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_apns_voip_sandbox_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_app:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_baidu_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_campaign:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
   delete_email_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_event_stream:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_gcm_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   delete_segment:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
   delete_sms_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_adm_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_apns_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_apns_sandbox_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_apns_voip_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_apns_voip_sandbox_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_app:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_application_settings:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_apps:
     parameters:
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_baidu_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_campaign:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
   get_campaign_activities:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_campaign_version:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   get_campaign_versions:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_campaigns:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_email_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_endpoint:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       endpoint_id:
         types:
         - String
         required: true
-        count: 1
   get_event_stream:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_gcm_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   get_import_job:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       job_id:
         types:
         - String
         required: true
-        count: 1
   get_import_jobs:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_segment:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
   get_segment_import_jobs:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_segment_version:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
   get_segment_versions:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_segments:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - String
         required: false
-        count: 1
       token:
         types:
         - String
         required: false
-        count: 1
   get_sms_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   put_event_stream:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       write_event_stream:
         types:
         - Types::WriteEventStream
         required: true
-        count: 1
   send_messages:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       message_request:
         types:
         - Types::MessageRequest
         required: true
-        count: 1
   send_users_messages:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       send_users_message_request:
         types:
         - Types::SendUsersMessageRequest
         required: true
-        count: 1
   update_adm_channel:
     parameters:
       adm_channel_request:
         types:
         - Types::ADMChannelRequest
         required: true
-        count: 1
       application_id:
         types:
         - String
         required: true
-        count: 1
   update_apns_channel:
     parameters:
       apns_channel_request:
         types:
         - Types::APNSChannelRequest
         required: true
-        count: 1
       application_id:
         types:
         - String
         required: true
-        count: 1
   update_apns_sandbox_channel:
     parameters:
       apns_sandbox_channel_request:
         types:
         - Types::APNSSandboxChannelRequest
         required: true
-        count: 1
       application_id:
         types:
         - String
         required: true
-        count: 1
   update_apns_voip_channel:
     parameters:
       apns_voip_channel_request:
         types:
         - Types::APNSVoipChannelRequest
         required: true
-        count: 1
       application_id:
         types:
         - String
         required: true
-        count: 1
   update_apns_voip_sandbox_channel:
     parameters:
       apns_voip_sandbox_channel_request:
         types:
         - Types::APNSVoipSandboxChannelRequest
         required: true
-        count: 1
       application_id:
         types:
         - String
         required: true
-        count: 1
   update_application_settings:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       write_application_settings_request:
         types:
         - Types::WriteApplicationSettingsRequest
         required: true
-        count: 1
   update_baidu_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       baidu_channel_request:
         types:
         - Types::BaiduChannelRequest
         required: true
-        count: 1
   update_campaign:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       campaign_id:
         types:
         - String
         required: true
-        count: 1
       write_campaign_request:
         types:
         - Types::WriteCampaignRequest
         required: true
-        count: 1
   update_email_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       email_channel_request:
         types:
         - Types::EmailChannelRequest
         required: true
-        count: 1
   update_endpoint:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       endpoint_id:
         types:
         - String
         required: true
-        count: 1
       endpoint_request:
         types:
         - Types::EndpointRequest
         required: true
-        count: 1
   update_endpoints_batch:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       endpoint_batch_request:
         types:
         - Types::EndpointBatchRequest
         required: true
-        count: 1
   update_gcm_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       gcm_channel_request:
         types:
         - Types::GCMChannelRequest
         required: true
-        count: 1
   update_segment:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       segment_id:
         types:
         - String
         required: true
-        count: 1
       write_segment_request:
         types:
         - Types::WriteSegmentRequest
         required: true
-        count: 1
   update_sms_channel:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       sms_channel_request:
         types:
         - Types::SMSChannelRequest
         required: true
-        count: 1

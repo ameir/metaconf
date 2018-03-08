@@ -7,395 +7,323 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_identity_pool:
     parameters:
       identity_pool_name:
         types:
         - String
         required: true
-        count: 1
       allow_unauthenticated_identities:
         types:
         - Boolean
         required: true
-        count: 1
       supported_login_providers:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       developer_provider_name:
         types:
         - String
         required: false
-        count: 1
       open_id_connect_provider_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       cognito_identity_providers:
         types:
         - Array<Types::CognitoIdentityProvider>
         required: false
-        count: 1
       saml_provider_arns:
         types:
         - Array<String>
         required: false
-        count: 1
   delete_identities:
     parameters:
       identity_ids_to_delete:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_identity_pool:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   describe_identity:
     parameters:
       identity_id:
         types:
         - String
         required: true
-        count: 1
   describe_identity_pool:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_credentials_for_identity:
     parameters:
       identity_id:
         types:
         - String
         required: true
-        count: 1
       logins:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       custom_role_arn:
         types:
         - String
         required: false
-        count: 1
   get_id:
     parameters:
       account_id:
         types:
         - String
         required: false
-        count: 1
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       logins:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   get_identity_pool_roles:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_open_id_token:
     parameters:
       identity_id:
         types:
         - String
         required: true
-        count: 1
       logins:
         types:
         - Hash<String,String>
         required: false
-        count: 1
   get_open_id_token_for_developer_identity:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: false
-        count: 1
       logins:
         types:
         - Hash<String,String>
         required: true
-        count: 1
       token_duration:
         types:
         - Integer
         required: false
-        count: 1
   list_identities:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       hide_disabled:
         types:
         - Boolean
         required: false
-        count: 1
   list_identity_pools:
     parameters:
       max_results:
         types:
         - Integer
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   lookup_developer_identity:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: false
-        count: 1
       developer_user_identifier:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   merge_developer_identities:
     parameters:
       source_user_identifier:
         types:
         - String
         required: true
-        count: 1
       destination_user_identifier:
         types:
         - String
         required: true
-        count: 1
       developer_provider_name:
         types:
         - String
         required: true
-        count: 1
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   set_identity_pool_roles:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       roles:
         types:
         - Hash<String,String>
         required: true
-        count: 1
       role_mappings:
         types:
         - Hash<String,Types::RoleMapping>
         required: false
-        count: 1
   unlink_developer_identity:
     parameters:
       identity_id:
         types:
         - String
         required: true
-        count: 1
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       developer_provider_name:
         types:
         - String
         required: true
-        count: 1
       developer_user_identifier:
         types:
         - String
         required: true
-        count: 1
   unlink_identity:
     parameters:
       identity_id:
         types:
         - String
         required: true
-        count: 1
       logins:
         types:
         - Hash<String,String>
         required: true
-        count: 1
       logins_to_remove:
         types:
         - Array<String>
         required: true
-        count: 1
   update_identity_pool:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_pool_name:
         types:
         - String
         required: true
-        count: 1
       allow_unauthenticated_identities:
         types:
         - Boolean
         required: true
-        count: 1
       supported_login_providers:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       developer_provider_name:
         types:
         - String
         required: false
-        count: 1
       open_id_connect_provider_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       cognito_identity_providers:
         types:
         - Array<Types::CognitoIdentityProvider>
         required: false
-        count: 1
       saml_provider_arns:
         types:
         - Array<String>
         required: false
-        count: 1

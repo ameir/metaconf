@@ -7,89 +7,72 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   activate_pipeline:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       parameter_values:
         types:
         - Array<Types::ParameterValue>
         required: false
-        count: 1
       start_timestamp:
         types:
         - Time
@@ -98,295 +81,243 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   add_tags:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   create_pipeline:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       unique_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   deactivate_pipeline:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       cancel_active:
         types:
         - Boolean
         required: false
-        count: 1
   delete_pipeline:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
   describe_objects:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       object_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       evaluate_expressions:
         types:
         - Boolean
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_pipelines:
     parameters:
       pipeline_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   evaluate_expression:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       object_id:
         types:
         - String
         required: true
-        count: 1
       expression:
         types:
         - String
         required: true
-        count: 1
   get_pipeline_definition:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: false
-        count: 1
   list_pipelines:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
   poll_for_task:
     parameters:
       worker_group:
         types:
         - String
         required: true
-        count: 1
       hostname:
         types:
         - String
         required: false
-        count: 1
       instance_identity:
         types:
         - Types::InstanceIdentity
         required: false
-        count: 1
   put_pipeline_definition:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       pipeline_objects:
         types:
         - Array<Types::PipelineObject>
         required: true
-        count: 1
       parameter_objects:
         types:
         - Array<Types::ParameterObject>
         required: false
-        count: 1
       parameter_values:
         types:
         - Array<Types::ParameterValue>
         required: false
-        count: 1
   query_objects:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       query:
         types:
         - Types::Query
         required: false
-        count: 1
       sphere:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       limit:
         types:
         - Integer
         required: false
-        count: 1
   remove_tags:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   report_task_progress:
     parameters:
       task_id:
         types:
         - String
         required: true
-        count: 1
       fields:
         types:
         - Array<Types::Field>
         required: false
-        count: 1
   report_task_runner_heartbeat:
     parameters:
       taskrunner_id:
         types:
         - String
         required: true
-        count: 1
       worker_group:
         types:
         - String
         required: false
-        count: 1
       hostname:
         types:
         - String
         required: false
-        count: 1
   set_status:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       object_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   set_task_status:
     parameters:
       task_id:
         types:
         - String
         required: true
-        count: 1
       task_status:
         types:
         - String
         required: true
-        count: 1
       error_id:
         types:
         - String
         required: false
-        count: 1
       error_message:
         types:
         - String
         required: false
-        count: 1
       error_stack_trace:
         types:
         - String
         required: false
-        count: 1
   validate_pipeline_definition:
     parameters:
       pipeline_id:
         types:
         - String
         required: true
-        count: 1
       pipeline_objects:
         types:
         - Array<Types::PipelineObject>
         required: true
-        count: 1
       parameter_objects:
         types:
         - Array<Types::ParameterObject>
         required: false
-        count: 1
       parameter_values:
         types:
         - Array<Types::ParameterValue>
         required: false
-        count: 1

@@ -7,1751 +7,1447 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_client_id_to_open_id_connect_provider:
     parameters:
       open_id_connect_provider_arn:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
   add_role_to_instance_profile:
     parameters:
       instance_profile_name:
         types:
         - String
         required: true
-        count: 1
       role_name:
         types:
         - String
         required: true
-        count: 1
   add_user_to_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_name:
         types:
         - String
         required: true
-        count: 1
   attach_group_policy:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   attach_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   attach_user_policy:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   change_password:
     parameters:
       old_password:
         types:
         - String
         required: true
-        count: 1
       new_password:
         types:
         - String
         required: true
-        count: 1
   create_access_key:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
   create_account_alias:
     parameters:
       account_alias:
         types:
         - String
         required: true
-        count: 1
   create_group:
     parameters:
       path:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
   create_instance_profile:
     parameters:
       instance_profile_name:
         types:
         - String
         required: true
-        count: 1
       path:
         types:
         - String
         required: false
-        count: 1
   create_login_profile:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: true
-        count: 1
       password_reset_required:
         types:
         - Boolean
         required: false
-        count: 1
   create_open_id_connect_provider:
     parameters:
       url:
         types:
         - String
         required: true
-        count: 1
       client_id_list:
         types:
         - Array<String>
         required: false
-        count: 1
       thumbprint_list:
         types:
         - Array<String>
         required: true
-        count: 1
   create_policy:
     parameters:
       policy_name:
         types:
         - String
         required: true
-        count: 1
       path:
         types:
         - String
         required: false
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   create_policy_version:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
       set_as_default:
         types:
         - Boolean
         required: false
-        count: 1
   create_role:
     parameters:
       path:
         types:
         - String
         required: false
-        count: 1
       role_name:
         types:
         - String
         required: true
-        count: 1
       assume_role_policy_document:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   create_saml_provider:
     parameters:
       saml_metadata_document:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   create_service_linked_role:
     parameters:
       aws_service_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       custom_suffix:
         types:
         - String
         required: false
-        count: 1
   create_service_specific_credential:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       service_name:
         types:
         - String
         required: true
-        count: 1
   create_user:
     parameters:
       path:
         types:
         - String
         required: false
-        count: 1
       user_name:
         types:
         - String
         required: true
-        count: 1
   create_virtual_mfa_device:
     parameters:
       path:
         types:
         - String
         required: false
-        count: 1
       virtual_mfa_device_name:
         types:
         - String
         required: true
-        count: 1
   deactivate_mfa_device:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       serial_number:
         types:
         - String
         required: true
-        count: 1
   delete_access_key:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       access_key_id:
         types:
         - String
         required: true
-        count: 1
   delete_account_alias:
     parameters:
       account_alias:
         types:
         - String
         required: true
-        count: 1
   delete_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
   delete_group_policy:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   delete_instance_profile:
     parameters:
       instance_profile_name:
         types:
         - String
         required: true
-        count: 1
   delete_login_profile:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
   delete_open_id_connect_provider:
     parameters:
       open_id_connect_provider_arn:
         types:
         - String
         required: true
-        count: 1
   delete_policy:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   delete_policy_version:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       version_id:
         types:
         - String
         required: true
-        count: 1
   delete_role:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
   delete_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   delete_saml_provider:
     parameters:
       saml_provider_arn:
         types:
         - String
         required: true
-        count: 1
   delete_ssh_public_key:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       ssh_public_key_id:
         types:
         - String
         required: true
-        count: 1
   delete_server_certificate:
     parameters:
       server_certificate_name:
         types:
         - String
         required: true
-        count: 1
   delete_service_linked_role:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
   delete_service_specific_credential:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       service_specific_credential_id:
         types:
         - String
         required: true
-        count: 1
   delete_signing_certificate:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       certificate_id:
         types:
         - String
         required: true
-        count: 1
   delete_user:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
   delete_user_policy:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   delete_virtual_mfa_device:
     parameters:
       serial_number:
         types:
         - String
         required: true
-        count: 1
   detach_group_policy:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   detach_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   detach_user_policy:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   enable_mfa_device:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       serial_number:
         types:
         - String
         required: true
-        count: 1
       authentication_code_1:
         types:
         - String
         required: true
-        count: 1
       authentication_code_2:
         types:
         - String
         required: true
-        count: 1
   get_access_key_last_used:
     parameters:
       access_key_id:
         types:
         - String
         required: true
-        count: 1
   get_account_authorization_details:
     parameters:
       filter:
         types:
         - Array<String>
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   get_context_keys_for_custom_policy:
     parameters:
       policy_input_list:
         types:
         - Array<String>
         required: true
-        count: 1
   get_context_keys_for_principal_policy:
     parameters:
       policy_source_arn:
         types:
         - String
         required: true
-        count: 1
       policy_input_list:
         types:
         - Array<String>
         required: false
-        count: 1
   get_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   get_group_policy:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   get_instance_profile:
     parameters:
       instance_profile_name:
         types:
         - String
         required: true
-        count: 1
   get_login_profile:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
   get_open_id_connect_provider:
     parameters:
       open_id_connect_provider_arn:
         types:
         - String
         required: true
-        count: 1
   get_policy:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
   get_policy_version:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       version_id:
         types:
         - String
         required: true
-        count: 1
   get_role:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
   get_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   get_saml_provider:
     parameters:
       saml_provider_arn:
         types:
         - String
         required: true
-        count: 1
   get_ssh_public_key:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       ssh_public_key_id:
         types:
         - String
         required: true
-        count: 1
       encoding:
         types:
         - String
         required: true
-        count: 1
   get_server_certificate:
     parameters:
       server_certificate_name:
         types:
         - String
         required: true
-        count: 1
   get_service_linked_role_deletion_status:
     parameters:
       deletion_task_id:
         types:
         - String
         required: true
-        count: 1
   get_user:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
   get_user_policy:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   list_access_keys:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_account_aliases:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_attached_group_policies:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_attached_role_policies:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_attached_user_policies:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_entities_for_policy:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       entity_filter:
         types:
         - String
         required: false
-        count: 1
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_group_policies:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_groups:
     parameters:
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_groups_for_user:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_instance_profiles:
     parameters:
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_instance_profiles_for_role:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_mfa_devices:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_policies:
     parameters:
       scope:
         types:
         - String
         required: false
-        count: 1
       only_attached:
         types:
         - Boolean
         required: false
-        count: 1
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_policy_versions:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_role_policies:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_roles:
     parameters:
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_ssh_public_keys:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_server_certificates:
     parameters:
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_service_specific_credentials:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       service_name:
         types:
         - String
         required: false
-        count: 1
   list_signing_certificates:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_user_policies:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_users:
     parameters:
       path_prefix:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_virtual_mfa_devices:
     parameters:
       assignment_status:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   put_group_policy:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
   put_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
   put_user_policy:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
   remove_client_id_from_open_id_connect_provider:
     parameters:
       open_id_connect_provider_arn:
         types:
         - String
         required: true
-        count: 1
       client_id:
         types:
         - String
         required: true
-        count: 1
   remove_role_from_instance_profile:
     parameters:
       instance_profile_name:
         types:
         - String
         required: true
-        count: 1
       role_name:
         types:
         - String
         required: true
-        count: 1
   remove_user_from_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       user_name:
         types:
         - String
         required: true
-        count: 1
   reset_service_specific_credential:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       service_specific_credential_id:
         types:
         - String
         required: true
-        count: 1
   resync_mfa_device:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       serial_number:
         types:
         - String
         required: true
-        count: 1
       authentication_code_1:
         types:
         - String
         required: true
-        count: 1
       authentication_code_2:
         types:
         - String
         required: true
-        count: 1
   set_default_policy_version:
     parameters:
       policy_arn:
         types:
         - String
         required: true
-        count: 1
       version_id:
         types:
         - String
         required: true
-        count: 1
   simulate_custom_policy:
     parameters:
       policy_input_list:
         types:
         - Array<String>
         required: true
-        count: 1
       action_names:
         types:
         - Array<String>
         required: true
-        count: 1
       resource_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       resource_policy:
         types:
         - String
         required: false
-        count: 1
       resource_owner:
         types:
         - String
         required: false
-        count: 1
       caller_arn:
         types:
         - String
         required: false
-        count: 1
       context_entries:
         types:
         - Array<Types::ContextEntry>
         required: false
-        count: 1
       resource_handling_option:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   simulate_principal_policy:
     parameters:
       policy_source_arn:
         types:
         - String
         required: true
-        count: 1
       policy_input_list:
         types:
         - Array<String>
         required: false
-        count: 1
       action_names:
         types:
         - Array<String>
         required: true
-        count: 1
       resource_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       resource_policy:
         types:
         - String
         required: false
-        count: 1
       resource_owner:
         types:
         - String
         required: false
-        count: 1
       caller_arn:
         types:
         - String
         required: false
-        count: 1
       context_entries:
         types:
         - Array<Types::ContextEntry>
         required: false
-        count: 1
       resource_handling_option:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   update_access_key:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       access_key_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   update_account_password_policy:
     parameters:
       minimum_password_length:
         types:
         - Integer
         required: false
-        count: 1
       require_symbols:
         types:
         - Boolean
         required: false
-        count: 1
       require_numbers:
         types:
         - Boolean
         required: false
-        count: 1
       require_uppercase_characters:
         types:
         - Boolean
         required: false
-        count: 1
       require_lowercase_characters:
         types:
         - Boolean
         required: false
-        count: 1
       allow_users_to_change_password:
         types:
         - Boolean
         required: false
-        count: 1
       max_password_age:
         types:
         - Integer
         required: false
-        count: 1
       password_reuse_prevention:
         types:
         - Integer
         required: false
-        count: 1
       hard_expiry:
         types:
         - Boolean
         required: false
-        count: 1
   update_assume_role_policy:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: true
-        count: 1
   update_group:
     parameters:
       group_name:
         types:
         - String
         required: true
-        count: 1
       new_path:
         types:
         - String
         required: false
-        count: 1
       new_group_name:
         types:
         - String
         required: false
-        count: 1
   update_login_profile:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       password:
         types:
         - String
         required: false
-        count: 1
       password_reset_required:
         types:
         - Boolean
         required: false
-        count: 1
   update_open_id_connect_provider_thumbprint:
     parameters:
       open_id_connect_provider_arn:
         types:
         - String
         required: true
-        count: 1
       thumbprint_list:
         types:
         - Array<String>
         required: true
-        count: 1
   update_role_description:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: true
-        count: 1
   update_saml_provider:
     parameters:
       saml_metadata_document:
         types:
         - String
         required: true
-        count: 1
       saml_provider_arn:
         types:
         - String
         required: true
-        count: 1
   update_ssh_public_key:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       ssh_public_key_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   update_server_certificate:
     parameters:
       server_certificate_name:
         types:
         - String
         required: true
-        count: 1
       new_path:
         types:
         - String
         required: false
-        count: 1
       new_server_certificate_name:
         types:
         - String
         required: false
-        count: 1
   update_service_specific_credential:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       service_specific_credential_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   update_signing_certificate:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       certificate_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   update_user:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       new_path:
         types:
         - String
         required: false
-        count: 1
       new_user_name:
         types:
         - String
         required: false
-        count: 1
   upload_ssh_public_key:
     parameters:
       user_name:
         types:
         - String
         required: true
-        count: 1
       ssh_public_key_body:
         types:
         - String
         required: true
-        count: 1
   upload_server_certificate:
     parameters:
       path:
         types:
         - String
         required: false
-        count: 1
       server_certificate_name:
         types:
         - String
         required: true
-        count: 1
       certificate_body:
         types:
         - String
         required: true
-        count: 1
       private_key:
         types:
         - String
         required: true
-        count: 1
       certificate_chain:
         types:
         - String
         required: false
-        count: 1
   upload_signing_certificate:
     parameters:
       user_name:
         types:
         - String
         required: false
-        count: 1
       certificate_body:
         types:
         - String
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

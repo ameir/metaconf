@@ -7,163 +7,134 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_instance_fleet:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       instance_fleet:
         types:
         - Types::InstanceFleetConfig
         required: true
-        count: 1
   add_instance_groups:
     parameters:
       instance_groups:
         types:
         - Array<Types::InstanceGroupConfig>
         required: true
-        count: 1
       job_flow_id:
         types:
         - String
         required: true
-        count: 1
   add_job_flow_steps:
     parameters:
       job_flow_id:
         types:
         - String
         required: true
-        count: 1
       steps:
         types:
         - Array<Types::StepConfig>
         required: true
-        count: 1
   add_tags:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   cancel_steps:
     parameters:
       cluster_id:
         types:
         - String
         required: false
-        count: 1
       step_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   create_security_configuration:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       security_configuration:
         types:
         - String
         required: true
-        count: 1
   delete_security_configuration:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_cluster:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
   describe_job_flows:
     parameters:
       created_after:
@@ -174,7 +145,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       created_before:
         types:
         - Time
@@ -183,48 +153,40 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       job_flow_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       job_flow_states:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_security_configuration:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_step:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       step_id:
         types:
         - String
         required: true
-        count: 1
   list_bootstrap_actions:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_clusters:
     parameters:
       created_after:
@@ -235,7 +197,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       created_before:
         types:
         - Time
@@ -244,339 +205,277 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       cluster_states:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_instance_fleets:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_instance_groups:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_instances:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       instance_group_id:
         types:
         - String
         required: false
-        count: 1
       instance_group_types:
         types:
         - Array<String>
         required: false
-        count: 1
       instance_fleet_id:
         types:
         - String
         required: false
-        count: 1
       instance_fleet_type:
         types:
         - String
         required: false
-        count: 1
       instance_states:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   list_security_configurations:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
   list_steps:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       step_states:
         types:
         - Array<String>
         required: false
-        count: 1
       step_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   modify_instance_fleet:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       instance_fleet:
         types:
         - Types::InstanceFleetModifyConfig
         required: true
-        count: 1
   modify_instance_groups:
     parameters:
       cluster_id:
         types:
         - String
         required: false
-        count: 1
       instance_groups:
         types:
         - Array<Types::InstanceGroupModifyConfig>
         required: false
-        count: 1
   put_auto_scaling_policy:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       instance_group_id:
         types:
         - String
         required: true
-        count: 1
       auto_scaling_policy:
         types:
         - Types::AutoScalingPolicy
         required: true
-        count: 1
   remove_auto_scaling_policy:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       instance_group_id:
         types:
         - String
         required: true
-        count: 1
   remove_tags:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   run_job_flow:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       log_uri:
         types:
         - String
         required: false
-        count: 1
       additional_info:
         types:
         - String
         required: false
-        count: 1
       ami_version:
         types:
         - String
         required: false
-        count: 1
       release_label:
         types:
         - String
         required: false
-        count: 1
       instances:
         types:
         - Types::JobFlowInstancesConfig
         required: true
-        count: 1
       steps:
         types:
         - Array<Types::StepConfig>
         required: false
-        count: 1
       bootstrap_actions:
         types:
         - Array<Types::BootstrapActionConfig>
         required: false
-        count: 1
       supported_products:
         types:
         - Array<String>
         required: false
-        count: 1
       new_supported_products:
         types:
         - Array<Types::SupportedProductConfig>
         required: false
-        count: 1
       applications:
         types:
         - Array<Types::Application>
         required: false
-        count: 1
       configurations:
         types:
         - Array<Types::Configuration>
         required: false
-        count: 1
       visible_to_all_users:
         types:
         - Boolean
         required: false
-        count: 1
       job_flow_role:
         types:
         - String
         required: false
-        count: 1
       service_role:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       security_configuration:
         types:
         - String
         required: false
-        count: 1
       auto_scaling_role:
         types:
         - String
         required: false
-        count: 1
       scale_down_behavior:
         types:
         - String
         required: false
-        count: 1
       custom_ami_id:
         types:
         - String
         required: false
-        count: 1
       ebs_root_volume_size:
         types:
         - Integer
         required: false
-        count: 1
       repo_upgrade_on_boot:
         types:
         - String
         required: false
-        count: 1
       kerberos_attributes:
         types:
         - Types::KerberosAttributes
         required: false
-        count: 1
   set_termination_protection:
     parameters:
       job_flow_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       termination_protected:
         types:
         - Boolean
         required: true
-        count: 1
   set_visible_to_all_users:
     parameters:
       job_flow_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       visible_to_all_users:
         types:
         - Boolean
         required: true
-        count: 1
   terminate_job_flows:
     parameters:
       job_flow_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

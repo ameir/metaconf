@@ -7,209 +7,171 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   batch_delete_attributes:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       items:
         types:
         - Array<Types::DeletableItem>
         required: true
-        count: 1
   batch_put_attributes:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       items:
         types:
         - Array<Types::ReplaceableItem>
         required: true
-        count: 1
   create_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   delete_attributes:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       item_name:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::Attribute>
         required: false
-        count: 1
       expected:
         types:
         - Types::UpdateCondition
         required: false
-        count: 1
   delete_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   domain_metadata:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   get_attributes:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       item_name:
         types:
         - String
         required: true
-        count: 1
       attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
       consistent_read:
         types:
         - Boolean
         required: false
-        count: 1
   list_domains:
     parameters:
       max_number_of_domains:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   put_attributes:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       item_name:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::ReplaceableAttribute>
         required: true
-        count: 1
       expected:
         types:
         - Types::UpdateCondition
         required: false
-        count: 1
   select:
     parameters:
       select_expression:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       consistent_read:
         types:
         - Boolean
         required: false
-        count: 1

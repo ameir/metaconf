@@ -7,387 +7,321 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_cloud_front_origin_access_identity:
     parameters:
       cloud_front_origin_access_identity_config:
         types:
         - Types::CloudFrontOriginAccessIdentityConfig
         required: true
-        count: 1
   create_distribution:
     parameters:
       distribution_config:
         types:
         - Types::DistributionConfig
         required: true
-        count: 1
   create_distribution_with_tags:
     parameters:
       distribution_config_with_tags:
         types:
         - Types::DistributionConfigWithTags
         required: true
-        count: 1
   create_invalidation:
     parameters:
       distribution_id:
         types:
         - String
         required: true
-        count: 1
       invalidation_batch:
         types:
         - Types::InvalidationBatch
         required: true
-        count: 1
   create_streaming_distribution:
     parameters:
       streaming_distribution_config:
         types:
         - Types::StreamingDistributionConfig
         required: true
-        count: 1
   create_streaming_distribution_with_tags:
     parameters:
       streaming_distribution_config_with_tags:
         types:
         - Types::StreamingDistributionConfigWithTags
         required: true
-        count: 1
   delete_cloud_front_origin_access_identity:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   delete_distribution:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   delete_service_linked_role:
     parameters:
       role_name:
         types:
         - String
         required: true
-        count: 1
   delete_streaming_distribution:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   get_cloud_front_origin_access_identity:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_cloud_front_origin_access_identity_config:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_distribution:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_distribution_config:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_invalidation:
     parameters:
       distribution_id:
         types:
         - String
         required: true
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   get_streaming_distribution:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_streaming_distribution_config:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   list_cloud_front_origin_access_identities:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_distributions:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_distributions_by_web_acl_id:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
       web_acl_id:
         types:
         - String
         required: true
-        count: 1
   list_invalidations:
     parameters:
       distribution_id:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_streaming_distributions:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource:
         types:
         - String
         required: true
-        count: 1
   tag_resource:
     parameters:
       resource:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Types::Tags
         required: true
-        count: 1
   untag_resource:
     parameters:
       resource:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Types::TagKeys
         required: true
-        count: 1
   update_cloud_front_origin_access_identity:
     parameters:
       cloud_front_origin_access_identity_config:
         types:
         - Types::CloudFrontOriginAccessIdentityConfig
         required: true
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   update_distribution:
     parameters:
       distribution_config:
         types:
         - Types::DistributionConfig
         required: true
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   update_streaming_distribution:
     parameters:
       streaming_distribution_config:
         types:
         - Types::StreamingDistributionConfig
         required: true
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       if_match:
         types:
         - String
         required: false
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

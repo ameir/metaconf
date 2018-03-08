@@ -29,13 +29,6 @@ files.each do |file|
       parameter = tag.pair.name.start_with?(':') ? tag.pair.name[1..-1] : tag.pair.name
       hash['methods'][method]['parameters'][parameter]['types'] = tag.pair.types.select { |i| i != 'required' }
       hash['methods'][method]['parameters'][parameter]['required'] = tag.pair.types.include?('required')
-
-      # count how many times we've come here (for debugging)
-      if hash['methods'][method]['parameters'][parameter].key?('count')
-        hash['methods'][method]['parameters'][parameter]['count'] += 1
-      else
-        hash['methods'][method]['parameters'][parameter]['count'] = 1
-      end
     end
   end
 

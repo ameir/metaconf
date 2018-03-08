@@ -7,156 +7,126 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       sigv4_region:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   search:
     parameters:
       cursor:
         types:
         - String
         required: false
-        count: 1
       expr:
         types:
         - String
         required: false
-        count: 1
       facet:
         types:
         - String
         required: false
-        count: 1
       filter_query:
         types:
         - String
         required: false
-        count: 1
       highlight:
         types:
         - String
         required: false
-        count: 1
       partial:
         types:
         - Boolean
         required: false
-        count: 1
       query:
         types:
         - String
         required: true
-        count: 1
       query_options:
         types:
         - String
         required: false
-        count: 1
       query_parser:
         types:
         - String
         required: false
-        count: 1
       return:
         types:
         - String
         required: false
-        count: 1
       size:
         types:
         - Integer
         required: false
-        count: 1
       sort:
         types:
         - String
         required: false
-        count: 1
       start:
         types:
         - Integer
         required: false
-        count: 1
       stats:
         types:
         - String
         required: false
-        count: 1
   suggest:
     parameters:
       query:
         types:
         - String
         required: true
-        count: 1
       suggester:
         types:
         - String
         required: true
-        count: 1
       size:
         types:
         - Integer
         required: false
-        count: 1
   upload_documents:
     parameters:
       documents:
@@ -164,9 +134,7 @@ methods:
         - String
         - IO
         required: true
-        count: 1
       content_type:
         types:
         - String
         required: true
-        count: 1

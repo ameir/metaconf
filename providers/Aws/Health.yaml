@@ -7,181 +7,147 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   describe_affected_entities:
     parameters:
       filter:
         types:
         - Types::EntityFilter
         required: true
-        count: 1
       locale:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_entity_aggregates:
     parameters:
       event_arns:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_event_aggregates:
     parameters:
       filter:
         types:
         - Types::EventFilter
         required: false
-        count: 1
       aggregate_field:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_event_details:
     parameters:
       event_arns:
         types:
         - Array<String>
         required: true
-        count: 1
       locale:
         types:
         - String
         required: false
-        count: 1
   describe_event_types:
     parameters:
       filter:
         types:
         - Types::EventTypeFilter
         required: false
-        count: 1
       locale:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_events:
     parameters:
       filter:
         types:
         - Types::EventFilter
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       locale:
         types:
         - String
         required: false
-        count: 1

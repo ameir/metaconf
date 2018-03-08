@@ -7,694 +7,569 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_listener_certificates:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
       certificates:
         types:
         - Array<Types::Certificate>
         required: true
-        count: 1
   add_tags:
     parameters:
       resource_arns:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   create_listener:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
       protocol:
         types:
         - String
         required: true
-        count: 1
       port:
         types:
         - Integer
         required: true
-        count: 1
       ssl_policy:
         types:
         - String
         required: false
-        count: 1
       certificates:
         types:
         - Array<Types::Certificate>
         required: false
-        count: 1
       default_actions:
         types:
         - Array<Types::Action>
         required: true
-        count: 1
   create_load_balancer:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       subnets:
         types:
         - Array<String>
         required: false
-        count: 1
       subnet_mappings:
         types:
         - Array<Types::SubnetMapping>
         required: false
-        count: 1
       security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       scheme:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       ip_address_type:
         types:
         - String
         required: false
-        count: 1
   create_rule:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
       conditions:
         types:
         - Array<Types::RuleCondition>
         required: true
-        count: 1
       priority:
         types:
         - Integer
         required: true
-        count: 1
       actions:
         types:
         - Array<Types::Action>
         required: true
-        count: 1
   create_target_group:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       protocol:
         types:
         - String
         required: true
-        count: 1
       port:
         types:
         - Integer
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       health_check_protocol:
         types:
         - String
         required: false
-        count: 1
       health_check_port:
         types:
         - String
         required: false
-        count: 1
       health_check_path:
         types:
         - String
         required: false
-        count: 1
       health_check_interval_seconds:
         types:
         - Integer
         required: false
-        count: 1
       health_check_timeout_seconds:
         types:
         - Integer
         required: false
-        count: 1
       healthy_threshold_count:
         types:
         - Integer
         required: false
-        count: 1
       unhealthy_threshold_count:
         types:
         - Integer
         required: false
-        count: 1
       matcher:
         types:
         - Types::Matcher
         required: false
-        count: 1
       target_type:
         types:
         - String
         required: false
-        count: 1
   delete_listener:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
   delete_load_balancer:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
   delete_rule:
     parameters:
       rule_arn:
         types:
         - String
         required: true
-        count: 1
   delete_target_group:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
   deregister_targets:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::TargetDescription>
         required: true
-        count: 1
   describe_account_limits:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_listener_certificates:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_listeners:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: false
-        count: 1
       listener_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_load_balancer_attributes:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
   describe_load_balancers:
     parameters:
       load_balancer_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       names:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_rules:
     parameters:
       listener_arn:
         types:
         - String
         required: false
-        count: 1
       rule_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_ssl_policies:
     parameters:
       names:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_tags:
     parameters:
       resource_arns:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_target_group_attributes:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
   describe_target_groups:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: false
-        count: 1
       target_group_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       names:
         types:
         - Array<String>
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_target_health:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::TargetDescription>
         required: false
-        count: 1
   modify_listener:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       protocol:
         types:
         - String
         required: false
-        count: 1
       ssl_policy:
         types:
         - String
         required: false
-        count: 1
       certificates:
         types:
         - Array<Types::Certificate>
         required: false
-        count: 1
       default_actions:
         types:
         - Array<Types::Action>
         required: false
-        count: 1
   modify_load_balancer_attributes:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::LoadBalancerAttribute>
         required: true
-        count: 1
   modify_rule:
     parameters:
       rule_arn:
         types:
         - String
         required: true
-        count: 1
       conditions:
         types:
         - Array<Types::RuleCondition>
         required: false
-        count: 1
       actions:
         types:
         - Array<Types::Action>
         required: false
-        count: 1
   modify_target_group:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
       health_check_protocol:
         types:
         - String
         required: false
-        count: 1
       health_check_port:
         types:
         - String
         required: false
-        count: 1
       health_check_path:
         types:
         - String
         required: false
-        count: 1
       health_check_interval_seconds:
         types:
         - Integer
         required: false
-        count: 1
       health_check_timeout_seconds:
         types:
         - Integer
         required: false
-        count: 1
       healthy_threshold_count:
         types:
         - Integer
         required: false
-        count: 1
       unhealthy_threshold_count:
         types:
         - Integer
         required: false
-        count: 1
       matcher:
         types:
         - Types::Matcher
         required: false
-        count: 1
   modify_target_group_attributes:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::TargetGroupAttribute>
         required: true
-        count: 1
   register_targets:
     parameters:
       target_group_arn:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::TargetDescription>
         required: true
-        count: 1
   remove_listener_certificates:
     parameters:
       listener_arn:
         types:
         - String
         required: true
-        count: 1
       certificates:
         types:
         - Array<Types::Certificate>
         required: true
-        count: 1
   remove_tags:
     parameters:
       resource_arns:
         types:
         - Array<String>
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   set_ip_address_type:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
       ip_address_type:
         types:
         - String
         required: true
-        count: 1
   set_rule_priorities:
     parameters:
       rule_priorities:
         types:
         - Array<Types::RulePriorityPair>
         required: true
-        count: 1
   set_security_groups:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
       security_groups:
         types:
         - Array<String>
         required: true
-        count: 1
   set_subnets:
     parameters:
       load_balancer_arn:
         types:
         - String
         required: true
-        count: 1
       subnets:
         types:
         - Array<String>
         required: true
-        count: 1
       subnet_mappings:
         types:
         - Array<Types::SubnetMapping>
         required: false
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

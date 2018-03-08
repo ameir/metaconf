@@ -7,332 +7,272 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   associate_created_artifact:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       created_artifact:
         types:
         - Types::CreatedArtifact
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   associate_discovered_resource:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       discovered_resource:
         types:
         - Types::DiscoveredResource
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_progress_update_stream:
     parameters:
       progress_update_stream_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_progress_update_stream:
     parameters:
       progress_update_stream_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_application_state:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
   describe_migration_task:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
   disassociate_created_artifact:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       created_artifact_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   disassociate_discovered_resource:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       configuration_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   import_migration_task:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   list_created_artifacts:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_discovered_resources:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_migration_tasks:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       resource_name:
         types:
         - String
         required: false
-        count: 1
   list_progress_update_streams:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   notify_application_state:
     parameters:
       application_id:
         types:
         - String
         required: true
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   notify_migration_task_state:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       task:
         types:
         - Types::Task
         required: true
-        count: 1
       update_date_time:
         types:
         - Time
@@ -341,36 +281,29 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
       next_update_seconds:
         types:
         - Integer
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   put_resource_attributes:
     parameters:
       progress_update_stream:
         types:
         - String
         required: true
-        count: 1
       migration_task_name:
         types:
         - String
         required: true
-        count: 1
       resource_attribute_list:
         types:
         - Array<Types::ResourceAttribute>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1

@@ -7,658 +7,536 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   authorize_cache_security_group_ingress:
     parameters:
       cache_security_group_name:
         types:
         - String
         required: true
-        count: 1
       ec2_security_group_name:
         types:
         - String
         required: true
-        count: 1
       ec2_security_group_owner_id:
         types:
         - String
         required: true
-        count: 1
   copy_snapshot:
     parameters:
       source_snapshot_name:
         types:
         - String
         required: true
-        count: 1
       target_snapshot_name:
         types:
         - String
         required: true
-        count: 1
       target_bucket:
         types:
         - String
         required: false
-        count: 1
   create_cache_cluster:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: true
-        count: 1
       replication_group_id:
         types:
         - String
         required: false
-        count: 1
       az_mode:
         types:
         - String
         required: false
-        count: 1
       preferred_availability_zone:
         types:
         - String
         required: false
-        count: 1
       preferred_availability_zones:
         types:
         - Array<String>
         required: false
-        count: 1
       num_cache_nodes:
         types:
         - Integer
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       cache_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       cache_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       cache_security_group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       snapshot_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       snapshot_name:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       notification_topic_arn:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       snapshot_retention_limit:
         types:
         - Integer
         required: false
-        count: 1
       snapshot_window:
         types:
         - String
         required: false
-        count: 1
       auth_token:
         types:
         - String
         required: false
-        count: 1
   create_cache_parameter_group:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       cache_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: true
-        count: 1
   create_cache_security_group:
     parameters:
       cache_security_group_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: true
-        count: 1
   create_cache_subnet_group:
     parameters:
       cache_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
       cache_subnet_group_description:
         types:
         - String
         required: true
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   create_replication_group:
     parameters:
       replication_group_id:
         types:
         - String
         required: true
-        count: 1
       replication_group_description:
         types:
         - String
         required: true
-        count: 1
       primary_cluster_id:
         types:
         - String
         required: false
-        count: 1
       automatic_failover_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       num_cache_clusters:
         types:
         - Integer
         required: false
-        count: 1
       preferred_cache_cluster_a_zs:
         types:
         - Array<String>
         required: false
-        count: 1
       num_node_groups:
         types:
         - Integer
         required: false
-        count: 1
       replicas_per_node_group:
         types:
         - Integer
         required: false
-        count: 1
       node_group_configuration:
         types:
         - Array<Types::NodeGroupConfiguration>
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
       engine:
         types:
         - String
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       cache_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       cache_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       cache_security_group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       snapshot_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       snapshot_name:
         types:
         - String
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       port:
         types:
         - Integer
         required: false
-        count: 1
       notification_topic_arn:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       snapshot_retention_limit:
         types:
         - Integer
         required: false
-        count: 1
       snapshot_window:
         types:
         - String
         required: false
-        count: 1
       auth_token:
         types:
         - String
         required: false
-        count: 1
       transit_encryption_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       at_rest_encryption_enabled:
         types:
         - Boolean
         required: false
-        count: 1
   create_snapshot:
     parameters:
       replication_group_id:
         types:
         - String
         required: false
-        count: 1
       cache_cluster_id:
         types:
         - String
         required: false
-        count: 1
       snapshot_name:
         types:
         - String
         required: true
-        count: 1
   delete_cache_cluster:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: true
-        count: 1
       final_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
   delete_cache_parameter_group:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_cache_security_group:
     parameters:
       cache_security_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_cache_subnet_group:
     parameters:
       cache_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
   delete_replication_group:
     parameters:
       replication_group_id:
         types:
         - String
         required: true
-        count: 1
       retain_primary_cluster:
         types:
         - Boolean
         required: false
-        count: 1
       final_snapshot_identifier:
         types:
         - String
         required: false
-        count: 1
   delete_snapshot:
     parameters:
       snapshot_name:
         types:
         - String
         required: true
-        count: 1
   describe_cache_clusters:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       show_cache_node_info:
         types:
         - Boolean
         required: false
-        count: 1
       show_cache_clusters_not_in_replication_groups:
         types:
         - Boolean
         required: false
-        count: 1
   describe_cache_engine_versions:
     parameters:
       engine:
         types:
         - String
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       cache_parameter_group_family:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       default_only:
         types:
         - Boolean
         required: false
-        count: 1
   describe_cache_parameter_groups:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_cache_parameters:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       source:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_cache_security_groups:
     parameters:
       cache_security_group_name:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_cache_subnet_groups:
     parameters:
       cache_subnet_group_name:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_engine_default_parameters:
     parameters:
       cache_parameter_group_family:
         types:
         - String
         required: true
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_events:
     parameters:
       source_identifier:
         types:
         - String
         required: false
-        count: 1
       source_type:
         types:
         - String
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -667,7 +545,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -676,515 +553,419 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       duration:
         types:
         - Integer
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_replication_groups:
     parameters:
       replication_group_id:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_cache_nodes:
     parameters:
       reserved_cache_node_id:
         types:
         - String
         required: false
-        count: 1
       reserved_cache_nodes_offering_id:
         types:
         - String
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
       duration:
         types:
         - String
         required: false
-        count: 1
       product_description:
         types:
         - String
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_cache_nodes_offerings:
     parameters:
       reserved_cache_nodes_offering_id:
         types:
         - String
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
       duration:
         types:
         - String
         required: false
-        count: 1
       product_description:
         types:
         - String
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
   describe_snapshots:
     parameters:
       replication_group_id:
         types:
         - String
         required: false
-        count: 1
       cache_cluster_id:
         types:
         - String
         required: false
-        count: 1
       snapshot_name:
         types:
         - String
         required: false
-        count: 1
       snapshot_source:
         types:
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_records:
         types:
         - Integer
         required: false
-        count: 1
       show_node_group_config:
         types:
         - Boolean
         required: false
-        count: 1
   list_allowed_node_type_modifications:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: false
-        count: 1
       replication_group_id:
         types:
         - String
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
   modify_cache_cluster:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: true
-        count: 1
       num_cache_nodes:
         types:
         - Integer
         required: false
-        count: 1
       cache_node_ids_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
       az_mode:
         types:
         - String
         required: false
-        count: 1
       new_availability_zones:
         types:
         - Array<String>
         required: false
-        count: 1
       cache_security_group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       notification_topic_arn:
         types:
         - String
         required: false
-        count: 1
       cache_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       notification_topic_status:
         types:
         - String
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       snapshot_retention_limit:
         types:
         - Integer
         required: false
-        count: 1
       snapshot_window:
         types:
         - String
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
   modify_cache_parameter_group:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       parameter_name_values:
         types:
         - Array<Types::ParameterNameValue>
         required: true
-        count: 1
   modify_cache_subnet_group:
     parameters:
       cache_subnet_group_name:
         types:
         - String
         required: true
-        count: 1
       cache_subnet_group_description:
         types:
         - String
         required: false
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_replication_group:
     parameters:
       replication_group_id:
         types:
         - String
         required: true
-        count: 1
       replication_group_description:
         types:
         - String
         required: false
-        count: 1
       primary_cluster_id:
         types:
         - String
         required: false
-        count: 1
       snapshotting_cluster_id:
         types:
         - String
         required: false
-        count: 1
       automatic_failover_enabled:
         types:
         - Boolean
         required: false
-        count: 1
       cache_security_group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       preferred_maintenance_window:
         types:
         - String
         required: false
-        count: 1
       notification_topic_arn:
         types:
         - String
         required: false
-        count: 1
       cache_parameter_group_name:
         types:
         - String
         required: false
-        count: 1
       notification_topic_status:
         types:
         - String
         required: false
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: false
-        count: 1
       engine_version:
         types:
         - String
         required: false
-        count: 1
       auto_minor_version_upgrade:
         types:
         - Boolean
         required: false
-        count: 1
       snapshot_retention_limit:
         types:
         - Integer
         required: false
-        count: 1
       snapshot_window:
         types:
         - String
         required: false
-        count: 1
       cache_node_type:
         types:
         - String
         required: false
-        count: 1
       node_group_id:
         types:
         - String
         required: false
-        count: 1
   modify_replication_group_shard_configuration:
     parameters:
       replication_group_id:
         types:
         - String
         required: true
-        count: 1
       node_group_count:
         types:
         - Integer
         required: true
-        count: 1
       apply_immediately:
         types:
         - Boolean
         required: true
-        count: 1
       resharding_configuration:
         types:
         - Array<Types::ReshardingConfiguration>
         required: false
-        count: 1
       node_groups_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
   purchase_reserved_cache_nodes_offering:
     parameters:
       reserved_cache_nodes_offering_id:
         types:
         - String
         required: true
-        count: 1
       reserved_cache_node_id:
         types:
         - String
         required: false
-        count: 1
       cache_node_count:
         types:
         - Integer
         required: false
-        count: 1
   reboot_cache_cluster:
     parameters:
       cache_cluster_id:
         types:
         - String
         required: true
-        count: 1
       cache_node_ids_to_reboot:
         types:
         - Array<String>
         required: true
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   reset_cache_parameter_group:
     parameters:
       cache_parameter_group_name:
         types:
         - String
         required: true
-        count: 1
       reset_all_parameters:
         types:
         - Boolean
         required: false
-        count: 1
       parameter_name_values:
         types:
         - Array<Types::ParameterNameValue>
         required: false
-        count: 1
   revoke_cache_security_group_ingress:
     parameters:
       cache_security_group_name:
         types:
         - String
         required: true
-        count: 1
       ec2_security_group_name:
         types:
         - String
         required: true
-        count: 1
       ec2_security_group_owner_id:
         types:
         - String
         required: true
-        count: 1
   test_failover:
     parameters:
       replication_group_id:
         types:
         - String
         required: true
-        count: 1
       node_group_id:
         types:
         - String
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

@@ -7,428 +7,352 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   check_domain_availability:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       idn_lang_code:
         types:
         - String
         required: false
-        count: 1
   check_domain_transferability:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       auth_code:
         types:
         - String
         required: false
-        count: 1
   delete_tags_for_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       tags_to_delete:
         types:
         - Array<String>
         required: true
-        count: 1
   disable_domain_auto_renew:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   disable_domain_transfer_lock:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   enable_domain_auto_renew:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   enable_domain_transfer_lock:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   get_contact_reachability_status:
     parameters:
       domain_name:
         types:
         - String
         required: false
-        count: 1
   get_domain_detail:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   get_domain_suggestions:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       suggestion_count:
         types:
         - Integer
         required: true
-        count: 1
       only_available:
         types:
         - Boolean
         required: true
-        count: 1
   get_operation_detail:
     parameters:
       operation_id:
         types:
         - String
         required: true
-        count: 1
   list_domains:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_operations:
     parameters:
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_tags_for_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   register_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       idn_lang_code:
         types:
         - String
         required: false
-        count: 1
       duration_in_years:
         types:
         - Integer
         required: true
-        count: 1
       auto_renew:
         types:
         - Boolean
         required: false
-        count: 1
       admin_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       registrant_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       tech_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       privacy_protect_admin_contact:
         types:
         - Boolean
         required: false
-        count: 1
       privacy_protect_registrant_contact:
         types:
         - Boolean
         required: false
-        count: 1
       privacy_protect_tech_contact:
         types:
         - Boolean
         required: false
-        count: 1
   renew_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       duration_in_years:
         types:
         - Integer
         required: false
-        count: 1
       current_expiry_year:
         types:
         - Integer
         required: true
-        count: 1
   resend_contact_reachability_email:
     parameters:
       domain_name:
         types:
         - String
         required: false
-        count: 1
   retrieve_domain_auth_code:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   transfer_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       idn_lang_code:
         types:
         - String
         required: false
-        count: 1
       duration_in_years:
         types:
         - Integer
         required: true
-        count: 1
       nameservers:
         types:
         - Array<Types::Nameserver>
         required: false
-        count: 1
       auth_code:
         types:
         - String
         required: false
-        count: 1
       auto_renew:
         types:
         - Boolean
         required: false
-        count: 1
       admin_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       registrant_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       tech_contact:
         types:
         - Types::ContactDetail
         required: true
-        count: 1
       privacy_protect_admin_contact:
         types:
         - Boolean
         required: false
-        count: 1
       privacy_protect_registrant_contact:
         types:
         - Boolean
         required: false
-        count: 1
       privacy_protect_tech_contact:
         types:
         - Boolean
         required: false
-        count: 1
   update_domain_contact:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       admin_contact:
         types:
         - Types::ContactDetail
         required: false
-        count: 1
       registrant_contact:
         types:
         - Types::ContactDetail
         required: false
-        count: 1
       tech_contact:
         types:
         - Types::ContactDetail
         required: false
-        count: 1
   update_domain_contact_privacy:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       admin_privacy:
         types:
         - Boolean
         required: false
-        count: 1
       registrant_privacy:
         types:
         - Boolean
         required: false
-        count: 1
       tech_privacy:
         types:
         - Boolean
         required: false
-        count: 1
   update_domain_nameservers:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       fi_auth_key:
         types:
         - String
         required: false
-        count: 1
       nameservers:
         types:
         - Array<Types::Nameserver>
         required: true
-        count: 1
   update_tags_for_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       tags_to_update:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   view_billing:
     parameters:
       start:
@@ -439,7 +363,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       end:
         types:
         - Time
@@ -448,14 +371,11 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       marker:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1

@@ -7,579 +7,480 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   allocate_static_ip:
     parameters:
       static_ip_name:
         types:
         - String
         required: true
-        count: 1
   attach_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
       disk_path:
         types:
         - String
         required: true
-        count: 1
   attach_instances_to_load_balancer:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       instance_names:
         types:
         - Array<String>
         required: true
-        count: 1
   attach_load_balancer_tls_certificate:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       certificate_name:
         types:
         - String
         required: true
-        count: 1
   attach_static_ip:
     parameters:
       static_ip_name:
         types:
         - String
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
   close_instance_public_ports:
     parameters:
       port_info:
         types:
         - Types::PortInfo
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
   create_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       size_in_gb:
         types:
         - Integer
         required: true
-        count: 1
   create_disk_from_snapshot:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
       disk_snapshot_name:
         types:
         - String
         required: true
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       size_in_gb:
         types:
         - Integer
         required: true
-        count: 1
   create_disk_snapshot:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
       disk_snapshot_name:
         types:
         - String
         required: true
-        count: 1
   create_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   create_domain_entry:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       domain_entry:
         types:
         - Types::DomainEntry
         required: true
-        count: 1
   create_instance_snapshot:
     parameters:
       instance_snapshot_name:
         types:
         - String
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
   create_instances:
     parameters:
       instance_names:
         types:
         - Array<String>
         required: true
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       custom_image_name:
         types:
         - String
         required: false
-        count: 1
       blueprint_id:
         types:
         - String
         required: true
-        count: 1
       bundle_id:
         types:
         - String
         required: true
-        count: 1
       user_data:
         types:
         - String
         required: false
-        count: 1
       key_pair_name:
         types:
         - String
         required: false
-        count: 1
   create_instances_from_snapshot:
     parameters:
       instance_names:
         types:
         - Array<String>
         required: true
-        count: 1
       attached_disk_mapping:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       instance_snapshot_name:
         types:
         - String
         required: true
-        count: 1
       bundle_id:
         types:
         - String
         required: true
-        count: 1
       user_data:
         types:
         - String
         required: false
-        count: 1
       key_pair_name:
         types:
         - String
         required: false
-        count: 1
   create_key_pair:
     parameters:
       key_pair_name:
         types:
         - String
         required: true
-        count: 1
   create_load_balancer:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       instance_port:
         types:
         - Integer
         required: true
-        count: 1
       health_check_path:
         types:
         - String
         required: false
-        count: 1
       certificate_name:
         types:
         - String
         required: false
-        count: 1
       certificate_domain_name:
         types:
         - String
         required: false
-        count: 1
       certificate_alternative_names:
         types:
         - Array<String>
         required: false
-        count: 1
   create_load_balancer_tls_certificate:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       certificate_name:
         types:
         - String
         required: true
-        count: 1
       certificate_domain_name:
         types:
         - String
         required: true
-        count: 1
       certificate_alternative_names:
         types:
         - Array<String>
         required: false
-        count: 1
   delete_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
   delete_disk_snapshot:
     parameters:
       disk_snapshot_name:
         types:
         - String
         required: true
-        count: 1
   delete_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   delete_domain_entry:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       domain_entry:
         types:
         - Types::DomainEntry
         required: true
-        count: 1
   delete_instance:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   delete_instance_snapshot:
     parameters:
       instance_snapshot_name:
         types:
         - String
         required: true
-        count: 1
   delete_key_pair:
     parameters:
       key_pair_name:
         types:
         - String
         required: true
-        count: 1
   delete_load_balancer:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
   delete_load_balancer_tls_certificate:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       certificate_name:
         types:
         - String
         required: true
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
   detach_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
   detach_instances_from_load_balancer:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       instance_names:
         types:
         - Array<String>
         required: true
-        count: 1
   detach_static_ip:
     parameters:
       static_ip_name:
         types:
         - String
         required: true
-        count: 1
   get_active_names:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_blueprints:
     parameters:
       include_inactive:
         types:
         - Boolean
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_bundles:
     parameters:
       include_inactive:
         types:
         - Boolean
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
-        count: 1
   get_disk_snapshot:
     parameters:
       disk_snapshot_name:
         types:
         - String
         required: true
-        count: 1
   get_disk_snapshots:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_disks:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_domain:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
   get_domains:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_instance:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   get_instance_access_details:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
       protocol:
         types:
         - String
         required: false
-        count: 1
   get_instance_metric_data:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
       metric_name:
         types:
         - String
         required: true
-        count: 1
       period:
         types:
         - Integer
         required: true
-        count: 1
       start_time:
         types:
         - Time
@@ -588,7 +489,6 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
       end_time:
         types:
         - Time
@@ -597,90 +497,76 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
       unit:
         types:
         - String
         required: true
-        count: 1
       statistics:
         types:
         - Array<String>
         required: true
-        count: 1
   get_instance_port_states:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   get_instance_snapshot:
     parameters:
       instance_snapshot_name:
         types:
         - String
         required: true
-        count: 1
   get_instance_snapshots:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_instance_state:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   get_instances:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_key_pair:
     parameters:
       key_pair_name:
         types:
         - String
         required: true
-        count: 1
   get_key_pairs:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_load_balancer:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
   get_load_balancer_metric_data:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       metric_name:
         types:
         - String
         required: true
-        count: 1
       period:
         types:
         - Integer
         required: true
-        count: 1
       start_time:
         types:
         - Time
@@ -689,7 +575,6 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
       end_time:
         types:
         - Time
@@ -698,173 +583,145 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
       unit:
         types:
         - String
         required: true
-        count: 1
       statistics:
         types:
         - Array<String>
         required: true
-        count: 1
   get_load_balancer_tls_certificates:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
   get_load_balancers:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_operation:
     parameters:
       operation_id:
         types:
         - String
         required: true
-        count: 1
   get_operations:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_operations_for_resource:
     parameters:
       resource_name:
         types:
         - String
         required: true
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   get_regions:
     parameters:
       include_availability_zones:
         types:
         - Boolean
         required: false
-        count: 1
   get_static_ip:
     parameters:
       static_ip_name:
         types:
         - String
         required: true
-        count: 1
   get_static_ips:
     parameters:
       page_token:
         types:
         - String
         required: false
-        count: 1
   import_key_pair:
     parameters:
       key_pair_name:
         types:
         - String
         required: true
-        count: 1
       public_key_base_64:
         types:
         - String
         required: true
-        count: 1
   open_instance_public_ports:
     parameters:
       port_info:
         types:
         - Types::PortInfo
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
   put_instance_public_ports:
     parameters:
       port_infos:
         types:
         - Array<Types::PortInfo>
         required: true
-        count: 1
       instance_name:
         types:
         - String
         required: true
-        count: 1
   reboot_instance:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   release_static_ip:
     parameters:
       static_ip_name:
         types:
         - String
         required: true
-        count: 1
   start_instance:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
   stop_instance:
     parameters:
       instance_name:
         types:
         - String
         required: true
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
   update_domain_entry:
     parameters:
       domain_name:
         types:
         - String
         required: true
-        count: 1
       domain_entry:
         types:
         - Types::DomainEntry
         required: true
-        count: 1
   update_load_balancer_attribute:
     parameters:
       load_balancer_name:
         types:
         - String
         required: true
-        count: 1
       attribute_name:
         types:
         - String
         required: true
-        count: 1
       attribute_value:
         types:
         - String
         required: true
-        count: 1

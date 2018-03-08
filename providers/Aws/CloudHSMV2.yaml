@@ -7,229 +7,187 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_cluster:
     parameters:
       subnet_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       hsm_type:
         types:
         - String
         required: true
-        count: 1
       source_backup_id:
         types:
         - String
         required: false
-        count: 1
   create_hsm:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       ip_address:
         types:
         - String
         required: false
-        count: 1
   delete_cluster:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
   delete_hsm:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       hsm_id:
         types:
         - String
         required: false
-        count: 1
       eni_id:
         types:
         - String
         required: false
-        count: 1
       eni_ip:
         types:
         - String
         required: false
-        count: 1
   describe_backups:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
   describe_clusters:
     parameters:
       filters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   initialize_cluster:
     parameters:
       cluster_id:
         types:
         - String
         required: true
-        count: 1
       signed_cert:
         types:
         - String
         required: true
-        count: 1
       trust_anchor:
         types:
         - String
         required: true
-        count: 1
   list_tags:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   tag_resource:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_list:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   untag_resource:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_key_list:
         types:
         - Array<String>
         required: true
-        count: 1

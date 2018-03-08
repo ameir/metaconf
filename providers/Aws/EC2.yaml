@@ -7,3361 +7,2752 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   accept_reserved_instances_exchange_quote:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       reserved_instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       target_configurations:
         types:
         - Array<Types::TargetConfigurationRequest>
         required: false
-        count: 1
   accept_vpc_endpoint_connections:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: true
-        count: 1
       vpc_endpoint_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   accept_vpc_peering_connection:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: false
-        count: 1
   allocate_address:
     parameters:
       domain:
         types:
         - String
         required: false
-        count: 1
       address:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   allocate_hosts:
     parameters:
       auto_placement:
         types:
         - String
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       instance_type:
         types:
         - String
         required: true
-        count: 1
       quantity:
         types:
         - Integer
         required: true
-        count: 1
   assign_ipv_6_addresses:
     parameters:
       ipv_6_address_count:
         types:
         - Integer
         required: false
-        count: 1
       ipv_6_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   assign_private_ip_addresses:
     parameters:
       allow_reassignment:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       private_ip_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       secondary_private_ip_address_count:
         types:
         - Integer
         required: false
-        count: 1
   associate_address:
     parameters:
       allocation_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       public_ip:
         types:
         - String
         required: false
-        count: 1
       allow_reassociation:
         types:
         - Boolean
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: false
-        count: 1
       private_ip_address:
         types:
         - String
         required: false
-        count: 1
   associate_dhcp_options:
     parameters:
       dhcp_options_id:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   associate_iam_instance_profile:
     parameters:
       iam_instance_profile:
         types:
         - Types::IamInstanceProfileSpecification
         required: true
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
   associate_route_table:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
   associate_subnet_cidr_block:
     parameters:
       ipv_6_cidr_block:
         types:
         - String
         required: true
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
   associate_vpc_cidr_block:
     parameters:
       amazon_provided_ipv_6_cidr_block:
         types:
         - Boolean
         required: false
-        count: 1
       cidr_block:
         types:
         - String
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   attach_classic_link_vpc:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       groups:
         types:
         - Array<String>
         required: true
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   attach_internet_gateway:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       internet_gateway_id:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   attach_network_interface:
     parameters:
       device_index:
         types:
         - Integer
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   attach_volume:
     parameters:
       device:
         types:
         - String
         required: true
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   attach_vpn_gateway:
     parameters:
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       vpn_gateway_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   authorize_security_group_egress:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: false
-        count: 1
       cidr_ip:
         types:
         - String
         required: false
-        count: 1
       from_port:
         types:
         - Integer
         required: false
-        count: 1
       ip_protocol:
         types:
         - String
         required: false
-        count: 1
       to_port:
         types:
         - Integer
         required: false
-        count: 1
       source_security_group_name:
         types:
         - String
         required: false
-        count: 1
       source_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
   authorize_security_group_ingress:
     parameters:
       cidr_ip:
         types:
         - String
         required: false
-        count: 1
       from_port:
         types:
         - Integer
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: false
-        count: 1
       ip_protocol:
         types:
         - String
         required: false
-        count: 1
       source_security_group_name:
         types:
         - String
         required: false
-        count: 1
       source_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
       to_port:
         types:
         - Integer
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   bundle_instance:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       storage:
         types:
         - Types::Storage
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   cancel_bundle_task:
     parameters:
       bundle_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   cancel_conversion_task:
     parameters:
       conversion_task_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       reason_message:
         types:
         - String
         required: false
-        count: 1
   cancel_export_task:
     parameters:
       export_task_id:
         types:
         - String
         required: true
-        count: 1
   cancel_import_task:
     parameters:
       cancel_reason:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       import_task_id:
         types:
         - String
         required: false
-        count: 1
   cancel_reserved_instances_listing:
     parameters:
       reserved_instances_listing_id:
         types:
         - String
         required: true
-        count: 1
   cancel_spot_fleet_requests:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       spot_fleet_request_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       terminate_instances:
         types:
         - Boolean
         required: true
-        count: 1
   cancel_spot_instance_requests:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       spot_instance_request_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   confirm_product_instance:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       product_code:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   copy_fpga_image:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       source_fpga_image_id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   copy_image:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       source_image_id:
         types:
         - String
         required: true
-        count: 1
       source_region:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   copy_snapshot:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       destination_region:
         types:
         - String
         required: false
-        count: 1
       encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       presigned_url:
         types:
         - String
         required: false
-        count: 1
       source_region:
         types:
         - String
         required: true
-        count: 1
       source_snapshot_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_customer_gateway:
     parameters:
       bgp_asn:
         types:
         - Integer
         required: true
-        count: 1
       public_ip:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_default_subnet:
     parameters:
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_default_vpc:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_dhcp_options:
     parameters:
       dhcp_configurations:
         types:
         - Array<Types::NewDhcpConfiguration>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_egress_only_internet_gateway:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   create_flow_logs:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       deliver_logs_permission_arn:
         types:
         - String
         required: true
-        count: 1
       log_group_name:
         types:
         - String
         required: true
-        count: 1
       resource_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: true
-        count: 1
       traffic_type:
         types:
         - String
         required: true
-        count: 1
   create_fpga_image:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       input_storage_location:
         types:
         - Types::StorageLocation
         required: true
-        count: 1
       logs_storage_location:
         types:
         - Types::StorageLocation
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   create_image:
     parameters:
       block_device_mappings:
         types:
         - Array<Types::BlockDeviceMapping>
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       no_reboot:
         types:
         - Boolean
         required: false
-        count: 1
   create_instance_export_task:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       export_to_s3_task:
         types:
         - Types::ExportToS3TaskSpecification
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       target_environment:
         types:
         - String
         required: false
-        count: 1
   create_internet_gateway:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_key_pair:
     parameters:
       key_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_launch_template:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: true
-        count: 1
       version_description:
         types:
         - String
         required: false
-        count: 1
       launch_template_data:
         types:
         - Types::RequestLaunchTemplateData
         required: true
-        count: 1
   create_launch_template_version:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       launch_template_id:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: false
-        count: 1
       source_version:
         types:
         - String
         required: false
-        count: 1
       version_description:
         types:
         - String
         required: false
-        count: 1
       launch_template_data:
         types:
         - Types::RequestLaunchTemplateData
         required: true
-        count: 1
   create_nat_gateway:
     parameters:
       allocation_id:
         types:
         - String
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
   create_network_acl:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   create_network_acl_entry:
     parameters:
       cidr_block:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress:
         types:
         - Boolean
         required: true
-        count: 1
       icmp_type_code:
         types:
         - Types::IcmpTypeCode
         required: false
-        count: 1
       ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       network_acl_id:
         types:
         - String
         required: true
-        count: 1
       port_range:
         types:
         - Types::PortRange
         required: false
-        count: 1
       protocol:
         types:
         - String
         required: true
-        count: 1
       rule_action:
         types:
         - String
         required: true
-        count: 1
       rule_number:
         types:
         - Integer
         required: true
-        count: 1
   create_network_interface:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       groups:
         types:
         - Array<String>
         required: false
-        count: 1
       ipv_6_address_count:
         types:
         - Integer
         required: false
-        count: 1
       ipv_6_addresses:
         types:
         - Array<Types::InstanceIpv6Address>
         required: false
-        count: 1
       private_ip_address:
         types:
         - String
         required: false
-        count: 1
       private_ip_addresses:
         types:
         - Array<Types::PrivateIpAddressSpecification>
         required: false
-        count: 1
       secondary_private_ip_address_count:
         types:
         - Integer
         required: false
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
   create_network_interface_permission:
     parameters:
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       aws_account_id:
         types:
         - String
         required: false
-        count: 1
       aws_service:
         types:
         - String
         required: false
-        count: 1
       permission:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_placement_group:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
       strategy:
         types:
         - String
         required: true
-        count: 1
   create_reserved_instances_listing:
     parameters:
       client_token:
         types:
         - String
         required: true
-        count: 1
       instance_count:
         types:
         - Integer
         required: true
-        count: 1
       price_schedules:
         types:
         - Array<Types::PriceScheduleSpecification>
         required: true
-        count: 1
       reserved_instances_id:
         types:
         - String
         required: true
-        count: 1
   create_route:
     parameters:
       destination_cidr_block:
         types:
         - String
         required: false
-        count: 1
       destination_ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress_only_internet_gateway_id:
         types:
         - String
         required: false
-        count: 1
       gateway_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       nat_gateway_id:
         types:
         - String
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: false
-        count: 1
   create_route_table:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   create_security_group:
     parameters:
       description:
         types:
         - String
         required: true
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_snapshot:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       tag_specifications:
         types:
         - Array<Types::TagSpecification>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_spot_datafeed_subscription:
     parameters:
       bucket:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       prefix:
         types:
         - String
         required: false
-        count: 1
   create_subnet:
     parameters:
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       cidr_block:
         types:
         - String
         required: true
-        count: 1
       ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   create_tags:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       resources:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   create_volume:
     parameters:
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       encrypted:
         types:
         - Boolean
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
       kms_key_id:
         types:
         - String
         required: false
-        count: 1
       size:
         types:
         - Integer
         required: false
-        count: 1
       snapshot_id:
         types:
         - String
         required: false
-        count: 1
       volume_type:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       tag_specifications:
         types:
         - Array<Types::TagSpecification>
         required: false
-        count: 1
   create_vpc:
     parameters:
       cidr_block:
         types:
         - String
         required: true
-        count: 1
       amazon_provided_ipv_6_cidr_block:
         types:
         - Boolean
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_tenancy:
         types:
         - String
         required: false
-        count: 1
   create_vpc_endpoint:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_endpoint_type:
         types:
         - String
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       service_name:
         types:
         - String
         required: true
-        count: 1
       policy_document:
         types:
         - String
         required: false
-        count: 1
       route_table_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       private_dns_enabled:
         types:
         - Boolean
         required: false
-        count: 1
   create_vpc_endpoint_connection_notification:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: false
-        count: 1
       vpc_endpoint_id:
         types:
         - String
         required: false
-        count: 1
       connection_notification_arn:
         types:
         - String
         required: true
-        count: 1
       connection_events:
         types:
         - Array<String>
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   create_vpc_endpoint_service_configuration:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       acceptance_required:
         types:
         - Boolean
         required: false
-        count: 1
       network_load_balancer_arns:
         types:
         - Array<String>
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   create_vpc_peering_connection:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       peer_owner_id:
         types:
         - String
         required: false
-        count: 1
       peer_vpc_id:
         types:
         - String
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: false
-        count: 1
       peer_region:
         types:
         - String
         required: false
-        count: 1
   create_vpn_connection:
     parameters:
       customer_gateway_id:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       vpn_gateway_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       options:
         types:
         - Types::VpnConnectionOptionsSpecification
         required: false
-        count: 1
   create_vpn_connection_route:
     parameters:
       destination_cidr_block:
         types:
         - String
         required: true
-        count: 1
       vpn_connection_id:
         types:
         - String
         required: true
-        count: 1
   create_vpn_gateway:
     parameters:
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       amazon_side_asn:
         types:
         - Integer
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_customer_gateway:
     parameters:
       customer_gateway_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_dhcp_options:
     parameters:
       dhcp_options_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_egress_only_internet_gateway:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress_only_internet_gateway_id:
         types:
         - String
         required: true
-        count: 1
   delete_flow_logs:
     parameters:
       flow_log_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_fpga_image:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       fpga_image_id:
         types:
         - String
         required: true
-        count: 1
   delete_internet_gateway:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       internet_gateway_id:
         types:
         - String
         required: true
-        count: 1
   delete_key_pair:
     parameters:
       key_name:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_launch_template:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       launch_template_id:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: false
-        count: 1
   delete_launch_template_versions:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       launch_template_id:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: false
-        count: 1
       versions:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_nat_gateway:
     parameters:
       nat_gateway_id:
         types:
         - String
         required: true
-        count: 1
   delete_network_acl:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_acl_id:
         types:
         - String
         required: true
-        count: 1
   delete_network_acl_entry:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress:
         types:
         - Boolean
         required: true
-        count: 1
       network_acl_id:
         types:
         - String
         required: true
-        count: 1
       rule_number:
         types:
         - Integer
         required: true
-        count: 1
   delete_network_interface:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   delete_network_interface_permission:
     parameters:
       network_interface_permission_id:
         types:
         - String
         required: true
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_placement_group:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: true
-        count: 1
   delete_route:
     parameters:
       destination_cidr_block:
         types:
         - String
         required: false
-        count: 1
       destination_ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
   delete_route_table:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
   delete_security_group:
     parameters:
       group_id:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_snapshot:
     parameters:
       snapshot_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_spot_datafeed_subscription:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_subnet:
     parameters:
       subnet_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_tags:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       resources:
         types:
         - Array<String>
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   delete_volume:
     parameters:
       volume_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_vpc:
     parameters:
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_vpc_endpoint_connection_notifications:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       connection_notification_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_vpc_endpoint_service_configurations:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_vpc_endpoints:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_endpoint_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_vpc_peering_connection:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: true
-        count: 1
   delete_vpn_connection:
     parameters:
       vpn_connection_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   delete_vpn_connection_route:
     parameters:
       destination_cidr_block:
         types:
         - String
         required: true
-        count: 1
       vpn_connection_id:
         types:
         - String
         required: true
-        count: 1
   delete_vpn_gateway:
     parameters:
       vpn_gateway_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   deregister_image:
     parameters:
       image_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_account_attributes:
     parameters:
       attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_addresses:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       public_ips:
         types:
         - Array<String>
         required: false
-        count: 1
       allocation_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_aggregate_id_format:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_availability_zones:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       zone_names:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_bundle_tasks:
     parameters:
       bundle_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_classic_link_instances:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_conversion_tasks:
     parameters:
       conversion_task_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_customer_gateways:
     parameters:
       customer_gateway_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_dhcp_options:
     parameters:
       dhcp_options_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_egress_only_internet_gateways:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress_only_internet_gateway_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_elastic_gpus:
     parameters:
       elastic_gpu_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_export_tasks:
     parameters:
       export_task_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_flow_logs:
     parameters:
       filter:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       flow_log_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_fpga_image_attribute:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       fpga_image_id:
         types:
         - String
         required: true
-        count: 1
       attribute:
         types:
         - String
         required: true
-        count: 1
   describe_fpga_images:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       fpga_image_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       owners:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_host_reservation_offerings:
     parameters:
       filter:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_duration:
         types:
         - Integer
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       min_duration:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       offering_id:
         types:
         - String
         required: false
-        count: 1
   describe_host_reservations:
     parameters:
       filter:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       host_reservation_id_set:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_hosts:
     parameters:
       filter:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       host_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_iam_instance_profile_associations:
     parameters:
       association_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_id_format:
     parameters:
       resource:
         types:
         - String
         required: false
-        count: 1
   describe_identity_id_format:
     parameters:
       principal_arn:
         types:
         - String
         required: true
-        count: 1
       resource:
         types:
         - String
         required: false
-        count: 1
   describe_image_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       image_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_images:
     parameters:
       executable_users:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       image_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       owners:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_import_image_tasks:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       import_task_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_import_snapshot_tasks:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       import_task_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_instance_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
   describe_instance_credit_specifications:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_instance_status:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       include_all_instances:
         types:
         - Boolean
         required: false
-        count: 1
   describe_instances:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_internet_gateways:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       internet_gateway_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_key_pairs:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       key_names:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_launch_template_versions:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       launch_template_id:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: false
-        count: 1
       versions:
         types:
         - Array<String>
         required: false
-        count: 1
       min_version:
         types:
         - String
         required: false
-        count: 1
       max_version:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
   describe_launch_templates:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       launch_template_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       launch_template_names:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_moving_addresses:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       public_ips:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_nat_gateways:
     parameters:
       filter:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       nat_gateway_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_network_acls:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_acl_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_network_interface_attribute:
     parameters:
       attribute:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   describe_network_interface_permissions:
     parameters:
       network_interface_permission_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_network_interfaces:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_placement_groups:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_names:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_prefix_lists:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       prefix_list_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_principal_id_format:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       resources:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_regions:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       region_names:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_reserved_instances:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       offering_class:
         types:
         - String
         required: false
-        count: 1
       reserved_instances_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_instances_listings:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       reserved_instances_id:
         types:
         - String
         required: false
-        count: 1
       reserved_instances_listing_id:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_instances_modifications:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       reserved_instances_modification_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_reserved_instances_offerings:
     parameters:
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       include_marketplace:
         types:
         - Boolean
         required: false
-        count: 1
       instance_type:
         types:
         - String
         required: false
-        count: 1
       max_duration:
         types:
         - Integer
         required: false
-        count: 1
       max_instance_count:
         types:
         - Integer
         required: false
-        count: 1
       min_duration:
         types:
         - Integer
         required: false
-        count: 1
       offering_class:
         types:
         - String
         required: false
-        count: 1
       product_description:
         types:
         - String
         required: false
-        count: 1
       reserved_instances_offering_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_tenancy:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       offering_type:
         types:
         - String
         required: false
-        count: 1
   describe_route_tables:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       route_table_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_scheduled_instance_availability:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       first_slot_start_time_range:
         types:
         - Types::SlotDateTimeRangeRequest
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       max_slot_duration_in_hours:
         types:
         - Integer
         required: false
-        count: 1
       min_slot_duration_in_hours:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       recurrence:
         types:
         - Types::ScheduledInstanceRecurrenceRequest
         required: true
-        count: 1
   describe_scheduled_instances:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       scheduled_instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       slot_start_time_range:
         types:
         - Types::SlotStartTimeRangeRequest
         required: false
-        count: 1
   describe_security_group_references:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_id:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_security_groups:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_snapshot_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       snapshot_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_snapshots:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       owner_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       restorable_by_user_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       snapshot_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_spot_datafeed_subscription:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_spot_fleet_instances:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       spot_fleet_request_id:
         types:
         - String
         required: true
-        count: 1
   describe_spot_fleet_request_history:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       event_type:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       spot_fleet_request_id:
         types:
         - String
         required: true
-        count: 1
       start_time:
         types:
         - Time
@@ -3370,63 +2761,52 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
   describe_spot_fleet_requests:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       spot_fleet_request_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_spot_instance_requests:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       spot_instance_request_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_spot_price_history:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       availability_zone:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -3435,27 +2815,22 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       instance_types:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       product_descriptions:
         types:
         - Array<String>
         required: false
-        count: 1
       start_time:
         types:
         - Time
@@ -3464,1929 +2839,1579 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   describe_stale_security_groups:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   describe_subnets:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       subnet_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_tags:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_volume_attribute:
     parameters:
       attribute:
         types:
         - String
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_volume_status:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       volume_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_volumes:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       volume_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_volumes_modifications:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       volume_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_vpc_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_vpc_classic_link:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_vpc_classic_link_dns_support:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       vpc_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_vpc_endpoint_connection_notifications:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       connection_notification_id:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_endpoint_connections:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_endpoint_service_configurations:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_endpoint_service_permissions:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_endpoint_services:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_names:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_endpoints:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_endpoint_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_vpc_peering_connections:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_peering_connection_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_vpcs:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       vpc_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_vpn_connections:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       vpn_connection_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   describe_vpn_gateways:
     parameters:
       filters:
         types:
         - Array<Types::Filter>
         required: false
-        count: 1
       vpn_gateway_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   detach_classic_link_vpc:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   detach_internet_gateway:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       internet_gateway_id:
         types:
         - String
         required: true
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   detach_network_interface:
     parameters:
       attachment_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
   detach_volume:
     parameters:
       device:
         types:
         - String
         required: false
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   detach_vpn_gateway:
     parameters:
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       vpn_gateway_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   disable_vgw_route_propagation:
     parameters:
       gateway_id:
         types:
         - String
         required: true
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
   disable_vpc_classic_link:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   disable_vpc_classic_link_dns_support:
     parameters:
       vpc_id:
         types:
         - String
         required: false
-        count: 1
   disassociate_address:
     parameters:
       association_id:
         types:
         - String
         required: false
-        count: 1
       public_ip:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   disassociate_iam_instance_profile:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_route_table:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   disassociate_subnet_cidr_block:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_vpc_cidr_block:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
   enable_vgw_route_propagation:
     parameters:
       gateway_id:
         types:
         - String
         required: true
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
   enable_volume_io:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
   enable_vpc_classic_link:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   enable_vpc_classic_link_dns_support:
     parameters:
       vpc_id:
         types:
         - String
         required: false
-        count: 1
   get_console_output:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   get_console_screenshot:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       wake_up:
         types:
         - Boolean
         required: false
-        count: 1
   get_host_reservation_purchase_preview:
     parameters:
       host_id_set:
         types:
         - Array<String>
         required: true
-        count: 1
       offering_id:
         types:
         - String
         required: true
-        count: 1
   get_launch_template_data:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
   get_password_data:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   get_reserved_instances_exchange_quote:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       reserved_instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       target_configurations:
         types:
         - Array<Types::TargetConfigurationRequest>
         required: false
-        count: 1
   import_image:
     parameters:
       architecture:
         types:
         - String
         required: false
-        count: 1
       client_data:
         types:
         - Types::ClientData
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       disk_containers:
         types:
         - Array<Types::ImageDiskContainer>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       hypervisor:
         types:
         - String
         required: false
-        count: 1
       license_type:
         types:
         - String
         required: false
-        count: 1
       platform:
         types:
         - String
         required: false
-        count: 1
       role_name:
         types:
         - String
         required: false
-        count: 1
   import_instance:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       disk_images:
         types:
         - Array<Types::DiskImage>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       launch_specification:
         types:
         - Types::ImportInstanceLaunchSpecification
         required: false
-        count: 1
       platform:
         types:
         - String
         required: true
-        count: 1
   import_key_pair:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       key_name:
         types:
         - String
         required: true
-        count: 1
       public_key_material:
         types:
         - String
         - IO
         required: true
-        count: 1
   import_snapshot:
     parameters:
       client_data:
         types:
         - Types::ClientData
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       disk_container:
         types:
         - Types::SnapshotDiskContainer
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       role_name:
         types:
         - String
         required: false
-        count: 1
   import_volume:
     parameters:
       availability_zone:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       image:
         types:
         - Types::DiskImageDetail
         required: true
-        count: 1
       volume:
         types:
         - Types::VolumeDetail
         required: true
-        count: 1
   modify_fpga_image_attribute:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       fpga_image_id:
         types:
         - String
         required: true
-        count: 1
       attribute:
         types:
         - String
         required: false
-        count: 1
       operation_type:
         types:
         - String
         required: false
-        count: 1
       user_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       user_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       product_codes:
         types:
         - Array<String>
         required: false
-        count: 1
       load_permission:
         types:
         - Types::LoadPermissionModifications
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
   modify_hosts:
     parameters:
       auto_placement:
         types:
         - String
         required: true
-        count: 1
       host_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   modify_id_format:
     parameters:
       resource:
         types:
         - String
         required: true
-        count: 1
       use_long_ids:
         types:
         - Boolean
         required: true
-        count: 1
   modify_identity_id_format:
     parameters:
       principal_arn:
         types:
         - String
         required: true
-        count: 1
       resource:
         types:
         - String
         required: true
-        count: 1
       use_long_ids:
         types:
         - Boolean
         required: true
-        count: 1
   modify_image_attribute:
     parameters:
       attribute:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       image_id:
         types:
         - String
         required: true
-        count: 1
       launch_permission:
         types:
         - Types::LaunchPermissionModifications
         required: false
-        count: 1
       operation_type:
         types:
         - String
         required: false
-        count: 1
       product_codes:
         types:
         - Array<String>
         required: false
-        count: 1
       user_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       user_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       value:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   modify_instance_attribute:
     parameters:
       source_dest_check:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       attribute:
         types:
         - String
         required: false
-        count: 1
       block_device_mappings:
         types:
         - Array<Types::InstanceBlockDeviceMappingSpecification>
         required: false
-        count: 1
       disable_api_termination:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       ebs_optimized:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       ena_support:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       groups:
         types:
         - Array<String>
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       instance_initiated_shutdown_behavior:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       instance_type:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       kernel:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       ramdisk:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       sriov_net_support:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       user_data:
         types:
         - Types::BlobAttributeValue
         required: false
-        count: 1
       value:
         types:
         - String
         required: false
-        count: 1
   modify_instance_credit_specification:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       instance_credit_specifications:
         types:
         - Array<Types::InstanceCreditSpecificationRequest>
         required: true
-        count: 1
   modify_instance_placement:
     parameters:
       affinity:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       host_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       tenancy:
         types:
         - String
         required: false
-        count: 1
   modify_launch_template:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       launch_template_id:
         types:
         - String
         required: false
-        count: 1
       launch_template_name:
         types:
         - String
         required: false
-        count: 1
       default_version:
         types:
         - String
         required: false
-        count: 1
   modify_network_interface_attribute:
     parameters:
       attachment:
         types:
         - Types::NetworkInterfaceAttachmentChanges
         required: false
-        count: 1
       description:
         types:
         - Types::AttributeValue
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       groups:
         types:
         - Array<String>
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       source_dest_check:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
   modify_reserved_instances:
     parameters:
       reserved_instances_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       target_configurations:
         types:
         - Array<Types::ReservedInstancesConfiguration>
         required: true
-        count: 1
   modify_snapshot_attribute:
     parameters:
       attribute:
         types:
         - String
         required: false
-        count: 1
       create_volume_permission:
         types:
         - Types::CreateVolumePermissionModifications
         required: false
-        count: 1
       group_names:
         types:
         - Array<String>
         required: false
-        count: 1
       operation_type:
         types:
         - String
         required: false
-        count: 1
       snapshot_id:
         types:
         - String
         required: true
-        count: 1
       user_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   modify_spot_fleet_request:
     parameters:
       excess_capacity_termination_policy:
         types:
         - String
         required: false
-        count: 1
       spot_fleet_request_id:
         types:
         - String
         required: true
-        count: 1
       target_capacity:
         types:
         - Integer
         required: false
-        count: 1
   modify_subnet_attribute:
     parameters:
       assign_ipv_6_address_on_creation:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       map_public_ip_on_launch:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       subnet_id:
         types:
         - String
         required: true
-        count: 1
   modify_volume:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       size:
         types:
         - Integer
         required: false
-        count: 1
       volume_type:
         types:
         - String
         required: false
-        count: 1
       iops:
         types:
         - Integer
         required: false
-        count: 1
   modify_volume_attribute:
     parameters:
       auto_enable_io:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       volume_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   modify_vpc_attribute:
     parameters:
       enable_dns_hostnames:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       enable_dns_support:
         types:
         - Types::AttributeBooleanValue
         required: false
-        count: 1
       vpc_id:
         types:
         - String
         required: true
-        count: 1
   modify_vpc_endpoint:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_endpoint_id:
         types:
         - String
         required: true
-        count: 1
       reset_policy:
         types:
         - Boolean
         required: false
-        count: 1
       policy_document:
         types:
         - String
         required: false
-        count: 1
       add_route_table_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       remove_route_table_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       add_subnet_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       remove_subnet_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       add_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       remove_security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       private_dns_enabled:
         types:
         - Boolean
         required: false
-        count: 1
   modify_vpc_endpoint_connection_notification:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       connection_notification_id:
         types:
         - String
         required: true
-        count: 1
       connection_notification_arn:
         types:
         - String
         required: false
-        count: 1
       connection_events:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_vpc_endpoint_service_configuration:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: true
-        count: 1
       acceptance_required:
         types:
         - Boolean
         required: false
-        count: 1
       add_network_load_balancer_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       remove_network_load_balancer_arns:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_vpc_endpoint_service_permissions:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: true
-        count: 1
       add_allowed_principals:
         types:
         - Array<String>
         required: false
-        count: 1
       remove_allowed_principals:
         types:
         - Array<String>
         required: false
-        count: 1
   modify_vpc_peering_connection_options:
     parameters:
       accepter_peering_connection_options:
         types:
         - Types::PeeringConnectionOptionsRequest
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       requester_peering_connection_options:
         types:
         - Types::PeeringConnectionOptionsRequest
         required: false
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: true
-        count: 1
   modify_vpc_tenancy:
     parameters:
       vpc_id:
         types:
         - String
         required: true
-        count: 1
       instance_tenancy:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   monitor_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   move_address_to_vpc:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       public_ip:
         types:
         - String
         required: true
-        count: 1
   purchase_host_reservation:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       currency_code:
         types:
         - String
         required: false
-        count: 1
       host_id_set:
         types:
         - Array<String>
         required: true
-        count: 1
       limit_price:
         types:
         - String
         required: false
-        count: 1
       offering_id:
         types:
         - String
         required: true
-        count: 1
   purchase_reserved_instances_offering:
     parameters:
       instance_count:
         types:
         - Integer
         required: true
-        count: 1
       reserved_instances_offering_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       limit_price:
         types:
         - Types::ReservedInstanceLimitPrice
         required: false
-        count: 1
   purchase_scheduled_instances:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       purchase_requests:
         types:
         - Array<Types::PurchaseRequest>
         required: true
-        count: 1
   reboot_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   register_image:
     parameters:
       image_location:
         types:
         - String
         required: false
-        count: 1
       architecture:
         types:
         - String
         required: false
-        count: 1
       block_device_mappings:
         types:
         - Array<Types::BlockDeviceMapping>
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       ena_support:
         types:
         - Boolean
         required: false
-        count: 1
       kernel_id:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       billing_products:
         types:
         - Array<String>
         required: false
-        count: 1
       ramdisk_id:
         types:
         - String
         required: false
-        count: 1
       root_device_name:
         types:
         - String
         required: false
-        count: 1
       sriov_net_support:
         types:
         - String
         required: false
-        count: 1
       virtualization_type:
         types:
         - String
         required: false
-        count: 1
   reject_vpc_endpoint_connections:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       service_id:
         types:
         - String
         required: true
-        count: 1
       vpc_endpoint_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   reject_vpc_peering_connection:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: true
-        count: 1
   release_address:
     parameters:
       allocation_id:
         types:
         - String
         required: false
-        count: 1
       public_ip:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   release_hosts:
     parameters:
       host_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   replace_iam_instance_profile_association:
     parameters:
       iam_instance_profile:
         types:
         - Types::IamInstanceProfileSpecification
         required: true
-        count: 1
       association_id:
         types:
         - String
         required: true
-        count: 1
   replace_network_acl_association:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_acl_id:
         types:
         - String
         required: true
-        count: 1
   replace_network_acl_entry:
     parameters:
       cidr_block:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress:
         types:
         - Boolean
         required: true
-        count: 1
       icmp_type_code:
         types:
         - Types::IcmpTypeCode
         required: false
-        count: 1
       ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       network_acl_id:
         types:
         - String
         required: true
-        count: 1
       port_range:
         types:
         - Types::PortRange
         required: false
-        count: 1
       protocol:
         types:
         - String
         required: true
-        count: 1
       rule_action:
         types:
         - String
         required: true
-        count: 1
       rule_number:
         types:
         - Integer
         required: true
-        count: 1
   replace_route:
     parameters:
       destination_cidr_block:
         types:
         - String
         required: false
-        count: 1
       destination_ipv_6_cidr_block:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       egress_only_internet_gateway_id:
         types:
         - String
         required: false
-        count: 1
       gateway_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       nat_gateway_id:
         types:
         - String
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
       vpc_peering_connection_id:
         types:
         - String
         required: false
-        count: 1
   replace_route_table_association:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       route_table_id:
         types:
         - String
         required: true
-        count: 1
   report_instance_status:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       end_time:
         types:
         - Time
@@ -5395,17 +4420,14 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       instances:
         types:
         - Array<String>
         required: true
-        count: 1
       reason_codes:
         types:
         - Array<String>
         required: true
-        count: 1
       start_time:
         types:
         - Time
@@ -5414,71 +4436,58 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: true
-        count: 1
   request_spot_fleet:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       spot_fleet_request_config:
         types:
         - Types::SpotFleetRequestConfigData
         required: true
-        count: 1
   request_spot_instances:
     parameters:
       availability_zone_group:
         types:
         - String
         required: false
-        count: 1
       block_duration_minutes:
         types:
         - Integer
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_count:
         types:
         - Integer
         required: false
-        count: 1
       launch_group:
         types:
         - String
         required: false
-        count: 1
       launch_specification:
         types:
         - Types::RequestSpotLaunchSpecification
         required: false
-        count: 1
       spot_price:
         types:
         - String
         required: false
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
       valid_from:
         types:
         - Time
@@ -5487,7 +4496,6 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       valid_until:
         types:
         - Time
@@ -5496,532 +4504,433 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
       instance_interruption_behavior:
         types:
         - String
         required: false
-        count: 1
   reset_fpga_image_attribute:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       fpga_image_id:
         types:
         - String
         required: true
-        count: 1
       attribute:
         types:
         - String
         required: false
-        count: 1
   reset_image_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       image_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   reset_instance_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
   reset_network_interface_attribute:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       source_dest_check:
         types:
         - String
         required: false
-        count: 1
   reset_snapshot_attribute:
     parameters:
       attribute:
         types:
         - String
         required: true
-        count: 1
       snapshot_id:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   restore_address_to_classic:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       public_ip:
         types:
         - String
         required: true
-        count: 1
   revoke_security_group_egress:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: true
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: false
-        count: 1
       cidr_ip:
         types:
         - String
         required: false
-        count: 1
       from_port:
         types:
         - Integer
         required: false
-        count: 1
       ip_protocol:
         types:
         - String
         required: false
-        count: 1
       to_port:
         types:
         - Integer
         required: false
-        count: 1
       source_security_group_name:
         types:
         - String
         required: false
-        count: 1
       source_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
   revoke_security_group_ingress:
     parameters:
       cidr_ip:
         types:
         - String
         required: false
-        count: 1
       from_port:
         types:
         - Integer
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: false
-        count: 1
       ip_protocol:
         types:
         - String
         required: false
-        count: 1
       source_security_group_name:
         types:
         - String
         required: false
-        count: 1
       source_security_group_owner_id:
         types:
         - String
         required: false
-        count: 1
       to_port:
         types:
         - Integer
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   run_instances:
     parameters:
       block_device_mappings:
         types:
         - Array<Types::BlockDeviceMapping>
         required: false
-        count: 1
       image_id:
         types:
         - String
         required: false
-        count: 1
       instance_type:
         types:
         - String
         required: false
-        count: 1
       ipv_6_address_count:
         types:
         - Integer
         required: false
-        count: 1
       ipv_6_addresses:
         types:
         - Array<Types::InstanceIpv6Address>
         required: false
-        count: 1
       kernel_id:
         types:
         - String
         required: false
-        count: 1
       key_name:
         types:
         - String
         required: false
-        count: 1
       max_count:
         types:
         - Integer
         required: true
-        count: 1
       min_count:
         types:
         - Integer
         required: true
-        count: 1
       monitoring:
         types:
         - Types::RunInstancesMonitoringEnabled
         required: false
-        count: 1
       placement:
         types:
         - Types::Placement
         required: false
-        count: 1
       ramdisk_id:
         types:
         - String
         required: false
-        count: 1
       security_group_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       subnet_id:
         types:
         - String
         required: false
-        count: 1
       user_data:
         types:
         - String
         required: false
-        count: 1
       additional_info:
         types:
         - String
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       disable_api_termination:
         types:
         - Boolean
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       ebs_optimized:
         types:
         - Boolean
         required: false
-        count: 1
       iam_instance_profile:
         types:
         - Types::IamInstanceProfileSpecification
         required: false
-        count: 1
       instance_initiated_shutdown_behavior:
         types:
         - String
         required: false
-        count: 1
       network_interfaces:
         types:
         - Array<Types::InstanceNetworkInterfaceSpecification>
         required: false
-        count: 1
       private_ip_address:
         types:
         - String
         required: false
-        count: 1
       elastic_gpu_specification:
         types:
         - Array<Types::ElasticGpuSpecification>
         required: false
-        count: 1
       tag_specifications:
         types:
         - Array<Types::TagSpecification>
         required: false
-        count: 1
       launch_template:
         types:
         - Types::LaunchTemplateSpecification
         required: false
-        count: 1
       instance_market_options:
         types:
         - Types::InstanceMarketOptionsRequest
         required: false
-        count: 1
       credit_specification:
         types:
         - Types::CreditSpecificationRequest
         required: false
-        count: 1
   run_scheduled_instances:
     parameters:
       client_token:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       instance_count:
         types:
         - Integer
         required: false
-        count: 1
       launch_specification:
         types:
         - Types::ScheduledInstancesLaunchSpecification
         required: true
-        count: 1
       scheduled_instance_id:
         types:
         - String
         required: true
-        count: 1
   start_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       additional_info:
         types:
         - String
         required: false
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   stop_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       force:
         types:
         - Boolean
         required: false
-        count: 1
   terminate_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   unassign_ipv_6_addresses:
     parameters:
       ipv_6_addresses:
         types:
         - Array<String>
         required: true
-        count: 1
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
   unassign_private_ip_addresses:
     parameters:
       network_interface_id:
         types:
         - String
         required: true
-        count: 1
       private_ip_addresses:
         types:
         - Array<String>
         required: true
-        count: 1
   unmonitor_instances:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   update_security_group_rule_descriptions_egress:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: true
-        count: 1
   update_security_group_rule_descriptions_ingress:
     parameters:
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
       group_id:
         types:
         - String
         required: false
-        count: 1
       group_name:
         types:
         - String
         required: false
-        count: 1
       ip_permissions:
         types:
         - Array<Types::IpPermission>
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

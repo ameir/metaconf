@@ -7,353 +7,289 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   bulk_publish:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   delete_dataset:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
   describe_dataset:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
   describe_identity_pool_usage:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   describe_identity_usage:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
   get_bulk_publish_details:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_cognito_events:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   get_identity_pool_configuration:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
   list_datasets:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_identity_pool_usage:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_records:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
       last_sync_count:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       sync_session_token:
         types:
         - String
         required: false
-        count: 1
   register_device:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       platform:
         types:
         - String
         required: true
-        count: 1
       token:
         types:
         - String
         required: true
-        count: 1
   set_cognito_events:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       events:
         types:
         - Hash<String,String>
         required: true
-        count: 1
   set_identity_pool_configuration:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       push_sync:
         types:
         - Types::PushSync
         required: false
-        count: 1
       cognito_streams:
         types:
         - Types::CognitoStreams
         required: false
-        count: 1
   subscribe_to_dataset:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
       device_id:
         types:
         - String
         required: true
-        count: 1
   unsubscribe_from_dataset:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
       device_id:
         types:
         - String
         required: true
-        count: 1
   update_records:
     parameters:
       identity_pool_id:
         types:
         - String
         required: true
-        count: 1
       identity_id:
         types:
         - String
         required: true
-        count: 1
       dataset_name:
         types:
         - String
         required: true
-        count: 1
       device_id:
         types:
         - String
         required: false
-        count: 1
       record_patches:
         types:
         - Array<Types::RecordPatch>
         required: false
-        count: 1
       sync_session_token:
         types:
         - String
         required: true
-        count: 1
       client_context:
         types:
         - String
         required: false
-        count: 1

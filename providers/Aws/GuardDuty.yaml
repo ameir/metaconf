@@ -7,591 +7,487 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   accept_invitation:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       invitation_id:
         types:
         - String
         required: false
-        count: 1
       master_id:
         types:
         - String
         required: false
-        count: 1
   archive_findings:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   create_detector:
     parameters:
       enable:
         types:
         - Boolean
         required: false
-        count: 1
   create_ip_set:
     parameters:
       activate:
         types:
         - Boolean
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       format:
         types:
         - String
         required: false
-        count: 1
       location:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
   create_members:
     parameters:
       account_details:
         types:
         - Array<Types::AccountDetail>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   create_sample_findings:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_types:
         types:
         - Array<String>
         required: false
-        count: 1
   create_threat_intel_set:
     parameters:
       activate:
         types:
         - Boolean
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       format:
         types:
         - String
         required: false
-        count: 1
       location:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
   decline_invitations:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   delete_detector:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
   delete_ip_set:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       ip_set_id:
         types:
         - String
         required: true
-        count: 1
   delete_invitations:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   delete_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   delete_threat_intel_set:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       threat_intel_set_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_from_master_account:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   get_detector:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
   get_findings:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       sort_criteria:
         types:
         - Types::SortCriteria
         required: false
-        count: 1
   get_findings_statistics:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_criteria:
         types:
         - Types::FindingCriteria
         required: false
-        count: 1
       finding_statistic_types:
         types:
         - Array<String>
         required: false
-        count: 1
   get_ip_set:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       ip_set_id:
         types:
         - String
         required: true
-        count: 1
   get_master_account:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
   get_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   get_threat_intel_set:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       threat_intel_set_id:
         types:
         - String
         required: true
-        count: 1
   invite_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       message:
         types:
         - String
         required: false
-        count: 1
   list_detectors:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_findings:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_criteria:
         types:
         - Types::FindingCriteria
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_criteria:
         types:
         - Types::SortCriteria
         required: false
-        count: 1
   list_ip_sets:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_invitations:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_members:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       only_associated:
         types:
         - String
         required: false
-        count: 1
   list_threat_intel_sets:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   start_monitoring_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   stop_monitoring_members:
     parameters:
       account_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
   unarchive_findings:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       finding_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   update_detector:
     parameters:
       detector_id:
         types:
         - String
         required: true
-        count: 1
       enable:
         types:
         - Boolean
         required: false
-        count: 1
   update_findings_feedback:
     parameters:
       comments:
         types:
         - String
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       feedback:
         types:
         - String
         required: false
-        count: 1
       finding_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   update_ip_set:
     parameters:
       activate:
         types:
         - Boolean
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       ip_set_id:
         types:
         - String
         required: true
-        count: 1
       location:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
   update_threat_intel_set:
     parameters:
       activate:
         types:
         - Boolean
         required: false
-        count: 1
       detector_id:
         types:
         - String
         required: true
-        count: 1
       location:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       threat_intel_set_id:
         types:
         - String
         required: true
-        count: 1

@@ -7,206 +7,168 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_application_cloud_watch_logging_option:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       cloud_watch_logging_option:
         types:
         - Types::CloudWatchLoggingOption
         required: true
-        count: 1
   add_application_input:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       input:
         types:
         - Types::Input
         required: true
-        count: 1
   add_application_input_processing_configuration:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       input_id:
         types:
         - String
         required: true
-        count: 1
       input_processing_configuration:
         types:
         - Types::InputProcessingConfiguration
         required: true
-        count: 1
   add_application_output:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       output:
         types:
         - Types::Output
         required: true
-        count: 1
   add_application_reference_data_source:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       reference_data_source:
         types:
         - Types::ReferenceDataSource
         required: true
-        count: 1
   create_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       application_description:
         types:
         - String
         required: false
-        count: 1
       inputs:
         types:
         - Array<Types::Input>
         required: false
-        count: 1
       outputs:
         types:
         - Array<Types::Output>
         required: false
-        count: 1
       cloud_watch_logging_options:
         types:
         - Array<Types::CloudWatchLoggingOption>
         required: false
-        count: 1
       application_code:
         types:
         - String
         required: false
-        count: 1
   delete_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       create_timestamp:
         types:
         - Time
@@ -215,154 +177,127 @@ methods:
         - Integer
         - String
         required: true
-        count: 1
   delete_application_cloud_watch_logging_option:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       cloud_watch_logging_option_id:
         types:
         - String
         required: true
-        count: 1
   delete_application_input_processing_configuration:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       input_id:
         types:
         - String
         required: true
-        count: 1
   delete_application_output:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       output_id:
         types:
         - String
         required: true
-        count: 1
   delete_application_reference_data_source:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       reference_id:
         types:
         - String
         required: true
-        count: 1
   describe_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
   discover_input_schema:
     parameters:
       resource_arn:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
       input_starting_position_configuration:
         types:
         - Types::InputStartingPositionConfiguration
         required: false
-        count: 1
       s3_configuration:
         types:
         - Types::S3Configuration
         required: false
-        count: 1
       input_processing_configuration:
         types:
         - Types::InputProcessingConfiguration
         required: false
-        count: 1
   list_applications:
     parameters:
       limit:
         types:
         - Integer
         required: false
-        count: 1
       exclusive_start_application_name:
         types:
         - String
         required: false
-        count: 1
   start_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       input_configurations:
         types:
         - Array<Types::InputConfiguration>
         required: true
-        count: 1
   stop_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
   update_application:
     parameters:
       application_name:
         types:
         - String
         required: true
-        count: 1
       current_application_version_id:
         types:
         - Integer
         required: true
-        count: 1
       application_update:
         types:
         - Types::ApplicationUpdate
         required: true
-        count: 1

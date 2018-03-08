@@ -7,1419 +7,1159 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   accept_portfolio_share:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
   associate_principal_with_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       principal_arn:
         types:
         - String
         required: true
-        count: 1
       principal_type:
         types:
         - String
         required: true
-        count: 1
   associate_product_with_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       source_portfolio_id:
         types:
         - String
         required: false
-        count: 1
   associate_tag_option_with_resource:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_option_id:
         types:
         - String
         required: true
-        count: 1
   copy_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       source_product_arn:
         types:
         - String
         required: true
-        count: 1
       target_product_id:
         types:
         - String
         required: false
-        count: 1
       target_product_name:
         types:
         - String
         required: false
-        count: 1
       source_provisioning_artifact_identifiers:
         types:
         - Array<Hash>
         required: false
-        count: 1
       copy_options:
         types:
         - Array<String>
         required: false
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   create_constraint:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   create_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       display_name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       provider_name:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   create_portfolio_share:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       account_id:
         types:
         - String
         required: true
-        count: 1
   create_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       owner:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       distributor:
         types:
         - String
         required: false
-        count: 1
       support_description:
         types:
         - String
         required: false
-        count: 1
       support_email:
         types:
         - String
         required: false
-        count: 1
       support_url:
         types:
         - String
         required: false
-        count: 1
       product_type:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       provisioning_artifact_parameters:
         types:
         - Types::ProvisioningArtifactProperties
         required: true
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   create_provisioned_product_plan:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       plan_name:
         types:
         - String
         required: true
-        count: 1
       plan_type:
         types:
         - String
         required: true
-        count: 1
       notification_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       path_id:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       provisioned_product_name:
         types:
         - String
         required: true
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
       provisioning_parameters:
         types:
         - Array<Types::UpdateProvisioningParameter>
         required: false
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
   create_provisioning_artifact:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Types::ProvisioningArtifactProperties
         required: true
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   create_tag_option:
     parameters:
       key:
         types:
         - String
         required: true
-        count: 1
       value:
         types:
         - String
         required: true
-        count: 1
   delete_constraint:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   delete_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   delete_portfolio_share:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       account_id:
         types:
         - String
         required: true
-        count: 1
   delete_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   delete_provisioned_product_plan:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       plan_id:
         types:
         - String
         required: true
-        count: 1
       ignore_errors:
         types:
         - Boolean
         required: false
-        count: 1
   delete_provisioning_artifact:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
   delete_tag_option:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   describe_constraint:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_copy_product_status:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       copy_product_token:
         types:
         - String
         required: true
-        count: 1
   describe_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_product_as_admin:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_product_view:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_provisioned_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   describe_provisioned_product_plan:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       plan_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   describe_provisioning_artifact:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       verbose:
         types:
         - Boolean
         required: false
-        count: 1
   describe_provisioning_parameters:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
       path_id:
         types:
         - String
         required: false
-        count: 1
   describe_record:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   describe_tag_option:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   disassociate_principal_from_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       principal_arn:
         types:
         - String
         required: true
-        count: 1
   disassociate_product_from_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
   disassociate_tag_option_from_resource:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_option_id:
         types:
         - String
         required: true
-        count: 1
   execute_provisioned_product_plan:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       plan_id:
         types:
         - String
         required: true
-        count: 1
       idempotency_token:
         types:
         - String
         required: true
-        count: 1
   list_accepted_portfolio_shares:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   list_constraints_for_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       product_id:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   list_launch_paths:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   list_portfolio_access:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
   list_portfolios:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   list_portfolios_for_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
   list_principals_for_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   list_provisioned_product_plans:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       provision_product_id:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       access_level_filter:
         types:
         - Types::AccessLevelFilter
         required: false
-        count: 1
   list_provisioning_artifacts:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
   list_record_history:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       access_level_filter:
         types:
         - Types::AccessLevelFilter
         required: false
-        count: 1
       search_filter:
         types:
         - Types::ListRecordHistorySearchFilter
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   list_resources_for_tag_option:
     parameters:
       tag_option_id:
         types:
         - String
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   list_tag_options:
     parameters:
       filters:
         types:
         - Types::ListTagOptionsFilters
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   provision_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
       path_id:
         types:
         - String
         required: false
-        count: 1
       provisioned_product_name:
         types:
         - String
         required: true
-        count: 1
       provisioning_parameters:
         types:
         - Array<Types::ProvisioningParameter>
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       notification_arns:
         types:
         - Array<String>
         required: false
-        count: 1
       provision_token:
         types:
         - String
         required: true
-        count: 1
   reject_portfolio_share:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: true
-        count: 1
   scan_provisioned_products:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       access_level_filter:
         types:
         - Types::AccessLevelFilter
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   search_products:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
       sort_order:
         types:
         - String
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   search_products_as_admin:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       portfolio_id:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
       sort_order:
         types:
         - String
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       product_source:
         types:
         - String
         required: false
-        count: 1
   search_provisioned_products:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       access_level_filter:
         types:
         - Types::AccessLevelFilter
         required: false
-        count: 1
       filters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
       sort_order:
         types:
         - String
         required: false
-        count: 1
       page_size:
         types:
         - Integer
         required: false
-        count: 1
       page_token:
         types:
         - String
         required: false
-        count: 1
   terminate_provisioned_product:
     parameters:
       provisioned_product_name:
         types:
         - String
         required: false
-        count: 1
       provisioned_product_id:
         types:
         - String
         required: false
-        count: 1
       terminate_token:
         types:
         - String
         required: true
-        count: 1
       ignore_errors:
         types:
         - Boolean
         required: false
-        count: 1
       accept_language:
         types:
         - String
         required: false
-        count: 1
   update_constraint:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
   update_portfolio:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       display_name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       provider_name:
         types:
         - String
         required: false
-        count: 1
       add_tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       remove_tags:
         types:
         - Array<String>
         required: false
-        count: 1
   update_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       owner:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       distributor:
         types:
         - String
         required: false
-        count: 1
       support_description:
         types:
         - String
         required: false
-        count: 1
       support_email:
         types:
         - String
         required: false
-        count: 1
       support_url:
         types:
         - String
         required: false
-        count: 1
       add_tags:
         types:
         - Array<Types::Tag>
         required: false
-        count: 1
       remove_tags:
         types:
         - Array<String>
         required: false
-        count: 1
   update_provisioned_product:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       provisioned_product_name:
         types:
         - String
         required: false
-        count: 1
       provisioned_product_id:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: false
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: false
-        count: 1
       path_id:
         types:
         - String
         required: false
-        count: 1
       provisioning_parameters:
         types:
         - Array<Types::UpdateProvisioningParameter>
         required: false
-        count: 1
       update_token:
         types:
         - String
         required: true
-        count: 1
   update_provisioning_artifact:
     parameters:
       accept_language:
         types:
         - String
         required: false
-        count: 1
       product_id:
         types:
         - String
         required: true
-        count: 1
       provisioning_artifact_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       active:
         types:
         - Boolean
         required: false
-        count: 1
   update_tag_option:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
       value:
         types:
         - String
         required: false
-        count: 1
       active:
         types:
         - Boolean
         required: false
-        count: 1

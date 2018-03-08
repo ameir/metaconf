@@ -7,371 +7,303 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   cancel_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       reason:
         types:
         - String
         required: true
-        count: 1
   create_compute_environment:
     parameters:
       compute_environment_name:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
       compute_resources:
         types:
         - Types::ComputeResource
         required: false
-        count: 1
       service_role:
         types:
         - String
         required: true
-        count: 1
   create_job_queue:
     parameters:
       job_queue_name:
         types:
         - String
         required: true
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
       priority:
         types:
         - Integer
         required: true
-        count: 1
       compute_environment_order:
         types:
         - Array<Types::ComputeEnvironmentOrder>
         required: true
-        count: 1
   delete_compute_environment:
     parameters:
       compute_environment:
         types:
         - String
         required: true
-        count: 1
   delete_job_queue:
     parameters:
       job_queue:
         types:
         - String
         required: true
-        count: 1
   deregister_job_definition:
     parameters:
       job_definition:
         types:
         - String
         required: true
-        count: 1
   describe_compute_environments:
     parameters:
       compute_environments:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_job_definitions:
     parameters:
       job_definitions:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       job_definition_name:
         types:
         - String
         required: false
-        count: 1
       status:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_job_queues:
     parameters:
       job_queues:
         types:
         - Array<String>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_jobs:
     parameters:
       jobs:
         types:
         - Array<String>
         required: true
-        count: 1
   list_jobs:
     parameters:
       job_queue:
         types:
         - String
         required: false
-        count: 1
       array_job_id:
         types:
         - String
         required: false
-        count: 1
       job_status:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   register_job_definition:
     parameters:
       job_definition_name:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       container_properties:
         types:
         - Types::ContainerProperties
         required: false
-        count: 1
       retry_strategy:
         types:
         - Types::RetryStrategy
         required: false
-        count: 1
   submit_job:
     parameters:
       job_name:
         types:
         - String
         required: true
-        count: 1
       job_queue:
         types:
         - String
         required: true
-        count: 1
       array_properties:
         types:
         - Types::ArrayProperties
         required: false
-        count: 1
       depends_on:
         types:
         - Array<Types::JobDependency>
         required: false
-        count: 1
       job_definition:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Hash<String,String>
         required: false
-        count: 1
       container_overrides:
         types:
         - Types::ContainerOverrides
         required: false
-        count: 1
       retry_strategy:
         types:
         - Types::RetryStrategy
         required: false
-        count: 1
   terminate_job:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       reason:
         types:
         - String
         required: true
-        count: 1
   update_compute_environment:
     parameters:
       compute_environment:
         types:
         - String
         required: true
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
       compute_resources:
         types:
         - Types::ComputeResourceUpdate
         required: false
-        count: 1
       service_role:
         types:
         - String
         required: false
-        count: 1
   update_job_queue:
     parameters:
       job_queue:
         types:
         - String
         required: true
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
       priority:
         types:
         - Integer
         required: false
-        count: 1
       compute_environment_order:
         types:
         - Array<Types::ComputeEnvironmentOrder>
         required: false
-        count: 1

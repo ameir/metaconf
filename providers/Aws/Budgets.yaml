@@ -7,325 +7,265 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_budget:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget:
         types:
         - Types::Budget
         required: true
-        count: 1
       notifications_with_subscribers:
         types:
         - Array<Types::NotificationWithSubscribers>
         required: false
-        count: 1
   create_notification:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       subscribers:
         types:
         - Array<Types::Subscriber>
         required: true
-        count: 1
   create_subscriber:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       subscriber:
         types:
         - Types::Subscriber
         required: true
-        count: 1
   delete_budget:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
   delete_notification:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
   delete_subscriber:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       subscriber:
         types:
         - Types::Subscriber
         required: true
-        count: 1
   describe_budget:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
   describe_budgets:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_notifications_for_budget:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_subscribers_for_notification:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   update_budget:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       new_budget:
         types:
         - Types::Budget
         required: true
-        count: 1
   update_notification:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       old_notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       new_notification:
         types:
         - Types::Notification
         required: true
-        count: 1
   update_subscriber:
     parameters:
       account_id:
         types:
         - String
         required: true
-        count: 1
       budget_name:
         types:
         - String
         required: true
-        count: 1
       notification:
         types:
         - Types::Notification
         required: true
-        count: 1
       old_subscriber:
         types:
         - Types::Subscriber
         required: true
-        count: 1
       new_subscriber:
         types:
         - Types::Subscriber
         required: true
-        count: 1

@@ -7,974 +7,805 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   clone_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       original_rule_set_name:
         types:
         - String
         required: true
-        count: 1
   create_configuration_set:
     parameters:
       configuration_set:
         types:
         - Types::ConfigurationSet
         required: true
-        count: 1
   create_configuration_set_event_destination:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       event_destination:
         types:
         - Types::EventDestination
         required: true
-        count: 1
   create_configuration_set_tracking_options:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       tracking_options:
         types:
         - Types::TrackingOptions
         required: true
-        count: 1
   create_custom_verification_email_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
       from_email_address:
         types:
         - String
         required: true
-        count: 1
       template_subject:
         types:
         - String
         required: true
-        count: 1
       template_content:
         types:
         - String
         required: true
-        count: 1
       success_redirection_url:
         types:
         - String
         required: true
-        count: 1
       failure_redirection_url:
         types:
         - String
         required: true
-        count: 1
   create_receipt_filter:
     parameters:
       filter:
         types:
         - Types::ReceiptFilter
         required: true
-        count: 1
   create_receipt_rule:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       after:
         types:
         - String
         required: false
-        count: 1
       rule:
         types:
         - Types::ReceiptRule
         required: true
-        count: 1
   create_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
   create_template:
     parameters:
       template:
         types:
         - Types::Template
         required: true
-        count: 1
   delete_configuration_set:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
   delete_configuration_set_event_destination:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       event_destination_name:
         types:
         - String
         required: true
-        count: 1
   delete_configuration_set_tracking_options:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
   delete_custom_verification_email_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
   delete_identity:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
   delete_identity_policy:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
   delete_receipt_filter:
     parameters:
       filter_name:
         types:
         - String
         required: true
-        count: 1
   delete_receipt_rule:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       rule_name:
         types:
         - String
         required: true
-        count: 1
   delete_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
   delete_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
   delete_verified_email_address:
     parameters:
       email_address:
         types:
         - String
         required: true
-        count: 1
   describe_configuration_set:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       configuration_set_attribute_names:
         types:
         - Array<String>
         required: false
-        count: 1
   describe_receipt_rule:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       rule_name:
         types:
         - String
         required: true
-        count: 1
   describe_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
   get_custom_verification_email_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
   get_identity_dkim_attributes:
     parameters:
       identities:
         types:
         - Array<String>
         required: true
-        count: 1
   get_identity_mail_from_domain_attributes:
     parameters:
       identities:
         types:
         - Array<String>
         required: true
-        count: 1
   get_identity_notification_attributes:
     parameters:
       identities:
         types:
         - Array<String>
         required: true
-        count: 1
   get_identity_policies:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       policy_names:
         types:
         - Array<String>
         required: true
-        count: 1
   get_identity_verification_attributes:
     parameters:
       identities:
         types:
         - Array<String>
         required: true
-        count: 1
   get_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
   list_configuration_sets:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_custom_verification_email_templates:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_identities:
     parameters:
       identity_type:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   list_identity_policies:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
   list_receipt_rule_sets:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_templates:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_items:
         types:
         - Integer
         required: false
-        count: 1
   put_identity_policy:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       policy_name:
         types:
         - String
         required: true
-        count: 1
       policy:
         types:
         - String
         required: true
-        count: 1
   reorder_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       rule_names:
         types:
         - Array<String>
         required: true
-        count: 1
   send_bounce:
     parameters:
       original_message_id:
         types:
         - String
         required: true
-        count: 1
       bounce_sender:
         types:
         - String
         required: true
-        count: 1
       explanation:
         types:
         - String
         required: false
-        count: 1
       message_dsn:
         types:
         - Types::MessageDsn
         required: false
-        count: 1
       bounced_recipient_info_list:
         types:
         - Array<Types::BouncedRecipientInfo>
         required: true
-        count: 1
       bounce_sender_arn:
         types:
         - String
         required: false
-        count: 1
   send_bulk_templated_email:
     parameters:
       source:
         types:
         - String
         required: true
-        count: 1
       source_arn:
         types:
         - String
         required: false
-        count: 1
       reply_to_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       return_path:
         types:
         - String
         required: false
-        count: 1
       return_path_arn:
         types:
         - String
         required: false
-        count: 1
       configuration_set_name:
         types:
         - String
         required: false
-        count: 1
       default_tags:
         types:
         - Array<Types::MessageTag>
         required: false
-        count: 1
       template:
         types:
         - String
         required: true
-        count: 1
       template_arn:
         types:
         - String
         required: false
-        count: 1
       default_template_data:
         types:
         - String
         required: false
-        count: 1
       destinations:
         types:
         - Array<Types::BulkEmailDestination>
         required: true
-        count: 1
   send_custom_verification_email:
     parameters:
       email_address:
         types:
         - String
         required: true
-        count: 1
       template_name:
         types:
         - String
         required: true
-        count: 1
       configuration_set_name:
         types:
         - String
         required: false
-        count: 1
   send_email:
     parameters:
       source:
         types:
         - String
         required: true
-        count: 1
       destination:
         types:
         - Types::Destination
         required: true
-        count: 1
       message:
         types:
         - Types::Message
         required: true
-        count: 1
       reply_to_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       return_path:
         types:
         - String
         required: false
-        count: 1
       source_arn:
         types:
         - String
         required: false
-        count: 1
       return_path_arn:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::MessageTag>
         required: false
-        count: 1
       configuration_set_name:
         types:
         - String
         required: false
-        count: 1
   send_raw_email:
     parameters:
       source:
         types:
         - String
         required: false
-        count: 1
       destinations:
         types:
         - Array<String>
         required: false
-        count: 1
       raw_message:
         types:
         - Types::RawMessage
         required: true
-        count: 1
       from_arn:
         types:
         - String
         required: false
-        count: 1
       source_arn:
         types:
         - String
         required: false
-        count: 1
       return_path_arn:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::MessageTag>
         required: false
-        count: 1
       configuration_set_name:
         types:
         - String
         required: false
-        count: 1
   send_templated_email:
     parameters:
       source:
         types:
         - String
         required: true
-        count: 1
       destination:
         types:
         - Types::Destination
         required: true
-        count: 1
       reply_to_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       return_path:
         types:
         - String
         required: false
-        count: 1
       source_arn:
         types:
         - String
         required: false
-        count: 1
       return_path_arn:
         types:
         - String
         required: false
-        count: 1
       tags:
         types:
         - Array<Types::MessageTag>
         required: false
-        count: 1
       configuration_set_name:
         types:
         - String
         required: false
-        count: 1
       template:
         types:
         - String
         required: true
-        count: 1
       template_arn:
         types:
         - String
         required: false
-        count: 1
       template_data:
         types:
         - String
         required: true
-        count: 1
   set_active_receipt_rule_set:
     parameters:
       rule_set_name:
         types:
         - String
         required: false
-        count: 1
   set_identity_dkim_enabled:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       dkim_enabled:
         types:
         - Boolean
         required: true
-        count: 1
   set_identity_feedback_forwarding_enabled:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       forwarding_enabled:
         types:
         - Boolean
         required: true
-        count: 1
   set_identity_headers_in_notifications_enabled:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       notification_type:
         types:
         - String
         required: true
-        count: 1
       enabled:
         types:
         - Boolean
         required: true
-        count: 1
   set_identity_mail_from_domain:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       mail_from_domain:
         types:
         - String
         required: false
-        count: 1
       behavior_on_mx_failure:
         types:
         - String
         required: false
-        count: 1
   set_identity_notification_topic:
     parameters:
       identity:
         types:
         - String
         required: true
-        count: 1
       notification_type:
         types:
         - String
         required: true
-        count: 1
       sns_topic:
         types:
         - String
         required: false
-        count: 1
   set_receipt_rule_position:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       rule_name:
         types:
         - String
         required: true
-        count: 1
       after:
         types:
         - String
         required: false
-        count: 1
   test_render_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
       template_data:
         types:
         - String
         required: true
-        count: 1
   update_account_sending_enabled:
     parameters:
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
   update_configuration_set_event_destination:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       event_destination:
         types:
         - Types::EventDestination
         required: true
-        count: 1
   update_configuration_set_reputation_metrics_enabled:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       enabled:
         types:
         - Boolean
         required: true
-        count: 1
   update_configuration_set_sending_enabled:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       enabled:
         types:
         - Boolean
         required: true
-        count: 1
   update_configuration_set_tracking_options:
     parameters:
       configuration_set_name:
         types:
         - String
         required: true
-        count: 1
       tracking_options:
         types:
         - Types::TrackingOptions
         required: true
-        count: 1
   update_custom_verification_email_template:
     parameters:
       template_name:
         types:
         - String
         required: true
-        count: 1
       from_email_address:
         types:
         - String
         required: false
-        count: 1
       template_subject:
         types:
         - String
         required: false
-        count: 1
       template_content:
         types:
         - String
         required: false
-        count: 1
       success_redirection_url:
         types:
         - String
         required: false
-        count: 1
       failure_redirection_url:
         types:
         - String
         required: false
-        count: 1
   update_receipt_rule:
     parameters:
       rule_set_name:
         types:
         - String
         required: true
-        count: 1
       rule:
         types:
         - Types::ReceiptRule
         required: true
-        count: 1
   update_template:
     parameters:
       template:
         types:
         - Types::Template
         required: true
-        count: 1
   verify_domain_dkim:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
   verify_domain_identity:
     parameters:
       domain:
         types:
         - String
         required: true
-        count: 1
   verify_email_address:
     parameters:
       email_address:
         types:
         - String
         required: true
-        count: 1
   verify_email_identity:
     parameters:
       email_address:
         types:
         - String
         required: true
-        count: 1
   wait_until:
     parameters:
       max_attempts:
         types:
         - Integer
         required: false
-        count: 1
       delay:
         types:
         - Integer
         required: false
-        count: 1
       before_attempt:
         types:
         - Proc
         required: false
-        count: 1
       before_wait:
         types:
         - Proc
         required: false
-        count: 1

@@ -7,625 +7,513 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   compare_faces:
     parameters:
       source_image:
         types:
         - Types::Image
         required: true
-        count: 1
       target_image:
         types:
         - Types::Image
         required: true
-        count: 1
       similarity_threshold:
         types:
         - Float
         required: false
-        count: 1
   create_collection:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
   create_stream_processor:
     parameters:
       input:
         types:
         - Types::StreamProcessorInput
         required: true
-        count: 1
       output:
         types:
         - Types::StreamProcessorOutput
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       settings:
         types:
         - Types::StreamProcessorSettings
         required: true
-        count: 1
       role_arn:
         types:
         - String
         required: true
-        count: 1
   delete_collection:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
   delete_faces:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
       face_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_stream_processor:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   describe_stream_processor:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   detect_faces:
     parameters:
       image:
         types:
         - Types::Image
         required: true
-        count: 1
       attributes:
         types:
         - Array<String>
         required: false
-        count: 1
   detect_labels:
     parameters:
       image:
         types:
         - Types::Image
         required: true
-        count: 1
       max_labels:
         types:
         - Integer
         required: false
-        count: 1
       min_confidence:
         types:
         - Float
         required: false
-        count: 1
   detect_moderation_labels:
     parameters:
       image:
         types:
         - Types::Image
         required: true
-        count: 1
       min_confidence:
         types:
         - Float
         required: false
-        count: 1
   detect_text:
     parameters:
       image:
         types:
         - Types::Image
         required: true
-        count: 1
   get_celebrity_info:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   get_celebrity_recognition:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
   get_content_moderation:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
   get_face_detection:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_face_search:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
   get_label_detection:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
   get_person_tracking:
     parameters:
       job_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       sort_by:
         types:
         - String
         required: false
-        count: 1
   index_faces:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
       image:
         types:
         - Types::Image
         required: true
-        count: 1
       external_image_id:
         types:
         - String
         required: false
-        count: 1
       detection_attributes:
         types:
         - Array<String>
         required: false
-        count: 1
   list_collections:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_faces:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_stream_processors:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   recognize_celebrities:
     parameters:
       image:
         types:
         - Types::Image
         required: true
-        count: 1
   search_faces:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
       face_id:
         types:
         - String
         required: true
-        count: 1
       max_faces:
         types:
         - Integer
         required: false
-        count: 1
       face_match_threshold:
         types:
         - Float
         required: false
-        count: 1
   search_faces_by_image:
     parameters:
       collection_id:
         types:
         - String
         required: true
-        count: 1
       image:
         types:
         - Types::Image
         required: true
-        count: 1
       max_faces:
         types:
         - Integer
         required: false
-        count: 1
       face_match_threshold:
         types:
         - Float
         required: false
-        count: 1
   start_celebrity_recognition:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_content_moderation:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       min_confidence:
         types:
         - Float
         required: false
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_face_detection:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       face_attributes:
         types:
         - String
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_face_search:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       face_match_threshold:
         types:
         - Float
         required: false
-        count: 1
       collection_id:
         types:
         - String
         required: true
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_label_detection:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       min_confidence:
         types:
         - Float
         required: false
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_person_tracking:
     parameters:
       video:
         types:
         - Types::Video
         required: true
-        count: 1
       client_request_token:
         types:
         - String
         required: false
-        count: 1
       notification_channel:
         types:
         - Types::NotificationChannel
         required: false
-        count: 1
       job_tag:
         types:
         - String
         required: false
-        count: 1
   start_stream_processor:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   stop_stream_processor:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1

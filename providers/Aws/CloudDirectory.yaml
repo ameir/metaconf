@@ -7,1178 +7,967 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_facet_to_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       schema_facet:
         types:
         - Types::SchemaFacet
         required: true
-        count: 1
       object_attribute_list:
         types:
         - Array<Types::AttributeKeyAndValue>
         required: false
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   apply_schema:
     parameters:
       published_schema_arn:
         types:
         - String
         required: true
-        count: 1
       directory_arn:
         types:
         - String
         required: true
-        count: 1
   attach_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       parent_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       child_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       link_name:
         types:
         - String
         required: true
-        count: 1
   attach_policy:
     parameters:
       directory_arn:
         types:
         - String
         required: false
-        count: 1
       policy_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   attach_to_index:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       index_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       target_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   attach_typed_link:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       source_object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       target_object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       typed_link_facet:
         types:
         - Types::TypedLinkSchemaAndFacetName
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::AttributeNameAndValue>
         required: true
-        count: 1
   batch_read:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       operations:
         types:
         - Array<Types::BatchReadOperation>
         required: true
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   batch_write:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       operations:
         types:
         - Array<Types::BatchWriteOperation>
         required: true
-        count: 1
   create_directory:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       schema_arn:
         types:
         - String
         required: true
-        count: 1
   create_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       attributes:
         types:
         - Array<Types::FacetAttribute>
         required: false
-        count: 1
       object_type:
         types:
         - String
         required: true
-        count: 1
   create_index:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       ordered_indexed_attribute_list:
         types:
         - Array<Types::AttributeKey>
         required: true
-        count: 1
       is_unique:
         types:
         - Boolean
         required: true
-        count: 1
       parent_reference:
         types:
         - Types::ObjectReference
         required: false
-        count: 1
       link_name:
         types:
         - String
         required: false
-        count: 1
   create_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       schema_facets:
         types:
         - Array<Types::SchemaFacet>
         required: true
-        count: 1
       object_attribute_list:
         types:
         - Array<Types::AttributeKeyAndValue>
         required: false
-        count: 1
       parent_reference:
         types:
         - Types::ObjectReference
         required: false
-        count: 1
       link_name:
         types:
         - String
         required: false
-        count: 1
   create_schema:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   create_typed_link_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       facet:
         types:
         - Types::TypedLinkFacet
         required: true
-        count: 1
   delete_directory:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
   delete_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   delete_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   delete_schema:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
   delete_typed_link_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   detach_from_index:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       index_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       target_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   detach_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       parent_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       link_name:
         types:
         - String
         required: true
-        count: 1
   detach_policy:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       policy_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   detach_typed_link:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       typed_link_specifier:
         types:
         - Types::TypedLinkSpecifier
         required: true
-        count: 1
   disable_directory:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
   enable_directory:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
   get_applied_schema_version:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
   get_directory:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
   get_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   get_object_information:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   get_schema_as_json:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
   get_typed_link_facet_information:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   list_applied_schema_arns:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       schema_arn:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_attached_indices:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       target_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_development_schema_arns:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_directories:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       state:
         types:
         - String
         required: false
-        count: 1
   list_facet_attributes:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_facet_names:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_incoming_typed_links:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       filter_attribute_ranges:
         types:
         - Array<Types::TypedLinkAttributeRange>
         required: false
-        count: 1
       filter_typed_link:
         types:
         - Types::TypedLinkSchemaAndFacetName
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_index:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       ranges_on_indexed_values:
         types:
         - Array<Types::ObjectAttributeRange>
         required: false
-        count: 1
       index_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_object_attributes:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
       facet_filter:
         types:
         - Types::SchemaFacet
         required: false
-        count: 1
   list_object_children:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_object_parent_paths:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_object_parents:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_object_policies:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_outgoing_typed_links:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       filter_attribute_ranges:
         types:
         - Array<Types::TypedLinkAttributeRange>
         required: false
-        count: 1
       filter_typed_link:
         types:
         - Types::TypedLinkSchemaAndFacetName
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_policy_attachments:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       policy_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       consistency_level:
         types:
         - String
         required: false
-        count: 1
   list_published_schema_arns:
     parameters:
       schema_arn:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_typed_link_facet_attributes:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_typed_link_facet_names:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   lookup_policy:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   publish_schema:
     parameters:
       development_schema_arn:
         types:
         - String
         required: true
-        count: 1
       version:
         types:
         - String
         required: true
-        count: 1
       minor_version:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
   put_schema_from_json:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       document:
         types:
         - String
         required: true
-        count: 1
   remove_facet_from_object:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       schema_facet:
         types:
         - Types::SchemaFacet
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
   tag_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   untag_resource:
     parameters:
       resource_arn:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   update_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       attribute_updates:
         types:
         - Array<Types::FacetAttributeUpdate>
         required: false
-        count: 1
       object_type:
         types:
         - String
         required: false
-        count: 1
   update_object_attributes:
     parameters:
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       object_reference:
         types:
         - Types::ObjectReference
         required: true
-        count: 1
       attribute_updates:
         types:
         - Array<Types::ObjectAttributeUpdate>
         required: true
-        count: 1
   update_schema:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
   update_typed_link_facet:
     parameters:
       schema_arn:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       attribute_updates:
         types:
         - Array<Types::TypedLinkFacetAttributeUpdate>
         required: true
-        count: 1
       identity_attribute_order:
         types:
         - Array<String>
         required: true
-        count: 1
   upgrade_applied_schema:
     parameters:
       published_schema_arn:
         types:
         - String
         required: true
-        count: 1
       directory_arn:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1
   upgrade_published_schema:
     parameters:
       development_schema_arn:
         types:
         - String
         required: true
-        count: 1
       published_schema_arn:
         types:
         - String
         required: true
-        count: 1
       minor_version:
         types:
         - String
         required: true
-        count: 1
       dry_run:
         types:
         - Boolean
         required: false
-        count: 1

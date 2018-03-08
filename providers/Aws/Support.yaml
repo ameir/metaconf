@@ -7,302 +7,247 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_attachments_to_set:
     parameters:
       attachment_set_id:
         types:
         - String
         required: false
-        count: 1
       attachments:
         types:
         - Array<Types::Attachment>
         required: true
-        count: 1
   add_communication_to_case:
     parameters:
       case_id:
         types:
         - String
         required: false
-        count: 1
       communication_body:
         types:
         - String
         required: true
-        count: 1
       cc_email_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       attachment_set_id:
         types:
         - String
         required: false
-        count: 1
   create_case:
     parameters:
       subject:
         types:
         - String
         required: true
-        count: 1
       service_code:
         types:
         - String
         required: false
-        count: 1
       severity_code:
         types:
         - String
         required: false
-        count: 1
       category_code:
         types:
         - String
         required: false
-        count: 1
       communication_body:
         types:
         - String
         required: true
-        count: 1
       cc_email_addresses:
         types:
         - Array<String>
         required: false
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
       issue_type:
         types:
         - String
         required: false
-        count: 1
       attachment_set_id:
         types:
         - String
         required: false
-        count: 1
   describe_attachment:
     parameters:
       attachment_id:
         types:
         - String
         required: true
-        count: 1
   describe_cases:
     parameters:
       case_id_list:
         types:
         - Array<String>
         required: false
-        count: 1
       display_id:
         types:
         - String
         required: false
-        count: 1
       after_time:
         types:
         - String
         required: false
-        count: 1
       before_time:
         types:
         - String
         required: false
-        count: 1
       include_resolved_cases:
         types:
         - Boolean
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
       include_communications:
         types:
         - Boolean
         required: false
-        count: 1
   describe_communications:
     parameters:
       case_id:
         types:
         - String
         required: true
-        count: 1
       before_time:
         types:
         - String
         required: false
-        count: 1
       after_time:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_services:
     parameters:
       service_code_list:
         types:
         - Array<String>
         required: false
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
   describe_severity_levels:
     parameters:
       language:
         types:
         - String
         required: false
-        count: 1
   describe_trusted_advisor_check_refresh_statuses:
     parameters:
       check_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_trusted_advisor_check_result:
     parameters:
       check_id:
         types:
         - String
         required: true
-        count: 1
       language:
         types:
         - String
         required: false
-        count: 1
   describe_trusted_advisor_check_summaries:
     parameters:
       check_ids:
         types:
         - Array<String>
         required: true
-        count: 1
   describe_trusted_advisor_checks:
     parameters:
       language:
         types:
         - String
         required: true
-        count: 1
   refresh_trusted_advisor_check:
     parameters:
       check_id:
         types:
         - String
         required: true
-        count: 1
   resolve_case:
     parameters:
       case_id:
         types:
         - String
         required: false
-        count: 1

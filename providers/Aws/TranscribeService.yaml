@@ -7,125 +7,101 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   get_transcription_job:
     parameters:
       transcription_job_name:
         types:
         - String
         required: true
-        count: 1
   list_transcription_jobs:
     parameters:
       status:
         types:
         - String
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   start_transcription_job:
     parameters:
       transcription_job_name:
         types:
         - String
         required: true
-        count: 1
       language_code:
         types:
         - String
         required: true
-        count: 1
       media_sample_rate_hertz:
         types:
         - Integer
         required: false
-        count: 1
       media_format:
         types:
         - String
         required: true
-        count: 1
       media:
         types:
         - Types::Media
         required: true
-        count: 1

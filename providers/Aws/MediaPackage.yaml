@@ -7,256 +7,209 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_channel:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   create_origin_endpoint:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
       dash_package:
         types:
         - Types::DashPackage
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       hls_package:
         types:
         - Types::HlsPackage
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       manifest_name:
         types:
         - String
         required: false
-        count: 1
       mss_package:
         types:
         - Types::MssPackage
         required: false
-        count: 1
       startover_window_seconds:
         types:
         - Integer
         required: false
-        count: 1
       time_delay_seconds:
         types:
         - Integer
         required: false
-        count: 1
       whitelist:
         types:
         - Array<String>
         required: false
-        count: 1
   delete_channel:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   delete_origin_endpoint:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   describe_channel:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   describe_origin_endpoint:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   list_channels:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_origin_endpoints:
     parameters:
       channel_id:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   rotate_channel_credentials:
     parameters:
       id:
         types:
         - String
         required: true
-        count: 1
   update_channel:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
   update_origin_endpoint:
     parameters:
       dash_package:
         types:
         - Types::DashPackage
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       hls_package:
         types:
         - Types::HlsPackage
         required: false
-        count: 1
       id:
         types:
         - String
         required: true
-        count: 1
       manifest_name:
         types:
         - String
         required: false
-        count: 1
       mss_package:
         types:
         - Types::MssPackage
         required: false
-        count: 1
       startover_window_seconds:
         types:
         - Integer
         required: false
-        count: 1
       time_delay_seconds:
         types:
         - Integer
         required: false
-        count: 1
       whitelist:
         types:
         - Array<String>
         required: false
-        count: 1

@@ -7,128 +7,104 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   add_tags_to_resource:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tags:
         types:
         - Array<Types::Tag>
         required: true
-        count: 1
   cancel_command:
     parameters:
       command_id:
         types:
         - String
         required: true
-        count: 1
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
   create_activation:
     parameters:
       description:
         types:
         - String
         required: false
-        count: 1
       default_instance_name:
         types:
         - String
         required: false
-        count: 1
       iam_role:
         types:
         - String
         required: true
-        count: 1
       registration_limit:
         types:
         - Integer
         required: false
-        count: 1
       expiration_date:
         types:
         - Time
@@ -137,1992 +113,1631 @@ methods:
         - Integer
         - String
         required: false
-        count: 1
   create_association:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       parameters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       schedule_expression:
         types:
         - String
         required: false
-        count: 1
       output_location:
         types:
         - Types::InstanceAssociationOutputLocation
         required: false
-        count: 1
       association_name:
         types:
         - String
         required: false
-        count: 1
   create_association_batch:
     parameters:
       entries:
         types:
         - Array<Types::CreateAssociationBatchRequestEntry>
         required: true
-        count: 1
   create_document:
     parameters:
       content:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       document_type:
         types:
         - String
         required: false
-        count: 1
       document_format:
         types:
         - String
         required: false
-        count: 1
       target_type:
         types:
         - String
         required: false
-        count: 1
   create_maintenance_window:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       schedule:
         types:
         - String
         required: true
-        count: 1
       duration:
         types:
         - Integer
         required: true
-        count: 1
       cutoff:
         types:
         - Integer
         required: true
-        count: 1
       allow_unassociated_targets:
         types:
         - Boolean
         required: true
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   create_patch_baseline:
     parameters:
       operating_system:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       global_filters:
         types:
         - Types::PatchFilterGroup
         required: false
-        count: 1
       approval_rules:
         types:
         - Types::PatchRuleGroup
         required: false
-        count: 1
       approved_patches:
         types:
         - Array<String>
         required: false
-        count: 1
       approved_patches_compliance_level:
         types:
         - String
         required: false
-        count: 1
       approved_patches_enable_non_security:
         types:
         - Boolean
         required: false
-        count: 1
       rejected_patches:
         types:
         - Array<String>
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       sources:
         types:
         - Array<Types::PatchSource>
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   create_resource_data_sync:
     parameters:
       sync_name:
         types:
         - String
         required: true
-        count: 1
       s3_destination:
         types:
         - Types::ResourceDataSyncS3Destination
         required: true
-        count: 1
   delete_activation:
     parameters:
       activation_id:
         types:
         - String
         required: true
-        count: 1
   delete_association:
     parameters:
       name:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       association_id:
         types:
         - String
         required: false
-        count: 1
   delete_document:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
   delete_parameter:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
   delete_parameters:
     parameters:
       names:
         types:
         - Array<String>
         required: true
-        count: 1
   delete_patch_baseline:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
   delete_resource_data_sync:
     parameters:
       sync_name:
         types:
         - String
         required: true
-        count: 1
   deregister_managed_instance:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
   deregister_patch_baseline_for_patch_group:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
       patch_group:
         types:
         - String
         required: true
-        count: 1
   deregister_target_from_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       window_target_id:
         types:
         - String
         required: true
-        count: 1
       safe:
         types:
         - Boolean
         required: false
-        count: 1
   deregister_task_from_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       window_task_id:
         types:
         - String
         required: true
-        count: 1
   describe_activations:
     parameters:
       filters:
         types:
         - Array<Types::DescribeActivationsFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_association:
     parameters:
       name:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       association_id:
         types:
         - String
         required: false
-        count: 1
       association_version:
         types:
         - String
         required: false
-        count: 1
   describe_automation_executions:
     parameters:
       filters:
         types:
         - Array<Types::AutomationExecutionFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_automation_step_executions:
     parameters:
       automation_execution_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::StepExecutionFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       reverse_order:
         types:
         - Boolean
         required: false
-        count: 1
   describe_available_patches:
     parameters:
       filters:
         types:
         - Array<Types::PatchOrchestratorFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_document:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
   describe_document_permission:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       permission_type:
         types:
         - String
         required: true
-        count: 1
   describe_effective_instance_associations:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_effective_patches_for_patch_baseline:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_instance_associations_status:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_instance_information:
     parameters:
       instance_information_filter_list:
         types:
         - Array<Types::InstanceInformationFilter>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::InstanceInformationStringFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_instance_patch_states:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: true
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_instance_patch_states_for_patch_group:
     parameters:
       patch_group:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::InstancePatchStateFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_instance_patches:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::PatchOrchestratorFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   describe_maintenance_window_execution_task_invocations:
     parameters:
       window_execution_id:
         types:
         - String
         required: true
-        count: 1
       task_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_maintenance_window_execution_tasks:
     parameters:
       window_execution_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_maintenance_window_executions:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_maintenance_window_targets:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_maintenance_window_tasks:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_maintenance_windows:
     parameters:
       filters:
         types:
         - Array<Types::MaintenanceWindowFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_parameters:
     parameters:
       filters:
         types:
         - Array<Types::ParametersFilter>
         required: false
-        count: 1
       parameter_filters:
         types:
         - Array<Types::ParameterStringFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_patch_baselines:
     parameters:
       filters:
         types:
         - Array<Types::PatchOrchestratorFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   describe_patch_group_state:
     parameters:
       patch_group:
         types:
         - String
         required: true
-        count: 1
   describe_patch_groups:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::PatchOrchestratorFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_automation_execution:
     parameters:
       automation_execution_id:
         types:
         - String
         required: true
-        count: 1
   get_command_invocation:
     parameters:
       command_id:
         types:
         - String
         required: true
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       plugin_name:
         types:
         - String
         required: false
-        count: 1
   get_default_patch_baseline:
     parameters:
       operating_system:
         types:
         - String
         required: false
-        count: 1
   get_deployable_patch_snapshot_for_instance:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       snapshot_id:
         types:
         - String
         required: true
-        count: 1
   get_document:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
       document_format:
         types:
         - String
         required: false
-        count: 1
   get_inventory:
     parameters:
       filters:
         types:
         - Array<Types::InventoryFilter>
         required: false
-        count: 1
       aggregators:
         types:
         - Array<Types::InventoryAggregator>
         required: false
-        count: 1
       result_attributes:
         types:
         - Array<Types::ResultAttribute>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   get_inventory_schema:
     parameters:
       type_name:
         types:
         - String
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       aggregator:
         types:
         - Boolean
         required: false
-        count: 1
       sub_type:
         types:
         - Boolean
         required: false
-        count: 1
   get_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
   get_maintenance_window_execution:
     parameters:
       window_execution_id:
         types:
         - String
         required: true
-        count: 1
   get_maintenance_window_execution_task:
     parameters:
       window_execution_id:
         types:
         - String
         required: true
-        count: 1
       task_id:
         types:
         - String
         required: true
-        count: 1
   get_maintenance_window_execution_task_invocation:
     parameters:
       window_execution_id:
         types:
         - String
         required: true
-        count: 1
       task_id:
         types:
         - String
         required: true
-        count: 1
       invocation_id:
         types:
         - String
         required: true
-        count: 1
   get_maintenance_window_task:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       window_task_id:
         types:
         - String
         required: true
-        count: 1
   get_parameter:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       with_decryption:
         types:
         - Boolean
         required: false
-        count: 1
   get_parameter_history:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       with_decryption:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_parameters:
     parameters:
       names:
         types:
         - Array<String>
         required: true
-        count: 1
       with_decryption:
         types:
         - Boolean
         required: false
-        count: 1
   get_parameters_by_path:
     parameters:
       path:
         types:
         - String
         required: true
-        count: 1
       recursive:
         types:
         - Boolean
         required: false
-        count: 1
       parameter_filters:
         types:
         - Array<Types::ParameterStringFilter>
         required: false
-        count: 1
       with_decryption:
         types:
         - Boolean
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   get_patch_baseline:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
   get_patch_baseline_for_patch_group:
     parameters:
       patch_group:
         types:
         - String
         required: true
-        count: 1
       operating_system:
         types:
         - String
         required: false
-        count: 1
   list_association_versions:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_associations:
     parameters:
       association_filter_list:
         types:
         - Array<Types::AssociationFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_command_invocations:
     parameters:
       command_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::CommandFilter>
         required: false
-        count: 1
       details:
         types:
         - Boolean
         required: false
-        count: 1
   list_commands:
     parameters:
       command_id:
         types:
         - String
         required: false
-        count: 1
       instance_id:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::CommandFilter>
         required: false
-        count: 1
   list_compliance_items:
     parameters:
       filters:
         types:
         - Array<Types::ComplianceStringFilter>
         required: false
-        count: 1
       resource_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       resource_types:
         types:
         - Array<String>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_compliance_summaries:
     parameters:
       filters:
         types:
         - Array<Types::ComplianceStringFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_document_versions:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_documents:
     parameters:
       document_filter_list:
         types:
         - Array<Types::DocumentFilter>
         required: false
-        count: 1
       filters:
         types:
         - Array<Types::DocumentKeyValuesFilter>
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_inventory_entries:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       type_name:
         types:
         - String
         required: true
-        count: 1
       filters:
         types:
         - Array<Types::InventoryFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_resource_compliance_summaries:
     parameters:
       filters:
         types:
         - Array<Types::ComplianceStringFilter>
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_resource_data_sync:
     parameters:
       next_token:
         types:
         - String
         required: false
-        count: 1
       max_results:
         types:
         - Integer
         required: false
-        count: 1
   list_tags_for_resource:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
   modify_document_permission:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       permission_type:
         types:
         - String
         required: true
-        count: 1
       account_ids_to_add:
         types:
         - Array<String>
         required: false
-        count: 1
       account_ids_to_remove:
         types:
         - Array<String>
         required: false
-        count: 1
   put_compliance_items:
     parameters:
       resource_id:
         types:
         - String
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: true
-        count: 1
       compliance_type:
         types:
         - String
         required: true
-        count: 1
       execution_summary:
         types:
         - Types::ComplianceExecutionSummary
         required: true
-        count: 1
       items:
         types:
         - Array<Types::ComplianceItemEntry>
         required: true
-        count: 1
       item_content_hash:
         types:
         - String
         required: false
-        count: 1
   put_inventory:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       items:
         types:
         - Array<Types::InventoryItem>
         required: true
-        count: 1
   put_parameter:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       value:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: true
-        count: 1
       key_id:
         types:
         - String
         required: false
-        count: 1
       overwrite:
         types:
         - Boolean
         required: false
-        count: 1
       allowed_pattern:
         types:
         - String
         required: false
-        count: 1
   register_default_patch_baseline:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
   register_patch_baseline_for_patch_group:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
       patch_group:
         types:
         - String
         required: true
-        count: 1
   register_target_with_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       resource_type:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: true
-        count: 1
       owner_information:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   register_task_with_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: true
-        count: 1
       task_arn:
         types:
         - String
         required: true
-        count: 1
       service_role_arn:
         types:
         - String
         required: true
-        count: 1
       task_type:
         types:
         - String
         required: true
-        count: 1
       task_parameters:
         types:
         - Hash<String,Types::MaintenanceWindowTaskParameterValueExpression>
         required: false
-        count: 1
       task_invocation_parameters:
         types:
         - Types::MaintenanceWindowTaskInvocationParameters
         required: false
-        count: 1
       priority:
         types:
         - Integer
         required: false
-        count: 1
       max_concurrency:
         types:
         - String
         required: true
-        count: 1
       max_errors:
         types:
         - String
         required: true
-        count: 1
       logging_info:
         types:
         - Types::LoggingInfo
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
   remove_tags_from_resource:
     parameters:
       resource_type:
         types:
         - String
         required: true
-        count: 1
       resource_id:
         types:
         - String
         required: true
-        count: 1
       tag_keys:
         types:
         - Array<String>
         required: true
-        count: 1
   send_automation_signal:
     parameters:
       automation_execution_id:
         types:
         - String
         required: true
-        count: 1
       signal_type:
         types:
         - String
         required: true
-        count: 1
       payload:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
   send_command:
     parameters:
       instance_ids:
         types:
         - Array<String>
         required: false
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       document_name:
         types:
         - String
         required: true
-        count: 1
       document_hash:
         types:
         - String
         required: false
-        count: 1
       document_hash_type:
         types:
         - String
         required: false
-        count: 1
       timeout_seconds:
         types:
         - Integer
         required: false
-        count: 1
       comment:
         types:
         - String
         required: false
-        count: 1
       parameters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       output_s3_region:
         types:
         - String
         required: false
-        count: 1
       output_s3_bucket_name:
         types:
         - String
         required: false
-        count: 1
       output_s3_key_prefix:
         types:
         - String
         required: false
-        count: 1
       max_concurrency:
         types:
         - String
         required: false
-        count: 1
       max_errors:
         types:
         - String
         required: false
-        count: 1
       service_role_arn:
         types:
         - String
         required: false
-        count: 1
       notification_config:
         types:
         - Types::NotificationConfig
         required: false
-        count: 1
   start_automation_execution:
     parameters:
       document_name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
       parameters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       client_token:
         types:
         - String
         required: false
-        count: 1
       mode:
         types:
         - String
         required: false
-        count: 1
       target_parameter_name:
         types:
         - String
         required: false
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       max_concurrency:
         types:
         - String
         required: false
-        count: 1
       max_errors:
         types:
         - String
         required: false
-        count: 1
   stop_automation_execution:
     parameters:
       automation_execution_id:
         types:
         - String
         required: true
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
   update_association:
     parameters:
       association_id:
         types:
         - String
         required: true
-        count: 1
       parameters:
         types:
         - Hash<String,Array>
         required: false
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
       schedule_expression:
         types:
         - String
         required: false
-        count: 1
       output_location:
         types:
         - Types::InstanceAssociationOutputLocation
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       association_name:
         types:
         - String
         required: false
-        count: 1
       association_version:
         types:
         - String
         required: false
-        count: 1
   update_association_status:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       instance_id:
         types:
         - String
         required: true
-        count: 1
       association_status:
         types:
         - Types::AssociationStatus
         required: true
-        count: 1
   update_document:
     parameters:
       content:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: false
-        count: 1
       document_format:
         types:
         - String
         required: false
-        count: 1
       target_type:
         types:
         - String
         required: false
-        count: 1
   update_document_default_version:
     parameters:
       name:
         types:
         - String
         required: true
-        count: 1
       document_version:
         types:
         - String
         required: true
-        count: 1
   update_maintenance_window:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       schedule:
         types:
         - String
         required: false
-        count: 1
       duration:
         types:
         - Integer
         required: false
-        count: 1
       cutoff:
         types:
         - Integer
         required: false
-        count: 1
       allow_unassociated_targets:
         types:
         - Boolean
         required: false
-        count: 1
       enabled:
         types:
         - Boolean
         required: false
-        count: 1
       replace:
         types:
         - Boolean
         required: false
-        count: 1
   update_maintenance_window_target:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       window_target_id:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       owner_information:
         types:
         - String
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       replace:
         types:
         - Boolean
         required: false
-        count: 1
   update_maintenance_window_task:
     parameters:
       window_id:
         types:
         - String
         required: true
-        count: 1
       window_task_id:
         types:
         - String
         required: true
-        count: 1
       targets:
         types:
         - Array<Types::Target>
         required: false
-        count: 1
       task_arn:
         types:
         - String
         required: false
-        count: 1
       service_role_arn:
         types:
         - String
         required: false
-        count: 1
       task_parameters:
         types:
         - Hash<String,Types::MaintenanceWindowTaskParameterValueExpression>
         required: false
-        count: 1
       task_invocation_parameters:
         types:
         - Types::MaintenanceWindowTaskInvocationParameters
         required: false
-        count: 1
       priority:
         types:
         - Integer
         required: false
-        count: 1
       max_concurrency:
         types:
         - String
         required: false
-        count: 1
       max_errors:
         types:
         - String
         required: false
-        count: 1
       logging_info:
         types:
         - Types::LoggingInfo
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       replace:
         types:
         - Boolean
         required: false
-        count: 1
   update_managed_instance_role:
     parameters:
       instance_id:
         types:
         - String
         required: true
-        count: 1
       iam_role:
         types:
         - String
         required: true
-        count: 1
   update_patch_baseline:
     parameters:
       baseline_id:
         types:
         - String
         required: true
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       global_filters:
         types:
         - Types::PatchFilterGroup
         required: false
-        count: 1
       approval_rules:
         types:
         - Types::PatchRuleGroup
         required: false
-        count: 1
       approved_patches:
         types:
         - Array<String>
         required: false
-        count: 1
       approved_patches_compliance_level:
         types:
         - String
         required: false
-        count: 1
       approved_patches_enable_non_security:
         types:
         - Boolean
         required: false
-        count: 1
       rejected_patches:
         types:
         - Array<String>
         required: false
-        count: 1
       description:
         types:
         - String
         required: false
-        count: 1
       sources:
         types:
         - Array<Types::PatchSource>
         required: false
-        count: 1
       replace:
         types:
         - Boolean
         required: false
-        count: 1

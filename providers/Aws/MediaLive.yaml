@@ -7,274 +7,225 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   create_channel:
     parameters:
       destinations:
         types:
         - Array<Types::OutputDestination>
         required: false
-        count: 1
       encoder_settings:
         types:
         - Types::EncoderSettings
         required: false
-        count: 1
       input_attachments:
         types:
         - Array<Types::InputAttachment>
         required: false
-        count: 1
       input_specification:
         types:
         - Types::InputSpecification
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       request_id:
         types:
         - String
         required: false
-        count: 1
       reserved:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1
   create_input:
     parameters:
       destinations:
         types:
         - Array<Types::InputDestinationRequest>
         required: false
-        count: 1
       input_security_groups:
         types:
         - Array<String>
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       request_id:
         types:
         - String
         required: false
-        count: 1
       sources:
         types:
         - Array<Types::InputSourceRequest>
         required: false
-        count: 1
       type:
         types:
         - String
         required: false
-        count: 1
   create_input_security_group:
     parameters:
       whitelist_rules:
         types:
         - Array<Types::InputWhitelistRuleCidr>
         required: false
-        count: 1
   delete_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
   delete_input:
     parameters:
       input_id:
         types:
         - String
         required: true
-        count: 1
   delete_input_security_group:
     parameters:
       input_security_group_id:
         types:
         - String
         required: true
-        count: 1
   describe_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
   describe_input:
     parameters:
       input_id:
         types:
         - String
         required: true
-        count: 1
   describe_input_security_group:
     parameters:
       input_security_group_id:
         types:
         - String
         required: true
-        count: 1
   list_channels:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_input_security_groups:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   list_inputs:
     parameters:
       max_results:
         types:
         - Integer
         required: false
-        count: 1
       next_token:
         types:
         - String
         required: false
-        count: 1
   start_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
   stop_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
   update_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
-        count: 1
       destinations:
         types:
         - Array<Types::OutputDestination>
         required: false
-        count: 1
       encoder_settings:
         types:
         - Types::EncoderSettings
         required: false
-        count: 1
       input_specification:
         types:
         - Types::InputSpecification
         required: false
-        count: 1
       name:
         types:
         - String
         required: false
-        count: 1
       role_arn:
         types:
         - String
         required: false
-        count: 1

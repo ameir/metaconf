@@ -7,209 +7,169 @@ methods:
         types:
         - Aws::CredentialProvider
         required: true
-        count: 1
       region:
         types:
         - String
         required: true
-        count: 1
       access_key_id:
         types:
         - String
         required: false
-        count: 1
       convert_params:
         types:
         - Boolean
         required: false
-        count: 1
       endpoint:
         types:
         - String
         required: false
-        count: 1
       log_formatter:
         types:
         - Aws::Log::Formatter
         required: false
-        count: 1
       log_level:
         types:
         - Symbol
         required: false
-        count: 1
       logger:
         types:
         - Logger
         required: false
-        count: 1
       profile:
         types:
         - String
         required: false
-        count: 1
       retry_limit:
         types:
         - Integer
         required: false
-        count: 1
       secret_access_key:
         types:
         - String
         required: false
-        count: 1
       session_token:
         types:
         - String
         required: false
-        count: 1
       simple_json:
         types:
         - Boolean
         required: false
-        count: 1
       stub_responses:
         types:
         - Boolean
         required: false
-        count: 1
       validate_params:
         types:
         - Boolean
         required: false
-        count: 1
   get_cost_and_usage:
     parameters:
       time_period:
         types:
         - Types::DateInterval
         required: false
-        count: 1
       granularity:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - Types::Expression
         required: false
-        count: 1
       metrics:
         types:
         - Array<String>
         required: false
-        count: 1
       group_by:
         types:
         - Array<Types::GroupDefinition>
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
   get_dimension_values:
     parameters:
       search_string:
         types:
         - String
         required: false
-        count: 1
       time_period:
         types:
         - Types::DateInterval
         required: true
-        count: 1
       dimension:
         types:
         - String
         required: true
-        count: 1
       context:
         types:
         - String
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
   get_reservation_coverage:
     parameters:
       time_period:
         types:
         - Types::DateInterval
         required: true
-        count: 1
       group_by:
         types:
         - Array<Types::GroupDefinition>
         required: false
-        count: 1
       granularity:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - Types::Expression
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
   get_reservation_utilization:
     parameters:
       time_period:
         types:
         - Types::DateInterval
         required: true
-        count: 1
       group_by:
         types:
         - Array<Types::GroupDefinition>
         required: false
-        count: 1
       granularity:
         types:
         - String
         required: false
-        count: 1
       filter:
         types:
         - Types::Expression
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
   get_tags:
     parameters:
       search_string:
         types:
         - String
         required: false
-        count: 1
       time_period:
         types:
         - Types::DateInterval
         required: true
-        count: 1
       tag_key:
         types:
         - String
         required: false
-        count: 1
       next_page_token:
         types:
         - String
         required: false
-        count: 1
