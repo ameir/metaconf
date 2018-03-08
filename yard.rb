@@ -3,12 +3,11 @@ require 'yard'
 require 'yaml'
 require 'pp'
 
-files = [
-  __dir__ + '/vendor/bundle/ruby/2.4.0/gems/aws-sdk-s3-1.8.2/lib/aws-sdk-s3/client.rb',
- __dir__ + '/vendor/bundle/ruby/2.4.0/gems/aws-sdk-ec2-1.29.0/lib/aws-sdk-ec2/client.rb',
-  __dir__ + '/vendor/bundle/ruby/2.4.0/gems/aws-sdk-ecs-1.9.0/lib/aws-sdk-ecs/client.rb',
-]
+# find gem root dir
+spec = Gem::Specification.find_by_name('aws-sdk')
+gem_root = File.expand_path('..', spec.gem_dir)
 
+files = Dir.glob("#{gem_root}/*/lib/*/client.rb")
 files.each do |file|
   puts "processing #{file}..."
   YARD::Registry.clear
