@@ -32,8 +32,36 @@ files.each do |file|
     end
   end
 
+  actions = {
+    'create' => %w(put create),
+    'read' => %w(get describe head),
+    'update' => %w(modify),
+    'delete' => %w(delete),
+  }
+
+  relations = Hash.new { |h, k| h[k] = Hash.new(&h.default_proc) }
+  actions['create'].each do |verb|
+    key = "#{verb}_"
+    create = hash['methods'].keys.select { |i| i.start_with?(key) }
+    create.each do |c|
+      general_method_name = c[key.length..-1]
+      pp general_method_name
+      filtered = hash['methods'].keys.select { |i| i.end_with?(*[general_method_name, "#{general_method_name}s"]) }
+
+      actions.each do |k, v|
+        relations[general_method_name][k] = filtered.select { |i| i.start_with?(*v) }[0]
+      end
+    end
+  end
+  pp relations
+
   # write out yaml spec
   class_parts = klass.split('::')
-  filename = "#{__dir__}/providers/#{class_parts[0]}/#{class_parts[1]}.yaml"
-  File.write(filename, hash.to_yaml)
+  dir = "#{__dir__}/providers/#{class_parts[0]}/#{class_parts[1]}"
+  Dir.mkdir(dir) unless File.exist?(dir)
+  filename_methods = "#{dir}/#{class_parts[1]}.yaml"
+  filename_relations = "#{dir}/relations.yaml"
+
+  File.write(filename_methods, hash.to_yaml)
+  File.write(filename_relations, relations.to_yaml)
 end
