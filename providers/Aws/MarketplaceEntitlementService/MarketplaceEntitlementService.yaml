@@ -1,0 +1,21 @@
+---
+class: Aws::MarketplaceEntitlementService::Client
+methods:
+  get_entitlements:
+    parameters:
+      product_code:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - Hash<String,Array>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false

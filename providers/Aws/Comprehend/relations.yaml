@@ -1,0 +1,11 @@
+---
+document_classifier:
+  create: create_document_classifier
+  read: describe_document_classifier
+  update: 
+  delete: delete_document_classifier
+entity_recognizer:
+  create: create_entity_recognizer
+  read: describe_entity_recognizer
+  update: 
+  delete: delete_entity_recognizer

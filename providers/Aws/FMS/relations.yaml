@@ -1,0 +1,11 @@
+---
+notification_channel:
+  create: put_notification_channel
+  read: 
+  update: 
+  delete: 
+policy:
+  create: put_policy
+  read: get_policy
+  update: 
+  delete: delete_policy

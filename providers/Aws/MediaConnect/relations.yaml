@@ -1,0 +1,6 @@
+---
+flow:
+  create: create_flow
+  read: describe_flow
+  update: 
+  delete: delete_flow

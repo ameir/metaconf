@@ -1,0 +1,6 @@
+---
+fleet:
+  create: create_fleet
+  read: 
+  update: 
+  delete: delete_fleet

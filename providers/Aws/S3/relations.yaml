@@ -1,0 +1,136 @@
+---
+bucket_accelerate_configuration:
+  create: put_bucket_accelerate_configuration
+  read: get_bucket_accelerate_configuration
+  update: 
+  delete: 
+bucket_acl:
+  create: put_bucket_acl
+  read: get_bucket_acl
+  update: 
+  delete: 
+bucket_analytics_configuration:
+  create: put_bucket_analytics_configuration
+  read: get_bucket_analytics_configuration
+  update: 
+  delete: delete_bucket_analytics_configuration
+bucket_cors:
+  create: put_bucket_cors
+  read: get_bucket_cors
+  update: 
+  delete: delete_bucket_cors
+bucket_encryption:
+  create: put_bucket_encryption
+  read: get_bucket_encryption
+  update: 
+  delete: delete_bucket_encryption
+bucket_inventory_configuration:
+  create: put_bucket_inventory_configuration
+  read: get_bucket_inventory_configuration
+  update: 
+  delete: delete_bucket_inventory_configuration
+bucket_lifecycle:
+  create: put_bucket_lifecycle
+  read: get_bucket_lifecycle
+  update: 
+  delete: delete_bucket_lifecycle
+bucket_lifecycle_configuration:
+  create: put_bucket_lifecycle_configuration
+  read: get_bucket_lifecycle_configuration
+  update: 
+  delete: 
+bucket_logging:
+  create: put_bucket_logging
+  read: get_bucket_logging
+  update: 
+  delete: 
+bucket_metrics_configuration:
+  create: put_bucket_metrics_configuration
+  read: get_bucket_metrics_configuration
+  update: 
+  delete: delete_bucket_metrics_configuration
+bucket_notification:
+  create: put_bucket_notification
+  read: get_bucket_notification
+  update: 
+  delete: 
+bucket_notification_configuration:
+  create: put_bucket_notification_configuration
+  read: get_bucket_notification_configuration
+  update: 
+  delete: 
+bucket_policy:
+  create: put_bucket_policy
+  read: get_bucket_policy
+  update: 
+  delete: delete_bucket_policy
+bucket_replication:
+  create: put_bucket_replication
+  read: get_bucket_replication
+  update: 
+  delete: delete_bucket_replication
+bucket_request_payment:
+  create: put_bucket_request_payment
+  read: get_bucket_request_payment
+  update: 
+  delete: 
+bucket_tagging:
+  create: put_bucket_tagging
+  read: get_bucket_tagging
+  update: 
+  delete: delete_bucket_tagging
+bucket_versioning:
+  create: put_bucket_versioning
+  read: get_bucket_versioning
+  update: 
+  delete: 
+bucket_website:
+  create: put_bucket_website
+  read: get_bucket_website
+  update: 
+  delete: delete_bucket_website
+object:
+  create: put_object
+  read: get_object
+  update: 
+  delete: delete_object
+object_acl:
+  create: put_object_acl
+  read: get_object_acl
+  update: 
+  delete: 
+object_legal_hold:
+  create: put_object_legal_hold
+  read: get_object_legal_hold
+  update: 
+  delete: 
+object_lock_configuration:
+  create: put_object_lock_configuration
+  read: get_object_lock_configuration
+  update: 
+  delete: 
+object_retention:
+  create: put_object_retention
+  read: get_object_retention
+  update: 
+  delete: 
+object_tagging:
+  create: put_object_tagging
+  read: get_object_tagging
+  update: 
+  delete: delete_object_tagging
+public_access_block:
+  create: put_public_access_block
+  read: get_public_access_block
+  update: 
+  delete: delete_public_access_block
+bucket:
+  create: create_bucket
+  read: head_bucket
+  update: 
+  delete: delete_bucket
+multipart_upload:
+  create: create_multipart_upload
+  read: 
+  update: 
+  delete: 

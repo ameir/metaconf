@@ -1,0 +1,16 @@
+---
+app:
+  create: create_app
+  read: get_app
+  update: 
+  delete: delete_app
+branch:
+  create: create_branch
+  read: get_branch
+  update: 
+  delete: delete_branch
+domain_association:
+  create: create_domain_association
+  read: get_domain_association
+  update: 
+  delete: delete_domain_association

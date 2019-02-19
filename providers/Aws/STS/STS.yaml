@@ -1,0 +1,115 @@
+---
+class: Aws::STS::Client
+methods:
+  assume_role:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: true
+      role_session_name:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: false
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+      external_id:
+        types:
+        - String
+        required: false
+      serial_number:
+        types:
+        - String
+        required: false
+      token_code:
+        types:
+        - String
+        required: false
+  assume_role_with_saml:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: true
+      principal_arn:
+        types:
+        - String
+        required: true
+      saml_assertion:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: false
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+  assume_role_with_web_identity:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: true
+      role_session_name:
+        types:
+        - String
+        required: true
+      web_identity_token:
+        types:
+        - String
+        required: true
+      provider_id:
+        types:
+        - String
+        required: false
+      policy:
+        types:
+        - String
+        required: false
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+  decode_authorization_message:
+    parameters:
+      encoded_message:
+        types:
+        - String
+        required: true
+  get_federation_token:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: false
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+  get_session_token:
+    parameters:
+      duration_seconds:
+        types:
+        - Integer
+        required: false
+      serial_number:
+        types:
+        - String
+        required: false
+      token_code:
+        types:
+        - String
+        required: false

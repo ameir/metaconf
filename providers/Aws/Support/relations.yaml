@@ -1,0 +1,6 @@
+---
+case:
+  create: create_case
+  read: describe_cases
+  update: 
+  delete: 

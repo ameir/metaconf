@@ -1,0 +1,551 @@
+---
+class: Aws::ConfigService::Client
+methods:
+  batch_get_aggregate_resource_config:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      resource_identifiers:
+        types:
+        - Array<Types::AggregateResourceIdentifier>
+        required: true
+  batch_get_resource_config:
+    parameters:
+      resource_keys:
+        types:
+        - Array<Types::ResourceKey>
+        required: true
+  delete_aggregation_authorization:
+    parameters:
+      authorized_account_id:
+        types:
+        - String
+        required: true
+      authorized_aws_region:
+        types:
+        - String
+        required: true
+  delete_config_rule:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+  delete_configuration_aggregator:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+  delete_configuration_recorder:
+    parameters:
+      configuration_recorder_name:
+        types:
+        - String
+        required: true
+  delete_delivery_channel:
+    parameters:
+      delivery_channel_name:
+        types:
+        - String
+        required: true
+  delete_evaluation_results:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+  delete_pending_aggregation_request:
+    parameters:
+      requester_account_id:
+        types:
+        - String
+        required: true
+      requester_aws_region:
+        types:
+        - String
+        required: true
+  delete_retention_configuration:
+    parameters:
+      retention_configuration_name:
+        types:
+        - String
+        required: true
+  deliver_config_snapshot:
+    parameters:
+      delivery_channel_name:
+        types:
+        - String
+        required: true
+  describe_aggregate_compliance_by_config_rules:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ConfigRuleComplianceFilters
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_aggregation_authorizations:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_compliance_by_config_rule:
+    parameters:
+      config_rule_names:
+        types:
+        - Array<String>
+        required: false
+      compliance_types:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_compliance_by_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: false
+      resource_id:
+        types:
+        - String
+        required: false
+      compliance_types:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_config_rule_evaluation_status:
+    parameters:
+      config_rule_names:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_config_rules:
+    parameters:
+      config_rule_names:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_configuration_aggregator_sources_status:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      update_status:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_configuration_aggregators:
+    parameters:
+      configuration_aggregator_names:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_configuration_recorder_status:
+    parameters:
+      configuration_recorder_names:
+        types:
+        - Array<String>
+        required: false
+  describe_configuration_recorders:
+    parameters:
+      configuration_recorder_names:
+        types:
+        - Array<String>
+        required: false
+  describe_delivery_channel_status:
+    parameters:
+      delivery_channel_names:
+        types:
+        - Array<String>
+        required: false
+  describe_delivery_channels:
+    parameters:
+      delivery_channel_names:
+        types:
+        - Array<String>
+        required: false
+  describe_pending_aggregation_requests:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_retention_configurations:
+    parameters:
+      retention_configuration_names:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_aggregate_compliance_details_by_config_rule:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      config_rule_name:
+        types:
+        - String
+        required: true
+      account_id:
+        types:
+        - String
+        required: true
+      aws_region:
+        types:
+        - String
+        required: true
+      compliance_type:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_aggregate_config_rule_compliance_summary:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ConfigRuleComplianceSummaryFilters
+        required: false
+      group_by_key:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_aggregate_discovered_resource_counts:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ResourceCountFilters
+        required: false
+      group_by_key:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_aggregate_resource_config:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      resource_identifier:
+        types:
+        - Types::AggregateResourceIdentifier
+        required: true
+  get_compliance_details_by_config_rule:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      compliance_types:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_compliance_details_by_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      compliance_types:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_compliance_summary_by_resource_type:
+    parameters:
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+  get_discovered_resource_counts:
+    parameters:
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_resource_config_history:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      later_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      earlier_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      chronological_order:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_aggregate_discovered_resources:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      resource_type:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ResourceFilters
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_discovered_resources:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_ids:
+        types:
+        - Array<String>
+        required: false
+      resource_name:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      include_deleted_resources:
+        types:
+        - Boolean
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_aggregation_authorization:
+    parameters:
+      authorized_account_id:
+        types:
+        - String
+        required: true
+      authorized_aws_region:
+        types:
+        - String
+        required: true
+  put_config_rule:
+    parameters:
+      config_rule:
+        types:
+        - Types::ConfigRule
+        required: true
+  put_configuration_aggregator:
+    parameters:
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      account_aggregation_sources:
+        types:
+        - Array<Types::AccountAggregationSource>
+        required: false
+      organization_aggregation_source:
+        types:
+        - Types::OrganizationAggregationSource
+        required: false
+  put_configuration_recorder:
+    parameters:
+      configuration_recorder:
+        types:
+        - Types::ConfigurationRecorder
+        required: true
+  put_delivery_channel:
+    parameters:
+      delivery_channel:
+        types:
+        - Types::DeliveryChannel
+        required: true
+  put_evaluations:
+    parameters:
+      evaluations:
+        types:
+        - Array<Types::Evaluation>
+        required: false
+      result_token:
+        types:
+        - String
+        required: true
+      test_mode:
+        types:
+        - Boolean
+        required: false
+  put_retention_configuration:
+    parameters:
+      retention_period_in_days:
+        types:
+        - Integer
+        required: true
+  start_config_rules_evaluation:
+    parameters:
+      config_rule_names:
+        types:
+        - Array<String>
+        required: false
+  start_configuration_recorder:
+    parameters:
+      configuration_recorder_name:
+        types:
+        - String
+        required: true
+  stop_configuration_recorder:
+    parameters:
+      configuration_recorder_name:
+        types:
+        - String
+        required: true

@@ -1,0 +1,56 @@
+---
+cluster:
+  create: create_cluster
+  read: describe_clusters
+  update: modify_cluster
+  delete: delete_cluster
+cluster_parameter_group:
+  create: create_cluster_parameter_group
+  read: describe_cluster_parameter_groups
+  update: modify_cluster_parameter_group
+  delete: delete_cluster_parameter_group
+cluster_security_group:
+  create: create_cluster_security_group
+  read: describe_cluster_security_groups
+  update: 
+  delete: delete_cluster_security_group
+cluster_snapshot:
+  create: create_cluster_snapshot
+  read: describe_cluster_snapshots
+  update: modify_cluster_snapshot
+  delete: delete_cluster_snapshot
+cluster_subnet_group:
+  create: create_cluster_subnet_group
+  read: describe_cluster_subnet_groups
+  update: modify_cluster_subnet_group
+  delete: delete_cluster_subnet_group
+event_subscription:
+  create: create_event_subscription
+  read: describe_event_subscriptions
+  update: modify_event_subscription
+  delete: delete_event_subscription
+hsm_client_certificate:
+  create: create_hsm_client_certificate
+  read: describe_hsm_client_certificates
+  update: 
+  delete: delete_hsm_client_certificate
+hsm_configuration:
+  create: create_hsm_configuration
+  read: describe_hsm_configurations
+  update: 
+  delete: delete_hsm_configuration
+snapshot_copy_grant:
+  create: create_snapshot_copy_grant
+  read: describe_snapshot_copy_grants
+  update: 
+  delete: delete_snapshot_copy_grant
+snapshot_schedule:
+  create: create_snapshot_schedule
+  read: describe_snapshot_schedules
+  update: modify_snapshot_schedule
+  delete: delete_snapshot_schedule
+tags:
+  create: create_tags
+  read: describe_tags
+  update: 
+  delete: delete_tags

@@ -1,0 +1,66 @@
+---
+db_cluster:
+  create: create_db_cluster
+  read: describe_db_clusters
+  update: modify_db_cluster
+  delete: delete_db_cluster
+db_cluster_endpoint:
+  create: create_db_cluster_endpoint
+  read: describe_db_cluster_endpoints
+  update: modify_db_cluster_endpoint
+  delete: delete_db_cluster_endpoint
+db_cluster_parameter_group:
+  create: create_db_cluster_parameter_group
+  read: describe_db_cluster_parameter_groups
+  update: modify_db_cluster_parameter_group
+  delete: delete_db_cluster_parameter_group
+db_cluster_snapshot:
+  create: create_db_cluster_snapshot
+  read: describe_db_cluster_snapshots
+  update: 
+  delete: delete_db_cluster_snapshot
+db_instance:
+  create: create_db_instance
+  read: describe_db_instances
+  update: modify_db_instance
+  delete: delete_db_instance
+db_instance_read_replica:
+  create: create_db_instance_read_replica
+  read: 
+  update: 
+  delete: 
+db_parameter_group:
+  create: create_db_parameter_group
+  read: describe_db_parameter_groups
+  update: modify_db_parameter_group
+  delete: delete_db_parameter_group
+db_security_group:
+  create: create_db_security_group
+  read: describe_db_security_groups
+  update: 
+  delete: delete_db_security_group
+db_snapshot:
+  create: create_db_snapshot
+  read: describe_db_snapshots
+  update: modify_db_snapshot
+  delete: delete_db_snapshot
+db_subnet_group:
+  create: create_db_subnet_group
+  read: describe_db_subnet_groups
+  update: modify_db_subnet_group
+  delete: delete_db_subnet_group
+event_subscription:
+  create: create_event_subscription
+  read: describe_event_subscriptions
+  update: modify_event_subscription
+  delete: delete_event_subscription
+global_cluster:
+  create: create_global_cluster
+  read: describe_global_clusters
+  update: modify_global_cluster
+  delete: delete_global_cluster
+option_group:
+  create: create_option_group
+  read: describe_option_groups
+  update: modify_option_group
+  delete: delete_option_group

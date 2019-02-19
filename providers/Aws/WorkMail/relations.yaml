@@ -1,0 +1,26 @@
+---
+mailbox_permissions:
+  create: put_mailbox_permissions
+  read: 
+  update: 
+  delete: delete_mailbox_permissions
+alias:
+  create: create_alias
+  read: 
+  update: 
+  delete: delete_alias
+group:
+  create: create_group
+  read: describe_group
+  update: 
+  delete: delete_group
+resource:
+  create: create_resource
+  read: describe_resource
+  update: 
+  delete: delete_resource
+user:
+  create: create_user
+  read: describe_user
+  update: 
+  delete: delete_user

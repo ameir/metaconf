@@ -1,0 +1,207 @@
+---
+class: Aws::XRay::Client
+methods:
+  batch_get_traces:
+    parameters:
+      trace_ids:
+        types:
+        - Array<String>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  create_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      filter_expression:
+        types:
+        - String
+        required: false
+  create_sampling_rule:
+    parameters:
+      sampling_rule:
+        types:
+        - Types::SamplingRule
+        required: true
+  delete_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: false
+      group_arn:
+        types:
+        - String
+        required: false
+  delete_sampling_rule:
+    parameters:
+      rule_name:
+        types:
+        - String
+        required: false
+      rule_arn:
+        types:
+        - String
+        required: false
+  get_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: false
+      group_arn:
+        types:
+        - String
+        required: false
+  get_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  get_sampling_rules:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  get_sampling_statistic_summaries:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  get_sampling_targets:
+    parameters:
+      sampling_statistics_documents:
+        types:
+        - Array<Types::SamplingStatisticsDocument>
+        required: true
+  get_service_graph:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      group_name:
+        types:
+        - String
+        required: false
+      group_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_trace_graph:
+    parameters:
+      trace_ids:
+        types:
+        - Array<String>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  get_trace_summaries:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      sampling:
+        types:
+        - Boolean
+        required: false
+      filter_expression:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_encryption_config:
+    parameters:
+      key_id:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: true
+  put_telemetry_records:
+    parameters:
+      telemetry_records:
+        types:
+        - Array<Types::TelemetryRecord>
+        required: true
+      ec2_instance_id:
+        types:
+        - String
+        required: false
+      hostname:
+        types:
+        - String
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: false
+  put_trace_segments:
+    parameters:
+      trace_segment_documents:
+        types:
+        - Array<String>
+        required: true
+  update_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: false
+      group_arn:
+        types:
+        - String
+        required: false
+      filter_expression:
+        types:
+        - String
+        required: false
+  update_sampling_rule:
+    parameters:
+      sampling_rule_update:
+        types:
+        - Types::SamplingRuleUpdate
+        required: true

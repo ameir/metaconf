@@ -1,0 +1,16 @@
+---
+job:
+  create: create_job
+  read: 
+  update: 
+  delete: 
+pipeline:
+  create: create_pipeline
+  read: 
+  update: 
+  delete: delete_pipeline
+preset:
+  create: create_preset
+  read: 
+  update: 
+  delete: delete_preset

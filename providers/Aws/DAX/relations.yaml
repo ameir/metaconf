@@ -1,0 +1,16 @@
+---
+cluster:
+  create: create_cluster
+  read: describe_clusters
+  update: 
+  delete: delete_cluster
+parameter_group:
+  create: create_parameter_group
+  read: describe_parameter_groups
+  update: 
+  delete: delete_parameter_group
+subnet_group:
+  create: create_subnet_group
+  read: describe_subnet_groups
+  update: 
+  delete: delete_subnet_group

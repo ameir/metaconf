@@ -1,0 +1,71 @@
+---
+data_catalog_encryption_settings:
+  create: put_data_catalog_encryption_settings
+  read: get_data_catalog_encryption_settings
+  update: 
+  delete: 
+resource_policy:
+  create: put_resource_policy
+  read: 
+  update: 
+  delete: delete_resource_policy
+classifier:
+  create: create_classifier
+  read: get_classifier
+  update: 
+  delete: delete_classifier
+connection:
+  create: create_connection
+  read: get_connection
+  update: 
+  delete: delete_connection
+crawler:
+  create: create_crawler
+  read: get_crawler
+  update: 
+  delete: delete_crawler
+database:
+  create: create_database
+  read: get_database
+  update: 
+  delete: delete_database
+dev_endpoint:
+  create: create_dev_endpoint
+  read: get_dev_endpoint
+  update: 
+  delete: delete_dev_endpoint
+job:
+  create: create_job
+  read: get_job
+  update: 
+  delete: delete_job
+partition:
+  create: create_partition
+  read: get_partition
+  update: 
+  delete: delete_partition
+script:
+  create: create_script
+  read: 
+  update: 
+  delete: 
+security_configuration:
+  create: create_security_configuration
+  read: get_security_configuration
+  update: 
+  delete: delete_security_configuration
+table:
+  create: create_table
+  read: get_table
+  update: 
+  delete: delete_table
+trigger:
+  create: create_trigger
+  read: get_trigger
+  update: 
+  delete: delete_trigger
+user_defined_function:
+  create: create_user_defined_function
+  read: get_user_defined_function
+  update: 
+  delete: delete_user_defined_function

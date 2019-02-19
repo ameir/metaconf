@@ -1,0 +1,26 @@
+---
+account_setting:
+  create: put_account_setting
+  read: 
+  update: 
+  delete: delete_account_setting
+account_setting_default:
+  create: put_account_setting_default
+  read: 
+  update: 
+  delete: 
+attributes:
+  create: put_attributes
+  read: 
+  update: 
+  delete: delete_attributes
+cluster:
+  create: create_cluster
+  read: describe_clusters
+  update: 
+  delete: delete_cluster
+service:
+  create: create_service
+  read: describe_services
+  update: 
+  delete: delete_service

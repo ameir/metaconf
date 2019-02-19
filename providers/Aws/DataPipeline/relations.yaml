@@ -1,0 +1,11 @@
+---
+pipeline_definition:
+  create: put_pipeline_definition
+  read: get_pipeline_definition
+  update: 
+  delete: 
+pipeline:
+  create: create_pipeline
+  read: describe_pipelines
+  update: 
+  delete: delete_pipeline

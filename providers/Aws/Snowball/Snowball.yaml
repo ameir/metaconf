@@ -1,0 +1,269 @@
+---
+class: Aws::Snowball::Client
+methods:
+  cancel_cluster:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+  cancel_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  create_address:
+    parameters:
+      address:
+        types:
+        - Types::Address
+        required: true
+  create_cluster:
+    parameters:
+      job_type:
+        types:
+        - String
+        required: true
+      resources:
+        types:
+        - Types::JobResource
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      address_id:
+        types:
+        - String
+        required: true
+      kms_key_arn:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      snowball_type:
+        types:
+        - String
+        required: false
+      shipping_option:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: false
+      forwarding_address_id:
+        types:
+        - String
+        required: false
+  create_job:
+    parameters:
+      job_type:
+        types:
+        - String
+        required: false
+      resources:
+        types:
+        - Types::JobResource
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      address_id:
+        types:
+        - String
+        required: false
+      kms_key_arn:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+      snowball_capacity_preference:
+        types:
+        - String
+        required: false
+      shipping_option:
+        types:
+        - String
+        required: false
+      notification:
+        types:
+        - Types::Notification
+        required: false
+      cluster_id:
+        types:
+        - String
+        required: false
+      snowball_type:
+        types:
+        - String
+        required: false
+      forwarding_address_id:
+        types:
+        - String
+        required: false
+  describe_address:
+    parameters:
+      address_id:
+        types:
+        - String
+        required: true
+  describe_addresses:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_cluster:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+  describe_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  get_job_manifest:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  get_job_unlock_code:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  list_cluster_jobs:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_clusters:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_compatible_images:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_jobs:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  update_cluster:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      resources:
+        types:
+        - Types::JobResource
+        required: false
+      address_id:
+        types:
+        - String
+        required: false
+      shipping_option:
+        types:
+        - String
+        required: false
+      notification:
+        types:
+        - Types::Notification
+        required: false
+      forwarding_address_id:
+        types:
+        - String
+        required: false
+  update_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: false
+      notification:
+        types:
+        - Types::Notification
+        required: false
+      resources:
+        types:
+        - Types::JobResource
+        required: false
+      address_id:
+        types:
+        - String
+        required: false
+      shipping_option:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      snowball_capacity_preference:
+        types:
+        - String
+        required: false
+      forwarding_address_id:
+        types:
+        - String
+        required: false

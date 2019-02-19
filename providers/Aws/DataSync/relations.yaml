@@ -1,0 +1,26 @@
+---
+agent:
+  create: create_agent
+  read: describe_agent
+  update: 
+  delete: delete_agent
+location_efs:
+  create: create_location_efs
+  read: describe_location_efs
+  update: 
+  delete: 
+location_nfs:
+  create: create_location_nfs
+  read: describe_location_nfs
+  update: 
+  delete: 
+location_s3:
+  create: create_location_s3
+  read: describe_location_s3
+  update: 
+  delete: 
+task:
+  create: create_task
+  read: describe_task
+  update: 
+  delete: delete_task

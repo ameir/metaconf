@@ -1,0 +1,81 @@
+---
+instance_public_ports:
+  create: put_instance_public_ports
+  read: 
+  update: 
+  delete: 
+cloud_formation_stack:
+  create: create_cloud_formation_stack
+  read: 
+  update: 
+  delete: 
+disk:
+  create: create_disk
+  read: get_disk
+  update: 
+  delete: delete_disk
+disk_from_snapshot:
+  create: create_disk_from_snapshot
+  read: 
+  update: 
+  delete: 
+disk_snapshot:
+  create: create_disk_snapshot
+  read: get_disk_snapshot
+  update: 
+  delete: delete_disk_snapshot
+domain:
+  create: create_domain
+  read: get_domain
+  update: 
+  delete: delete_domain
+domain_entry:
+  create: create_domain_entry
+  read: 
+  update: 
+  delete: delete_domain_entry
+instance_snapshot:
+  create: create_instance_snapshot
+  read: get_instance_snapshot
+  update: 
+  delete: delete_instance_snapshot
+instances:
+  create: create_instances
+  read: get_instances
+  update: 
+  delete: 
+instances_from_snapshot:
+  create: create_instances_from_snapshot
+  read: 
+  update: 
+  delete: 
+key_pair:
+  create: create_key_pair
+  read: get_key_pair
+  update: 
+  delete: delete_key_pair
+load_balancer:
+  create: create_load_balancer
+  read: get_load_balancer
+  update: 
+  delete: delete_load_balancer
+load_balancer_tls_certificate:
+  create: create_load_balancer_tls_certificate
+  read: get_load_balancer_tls_certificates
+  update: 
+  delete: delete_load_balancer_tls_certificate
+relational_database:
+  create: create_relational_database
+  read: get_relational_database
+  update: 
+  delete: delete_relational_database
+relational_database_from_snapshot:
+  create: create_relational_database_from_snapshot
+  read: 
+  update: 
+  delete: 
+relational_database_snapshot:
+  create: create_relational_database_snapshot
+  read: get_relational_database_snapshot
+  update: 
+  delete: delete_relational_database_snapshot

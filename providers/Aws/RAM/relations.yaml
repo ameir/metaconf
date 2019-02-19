@@ -1,0 +1,6 @@
+---
+resource_share:
+  create: create_resource_share
+  read: get_resource_shares
+  update: 
+  delete: delete_resource_share

@@ -1,0 +1,21 @@
+---
+channel:
+  create: create_channel
+  read: describe_channel
+  update: 
+  delete: delete_channel
+input:
+  create: create_input
+  read: describe_input
+  update: 
+  delete: delete_input
+input_security_group:
+  create: create_input_security_group
+  read: describe_input_security_group
+  update: 
+  delete: delete_input_security_group
+tags:
+  create: create_tags
+  read: 
+  update: 
+  delete: delete_tags

@@ -1,0 +1,121 @@
+---
+class: Aws::TranscribeService::Client
+methods:
+  create_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      phrases:
+        types:
+        - Array<String>
+        required: true
+  delete_transcription_job:
+    parameters:
+      transcription_job_name:
+        types:
+        - String
+        required: true
+  delete_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+  get_transcription_job:
+    parameters:
+      transcription_job_name:
+        types:
+        - String
+        required: true
+  get_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+  list_transcription_jobs:
+    parameters:
+      status:
+        types:
+        - String
+        required: false
+      job_name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_vocabularies:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      state_equals:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+  start_transcription_job:
+    parameters:
+      transcription_job_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      media_sample_rate_hertz:
+        types:
+        - Integer
+        required: false
+      media_format:
+        types:
+        - String
+        required: true
+      media:
+        types:
+        - Types::Media
+        required: true
+      output_bucket_name:
+        types:
+        - String
+        required: false
+      settings:
+        types:
+        - Types::Settings
+        required: false
+  update_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      phrases:
+        types:
+        - Array<String>
+        required: true

@@ -1,0 +1,41 @@
+---
+constraint:
+  create: create_constraint
+  read: describe_constraint
+  update: 
+  delete: delete_constraint
+portfolio:
+  create: create_portfolio
+  read: describe_portfolio
+  update: 
+  delete: delete_portfolio
+portfolio_share:
+  create: create_portfolio_share
+  read: 
+  update: 
+  delete: delete_portfolio_share
+product:
+  create: create_product
+  read: describe_product
+  update: 
+  delete: delete_product
+provisioned_product_plan:
+  create: create_provisioned_product_plan
+  read: describe_provisioned_product_plan
+  update: 
+  delete: delete_provisioned_product_plan
+provisioning_artifact:
+  create: create_provisioning_artifact
+  read: describe_provisioning_artifact
+  update: 
+  delete: delete_provisioning_artifact
+service_action:
+  create: create_service_action
+  read: describe_service_action
+  update: 
+  delete: delete_service_action
+tag_option:
+  create: create_tag_option
+  read: describe_tag_option
+  update: 
+  delete: delete_tag_option

@@ -1,0 +1,11 @@
+---
+configuration_set:
+  create: create_configuration_set
+  read: 
+  update: 
+  delete: delete_configuration_set
+configuration_set_event_destination:
+  create: create_configuration_set_event_destination
+  read: get_configuration_set_event_destinations
+  update: 
+  delete: delete_configuration_set_event_destination

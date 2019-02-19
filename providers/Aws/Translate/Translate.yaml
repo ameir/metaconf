@@ -1,0 +1,69 @@
+---
+class: Aws::Translate::Client
+methods:
+  delete_terminology:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_terminology:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      terminology_data_format:
+        types:
+        - String
+        required: true
+  import_terminology:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      merge_strategy:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      terminology_data:
+        types:
+        - Types::TerminologyData
+        required: true
+      encryption_key:
+        types:
+        - Types::EncryptionKey
+        required: false
+  list_terminologies:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  translate_text:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      terminology_names:
+        types:
+        - Array<String>
+        required: false
+      source_language_code:
+        types:
+        - String
+        required: true
+      target_language_code:
+        types:
+        - String
+        required: true

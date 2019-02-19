@@ -1,0 +1,6 @@
+---
+protection:
+  create: create_protection
+  read: describe_protection
+  update: 
+  delete: delete_protection

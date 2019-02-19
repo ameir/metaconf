@@ -1,0 +1,36 @@
+---
+device_pool:
+  create: create_device_pool
+  read: get_device_pool
+  update: 
+  delete: delete_device_pool
+instance_profile:
+  create: create_instance_profile
+  read: get_instance_profile
+  update: 
+  delete: delete_instance_profile
+network_profile:
+  create: create_network_profile
+  read: get_network_profile
+  update: 
+  delete: delete_network_profile
+project:
+  create: create_project
+  read: get_project
+  update: 
+  delete: delete_project
+remote_access_session:
+  create: create_remote_access_session
+  read: get_remote_access_session
+  update: 
+  delete: delete_remote_access_session
+upload:
+  create: create_upload
+  read: get_upload
+  update: 
+  delete: delete_upload
+vpce_configuration:
+  create: create_vpce_configuration
+  read: get_vpce_configuration
+  update: 
+  delete: delete_vpce_configuration

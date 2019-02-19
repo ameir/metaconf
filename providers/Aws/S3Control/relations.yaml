@@ -1,0 +1,6 @@
+---
+public_access_block:
+  create: put_public_access_block
+  read: get_public_access_block
+  update: 
+  delete: delete_public_access_block

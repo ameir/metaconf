@@ -1,0 +1,26 @@
+---
+class: Aws::SageMakerRuntime::Client
+methods:
+  invoke_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      body:
+        types:
+        - String
+        - IO
+        required: true
+      content_type:
+        types:
+        - String
+        required: false
+      accept:
+        types:
+        - String
+        required: false
+      custom_attributes:
+        types:
+        - String
+        required: false

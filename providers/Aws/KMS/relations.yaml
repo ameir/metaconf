@@ -1,0 +1,26 @@
+---
+key_policy:
+  create: put_key_policy
+  read: get_key_policy
+  update: 
+  delete: 
+alias:
+  create: create_alias
+  read: 
+  update: 
+  delete: delete_alias
+custom_key_store:
+  create: create_custom_key_store
+  read: describe_custom_key_stores
+  update: 
+  delete: delete_custom_key_store
+grant:
+  create: create_grant
+  read: 
+  update: 
+  delete: 
+key:
+  create: create_key
+  read: describe_key
+  update: 
+  delete: 

@@ -1,0 +1,949 @@
+---
+class: Aws::Greengrass::Client
+methods:
+  associate_role_to_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: false
+  associate_service_role_to_account:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: false
+  create_connector_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::ConnectorDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_connector_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      connector_definition_id:
+        types:
+        - String
+        required: true
+      connectors:
+        types:
+        - Array<Types::Connector>
+        required: false
+  create_core_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::CoreDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_core_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      core_definition_id:
+        types:
+        - String
+        required: true
+      cores:
+        types:
+        - Array<Types::Core>
+        required: false
+  create_deployment:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      deployment_id:
+        types:
+        - String
+        required: false
+      deployment_type:
+        types:
+        - String
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+      group_version_id:
+        types:
+        - String
+        required: false
+  create_device_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::DeviceDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_device_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      device_definition_id:
+        types:
+        - String
+        required: true
+      devices:
+        types:
+        - Array<Types::Device>
+        required: false
+  create_function_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::FunctionDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_function_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      default_config:
+        types:
+        - Types::FunctionDefaultConfig
+        required: false
+      function_definition_id:
+        types:
+        - String
+        required: true
+      functions:
+        types:
+        - Array<Types::Function>
+        required: false
+  create_group:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::GroupVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_group_certificate_authority:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+  create_group_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      connector_definition_version_arn:
+        types:
+        - String
+        required: false
+      core_definition_version_arn:
+        types:
+        - String
+        required: false
+      device_definition_version_arn:
+        types:
+        - String
+        required: false
+      function_definition_version_arn:
+        types:
+        - String
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+      logger_definition_version_arn:
+        types:
+        - String
+        required: false
+      resource_definition_version_arn:
+        types:
+        - String
+        required: false
+      subscription_definition_version_arn:
+        types:
+        - String
+        required: false
+  create_logger_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::LoggerDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_logger_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      logger_definition_id:
+        types:
+        - String
+        required: true
+      loggers:
+        types:
+        - Array<Types::Logger>
+        required: false
+  create_resource_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::ResourceDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_resource_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      resource_definition_id:
+        types:
+        - String
+        required: true
+      resources:
+        types:
+        - Array<Types::Resource>
+        required: false
+  create_software_update_job:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      s3_url_signer_role:
+        types:
+        - String
+        required: false
+      software_to_update:
+        types:
+        - String
+        required: false
+      update_agent_log_level:
+        types:
+        - String
+        required: false
+      update_targets:
+        types:
+        - Array<String>
+        required: false
+      update_targets_architecture:
+        types:
+        - String
+        required: false
+      update_targets_operating_system:
+        types:
+        - String
+        required: false
+  create_subscription_definition:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      initial_version:
+        types:
+        - Types::SubscriptionDefinitionVersion
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  create_subscription_definition_version:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      subscription_definition_id:
+        types:
+        - String
+        required: true
+      subscriptions:
+        types:
+        - Array<Types::Subscription>
+        required: false
+  delete_connector_definition:
+    parameters:
+      connector_definition_id:
+        types:
+        - String
+        required: true
+  delete_core_definition:
+    parameters:
+      core_definition_id:
+        types:
+        - String
+        required: true
+  delete_device_definition:
+    parameters:
+      device_definition_id:
+        types:
+        - String
+        required: true
+  delete_function_definition:
+    parameters:
+      function_definition_id:
+        types:
+        - String
+        required: true
+  delete_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  delete_logger_definition:
+    parameters:
+      logger_definition_id:
+        types:
+        - String
+        required: true
+  delete_resource_definition:
+    parameters:
+      resource_definition_id:
+        types:
+        - String
+        required: true
+  delete_subscription_definition:
+    parameters:
+      subscription_definition_id:
+        types:
+        - String
+        required: true
+  disassociate_role_from_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  get_associated_role:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  get_bulk_deployment_status:
+    parameters:
+      bulk_deployment_id:
+        types:
+        - String
+        required: true
+  get_connectivity_info:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+  get_connector_definition:
+    parameters:
+      connector_definition_id:
+        types:
+        - String
+        required: true
+  get_connector_definition_version:
+    parameters:
+      connector_definition_id:
+        types:
+        - String
+        required: true
+      connector_definition_version_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  get_core_definition:
+    parameters:
+      core_definition_id:
+        types:
+        - String
+        required: true
+  get_core_definition_version:
+    parameters:
+      core_definition_id:
+        types:
+        - String
+        required: true
+      core_definition_version_id:
+        types:
+        - String
+        required: true
+  get_deployment_status:
+    parameters:
+      deployment_id:
+        types:
+        - String
+        required: true
+      group_id:
+        types:
+        - String
+        required: true
+  get_device_definition:
+    parameters:
+      device_definition_id:
+        types:
+        - String
+        required: true
+  get_device_definition_version:
+    parameters:
+      device_definition_id:
+        types:
+        - String
+        required: true
+      device_definition_version_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  get_function_definition:
+    parameters:
+      function_definition_id:
+        types:
+        - String
+        required: true
+  get_function_definition_version:
+    parameters:
+      function_definition_id:
+        types:
+        - String
+        required: true
+      function_definition_version_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  get_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  get_group_certificate_authority:
+    parameters:
+      certificate_authority_id:
+        types:
+        - String
+        required: true
+      group_id:
+        types:
+        - String
+        required: true
+  get_group_certificate_configuration:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  get_group_version:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      group_version_id:
+        types:
+        - String
+        required: true
+  get_logger_definition:
+    parameters:
+      logger_definition_id:
+        types:
+        - String
+        required: true
+  get_logger_definition_version:
+    parameters:
+      logger_definition_id:
+        types:
+        - String
+        required: true
+      logger_definition_version_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  get_resource_definition:
+    parameters:
+      resource_definition_id:
+        types:
+        - String
+        required: true
+  get_resource_definition_version:
+    parameters:
+      resource_definition_id:
+        types:
+        - String
+        required: true
+      resource_definition_version_id:
+        types:
+        - String
+        required: true
+  get_subscription_definition:
+    parameters:
+      subscription_definition_id:
+        types:
+        - String
+        required: true
+  get_subscription_definition_version:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      subscription_definition_id:
+        types:
+        - String
+        required: true
+      subscription_definition_version_id:
+        types:
+        - String
+        required: true
+  list_bulk_deployment_detailed_reports:
+    parameters:
+      bulk_deployment_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_bulk_deployments:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_connector_definition_versions:
+    parameters:
+      connector_definition_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_connector_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_core_definition_versions:
+    parameters:
+      core_definition_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_core_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_deployments:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_device_definition_versions:
+    parameters:
+      device_definition_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_device_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_function_definition_versions:
+    parameters:
+      function_definition_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_function_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_group_certificate_authorities:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+  list_group_versions:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_groups:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_logger_definition_versions:
+    parameters:
+      logger_definition_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_logger_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_resource_definition_versions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      resource_definition_id:
+        types:
+        - String
+        required: true
+  list_resource_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_subscription_definition_versions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      subscription_definition_id:
+        types:
+        - String
+        required: true
+  list_subscription_definitions:
+    parameters:
+      max_results:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  reset_deployments:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+  start_bulk_deployment:
+    parameters:
+      amzn_client_token:
+        types:
+        - String
+        required: false
+      execution_role_arn:
+        types:
+        - String
+        required: false
+      input_file_uri:
+        types:
+        - String
+        required: false
+  stop_bulk_deployment:
+    parameters:
+      bulk_deployment_id:
+        types:
+        - String
+        required: true
+  update_connectivity_info:
+    parameters:
+      connectivity_info:
+        types:
+        - Array<Types::ConnectivityInfo>
+        required: false
+      thing_name:
+        types:
+        - String
+        required: true
+  update_connector_definition:
+    parameters:
+      connector_definition_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_core_definition:
+    parameters:
+      core_definition_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_device_definition:
+    parameters:
+      device_definition_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_function_definition:
+    parameters:
+      function_definition_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_group_certificate_configuration:
+    parameters:
+      certificate_expiry_in_milliseconds:
+        types:
+        - String
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+  update_logger_definition:
+    parameters:
+      logger_definition_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_resource_definition:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      resource_definition_id:
+        types:
+        - String
+        required: true
+  update_subscription_definition:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      subscription_definition_id:
+        types:
+        - String
+        required: true

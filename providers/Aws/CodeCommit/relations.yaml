@@ -1,0 +1,26 @@
+---
+file:
+  create: put_file
+  read: get_file
+  update: 
+  delete: delete_file
+repository_triggers:
+  create: put_repository_triggers
+  read: get_repository_triggers
+  update: 
+  delete: 
+branch:
+  create: create_branch
+  read: get_branch
+  update: 
+  delete: delete_branch
+pull_request:
+  create: create_pull_request
+  read: get_pull_request
+  update: 
+  delete: 
+repository:
+  create: create_repository
+  read: get_repository
+  update: 
+  delete: delete_repository

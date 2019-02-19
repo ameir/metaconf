@@ -1,0 +1,11 @@
+---
+scaling_policy:
+  create: put_scaling_policy
+  read: 
+  update: 
+  delete: delete_scaling_policy
+scheduled_action:
+  create: put_scheduled_action
+  read: describe_scheduled_actions
+  update: 
+  delete: delete_scheduled_action

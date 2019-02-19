@@ -1,0 +1,16 @@
+---
+accelerator:
+  create: create_accelerator
+  read: describe_accelerator
+  update: 
+  delete: delete_accelerator
+endpoint_group:
+  create: create_endpoint_group
+  read: describe_endpoint_group
+  update: 
+  delete: delete_endpoint_group
+listener:
+  create: create_listener
+  read: describe_listener
+  update: 
+  delete: delete_listener

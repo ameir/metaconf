@@ -1,0 +1,26 @@
+---
+endpoint:
+  create: create_endpoint
+  read: describe_endpoints
+  update: modify_endpoint
+  delete: delete_endpoint
+event_subscription:
+  create: create_event_subscription
+  read: describe_event_subscriptions
+  update: modify_event_subscription
+  delete: delete_event_subscription
+replication_instance:
+  create: create_replication_instance
+  read: describe_replication_instances
+  update: modify_replication_instance
+  delete: delete_replication_instance
+replication_subnet_group:
+  create: create_replication_subnet_group
+  read: describe_replication_subnet_groups
+  update: modify_replication_subnet_group
+  delete: delete_replication_subnet_group
+replication_task:
+  create: create_replication_task
+  read: describe_replication_tasks
+  update: modify_replication_task
+  delete: delete_replication_task

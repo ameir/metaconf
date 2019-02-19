@@ -1,0 +1,21 @@
+---
+container_policy:
+  create: put_container_policy
+  read: get_container_policy
+  update: 
+  delete: delete_container_policy
+cors_policy:
+  create: put_cors_policy
+  read: get_cors_policy
+  update: 
+  delete: delete_cors_policy
+lifecycle_policy:
+  create: put_lifecycle_policy
+  read: get_lifecycle_policy
+  update: 
+  delete: delete_lifecycle_policy
+container:
+  create: create_container
+  read: describe_container
+  update: 
+  delete: delete_container

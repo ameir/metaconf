@@ -1,0 +1,11 @@
+---
+channel:
+  create: create_channel
+  read: describe_channel
+  update: 
+  delete: delete_channel
+origin_endpoint:
+  create: create_origin_endpoint
+  read: describe_origin_endpoint
+  update: 
+  delete: delete_origin_endpoint

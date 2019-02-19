@@ -1,0 +1,6 @@
+---
+playback_configuration:
+  create: put_playback_configuration
+  read: get_playback_configuration
+  update: 
+  delete: delete_playback_configuration

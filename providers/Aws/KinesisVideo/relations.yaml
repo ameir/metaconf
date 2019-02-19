@@ -1,0 +1,6 @@
+---
+stream:
+  create: create_stream
+  read: describe_stream
+  update: 
+  delete: delete_stream

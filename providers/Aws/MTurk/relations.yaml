@@ -1,0 +1,31 @@
+---
+additional_assignments_for_hit:
+  create: create_additional_assignments_for_hit
+  read: 
+  update: 
+  delete: 
+hit:
+  create: create_hit
+  read: get_hit
+  update: 
+  delete: delete_hit
+hit_type:
+  create: create_hit_type
+  read: 
+  update: 
+  delete: 
+hit_with_hit_type:
+  create: create_hit_with_hit_type
+  read: 
+  update: 
+  delete: 
+qualification_type:
+  create: create_qualification_type
+  read: get_qualification_type
+  update: 
+  delete: delete_qualification_type
+worker_block:
+  create: create_worker_block
+  read: 
+  update: 
+  delete: delete_worker_block

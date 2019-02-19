@@ -1,0 +1,21 @@
+---
+events:
+  create: put_events
+  read: 
+  update: 
+  delete: 
+permission:
+  create: put_permission
+  read: 
+  update: 
+  delete: 
+rule:
+  create: put_rule
+  read: describe_rule
+  update: 
+  delete: delete_rule
+targets:
+  create: put_targets
+  read: 
+  update: 
+  delete: 

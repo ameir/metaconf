@@ -1,0 +1,31 @@
+---
+detector:
+  create: create_detector
+  read: get_detector
+  update: 
+  delete: delete_detector
+filter:
+  create: create_filter
+  read: get_filter
+  update: 
+  delete: delete_filter
+ip_set:
+  create: create_ip_set
+  read: get_ip_set
+  update: 
+  delete: delete_ip_set
+members:
+  create: create_members
+  read: get_members
+  update: 
+  delete: delete_members
+sample_findings:
+  create: create_sample_findings
+  read: 
+  update: 
+  delete: 
+threat_intel_set:
+  create: create_threat_intel_set
+  read: get_threat_intel_set
+  update: 
+  delete: delete_threat_intel_set

@@ -1,0 +1,46 @@
+---
+cloud_front_origin_access_identity:
+  create: create_cloud_front_origin_access_identity
+  read: get_cloud_front_origin_access_identity
+  update: 
+  delete: delete_cloud_front_origin_access_identity
+distribution:
+  create: create_distribution
+  read: get_distribution
+  update: 
+  delete: delete_distribution
+distribution_with_tags:
+  create: create_distribution_with_tags
+  read: 
+  update: 
+  delete: 
+field_level_encryption_config:
+  create: create_field_level_encryption_config
+  read: get_field_level_encryption_config
+  update: 
+  delete: delete_field_level_encryption_config
+field_level_encryption_profile:
+  create: create_field_level_encryption_profile
+  read: get_field_level_encryption_profile
+  update: 
+  delete: delete_field_level_encryption_profile
+invalidation:
+  create: create_invalidation
+  read: get_invalidation
+  update: 
+  delete: 
+public_key:
+  create: create_public_key
+  read: get_public_key
+  update: 
+  delete: delete_public_key
+streaming_distribution:
+  create: create_streaming_distribution
+  read: get_streaming_distribution
+  update: 
+  delete: delete_streaming_distribution
+streaming_distribution_with_tags:
+  create: create_streaming_distribution_with_tags
+  read: 
+  update: 
+  delete: 

@@ -1,0 +1,26 @@
+---
+application:
+  create: create_application
+  read: describe_applications
+  update: 
+  delete: delete_application
+application_version:
+  create: create_application_version
+  read: describe_application_versions
+  update: 
+  delete: delete_application_version
+configuration_template:
+  create: create_configuration_template
+  read: 
+  update: 
+  delete: delete_configuration_template
+environment:
+  create: create_environment
+  read: describe_environments
+  update: 
+  delete: 
+platform_version:
+  create: create_platform_version
+  read: describe_platform_version
+  update: 
+  delete: delete_platform_version

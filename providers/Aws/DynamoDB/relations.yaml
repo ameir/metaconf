@@ -1,0 +1,21 @@
+---
+item:
+  create: put_item
+  read: get_item
+  update: 
+  delete: delete_item
+backup:
+  create: create_backup
+  read: describe_backup
+  update: 
+  delete: delete_backup
+global_table:
+  create: create_global_table
+  read: describe_global_table
+  update: 
+  delete: 
+table:
+  create: create_table
+  read: describe_table
+  update: 
+  delete: delete_table

@@ -1,0 +1,16 @@
+---
+resource_policy:
+  create: put_resource_policy
+  read: get_resource_policy
+  update: 
+  delete: delete_resource_policy
+secret_value:
+  create: put_secret_value
+  read: get_secret_value
+  update: 
+  delete: 
+secret:
+  create: create_secret
+  read: describe_secret
+  update: 
+  delete: delete_secret

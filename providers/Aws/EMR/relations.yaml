@@ -1,0 +1,11 @@
+---
+auto_scaling_policy:
+  create: put_auto_scaling_policy
+  read: 
+  update: 
+  delete: 
+security_configuration:
+  create: create_security_configuration
+  read: describe_security_configuration
+  update: 
+  delete: delete_security_configuration

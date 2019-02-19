@@ -1,0 +1,51 @@
+---
+compliance_items:
+  create: put_compliance_items
+  read: 
+  update: 
+  delete: 
+inventory:
+  create: put_inventory
+  read: get_inventory
+  update: 
+  delete: delete_inventory
+parameter:
+  create: put_parameter
+  read: describe_parameters
+  update: 
+  delete: delete_parameter
+activation:
+  create: create_activation
+  read: describe_activations
+  update: 
+  delete: delete_activation
+association:
+  create: create_association
+  read: describe_association
+  update: 
+  delete: delete_association
+association_batch:
+  create: create_association_batch
+  read: 
+  update: 
+  delete: 
+document:
+  create: create_document
+  read: describe_document
+  update: 
+  delete: delete_document
+maintenance_window:
+  create: create_maintenance_window
+  read: describe_maintenance_windows
+  update: 
+  delete: delete_maintenance_window
+patch_baseline:
+  create: create_patch_baseline
+  read: describe_patch_baselines
+  update: 
+  delete: delete_patch_baseline
+resource_data_sync:
+  create: create_resource_data_sync
+  read: 
+  update: 
+  delete: delete_resource_data_sync

@@ -1,0 +1,16 @@
+---
+record:
+  create: put_record
+  read: get_records
+  update: 
+  delete: 
+records:
+  create: put_records
+  read: get_records
+  update: 
+  delete: 
+stream:
+  create: create_stream
+  read: describe_stream
+  update: 
+  delete: delete_stream

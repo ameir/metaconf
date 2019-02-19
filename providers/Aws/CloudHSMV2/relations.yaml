@@ -1,0 +1,11 @@
+---
+cluster:
+  create: create_cluster
+  read: describe_clusters
+  update: 
+  delete: delete_cluster
+hsm:
+  create: create_hsm
+  read: 
+  update: 
+  delete: delete_hsm

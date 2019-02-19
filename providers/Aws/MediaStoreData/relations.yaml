@@ -1,0 +1,6 @@
+---
+object:
+  create: put_object
+  read: describe_object
+  update: 
+  delete: delete_object

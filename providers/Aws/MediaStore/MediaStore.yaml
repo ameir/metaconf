@@ -1,0 +1,97 @@
+---
+class: Aws::MediaStore::Client
+methods:
+  create_container:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  delete_container:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  delete_container_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  delete_cors_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  delete_lifecycle_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  describe_container:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: false
+  get_container_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  get_cors_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  get_lifecycle_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  list_containers:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_container_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: true
+  put_cors_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+      cors_policy:
+        types:
+        - Array<Types::CorsRule>
+        required: true
+  put_lifecycle_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+      lifecycle_policy:
+        types:
+        - String
+        required: true

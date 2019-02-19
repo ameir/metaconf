@@ -1,0 +1,6 @@
+---
+elasticsearch_domain:
+  create: create_elasticsearch_domain
+  read: describe_elasticsearch_domain
+  update: 
+  delete: delete_elasticsearch_domain

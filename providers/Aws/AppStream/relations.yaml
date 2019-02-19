@@ -1,0 +1,36 @@
+---
+directory_config:
+  create: create_directory_config
+  read: describe_directory_configs
+  update: 
+  delete: delete_directory_config
+fleet:
+  create: create_fleet
+  read: describe_fleets
+  update: 
+  delete: delete_fleet
+image_builder:
+  create: create_image_builder
+  read: describe_image_builders
+  update: 
+  delete: delete_image_builder
+image_builder_streaming_url:
+  create: create_image_builder_streaming_url
+  read: 
+  update: 
+  delete: 
+stack:
+  create: create_stack
+  read: describe_stacks
+  update: 
+  delete: delete_stack
+streaming_url:
+  create: create_streaming_url
+  read: 
+  update: 
+  delete: 
+user:
+  create: create_user
+  read: describe_users
+  update: 
+  delete: delete_user

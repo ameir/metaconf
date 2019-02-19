@@ -1,0 +1,327 @@
+---
+class: Aws::Route53Domains::Client
+methods:
+  check_domain_availability:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      idn_lang_code:
+        types:
+        - String
+        required: false
+  check_domain_transferability:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      auth_code:
+        types:
+        - String
+        required: false
+  delete_tags_for_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      tags_to_delete:
+        types:
+        - Array<String>
+        required: true
+  disable_domain_auto_renew:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  disable_domain_transfer_lock:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  enable_domain_auto_renew:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  enable_domain_transfer_lock:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  get_contact_reachability_status:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: false
+  get_domain_detail:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  get_domain_suggestions:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      suggestion_count:
+        types:
+        - Integer
+        required: true
+      only_available:
+        types:
+        - Boolean
+        required: true
+  get_operation_detail:
+    parameters:
+      operation_id:
+        types:
+        - String
+        required: true
+  list_domains:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_operations:
+    parameters:
+      submitted_since:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_tags_for_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  register_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      idn_lang_code:
+        types:
+        - String
+        required: false
+      duration_in_years:
+        types:
+        - Integer
+        required: true
+      auto_renew:
+        types:
+        - Boolean
+        required: false
+      admin_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      registrant_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      tech_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      privacy_protect_admin_contact:
+        types:
+        - Boolean
+        required: false
+      privacy_protect_registrant_contact:
+        types:
+        - Boolean
+        required: false
+      privacy_protect_tech_contact:
+        types:
+        - Boolean
+        required: false
+  renew_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      duration_in_years:
+        types:
+        - Integer
+        required: false
+      current_expiry_year:
+        types:
+        - Integer
+        required: true
+  resend_contact_reachability_email:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: false
+  retrieve_domain_auth_code:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  transfer_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      idn_lang_code:
+        types:
+        - String
+        required: false
+      duration_in_years:
+        types:
+        - Integer
+        required: true
+      nameservers:
+        types:
+        - Array<Types::Nameserver>
+        required: false
+      auth_code:
+        types:
+        - String
+        required: false
+      auto_renew:
+        types:
+        - Boolean
+        required: false
+      admin_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      registrant_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      tech_contact:
+        types:
+        - Types::ContactDetail
+        required: true
+      privacy_protect_admin_contact:
+        types:
+        - Boolean
+        required: false
+      privacy_protect_registrant_contact:
+        types:
+        - Boolean
+        required: false
+      privacy_protect_tech_contact:
+        types:
+        - Boolean
+        required: false
+  update_domain_contact:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      admin_contact:
+        types:
+        - Types::ContactDetail
+        required: false
+      registrant_contact:
+        types:
+        - Types::ContactDetail
+        required: false
+      tech_contact:
+        types:
+        - Types::ContactDetail
+        required: false
+  update_domain_contact_privacy:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      admin_privacy:
+        types:
+        - Boolean
+        required: false
+      registrant_privacy:
+        types:
+        - Boolean
+        required: false
+      tech_privacy:
+        types:
+        - Boolean
+        required: false
+  update_domain_nameservers:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      fi_auth_key:
+        types:
+        - String
+        required: false
+      nameservers:
+        types:
+        - Array<Types::Nameserver>
+        required: true
+  update_tags_for_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      tags_to_update:
+        types:
+        - Array<Types::Tag>
+        required: false
+  view_billing:
+    parameters:
+      start:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false

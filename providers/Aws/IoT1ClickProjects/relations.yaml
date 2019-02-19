@@ -1,0 +1,11 @@
+---
+placement:
+  create: create_placement
+  read: describe_placement
+  update: 
+  delete: delete_placement
+project:
+  create: create_project
+  read: describe_project
+  update: 
+  delete: delete_project

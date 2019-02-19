@@ -1,0 +1,41 @@
+---
+class: Aws::IoTDataPlane::Client
+methods:
+  delete_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+  get_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+  publish:
+    parameters:
+      topic:
+        types:
+        - String
+        required: true
+      qos:
+        types:
+        - Integer
+        required: false
+      payload:
+        types:
+        - String
+        - IO
+        required: false
+  update_thing_shadow:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+      payload:
+        types:
+        - String
+        - IO
+        required: true

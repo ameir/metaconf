@@ -1,0 +1,1579 @@
+---
+class: Aws::SageMaker::Client
+methods:
+  add_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  create_algorithm:
+    parameters:
+      algorithm_name:
+        types:
+        - String
+        required: true
+      algorithm_description:
+        types:
+        - String
+        required: false
+      training_specification:
+        types:
+        - Types::TrainingSpecification
+        required: true
+      inference_specification:
+        types:
+        - Types::InferenceSpecification
+        required: false
+      validation_specification:
+        types:
+        - Types::AlgorithmValidationSpecification
+        required: false
+      certify_for_marketplace:
+        types:
+        - Boolean
+        required: false
+  create_code_repository:
+    parameters:
+      code_repository_name:
+        types:
+        - String
+        required: true
+      git_config:
+        types:
+        - Types::GitConfig
+        required: true
+  create_compilation_job:
+    parameters:
+      compilation_job_name:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      input_config:
+        types:
+        - Types::InputConfig
+        required: true
+      output_config:
+        types:
+        - Types::OutputConfig
+        required: true
+      stopping_condition:
+        types:
+        - Types::StoppingCondition
+        required: true
+  create_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+      production_variants:
+        types:
+        - Array<Types::ProductionVariant>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+  create_hyper_parameter_tuning_job:
+    parameters:
+      hyper_parameter_tuning_job_name:
+        types:
+        - String
+        required: true
+      hyper_parameter_tuning_job_config:
+        types:
+        - Types::HyperParameterTuningJobConfig
+        required: true
+      training_job_definition:
+        types:
+        - Types::HyperParameterTrainingJobDefinition
+        required: true
+      warm_start_config:
+        types:
+        - Types::HyperParameterTuningJobWarmStartConfig
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_labeling_job:
+    parameters:
+      labeling_job_name:
+        types:
+        - String
+        required: true
+      label_attribute_name:
+        types:
+        - String
+        required: true
+      input_config:
+        types:
+        - Types::LabelingJobInputConfig
+        required: true
+      output_config:
+        types:
+        - Types::LabelingJobOutputConfig
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      label_category_config_s3_uri:
+        types:
+        - String
+        required: false
+      stopping_conditions:
+        types:
+        - Types::LabelingJobStoppingConditions
+        required: false
+      labeling_job_algorithms_config:
+        types:
+        - Types::LabelingJobAlgorithmsConfig
+        required: false
+      human_task_config:
+        types:
+        - Types::HumanTaskConfig
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+      primary_container:
+        types:
+        - Types::ContainerDefinition
+        required: false
+      containers:
+        types:
+        - Array<Types::ContainerDefinition>
+        required: false
+      execution_role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+      enable_network_isolation:
+        types:
+        - Boolean
+        required: false
+  create_model_package:
+    parameters:
+      model_package_name:
+        types:
+        - String
+        required: true
+      model_package_description:
+        types:
+        - String
+        required: false
+      inference_specification:
+        types:
+        - Types::InferenceSpecification
+        required: false
+      validation_specification:
+        types:
+        - Types::ModelPackageValidationSpecification
+        required: false
+      source_algorithm_specification:
+        types:
+        - Types::SourceAlgorithmSpecification
+        required: false
+      certify_for_marketplace:
+        types:
+        - Boolean
+        required: false
+  create_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+      instance_type:
+        types:
+        - String
+        required: true
+      subnet_id:
+        types:
+        - String
+        required: false
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      kms_key_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      lifecycle_config_name:
+        types:
+        - String
+        required: false
+      direct_internet_access:
+        types:
+        - String
+        required: false
+      volume_size_in_gb:
+        types:
+        - Integer
+        required: false
+      accelerator_types:
+        types:
+        - Array<String>
+        required: false
+      default_code_repository:
+        types:
+        - String
+        required: false
+      additional_code_repositories:
+        types:
+        - Array<String>
+        required: false
+  create_notebook_instance_lifecycle_config:
+    parameters:
+      notebook_instance_lifecycle_config_name:
+        types:
+        - String
+        required: true
+      on_create:
+        types:
+        - Array<Types::NotebookInstanceLifecycleHook>
+        required: false
+      on_start:
+        types:
+        - Array<Types::NotebookInstanceLifecycleHook>
+        required: false
+  create_presigned_notebook_instance_url:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+      session_expiration_duration_in_seconds:
+        types:
+        - Integer
+        required: false
+  create_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+      hyper_parameters:
+        types:
+        - Hash<String,String>
+        required: false
+      algorithm_specification:
+        types:
+        - Types::AlgorithmSpecification
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      input_data_config:
+        types:
+        - Array<Types::Channel>
+        required: false
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      resource_config:
+        types:
+        - Types::ResourceConfig
+        required: true
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+      stopping_condition:
+        types:
+        - Types::StoppingCondition
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      enable_network_isolation:
+        types:
+        - Boolean
+        required: false
+      enable_inter_container_traffic_encryption:
+        types:
+        - Boolean
+        required: false
+  create_transform_job:
+    parameters:
+      transform_job_name:
+        types:
+        - String
+        required: true
+      model_name:
+        types:
+        - String
+        required: true
+      max_concurrent_transforms:
+        types:
+        - Integer
+        required: false
+      max_payload_in_mb:
+        types:
+        - Integer
+        required: false
+      batch_strategy:
+        types:
+        - String
+        required: false
+      environment:
+        types:
+        - Hash<String,String>
+        required: false
+      transform_input:
+        types:
+        - Types::TransformInput
+        required: true
+      transform_output:
+        types:
+        - Types::TransformOutput
+        required: true
+      transform_resources:
+        types:
+        - Types::TransformResources
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_workteam:
+    parameters:
+      workteam_name:
+        types:
+        - String
+        required: true
+      member_definitions:
+        types:
+        - Array<Types::MemberDefinition>
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_algorithm:
+    parameters:
+      algorithm_name:
+        types:
+        - String
+        required: true
+  delete_code_repository:
+    parameters:
+      code_repository_name:
+        types:
+        - String
+        required: true
+  delete_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+  delete_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+  delete_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+  delete_model_package:
+    parameters:
+      model_package_name:
+        types:
+        - String
+        required: true
+  delete_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+  delete_notebook_instance_lifecycle_config:
+    parameters:
+      notebook_instance_lifecycle_config_name:
+        types:
+        - String
+        required: true
+  delete_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  delete_workteam:
+    parameters:
+      workteam_name:
+        types:
+        - String
+        required: true
+  describe_algorithm:
+    parameters:
+      algorithm_name:
+        types:
+        - String
+        required: true
+  describe_code_repository:
+    parameters:
+      code_repository_name:
+        types:
+        - String
+        required: true
+  describe_compilation_job:
+    parameters:
+      compilation_job_name:
+        types:
+        - String
+        required: true
+  describe_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+  describe_endpoint_config:
+    parameters:
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+  describe_hyper_parameter_tuning_job:
+    parameters:
+      hyper_parameter_tuning_job_name:
+        types:
+        - String
+        required: true
+  describe_labeling_job:
+    parameters:
+      labeling_job_name:
+        types:
+        - String
+        required: true
+  describe_model:
+    parameters:
+      model_name:
+        types:
+        - String
+        required: true
+  describe_model_package:
+    parameters:
+      model_package_name:
+        types:
+        - String
+        required: true
+  describe_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+  describe_notebook_instance_lifecycle_config:
+    parameters:
+      notebook_instance_lifecycle_config_name:
+        types:
+        - String
+        required: true
+  describe_subscribed_workteam:
+    parameters:
+      workteam_arn:
+        types:
+        - String
+        required: true
+  describe_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+  describe_transform_job:
+    parameters:
+      transform_job_name:
+        types:
+        - String
+        required: true
+  describe_workteam:
+    parameters:
+      workteam_name:
+        types:
+        - String
+        required: true
+  get_search_suggestions:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      suggestion_query:
+        types:
+        - Types::SuggestionQuery
+        required: false
+  list_algorithms:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_code_repositories:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_compilation_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_endpoint_configs:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_endpoints:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+  list_hyper_parameter_tuning_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+  list_labeling_jobs:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+  list_labeling_jobs_for_workteam:
+    parameters:
+      workteam_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      job_reference_code_contains:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_model_packages:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_models:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_notebook_instance_lifecycle_configs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_notebook_instances:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+      notebook_instance_lifecycle_config_name_contains:
+        types:
+        - String
+        required: false
+      default_code_repository_contains:
+        types:
+        - String
+        required: false
+      additional_code_repository_equals:
+        types:
+        - String
+        required: false
+  list_subscribed_workteams:
+    parameters:
+      name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_training_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_training_jobs_for_hyper_parameter_tuning_job:
+    parameters:
+      hyper_parameter_tuning_job_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+  list_transform_jobs:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      last_modified_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      status_equals:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_workteams:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  render_ui_template:
+    parameters:
+      ui_template:
+        types:
+        - Types::UiTemplate
+        required: true
+      task:
+        types:
+        - Types::RenderableTask
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+  search:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      search_expression:
+        types:
+        - Types::SearchExpression
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+  stop_compilation_job:
+    parameters:
+      compilation_job_name:
+        types:
+        - String
+        required: true
+  stop_hyper_parameter_tuning_job:
+    parameters:
+      hyper_parameter_tuning_job_name:
+        types:
+        - String
+        required: true
+  stop_labeling_job:
+    parameters:
+      labeling_job_name:
+        types:
+        - String
+        required: true
+  stop_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+  stop_training_job:
+    parameters:
+      training_job_name:
+        types:
+        - String
+        required: true
+  stop_transform_job:
+    parameters:
+      transform_job_name:
+        types:
+        - String
+        required: true
+  update_code_repository:
+    parameters:
+      code_repository_name:
+        types:
+        - String
+        required: true
+      git_config:
+        types:
+        - Types::GitConfigForUpdate
+        required: false
+  update_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      endpoint_config_name:
+        types:
+        - String
+        required: true
+  update_endpoint_weights_and_capacities:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      desired_weights_and_capacities:
+        types:
+        - Array<Types::DesiredWeightAndCapacity>
+        required: true
+  update_notebook_instance:
+    parameters:
+      notebook_instance_name:
+        types:
+        - String
+        required: true
+      instance_type:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+      lifecycle_config_name:
+        types:
+        - String
+        required: false
+      disassociate_lifecycle_config:
+        types:
+        - Boolean
+        required: false
+      volume_size_in_gb:
+        types:
+        - Integer
+        required: false
+      default_code_repository:
+        types:
+        - String
+        required: false
+      additional_code_repositories:
+        types:
+        - Array<String>
+        required: false
+      accelerator_types:
+        types:
+        - Array<String>
+        required: false
+      disassociate_accelerator_types:
+        types:
+        - Boolean
+        required: false
+      disassociate_default_code_repository:
+        types:
+        - Boolean
+        required: false
+      disassociate_additional_code_repositories:
+        types:
+        - Boolean
+        required: false
+  update_notebook_instance_lifecycle_config:
+    parameters:
+      notebook_instance_lifecycle_config_name:
+        types:
+        - String
+        required: true
+      on_create:
+        types:
+        - Array<Types::NotebookInstanceLifecycleHook>
+        required: false
+      on_start:
+        types:
+        - Array<Types::NotebookInstanceLifecycleHook>
+        required: false
+  update_workteam:
+    parameters:
+      workteam_name:
+        types:
+        - String
+        required: true
+      member_definitions:
+        types:
+        - Array<Types::MemberDefinition>
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

@@ -1,0 +1,11 @@
+---
+certificate_authority:
+  create: create_certificate_authority
+  read: describe_certificate_authority
+  update: 
+  delete: delete_certificate_authority
+certificate_authority_audit_report:
+  create: create_certificate_authority_audit_report
+  read: describe_certificate_authority_audit_report
+  update: 
+  delete: 

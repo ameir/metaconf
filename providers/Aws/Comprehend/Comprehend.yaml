@@ -1,0 +1,503 @@
+---
+class: Aws::Comprehend::Client
+methods:
+  batch_detect_dominant_language:
+    parameters:
+      text_list:
+        types:
+        - Array<String>
+        required: true
+  batch_detect_entities:
+    parameters:
+      text_list:
+        types:
+        - Array<String>
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  batch_detect_key_phrases:
+    parameters:
+      text_list:
+        types:
+        - Array<String>
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  batch_detect_sentiment:
+    parameters:
+      text_list:
+        types:
+        - Array<String>
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  batch_detect_syntax:
+    parameters:
+      text_list:
+        types:
+        - Array<String>
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  create_document_classifier:
+    parameters:
+      document_classifier_name:
+        types:
+        - String
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      input_data_config:
+        types:
+        - Types::DocumentClassifierInputDataConfig
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  create_entity_recognizer:
+    parameters:
+      recognizer_name:
+        types:
+        - String
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      input_data_config:
+        types:
+        - Types::EntityRecognizerInputDataConfig
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  delete_document_classifier:
+    parameters:
+      document_classifier_arn:
+        types:
+        - String
+        required: true
+  delete_entity_recognizer:
+    parameters:
+      entity_recognizer_arn:
+        types:
+        - String
+        required: true
+  describe_document_classification_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_document_classifier:
+    parameters:
+      document_classifier_arn:
+        types:
+        - String
+        required: true
+  describe_dominant_language_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_entities_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_entity_recognizer:
+    parameters:
+      entity_recognizer_arn:
+        types:
+        - String
+        required: true
+  describe_key_phrases_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_sentiment_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_topics_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  detect_dominant_language:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+  detect_entities:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  detect_key_phrases:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  detect_sentiment:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  detect_syntax:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+  list_document_classification_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::DocumentClassificationJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_document_classifiers:
+    parameters:
+      filter:
+        types:
+        - Types::DocumentClassifierFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dominant_language_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::DominantLanguageDetectionJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_entities_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::EntitiesDetectionJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_entity_recognizers:
+    parameters:
+      filter:
+        types:
+        - Types::EntityRecognizerFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_key_phrases_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::KeyPhrasesDetectionJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_sentiment_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::SentimentDetectionJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_topics_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::TopicsDetectionJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_document_classification_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: false
+      document_classifier_arn:
+        types:
+        - String
+        required: true
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  start_dominant_language_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+  start_entities_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      entity_recognizer_arn:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  start_key_phrases_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  start_sentiment_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  start_topics_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      number_of_topics:
+        types:
+        - Integer
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+  stop_dominant_language_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_entities_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_key_phrases_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_sentiment_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_training_document_classifier:
+    parameters:
+      document_classifier_arn:
+        types:
+        - String
+        required: true
+  stop_training_entity_recognizer:
+    parameters:
+      entity_recognizer_arn:
+        types:
+        - String
+        required: true

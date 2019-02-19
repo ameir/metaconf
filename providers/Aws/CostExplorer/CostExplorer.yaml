@@ -1,0 +1,177 @@
+---
+class: Aws::CostExplorer::Client
+methods:
+  get_cost_and_usage:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: false
+      granularity:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      metrics:
+        types:
+        - Array<String>
+        required: false
+      group_by:
+        types:
+        - Array<Types::GroupDefinition>
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_cost_forecast:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      metric:
+        types:
+        - String
+        required: true
+      granularity:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      prediction_interval_level:
+        types:
+        - Integer
+        required: false
+  get_dimension_values:
+    parameters:
+      search_string:
+        types:
+        - String
+        required: false
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      dimension:
+        types:
+        - String
+        required: true
+      context:
+        types:
+        - String
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_reservation_coverage:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      group_by:
+        types:
+        - Array<Types::GroupDefinition>
+        required: false
+      granularity:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      metrics:
+        types:
+        - Array<String>
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_reservation_purchase_recommendation:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: false
+      service:
+        types:
+        - String
+        required: true
+      account_scope:
+        types:
+        - String
+        required: false
+      lookback_period_in_days:
+        types:
+        - String
+        required: false
+      term_in_years:
+        types:
+        - String
+        required: false
+      payment_option:
+        types:
+        - String
+        required: false
+      service_specification:
+        types:
+        - Types::ServiceSpecification
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_reservation_utilization:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      group_by:
+        types:
+        - Array<Types::GroupDefinition>
+        required: false
+      granularity:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_tags:
+    parameters:
+      search_string:
+        types:
+        - String
+        required: false
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      tag_key:
+        types:
+        - String
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false

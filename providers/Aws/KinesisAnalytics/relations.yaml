@@ -1,0 +1,6 @@
+---
+application:
+  create: create_application
+  read: describe_application
+  update: 
+  delete: delete_application

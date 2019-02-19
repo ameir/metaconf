@@ -1,0 +1,21 @@
+---
+job:
+  create: create_job
+  read: get_job
+  update: 
+  delete: 
+job_template:
+  create: create_job_template
+  read: get_job_template
+  update: 
+  delete: delete_job_template
+preset:
+  create: create_preset
+  read: get_preset
+  update: 
+  delete: delete_preset
+queue:
+  create: create_queue
+  read: get_queue
+  update: 
+  delete: delete_queue

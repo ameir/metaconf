@@ -1,0 +1,16 @@
+---
+ip_group:
+  create: create_ip_group
+  read: describe_ip_groups
+  update: 
+  delete: delete_ip_group
+tags:
+  create: create_tags
+  read: describe_tags
+  update: 
+  delete: delete_tags
+workspaces:
+  create: create_workspaces
+  read: describe_workspaces
+  update: 
+  delete: 

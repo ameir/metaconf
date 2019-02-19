@@ -1,0 +1,21 @@
+---
+account:
+  create: create_account
+  read: describe_account
+  update: 
+  delete: 
+organization:
+  create: create_organization
+  read: 
+  update: 
+  delete: 
+organizational_unit:
+  create: create_organizational_unit
+  read: describe_organizational_unit
+  update: 
+  delete: delete_organizational_unit
+policy:
+  create: create_policy
+  read: describe_policy
+  update: 
+  delete: delete_policy

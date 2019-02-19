@@ -1,0 +1,6 @@
+---
+job:
+  create: create_job
+  read: 
+  update: 
+  delete: 

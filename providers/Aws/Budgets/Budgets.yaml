@@ -1,0 +1,231 @@
+---
+class: Aws::Budgets::Client
+methods:
+  create_budget:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget:
+        types:
+        - Types::Budget
+        required: true
+      notifications_with_subscribers:
+        types:
+        - Array<Types::NotificationWithSubscribers>
+        required: false
+  create_notification:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+      subscribers:
+        types:
+        - Array<Types::Subscriber>
+        required: true
+  create_subscriber:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+      subscriber:
+        types:
+        - Types::Subscriber
+        required: true
+  delete_budget:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+  delete_notification:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+  delete_subscriber:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+      subscriber:
+        types:
+        - Types::Subscriber
+        required: true
+  describe_budget:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+  describe_budget_performance_history:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      time_period:
+        types:
+        - Types::TimePeriod
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_budgets:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_notifications_for_budget:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_subscribers_for_notification:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  update_budget:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      new_budget:
+        types:
+        - Types::Budget
+        required: true
+  update_notification:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      old_notification:
+        types:
+        - Types::Notification
+        required: true
+      new_notification:
+        types:
+        - Types::Notification
+        required: true
+  update_subscriber:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      budget_name:
+        types:
+        - String
+        required: true
+      notification:
+        types:
+        - Types::Notification
+        required: true
+      old_subscriber:
+        types:
+        - Types::Subscriber
+        required: true
+      new_subscriber:
+        types:
+        - Types::Subscriber
+        required: true

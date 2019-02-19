@@ -1,0 +1,11 @@
+---
+named_query:
+  create: create_named_query
+  read: get_named_query
+  update: 
+  delete: delete_named_query
+work_group:
+  create: create_work_group
+  read: get_work_group
+  update: 
+  delete: delete_work_group

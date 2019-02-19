@@ -1,0 +1,61 @@
+---
+scaling_policy:
+  create: put_scaling_policy
+  read: 
+  update: 
+  delete: delete_scaling_policy
+alias:
+  create: create_alias
+  read: describe_alias
+  update: 
+  delete: delete_alias
+build:
+  create: create_build
+  read: describe_build
+  update: 
+  delete: delete_build
+fleet:
+  create: create_fleet
+  read: 
+  update: 
+  delete: delete_fleet
+game_session:
+  create: create_game_session
+  read: describe_game_sessions
+  update: 
+  delete: 
+game_session_queue:
+  create: create_game_session_queue
+  read: describe_game_session_queues
+  update: 
+  delete: delete_game_session_queue
+matchmaking_configuration:
+  create: create_matchmaking_configuration
+  read: describe_matchmaking_configurations
+  update: 
+  delete: delete_matchmaking_configuration
+matchmaking_rule_set:
+  create: create_matchmaking_rule_set
+  read: describe_matchmaking_rule_sets
+  update: 
+  delete: delete_matchmaking_rule_set
+player_session:
+  create: create_player_session
+  read: describe_player_sessions
+  update: 
+  delete: 
+player_sessions:
+  create: create_player_sessions
+  read: describe_player_sessions
+  update: 
+  delete: 
+vpc_peering_authorization:
+  create: create_vpc_peering_authorization
+  read: 
+  update: 
+  delete: delete_vpc_peering_authorization
+vpc_peering_connection:
+  create: create_vpc_peering_connection
+  read: describe_vpc_peering_connections
+  update: 
+  delete: delete_vpc_peering_connection

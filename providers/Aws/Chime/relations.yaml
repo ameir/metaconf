@@ -1,0 +1,6 @@
+---
+account:
+  create: create_account
+  read: get_account
+  update: 
+  delete: delete_account

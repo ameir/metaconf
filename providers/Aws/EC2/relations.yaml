@@ -1,0 +1,221 @@
+---
+capacity_reservation:
+  create: create_capacity_reservation
+  read: describe_capacity_reservations
+  update: modify_capacity_reservation
+  delete: 
+client_vpn_endpoint:
+  create: create_client_vpn_endpoint
+  read: describe_client_vpn_endpoints
+  update: modify_client_vpn_endpoint
+  delete: delete_client_vpn_endpoint
+client_vpn_route:
+  create: create_client_vpn_route
+  read: describe_client_vpn_routes
+  update: 
+  delete: delete_client_vpn_route
+customer_gateway:
+  create: create_customer_gateway
+  read: describe_customer_gateways
+  update: 
+  delete: delete_customer_gateway
+default_subnet:
+  create: create_default_subnet
+  read: 
+  update: 
+  delete: 
+default_vpc:
+  create: create_default_vpc
+  read: 
+  update: 
+  delete: 
+dhcp_options:
+  create: create_dhcp_options
+  read: describe_dhcp_options
+  update: 
+  delete: delete_dhcp_options
+egress_only_internet_gateway:
+  create: create_egress_only_internet_gateway
+  read: describe_egress_only_internet_gateways
+  update: 
+  delete: delete_egress_only_internet_gateway
+fleet:
+  create: create_fleet
+  read: describe_fleets
+  update: modify_fleet
+  delete: delete_fleets
+flow_logs:
+  create: create_flow_logs
+  read: describe_flow_logs
+  update: 
+  delete: delete_flow_logs
+fpga_image:
+  create: create_fpga_image
+  read: describe_fpga_images
+  update: 
+  delete: delete_fpga_image
+image:
+  create: create_image
+  read: describe_images
+  update: 
+  delete: 
+instance_export_task:
+  create: create_instance_export_task
+  read: 
+  update: 
+  delete: 
+internet_gateway:
+  create: create_internet_gateway
+  read: describe_internet_gateways
+  update: 
+  delete: delete_internet_gateway
+key_pair:
+  create: create_key_pair
+  read: describe_key_pairs
+  update: 
+  delete: delete_key_pair
+launch_template:
+  create: create_launch_template
+  read: describe_launch_templates
+  update: modify_launch_template
+  delete: delete_launch_template
+launch_template_version:
+  create: create_launch_template_version
+  read: describe_launch_template_versions
+  update: 
+  delete: delete_launch_template_versions
+nat_gateway:
+  create: create_nat_gateway
+  read: describe_nat_gateways
+  update: 
+  delete: delete_nat_gateway
+network_acl:
+  create: create_network_acl
+  read: describe_network_acls
+  update: 
+  delete: delete_network_acl
+network_acl_entry:
+  create: create_network_acl_entry
+  read: 
+  update: 
+  delete: delete_network_acl_entry
+network_interface:
+  create: create_network_interface
+  read: describe_network_interfaces
+  update: 
+  delete: delete_network_interface
+network_interface_permission:
+  create: create_network_interface_permission
+  read: describe_network_interface_permissions
+  update: 
+  delete: delete_network_interface_permission
+placement_group:
+  create: create_placement_group
+  read: describe_placement_groups
+  update: 
+  delete: delete_placement_group
+reserved_instances_listing:
+  create: create_reserved_instances_listing
+  read: describe_reserved_instances_listings
+  update: 
+  delete: 
+route:
+  create: create_route
+  read: 
+  update: 
+  delete: delete_route
+route_table:
+  create: create_route_table
+  read: describe_route_tables
+  update: 
+  delete: delete_route_table
+security_group:
+  create: create_security_group
+  read: describe_security_groups
+  update: 
+  delete: delete_security_group
+snapshot:
+  create: create_snapshot
+  read: describe_snapshots
+  update: 
+  delete: delete_snapshot
+spot_datafeed_subscription:
+  create: create_spot_datafeed_subscription
+  read: describe_spot_datafeed_subscription
+  update: 
+  delete: delete_spot_datafeed_subscription
+subnet:
+  create: create_subnet
+  read: describe_subnets
+  update: 
+  delete: delete_subnet
+tags:
+  create: create_tags
+  read: describe_tags
+  update: 
+  delete: delete_tags
+transit_gateway:
+  create: create_transit_gateway
+  read: describe_transit_gateways
+  update: 
+  delete: delete_transit_gateway
+transit_gateway_route:
+  create: create_transit_gateway_route
+  read: 
+  update: 
+  delete: delete_transit_gateway_route
+transit_gateway_route_table:
+  create: create_transit_gateway_route_table
+  read: describe_transit_gateway_route_tables
+  update: 
+  delete: delete_transit_gateway_route_table
+transit_gateway_vpc_attachment:
+  create: create_transit_gateway_vpc_attachment
+  read: describe_transit_gateway_vpc_attachments
+  update: modify_transit_gateway_vpc_attachment
+  delete: delete_transit_gateway_vpc_attachment
+volume:
+  create: create_volume
+  read: describe_volumes
+  update: modify_volume
+  delete: delete_volume
+vpc:
+  create: create_vpc
+  read: describe_vpcs
+  update: 
+  delete: delete_vpc
+vpc_endpoint:
+  create: create_vpc_endpoint
+  read: describe_vpc_endpoints
+  update: modify_vpc_endpoint
+  delete: delete_vpc_endpoints
+vpc_endpoint_connection_notification:
+  create: create_vpc_endpoint_connection_notification
+  read: describe_vpc_endpoint_connection_notifications
+  update: modify_vpc_endpoint_connection_notification
+  delete: delete_vpc_endpoint_connection_notifications
+vpc_endpoint_service_configuration:
+  create: create_vpc_endpoint_service_configuration
+  read: describe_vpc_endpoint_service_configurations
+  update: modify_vpc_endpoint_service_configuration
+  delete: delete_vpc_endpoint_service_configurations
+vpc_peering_connection:
+  create: create_vpc_peering_connection
+  read: describe_vpc_peering_connections
+  update: 
+  delete: delete_vpc_peering_connection
+vpn_connection:
+  create: create_vpn_connection
+  read: describe_vpn_connections
+  update: 
+  delete: delete_vpn_connection
+vpn_connection_route:
+  create: create_vpn_connection_route
+  read: 
+  update: 
+  delete: delete_vpn_connection_route
+vpn_gateway:
+  create: create_vpn_gateway
+  read: describe_vpn_gateways
+  update: 
+  delete: delete_vpn_gateway

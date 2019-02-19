@@ -1,0 +1,6 @@
+---
+domain:
+  create: create_domain
+  read: describe_domains
+  update: 
+  delete: delete_domain

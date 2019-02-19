@@ -1,0 +1,11 @@
+---
+activity:
+  create: create_activity
+  read: describe_activity
+  update: 
+  delete: delete_activity
+state_machine:
+  create: create_state_machine
+  read: describe_state_machine
+  update: 
+  delete: delete_state_machine

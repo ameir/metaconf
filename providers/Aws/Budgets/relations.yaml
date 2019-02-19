@@ -1,0 +1,16 @@
+---
+budget:
+  create: create_budget
+  read: describe_budget
+  update: 
+  delete: delete_budget
+notification:
+  create: create_notification
+  read: 
+  update: 
+  delete: delete_notification
+subscriber:
+  create: create_subscriber
+  read: 
+  update: 
+  delete: delete_subscriber

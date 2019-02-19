@@ -1,0 +1,179 @@
+---
+class: Aws::EFS::Client
+methods:
+  create_file_system:
+    parameters:
+      creation_token:
+        types:
+        - String
+        required: true
+      performance_mode:
+        types:
+        - String
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      throughput_mode:
+        types:
+        - String
+        required: false
+      provisioned_throughput_in_mibps:
+        types:
+        - Float
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_mount_target:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      subnet_id:
+        types:
+        - String
+        required: true
+      ip_address:
+        types:
+        - String
+        required: false
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+  create_tags:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  delete_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+  delete_mount_target:
+    parameters:
+      mount_target_id:
+        types:
+        - String
+        required: true
+  delete_tags:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  describe_file_systems:
+    parameters:
+      max_items:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      creation_token:
+        types:
+        - String
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: false
+  describe_lifecycle_configuration:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+  describe_mount_target_security_groups:
+    parameters:
+      mount_target_id:
+        types:
+        - String
+        required: true
+  describe_mount_targets:
+    parameters:
+      max_items:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: false
+      mount_target_id:
+        types:
+        - String
+        required: false
+  describe_tags:
+    parameters:
+      max_items:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: true
+  modify_mount_target_security_groups:
+    parameters:
+      mount_target_id:
+        types:
+        - String
+        required: true
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+  put_lifecycle_configuration:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      lifecycle_policies:
+        types:
+        - Array<Types::LifecyclePolicy>
+        required: true
+  update_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      throughput_mode:
+        types:
+        - String
+        required: false
+      provisioned_throughput_in_mibps:
+        types:
+        - Float
+        required: false

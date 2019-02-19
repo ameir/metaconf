@@ -1,0 +1,6 @@
+---
+report_definition:
+  create: put_report_definition
+  read: describe_report_definitions
+  update: 
+  delete: delete_report_definition

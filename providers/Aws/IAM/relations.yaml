@@ -1,0 +1,96 @@
+---
+group_policy:
+  create: put_group_policy
+  read: get_group_policy
+  update: 
+  delete: delete_group_policy
+role_permissions_boundary:
+  create: put_role_permissions_boundary
+  read: 
+  update: 
+  delete: delete_role_permissions_boundary
+role_policy:
+  create: put_role_policy
+  read: get_role_policy
+  update: 
+  delete: delete_role_policy
+user_permissions_boundary:
+  create: put_user_permissions_boundary
+  read: 
+  update: 
+  delete: delete_user_permissions_boundary
+user_policy:
+  create: put_user_policy
+  read: get_user_policy
+  update: 
+  delete: delete_user_policy
+access_key:
+  create: create_access_key
+  read: 
+  update: 
+  delete: delete_access_key
+account_alias:
+  create: create_account_alias
+  read: 
+  update: 
+  delete: delete_account_alias
+group:
+  create: create_group
+  read: get_group
+  update: 
+  delete: delete_group
+instance_profile:
+  create: create_instance_profile
+  read: get_instance_profile
+  update: 
+  delete: delete_instance_profile
+login_profile:
+  create: create_login_profile
+  read: get_login_profile
+  update: 
+  delete: delete_login_profile
+open_id_connect_provider:
+  create: create_open_id_connect_provider
+  read: get_open_id_connect_provider
+  update: 
+  delete: delete_open_id_connect_provider
+policy:
+  create: create_policy
+  read: get_policy
+  update: 
+  delete: delete_policy
+policy_version:
+  create: create_policy_version
+  read: get_policy_version
+  update: 
+  delete: delete_policy_version
+role:
+  create: create_role
+  read: get_role
+  update: 
+  delete: delete_role
+saml_provider:
+  create: create_saml_provider
+  read: get_saml_provider
+  update: 
+  delete: delete_saml_provider
+service_linked_role:
+  create: create_service_linked_role
+  read: 
+  update: 
+  delete: delete_service_linked_role
+service_specific_credential:
+  create: create_service_specific_credential
+  read: 
+  update: 
+  delete: delete_service_specific_credential
+user:
+  create: create_user
+  read: get_user
+  update: 
+  delete: delete_user
+virtual_mfa_device:
+  create: create_virtual_mfa_device
+  read: 
+  update: 
+  delete: delete_virtual_mfa_device

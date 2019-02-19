@@ -1,0 +1,21 @@
+---
+broker:
+  create: create_broker
+  read: describe_broker
+  update: 
+  delete: delete_broker
+configuration:
+  create: create_configuration
+  read: describe_configuration
+  update: 
+  delete: 
+tags:
+  create: create_tags
+  read: 
+  update: 
+  delete: delete_tags
+user:
+  create: create_user
+  read: describe_user
+  update: 
+  delete: delete_user

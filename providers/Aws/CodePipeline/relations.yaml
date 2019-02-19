@@ -1,0 +1,46 @@
+---
+action_revision:
+  create: put_action_revision
+  read: 
+  update: 
+  delete: 
+approval_result:
+  create: put_approval_result
+  read: 
+  update: 
+  delete: 
+job_failure_result:
+  create: put_job_failure_result
+  read: 
+  update: 
+  delete: 
+job_success_result:
+  create: put_job_success_result
+  read: 
+  update: 
+  delete: 
+third_party_job_failure_result:
+  create: put_third_party_job_failure_result
+  read: 
+  update: 
+  delete: 
+third_party_job_success_result:
+  create: put_third_party_job_success_result
+  read: 
+  update: 
+  delete: 
+webhook:
+  create: put_webhook
+  read: 
+  update: 
+  delete: delete_webhook
+custom_action_type:
+  create: create_custom_action_type
+  read: 
+  update: 
+  delete: delete_custom_action_type
+pipeline:
+  create: create_pipeline
+  read: get_pipeline
+  update: 
+  delete: delete_pipeline

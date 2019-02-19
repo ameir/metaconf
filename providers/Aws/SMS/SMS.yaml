@@ -1,0 +1,343 @@
+---
+class: Aws::SMS::Client
+methods:
+  create_app:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      server_groups:
+        types:
+        - Array<Types::ServerGroup>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_replication_job:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      seed_replication_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      frequency:
+        types:
+        - Integer
+        required: false
+      run_once:
+        types:
+        - Boolean
+        required: false
+      license_type:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      number_of_recent_amis_to_keep:
+        types:
+        - Integer
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+  delete_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      force_stop_app_replication:
+        types:
+        - Boolean
+        required: false
+      force_terminate_app:
+        types:
+        - Boolean
+        required: false
+  delete_app_launch_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  delete_app_replication_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  delete_replication_job:
+    parameters:
+      replication_job_id:
+        types:
+        - String
+        required: true
+  disassociate_connector:
+    parameters:
+      connector_id:
+        types:
+        - String
+        required: true
+  generate_change_set:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      changeset_format:
+        types:
+        - String
+        required: false
+  generate_template:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      template_format:
+        types:
+        - String
+        required: false
+  get_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  get_app_launch_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  get_app_replication_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  get_connectors:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_replication_jobs:
+    parameters:
+      replication_job_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_replication_runs:
+    parameters:
+      replication_job_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_servers:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      vm_server_address_list:
+        types:
+        - Array<Types::VmServerAddress>
+        required: false
+  launch_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  list_apps:
+    parameters:
+      app_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_app_launch_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+      server_group_launch_configurations:
+        types:
+        - Array<Types::ServerGroupLaunchConfiguration>
+        required: false
+  put_app_replication_configuration:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      server_group_replication_configurations:
+        types:
+        - Array<Types::ServerGroupReplicationConfiguration>
+        required: false
+  start_app_replication:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  start_on_demand_replication_run:
+    parameters:
+      replication_job_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+  stop_app_replication:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  terminate_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+  update_app:
+    parameters:
+      app_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+      server_groups:
+        types:
+        - Array<Types::ServerGroup>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  update_replication_job:
+    parameters:
+      replication_job_id:
+        types:
+        - String
+        required: true
+      frequency:
+        types:
+        - Integer
+        required: false
+      next_replication_run_start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      license_type:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      number_of_recent_amis_to_keep:
+        types:
+        - Integer
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false

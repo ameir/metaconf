@@ -1,0 +1,16 @@
+---
+image:
+  create: put_image
+  read: describe_images
+  update: 
+  delete: 
+lifecycle_policy:
+  create: put_lifecycle_policy
+  read: get_lifecycle_policy
+  update: 
+  delete: delete_lifecycle_policy
+repository:
+  create: create_repository
+  read: 
+  update: 
+  delete: delete_repository

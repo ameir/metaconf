@@ -1,0 +1,97 @@
+---
+class: Aws::Shield::Client
+methods:
+  associate_drt_log_bucket:
+    parameters:
+      log_bucket:
+        types:
+        - String
+        required: true
+  associate_drt_role:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: true
+  create_protection:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      resource_arn:
+        types:
+        - String
+        required: true
+  delete_protection:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: true
+  describe_attack:
+    parameters:
+      attack_id:
+        types:
+        - String
+        required: true
+  describe_protection:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: false
+  disassociate_drt_log_bucket:
+    parameters:
+      log_bucket:
+        types:
+        - String
+        required: true
+  list_attacks:
+    parameters:
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+      start_time:
+        types:
+        - Types::TimeRange
+        required: false
+      end_time:
+        types:
+        - Types::TimeRange
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_protections:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_emergency_contact_settings:
+    parameters:
+      emergency_contact_list:
+        types:
+        - Array<Types::EmergencyContact>
+        required: false
+  update_subscription:
+    parameters:
+      auto_renew:
+        types:
+        - String
+        required: false

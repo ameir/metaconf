@@ -1,0 +1,59 @@
+---
+class: Aws::MarketplaceMetering::Client
+methods:
+  batch_meter_usage:
+    parameters:
+      usage_records:
+        types:
+        - Array<Types::UsageRecord>
+        required: true
+      product_code:
+        types:
+        - String
+        required: true
+  meter_usage:
+    parameters:
+      product_code:
+        types:
+        - String
+        required: true
+      timestamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      usage_dimension:
+        types:
+        - String
+        required: true
+      usage_quantity:
+        types:
+        - Integer
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: true
+  register_usage:
+    parameters:
+      product_code:
+        types:
+        - String
+        required: true
+      public_key_version:
+        types:
+        - Integer
+        required: true
+      nonce:
+        types:
+        - String
+        required: false
+  resolve_customer:
+    parameters:
+      registration_token:
+        types:
+        - String
+        required: true

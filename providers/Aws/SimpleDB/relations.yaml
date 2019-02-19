@@ -1,0 +1,11 @@
+---
+attributes:
+  create: put_attributes
+  read: get_attributes
+  update: 
+  delete: delete_attributes
+domain:
+  create: create_domain
+  read: 
+  update: 
+  delete: delete_domain

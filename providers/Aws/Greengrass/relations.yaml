@@ -1,0 +1,96 @@
+---
+connector_definition:
+  create: create_connector_definition
+  read: get_connector_definition
+  update: 
+  delete: delete_connector_definition
+connector_definition_version:
+  create: create_connector_definition_version
+  read: get_connector_definition_version
+  update: 
+  delete: 
+core_definition:
+  create: create_core_definition
+  read: get_core_definition
+  update: 
+  delete: delete_core_definition
+core_definition_version:
+  create: create_core_definition_version
+  read: get_core_definition_version
+  update: 
+  delete: 
+deployment:
+  create: create_deployment
+  read: 
+  update: 
+  delete: 
+device_definition:
+  create: create_device_definition
+  read: get_device_definition
+  update: 
+  delete: delete_device_definition
+device_definition_version:
+  create: create_device_definition_version
+  read: get_device_definition_version
+  update: 
+  delete: 
+function_definition:
+  create: create_function_definition
+  read: get_function_definition
+  update: 
+  delete: delete_function_definition
+function_definition_version:
+  create: create_function_definition_version
+  read: get_function_definition_version
+  update: 
+  delete: 
+group:
+  create: create_group
+  read: get_group
+  update: 
+  delete: delete_group
+group_certificate_authority:
+  create: create_group_certificate_authority
+  read: get_group_certificate_authority
+  update: 
+  delete: 
+group_version:
+  create: create_group_version
+  read: get_group_version
+  update: 
+  delete: 
+logger_definition:
+  create: create_logger_definition
+  read: get_logger_definition
+  update: 
+  delete: delete_logger_definition
+logger_definition_version:
+  create: create_logger_definition_version
+  read: get_logger_definition_version
+  update: 
+  delete: 
+resource_definition:
+  create: create_resource_definition
+  read: get_resource_definition
+  update: 
+  delete: delete_resource_definition
+resource_definition_version:
+  create: create_resource_definition_version
+  read: get_resource_definition_version
+  update: 
+  delete: 
+software_update_job:
+  create: create_software_update_job
+  read: 
+  update: 
+  delete: 
+subscription_definition:
+  create: create_subscription_definition
+  read: get_subscription_definition
+  update: 
+  delete: delete_subscription_definition
+subscription_definition_version:
+  create: create_subscription_definition_version
+  read: get_subscription_definition_version
+  update: 
+  delete: 

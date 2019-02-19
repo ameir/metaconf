@@ -1,0 +1,31 @@
+---
+logging_options:
+  create: put_logging_options
+  read: 
+  update: 
+  delete: 
+channel:
+  create: create_channel
+  read: describe_channel
+  update: 
+  delete: delete_channel
+dataset:
+  create: create_dataset
+  read: describe_dataset
+  update: 
+  delete: delete_dataset
+dataset_content:
+  create: create_dataset_content
+  read: get_dataset_content
+  update: 
+  delete: delete_dataset_content
+datastore:
+  create: create_datastore
+  read: describe_datastore
+  update: 
+  delete: delete_datastore
+pipeline:
+  create: create_pipeline
+  read: describe_pipeline
+  update: 
+  delete: delete_pipeline

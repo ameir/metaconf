@@ -1,0 +1,36 @@
+---
+event_stream:
+  create: put_event_stream
+  read: get_event_stream
+  update: 
+  delete: delete_event_stream
+events:
+  create: put_events
+  read: 
+  update: 
+  delete: 
+app:
+  create: create_app
+  read: get_app
+  update: 
+  delete: delete_app
+campaign:
+  create: create_campaign
+  read: get_campaign
+  update: 
+  delete: delete_campaign
+export_job:
+  create: create_export_job
+  read: get_export_job
+  update: 
+  delete: 
+import_job:
+  create: create_import_job
+  read: get_import_job
+  update: 
+  delete: 
+segment:
+  create: create_segment
+  read: get_segment
+  update: 
+  delete: delete_segment

@@ -1,0 +1,261 @@
+---
+class: Aws::DataPipeline::Client
+methods:
+  activate_pipeline:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      parameter_values:
+        types:
+        - Array<Types::ParameterValue>
+        required: false
+      start_timestamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  add_tags:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  create_pipeline:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      unique_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  deactivate_pipeline:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      cancel_active:
+        types:
+        - Boolean
+        required: false
+  delete_pipeline:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+  describe_objects:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      object_ids:
+        types:
+        - Array<String>
+        required: true
+      evaluate_expressions:
+        types:
+        - Boolean
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_pipelines:
+    parameters:
+      pipeline_ids:
+        types:
+        - Array<String>
+        required: true
+  evaluate_expression:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      object_id:
+        types:
+        - String
+        required: true
+      expression:
+        types:
+        - String
+        required: true
+  get_pipeline_definition:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  list_pipelines:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+  poll_for_task:
+    parameters:
+      worker_group:
+        types:
+        - String
+        required: true
+      hostname:
+        types:
+        - String
+        required: false
+      instance_identity:
+        types:
+        - Types::InstanceIdentity
+        required: false
+  put_pipeline_definition:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      pipeline_objects:
+        types:
+        - Array<Types::PipelineObject>
+        required: true
+      parameter_objects:
+        types:
+        - Array<Types::ParameterObject>
+        required: false
+      parameter_values:
+        types:
+        - Array<Types::ParameterValue>
+        required: false
+  query_objects:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      query:
+        types:
+        - Types::Query
+        required: false
+      sphere:
+        types:
+        - String
+        required: true
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  remove_tags:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  report_task_progress:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: true
+      fields:
+        types:
+        - Array<Types::Field>
+        required: false
+  report_task_runner_heartbeat:
+    parameters:
+      taskrunner_id:
+        types:
+        - String
+        required: true
+      worker_group:
+        types:
+        - String
+        required: false
+      hostname:
+        types:
+        - String
+        required: false
+  set_status:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      object_ids:
+        types:
+        - Array<String>
+        required: true
+      status:
+        types:
+        - String
+        required: true
+  set_task_status:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: true
+      task_status:
+        types:
+        - String
+        required: true
+      error_id:
+        types:
+        - String
+        required: false
+      error_message:
+        types:
+        - String
+        required: false
+      error_stack_trace:
+        types:
+        - String
+        required: false
+  validate_pipeline_definition:
+    parameters:
+      pipeline_id:
+        types:
+        - String
+        required: true
+      pipeline_objects:
+        types:
+        - Array<Types::PipelineObject>
+        required: true
+      parameter_objects:
+        types:
+        - Array<Types::ParameterObject>
+        required: false
+      parameter_values:
+        types:
+        - Array<Types::ParameterValue>
+        required: false

@@ -1,0 +1,31 @@
+---
+app:
+  create: create_app
+  read: describe_apps
+  update: 
+  delete: delete_app
+deployment:
+  create: create_deployment
+  read: describe_deployments
+  update: 
+  delete: 
+instance:
+  create: create_instance
+  read: describe_instances
+  update: 
+  delete: delete_instance
+layer:
+  create: create_layer
+  read: describe_layers
+  update: 
+  delete: delete_layer
+stack:
+  create: create_stack
+  read: describe_stacks
+  update: 
+  delete: delete_stack
+user_profile:
+  create: create_user_profile
+  read: describe_user_profiles
+  update: 
+  delete: delete_user_profile

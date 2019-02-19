@@ -1,0 +1,16 @@
+---
+resolver_rule_policy:
+  create: put_resolver_rule_policy
+  read: get_resolver_rule_policy
+  update: 
+  delete: 
+resolver_endpoint:
+  create: create_resolver_endpoint
+  read: get_resolver_endpoint
+  update: 
+  delete: delete_resolver_endpoint
+resolver_rule:
+  create: create_resolver_rule
+  read: get_resolver_rule
+  update: 
+  delete: delete_resolver_rule

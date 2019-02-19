@@ -1,0 +1,36 @@
+---
+lifecycle_hook:
+  create: put_lifecycle_hook
+  read: describe_lifecycle_hooks
+  update: 
+  delete: delete_lifecycle_hook
+notification_configuration:
+  create: put_notification_configuration
+  read: describe_notification_configurations
+  update: 
+  delete: delete_notification_configuration
+scaling_policy:
+  create: put_scaling_policy
+  read: 
+  update: 
+  delete: 
+scheduled_update_group_action:
+  create: put_scheduled_update_group_action
+  read: 
+  update: 
+  delete: 
+auto_scaling_group:
+  create: create_auto_scaling_group
+  read: describe_auto_scaling_groups
+  update: 
+  delete: delete_auto_scaling_group
+launch_configuration:
+  create: create_launch_configuration
+  read: describe_launch_configurations
+  update: 
+  delete: delete_launch_configuration
+or_update_tags:
+  create: create_or_update_tags
+  read: 
+  update: 
+  delete: 

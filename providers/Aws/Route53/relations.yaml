@@ -1,0 +1,41 @@
+---
+health_check:
+  create: create_health_check
+  read: get_health_check
+  update: 
+  delete: delete_health_check
+hosted_zone:
+  create: create_hosted_zone
+  read: get_hosted_zone
+  update: 
+  delete: delete_hosted_zone
+query_logging_config:
+  create: create_query_logging_config
+  read: get_query_logging_config
+  update: 
+  delete: delete_query_logging_config
+reusable_delegation_set:
+  create: create_reusable_delegation_set
+  read: get_reusable_delegation_set
+  update: 
+  delete: delete_reusable_delegation_set
+traffic_policy:
+  create: create_traffic_policy
+  read: get_traffic_policy
+  update: 
+  delete: delete_traffic_policy
+traffic_policy_instance:
+  create: create_traffic_policy_instance
+  read: get_traffic_policy_instance
+  update: 
+  delete: delete_traffic_policy_instance
+traffic_policy_version:
+  create: create_traffic_policy_version
+  read: 
+  update: 
+  delete: 
+vpc_association_authorization:
+  create: create_vpc_association_authorization
+  read: 
+  update: 
+  delete: delete_vpc_association_authorization

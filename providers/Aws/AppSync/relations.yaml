@@ -1,0 +1,31 @@
+---
+api_key:
+  create: create_api_key
+  read: 
+  update: 
+  delete: delete_api_key
+data_source:
+  create: create_data_source
+  read: get_data_source
+  update: 
+  delete: delete_data_source
+function:
+  create: create_function
+  read: get_function
+  update: 
+  delete: delete_function
+graphql_api:
+  create: create_graphql_api
+  read: get_graphql_api
+  update: 
+  delete: delete_graphql_api
+resolver:
+  create: create_resolver
+  read: get_resolver
+  update: 
+  delete: delete_resolver
+type:
+  create: create_type
+  read: get_type
+  update: 
+  delete: delete_type

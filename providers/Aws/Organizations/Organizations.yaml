@@ -1,0 +1,403 @@
+---
+class: Aws::Organizations::Client
+methods:
+  accept_handshake:
+    parameters:
+      handshake_id:
+        types:
+        - String
+        required: true
+  attach_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      target_id:
+        types:
+        - String
+        required: true
+  cancel_handshake:
+    parameters:
+      handshake_id:
+        types:
+        - String
+        required: true
+  create_account:
+    parameters:
+      email:
+        types:
+        - String
+        required: true
+      account_name:
+        types:
+        - String
+        required: true
+      role_name:
+        types:
+        - String
+        required: false
+      iam_user_access_to_billing:
+        types:
+        - String
+        required: false
+  create_organization:
+    parameters:
+      feature_set:
+        types:
+        - String
+        required: false
+  create_organizational_unit:
+    parameters:
+      parent_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  create_policy:
+    parameters:
+      content:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+  decline_handshake:
+    parameters:
+      handshake_id:
+        types:
+        - String
+        required: true
+  delete_organizational_unit:
+    parameters:
+      organizational_unit_id:
+        types:
+        - String
+        required: true
+  delete_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+  describe_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  describe_create_account_status:
+    parameters:
+      create_account_request_id:
+        types:
+        - String
+        required: true
+  describe_handshake:
+    parameters:
+      handshake_id:
+        types:
+        - String
+        required: true
+  describe_organizational_unit:
+    parameters:
+      organizational_unit_id:
+        types:
+        - String
+        required: true
+  describe_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+  detach_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      target_id:
+        types:
+        - String
+        required: true
+  disable_aws_service_access:
+    parameters:
+      service_principal:
+        types:
+        - String
+        required: true
+  disable_policy_type:
+    parameters:
+      root_id:
+        types:
+        - String
+        required: true
+      policy_type:
+        types:
+        - String
+        required: true
+  enable_aws_service_access:
+    parameters:
+      service_principal:
+        types:
+        - String
+        required: true
+  enable_policy_type:
+    parameters:
+      root_id:
+        types:
+        - String
+        required: true
+      policy_type:
+        types:
+        - String
+        required: true
+  invite_account_to_organization:
+    parameters:
+      target:
+        types:
+        - Types::HandshakeParty
+        required: true
+      notes:
+        types:
+        - String
+        required: false
+  list_aws_service_access_for_organization:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_accounts:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_accounts_for_parent:
+    parameters:
+      parent_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_children:
+    parameters:
+      parent_id:
+        types:
+        - String
+        required: true
+      child_type:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_create_account_status:
+    parameters:
+      states:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_handshakes_for_account:
+    parameters:
+      filter:
+        types:
+        - Types::HandshakeFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_handshakes_for_organization:
+    parameters:
+      filter:
+        types:
+        - Types::HandshakeFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_organizational_units_for_parent:
+    parameters:
+      parent_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_parents:
+    parameters:
+      child_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_policies:
+    parameters:
+      filter:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_policies_for_target:
+    parameters:
+      target_id:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_roots:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_targets_for_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  move_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      source_parent_id:
+        types:
+        - String
+        required: true
+      destination_parent_id:
+        types:
+        - String
+        required: true
+  remove_account_from_organization:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  update_organizational_unit:
+    parameters:
+      organizational_unit_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      content:
+        types:
+        - String
+        required: false

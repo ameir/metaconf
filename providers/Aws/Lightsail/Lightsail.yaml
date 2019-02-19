@@ -1,0 +1,1111 @@
+---
+class: Aws::Lightsail::Client
+methods:
+  allocate_static_ip:
+    parameters:
+      static_ip_name:
+        types:
+        - String
+        required: true
+  attach_disk:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+      disk_path:
+        types:
+        - String
+        required: true
+  attach_instances_to_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+  attach_load_balancer_tls_certificate:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      certificate_name:
+        types:
+        - String
+        required: true
+  attach_static_ip:
+    parameters:
+      static_ip_name:
+        types:
+        - String
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+  close_instance_public_ports:
+    parameters:
+      port_info:
+        types:
+        - Types::PortInfo
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+  copy_snapshot:
+    parameters:
+      source_snapshot_name:
+        types:
+        - String
+        required: true
+      target_snapshot_name:
+        types:
+        - String
+        required: true
+      source_region:
+        types:
+        - String
+        required: true
+  create_cloud_formation_stack:
+    parameters:
+      instances:
+        types:
+        - Array<Types::InstanceEntry>
+        required: true
+  create_disk:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: true
+      size_in_gb:
+        types:
+        - Integer
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_disk_from_snapshot:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+      disk_snapshot_name:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: true
+      size_in_gb:
+        types:
+        - Integer
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_disk_snapshot:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: false
+      disk_snapshot_name:
+        types:
+        - String
+        required: true
+      instance_name:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_domain_entry:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      domain_entry:
+        types:
+        - Types::DomainEntry
+        required: true
+  create_instance_snapshot:
+    parameters:
+      instance_snapshot_name:
+        types:
+        - String
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_instances:
+    parameters:
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: true
+      custom_image_name:
+        types:
+        - String
+        required: false
+      blueprint_id:
+        types:
+        - String
+        required: true
+      bundle_id:
+        types:
+        - String
+        required: true
+      user_data:
+        types:
+        - String
+        required: false
+      key_pair_name:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_instances_from_snapshot:
+    parameters:
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+      attached_disk_mapping:
+        types:
+        - Hash<String,Array>
+        required: false
+      availability_zone:
+        types:
+        - String
+        required: true
+      instance_snapshot_name:
+        types:
+        - String
+        required: true
+      bundle_id:
+        types:
+        - String
+        required: true
+      user_data:
+        types:
+        - String
+        required: false
+      key_pair_name:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_key_pair:
+    parameters:
+      key_pair_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      instance_port:
+        types:
+        - Integer
+        required: true
+      health_check_path:
+        types:
+        - String
+        required: false
+      certificate_name:
+        types:
+        - String
+        required: false
+      certificate_domain_name:
+        types:
+        - String
+        required: false
+      certificate_alternative_names:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_load_balancer_tls_certificate:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      certificate_name:
+        types:
+        - String
+        required: true
+      certificate_domain_name:
+        types:
+        - String
+        required: true
+      certificate_alternative_names:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: false
+      relational_database_blueprint_id:
+        types:
+        - String
+        required: true
+      relational_database_bundle_id:
+        types:
+        - String
+        required: true
+      master_database_name:
+        types:
+        - String
+        required: true
+      master_username:
+        types:
+        - String
+        required: true
+      master_user_password:
+        types:
+        - String
+        required: false
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_relational_database_from_snapshot:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: false
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+      relational_database_snapshot_name:
+        types:
+        - String
+        required: false
+      relational_database_bundle_id:
+        types:
+        - String
+        required: false
+      source_relational_database_name:
+        types:
+        - String
+        required: false
+      restore_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      use_latest_restorable_time:
+        types:
+        - Boolean
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_relational_database_snapshot:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      relational_database_snapshot_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_disk:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+  delete_disk_snapshot:
+    parameters:
+      disk_snapshot_name:
+        types:
+        - String
+        required: true
+  delete_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  delete_domain_entry:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      domain_entry:
+        types:
+        - Types::DomainEntry
+        required: true
+  delete_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  delete_instance_snapshot:
+    parameters:
+      instance_snapshot_name:
+        types:
+        - String
+        required: true
+  delete_key_pair:
+    parameters:
+      key_pair_name:
+        types:
+        - String
+        required: true
+  delete_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+  delete_load_balancer_tls_certificate:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      certificate_name:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+  delete_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      skip_final_snapshot:
+        types:
+        - Boolean
+        required: false
+      final_relational_database_snapshot_name:
+        types:
+        - String
+        required: false
+  delete_relational_database_snapshot:
+    parameters:
+      relational_database_snapshot_name:
+        types:
+        - String
+        required: true
+  detach_disk:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+  detach_instances_from_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      instance_names:
+        types:
+        - Array<String>
+        required: true
+  detach_static_ip:
+    parameters:
+      static_ip_name:
+        types:
+        - String
+        required: true
+  export_snapshot:
+    parameters:
+      source_snapshot_name:
+        types:
+        - String
+        required: true
+  get_active_names:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_blueprints:
+    parameters:
+      include_inactive:
+        types:
+        - Boolean
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+  get_bundles:
+    parameters:
+      include_inactive:
+        types:
+        - Boolean
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+  get_cloud_formation_stack_records:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_disk:
+    parameters:
+      disk_name:
+        types:
+        - String
+        required: true
+  get_disk_snapshot:
+    parameters:
+      disk_snapshot_name:
+        types:
+        - String
+        required: true
+  get_disk_snapshots:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_disks:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+  get_domains:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_export_snapshot_records:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  get_instance_access_details:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+      protocol:
+        types:
+        - String
+        required: false
+  get_instance_metric_data:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      period:
+        types:
+        - Integer
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      unit:
+        types:
+        - String
+        required: true
+      statistics:
+        types:
+        - Array<String>
+        required: true
+  get_instance_port_states:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  get_instance_snapshot:
+    parameters:
+      instance_snapshot_name:
+        types:
+        - String
+        required: true
+  get_instance_snapshots:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_instance_state:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  get_instances:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_key_pair:
+    parameters:
+      key_pair_name:
+        types:
+        - String
+        required: true
+  get_key_pairs:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_load_balancer:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+  get_load_balancer_metric_data:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      period:
+        types:
+        - Integer
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      unit:
+        types:
+        - String
+        required: true
+      statistics:
+        types:
+        - Array<String>
+        required: true
+  get_load_balancer_tls_certificates:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+  get_load_balancers:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_operation:
+    parameters:
+      operation_id:
+        types:
+        - String
+        required: true
+  get_operations:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_operations_for_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      page_token:
+        types:
+        - String
+        required: false
+  get_regions:
+    parameters:
+      include_availability_zones:
+        types:
+        - Boolean
+        required: false
+      include_relational_database_availability_zones:
+        types:
+        - Boolean
+        required: false
+  get_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+  get_relational_database_blueprints:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_database_bundles:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_database_events:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      duration_in_minutes:
+        types:
+        - Integer
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_database_log_events:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      log_stream_name:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      start_from_head:
+        types:
+        - Boolean
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_database_log_streams:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+  get_relational_database_master_user_password:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      password_version:
+        types:
+        - String
+        required: false
+  get_relational_database_metric_data:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      period:
+        types:
+        - Integer
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      unit:
+        types:
+        - String
+        required: true
+      statistics:
+        types:
+        - Array<String>
+        required: true
+  get_relational_database_parameters:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_database_snapshot:
+    parameters:
+      relational_database_snapshot_name:
+        types:
+        - String
+        required: true
+  get_relational_database_snapshots:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_relational_databases:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  get_static_ip:
+    parameters:
+      static_ip_name:
+        types:
+        - String
+        required: true
+  get_static_ips:
+    parameters:
+      page_token:
+        types:
+        - String
+        required: false
+  import_key_pair:
+    parameters:
+      key_pair_name:
+        types:
+        - String
+        required: true
+      public_key_base_64:
+        types:
+        - String
+        required: true
+  open_instance_public_ports:
+    parameters:
+      port_info:
+        types:
+        - Types::PortInfo
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+  put_instance_public_ports:
+    parameters:
+      port_infos:
+        types:
+        - Array<Types::PortInfo>
+        required: true
+      instance_name:
+        types:
+        - String
+        required: true
+  reboot_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  reboot_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+  release_static_ip:
+    parameters:
+      static_ip_name:
+        types:
+        - String
+        required: true
+  start_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+  start_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+  stop_instance:
+    parameters:
+      instance_name:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+  stop_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      relational_database_snapshot_name:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_domain_entry:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      domain_entry:
+        types:
+        - Types::DomainEntry
+        required: true
+  update_load_balancer_attribute:
+    parameters:
+      load_balancer_name:
+        types:
+        - String
+        required: true
+      attribute_name:
+        types:
+        - String
+        required: true
+      attribute_value:
+        types:
+        - String
+        required: true
+  update_relational_database:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      master_user_password:
+        types:
+        - String
+        required: false
+      rotate_master_user_password:
+        types:
+        - Boolean
+        required: false
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      enable_backup_retention:
+        types:
+        - Boolean
+        required: false
+      disable_backup_retention:
+        types:
+        - Boolean
+        required: false
+      publicly_accessible:
+        types:
+        - Boolean
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
+        required: false
+  update_relational_database_parameters:
+    parameters:
+      relational_database_name:
+        types:
+        - String
+        required: true
+      parameters:
+        types:
+        - Array<Types::RelationalDatabaseParameter>
+        required: true

@@ -1,0 +1,6 @@
+---
+project:
+  create: create_project
+  read: describe_project
+  update: 
+  delete: delete_project

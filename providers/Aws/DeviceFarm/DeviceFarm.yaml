@@ -1,0 +1,801 @@
+---
+class: Aws::DeviceFarm::Client
+methods:
+  create_device_pool:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: true
+      max_devices:
+        types:
+        - Integer
+        required: false
+  create_instance_profile:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      package_cleanup:
+        types:
+        - Boolean
+        required: false
+      exclude_app_packages_from_cleanup:
+        types:
+        - Array<String>
+        required: false
+      reboot_after_use:
+        types:
+        - Boolean
+        required: false
+  create_network_profile:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      uplink_bandwidth_bits:
+        types:
+        - Integer
+        required: false
+      downlink_bandwidth_bits:
+        types:
+        - Integer
+        required: false
+      uplink_delay_ms:
+        types:
+        - Integer
+        required: false
+      downlink_delay_ms:
+        types:
+        - Integer
+        required: false
+      uplink_jitter_ms:
+        types:
+        - Integer
+        required: false
+      downlink_jitter_ms:
+        types:
+        - Integer
+        required: false
+      uplink_loss_percent:
+        types:
+        - Integer
+        required: false
+      downlink_loss_percent:
+        types:
+        - Integer
+        required: false
+  create_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      default_job_timeout_minutes:
+        types:
+        - Integer
+        required: false
+  create_remote_access_session:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      device_arn:
+        types:
+        - String
+        required: true
+      instance_arn:
+        types:
+        - String
+        required: false
+      ssh_public_key:
+        types:
+        - String
+        required: false
+      remote_debug_enabled:
+        types:
+        - Boolean
+        required: false
+      remote_record_enabled:
+        types:
+        - Boolean
+        required: false
+      remote_record_app_arn:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      client_id:
+        types:
+        - String
+        required: false
+      configuration:
+        types:
+        - Types::CreateRemoteAccessSessionConfiguration
+        required: false
+      interaction_mode:
+        types:
+        - String
+        required: false
+      skip_app_resign:
+        types:
+        - Boolean
+        required: false
+  create_upload:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      content_type:
+        types:
+        - String
+        required: false
+  create_vpce_configuration:
+    parameters:
+      vpce_configuration_name:
+        types:
+        - String
+        required: true
+      vpce_service_name:
+        types:
+        - String
+        required: true
+      service_dns_name:
+        types:
+        - String
+        required: true
+      vpce_configuration_description:
+        types:
+        - String
+        required: false
+  delete_device_pool:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_instance_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_network_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_project:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_remote_access_session:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_run:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_upload:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_vpce_configuration:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_device:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_device_instance:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_device_pool:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_device_pool_compatibility:
+    parameters:
+      device_pool_arn:
+        types:
+        - String
+        required: true
+      app_arn:
+        types:
+        - String
+        required: false
+      test_type:
+        types:
+        - String
+        required: false
+      test:
+        types:
+        - Types::ScheduleRunTest
+        required: false
+      configuration:
+        types:
+        - Types::ScheduleRunConfiguration
+        required: false
+  get_instance_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_job:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_network_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_offering_status:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  get_project:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_remote_access_session:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_run:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_suite:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_test:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_upload:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  get_vpce_configuration:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  install_to_remote_access_session:
+    parameters:
+      remote_access_session_arn:
+        types:
+        - String
+        required: true
+      app_arn:
+        types:
+        - String
+        required: true
+  list_artifacts:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_device_instances:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_device_pools:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_devices:
+    parameters:
+      arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::DeviceFilter>
+        required: false
+  list_instance_profiles:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_jobs:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_network_profiles:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_offering_promotions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  list_offering_transactions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  list_offerings:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  list_projects:
+    parameters:
+      arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_remote_access_sessions:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_runs:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_samples:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_suites:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_tests:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_unique_problems:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_uploads:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_vpce_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  purchase_offering:
+    parameters:
+      offering_id:
+        types:
+        - String
+        required: false
+      quantity:
+        types:
+        - Integer
+        required: false
+      offering_promotion_id:
+        types:
+        - String
+        required: false
+  renew_offering:
+    parameters:
+      offering_id:
+        types:
+        - String
+        required: false
+      quantity:
+        types:
+        - Integer
+        required: false
+  schedule_run:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      app_arn:
+        types:
+        - String
+        required: false
+      device_pool_arn:
+        types:
+        - String
+        required: false
+      device_selection_configuration:
+        types:
+        - Types::DeviceSelectionConfiguration
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      test:
+        types:
+        - Types::ScheduleRunTest
+        required: true
+      configuration:
+        types:
+        - Types::ScheduleRunConfiguration
+        required: false
+      execution_configuration:
+        types:
+        - Types::ExecutionConfiguration
+        required: false
+  stop_job:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  stop_remote_access_session:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  stop_run:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  update_device_instance:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      profile_arn:
+        types:
+        - String
+        required: false
+      labels:
+        types:
+        - Array<String>
+        required: false
+  update_device_pool:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: false
+      max_devices:
+        types:
+        - Integer
+        required: false
+      clear_max_devices:
+        types:
+        - Boolean
+        required: false
+  update_instance_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      package_cleanup:
+        types:
+        - Boolean
+        required: false
+      exclude_app_packages_from_cleanup:
+        types:
+        - Array<String>
+        required: false
+      reboot_after_use:
+        types:
+        - Boolean
+        required: false
+  update_network_profile:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      uplink_bandwidth_bits:
+        types:
+        - Integer
+        required: false
+      downlink_bandwidth_bits:
+        types:
+        - Integer
+        required: false
+      uplink_delay_ms:
+        types:
+        - Integer
+        required: false
+      downlink_delay_ms:
+        types:
+        - Integer
+        required: false
+      uplink_jitter_ms:
+        types:
+        - Integer
+        required: false
+      downlink_jitter_ms:
+        types:
+        - Integer
+        required: false
+      uplink_loss_percent:
+        types:
+        - Integer
+        required: false
+      downlink_loss_percent:
+        types:
+        - Integer
+        required: false
+  update_project:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      default_job_timeout_minutes:
+        types:
+        - Integer
+        required: false
+  update_upload:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      content_type:
+        types:
+        - String
+        required: false
+      edit_content:
+        types:
+        - Boolean
+        required: false
+  update_vpce_configuration:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      vpce_configuration_name:
+        types:
+        - String
+        required: false
+      vpce_service_name:
+        types:
+        - String
+        required: false
+      service_dns_name:
+        types:
+        - String
+        required: false
+      vpce_configuration_description:
+        types:
+        - String
+        required: false

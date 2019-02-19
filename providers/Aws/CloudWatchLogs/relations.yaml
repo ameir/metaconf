@@ -1,0 +1,51 @@
+---
+destination:
+  create: put_destination
+  read: describe_destinations
+  update: 
+  delete: delete_destination
+destination_policy:
+  create: put_destination_policy
+  read: 
+  update: 
+  delete: 
+log_events:
+  create: put_log_events
+  read: get_log_events
+  update: 
+  delete: 
+metric_filter:
+  create: put_metric_filter
+  read: describe_metric_filters
+  update: 
+  delete: delete_metric_filter
+resource_policy:
+  create: put_resource_policy
+  read: 
+  update: 
+  delete: delete_resource_policy
+retention_policy:
+  create: put_retention_policy
+  read: 
+  update: 
+  delete: delete_retention_policy
+subscription_filter:
+  create: put_subscription_filter
+  read: describe_subscription_filters
+  update: 
+  delete: delete_subscription_filter
+export_task:
+  create: create_export_task
+  read: describe_export_tasks
+  update: 
+  delete: 
+log_group:
+  create: create_log_group
+  read: describe_log_groups
+  update: 
+  delete: delete_log_group
+log_stream:
+  create: create_log_stream
+  read: describe_log_streams
+  update: 
+  delete: delete_log_stream

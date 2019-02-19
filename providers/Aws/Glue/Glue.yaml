@@ -1,0 +1,1239 @@
+---
+class: Aws::Glue::Client
+methods:
+  batch_create_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partition_input_list:
+        types:
+        - Array<Types::PartitionInput>
+        required: true
+  batch_delete_connection:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      connection_name_list:
+        types:
+        - Array<String>
+        required: true
+  batch_delete_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partitions_to_delete:
+        types:
+        - Array<Types::PartitionValueList>
+        required: true
+  batch_delete_table:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      tables_to_delete:
+        types:
+        - Array<String>
+        required: true
+  batch_delete_table_version:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      version_ids:
+        types:
+        - Array<String>
+        required: true
+  batch_get_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partitions_to_get:
+        types:
+        - Array<Types::PartitionValueList>
+        required: true
+  batch_stop_job_run:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      job_run_ids:
+        types:
+        - Array<String>
+        required: true
+  create_classifier:
+    parameters:
+      grok_classifier:
+        types:
+        - Types::CreateGrokClassifierRequest
+        required: false
+      xml_classifier:
+        types:
+        - Types::CreateXMLClassifierRequest
+        required: false
+      json_classifier:
+        types:
+        - Types::CreateJsonClassifierRequest
+        required: false
+  create_connection:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      connection_input:
+        types:
+        - Types::ConnectionInput
+        required: true
+  create_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      role:
+        types:
+        - String
+        required: true
+      database_name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      targets:
+        types:
+        - Types::CrawlerTargets
+        required: true
+      schedule:
+        types:
+        - String
+        required: false
+      classifiers:
+        types:
+        - Array<String>
+        required: false
+      table_prefix:
+        types:
+        - String
+        required: false
+      schema_change_policy:
+        types:
+        - Types::SchemaChangePolicy
+        required: false
+      configuration:
+        types:
+        - String
+        required: false
+      crawler_security_configuration:
+        types:
+        - String
+        required: false
+  create_database:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_input:
+        types:
+        - Types::DatabaseInput
+        required: true
+  create_dev_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      subnet_id:
+        types:
+        - String
+        required: false
+      public_key:
+        types:
+        - String
+        required: false
+      public_keys:
+        types:
+        - Array<String>
+        required: false
+      number_of_nodes:
+        types:
+        - Integer
+        required: false
+      extra_python_libs_s3_path:
+        types:
+        - String
+        required: false
+      extra_jars_s3_path:
+        types:
+        - String
+        required: false
+      security_configuration:
+        types:
+        - String
+        required: false
+  create_job:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      log_uri:
+        types:
+        - String
+        required: false
+      role:
+        types:
+        - String
+        required: true
+      execution_property:
+        types:
+        - Types::ExecutionProperty
+        required: false
+      command:
+        types:
+        - Types::JobCommand
+        required: true
+      default_arguments:
+        types:
+        - Hash<String,String>
+        required: false
+      connections:
+        types:
+        - Types::ConnectionsList
+        required: false
+      max_retries:
+        types:
+        - Integer
+        required: false
+      allocated_capacity:
+        types:
+        - Integer
+        required: false
+      timeout:
+        types:
+        - Integer
+        required: false
+      max_capacity:
+        types:
+        - Float
+        required: false
+      notification_property:
+        types:
+        - Types::NotificationProperty
+        required: false
+      security_configuration:
+        types:
+        - String
+        required: false
+  create_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partition_input:
+        types:
+        - Types::PartitionInput
+        required: true
+  create_script:
+    parameters:
+      dag_nodes:
+        types:
+        - Array<Types::CodeGenNode>
+        required: false
+      dag_edges:
+        types:
+        - Array<Types::CodeGenEdge>
+        required: false
+      language:
+        types:
+        - String
+        required: false
+  create_security_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      encryption_configuration:
+        types:
+        - Types::EncryptionConfiguration
+        required: true
+  create_table:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_input:
+        types:
+        - Types::TableInput
+        required: true
+  create_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      schedule:
+        types:
+        - String
+        required: false
+      predicate:
+        types:
+        - Types::Predicate
+        required: false
+      actions:
+        types:
+        - Array<Types::Action>
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      start_on_creation:
+        types:
+        - Boolean
+        required: false
+  create_user_defined_function:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      function_input:
+        types:
+        - Types::UserDefinedFunctionInput
+        required: true
+  delete_classifier:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_connection:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      connection_name:
+        types:
+        - String
+        required: true
+  delete_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_database:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+  delete_dev_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+  delete_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+  delete_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partition_values:
+        types:
+        - Array<String>
+        required: true
+  delete_resource_policy:
+    parameters:
+      policy_hash_condition:
+        types:
+        - String
+        required: false
+  delete_security_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_table:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  delete_table_version:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: true
+  delete_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_user_defined_function:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      function_name:
+        types:
+        - String
+        required: true
+  get_catalog_import_status:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+  get_classifier:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_classifiers:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_connection:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      hide_password:
+        types:
+        - Boolean
+        required: false
+  get_connections:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::GetConnectionsFilter
+        required: false
+      hide_password:
+        types:
+        - Boolean
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_crawler_metrics:
+    parameters:
+      crawler_name_list:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_crawlers:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_data_catalog_encryption_settings:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+  get_database:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+  get_databases:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_dataflow_graph:
+    parameters:
+      python_script:
+        types:
+        - String
+        required: false
+  get_dev_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+  get_dev_endpoints:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+  get_job_run:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      run_id:
+        types:
+        - String
+        required: true
+      predecessors_included:
+        types:
+        - Boolean
+        required: false
+  get_job_runs:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_mapping:
+    parameters:
+      source:
+        types:
+        - Types::CatalogEntry
+        required: true
+      sinks:
+        types:
+        - Array<Types::CatalogEntry>
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false
+  get_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partition_values:
+        types:
+        - Array<String>
+        required: true
+  get_partitions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      expression:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      segment:
+        types:
+        - Types::Segment
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_plan:
+    parameters:
+      mapping:
+        types:
+        - Array<Types::MappingEntry>
+        required: true
+      source:
+        types:
+        - Types::CatalogEntry
+        required: true
+      sinks:
+        types:
+        - Array<Types::CatalogEntry>
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false
+      language:
+        types:
+        - String
+        required: false
+  get_security_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_security_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_table:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  get_table_version:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: false
+  get_table_versions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_tables:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      expression:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_triggers:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      dependent_job_name:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_user_defined_function:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      function_name:
+        types:
+        - String
+        required: true
+  get_user_defined_functions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      pattern:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  import_catalog_to_glue:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+  put_data_catalog_encryption_settings:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      data_catalog_encryption_settings:
+        types:
+        - Types::DataCatalogEncryptionSettings
+        required: true
+  put_resource_policy:
+    parameters:
+      policy_in_json:
+        types:
+        - String
+        required: true
+      policy_hash_condition:
+        types:
+        - String
+        required: false
+      policy_exists_condition:
+        types:
+        - String
+        required: false
+  reset_job_bookmark:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+  start_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  start_crawler_schedule:
+    parameters:
+      crawler_name:
+        types:
+        - String
+        required: true
+  start_job_run:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      job_run_id:
+        types:
+        - String
+        required: false
+      arguments:
+        types:
+        - Hash<String,String>
+        required: false
+      allocated_capacity:
+        types:
+        - Integer
+        required: false
+      timeout:
+        types:
+        - Integer
+        required: false
+      max_capacity:
+        types:
+        - Float
+        required: false
+      notification_property:
+        types:
+        - Types::NotificationProperty
+        required: false
+      security_configuration:
+        types:
+        - String
+        required: false
+  start_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  stop_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  stop_crawler_schedule:
+    parameters:
+      crawler_name:
+        types:
+        - String
+        required: true
+  stop_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  update_classifier:
+    parameters:
+      grok_classifier:
+        types:
+        - Types::UpdateGrokClassifierRequest
+        required: false
+      xml_classifier:
+        types:
+        - Types::UpdateXMLClassifierRequest
+        required: false
+      json_classifier:
+        types:
+        - Types::UpdateJsonClassifierRequest
+        required: false
+  update_connection:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      connection_input:
+        types:
+        - Types::ConnectionInput
+        required: true
+  update_crawler:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      role:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      targets:
+        types:
+        - Types::CrawlerTargets
+        required: false
+      schedule:
+        types:
+        - String
+        required: false
+      classifiers:
+        types:
+        - Array<String>
+        required: false
+      table_prefix:
+        types:
+        - String
+        required: false
+      schema_change_policy:
+        types:
+        - Types::SchemaChangePolicy
+        required: false
+      configuration:
+        types:
+        - String
+        required: false
+      crawler_security_configuration:
+        types:
+        - String
+        required: false
+  update_crawler_schedule:
+    parameters:
+      crawler_name:
+        types:
+        - String
+        required: true
+      schedule:
+        types:
+        - String
+        required: false
+  update_database:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      database_input:
+        types:
+        - Types::DatabaseInput
+        required: true
+  update_dev_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      public_key:
+        types:
+        - String
+        required: false
+      add_public_keys:
+        types:
+        - Array<String>
+        required: false
+      delete_public_keys:
+        types:
+        - Array<String>
+        required: false
+      custom_libraries:
+        types:
+        - Types::DevEndpointCustomLibraries
+        required: false
+      update_etl_libraries:
+        types:
+        - Boolean
+        required: false
+  update_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      job_update:
+        types:
+        - Types::JobUpdate
+        required: true
+  update_partition:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_name:
+        types:
+        - String
+        required: true
+      partition_value_list:
+        types:
+        - Array<String>
+        required: true
+      partition_input:
+        types:
+        - Types::PartitionInput
+        required: true
+  update_table:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      table_input:
+        types:
+        - Types::TableInput
+        required: true
+      skip_archive:
+        types:
+        - Boolean
+        required: false
+  update_trigger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      trigger_update:
+        types:
+        - Types::TriggerUpdate
+        required: true
+  update_user_defined_function:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      database_name:
+        types:
+        - String
+        required: true
+      function_name:
+        types:
+        - String
+        required: true
+      function_input:
+        types:
+        - Types::UserDefinedFunctionInput
+        required: true

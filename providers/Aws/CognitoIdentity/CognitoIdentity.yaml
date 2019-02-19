@@ -1,0 +1,267 @@
+---
+class: Aws::CognitoIdentity::Client
+methods:
+  create_identity_pool:
+    parameters:
+      identity_pool_name:
+        types:
+        - String
+        required: true
+      allow_unauthenticated_identities:
+        types:
+        - Boolean
+        required: true
+      supported_login_providers:
+        types:
+        - Hash<String,String>
+        required: false
+      developer_provider_name:
+        types:
+        - String
+        required: false
+      open_id_connect_provider_arns:
+        types:
+        - Array<String>
+        required: false
+      cognito_identity_providers:
+        types:
+        - Array<Types::CognitoIdentityProvider>
+        required: false
+      saml_provider_arns:
+        types:
+        - Array<String>
+        required: false
+  delete_identities:
+    parameters:
+      identity_ids_to_delete:
+        types:
+        - Array<String>
+        required: true
+  delete_identity_pool:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  describe_identity:
+    parameters:
+      identity_id:
+        types:
+        - String
+        required: true
+  describe_identity_pool:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  get_credentials_for_identity:
+    parameters:
+      identity_id:
+        types:
+        - String
+        required: true
+      logins:
+        types:
+        - Hash<String,String>
+        required: false
+      custom_role_arn:
+        types:
+        - String
+        required: false
+  get_id:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: false
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      logins:
+        types:
+        - Hash<String,String>
+        required: false
+  get_identity_pool_roles:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  get_open_id_token:
+    parameters:
+      identity_id:
+        types:
+        - String
+        required: true
+      logins:
+        types:
+        - Hash<String,String>
+        required: false
+  get_open_id_token_for_developer_identity:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: false
+      logins:
+        types:
+        - Hash<String,String>
+        required: true
+      token_duration:
+        types:
+        - Integer
+        required: false
+  list_identities:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      hide_disabled:
+        types:
+        - Boolean
+        required: false
+  list_identity_pools:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  lookup_developer_identity:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: false
+      developer_user_identifier:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  merge_developer_identities:
+    parameters:
+      source_user_identifier:
+        types:
+        - String
+        required: true
+      destination_user_identifier:
+        types:
+        - String
+        required: true
+      developer_provider_name:
+        types:
+        - String
+        required: true
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  set_identity_pool_roles:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      roles:
+        types:
+        - Hash<String,String>
+        required: true
+      role_mappings:
+        types:
+        - Hash<String,Types::RoleMapping>
+        required: false
+  unlink_developer_identity:
+    parameters:
+      identity_id:
+        types:
+        - String
+        required: true
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      developer_provider_name:
+        types:
+        - String
+        required: true
+      developer_user_identifier:
+        types:
+        - String
+        required: true
+  unlink_identity:
+    parameters:
+      identity_id:
+        types:
+        - String
+        required: true
+      logins:
+        types:
+        - Hash<String,String>
+        required: true
+      logins_to_remove:
+        types:
+        - Array<String>
+        required: true
+  update_identity_pool:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_pool_name:
+        types:
+        - String
+        required: true
+      allow_unauthenticated_identities:
+        types:
+        - Boolean
+        required: true
+      supported_login_providers:
+        types:
+        - Hash<String,String>
+        required: false
+      developer_provider_name:
+        types:
+        - String
+        required: false
+      open_id_connect_provider_arns:
+        types:
+        - Array<String>
+        required: false
+      cognito_identity_providers:
+        types:
+        - Array<Types::CognitoIdentityProvider>
+        required: false
+      saml_provider_arns:
+        types:
+        - Array<String>
+        required: false

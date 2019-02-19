@@ -1,0 +1,231 @@
+---
+class: Aws::SQS::Client
+methods:
+  add_permission:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      label:
+        types:
+        - String
+        required: true
+      aws_account_ids:
+        types:
+        - Array<String>
+        required: true
+      actions:
+        types:
+        - Array<String>
+        required: true
+  change_message_visibility:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      receipt_handle:
+        types:
+        - String
+        required: true
+      visibility_timeout:
+        types:
+        - Integer
+        required: true
+  change_message_visibility_batch:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      entries:
+        types:
+        - Array<Types::ChangeMessageVisibilityBatchRequestEntry>
+        required: true
+  create_queue:
+    parameters:
+      queue_name:
+        types:
+        - String
+        required: true
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+  delete_message:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      receipt_handle:
+        types:
+        - String
+        required: true
+  delete_message_batch:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      entries:
+        types:
+        - Array<Types::DeleteMessageBatchRequestEntry>
+        required: true
+  delete_queue:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+  get_queue_attributes:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      attribute_names:
+        types:
+        - Array<String>
+        required: false
+  get_queue_url:
+    parameters:
+      queue_name:
+        types:
+        - String
+        required: true
+      queue_owner_aws_account_id:
+        types:
+        - String
+        required: false
+  list_dead_letter_source_queues:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+  list_queue_tags:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+  list_queues:
+    parameters:
+      queue_name_prefix:
+        types:
+        - String
+        required: false
+  purge_queue:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+  receive_message:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      attribute_names:
+        types:
+        - Array<String>
+        required: false
+      message_attribute_names:
+        types:
+        - Array<String>
+        required: false
+      max_number_of_messages:
+        types:
+        - Integer
+        required: false
+      visibility_timeout:
+        types:
+        - Integer
+        required: false
+      wait_time_seconds:
+        types:
+        - Integer
+        required: false
+      receive_request_attempt_id:
+        types:
+        - String
+        required: false
+  remove_permission:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      label:
+        types:
+        - String
+        required: true
+  send_message:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      message_body:
+        types:
+        - String
+        required: true
+      delay_seconds:
+        types:
+        - Integer
+        required: false
+      message_attributes:
+        types:
+        - Hash<String,Types::MessageAttributeValue>
+        required: false
+      message_deduplication_id:
+        types:
+        - String
+        required: false
+      message_group_id:
+        types:
+        - String
+        required: false
+  send_message_batch:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      entries:
+        types:
+        - Array<Types::SendMessageBatchRequestEntry>
+        required: true
+  set_queue_attributes:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+  tag_queue:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_queue:
+    parameters:
+      queue_url:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

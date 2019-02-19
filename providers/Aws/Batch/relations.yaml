@@ -1,0 +1,11 @@
+---
+compute_environment:
+  create: create_compute_environment
+  read: describe_compute_environments
+  update: 
+  delete: delete_compute_environment
+job_queue:
+  create: create_job_queue
+  read: describe_job_queues
+  update: 
+  delete: delete_job_queue

@@ -1,0 +1,11 @@
+---
+backup:
+  create: create_backup
+  read: describe_backups
+  update: 
+  delete: delete_backup
+server:
+  create: create_server
+  read: describe_servers
+  update: 
+  delete: delete_server

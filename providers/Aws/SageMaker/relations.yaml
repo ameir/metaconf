@@ -1,0 +1,76 @@
+---
+algorithm:
+  create: create_algorithm
+  read: describe_algorithm
+  update: 
+  delete: delete_algorithm
+code_repository:
+  create: create_code_repository
+  read: describe_code_repository
+  update: 
+  delete: delete_code_repository
+compilation_job:
+  create: create_compilation_job
+  read: describe_compilation_job
+  update: 
+  delete: 
+endpoint:
+  create: create_endpoint
+  read: describe_endpoint
+  update: 
+  delete: delete_endpoint
+endpoint_config:
+  create: create_endpoint_config
+  read: describe_endpoint_config
+  update: 
+  delete: delete_endpoint_config
+hyper_parameter_tuning_job:
+  create: create_hyper_parameter_tuning_job
+  read: describe_hyper_parameter_tuning_job
+  update: 
+  delete: 
+labeling_job:
+  create: create_labeling_job
+  read: describe_labeling_job
+  update: 
+  delete: 
+model:
+  create: create_model
+  read: describe_model
+  update: 
+  delete: delete_model
+model_package:
+  create: create_model_package
+  read: describe_model_package
+  update: 
+  delete: delete_model_package
+notebook_instance:
+  create: create_notebook_instance
+  read: describe_notebook_instance
+  update: 
+  delete: delete_notebook_instance
+notebook_instance_lifecycle_config:
+  create: create_notebook_instance_lifecycle_config
+  read: describe_notebook_instance_lifecycle_config
+  update: 
+  delete: delete_notebook_instance_lifecycle_config
+presigned_notebook_instance_url:
+  create: create_presigned_notebook_instance_url
+  read: 
+  update: 
+  delete: 
+training_job:
+  create: create_training_job
+  read: describe_training_job
+  update: 
+  delete: 
+transform_job:
+  create: create_transform_job
+  read: describe_transform_job
+  update: 
+  delete: 
+workteam:
+  create: create_workteam
+  read: describe_workteam
+  update: 
+  delete: delete_workteam

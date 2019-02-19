@@ -1,0 +1,21 @@
+---
+change_set:
+  create: create_change_set
+  read: describe_change_set
+  update: 
+  delete: delete_change_set
+stack:
+  create: create_stack
+  read: describe_stacks
+  update: 
+  delete: delete_stack
+stack_instances:
+  create: create_stack_instances
+  read: 
+  update: 
+  delete: delete_stack_instances
+stack_set:
+  create: create_stack_set
+  read: describe_stack_set
+  update: 
+  delete: delete_stack_set

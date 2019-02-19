@@ -1,0 +1,261 @@
+---
+class: Aws::ServerlessApplicationRepository::Client
+methods:
+  create_application:
+    parameters:
+      author:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      home_page_url:
+        types:
+        - String
+        required: false
+      labels:
+        types:
+        - Array<String>
+        required: false
+      license_body:
+        types:
+        - String
+        required: false
+      license_url:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      readme_body:
+        types:
+        - String
+        required: false
+      readme_url:
+        types:
+        - String
+        required: false
+      semantic_version:
+        types:
+        - String
+        required: false
+      source_code_url:
+        types:
+        - String
+        required: false
+      spdx_license_id:
+        types:
+        - String
+        required: false
+      template_body:
+        types:
+        - String
+        required: false
+      template_url:
+        types:
+        - String
+        required: false
+  create_application_version:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      semantic_version:
+        types:
+        - String
+        required: true
+      source_code_url:
+        types:
+        - String
+        required: false
+      template_body:
+        types:
+        - String
+        required: false
+      template_url:
+        types:
+        - String
+        required: false
+  create_cloud_formation_change_set:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      capabilities:
+        types:
+        - Array<String>
+        required: false
+      change_set_name:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      notification_arns:
+        types:
+        - Array<String>
+        required: false
+      parameter_overrides:
+        types:
+        - Array<Types::ParameterValue>
+        required: false
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+      rollback_configuration:
+        types:
+        - Types::RollbackConfiguration
+        required: false
+      semantic_version:
+        types:
+        - String
+        required: false
+      stack_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      template_id:
+        types:
+        - String
+        required: false
+  create_cloud_formation_template:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      semantic_version:
+        types:
+        - String
+        required: false
+  delete_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+  get_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      semantic_version:
+        types:
+        - String
+        required: false
+  get_application_policy:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+  get_cloud_formation_template:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+  list_application_dependencies:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      max_items:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      semantic_version:
+        types:
+        - String
+        required: false
+  list_application_versions:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      max_items:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_applications:
+    parameters:
+      max_items:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_application_policy:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      statements:
+        types:
+        - Array<Types::ApplicationPolicyStatement>
+        required: true
+  update_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      author:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      home_page_url:
+        types:
+        - String
+        required: false
+      labels:
+        types:
+        - Array<String>
+        required: false
+      readme_body:
+        types:
+        - String
+        required: false
+      readme_url:
+        types:
+        - String
+        required: false

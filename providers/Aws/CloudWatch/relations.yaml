@@ -1,0 +1,16 @@
+---
+dashboard:
+  create: put_dashboard
+  read: get_dashboard
+  update: 
+  delete: delete_dashboards
+metric_alarm:
+  create: put_metric_alarm
+  read: 
+  update: 
+  delete: 
+metric_data:
+  create: put_metric_data
+  read: get_metric_data
+  update: 
+  delete: 

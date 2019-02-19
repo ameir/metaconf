@@ -1,0 +1,163 @@
+---
+class: Aws::CloudWatchEvents::Client
+methods:
+  delete_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+  describe_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  disable_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  enable_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  list_rule_names_by_target:
+    parameters:
+      target_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_rules:
+    parameters:
+      name_prefix:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_targets_by_rule:
+    parameters:
+      rule:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  put_events:
+    parameters:
+      entries:
+        types:
+        - Array<Types::PutEventsRequestEntry>
+        required: true
+  put_permission:
+    parameters:
+      action:
+        types:
+        - String
+        required: true
+      principal:
+        types:
+        - String
+        required: true
+      statement_id:
+        types:
+        - String
+        required: true
+      condition:
+        types:
+        - Types::Condition
+        required: false
+  put_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      schedule_expression:
+        types:
+        - String
+        required: false
+      event_pattern:
+        types:
+        - String
+        required: false
+      state:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+  put_targets:
+    parameters:
+      rule:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+  remove_permission:
+    parameters:
+      statement_id:
+        types:
+        - String
+        required: true
+  remove_targets:
+    parameters:
+      rule:
+        types:
+        - String
+        required: true
+      ids:
+        types:
+        - Array<String>
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+  test_event_pattern:
+    parameters:
+      event_pattern:
+        types:
+        - String
+        required: true
+      event:
+        types:
+        - String
+        required: true

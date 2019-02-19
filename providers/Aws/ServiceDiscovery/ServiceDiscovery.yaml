@@ -1,0 +1,267 @@
+---
+class: Aws::ServiceDiscovery::Client
+methods:
+  create_http_namespace:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      creator_request_id:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  create_private_dns_namespace:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      creator_request_id:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      vpc:
+        types:
+        - String
+        required: true
+  create_public_dns_namespace:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      creator_request_id:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  create_service:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      namespace_id:
+        types:
+        - String
+        required: false
+      creator_request_id:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dns_config:
+        types:
+        - Types::DnsConfig
+        required: false
+      health_check_config:
+        types:
+        - Types::HealthCheckConfig
+        required: false
+      health_check_custom_config:
+        types:
+        - Types::HealthCheckCustomConfig
+        required: false
+  delete_namespace:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  delete_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  deregister_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  discover_instances:
+    parameters:
+      namespace_name:
+        types:
+        - String
+        required: true
+      service_name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      query_parameters:
+        types:
+        - Hash<String,String>
+        required: false
+      health_status:
+        types:
+        - String
+        required: false
+  get_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  get_instances_health_status:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      instances:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_namespace:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_operation:
+    parameters:
+      operation_id:
+        types:
+        - String
+        required: true
+  get_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  list_instances:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_namespaces:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::NamespaceFilter>
+        required: false
+  list_operations:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::OperationFilter>
+        required: false
+  list_services:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::ServiceFilter>
+        required: false
+  register_instance:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      creator_request_id:
+        types:
+        - String
+        required: false
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+  update_instance_custom_health_status:
+    parameters:
+      service_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      status:
+        types:
+        - String
+        required: true
+  update_service:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      service:
+        types:
+        - Types::ServiceChange
+        required: true

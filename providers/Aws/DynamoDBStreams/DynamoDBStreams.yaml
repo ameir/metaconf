@@ -1,0 +1,59 @@
+---
+class: Aws::DynamoDBStreams::Client
+methods:
+  describe_stream:
+    parameters:
+      stream_arn:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      exclusive_start_shard_id:
+        types:
+        - String
+        required: false
+  get_records:
+    parameters:
+      shard_iterator:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+  get_shard_iterator:
+    parameters:
+      stream_arn:
+        types:
+        - String
+        required: true
+      shard_id:
+        types:
+        - String
+        required: true
+      shard_iterator_type:
+        types:
+        - String
+        required: true
+      sequence_number:
+        types:
+        - String
+        required: false
+  list_streams:
+    parameters:
+      table_name:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      exclusive_start_stream_arn:
+        types:
+        - String
+        required: false

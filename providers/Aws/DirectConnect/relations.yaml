@@ -1,0 +1,41 @@
+---
+bgp_peer:
+  create: create_bgp_peer
+  read: 
+  update: 
+  delete: delete_bgp_peer
+connection:
+  create: create_connection
+  read: describe_connections
+  update: 
+  delete: delete_connection
+direct_connect_gateway:
+  create: create_direct_connect_gateway
+  read: describe_direct_connect_gateways
+  update: 
+  delete: delete_direct_connect_gateway
+direct_connect_gateway_association:
+  create: create_direct_connect_gateway_association
+  read: describe_direct_connect_gateway_associations
+  update: 
+  delete: delete_direct_connect_gateway_association
+interconnect:
+  create: create_interconnect
+  read: describe_interconnects
+  update: 
+  delete: delete_interconnect
+lag:
+  create: create_lag
+  read: describe_lags
+  update: 
+  delete: delete_lag
+private_virtual_interface:
+  create: create_private_virtual_interface
+  read: 
+  update: 
+  delete: 
+public_virtual_interface:
+  create: create_public_virtual_interface
+  read: 
+  update: 
+  delete: 

@@ -1,0 +1,6 @@
+---
+vocabulary:
+  create: create_vocabulary
+  read: get_vocabulary
+  update: 
+  delete: delete_vocabulary

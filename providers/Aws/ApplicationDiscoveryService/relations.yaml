@@ -1,0 +1,11 @@
+---
+application:
+  create: create_application
+  read: 
+  update: 
+  delete: delete_applications
+tags:
+  create: create_tags
+  read: describe_tags
+  update: 
+  delete: delete_tags

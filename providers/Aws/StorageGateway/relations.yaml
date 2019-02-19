@@ -1,0 +1,41 @@
+---
+cached_iscsi_volume:
+  create: create_cached_iscsi_volume
+  read: describe_cached_iscsi_volumes
+  update: 
+  delete: 
+nfs_file_share:
+  create: create_nfs_file_share
+  read: describe_nfs_file_shares
+  update: 
+  delete: 
+smb_file_share:
+  create: create_smb_file_share
+  read: describe_smb_file_shares
+  update: 
+  delete: 
+snapshot:
+  create: create_snapshot
+  read: 
+  update: 
+  delete: 
+snapshot_from_volume_recovery_point:
+  create: create_snapshot_from_volume_recovery_point
+  read: 
+  update: 
+  delete: 
+stored_iscsi_volume:
+  create: create_stored_iscsi_volume
+  read: describe_stored_iscsi_volumes
+  update: 
+  delete: 
+tape_with_barcode:
+  create: create_tape_with_barcode
+  read: 
+  update: 
+  delete: 
+tapes:
+  create: create_tapes
+  read: describe_tapes
+  update: 
+  delete: 

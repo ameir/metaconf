@@ -1,0 +1,11 @@
+---
+resource_attributes:
+  create: put_resource_attributes
+  read: 
+  update: 
+  delete: 
+progress_update_stream:
+  create: create_progress_update_stream
+  read: 
+  update: 
+  delete: delete_progress_update_stream

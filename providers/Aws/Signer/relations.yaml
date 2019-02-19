@@ -1,0 +1,6 @@
+---
+signing_profile:
+  create: put_signing_profile
+  read: get_signing_profile
+  update: 
+  delete: 

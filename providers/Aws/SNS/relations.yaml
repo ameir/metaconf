@@ -1,0 +1,16 @@
+---
+platform_application:
+  create: create_platform_application
+  read: 
+  update: 
+  delete: delete_platform_application
+platform_endpoint:
+  create: create_platform_endpoint
+  read: 
+  update: 
+  delete: 
+topic:
+  create: create_topic
+  read: 
+  update: 
+  delete: delete_topic

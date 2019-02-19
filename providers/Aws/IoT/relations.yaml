@@ -1,0 +1,86 @@
+---
+authorizer:
+  create: create_authorizer
+  read: describe_authorizer
+  update: 
+  delete: delete_authorizer
+billing_group:
+  create: create_billing_group
+  read: describe_billing_group
+  update: 
+  delete: delete_billing_group
+certificate_from_csr:
+  create: create_certificate_from_csr
+  read: 
+  update: 
+  delete: 
+dynamic_thing_group:
+  create: create_dynamic_thing_group
+  read: 
+  update: 
+  delete: delete_dynamic_thing_group
+job:
+  create: create_job
+  read: describe_job
+  update: 
+  delete: delete_job
+keys_and_certificate:
+  create: create_keys_and_certificate
+  read: 
+  update: 
+  delete: 
+ota_update:
+  create: create_ota_update
+  read: get_ota_update
+  update: 
+  delete: delete_ota_update
+policy:
+  create: create_policy
+  read: get_policy
+  update: 
+  delete: delete_policy
+policy_version:
+  create: create_policy_version
+  read: get_policy_version
+  update: 
+  delete: delete_policy_version
+role_alias:
+  create: create_role_alias
+  read: describe_role_alias
+  update: 
+  delete: delete_role_alias
+scheduled_audit:
+  create: create_scheduled_audit
+  read: describe_scheduled_audit
+  update: 
+  delete: delete_scheduled_audit
+security_profile:
+  create: create_security_profile
+  read: describe_security_profile
+  update: 
+  delete: delete_security_profile
+stream:
+  create: create_stream
+  read: describe_stream
+  update: 
+  delete: delete_stream
+thing:
+  create: create_thing
+  read: describe_thing
+  update: 
+  delete: delete_thing
+thing_group:
+  create: create_thing_group
+  read: describe_thing_group
+  update: 
+  delete: delete_thing_group
+thing_type:
+  create: create_thing_type
+  read: describe_thing_type
+  update: 
+  delete: delete_thing_type
+topic_rule:
+  create: create_topic_rule
+  read: get_topic_rule
+  update: 
+  delete: delete_topic_rule

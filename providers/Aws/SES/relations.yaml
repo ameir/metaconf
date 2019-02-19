@@ -1,0 +1,46 @@
+---
+identity_policy:
+  create: put_identity_policy
+  read: 
+  update: 
+  delete: delete_identity_policy
+configuration_set:
+  create: create_configuration_set
+  read: describe_configuration_set
+  update: 
+  delete: delete_configuration_set
+configuration_set_event_destination:
+  create: create_configuration_set_event_destination
+  read: 
+  update: 
+  delete: delete_configuration_set_event_destination
+configuration_set_tracking_options:
+  create: create_configuration_set_tracking_options
+  read: 
+  update: 
+  delete: delete_configuration_set_tracking_options
+custom_verification_email_template:
+  create: create_custom_verification_email_template
+  read: get_custom_verification_email_template
+  update: 
+  delete: delete_custom_verification_email_template
+receipt_filter:
+  create: create_receipt_filter
+  read: 
+  update: 
+  delete: delete_receipt_filter
+receipt_rule:
+  create: create_receipt_rule
+  read: describe_receipt_rule
+  update: 
+  delete: delete_receipt_rule
+receipt_rule_set:
+  create: create_receipt_rule_set
+  read: describe_receipt_rule_set
+  update: 
+  delete: delete_receipt_rule_set
+template:
+  create: create_template
+  read: get_template
+  update: 
+  delete: delete_template

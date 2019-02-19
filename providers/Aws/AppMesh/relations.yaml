@@ -1,0 +1,21 @@
+---
+mesh:
+  create: create_mesh
+  read: describe_mesh
+  update: 
+  delete: delete_mesh
+route:
+  create: create_route
+  read: describe_route
+  update: 
+  delete: delete_route
+virtual_node:
+  create: create_virtual_node
+  read: describe_virtual_node
+  update: 
+  delete: delete_virtual_node
+virtual_router:
+  create: create_virtual_router
+  read: describe_virtual_router
+  update: 
+  delete: delete_virtual_router

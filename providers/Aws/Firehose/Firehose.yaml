@@ -1,0 +1,175 @@
+---
+class: Aws::Firehose::Client
+methods:
+  create_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      delivery_stream_type:
+        types:
+        - String
+        required: false
+      kinesis_stream_source_configuration:
+        types:
+        - Types::KinesisStreamSourceConfiguration
+        required: false
+      s3_destination_configuration:
+        types:
+        - Types::S3DestinationConfiguration
+        required: false
+      extended_s3_destination_configuration:
+        types:
+        - Types::ExtendedS3DestinationConfiguration
+        required: false
+      redshift_destination_configuration:
+        types:
+        - Types::RedshiftDestinationConfiguration
+        required: false
+      elasticsearch_destination_configuration:
+        types:
+        - Types::ElasticsearchDestinationConfiguration
+        required: false
+      splunk_destination_configuration:
+        types:
+        - Types::SplunkDestinationConfiguration
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+  describe_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      exclusive_start_destination_id:
+        types:
+        - String
+        required: false
+  list_delivery_streams:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      delivery_stream_type:
+        types:
+        - String
+        required: false
+      exclusive_start_delivery_stream_name:
+        types:
+        - String
+        required: false
+  list_tags_for_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      exclusive_start_tag_key:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  put_record:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      record:
+        types:
+        - Types::Record
+        required: true
+  put_record_batch:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      records:
+        types:
+        - Array<Types::Record>
+        required: true
+  start_delivery_stream_encryption:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+  stop_delivery_stream_encryption:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+  tag_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_delivery_stream:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_destination:
+    parameters:
+      delivery_stream_name:
+        types:
+        - String
+        required: true
+      current_delivery_stream_version_id:
+        types:
+        - String
+        required: true
+      destination_id:
+        types:
+        - String
+        required: true
+      s3_destination_update:
+        types:
+        - Types::S3DestinationUpdate
+        required: false
+      extended_s3_destination_update:
+        types:
+        - Types::ExtendedS3DestinationUpdate
+        required: false
+      redshift_destination_update:
+        types:
+        - Types::RedshiftDestinationUpdate
+        required: false
+      elasticsearch_destination_update:
+        types:
+        - Types::ElasticsearchDestinationUpdate
+        required: false
+      splunk_destination_update:
+        types:
+        - Types::SplunkDestinationUpdate
+        required: false

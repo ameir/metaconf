@@ -1,0 +1,6 @@
+---
+license_configuration:
+  create: create_license_configuration
+  read: get_license_configuration
+  update: 
+  delete: delete_license_configuration

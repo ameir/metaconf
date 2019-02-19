@@ -1,0 +1,6196 @@
+---
+class: Aws::EC2::Client
+methods:
+  accept_reserved_instances_exchange_quote:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      reserved_instance_ids:
+        types:
+        - Array<String>
+        required: true
+      target_configurations:
+        types:
+        - Array<Types::TargetConfigurationRequest>
+        required: false
+  accept_transit_gateway_vpc_attachment:
+    parameters:
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  accept_vpc_endpoint_connections:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: true
+      vpc_endpoint_ids:
+        types:
+        - Array<String>
+        required: true
+  accept_vpc_peering_connection:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: false
+  advertise_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  allocate_address:
+    parameters:
+      domain:
+        types:
+        - String
+        required: false
+      address:
+        types:
+        - String
+        required: false
+      public_ipv_4_pool:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  allocate_hosts:
+    parameters:
+      auto_placement:
+        types:
+        - String
+        required: false
+      availability_zone:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      instance_type:
+        types:
+        - String
+        required: true
+      quantity:
+        types:
+        - Integer
+        required: true
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+  apply_security_groups_to_client_vpn_target_network:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+      security_group_ids:
+        types:
+        - Array<String>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  assign_ipv_6_addresses:
+    parameters:
+      ipv_6_address_count:
+        types:
+        - Integer
+        required: false
+      ipv_6_addresses:
+        types:
+        - Array<String>
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+  assign_private_ip_addresses:
+    parameters:
+      allow_reassignment:
+        types:
+        - Boolean
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+      private_ip_addresses:
+        types:
+        - Array<String>
+        required: false
+      secondary_private_ip_address_count:
+        types:
+        - Integer
+        required: false
+  associate_address:
+    parameters:
+      allocation_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      public_ip:
+        types:
+        - String
+        required: false
+      allow_reassociation:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: false
+      private_ip_address:
+        types:
+        - String
+        required: false
+  associate_client_vpn_target_network:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      subnet_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  associate_dhcp_options:
+    parameters:
+      dhcp_options_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  associate_iam_instance_profile:
+    parameters:
+      iam_instance_profile:
+        types:
+        - Types::IamInstanceProfileSpecification
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  associate_route_table:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+      subnet_id:
+        types:
+        - String
+        required: true
+  associate_subnet_cidr_block:
+    parameters:
+      ipv_6_cidr_block:
+        types:
+        - String
+        required: true
+      subnet_id:
+        types:
+        - String
+        required: true
+  associate_transit_gateway_route_table:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  associate_vpc_cidr_block:
+    parameters:
+      amazon_provided_ipv_6_cidr_block:
+        types:
+        - Boolean
+        required: false
+      cidr_block:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  attach_classic_link_vpc:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      groups:
+        types:
+        - Array<String>
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+  attach_internet_gateway:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      internet_gateway_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+  attach_network_interface:
+    parameters:
+      device_index:
+        types:
+        - Integer
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      network_interface_id:
+        types:
+        - String
+        required: true
+  attach_volume:
+    parameters:
+      device:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      volume_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  attach_vpn_gateway:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: true
+      vpn_gateway_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  authorize_client_vpn_ingress:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      target_network_cidr:
+        types:
+        - String
+        required: true
+      access_group_id:
+        types:
+        - String
+        required: false
+      authorize_all_groups:
+        types:
+        - Boolean
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  authorize_security_group_egress:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: false
+      cidr_ip:
+        types:
+        - String
+        required: false
+      from_port:
+        types:
+        - Integer
+        required: false
+      ip_protocol:
+        types:
+        - String
+        required: false
+      to_port:
+        types:
+        - Integer
+        required: false
+      source_security_group_name:
+        types:
+        - String
+        required: false
+      source_security_group_owner_id:
+        types:
+        - String
+        required: false
+  authorize_security_group_ingress:
+    parameters:
+      cidr_ip:
+        types:
+        - String
+        required: false
+      from_port:
+        types:
+        - Integer
+        required: false
+      group_id:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: false
+      ip_protocol:
+        types:
+        - String
+        required: false
+      source_security_group_name:
+        types:
+        - String
+        required: false
+      source_security_group_owner_id:
+        types:
+        - String
+        required: false
+      to_port:
+        types:
+        - Integer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  bundle_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      storage:
+        types:
+        - Types::Storage
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  cancel_bundle_task:
+    parameters:
+      bundle_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  cancel_capacity_reservation:
+    parameters:
+      capacity_reservation_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  cancel_conversion_task:
+    parameters:
+      conversion_task_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      reason_message:
+        types:
+        - String
+        required: false
+  cancel_export_task:
+    parameters:
+      export_task_id:
+        types:
+        - String
+        required: true
+  cancel_import_task:
+    parameters:
+      cancel_reason:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      import_task_id:
+        types:
+        - String
+        required: false
+  cancel_reserved_instances_listing:
+    parameters:
+      reserved_instances_listing_id:
+        types:
+        - String
+        required: true
+  cancel_spot_fleet_requests:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      spot_fleet_request_ids:
+        types:
+        - Array<String>
+        required: true
+      terminate_instances:
+        types:
+        - Boolean
+        required: true
+  cancel_spot_instance_requests:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      spot_instance_request_ids:
+        types:
+        - Array<String>
+        required: true
+  confirm_product_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      product_code:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  copy_fpga_image:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      source_fpga_image_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      source_region:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  copy_image:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      source_image_id:
+        types:
+        - String
+        required: true
+      source_region:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  copy_snapshot:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      destination_region:
+        types:
+        - String
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      presigned_url:
+        types:
+        - String
+        required: false
+      source_region:
+        types:
+        - String
+        required: true
+      source_snapshot_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_capacity_reservation:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      instance_type:
+        types:
+        - String
+        required: true
+      instance_platform:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: true
+      tenancy:
+        types:
+        - String
+        required: false
+      instance_count:
+        types:
+        - Integer
+        required: true
+      ebs_optimized:
+        types:
+        - Boolean
+        required: false
+      ephemeral_storage:
+        types:
+        - Boolean
+        required: false
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_date_type:
+        types:
+        - String
+        required: false
+      instance_match_criteria:
+        types:
+        - String
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_client_vpn_endpoint:
+    parameters:
+      client_cidr_block:
+        types:
+        - String
+        required: true
+      server_certificate_arn:
+        types:
+        - String
+        required: true
+      authentication_options:
+        types:
+        - Array<Types::ClientVpnAuthenticationRequest>
+        required: true
+      connection_log_options:
+        types:
+        - Types::ConnectionLogOptions
+        required: true
+      dns_servers:
+        types:
+        - Array<String>
+        required: false
+      transport_protocol:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+  create_client_vpn_route:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      target_vpc_subnet_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_customer_gateway:
+    parameters:
+      bgp_asn:
+        types:
+        - Integer
+        required: true
+      public_ip:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_default_subnet:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_default_vpc:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_dhcp_options:
+    parameters:
+      dhcp_configurations:
+        types:
+        - Array<Types::NewDhcpConfiguration>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_egress_only_internet_gateway:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  create_fleet:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      spot_options:
+        types:
+        - Types::SpotOptionsRequest
+        required: false
+      on_demand_options:
+        types:
+        - Types::OnDemandOptionsRequest
+        required: false
+      excess_capacity_termination_policy:
+        types:
+        - String
+        required: false
+      launch_template_configs:
+        types:
+        - Array<Types::FleetLaunchTemplateConfigRequest>
+        required: true
+      target_capacity_specification:
+        types:
+        - Types::TargetCapacitySpecificationRequest
+        required: true
+      terminate_instances_with_expiration:
+        types:
+        - Boolean
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      valid_from:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      valid_until:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      replace_unhealthy_instances:
+        types:
+        - Boolean
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+  create_flow_logs:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      deliver_logs_permission_arn:
+        types:
+        - String
+        required: false
+      log_group_name:
+        types:
+        - String
+        required: false
+      resource_ids:
+        types:
+        - Array<String>
+        required: true
+      resource_type:
+        types:
+        - String
+        required: true
+      traffic_type:
+        types:
+        - String
+        required: true
+      log_destination_type:
+        types:
+        - String
+        required: false
+      log_destination:
+        types:
+        - String
+        required: false
+  create_fpga_image:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      input_storage_location:
+        types:
+        - Types::StorageLocation
+        required: true
+      logs_storage_location:
+        types:
+        - Types::StorageLocation
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  create_image:
+    parameters:
+      block_device_mappings:
+        types:
+        - Array<Types::BlockDeviceMapping>
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      no_reboot:
+        types:
+        - Boolean
+        required: false
+  create_instance_export_task:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      export_to_s3_task:
+        types:
+        - Types::ExportToS3TaskSpecification
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      target_environment:
+        types:
+        - String
+        required: false
+  create_internet_gateway:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_key_pair:
+    parameters:
+      key_name:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_launch_template:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: true
+      version_description:
+        types:
+        - String
+        required: false
+      launch_template_data:
+        types:
+        - Types::RequestLaunchTemplateData
+        required: true
+  create_launch_template_version:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      launch_template_id:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: false
+      source_version:
+        types:
+        - String
+        required: false
+      version_description:
+        types:
+        - String
+        required: false
+      launch_template_data:
+        types:
+        - Types::RequestLaunchTemplateData
+        required: true
+  create_nat_gateway:
+    parameters:
+      allocation_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      subnet_id:
+        types:
+        - String
+        required: true
+  create_network_acl:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  create_network_acl_entry:
+    parameters:
+      cidr_block:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress:
+        types:
+        - Boolean
+        required: true
+      icmp_type_code:
+        types:
+        - Types::IcmpTypeCode
+        required: false
+      ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      network_acl_id:
+        types:
+        - String
+        required: true
+      port_range:
+        types:
+        - Types::PortRange
+        required: false
+      protocol:
+        types:
+        - String
+        required: true
+      rule_action:
+        types:
+        - String
+        required: true
+      rule_number:
+        types:
+        - Integer
+        required: true
+  create_network_interface:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      groups:
+        types:
+        - Array<String>
+        required: false
+      ipv_6_address_count:
+        types:
+        - Integer
+        required: false
+      ipv_6_addresses:
+        types:
+        - Array<Types::InstanceIpv6Address>
+        required: false
+      private_ip_address:
+        types:
+        - String
+        required: false
+      private_ip_addresses:
+        types:
+        - Array<Types::PrivateIpAddressSpecification>
+        required: false
+      secondary_private_ip_address_count:
+        types:
+        - Integer
+        required: false
+      subnet_id:
+        types:
+        - String
+        required: true
+  create_network_interface_permission:
+    parameters:
+      network_interface_id:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: false
+      aws_service:
+        types:
+        - String
+        required: false
+      permission:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_placement_group:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      strategy:
+        types:
+        - String
+        required: false
+      partition_count:
+        types:
+        - Integer
+        required: false
+  create_reserved_instances_listing:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: true
+      instance_count:
+        types:
+        - Integer
+        required: true
+      price_schedules:
+        types:
+        - Array<Types::PriceScheduleSpecification>
+        required: true
+      reserved_instances_id:
+        types:
+        - String
+        required: true
+  create_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: false
+      destination_ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress_only_internet_gateway_id:
+        types:
+        - String
+        required: false
+      gateway_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      nat_gateway_id:
+        types:
+        - String
+        required: false
+      transit_gateway_id:
+        types:
+        - String
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: false
+  create_route_table:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  create_security_group:
+    parameters:
+      description:
+        types:
+        - String
+        required: true
+      group_name:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_snapshot:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      volume_id:
+        types:
+        - String
+        required: true
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_spot_datafeed_subscription:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      prefix:
+        types:
+        - String
+        required: false
+  create_subnet:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: false
+      availability_zone_id:
+        types:
+        - String
+        required: false
+      cidr_block:
+        types:
+        - String
+        required: true
+      ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_tags:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      resources:
+        types:
+        - Array<String>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  create_transit_gateway:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      options:
+        types:
+        - Types::TransitGatewayRequestOptions
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_transit_gateway_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: false
+      blackhole:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_transit_gateway_route_table:
+    parameters:
+      transit_gateway_id:
+        types:
+        - String
+        required: true
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_transit_gateway_vpc_attachment:
+    parameters:
+      transit_gateway_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+      options:
+        types:
+        - Types::CreateTransitGatewayVpcAttachmentRequestOptions
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  create_volume:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: true
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      iops:
+        types:
+        - Integer
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      size:
+        types:
+        - Integer
+        required: false
+      snapshot_id:
+        types:
+        - String
+        required: false
+      volume_type:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+  create_vpc:
+    parameters:
+      cidr_block:
+        types:
+        - String
+        required: true
+      amazon_provided_ipv_6_cidr_block:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_tenancy:
+        types:
+        - String
+        required: false
+  create_vpc_endpoint:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_endpoint_type:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+      service_name:
+        types:
+        - String
+        required: true
+      policy_document:
+        types:
+        - String
+        required: false
+      route_table_ids:
+        types:
+        - Array<String>
+        required: false
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      private_dns_enabled:
+        types:
+        - Boolean
+        required: false
+  create_vpc_endpoint_connection_notification:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: false
+      vpc_endpoint_id:
+        types:
+        - String
+        required: false
+      connection_notification_arn:
+        types:
+        - String
+        required: true
+      connection_events:
+        types:
+        - Array<String>
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  create_vpc_endpoint_service_configuration:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      acceptance_required:
+        types:
+        - Boolean
+        required: false
+      network_load_balancer_arns:
+        types:
+        - Array<String>
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  create_vpc_peering_connection:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      peer_owner_id:
+        types:
+        - String
+        required: false
+      peer_vpc_id:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: false
+      peer_region:
+        types:
+        - String
+        required: false
+  create_vpn_connection:
+    parameters:
+      customer_gateway_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      vpn_gateway_id:
+        types:
+        - String
+        required: false
+      transit_gateway_id:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      options:
+        types:
+        - Types::VpnConnectionOptionsSpecification
+        required: false
+  create_vpn_connection_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      vpn_connection_id:
+        types:
+        - String
+        required: true
+  create_vpn_gateway:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: true
+      amazon_side_asn:
+        types:
+        - Integer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_client_vpn_endpoint:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_client_vpn_route:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      target_vpc_subnet_id:
+        types:
+        - String
+        required: false
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_customer_gateway:
+    parameters:
+      customer_gateway_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_dhcp_options:
+    parameters:
+      dhcp_options_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_egress_only_internet_gateway:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress_only_internet_gateway_id:
+        types:
+        - String
+        required: true
+  delete_fleets:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fleet_ids:
+        types:
+        - Array<String>
+        required: true
+      terminate_instances:
+        types:
+        - Boolean
+        required: true
+  delete_flow_logs:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      flow_log_ids:
+        types:
+        - Array<String>
+        required: true
+  delete_fpga_image:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fpga_image_id:
+        types:
+        - String
+        required: true
+  delete_internet_gateway:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      internet_gateway_id:
+        types:
+        - String
+        required: true
+  delete_key_pair:
+    parameters:
+      key_name:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_launch_template:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      launch_template_id:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: false
+  delete_launch_template_versions:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      launch_template_id:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: false
+      versions:
+        types:
+        - Array<String>
+        required: true
+  delete_nat_gateway:
+    parameters:
+      nat_gateway_id:
+        types:
+        - String
+        required: true
+  delete_network_acl:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_acl_id:
+        types:
+        - String
+        required: true
+  delete_network_acl_entry:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress:
+        types:
+        - Boolean
+        required: true
+      network_acl_id:
+        types:
+        - String
+        required: true
+      rule_number:
+        types:
+        - Integer
+        required: true
+  delete_network_interface:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+  delete_network_interface_permission:
+    parameters:
+      network_interface_permission_id:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_placement_group:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_name:
+        types:
+        - String
+        required: true
+  delete_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: false
+      destination_ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+  delete_route_table:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+  delete_security_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_snapshot:
+    parameters:
+      snapshot_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_spot_datafeed_subscription:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_subnet:
+    parameters:
+      subnet_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_tags:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      resources:
+        types:
+        - Array<String>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_transit_gateway:
+    parameters:
+      transit_gateway_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_transit_gateway_route:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_transit_gateway_route_table:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_transit_gateway_vpc_attachment:
+    parameters:
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_volume:
+    parameters:
+      volume_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_vpc:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_vpc_endpoint_connection_notifications:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      connection_notification_ids:
+        types:
+        - Array<String>
+        required: true
+  delete_vpc_endpoint_service_configurations:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_ids:
+        types:
+        - Array<String>
+        required: true
+  delete_vpc_endpoints:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_endpoint_ids:
+        types:
+        - Array<String>
+        required: true
+  delete_vpc_peering_connection:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: true
+  delete_vpn_connection:
+    parameters:
+      vpn_connection_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  delete_vpn_connection_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      vpn_connection_id:
+        types:
+        - String
+        required: true
+  delete_vpn_gateway:
+    parameters:
+      vpn_gateway_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  deprovision_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  deregister_image:
+    parameters:
+      image_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_account_attributes:
+    parameters:
+      attribute_names:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_addresses:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      public_ips:
+        types:
+        - Array<String>
+        required: false
+      allocation_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_aggregate_id_format:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_availability_zones:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      zone_names:
+        types:
+        - Array<String>
+        required: false
+      zone_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_bundle_tasks:
+    parameters:
+      bundle_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_byoip_cidrs:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  describe_capacity_reservations:
+    parameters:
+      capacity_reservation_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_classic_link_instances:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_client_vpn_authorization_rules:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_client_vpn_connections:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_client_vpn_endpoints:
+    parameters:
+      client_vpn_endpoint_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_client_vpn_routes:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_client_vpn_target_networks:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      association_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_conversion_tasks:
+    parameters:
+      conversion_task_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_customer_gateways:
+    parameters:
+      customer_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_dhcp_options:
+    parameters:
+      dhcp_options_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_egress_only_internet_gateways:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress_only_internet_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_elastic_gpus:
+    parameters:
+      elastic_gpu_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_export_tasks:
+    parameters:
+      export_task_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_fleet_history:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      event_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      fleet_id:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  describe_fleet_instances:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      fleet_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  describe_fleets:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      fleet_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  describe_flow_logs:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filter:
+        types:
+        - Array<Types::Filter>
+        required: false
+      flow_log_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_fpga_image_attribute:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fpga_image_id:
+        types:
+        - String
+        required: true
+      attribute:
+        types:
+        - String
+        required: true
+  describe_fpga_images:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fpga_image_ids:
+        types:
+        - Array<String>
+        required: false
+      owners:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_host_reservation_offerings:
+    parameters:
+      filter:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_duration:
+        types:
+        - Integer
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      min_duration:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      offering_id:
+        types:
+        - String
+        required: false
+  describe_host_reservations:
+    parameters:
+      filter:
+        types:
+        - Array<Types::Filter>
+        required: false
+      host_reservation_id_set:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_hosts:
+    parameters:
+      filter:
+        types:
+        - Array<Types::Filter>
+        required: false
+      host_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_iam_instance_profile_associations:
+    parameters:
+      association_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_id_format:
+    parameters:
+      resource:
+        types:
+        - String
+        required: false
+  describe_identity_id_format:
+    parameters:
+      principal_arn:
+        types:
+        - String
+        required: true
+      resource:
+        types:
+        - String
+        required: false
+  describe_image_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      image_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_images:
+    parameters:
+      executable_users:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      image_ids:
+        types:
+        - Array<String>
+        required: false
+      owners:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_import_image_tasks:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      import_task_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_import_snapshot_tasks:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      import_task_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_instance_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+  describe_instance_credit_specifications:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_instance_status:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      include_all_instances:
+        types:
+        - Boolean
+        required: false
+  describe_instances:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_internet_gateways:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      internet_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_key_pairs:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      key_names:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_launch_template_versions:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      launch_template_id:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: false
+      versions:
+        types:
+        - Array<String>
+        required: false
+      min_version:
+        types:
+        - String
+        required: false
+      max_version:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  describe_launch_templates:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      launch_template_ids:
+        types:
+        - Array<String>
+        required: false
+      launch_template_names:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_moving_addresses:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      public_ips:
+        types:
+        - Array<String>
+        required: false
+  describe_nat_gateways:
+    parameters:
+      filter:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      nat_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_network_acls:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_acl_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_network_interface_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+  describe_network_interface_permissions:
+    parameters:
+      network_interface_permission_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_network_interfaces:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_interface_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_placement_groups:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_names:
+        types:
+        - Array<String>
+        required: false
+  describe_prefix_lists:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      prefix_list_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_principal_id_format:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      resources:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_public_ipv_4_pools:
+    parameters:
+      pool_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_regions:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      region_names:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_reserved_instances:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      offering_class:
+        types:
+        - String
+        required: false
+      reserved_instances_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      offering_type:
+        types:
+        - String
+        required: false
+  describe_reserved_instances_listings:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      reserved_instances_id:
+        types:
+        - String
+        required: false
+      reserved_instances_listing_id:
+        types:
+        - String
+        required: false
+  describe_reserved_instances_modifications:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      reserved_instances_modification_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_reserved_instances_offerings:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      include_marketplace:
+        types:
+        - Boolean
+        required: false
+      instance_type:
+        types:
+        - String
+        required: false
+      max_duration:
+        types:
+        - Integer
+        required: false
+      max_instance_count:
+        types:
+        - Integer
+        required: false
+      min_duration:
+        types:
+        - Integer
+        required: false
+      offering_class:
+        types:
+        - String
+        required: false
+      product_description:
+        types:
+        - String
+        required: false
+      reserved_instances_offering_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_tenancy:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      offering_type:
+        types:
+        - String
+        required: false
+  describe_route_tables:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      route_table_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_scheduled_instance_availability:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      first_slot_start_time_range:
+        types:
+        - Types::SlotDateTimeRangeRequest
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      max_slot_duration_in_hours:
+        types:
+        - Integer
+        required: false
+      min_slot_duration_in_hours:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      recurrence:
+        types:
+        - Types::ScheduledInstanceRecurrenceRequest
+        required: true
+  describe_scheduled_instances:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      scheduled_instance_ids:
+        types:
+        - Array<String>
+        required: false
+      slot_start_time_range:
+        types:
+        - Types::SlotStartTimeRangeRequest
+        required: false
+  describe_security_group_references:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - Array<String>
+        required: true
+  describe_security_groups:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      group_ids:
+        types:
+        - Array<String>
+        required: false
+      group_names:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_snapshot_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      snapshot_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_snapshots:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      owner_ids:
+        types:
+        - Array<String>
+        required: false
+      restorable_by_user_ids:
+        types:
+        - Array<String>
+        required: false
+      snapshot_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_spot_datafeed_subscription:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_spot_fleet_instances:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      spot_fleet_request_id:
+        types:
+        - String
+        required: true
+  describe_spot_fleet_request_history:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      event_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      spot_fleet_request_id:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  describe_spot_fleet_requests:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      spot_fleet_request_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_spot_instance_requests:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      spot_instance_request_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_spot_price_history:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      availability_zone:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      instance_types:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      product_descriptions:
+        types:
+        - Array<String>
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  describe_stale_security_groups:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  describe_subnets:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_tags:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_transit_gateway_attachments:
+    parameters:
+      transit_gateway_attachment_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_transit_gateway_route_tables:
+    parameters:
+      transit_gateway_route_table_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_transit_gateway_vpc_attachments:
+    parameters:
+      transit_gateway_attachment_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_transit_gateways:
+    parameters:
+      transit_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_volume_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      volume_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_volume_status:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      volume_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_volumes:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      volume_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_volumes_modifications:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      volume_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_vpc_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_vpc_classic_link:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_vpc_classic_link_dns_support:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      vpc_ids:
+        types:
+        - Array<String>
+        required: false
+  describe_vpc_endpoint_connection_notifications:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      connection_notification_id:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_endpoint_connections:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_endpoint_service_configurations:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_endpoint_service_permissions:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_endpoint_services:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_names:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_endpoints:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_endpoint_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_vpc_peering_connections:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_peering_connection_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_vpcs:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      vpc_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_vpn_connections:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      vpn_connection_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_vpn_gateways:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      vpn_gateway_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  detach_classic_link_vpc:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+  detach_internet_gateway:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      internet_gateway_id:
+        types:
+        - String
+        required: true
+      vpc_id:
+        types:
+        - String
+        required: true
+  detach_network_interface:
+    parameters:
+      attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
+  detach_volume:
+    parameters:
+      device:
+        types:
+        - String
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      volume_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  detach_vpn_gateway:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: true
+      vpn_gateway_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disable_transit_gateway_route_table_propagation:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disable_vgw_route_propagation:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+      route_table_id:
+        types:
+        - String
+        required: true
+  disable_vpc_classic_link:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  disable_vpc_classic_link_dns_support:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: false
+  disassociate_address:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: false
+      public_ip:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disassociate_client_vpn_target_network:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      association_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disassociate_iam_instance_profile:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+  disassociate_route_table:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disassociate_subnet_cidr_block:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+  disassociate_transit_gateway_route_table:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  disassociate_vpc_cidr_block:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+  enable_transit_gateway_route_table_propagation:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  enable_vgw_route_propagation:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+      route_table_id:
+        types:
+        - String
+        required: true
+  enable_volume_io:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      volume_id:
+        types:
+        - String
+        required: true
+  enable_vpc_classic_link:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  enable_vpc_classic_link_dns_support:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: false
+  export_client_vpn_client_certificate_revocation_list:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  export_client_vpn_client_configuration:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  export_transit_gateway_routes:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      s3_bucket:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  get_console_output:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      latest:
+        types:
+        - Boolean
+        required: false
+  get_console_screenshot:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      wake_up:
+        types:
+        - Boolean
+        required: false
+  get_host_reservation_purchase_preview:
+    parameters:
+      host_id_set:
+        types:
+        - Array<String>
+        required: true
+      offering_id:
+        types:
+        - String
+        required: true
+  get_launch_template_data:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+  get_password_data:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  get_reserved_instances_exchange_quote:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      reserved_instance_ids:
+        types:
+        - Array<String>
+        required: true
+      target_configurations:
+        types:
+        - Array<Types::TargetConfigurationRequest>
+        required: false
+  get_transit_gateway_attachment_propagations:
+    parameters:
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  get_transit_gateway_route_table_associations:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  get_transit_gateway_route_table_propagations:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  import_client_vpn_client_certificate_revocation_list:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      certificate_revocation_list:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  import_image:
+    parameters:
+      architecture:
+        types:
+        - String
+        required: false
+      client_data:
+        types:
+        - Types::ClientData
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      disk_containers:
+        types:
+        - Array<Types::ImageDiskContainer>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      hypervisor:
+        types:
+        - String
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      license_type:
+        types:
+        - String
+        required: false
+      platform:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+  import_instance:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      disk_images:
+        types:
+        - Array<Types::DiskImage>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      launch_specification:
+        types:
+        - Types::ImportInstanceLaunchSpecification
+        required: false
+      platform:
+        types:
+        - String
+        required: true
+  import_key_pair:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      key_name:
+        types:
+        - String
+        required: true
+      public_key_material:
+        types:
+        - String
+        - IO
+        required: true
+  import_snapshot:
+    parameters:
+      client_data:
+        types:
+        - Types::ClientData
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      disk_container:
+        types:
+        - Types::SnapshotDiskContainer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      role_name:
+        types:
+        - String
+        required: false
+  import_volume:
+    parameters:
+      availability_zone:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      image:
+        types:
+        - Types::DiskImageDetail
+        required: true
+      volume:
+        types:
+        - Types::VolumeDetail
+        required: true
+  modify_capacity_reservation:
+    parameters:
+      capacity_reservation_id:
+        types:
+        - String
+        required: true
+      instance_count:
+        types:
+        - Integer
+        required: false
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_date_type:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_client_vpn_endpoint:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      server_certificate_arn:
+        types:
+        - String
+        required: false
+      connection_log_options:
+        types:
+        - Types::ConnectionLogOptions
+        required: false
+      dns_servers:
+        types:
+        - Types::DnsServersOptionsModifyStructure
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_fleet:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      excess_capacity_termination_policy:
+        types:
+        - String
+        required: false
+      fleet_id:
+        types:
+        - String
+        required: true
+      target_capacity_specification:
+        types:
+        - Types::TargetCapacitySpecificationRequest
+        required: true
+  modify_fpga_image_attribute:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fpga_image_id:
+        types:
+        - String
+        required: true
+      attribute:
+        types:
+        - String
+        required: false
+      operation_type:
+        types:
+        - String
+        required: false
+      user_ids:
+        types:
+        - Array<String>
+        required: false
+      user_groups:
+        types:
+        - Array<String>
+        required: false
+      product_codes:
+        types:
+        - Array<String>
+        required: false
+      load_permission:
+        types:
+        - Types::LoadPermissionModifications
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  modify_hosts:
+    parameters:
+      auto_placement:
+        types:
+        - String
+        required: true
+      host_ids:
+        types:
+        - Array<String>
+        required: true
+  modify_id_format:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      use_long_ids:
+        types:
+        - Boolean
+        required: true
+  modify_identity_id_format:
+    parameters:
+      principal_arn:
+        types:
+        - String
+        required: true
+      resource:
+        types:
+        - String
+        required: true
+      use_long_ids:
+        types:
+        - Boolean
+        required: true
+  modify_image_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - Types::AttributeValue
+        required: false
+      image_id:
+        types:
+        - String
+        required: true
+      launch_permission:
+        types:
+        - Types::LaunchPermissionModifications
+        required: false
+      operation_type:
+        types:
+        - String
+        required: false
+      product_codes:
+        types:
+        - Array<String>
+        required: false
+      user_groups:
+        types:
+        - Array<String>
+        required: false
+      user_ids:
+        types:
+        - Array<String>
+        required: false
+      value:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_instance_attribute:
+    parameters:
+      source_dest_check:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      attribute:
+        types:
+        - String
+        required: false
+      block_device_mappings:
+        types:
+        - Array<Types::InstanceBlockDeviceMappingSpecification>
+        required: false
+      disable_api_termination:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      ebs_optimized:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      ena_support:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      groups:
+        types:
+        - Array<String>
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      instance_initiated_shutdown_behavior:
+        types:
+        - Types::AttributeValue
+        required: false
+      instance_type:
+        types:
+        - Types::AttributeValue
+        required: false
+      kernel:
+        types:
+        - Types::AttributeValue
+        required: false
+      ramdisk:
+        types:
+        - Types::AttributeValue
+        required: false
+      sriov_net_support:
+        types:
+        - Types::AttributeValue
+        required: false
+      user_data:
+        types:
+        - Types::BlobAttributeValue
+        required: false
+      value:
+        types:
+        - String
+        required: false
+  modify_instance_capacity_reservation_attributes:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      capacity_reservation_specification:
+        types:
+        - Types::CapacityReservationSpecification
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_instance_credit_specification:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      instance_credit_specifications:
+        types:
+        - Array<Types::InstanceCreditSpecificationRequest>
+        required: true
+  modify_instance_placement:
+    parameters:
+      affinity:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      host_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+      tenancy:
+        types:
+        - String
+        required: false
+      partition_number:
+        types:
+        - Integer
+        required: false
+  modify_launch_template:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      launch_template_id:
+        types:
+        - String
+        required: false
+      launch_template_name:
+        types:
+        - String
+        required: false
+      default_version:
+        types:
+        - String
+        required: false
+  modify_network_interface_attribute:
+    parameters:
+      attachment:
+        types:
+        - Types::NetworkInterfaceAttachmentChanges
+        required: false
+      description:
+        types:
+        - Types::AttributeValue
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      groups:
+        types:
+        - Array<String>
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+      source_dest_check:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+  modify_reserved_instances:
+    parameters:
+      reserved_instances_ids:
+        types:
+        - Array<String>
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      target_configurations:
+        types:
+        - Array<Types::ReservedInstancesConfiguration>
+        required: true
+  modify_snapshot_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: false
+      create_volume_permission:
+        types:
+        - Types::CreateVolumePermissionModifications
+        required: false
+      group_names:
+        types:
+        - Array<String>
+        required: false
+      operation_type:
+        types:
+        - String
+        required: false
+      snapshot_id:
+        types:
+        - String
+        required: true
+      user_ids:
+        types:
+        - Array<String>
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_spot_fleet_request:
+    parameters:
+      excess_capacity_termination_policy:
+        types:
+        - String
+        required: false
+      spot_fleet_request_id:
+        types:
+        - String
+        required: true
+      target_capacity:
+        types:
+        - Integer
+        required: false
+  modify_subnet_attribute:
+    parameters:
+      assign_ipv_6_address_on_creation:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      map_public_ip_on_launch:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      subnet_id:
+        types:
+        - String
+        required: true
+  modify_transit_gateway_vpc_attachment:
+    parameters:
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      add_subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      remove_subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      options:
+        types:
+        - Types::ModifyTransitGatewayVpcAttachmentRequestOptions
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_volume:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      volume_id:
+        types:
+        - String
+        required: true
+      size:
+        types:
+        - Integer
+        required: false
+      volume_type:
+        types:
+        - String
+        required: false
+      iops:
+        types:
+        - Integer
+        required: false
+  modify_volume_attribute:
+    parameters:
+      auto_enable_io:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      volume_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  modify_vpc_attribute:
+    parameters:
+      enable_dns_hostnames:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      enable_dns_support:
+        types:
+        - Types::AttributeBooleanValue
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  modify_vpc_endpoint:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_endpoint_id:
+        types:
+        - String
+        required: true
+      reset_policy:
+        types:
+        - Boolean
+        required: false
+      policy_document:
+        types:
+        - String
+        required: false
+      add_route_table_ids:
+        types:
+        - Array<String>
+        required: false
+      remove_route_table_ids:
+        types:
+        - Array<String>
+        required: false
+      add_subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      remove_subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      add_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      remove_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      private_dns_enabled:
+        types:
+        - Boolean
+        required: false
+  modify_vpc_endpoint_connection_notification:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      connection_notification_id:
+        types:
+        - String
+        required: true
+      connection_notification_arn:
+        types:
+        - String
+        required: false
+      connection_events:
+        types:
+        - Array<String>
+        required: false
+  modify_vpc_endpoint_service_configuration:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: true
+      acceptance_required:
+        types:
+        - Boolean
+        required: false
+      add_network_load_balancer_arns:
+        types:
+        - Array<String>
+        required: false
+      remove_network_load_balancer_arns:
+        types:
+        - Array<String>
+        required: false
+  modify_vpc_endpoint_service_permissions:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: true
+      add_allowed_principals:
+        types:
+        - Array<String>
+        required: false
+      remove_allowed_principals:
+        types:
+        - Array<String>
+        required: false
+  modify_vpc_peering_connection_options:
+    parameters:
+      accepter_peering_connection_options:
+        types:
+        - Types::PeeringConnectionOptionsRequest
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      requester_peering_connection_options:
+        types:
+        - Types::PeeringConnectionOptionsRequest
+        required: false
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: true
+  modify_vpc_tenancy:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: true
+      instance_tenancy:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  monitor_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  move_address_to_vpc:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      public_ip:
+        types:
+        - String
+        required: true
+  provision_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
+      cidr_authorization_context:
+        types:
+        - Types::CidrAuthorizationContext
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  purchase_host_reservation:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      currency_code:
+        types:
+        - String
+        required: false
+      host_id_set:
+        types:
+        - Array<String>
+        required: true
+      limit_price:
+        types:
+        - String
+        required: false
+      offering_id:
+        types:
+        - String
+        required: true
+  purchase_reserved_instances_offering:
+    parameters:
+      instance_count:
+        types:
+        - Integer
+        required: true
+      reserved_instances_offering_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      limit_price:
+        types:
+        - Types::ReservedInstanceLimitPrice
+        required: false
+  purchase_scheduled_instances:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      purchase_requests:
+        types:
+        - Array<Types::PurchaseRequest>
+        required: true
+  reboot_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  register_image:
+    parameters:
+      image_location:
+        types:
+        - String
+        required: false
+      architecture:
+        types:
+        - String
+        required: false
+      block_device_mappings:
+        types:
+        - Array<Types::BlockDeviceMapping>
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      ena_support:
+        types:
+        - Boolean
+        required: false
+      kernel_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      billing_products:
+        types:
+        - Array<String>
+        required: false
+      ramdisk_id:
+        types:
+        - String
+        required: false
+      root_device_name:
+        types:
+        - String
+        required: false
+      sriov_net_support:
+        types:
+        - String
+        required: false
+      virtualization_type:
+        types:
+        - String
+        required: false
+  reject_transit_gateway_vpc_attachment:
+    parameters:
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  reject_vpc_endpoint_connections:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      service_id:
+        types:
+        - String
+        required: true
+      vpc_endpoint_ids:
+        types:
+        - Array<String>
+        required: true
+  reject_vpc_peering_connection:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: true
+  release_address:
+    parameters:
+      allocation_id:
+        types:
+        - String
+        required: false
+      public_ip:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  release_hosts:
+    parameters:
+      host_ids:
+        types:
+        - Array<String>
+        required: true
+  replace_iam_instance_profile_association:
+    parameters:
+      iam_instance_profile:
+        types:
+        - Types::IamInstanceProfileSpecification
+        required: true
+      association_id:
+        types:
+        - String
+        required: true
+  replace_network_acl_association:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_acl_id:
+        types:
+        - String
+        required: true
+  replace_network_acl_entry:
+    parameters:
+      cidr_block:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress:
+        types:
+        - Boolean
+        required: true
+      icmp_type_code:
+        types:
+        - Types::IcmpTypeCode
+        required: false
+      ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      network_acl_id:
+        types:
+        - String
+        required: true
+      port_range:
+        types:
+        - Types::PortRange
+        required: false
+      protocol:
+        types:
+        - String
+        required: true
+      rule_action:
+        types:
+        - String
+        required: true
+      rule_number:
+        types:
+        - Integer
+        required: true
+  replace_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: false
+      destination_ipv_6_cidr_block:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      egress_only_internet_gateway_id:
+        types:
+        - String
+        required: false
+      gateway_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      nat_gateway_id:
+        types:
+        - String
+        required: false
+      transit_gateway_id:
+        types:
+        - String
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+      vpc_peering_connection_id:
+        types:
+        - String
+        required: false
+  replace_route_table_association:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      route_table_id:
+        types:
+        - String
+        required: true
+  replace_transit_gateway_route:
+    parameters:
+      destination_cidr_block:
+        types:
+        - String
+        required: true
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      transit_gateway_attachment_id:
+        types:
+        - String
+        required: false
+      blackhole:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  report_instance_status:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      instances:
+        types:
+        - Array<String>
+        required: true
+      reason_codes:
+        types:
+        - Array<String>
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      status:
+        types:
+        - String
+        required: true
+  request_spot_fleet:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      spot_fleet_request_config:
+        types:
+        - Types::SpotFleetRequestConfigData
+        required: true
+  request_spot_instances:
+    parameters:
+      availability_zone_group:
+        types:
+        - String
+        required: false
+      block_duration_minutes:
+        types:
+        - Integer
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_count:
+        types:
+        - Integer
+        required: false
+      launch_group:
+        types:
+        - String
+        required: false
+      launch_specification:
+        types:
+        - Types::RequestSpotLaunchSpecification
+        required: false
+      spot_price:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      valid_from:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      valid_until:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      instance_interruption_behavior:
+        types:
+        - String
+        required: false
+  reset_fpga_image_attribute:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      fpga_image_id:
+        types:
+        - String
+        required: true
+      attribute:
+        types:
+        - String
+        required: false
+  reset_image_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      image_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  reset_instance_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+  reset_network_interface_attribute:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+      source_dest_check:
+        types:
+        - String
+        required: false
+  reset_snapshot_attribute:
+    parameters:
+      attribute:
+        types:
+        - String
+        required: true
+      snapshot_id:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  restore_address_to_classic:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      public_ip:
+        types:
+        - String
+        required: true
+  revoke_client_vpn_ingress:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      target_network_cidr:
+        types:
+        - String
+        required: true
+      access_group_id:
+        types:
+        - String
+        required: false
+      revoke_all_groups:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  revoke_security_group_egress:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - String
+        required: true
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: false
+      cidr_ip:
+        types:
+        - String
+        required: false
+      from_port:
+        types:
+        - Integer
+        required: false
+      ip_protocol:
+        types:
+        - String
+        required: false
+      to_port:
+        types:
+        - Integer
+        required: false
+      source_security_group_name:
+        types:
+        - String
+        required: false
+      source_security_group_owner_id:
+        types:
+        - String
+        required: false
+  revoke_security_group_ingress:
+    parameters:
+      cidr_ip:
+        types:
+        - String
+        required: false
+      from_port:
+        types:
+        - Integer
+        required: false
+      group_id:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: false
+      ip_protocol:
+        types:
+        - String
+        required: false
+      source_security_group_name:
+        types:
+        - String
+        required: false
+      source_security_group_owner_id:
+        types:
+        - String
+        required: false
+      to_port:
+        types:
+        - Integer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  run_instances:
+    parameters:
+      block_device_mappings:
+        types:
+        - Array<Types::BlockDeviceMapping>
+        required: false
+      image_id:
+        types:
+        - String
+        required: false
+      instance_type:
+        types:
+        - String
+        required: false
+      ipv_6_address_count:
+        types:
+        - Integer
+        required: false
+      ipv_6_addresses:
+        types:
+        - Array<Types::InstanceIpv6Address>
+        required: false
+      kernel_id:
+        types:
+        - String
+        required: false
+      key_name:
+        types:
+        - String
+        required: false
+      max_count:
+        types:
+        - Integer
+        required: true
+      min_count:
+        types:
+        - Integer
+        required: true
+      monitoring:
+        types:
+        - Types::RunInstancesMonitoringEnabled
+        required: false
+      placement:
+        types:
+        - Types::Placement
+        required: false
+      ramdisk_id:
+        types:
+        - String
+        required: false
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+      subnet_id:
+        types:
+        - String
+        required: false
+      user_data:
+        types:
+        - String
+        required: false
+      additional_info:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      disable_api_termination:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      ebs_optimized:
+        types:
+        - Boolean
+        required: false
+      iam_instance_profile:
+        types:
+        - Types::IamInstanceProfileSpecification
+        required: false
+      instance_initiated_shutdown_behavior:
+        types:
+        - String
+        required: false
+      network_interfaces:
+        types:
+        - Array<Types::InstanceNetworkInterfaceSpecification>
+        required: false
+      private_ip_address:
+        types:
+        - String
+        required: false
+      elastic_gpu_specification:
+        types:
+        - Array<Types::ElasticGpuSpecification>
+        required: false
+      elastic_inference_accelerators:
+        types:
+        - Array<Types::ElasticInferenceAccelerator>
+        required: false
+      tag_specifications:
+        types:
+        - Array<Types::TagSpecification>
+        required: false
+      launch_template:
+        types:
+        - Types::LaunchTemplateSpecification
+        required: false
+      instance_market_options:
+        types:
+        - Types::InstanceMarketOptionsRequest
+        required: false
+      credit_specification:
+        types:
+        - Types::CreditSpecificationRequest
+        required: false
+      cpu_options:
+        types:
+        - Types::CpuOptionsRequest
+        required: false
+      capacity_reservation_specification:
+        types:
+        - Types::CapacityReservationSpecification
+        required: false
+      hibernation_options:
+        types:
+        - Types::HibernationOptionsRequest
+        required: false
+      license_specifications:
+        types:
+        - Array<Types::LicenseConfigurationRequest>
+        required: false
+  run_scheduled_instances:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      instance_count:
+        types:
+        - Integer
+        required: false
+      launch_specification:
+        types:
+        - Types::ScheduledInstancesLaunchSpecification
+        required: true
+      scheduled_instance_id:
+        types:
+        - String
+        required: true
+  search_transit_gateway_routes:
+    parameters:
+      transit_gateway_route_table_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  start_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      additional_info:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  stop_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      hibernate:
+        types:
+        - Boolean
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
+  terminate_client_vpn_connections:
+    parameters:
+      client_vpn_endpoint_id:
+        types:
+        - String
+        required: true
+      connection_id:
+        types:
+        - String
+        required: false
+      username:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  terminate_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  unassign_ipv_6_addresses:
+    parameters:
+      ipv_6_addresses:
+        types:
+        - Array<String>
+        required: true
+      network_interface_id:
+        types:
+        - String
+        required: true
+  unassign_private_ip_addresses:
+    parameters:
+      network_interface_id:
+        types:
+        - String
+        required: true
+      private_ip_addresses:
+        types:
+        - Array<String>
+        required: true
+  unmonitor_instances:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  update_security_group_rule_descriptions_egress:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: true
+  update_security_group_rule_descriptions_ingress:
+    parameters:
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      group_id:
+        types:
+        - String
+        required: false
+      group_name:
+        types:
+        - String
+        required: false
+      ip_permissions:
+        types:
+        - Array<Types::IpPermission>
+        required: true
+  withdraw_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

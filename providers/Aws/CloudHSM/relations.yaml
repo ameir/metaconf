@@ -1,0 +1,16 @@
+---
+hapg:
+  create: create_hapg
+  read: describe_hapg
+  update: modify_hapg
+  delete: delete_hapg
+hsm:
+  create: create_hsm
+  read: describe_hsm
+  update: modify_hsm
+  delete: delete_hsm
+luna_client:
+  create: create_luna_client
+  read: describe_luna_client
+  update: modify_luna_client
+  delete: delete_luna_client

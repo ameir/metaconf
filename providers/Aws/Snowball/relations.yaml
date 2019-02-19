@@ -1,0 +1,16 @@
+---
+address:
+  create: create_address
+  read: describe_address
+  update: 
+  delete: 
+cluster:
+  create: create_cluster
+  read: describe_cluster
+  update: 
+  delete: 
+job:
+  create: create_job
+  read: describe_job
+  update: 
+  delete: 

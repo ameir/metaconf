@@ -1,0 +1,11 @@
+---
+insight:
+  create: create_insight
+  read: get_insights
+  update: 
+  delete: delete_insight
+members:
+  create: create_members
+  read: get_members
+  update: 
+  delete: delete_members

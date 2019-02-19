@@ -1,0 +1,6 @@
+---
+lexicon:
+  create: put_lexicon
+  read: get_lexicon
+  update: 
+  delete: delete_lexicon

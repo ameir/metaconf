@@ -1,0 +1,101 @@
+---
+gateway_response:
+  create: put_gateway_response
+  read: get_gateway_response
+  update: 
+  delete: delete_gateway_response
+integration:
+  create: put_integration
+  read: get_integration
+  update: 
+  delete: delete_integration
+integration_response:
+  create: put_integration_response
+  read: get_integration_response
+  update: 
+  delete: delete_integration_response
+method:
+  create: put_method
+  read: get_method
+  update: 
+  delete: delete_method
+method_response:
+  create: put_method_response
+  read: get_method_response
+  update: 
+  delete: delete_method_response
+rest_api:
+  create: create_rest_api
+  read: get_rest_api
+  update: 
+  delete: delete_rest_api
+api_key:
+  create: create_api_key
+  read: get_api_key
+  update: 
+  delete: delete_api_key
+authorizer:
+  create: create_authorizer
+  read: get_authorizer
+  update: 
+  delete: delete_authorizer
+base_path_mapping:
+  create: create_base_path_mapping
+  read: get_base_path_mapping
+  update: 
+  delete: delete_base_path_mapping
+deployment:
+  create: create_deployment
+  read: get_deployment
+  update: 
+  delete: delete_deployment
+documentation_part:
+  create: create_documentation_part
+  read: get_documentation_part
+  update: 
+  delete: delete_documentation_part
+documentation_version:
+  create: create_documentation_version
+  read: get_documentation_version
+  update: 
+  delete: delete_documentation_version
+domain_name:
+  create: create_domain_name
+  read: get_domain_name
+  update: 
+  delete: delete_domain_name
+model:
+  create: create_model
+  read: get_model
+  update: 
+  delete: delete_model
+request_validator:
+  create: create_request_validator
+  read: get_request_validator
+  update: 
+  delete: delete_request_validator
+resource:
+  create: create_resource
+  read: get_resource
+  update: 
+  delete: delete_resource
+stage:
+  create: create_stage
+  read: get_stage
+  update: 
+  delete: delete_stage
+usage_plan:
+  create: create_usage_plan
+  read: get_usage_plan
+  update: 
+  delete: delete_usage_plan
+usage_plan_key:
+  create: create_usage_plan_key
+  read: get_usage_plan_key
+  update: 
+  delete: delete_usage_plan_key
+vpc_link:
+  create: create_vpc_link
+  read: get_vpc_link
+  update: 
+  delete: delete_vpc_link

@@ -1,0 +1,1997 @@
+---
+class: Aws::SSM::Client
+methods:
+  add_tags_to_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  cancel_command:
+    parameters:
+      command_id:
+        types:
+        - String
+        required: true
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+  cancel_maintenance_window_execution:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+  create_activation:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      default_instance_name:
+        types:
+        - String
+        required: false
+      iam_role:
+        types:
+        - String
+        required: true
+      registration_limit:
+        types:
+        - Integer
+        required: false
+      expiration_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_association:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      document_version:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      schedule_expression:
+        types:
+        - String
+        required: false
+      output_location:
+        types:
+        - Types::InstanceAssociationOutputLocation
+        required: false
+      association_name:
+        types:
+        - String
+        required: false
+      automation_target_parameter_name:
+        types:
+        - String
+        required: false
+      max_errors:
+        types:
+        - String
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: false
+      compliance_severity:
+        types:
+        - String
+        required: false
+  create_association_batch:
+    parameters:
+      entries:
+        types:
+        - Array<Types::CreateAssociationBatchRequestEntry>
+        required: true
+  create_document:
+    parameters:
+      content:
+        types:
+        - String
+        required: true
+      attachments:
+        types:
+        - Array<Types::AttachmentsSource>
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      version_name:
+        types:
+        - String
+        required: false
+      document_type:
+        types:
+        - String
+        required: false
+      document_format:
+        types:
+        - String
+        required: false
+      target_type:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_maintenance_window:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      start_date:
+        types:
+        - String
+        required: false
+      end_date:
+        types:
+        - String
+        required: false
+      schedule:
+        types:
+        - String
+        required: true
+      schedule_timezone:
+        types:
+        - String
+        required: false
+      duration:
+        types:
+        - Integer
+        required: true
+      cutoff:
+        types:
+        - Integer
+        required: true
+      allow_unassociated_targets:
+        types:
+        - Boolean
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_patch_baseline:
+    parameters:
+      operating_system:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      global_filters:
+        types:
+        - Types::PatchFilterGroup
+        required: false
+      approval_rules:
+        types:
+        - Types::PatchRuleGroup
+        required: false
+      approved_patches:
+        types:
+        - Array<String>
+        required: false
+      approved_patches_compliance_level:
+        types:
+        - String
+        required: false
+      approved_patches_enable_non_security:
+        types:
+        - Boolean
+        required: false
+      rejected_patches:
+        types:
+        - Array<String>
+        required: false
+      rejected_patches_action:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      sources:
+        types:
+        - Array<Types::PatchSource>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_resource_data_sync:
+    parameters:
+      sync_name:
+        types:
+        - String
+        required: true
+      s3_destination:
+        types:
+        - Types::ResourceDataSyncS3Destination
+        required: true
+  delete_activation:
+    parameters:
+      activation_id:
+        types:
+        - String
+        required: true
+  delete_association:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      association_id:
+        types:
+        - String
+        required: false
+  delete_document:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_inventory:
+    parameters:
+      type_name:
+        types:
+        - String
+        required: true
+      schema_delete_option:
+        types:
+        - String
+        required: false
+      dry_run:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  delete_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+  delete_parameter:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_parameters:
+    parameters:
+      names:
+        types:
+        - Array<String>
+        required: true
+  delete_patch_baseline:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+  delete_resource_data_sync:
+    parameters:
+      sync_name:
+        types:
+        - String
+        required: true
+  deregister_managed_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+  deregister_patch_baseline_for_patch_group:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+      patch_group:
+        types:
+        - String
+        required: true
+  deregister_target_from_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      window_target_id:
+        types:
+        - String
+        required: true
+      safe:
+        types:
+        - Boolean
+        required: false
+  deregister_task_from_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      window_task_id:
+        types:
+        - String
+        required: true
+  describe_activations:
+    parameters:
+      filters:
+        types:
+        - Array<Types::DescribeActivationsFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_association:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      association_id:
+        types:
+        - String
+        required: false
+      association_version:
+        types:
+        - String
+        required: false
+  describe_association_execution_targets:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      execution_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::AssociationExecutionTargetsFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_association_executions:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::AssociationExecutionFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_automation_executions:
+    parameters:
+      filters:
+        types:
+        - Array<Types::AutomationExecutionFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_automation_step_executions:
+    parameters:
+      automation_execution_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::StepExecutionFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      reverse_order:
+        types:
+        - Boolean
+        required: false
+  describe_available_patches:
+    parameters:
+      filters:
+        types:
+        - Array<Types::PatchOrchestratorFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_document:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      document_version:
+        types:
+        - String
+        required: false
+      version_name:
+        types:
+        - String
+        required: false
+  describe_document_permission:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      permission_type:
+        types:
+        - String
+        required: true
+  describe_effective_instance_associations:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_effective_patches_for_patch_baseline:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_instance_associations_status:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_instance_information:
+    parameters:
+      instance_information_filter_list:
+        types:
+        - Array<Types::InstanceInformationFilter>
+        required: false
+      filters:
+        types:
+        - Array<Types::InstanceInformationStringFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_instance_patch_states:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_instance_patch_states_for_patch_group:
+    parameters:
+      patch_group:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::InstancePatchStateFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_instance_patches:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::PatchOrchestratorFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_inventory_deletions:
+    parameters:
+      deletion_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_maintenance_window_execution_task_invocations:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+      task_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_window_execution_tasks:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_window_executions:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_window_schedule:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      resource_type:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::PatchOrchestratorFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_window_targets:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_window_tasks:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_windows:
+    parameters:
+      filters:
+        types:
+        - Array<Types::MaintenanceWindowFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_maintenance_windows_for_target:
+    parameters:
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+      resource_type:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_parameters:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ParametersFilter>
+        required: false
+      parameter_filters:
+        types:
+        - Array<Types::ParameterStringFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_patch_baselines:
+    parameters:
+      filters:
+        types:
+        - Array<Types::PatchOrchestratorFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_patch_group_state:
+    parameters:
+      patch_group:
+        types:
+        - String
+        required: true
+  describe_patch_groups:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::PatchOrchestratorFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_sessions:
+    parameters:
+      state:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::SessionFilter>
+        required: false
+  get_automation_execution:
+    parameters:
+      automation_execution_id:
+        types:
+        - String
+        required: true
+  get_command_invocation:
+    parameters:
+      command_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      plugin_name:
+        types:
+        - String
+        required: false
+  get_connection_status:
+    parameters:
+      target:
+        types:
+        - String
+        required: true
+  get_default_patch_baseline:
+    parameters:
+      operating_system:
+        types:
+        - String
+        required: false
+  get_deployable_patch_snapshot_for_instance:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      snapshot_id:
+        types:
+        - String
+        required: true
+  get_document:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      version_name:
+        types:
+        - String
+        required: false
+      document_version:
+        types:
+        - String
+        required: false
+      document_format:
+        types:
+        - String
+        required: false
+  get_inventory:
+    parameters:
+      filters:
+        types:
+        - Array<Types::InventoryFilter>
+        required: false
+      aggregators:
+        types:
+        - Array<Types::InventoryAggregator>
+        required: false
+      result_attributes:
+        types:
+        - Array<Types::ResultAttribute>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_inventory_schema:
+    parameters:
+      type_name:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      aggregator:
+        types:
+        - Boolean
+        required: false
+      sub_type:
+        types:
+        - Boolean
+        required: false
+  get_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+  get_maintenance_window_execution:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+  get_maintenance_window_execution_task:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+      task_id:
+        types:
+        - String
+        required: true
+  get_maintenance_window_execution_task_invocation:
+    parameters:
+      window_execution_id:
+        types:
+        - String
+        required: true
+      task_id:
+        types:
+        - String
+        required: true
+      invocation_id:
+        types:
+        - String
+        required: true
+  get_maintenance_window_task:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      window_task_id:
+        types:
+        - String
+        required: true
+  get_parameter:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      with_decryption:
+        types:
+        - Boolean
+        required: false
+  get_parameter_history:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      with_decryption:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_parameters:
+    parameters:
+      names:
+        types:
+        - Array<String>
+        required: true
+      with_decryption:
+        types:
+        - Boolean
+        required: false
+  get_parameters_by_path:
+    parameters:
+      path:
+        types:
+        - String
+        required: true
+      recursive:
+        types:
+        - Boolean
+        required: false
+      parameter_filters:
+        types:
+        - Array<Types::ParameterStringFilter>
+        required: false
+      with_decryption:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_patch_baseline:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+  get_patch_baseline_for_patch_group:
+    parameters:
+      patch_group:
+        types:
+        - String
+        required: true
+      operating_system:
+        types:
+        - String
+        required: false
+  label_parameter_version:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      parameter_version:
+        types:
+        - Integer
+        required: false
+      labels:
+        types:
+        - Array<String>
+        required: true
+  list_association_versions:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_associations:
+    parameters:
+      association_filter_list:
+        types:
+        - Array<Types::AssociationFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_command_invocations:
+    parameters:
+      command_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::CommandFilter>
+        required: false
+      details:
+        types:
+        - Boolean
+        required: false
+  list_commands:
+    parameters:
+      command_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::CommandFilter>
+        required: false
+  list_compliance_items:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ComplianceStringFilter>
+        required: false
+      resource_ids:
+        types:
+        - Array<String>
+        required: false
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_compliance_summaries:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ComplianceStringFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_document_versions:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_documents:
+    parameters:
+      document_filter_list:
+        types:
+        - Array<Types::DocumentFilter>
+        required: false
+      filters:
+        types:
+        - Array<Types::DocumentKeyValuesFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_inventory_entries:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      type_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::InventoryFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resource_compliance_summaries:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ComplianceStringFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resource_data_sync:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+  modify_document_permission:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      permission_type:
+        types:
+        - String
+        required: true
+      account_ids_to_add:
+        types:
+        - Array<String>
+        required: false
+      account_ids_to_remove:
+        types:
+        - Array<String>
+        required: false
+  put_compliance_items:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      resource_type:
+        types:
+        - String
+        required: true
+      compliance_type:
+        types:
+        - String
+        required: true
+      execution_summary:
+        types:
+        - Types::ComplianceExecutionSummary
+        required: true
+      items:
+        types:
+        - Array<Types::ComplianceItemEntry>
+        required: true
+      item_content_hash:
+        types:
+        - String
+        required: false
+  put_inventory:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      items:
+        types:
+        - Array<Types::InventoryItem>
+        required: true
+  put_parameter:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      value:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      key_id:
+        types:
+        - String
+        required: false
+      overwrite:
+        types:
+        - Boolean
+        required: false
+      allowed_pattern:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  register_default_patch_baseline:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+  register_patch_baseline_for_patch_group:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+      patch_group:
+        types:
+        - String
+        required: true
+  register_target_with_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      resource_type:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+      owner_information:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  register_task_with_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+      task_arn:
+        types:
+        - String
+        required: true
+      service_role_arn:
+        types:
+        - String
+        required: false
+      task_type:
+        types:
+        - String
+        required: true
+      task_parameters:
+        types:
+        - Hash<String,Types::MaintenanceWindowTaskParameterValueExpression>
+        required: false
+      task_invocation_parameters:
+        types:
+        - Types::MaintenanceWindowTaskInvocationParameters
+        required: false
+      priority:
+        types:
+        - Integer
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: true
+      max_errors:
+        types:
+        - String
+        required: true
+      logging_info:
+        types:
+        - Types::LoggingInfo
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  remove_tags_from_resource:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  resume_session:
+    parameters:
+      session_id:
+        types:
+        - String
+        required: true
+  send_automation_signal:
+    parameters:
+      automation_execution_id:
+        types:
+        - String
+        required: true
+      signal_type:
+        types:
+        - String
+        required: true
+      payload:
+        types:
+        - Hash<String,Array>
+        required: false
+  send_command:
+    parameters:
+      instance_ids:
+        types:
+        - Array<String>
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      document_name:
+        types:
+        - String
+        required: true
+      document_version:
+        types:
+        - String
+        required: false
+      document_hash:
+        types:
+        - String
+        required: false
+      document_hash_type:
+        types:
+        - String
+        required: false
+      timeout_seconds:
+        types:
+        - Integer
+        required: false
+      comment:
+        types:
+        - String
+        required: false
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
+      output_s3_region:
+        types:
+        - String
+        required: false
+      output_s3_bucket_name:
+        types:
+        - String
+        required: false
+      output_s3_key_prefix:
+        types:
+        - String
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: false
+      max_errors:
+        types:
+        - String
+        required: false
+      service_role_arn:
+        types:
+        - String
+        required: false
+      notification_config:
+        types:
+        - Types::NotificationConfig
+        required: false
+      cloud_watch_output_config:
+        types:
+        - Types::CloudWatchOutputConfig
+        required: false
+  start_associations_once:
+    parameters:
+      association_ids:
+        types:
+        - Array<String>
+        required: true
+  start_automation_execution:
+    parameters:
+      document_name:
+        types:
+        - String
+        required: true
+      document_version:
+        types:
+        - String
+        required: false
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      mode:
+        types:
+        - String
+        required: false
+      target_parameter_name:
+        types:
+        - String
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      target_maps:
+        types:
+        - Array<Hash>
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: false
+      max_errors:
+        types:
+        - String
+        required: false
+      target_locations:
+        types:
+        - Array<Types::TargetLocation>
+        required: false
+  start_session:
+    parameters:
+      target:
+        types:
+        - String
+        required: true
+      document_name:
+        types:
+        - String
+        required: false
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
+  stop_automation_execution:
+    parameters:
+      automation_execution_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+  terminate_session:
+    parameters:
+      session_id:
+        types:
+        - String
+        required: true
+  update_association:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: true
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
+      document_version:
+        types:
+        - String
+        required: false
+      schedule_expression:
+        types:
+        - String
+        required: false
+      output_location:
+        types:
+        - Types::InstanceAssociationOutputLocation
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      association_name:
+        types:
+        - String
+        required: false
+      association_version:
+        types:
+        - String
+        required: false
+      automation_target_parameter_name:
+        types:
+        - String
+        required: false
+      max_errors:
+        types:
+        - String
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: false
+      compliance_severity:
+        types:
+        - String
+        required: false
+  update_association_status:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      association_status:
+        types:
+        - Types::AssociationStatus
+        required: true
+  update_document:
+    parameters:
+      content:
+        types:
+        - String
+        required: true
+      attachments:
+        types:
+        - Array<Types::AttachmentsSource>
+        required: false
+      name:
+        types:
+        - String
+        required: true
+      version_name:
+        types:
+        - String
+        required: false
+      document_version:
+        types:
+        - String
+        required: false
+      document_format:
+        types:
+        - String
+        required: false
+      target_type:
+        types:
+        - String
+        required: false
+  update_document_default_version:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      document_version:
+        types:
+        - String
+        required: true
+  update_maintenance_window:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      start_date:
+        types:
+        - String
+        required: false
+      end_date:
+        types:
+        - String
+        required: false
+      schedule:
+        types:
+        - String
+        required: false
+      schedule_timezone:
+        types:
+        - String
+        required: false
+      duration:
+        types:
+        - Integer
+        required: false
+      cutoff:
+        types:
+        - Integer
+        required: false
+      allow_unassociated_targets:
+        types:
+        - Boolean
+        required: false
+      enabled:
+        types:
+        - Boolean
+        required: false
+      replace:
+        types:
+        - Boolean
+        required: false
+  update_maintenance_window_target:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      window_target_id:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      owner_information:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      replace:
+        types:
+        - Boolean
+        required: false
+  update_maintenance_window_task:
+    parameters:
+      window_id:
+        types:
+        - String
+        required: true
+      window_task_id:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      task_arn:
+        types:
+        - String
+        required: false
+      service_role_arn:
+        types:
+        - String
+        required: false
+      task_parameters:
+        types:
+        - Hash<String,Types::MaintenanceWindowTaskParameterValueExpression>
+        required: false
+      task_invocation_parameters:
+        types:
+        - Types::MaintenanceWindowTaskInvocationParameters
+        required: false
+      priority:
+        types:
+        - Integer
+        required: false
+      max_concurrency:
+        types:
+        - String
+        required: false
+      max_errors:
+        types:
+        - String
+        required: false
+      logging_info:
+        types:
+        - Types::LoggingInfo
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      replace:
+        types:
+        - Boolean
+        required: false
+  update_managed_instance_role:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      iam_role:
+        types:
+        - String
+        required: true
+  update_patch_baseline:
+    parameters:
+      baseline_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      global_filters:
+        types:
+        - Types::PatchFilterGroup
+        required: false
+      approval_rules:
+        types:
+        - Types::PatchRuleGroup
+        required: false
+      approved_patches:
+        types:
+        - Array<String>
+        required: false
+      approved_patches_compliance_level:
+        types:
+        - String
+        required: false
+      approved_patches_enable_non_security:
+        types:
+        - Boolean
+        required: false
+      rejected_patches:
+        types:
+        - Array<String>
+        required: false
+      rejected_patches_action:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      sources:
+        types:
+        - Array<Types::PatchSource>
+        required: false
+      replace:
+        types:
+        - Boolean
+        required: false

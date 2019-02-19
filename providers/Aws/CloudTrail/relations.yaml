@@ -1,0 +1,11 @@
+---
+event_selectors:
+  create: put_event_selectors
+  read: get_event_selectors
+  update: 
+  delete: 
+trail:
+  create: create_trail
+  read: describe_trails
+  update: 
+  delete: delete_trail

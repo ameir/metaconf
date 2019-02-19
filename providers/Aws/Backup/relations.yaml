@@ -1,0 +1,26 @@
+---
+backup_vault_access_policy:
+  create: put_backup_vault_access_policy
+  read: get_backup_vault_access_policy
+  update: 
+  delete: delete_backup_vault_access_policy
+backup_vault_notifications:
+  create: put_backup_vault_notifications
+  read: get_backup_vault_notifications
+  update: 
+  delete: delete_backup_vault_notifications
+backup_plan:
+  create: create_backup_plan
+  read: get_backup_plan
+  update: 
+  delete: delete_backup_plan
+backup_selection:
+  create: create_backup_selection
+  read: get_backup_selection
+  update: 
+  delete: delete_backup_selection
+backup_vault:
+  create: create_backup_vault
+  read: describe_backup_vault
+  update: 
+  delete: delete_backup_vault

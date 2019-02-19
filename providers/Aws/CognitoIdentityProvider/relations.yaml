@@ -1,0 +1,36 @@
+---
+group:
+  create: create_group
+  read: get_group
+  update: 
+  delete: delete_group
+identity_provider:
+  create: create_identity_provider
+  read: describe_identity_provider
+  update: 
+  delete: delete_identity_provider
+resource_server:
+  create: create_resource_server
+  read: describe_resource_server
+  update: 
+  delete: delete_resource_server
+user_import_job:
+  create: create_user_import_job
+  read: describe_user_import_job
+  update: 
+  delete: 
+user_pool:
+  create: create_user_pool
+  read: describe_user_pool
+  update: 
+  delete: delete_user_pool
+user_pool_client:
+  create: create_user_pool_client
+  read: describe_user_pool_client
+  update: 
+  delete: delete_user_pool_client
+user_pool_domain:
+  create: create_user_pool_domain
+  read: describe_user_pool_domain
+  update: 
+  delete: delete_user_pool_domain

@@ -1,0 +1,175 @@
+---
+class: Aws::MediaPackage::Client
+methods:
+  create_channel:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      id:
+        types:
+        - String
+        required: true
+  create_origin_endpoint:
+    parameters:
+      channel_id:
+        types:
+        - String
+        required: true
+      cmaf_package:
+        types:
+        - Types::CmafPackageCreateOrUpdateParameters
+        required: false
+      dash_package:
+        types:
+        - Types::DashPackage
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      hls_package:
+        types:
+        - Types::HlsPackage
+        required: false
+      id:
+        types:
+        - String
+        required: true
+      manifest_name:
+        types:
+        - String
+        required: false
+      mss_package:
+        types:
+        - Types::MssPackage
+        required: false
+      startover_window_seconds:
+        types:
+        - Integer
+        required: false
+      time_delay_seconds:
+        types:
+        - Integer
+        required: false
+      whitelist:
+        types:
+        - Array<String>
+        required: false
+  delete_channel:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  delete_origin_endpoint:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_channel:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_origin_endpoint:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  list_channels:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_origin_endpoints:
+    parameters:
+      channel_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  rotate_channel_credentials:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  rotate_ingest_endpoint_credentials:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      ingest_endpoint_id:
+        types:
+        - String
+        required: true
+  update_channel:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      id:
+        types:
+        - String
+        required: true
+  update_origin_endpoint:
+    parameters:
+      cmaf_package:
+        types:
+        - Types::CmafPackageCreateOrUpdateParameters
+        required: false
+      dash_package:
+        types:
+        - Types::DashPackage
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      hls_package:
+        types:
+        - Types::HlsPackage
+        required: false
+      id:
+        types:
+        - String
+        required: true
+      manifest_name:
+        types:
+        - String
+        required: false
+      mss_package:
+        types:
+        - Types::MssPackage
+        required: false
+      startover_window_seconds:
+        types:
+        - Integer
+        required: false
+      time_delay_seconds:
+        types:
+        - Integer
+        required: false
+      whitelist:
+        types:
+        - Array<String>
+        required: false

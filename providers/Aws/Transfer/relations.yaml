@@ -1,0 +1,11 @@
+---
+server:
+  create: create_server
+  read: describe_server
+  update: 
+  delete: delete_server
+user:
+  create: create_user
+  read: describe_user
+  update: 
+  delete: delete_user

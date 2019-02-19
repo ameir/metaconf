@@ -1,0 +1,6 @@
+---
+vault:
+  create: create_vault
+  read: describe_vault
+  update: 
+  delete: delete_vault

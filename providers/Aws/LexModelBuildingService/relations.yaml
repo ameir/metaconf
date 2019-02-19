@@ -1,0 +1,36 @@
+---
+bot:
+  create: put_bot
+  read: get_bot
+  update: 
+  delete: delete_bot
+bot_alias:
+  create: put_bot_alias
+  read: get_bot_alias
+  update: 
+  delete: delete_bot_alias
+intent:
+  create: put_intent
+  read: get_intent
+  update: 
+  delete: delete_intent
+slot_type:
+  create: put_slot_type
+  read: get_slot_type
+  update: 
+  delete: delete_slot_type
+bot_version:
+  create: create_bot_version
+  read: get_bot_versions
+  update: 
+  delete: delete_bot_version
+intent_version:
+  create: create_intent_version
+  read: get_intent_versions
+  update: 
+  delete: delete_intent_version
+slot_type_version:
+  create: create_slot_type_version
+  read: get_slot_type_versions
+  update: 
+  delete: delete_slot_type_version

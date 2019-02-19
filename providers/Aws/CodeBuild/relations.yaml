@@ -1,0 +1,11 @@
+---
+project:
+  create: create_project
+  read: 
+  update: 
+  delete: delete_project
+webhook:
+  create: create_webhook
+  read: 
+  update: 
+  delete: delete_webhook

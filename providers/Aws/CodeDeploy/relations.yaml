@@ -1,0 +1,26 @@
+---
+lifecycle_event_hook_execution_status:
+  create: put_lifecycle_event_hook_execution_status
+  read: 
+  update: 
+  delete: 
+application:
+  create: create_application
+  read: get_application
+  update: 
+  delete: delete_application
+deployment:
+  create: create_deployment
+  read: get_deployment
+  update: 
+  delete: 
+deployment_config:
+  create: create_deployment_config
+  read: get_deployment_config
+  update: 
+  delete: delete_deployment_config
+deployment_group:
+  create: create_deployment_group
+  read: get_deployment_group
+  update: 
+  delete: delete_deployment_group

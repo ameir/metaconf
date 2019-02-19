@@ -1,0 +1,26 @@
+---
+encryption_config:
+  create: put_encryption_config
+  read: 
+  update: 
+  delete: 
+telemetry_records:
+  create: put_telemetry_records
+  read: 
+  update: 
+  delete: 
+trace_segments:
+  create: put_trace_segments
+  read: 
+  update: 
+  delete: 
+group:
+  create: create_group
+  read: get_group
+  update: 
+  delete: delete_group
+sampling_rule:
+  create: create_sampling_rule
+  read: get_sampling_rules
+  update: 
+  delete: delete_sampling_rule

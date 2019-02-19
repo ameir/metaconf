@@ -1,0 +1,41 @@
+---
+deployment_job:
+  create: create_deployment_job
+  read: describe_deployment_job
+  update: 
+  delete: 
+fleet:
+  create: create_fleet
+  read: describe_fleet
+  update: 
+  delete: delete_fleet
+robot:
+  create: create_robot
+  read: describe_robot
+  update: 
+  delete: delete_robot
+robot_application:
+  create: create_robot_application
+  read: describe_robot_application
+  update: 
+  delete: delete_robot_application
+robot_application_version:
+  create: create_robot_application_version
+  read: 
+  update: 
+  delete: 
+simulation_application:
+  create: create_simulation_application
+  read: describe_simulation_application
+  update: 
+  delete: delete_simulation_application
+simulation_application_version:
+  create: create_simulation_application_version
+  read: 
+  update: 
+  delete: 
+simulation_job:
+  create: create_simulation_job
+  read: describe_simulation_job
+  update: 
+  delete: 

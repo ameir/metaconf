@@ -1,0 +1,36 @@
+---
+batch_prediction:
+  create: create_batch_prediction
+  read: describe_batch_predictions
+  update: 
+  delete: delete_batch_prediction
+data_source_from_rds:
+  create: create_data_source_from_rds
+  read: 
+  update: 
+  delete: 
+data_source_from_redshift:
+  create: create_data_source_from_redshift
+  read: 
+  update: 
+  delete: 
+data_source_from_s3:
+  create: create_data_source_from_s3
+  read: 
+  update: 
+  delete: 
+evaluation:
+  create: create_evaluation
+  read: describe_evaluations
+  update: 
+  delete: delete_evaluation
+ml_model:
+  create: create_ml_model
+  read: describe_ml_models
+  update: 
+  delete: delete_ml_model
+realtime_endpoint:
+  create: create_realtime_endpoint
+  read: 
+  update: 
+  delete: delete_realtime_endpoint

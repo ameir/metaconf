@@ -1,0 +1,237 @@
+---
+class: Aws::CognitoSync::Client
+methods:
+  bulk_publish:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  delete_dataset:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+  describe_dataset:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+  describe_identity_pool_usage:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  describe_identity_usage:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+  get_bulk_publish_details:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  get_cognito_events:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  get_identity_pool_configuration:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+  list_datasets:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_identity_pool_usage:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_records:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+      last_sync_count:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      sync_session_token:
+        types:
+        - String
+        required: false
+  register_device:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      platform:
+        types:
+        - String
+        required: true
+      token:
+        types:
+        - String
+        required: true
+  set_cognito_events:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      events:
+        types:
+        - Hash<String,String>
+        required: true
+  set_identity_pool_configuration:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      push_sync:
+        types:
+        - Types::PushSync
+        required: false
+      cognito_streams:
+        types:
+        - Types::CognitoStreams
+        required: false
+  subscribe_to_dataset:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+  unsubscribe_from_dataset:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+  update_records:
+    parameters:
+      identity_pool_id:
+        types:
+        - String
+        required: true
+      identity_id:
+        types:
+        - String
+        required: true
+      dataset_name:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: false
+      record_patches:
+        types:
+        - Array<Types::RecordPatch>
+        required: false
+      sync_session_token:
+        types:
+        - String
+        required: true
+      client_context:
+        types:
+        - String
+        required: false

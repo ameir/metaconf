@@ -1,0 +1,71 @@
+---
+logging_configuration:
+  create: put_logging_configuration
+  read: get_logging_configuration
+  update: 
+  delete: delete_logging_configuration
+permission_policy:
+  create: put_permission_policy
+  read: get_permission_policy
+  update: 
+  delete: delete_permission_policy
+byte_match_set:
+  create: create_byte_match_set
+  read: get_byte_match_set
+  update: 
+  delete: delete_byte_match_set
+geo_match_set:
+  create: create_geo_match_set
+  read: get_geo_match_set
+  update: 
+  delete: delete_geo_match_set
+ip_set:
+  create: create_ip_set
+  read: get_ip_set
+  update: 
+  delete: delete_ip_set
+rate_based_rule:
+  create: create_rate_based_rule
+  read: get_rate_based_rule
+  update: 
+  delete: delete_rate_based_rule
+regex_match_set:
+  create: create_regex_match_set
+  read: get_regex_match_set
+  update: 
+  delete: delete_regex_match_set
+regex_pattern_set:
+  create: create_regex_pattern_set
+  read: get_regex_pattern_set
+  update: 
+  delete: delete_regex_pattern_set
+rule:
+  create: create_rule
+  read: get_rule
+  update: 
+  delete: delete_rule
+rule_group:
+  create: create_rule_group
+  read: get_rule_group
+  update: 
+  delete: delete_rule_group
+size_constraint_set:
+  create: create_size_constraint_set
+  read: get_size_constraint_set
+  update: 
+  delete: delete_size_constraint_set
+sql_injection_match_set:
+  create: create_sql_injection_match_set
+  read: get_sql_injection_match_set
+  update: 
+  delete: delete_sql_injection_match_set
+web_acl:
+  create: create_web_acl
+  read: get_web_acl
+  update: 
+  delete: delete_web_acl
+xss_match_set:
+  create: create_xss_match_set
+  read: get_xss_match_set
+  update: 
+  delete: delete_xss_match_set

@@ -1,0 +1,16 @@
+---
+record:
+  create: put_record
+  read: 
+  update: 
+  delete: 
+record_batch:
+  create: put_record_batch
+  read: 
+  update: 
+  delete: 
+delivery_stream:
+  create: create_delivery_stream
+  read: describe_delivery_stream
+  update: 
+  delete: delete_delivery_stream

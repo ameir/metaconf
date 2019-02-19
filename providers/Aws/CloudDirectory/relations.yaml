@@ -1,0 +1,36 @@
+---
+schema_from_json:
+  create: put_schema_from_json
+  read: 
+  update: 
+  delete: 
+directory:
+  create: create_directory
+  read: get_directory
+  update: 
+  delete: delete_directory
+facet:
+  create: create_facet
+  read: get_facet
+  update: 
+  delete: delete_facet
+index:
+  create: create_index
+  read: 
+  update: 
+  delete: 
+object:
+  create: create_object
+  read: 
+  update: 
+  delete: delete_object
+schema:
+  create: create_schema
+  read: 
+  update: 
+  delete: delete_schema
+typed_link_facet:
+  create: create_typed_link_facet
+  read: 
+  update: 
+  delete: delete_typed_link_facet

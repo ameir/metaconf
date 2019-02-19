@@ -1,0 +1,6 @@
+---
+group:
+  create: create_group
+  read: get_group
+  update: 
+  delete: delete_group

@@ -1,0 +1,247 @@
+---
+class: Aws::ApplicationAutoScaling::Client
+methods:
+  delete_scaling_policy:
+    parameters:
+      policy_name:
+        types:
+        - String
+        required: true
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+  delete_scheduled_action:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+  deregister_scalable_target:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+  describe_scalable_targets:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_ids:
+        types:
+        - Array<String>
+        required: false
+      scalable_dimension:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_scaling_activities:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: false
+      scalable_dimension:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_scaling_policies:
+    parameters:
+      policy_names:
+        types:
+        - Array<String>
+        required: false
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: false
+      scalable_dimension:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_scheduled_actions:
+    parameters:
+      scheduled_action_names:
+        types:
+        - Array<String>
+        required: false
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: false
+      scalable_dimension:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_scaling_policy:
+    parameters:
+      policy_name:
+        types:
+        - String
+        required: true
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+      policy_type:
+        types:
+        - String
+        required: false
+      step_scaling_policy_configuration:
+        types:
+        - Types::StepScalingPolicyConfiguration
+        required: false
+      target_tracking_scaling_policy_configuration:
+        types:
+        - Types::TargetTrackingScalingPolicyConfiguration
+        required: false
+  put_scheduled_action:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      schedule:
+        types:
+        - String
+        required: false
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      scalable_target_action:
+        types:
+        - Types::ScalableTargetAction
+        required: false
+  register_scalable_target:
+    parameters:
+      service_namespace:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      scalable_dimension:
+        types:
+        - String
+        required: true
+      min_capacity:
+        types:
+        - Integer
+        required: false
+      max_capacity:
+        types:
+        - Integer
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false

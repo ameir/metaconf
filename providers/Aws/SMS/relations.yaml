@@ -1,0 +1,21 @@
+---
+app_launch_configuration:
+  create: put_app_launch_configuration
+  read: get_app_launch_configuration
+  update: 
+  delete: delete_app_launch_configuration
+app_replication_configuration:
+  create: put_app_replication_configuration
+  read: get_app_replication_configuration
+  update: 
+  delete: delete_app_replication_configuration
+app:
+  create: create_app
+  read: get_app
+  update: 
+  delete: delete_app
+replication_job:
+  create: create_replication_job
+  read: get_replication_jobs
+  update: 
+  delete: delete_replication_job

@@ -1,0 +1,21 @@
+---
+http_namespace:
+  create: create_http_namespace
+  read: 
+  update: 
+  delete: 
+private_dns_namespace:
+  create: create_private_dns_namespace
+  read: 
+  update: 
+  delete: 
+public_dns_namespace:
+  create: create_public_dns_namespace
+  read: 
+  update: 
+  delete: 
+service:
+  create: create_service
+  read: get_service
+  update: 
+  delete: delete_service

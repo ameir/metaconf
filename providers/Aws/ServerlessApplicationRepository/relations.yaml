@@ -1,0 +1,26 @@
+---
+application_policy:
+  create: put_application_policy
+  read: get_application_policy
+  update: 
+  delete: 
+application:
+  create: create_application
+  read: get_application
+  update: 
+  delete: delete_application
+application_version:
+  create: create_application_version
+  read: 
+  update: 
+  delete: 
+cloud_formation_change_set:
+  create: create_cloud_formation_change_set
+  read: 
+  update: 
+  delete: 
+cloud_formation_template:
+  create: create_cloud_formation_template
+  read: get_cloud_formation_template
+  update: 
+  delete: 

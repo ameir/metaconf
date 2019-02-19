@@ -1,0 +1,21 @@
+---
+lifecycle_configuration:
+  create: put_lifecycle_configuration
+  read: describe_lifecycle_configuration
+  update: 
+  delete: 
+file_system:
+  create: create_file_system
+  read: describe_file_systems
+  update: 
+  delete: delete_file_system
+mount_target:
+  create: create_mount_target
+  read: describe_mount_targets
+  update: 
+  delete: delete_mount_target
+tags:
+  create: create_tags
+  read: describe_tags
+  update: 
+  delete: delete_tags

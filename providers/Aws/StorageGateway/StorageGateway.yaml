@@ -1,0 +1,981 @@
+---
+class: Aws::StorageGateway::Client
+methods:
+  activate_gateway:
+    parameters:
+      activation_key:
+        types:
+        - String
+        required: true
+      gateway_name:
+        types:
+        - String
+        required: true
+      gateway_timezone:
+        types:
+        - String
+        required: true
+      gateway_region:
+        types:
+        - String
+        required: true
+      gateway_type:
+        types:
+        - String
+        required: false
+      tape_drive_type:
+        types:
+        - String
+        required: false
+      medium_changer_type:
+        types:
+        - String
+        required: false
+  add_cache:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      disk_ids:
+        types:
+        - Array<String>
+        required: true
+  add_tags_to_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  add_upload_buffer:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      disk_ids:
+        types:
+        - Array<String>
+        required: true
+  add_working_storage:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      disk_ids:
+        types:
+        - Array<String>
+        required: true
+  attach_volume:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      target_name:
+        types:
+        - String
+        required: false
+      volume_arn:
+        types:
+        - String
+        required: true
+      network_interface_id:
+        types:
+        - String
+        required: true
+      disk_id:
+        types:
+        - String
+        required: false
+  cancel_archival:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_arn:
+        types:
+        - String
+        required: true
+  cancel_retrieval:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_arn:
+        types:
+        - String
+        required: true
+  create_cached_iscsi_volume:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      volume_size_in_bytes:
+        types:
+        - Integer
+        required: true
+      snapshot_id:
+        types:
+        - String
+        required: false
+      target_name:
+        types:
+        - String
+        required: true
+      source_volume_arn:
+        types:
+        - String
+        required: false
+      network_interface_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+  create_nfs_file_share:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: true
+      nfs_file_share_defaults:
+        types:
+        - Types::NFSFileShareDefaults
+        required: false
+      gateway_arn:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      role:
+        types:
+        - String
+        required: true
+      location_arn:
+        types:
+        - String
+        required: true
+      default_storage_class:
+        types:
+        - String
+        required: false
+      object_acl:
+        types:
+        - String
+        required: false
+      client_list:
+        types:
+        - Array<String>
+        required: false
+      squash:
+        types:
+        - String
+        required: false
+      read_only:
+        types:
+        - Boolean
+        required: false
+      guess_mime_type_enabled:
+        types:
+        - Boolean
+        required: false
+      requester_pays:
+        types:
+        - Boolean
+        required: false
+  create_smb_file_share:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: true
+      gateway_arn:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      role:
+        types:
+        - String
+        required: true
+      location_arn:
+        types:
+        - String
+        required: true
+      default_storage_class:
+        types:
+        - String
+        required: false
+      object_acl:
+        types:
+        - String
+        required: false
+      read_only:
+        types:
+        - Boolean
+        required: false
+      guess_mime_type_enabled:
+        types:
+        - Boolean
+        required: false
+      requester_pays:
+        types:
+        - Boolean
+        required: false
+      valid_user_list:
+        types:
+        - Array<String>
+        required: false
+      invalid_user_list:
+        types:
+        - Array<String>
+        required: false
+      authentication:
+        types:
+        - String
+        required: false
+  create_snapshot:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+      snapshot_description:
+        types:
+        - String
+        required: true
+  create_snapshot_from_volume_recovery_point:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+      snapshot_description:
+        types:
+        - String
+        required: true
+  create_stored_iscsi_volume:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      disk_id:
+        types:
+        - String
+        required: true
+      snapshot_id:
+        types:
+        - String
+        required: false
+      preserve_existing_data:
+        types:
+        - Boolean
+        required: true
+      target_name:
+        types:
+        - String
+        required: true
+      network_interface_id:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+  create_tape_with_barcode:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_size_in_bytes:
+        types:
+        - Integer
+        required: true
+      tape_barcode:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+  create_tapes:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_size_in_bytes:
+        types:
+        - Integer
+        required: true
+      client_token:
+        types:
+        - String
+        required: true
+      num_tapes_to_create:
+        types:
+        - Integer
+        required: true
+      tape_barcode_prefix:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+  delete_bandwidth_rate_limit:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      bandwidth_type:
+        types:
+        - String
+        required: true
+  delete_chap_credentials:
+    parameters:
+      target_arn:
+        types:
+        - String
+        required: true
+      initiator_name:
+        types:
+        - String
+        required: true
+  delete_file_share:
+    parameters:
+      file_share_arn:
+        types:
+        - String
+        required: true
+      force_delete:
+        types:
+        - Boolean
+        required: false
+  delete_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  delete_snapshot_schedule:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+  delete_tape:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_arn:
+        types:
+        - String
+        required: true
+  delete_tape_archive:
+    parameters:
+      tape_arn:
+        types:
+        - String
+        required: true
+  delete_volume:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+  describe_bandwidth_rate_limit:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_cache:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_cached_iscsi_volumes:
+    parameters:
+      volume_arns:
+        types:
+        - Array<String>
+        required: true
+  describe_chap_credentials:
+    parameters:
+      target_arn:
+        types:
+        - String
+        required: true
+  describe_gateway_information:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_maintenance_start_time:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_nfs_file_shares:
+    parameters:
+      file_share_arn_list:
+        types:
+        - Array<String>
+        required: true
+  describe_smb_file_shares:
+    parameters:
+      file_share_arn_list:
+        types:
+        - Array<String>
+        required: true
+  describe_smb_settings:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_snapshot_schedule:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+  describe_stored_iscsi_volumes:
+    parameters:
+      volume_arns:
+        types:
+        - Array<String>
+        required: true
+  describe_tape_archives:
+    parameters:
+      tape_arns:
+        types:
+        - Array<String>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_tape_recovery_points:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_tapes:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      tape_arns:
+        types:
+        - Array<String>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_upload_buffer:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  describe_vtl_devices:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      vtl_device_arns:
+        types:
+        - Array<String>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  describe_working_storage:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  detach_volume:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+      force_detach:
+        types:
+        - Boolean
+        required: false
+  disable_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  join_domain:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+      organizational_unit:
+        types:
+        - String
+        required: false
+      domain_controllers:
+        types:
+        - Array<String>
+        required: false
+      user_name:
+        types:
+        - String
+        required: true
+      password:
+        types:
+        - String
+        required: true
+  list_file_shares:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  list_gateways:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_local_disks:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_tapes:
+    parameters:
+      tape_arns:
+        types:
+        - Array<String>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_volume_initiators:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+  list_volume_recovery_points:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  list_volumes:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  notify_when_uploaded:
+    parameters:
+      file_share_arn:
+        types:
+        - String
+        required: true
+  refresh_cache:
+    parameters:
+      file_share_arn:
+        types:
+        - String
+        required: true
+      folder_list:
+        types:
+        - Array<String>
+        required: false
+      recursive:
+        types:
+        - Boolean
+        required: false
+  remove_tags_from_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  reset_cache:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  retrieve_tape_archive:
+    parameters:
+      tape_arn:
+        types:
+        - String
+        required: true
+      gateway_arn:
+        types:
+        - String
+        required: true
+  retrieve_tape_recovery_point:
+    parameters:
+      tape_arn:
+        types:
+        - String
+        required: true
+      gateway_arn:
+        types:
+        - String
+        required: true
+  set_local_console_password:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      local_console_password:
+        types:
+        - String
+        required: true
+  set_smb_guest_password:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      password:
+        types:
+        - String
+        required: true
+  shutdown_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  start_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  update_bandwidth_rate_limit:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      average_upload_rate_limit_in_bits_per_sec:
+        types:
+        - Integer
+        required: false
+      average_download_rate_limit_in_bits_per_sec:
+        types:
+        - Integer
+        required: false
+  update_chap_credentials:
+    parameters:
+      target_arn:
+        types:
+        - String
+        required: true
+      secret_to_authenticate_initiator:
+        types:
+        - String
+        required: true
+      initiator_name:
+        types:
+        - String
+        required: true
+      secret_to_authenticate_target:
+        types:
+        - String
+        required: false
+  update_gateway_information:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      gateway_name:
+        types:
+        - String
+        required: false
+      gateway_timezone:
+        types:
+        - String
+        required: false
+  update_gateway_software_now:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  update_maintenance_start_time:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      hour_of_day:
+        types:
+        - Integer
+        required: true
+      minute_of_hour:
+        types:
+        - Integer
+        required: true
+      day_of_week:
+        types:
+        - Integer
+        required: true
+  update_nfs_file_share:
+    parameters:
+      file_share_arn:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      nfs_file_share_defaults:
+        types:
+        - Types::NFSFileShareDefaults
+        required: false
+      default_storage_class:
+        types:
+        - String
+        required: false
+      object_acl:
+        types:
+        - String
+        required: false
+      client_list:
+        types:
+        - Array<String>
+        required: false
+      squash:
+        types:
+        - String
+        required: false
+      read_only:
+        types:
+        - Boolean
+        required: false
+      guess_mime_type_enabled:
+        types:
+        - Boolean
+        required: false
+      requester_pays:
+        types:
+        - Boolean
+        required: false
+  update_smb_file_share:
+    parameters:
+      file_share_arn:
+        types:
+        - String
+        required: true
+      kms_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      default_storage_class:
+        types:
+        - String
+        required: false
+      object_acl:
+        types:
+        - String
+        required: false
+      read_only:
+        types:
+        - Boolean
+        required: false
+      guess_mime_type_enabled:
+        types:
+        - Boolean
+        required: false
+      requester_pays:
+        types:
+        - Boolean
+        required: false
+      valid_user_list:
+        types:
+        - Array<String>
+        required: false
+      invalid_user_list:
+        types:
+        - Array<String>
+        required: false
+  update_snapshot_schedule:
+    parameters:
+      volume_arn:
+        types:
+        - String
+        required: true
+      start_at:
+        types:
+        - Integer
+        required: true
+      recurrence_in_hours:
+        types:
+        - Integer
+        required: true
+      description:
+        types:
+        - String
+        required: false
+  update_vtl_device_type:
+    parameters:
+      vtl_device_arn:
+        types:
+        - String
+        required: true
+      device_type:
+        types:
+        - String
+        required: true

@@ -1,0 +1,6 @@
+---
+cluster:
+  create: create_cluster
+  read: describe_cluster
+  update: 
+  delete: delete_cluster

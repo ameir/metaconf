@@ -1,0 +1,36 @@
+---
+aggregation_authorization:
+  create: put_aggregation_authorization
+  read: describe_aggregation_authorizations
+  update: 
+  delete: delete_aggregation_authorization
+config_rule:
+  create: put_config_rule
+  read: describe_config_rules
+  update: 
+  delete: delete_config_rule
+configuration_aggregator:
+  create: put_configuration_aggregator
+  read: describe_configuration_aggregators
+  update: 
+  delete: delete_configuration_aggregator
+configuration_recorder:
+  create: put_configuration_recorder
+  read: describe_configuration_recorders
+  update: 
+  delete: delete_configuration_recorder
+delivery_channel:
+  create: put_delivery_channel
+  read: describe_delivery_channels
+  update: 
+  delete: delete_delivery_channel
+evaluations:
+  create: put_evaluations
+  read: 
+  update: 
+  delete: 
+retention_configuration:
+  create: put_retention_configuration
+  read: describe_retention_configurations
+  update: 
+  delete: delete_retention_configuration

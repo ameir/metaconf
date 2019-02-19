@@ -1,0 +1,56 @@
+---
+api:
+  create: create_api
+  read: get_api
+  update: 
+  delete: delete_api
+api_mapping:
+  create: create_api_mapping
+  read: get_api_mapping
+  update: 
+  delete: delete_api_mapping
+authorizer:
+  create: create_authorizer
+  read: get_authorizer
+  update: 
+  delete: delete_authorizer
+deployment:
+  create: create_deployment
+  read: get_deployment
+  update: 
+  delete: delete_deployment
+domain_name:
+  create: create_domain_name
+  read: get_domain_name
+  update: 
+  delete: delete_domain_name
+integration:
+  create: create_integration
+  read: get_integration
+  update: 
+  delete: delete_integration
+integration_response:
+  create: create_integration_response
+  read: get_integration_response
+  update: 
+  delete: delete_integration_response
+model:
+  create: create_model
+  read: get_model
+  update: 
+  delete: delete_model
+route:
+  create: create_route
+  read: get_route
+  update: 
+  delete: delete_route
+route_response:
+  create: create_route_response
+  read: get_route_response
+  update: 
+  delete: delete_route_response
+stage:
+  create: create_stage
+  read: get_stage
+  update: 
+  delete: delete_stage

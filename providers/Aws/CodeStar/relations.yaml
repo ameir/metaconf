@@ -1,0 +1,11 @@
+---
+project:
+  create: create_project
+  read: describe_project
+  update: 
+  delete: delete_project
+user_profile:
+  create: create_user_profile
+  read: describe_user_profile
+  update: 
+  delete: delete_user_profile

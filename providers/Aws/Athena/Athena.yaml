@@ -1,0 +1,187 @@
+---
+class: Aws::Athena::Client
+methods:
+  batch_get_named_query:
+    parameters:
+      named_query_ids:
+        types:
+        - Array<String>
+        required: true
+  batch_get_query_execution:
+    parameters:
+      query_execution_ids:
+        types:
+        - Array<String>
+        required: true
+  create_named_query:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      database:
+        types:
+        - String
+        required: true
+      query_string:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      work_group:
+        types:
+        - String
+        required: false
+  create_work_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      configuration:
+        types:
+        - Types::WorkGroupConfiguration
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  delete_named_query:
+    parameters:
+      named_query_id:
+        types:
+        - String
+        required: true
+  delete_work_group:
+    parameters:
+      work_group:
+        types:
+        - String
+        required: true
+      recursive_delete_option:
+        types:
+        - Boolean
+        required: false
+  get_named_query:
+    parameters:
+      named_query_id:
+        types:
+        - String
+        required: true
+  get_query_execution:
+    parameters:
+      query_execution_id:
+        types:
+        - String
+        required: true
+  get_query_results:
+    parameters:
+      query_execution_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_work_group:
+    parameters:
+      work_group:
+        types:
+        - String
+        required: true
+  list_named_queries:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      work_group:
+        types:
+        - String
+        required: false
+  list_query_executions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      work_group:
+        types:
+        - String
+        required: false
+  list_work_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_query_execution:
+    parameters:
+      query_string:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      query_execution_context:
+        types:
+        - Types::QueryExecutionContext
+        required: false
+      result_configuration:
+        types:
+        - Types::ResultConfiguration
+        required: false
+      work_group:
+        types:
+        - String
+        required: false
+  stop_query_execution:
+    parameters:
+      query_execution_id:
+        types:
+        - String
+        required: true
+  update_work_group:
+    parameters:
+      work_group:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      configuration_updates:
+        types:
+        - Types::WorkGroupConfigurationUpdates
+        required: false
+      state:
+        types:
+        - String
+        required: false

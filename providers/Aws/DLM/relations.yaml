@@ -1,0 +1,6 @@
+---
+lifecycle_policy:
+  create: create_lifecycle_policy
+  read: get_lifecycle_policy
+  update: 
+  delete: delete_lifecycle_policy

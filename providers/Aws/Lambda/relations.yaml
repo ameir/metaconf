@@ -1,0 +1,21 @@
+---
+function_concurrency:
+  create: put_function_concurrency
+  read: 
+  update: 
+  delete: delete_function_concurrency
+alias:
+  create: create_alias
+  read: get_alias
+  update: 
+  delete: delete_alias
+event_source_mapping:
+  create: create_event_source_mapping
+  read: get_event_source_mapping
+  update: 
+  delete: delete_event_source_mapping
+function:
+  create: create_function
+  read: get_function
+  update: 
+  delete: delete_function

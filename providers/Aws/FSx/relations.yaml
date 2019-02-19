@@ -1,0 +1,16 @@
+---
+backup:
+  create: create_backup
+  read: describe_backups
+  update: 
+  delete: delete_backup
+file_system:
+  create: create_file_system
+  read: describe_file_systems
+  update: 
+  delete: delete_file_system
+file_system_from_backup:
+  create: create_file_system_from_backup
+  read: 
+  update: 
+  delete: 

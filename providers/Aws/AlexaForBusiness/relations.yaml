@@ -1,0 +1,56 @@
+---
+conference_preference:
+  create: put_conference_preference
+  read: 
+  update: 
+  delete: 
+room_skill_parameter:
+  create: put_room_skill_parameter
+  read: get_room_skill_parameter
+  update: 
+  delete: delete_room_skill_parameter
+skill_authorization:
+  create: put_skill_authorization
+  read: 
+  update: 
+  delete: delete_skill_authorization
+address_book:
+  create: create_address_book
+  read: get_address_book
+  update: 
+  delete: delete_address_book
+business_report_schedule:
+  create: create_business_report_schedule
+  read: 
+  update: 
+  delete: delete_business_report_schedule
+conference_provider:
+  create: create_conference_provider
+  read: get_conference_provider
+  update: 
+  delete: delete_conference_provider
+contact:
+  create: create_contact
+  read: get_contact
+  update: 
+  delete: delete_contact
+profile:
+  create: create_profile
+  read: get_profile
+  update: 
+  delete: delete_profile
+room:
+  create: create_room
+  read: get_room
+  update: 
+  delete: delete_room
+skill_group:
+  create: create_skill_group
+  read: get_skill_group
+  update: 
+  delete: delete_skill_group
+user:
+  create: create_user
+  read: 
+  update: 
+  delete: delete_user

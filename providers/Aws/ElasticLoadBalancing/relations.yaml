@@ -1,0 +1,26 @@
+---
+app_cookie_stickiness_policy:
+  create: create_app_cookie_stickiness_policy
+  read: 
+  update: 
+  delete: 
+lb_cookie_stickiness_policy:
+  create: create_lb_cookie_stickiness_policy
+  read: 
+  update: 
+  delete: 
+load_balancer:
+  create: create_load_balancer
+  read: describe_load_balancers
+  update: 
+  delete: delete_load_balancer
+load_balancer_listeners:
+  create: create_load_balancer_listeners
+  read: 
+  update: 
+  delete: delete_load_balancer_listeners
+load_balancer_policy:
+  create: create_load_balancer_policy
+  read: 
+  update: 
+  delete: delete_load_balancer_policy

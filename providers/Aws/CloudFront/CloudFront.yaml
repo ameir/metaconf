@@ -1,0 +1,419 @@
+---
+class: Aws::CloudFront::Client
+methods:
+  create_cloud_front_origin_access_identity:
+    parameters:
+      cloud_front_origin_access_identity_config:
+        types:
+        - Types::CloudFrontOriginAccessIdentityConfig
+        required: true
+  create_distribution:
+    parameters:
+      distribution_config:
+        types:
+        - Types::DistributionConfig
+        required: true
+  create_distribution_with_tags:
+    parameters:
+      distribution_config_with_tags:
+        types:
+        - Types::DistributionConfigWithTags
+        required: true
+  create_field_level_encryption_config:
+    parameters:
+      field_level_encryption_config:
+        types:
+        - Types::FieldLevelEncryptionConfig
+        required: true
+  create_field_level_encryption_profile:
+    parameters:
+      field_level_encryption_profile_config:
+        types:
+        - Types::FieldLevelEncryptionProfileConfig
+        required: true
+  create_invalidation:
+    parameters:
+      distribution_id:
+        types:
+        - String
+        required: true
+      invalidation_batch:
+        types:
+        - Types::InvalidationBatch
+        required: true
+  create_public_key:
+    parameters:
+      public_key_config:
+        types:
+        - Types::PublicKeyConfig
+        required: true
+  create_streaming_distribution:
+    parameters:
+      streaming_distribution_config:
+        types:
+        - Types::StreamingDistributionConfig
+        required: true
+  create_streaming_distribution_with_tags:
+    parameters:
+      streaming_distribution_config_with_tags:
+        types:
+        - Types::StreamingDistributionConfigWithTags
+        required: true
+  delete_cloud_front_origin_access_identity:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  delete_distribution:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  delete_field_level_encryption_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  delete_field_level_encryption_profile:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  delete_public_key:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  delete_streaming_distribution:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  get_cloud_front_origin_access_identity:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_cloud_front_origin_access_identity_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_distribution:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_distribution_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_field_level_encryption:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_field_level_encryption_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_field_level_encryption_profile:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_field_level_encryption_profile_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_invalidation:
+    parameters:
+      distribution_id:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+  get_public_key:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_public_key_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_streaming_distribution:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_streaming_distribution_config:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  list_cloud_front_origin_access_identities:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_distributions:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_distributions_by_web_acl_id:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+      web_acl_id:
+        types:
+        - String
+        required: true
+  list_field_level_encryption_configs:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_field_level_encryption_profiles:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_invalidations:
+    parameters:
+      distribution_id:
+        types:
+        - String
+        required: true
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_public_keys:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_streaming_distributions:
+    parameters:
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Types::Tags
+        required: true
+  untag_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Types::TagKeys
+        required: true
+  update_cloud_front_origin_access_identity:
+    parameters:
+      cloud_front_origin_access_identity_config:
+        types:
+        - Types::CloudFrontOriginAccessIdentityConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  update_distribution:
+    parameters:
+      distribution_config:
+        types:
+        - Types::DistributionConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  update_field_level_encryption_config:
+    parameters:
+      field_level_encryption_config:
+        types:
+        - Types::FieldLevelEncryptionConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  update_field_level_encryption_profile:
+    parameters:
+      field_level_encryption_profile_config:
+        types:
+        - Types::FieldLevelEncryptionProfileConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  update_public_key:
+    parameters:
+      public_key_config:
+        types:
+        - Types::PublicKeyConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  update_streaming_distribution:
+    parameters:
+      streaming_distribution_config:
+        types:
+        - Types::StreamingDistributionConfig
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      if_match:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

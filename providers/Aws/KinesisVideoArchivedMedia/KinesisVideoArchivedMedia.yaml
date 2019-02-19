@@ -1,0 +1,61 @@
+---
+class: Aws::KinesisVideoArchivedMedia::Client
+methods:
+  get_hls_streaming_session_url:
+    parameters:
+      stream_name:
+        types:
+        - String
+        required: false
+      stream_arn:
+        types:
+        - String
+        required: false
+      playback_mode:
+        types:
+        - String
+        required: false
+      hls_fragment_selector:
+        types:
+        - Types::HLSFragmentSelector
+        required: false
+      discontinuity_mode:
+        types:
+        - String
+        required: false
+      expires:
+        types:
+        - Integer
+        required: false
+      max_media_playlist_fragment_results:
+        types:
+        - Integer
+        required: false
+  get_media_for_fragment_list:
+    parameters:
+      stream_name:
+        types:
+        - String
+        required: true
+      fragments:
+        types:
+        - Array<String>
+        required: true
+  list_fragments:
+    parameters:
+      stream_name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      fragment_selector:
+        types:
+        - Types::FragmentSelector
+        required: false

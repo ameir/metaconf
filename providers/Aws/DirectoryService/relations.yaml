@@ -1,0 +1,41 @@
+---
+alias:
+  create: create_alias
+  read: 
+  update: 
+  delete: 
+computer:
+  create: create_computer
+  read: 
+  update: 
+  delete: 
+conditional_forwarder:
+  create: create_conditional_forwarder
+  read: describe_conditional_forwarders
+  update: 
+  delete: delete_conditional_forwarder
+directory:
+  create: create_directory
+  read: 
+  update: 
+  delete: delete_directory
+log_subscription:
+  create: create_log_subscription
+  read: 
+  update: 
+  delete: delete_log_subscription
+microsoft_ad:
+  create: create_microsoft_ad
+  read: 
+  update: 
+  delete: 
+snapshot:
+  create: create_snapshot
+  read: describe_snapshots
+  update: 
+  delete: delete_snapshot
+trust:
+  create: create_trust
+  read: describe_trusts
+  update: 
+  delete: delete_trust

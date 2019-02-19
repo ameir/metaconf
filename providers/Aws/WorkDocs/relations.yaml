@@ -1,0 +1,31 @@
+---
+comment:
+  create: create_comment
+  read: describe_comments
+  update: 
+  delete: delete_comment
+custom_metadata:
+  create: create_custom_metadata
+  read: 
+  update: 
+  delete: delete_custom_metadata
+folder:
+  create: create_folder
+  read: get_folder
+  update: 
+  delete: delete_folder
+labels:
+  create: create_labels
+  read: 
+  update: 
+  delete: delete_labels
+notification_subscription:
+  create: create_notification_subscription
+  read: describe_notification_subscriptions
+  update: 
+  delete: delete_notification_subscription
+user:
+  create: create_user
+  read: describe_users
+  update: 
+  delete: delete_user

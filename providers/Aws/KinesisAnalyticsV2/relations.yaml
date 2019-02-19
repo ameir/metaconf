@@ -1,0 +1,11 @@
+---
+application:
+  create: create_application
+  read: describe_application
+  update: 
+  delete: delete_application
+application_snapshot:
+  create: create_application_snapshot
+  read: describe_application_snapshot
+  update: 
+  delete: delete_application_snapshot

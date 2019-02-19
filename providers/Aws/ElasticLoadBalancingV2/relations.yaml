@@ -1,0 +1,21 @@
+---
+listener:
+  create: create_listener
+  read: describe_listeners
+  update: modify_listener
+  delete: delete_listener
+load_balancer:
+  create: create_load_balancer
+  read: describe_load_balancers
+  update: 
+  delete: delete_load_balancer
+rule:
+  create: create_rule
+  read: describe_rules
+  update: modify_rule
+  delete: delete_rule
+target_group:
+  create: create_target_group
+  read: describe_target_groups
+  update: modify_target_group
+  delete: delete_target_group

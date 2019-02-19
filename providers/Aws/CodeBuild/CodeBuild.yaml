@@ -1,0 +1,381 @@
+---
+class: Aws::CodeBuild::Client
+methods:
+  batch_delete_builds:
+    parameters:
+      ids:
+        types:
+        - Array<String>
+        required: true
+  batch_get_builds:
+    parameters:
+      ids:
+        types:
+        - Array<String>
+        required: true
+  batch_get_projects:
+    parameters:
+      names:
+        types:
+        - Array<String>
+        required: true
+  create_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      source:
+        types:
+        - Types::ProjectSource
+        required: true
+      secondary_sources:
+        types:
+        - Array<Types::ProjectSource>
+        required: false
+      artifacts:
+        types:
+        - Types::ProjectArtifacts
+        required: true
+      secondary_artifacts:
+        types:
+        - Array<Types::ProjectArtifacts>
+        required: false
+      cache:
+        types:
+        - Types::ProjectCache
+        required: false
+      environment:
+        types:
+        - Types::ProjectEnvironment
+        required: true
+      service_role:
+        types:
+        - String
+        required: true
+      timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+      queued_timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+      encryption_key:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+      badge_enabled:
+        types:
+        - Boolean
+        required: false
+      logs_config:
+        types:
+        - Types::LogsConfig
+        required: false
+  create_webhook:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+      branch_filter:
+        types:
+        - String
+        required: false
+      filter_groups:
+        types:
+        - Array<Array>
+        required: false
+  delete_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_source_credentials:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_webhook:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+  import_source_credentials:
+    parameters:
+      username:
+        types:
+        - String
+        required: false
+      token:
+        types:
+        - String
+        required: true
+      server_type:
+        types:
+        - String
+        required: true
+      auth_type:
+        types:
+        - String
+        required: true
+  invalidate_project_cache:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+  list_builds:
+    parameters:
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_builds_for_project:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_projects:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  start_build:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+      secondary_sources_override:
+        types:
+        - Array<Types::ProjectSource>
+        required: false
+      secondary_sources_version_override:
+        types:
+        - Array<Types::ProjectSourceVersion>
+        required: false
+      source_version:
+        types:
+        - String
+        required: false
+      artifacts_override:
+        types:
+        - Types::ProjectArtifacts
+        required: false
+      secondary_artifacts_override:
+        types:
+        - Array<Types::ProjectArtifacts>
+        required: false
+      environment_variables_override:
+        types:
+        - Array<Types::EnvironmentVariable>
+        required: false
+      source_type_override:
+        types:
+        - String
+        required: false
+      source_location_override:
+        types:
+        - String
+        required: false
+      source_auth_override:
+        types:
+        - Types::SourceAuth
+        required: false
+      git_clone_depth_override:
+        types:
+        - Integer
+        required: false
+      buildspec_override:
+        types:
+        - String
+        required: false
+      insecure_ssl_override:
+        types:
+        - Boolean
+        required: false
+      report_build_status_override:
+        types:
+        - Boolean
+        required: false
+      environment_type_override:
+        types:
+        - String
+        required: false
+      image_override:
+        types:
+        - String
+        required: false
+      compute_type_override:
+        types:
+        - String
+        required: false
+      certificate_override:
+        types:
+        - String
+        required: false
+      cache_override:
+        types:
+        - Types::ProjectCache
+        required: false
+      service_role_override:
+        types:
+        - String
+        required: false
+      privileged_mode_override:
+        types:
+        - Boolean
+        required: false
+      timeout_in_minutes_override:
+        types:
+        - Integer
+        required: false
+      queued_timeout_in_minutes_override:
+        types:
+        - Integer
+        required: false
+      idempotency_token:
+        types:
+        - String
+        required: false
+      logs_config_override:
+        types:
+        - Types::LogsConfig
+        required: false
+      registry_credential_override:
+        types:
+        - Types::RegistryCredential
+        required: false
+      image_pull_credentials_type_override:
+        types:
+        - String
+        required: false
+  stop_build:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  update_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      source:
+        types:
+        - Types::ProjectSource
+        required: false
+      secondary_sources:
+        types:
+        - Array<Types::ProjectSource>
+        required: false
+      artifacts:
+        types:
+        - Types::ProjectArtifacts
+        required: false
+      secondary_artifacts:
+        types:
+        - Array<Types::ProjectArtifacts>
+        required: false
+      cache:
+        types:
+        - Types::ProjectCache
+        required: false
+      environment:
+        types:
+        - Types::ProjectEnvironment
+        required: false
+      service_role:
+        types:
+        - String
+        required: false
+      timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+      queued_timeout_in_minutes:
+        types:
+        - Integer
+        required: false
+      encryption_key:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+      badge_enabled:
+        types:
+        - Boolean
+        required: false
+      logs_config:
+        types:
+        - Types::LogsConfig
+        required: false
+  update_webhook:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+      branch_filter:
+        types:
+        - String
+        required: false
+      filter_groups:
+        types:
+        - Array<Array>
+        required: false
+      rotate_secret:
+        types:
+        - Boolean
+        required: false

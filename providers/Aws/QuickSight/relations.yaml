@@ -1,0 +1,11 @@
+---
+group:
+  create: create_group
+  read: describe_group
+  update: 
+  delete: delete_group
+group_membership:
+  create: create_group_membership
+  read: 
+  update: 
+  delete: delete_group_membership

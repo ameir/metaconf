@@ -1,0 +1,91 @@
+---
+class: Aws::Health::Client
+methods:
+  describe_affected_entities:
+    parameters:
+      filter:
+        types:
+        - Types::EntityFilter
+        required: true
+      locale:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_entity_aggregates:
+    parameters:
+      event_arns:
+        types:
+        - Array<String>
+        required: false
+  describe_event_aggregates:
+    parameters:
+      filter:
+        types:
+        - Types::EventFilter
+        required: false
+      aggregate_field:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_event_details:
+    parameters:
+      event_arns:
+        types:
+        - Array<String>
+        required: true
+      locale:
+        types:
+        - String
+        required: false
+  describe_event_types:
+    parameters:
+      filter:
+        types:
+        - Types::EventTypeFilter
+        required: false
+      locale:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_events:
+    parameters:
+      filter:
+        types:
+        - Types::EventFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      locale:
+        types:
+        - String
+        required: false

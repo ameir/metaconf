@@ -1,0 +1,11 @@
+---
+environment_ec2:
+  create: create_environment_ec2
+  read: 
+  update: 
+  delete: 
+environment_membership:
+  create: create_environment_membership
+  read: describe_environment_memberships
+  update: 
+  delete: delete_environment_membership

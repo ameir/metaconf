@@ -1,0 +1,11 @@
+---
+collection:
+  create: create_collection
+  read: describe_collection
+  update: 
+  delete: delete_collection
+stream_processor:
+  create: create_stream_processor
+  read: describe_stream_processor
+  update: 
+  delete: delete_stream_processor

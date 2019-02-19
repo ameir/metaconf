@@ -1,0 +1,21 @@
+---
+assessment_target:
+  create: create_assessment_target
+  read: describe_assessment_targets
+  update: 
+  delete: delete_assessment_target
+assessment_template:
+  create: create_assessment_template
+  read: describe_assessment_templates
+  update: 
+  delete: delete_assessment_template
+exclusions_preview:
+  create: create_exclusions_preview
+  read: get_exclusions_preview
+  update: 
+  delete: 
+resource_group:
+  create: create_resource_group
+  read: describe_resource_groups
+  update: 
+  delete: 

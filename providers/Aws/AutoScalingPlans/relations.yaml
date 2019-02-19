@@ -1,0 +1,6 @@
+---
+scaling_plan:
+  create: create_scaling_plan
+  read: describe_scaling_plans
+  update: 
+  delete: delete_scaling_plan

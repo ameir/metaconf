@@ -1,0 +1,6 @@
+---
+queue:
+  create: create_queue
+  read: 
+  update: 
+  delete: delete_queue
