@@ -7,7 +7,7 @@ require 'pp'
 spec = Gem::Specification.find_by_name('aws-sdk')
 gem_root = File.expand_path('..', spec.gem_dir)
 
-files = Dir.glob("#{gem_root}/*/lib/*/client.rb")
+files = Dir.glob("#{gem_root}/*/lib/*ec2/client.rb")
 files.each do |file|
   puts "processing #{file}..."
   YARD::Registry.clear
@@ -46,8 +46,15 @@ files.each do |file|
     create.each do |c|
       general_method_name = c[key.length..-1]
       pp general_method_name
-      filtered = hash['methods'].keys.select { |i| i.end_with?(*[general_method_name, "#{general_method_name}s"]) }
 
+      # generate all possible method names
+      ac = actions.flatten(2).uniq.map { |s| s += "_#{general_method_name}" }
+      ac += actions.flatten(2).uniq.map { |s| s += "_#{general_method_name}s" } # plural form is sometimes used
+
+      # select methods that are actually in use
+      filtered = hash['methods'].keys & ac
+
+      # associate method with action
       actions.each do |k, v|
         relations[general_method_name][k] = filtered.select { |i| i.start_with?(*v) }[0]
       end
