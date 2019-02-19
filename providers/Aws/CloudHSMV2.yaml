@@ -1,68 +1,16 @@
 ---
 class: Aws::CloudHSMV2::Client
 methods:
-  initialize:
+  copy_backup_to_region:
     parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
+      destination_region:
         types:
         - String
         required: true
-      access_key_id:
+      backup_id:
         types:
         - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
+        required: true
   create_cluster:
     parameters:
       subnet_ids:
@@ -91,6 +39,12 @@ methods:
         types:
         - String
         required: false
+  delete_backup:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
   delete_cluster:
     parameters:
       cluster_id:
@@ -128,6 +82,10 @@ methods:
       filters:
         types:
         - Hash<String,Array>
+        required: false
+      sort_ascending:
+        types:
+        - Boolean
         required: false
   describe_clusters:
     parameters:
@@ -171,6 +129,12 @@ methods:
         types:
         - Integer
         required: false
+  restore_backup:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
   tag_resource:
     parameters:
       resource_id:

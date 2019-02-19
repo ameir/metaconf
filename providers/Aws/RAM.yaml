@@ -1,0 +1,289 @@
+---
+class: Aws::RAM::Client
+methods:
+  accept_resource_share_invitation:
+    parameters:
+      resource_share_invitation_arn:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  associate_resource_share:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+      principals:
+        types:
+        - Array<String>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  create_resource_share:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+      principals:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      allow_external_principals:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  delete_resource_share:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  disassociate_resource_share:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+      principals:
+        types:
+        - Array<String>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  get_resource_policies:
+    parameters:
+      resource_arns:
+        types:
+        - Array<String>
+        required: true
+      principal:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_resource_share_associations:
+    parameters:
+      association_type:
+        types:
+        - String
+        required: true
+      resource_share_arns:
+        types:
+        - Array<String>
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: false
+      principal:
+        types:
+        - String
+        required: false
+      association_status:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_resource_share_invitations:
+    parameters:
+      resource_share_invitation_arns:
+        types:
+        - Array<String>
+        required: false
+      resource_share_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_resource_shares:
+    parameters:
+      resource_share_arns:
+        types:
+        - Array<String>
+        required: false
+      resource_share_status:
+        types:
+        - String
+        required: false
+      resource_owner:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      tag_filters:
+        types:
+        - Array<Types::TagFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_principals:
+    parameters:
+      resource_owner:
+        types:
+        - String
+        required: true
+      resource_arn:
+        types:
+        - String
+        required: false
+      principals:
+        types:
+        - Array<String>
+        required: false
+      resource_type:
+        types:
+        - String
+        required: false
+      resource_share_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resources:
+    parameters:
+      resource_owner:
+        types:
+        - String
+        required: true
+      principal:
+        types:
+        - String
+        required: false
+      resource_type:
+        types:
+        - String
+        required: false
+      resource_arns:
+        types:
+        - Array<String>
+        required: false
+      resource_share_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  reject_resource_share_invitation:
+    parameters:
+      resource_share_invitation_arn:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_resource_share:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      allow_external_principals:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false

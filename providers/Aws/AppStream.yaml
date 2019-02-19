@@ -1,68 +1,6 @@
 ---
 class: Aws::AppStream::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   associate_fleet:
     parameters:
       fleet_name:
@@ -72,6 +10,18 @@ methods:
       stack_name:
         types:
         - String
+        required: true
+  batch_associate_user_stack:
+    parameters:
+      user_stack_associations:
+        types:
+        - Array<Types::UserStackAssociation>
+        required: true
+  batch_disassociate_user_stack:
+    parameters:
+      user_stack_associations:
+        types:
+        - Array<Types::UserStackAssociation>
         required: true
   copy_image:
     parameters:
@@ -114,7 +64,11 @@ methods:
       image_name:
         types:
         - String
-        required: true
+        required: false
+      image_arn:
+        types:
+        - String
+        required: false
       instance_type:
         types:
         - String
@@ -155,6 +109,10 @@ methods:
         types:
         - Types::DomainJoinInfo
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   create_image_builder:
     parameters:
       name:
@@ -164,7 +122,11 @@ methods:
       image_name:
         types:
         - String
-        required: true
+        required: false
+      image_arn:
+        types:
+        - String
+        required: false
       instance_type:
         types:
         - String
@@ -192,6 +154,10 @@ methods:
       appstream_agent_version:
         types:
         - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
         required: false
   create_image_builder_streaming_url:
     parameters:
@@ -225,6 +191,22 @@ methods:
         types:
         - String
         required: false
+      feedback_url:
+        types:
+        - String
+        required: false
+      user_settings:
+        types:
+        - Array<Types::UserSetting>
+        required: false
+      application_settings:
+        types:
+        - Types::ApplicationSettings
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   create_streaming_url:
     parameters:
       stack_name:
@@ -251,6 +233,28 @@ methods:
         types:
         - String
         required: false
+  create_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      message_action:
+        types:
+        - String
+        required: false
+      first_name:
+        types:
+        - String
+        required: false
+      last_name:
+        types:
+        - String
+        required: false
+      authentication_type:
+        types:
+        - String
+        required: true
   delete_directory_config:
     parameters:
       directory_name:
@@ -275,9 +279,29 @@ methods:
         types:
         - String
         required: true
+  delete_image_permissions:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      shared_account_id:
+        types:
+        - String
+        required: true
   delete_stack:
     parameters:
       name:
+        types:
+        - String
+        required: true
+  delete_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      authentication_type:
         types:
         - String
         required: true
@@ -319,11 +343,45 @@ methods:
         types:
         - String
         required: false
+  describe_image_permissions:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      shared_aws_account_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_images:
     parameters:
       names:
         types:
         - Array<String>
+        required: false
+      arns:
+        types:
+        - Array<String>
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   describe_sessions:
     parameters:
@@ -361,6 +419,52 @@ methods:
         types:
         - String
         required: false
+  describe_user_stack_associations:
+    parameters:
+      stack_name:
+        types:
+        - String
+        required: false
+      user_name:
+        types:
+        - String
+        required: false
+      authentication_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_users:
+    parameters:
+      authentication_type:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  disable_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      authentication_type:
+        types:
+        - String
+        required: true
   disassociate_fleet:
     parameters:
       fleet_name:
@@ -368,6 +472,16 @@ methods:
         - String
         required: true
       stack_name:
+        types:
+        - String
+        required: true
+  enable_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      authentication_type:
         types:
         - String
         required: true
@@ -471,10 +585,14 @@ methods:
         types:
         - String
         required: false
+      image_arn:
+        types:
+        - String
+        required: false
       name:
         types:
         - String
-        required: true
+        required: false
       instance_type:
         types:
         - String
@@ -519,6 +637,20 @@ methods:
         types:
         - Array<String>
         required: false
+  update_image_permissions:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      shared_account_id:
+        types:
+        - String
+        required: true
+      image_permissions:
+        types:
+        - Types::ImagePermissions
+        required: true
   update_stack:
     parameters:
       display_name:
@@ -545,9 +677,21 @@ methods:
         types:
         - String
         required: false
+      feedback_url:
+        types:
+        - String
+        required: false
       attributes_to_delete:
         types:
         - Array<String>
+        required: false
+      user_settings:
+        types:
+        - Array<Types::UserSetting>
+        required: false
+      application_settings:
+        types:
+        - Types::ApplicationSettings
         required: false
   wait_until:
     parameters:

@@ -1,0 +1,223 @@
+---
+class: Aws::SecurityHub::Client
+methods:
+  accept_invitation:
+    parameters:
+      master_id:
+        types:
+        - String
+        required: false
+      invitation_id:
+        types:
+        - String
+        required: false
+  batch_disable_standards:
+    parameters:
+      standards_subscription_arns:
+        types:
+        - Array<String>
+        required: true
+  batch_enable_standards:
+    parameters:
+      standards_subscription_requests:
+        types:
+        - Array<Types::StandardsSubscriptionRequest>
+        required: true
+  batch_import_findings:
+    parameters:
+      findings:
+        types:
+        - Array<Types::AwsSecurityFinding>
+        required: true
+  create_insight:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::AwsSecurityFindingFilters
+        required: true
+      group_by_attribute:
+        types:
+        - String
+        required: true
+  create_members:
+    parameters:
+      account_details:
+        types:
+        - Array<Types::AccountDetails>
+        required: false
+  decline_invitations:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  delete_insight:
+    parameters:
+      insight_arn:
+        types:
+        - String
+        required: true
+  delete_invitations:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  delete_members:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  disable_import_findings_for_product:
+    parameters:
+      product_subscription_arn:
+        types:
+        - String
+        required: true
+  disassociate_members:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  enable_import_findings_for_product:
+    parameters:
+      product_arn:
+        types:
+        - String
+        required: true
+  get_enabled_standards:
+    parameters:
+      standards_subscription_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_findings:
+    parameters:
+      filters:
+        types:
+        - Types::AwsSecurityFindingFilters
+        required: false
+      sort_criteria:
+        types:
+        - Array<Types::SortCriterion>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_insight_results:
+    parameters:
+      insight_arn:
+        types:
+        - String
+        required: true
+  get_insights:
+    parameters:
+      insight_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_members:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: true
+  invite_members:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  list_enabled_products_for_import:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_invitations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_members:
+    parameters:
+      only_associated:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  update_findings:
+    parameters:
+      filters:
+        types:
+        - Types::AwsSecurityFindingFilters
+        required: true
+      note:
+        types:
+        - Types::NoteUpdate
+        required: false
+      record_state:
+        types:
+        - String
+        required: false
+  update_insight:
+    parameters:
+      insight_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Types::AwsSecurityFindingFilters
+        required: false
+      group_by_attribute:
+        types:
+        - String
+        required: false

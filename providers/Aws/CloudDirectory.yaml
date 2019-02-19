@@ -1,64 +1,6 @@
 ---
 class: Aws::CloudDirectory::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   add_facet_to_object:
     parameters:
       directory_arn:
@@ -110,7 +52,7 @@ methods:
       directory_arn:
         types:
         - String
-        required: false
+        required: true
       policy_reference:
         types:
         - Types::ObjectReference
@@ -206,7 +148,11 @@ methods:
       object_type:
         types:
         - String
-        required: true
+        required: false
+      facet_style:
+        types:
+        - String
+        required: false
   create_index:
     parameters:
       directory_arn:
@@ -395,6 +341,46 @@ methods:
         types:
         - String
         required: true
+  get_link_attributes:
+    parameters:
+      directory_arn:
+        types:
+        - String
+        required: true
+      typed_link_specifier:
+        types:
+        - Types::TypedLinkSpecifier
+        required: true
+      attribute_names:
+        types:
+        - Array<String>
+        required: true
+      consistency_level:
+        types:
+        - String
+        required: false
+  get_object_attributes:
+    parameters:
+      directory_arn:
+        types:
+        - String
+        required: true
+      object_reference:
+        types:
+        - Types::ObjectReference
+        required: true
+      consistency_level:
+        types:
+        - String
+        required: false
+      schema_facet:
+        types:
+        - Types::SchemaFacet
+        required: true
+      attribute_names:
+        types:
+        - Array<String>
+        required: true
   get_object_information:
     parameters:
       directory_arn:
@@ -577,6 +563,20 @@ methods:
         types:
         - String
         required: false
+  list_managed_schema_arns:
+    parameters:
+      schema_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_object_attributes:
     parameters:
       directory_arn:
@@ -664,6 +664,10 @@ methods:
       consistency_level:
         types:
         - String
+        required: false
+      include_all_links_to_each_parent:
+        types:
+        - Boolean
         required: false
   list_object_policies:
     parameters:
@@ -897,6 +901,20 @@ methods:
         types:
         - String
         required: false
+  update_link_attributes:
+    parameters:
+      directory_arn:
+        types:
+        - String
+        required: true
+      typed_link_specifier:
+        types:
+        - Types::TypedLinkSpecifier
+        required: true
+      attribute_updates:
+        types:
+        - Array<Types::LinkAttributeUpdate>
+        required: true
   update_object_attributes:
     parameters:
       directory_arn:

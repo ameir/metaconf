@@ -1,68 +1,12 @@
 ---
 class: Aws::DirectoryService::Client
 methods:
-  initialize:
+  accept_shared_directory:
     parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
+      shared_directory_id:
         types:
         - String
         required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   add_ip_routes:
     parameters:
       directory_id:
@@ -195,6 +139,16 @@ methods:
         types:
         - Types::DirectoryVpcSettings
         required: false
+  create_log_subscription:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      log_group_name:
+        types:
+        - String
+        required: true
   create_microsoft_ad:
     parameters:
       name:
@@ -257,6 +211,10 @@ methods:
         types:
         - Array<String>
         required: false
+      selective_auth:
+        types:
+        - String
+        required: false
   delete_conditional_forwarder:
     parameters:
       directory_id:
@@ -268,6 +226,12 @@ methods:
         - String
         required: true
   delete_directory:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+  delete_log_subscription:
     parameters:
       directory_id:
         types:
@@ -350,6 +314,24 @@ methods:
       topic_names:
         types:
         - Array<String>
+        required: false
+  describe_shared_directories:
+    parameters:
+      owner_directory_id:
+        types:
+        - String
+        required: true
+      shared_directory_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
         required: false
   describe_snapshots:
     parameters:
@@ -451,6 +433,20 @@ methods:
         types:
         - Integer
         required: false
+  list_log_subscriptions:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
   list_schema_extensions:
     parameters:
       directory_id:
@@ -489,6 +485,12 @@ methods:
         types:
         - String
         required: true
+  reject_shared_directory:
+    parameters:
+      shared_directory_id:
+        types:
+        - String
+        required: true
   remove_ip_routes:
     parameters:
       directory_id:
@@ -509,9 +511,41 @@ methods:
         types:
         - Array<String>
         required: true
+  reset_user_password:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+      new_password:
+        types:
+        - String
+        required: true
   restore_from_snapshot:
     parameters:
       snapshot_id:
+        types:
+        - String
+        required: true
+  share_directory:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      share_notes:
+        types:
+        - String
+        required: false
+      share_target:
+        types:
+        - Types::ShareTarget
+        required: true
+      share_method:
         types:
         - String
         required: true
@@ -532,6 +566,16 @@ methods:
       description:
         types:
         - String
+        required: true
+  unshare_directory:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      unshare_target:
+        types:
+        - Types::UnshareTarget
         required: true
   update_conditional_forwarder:
     parameters:
@@ -567,6 +611,16 @@ methods:
         types:
         - Types::RadiusSettings
         required: true
+  update_trust:
+    parameters:
+      trust_id:
+        types:
+        - String
+        required: true
+      selective_auth:
+        types:
+        - String
+        required: false
   verify_trust:
     parameters:
       trust_id:

@@ -1,0 +1,211 @@
+---
+class: Aws::LicenseManager::Client
+methods:
+  create_license_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      license_counting_type:
+        types:
+        - String
+        required: true
+      license_count:
+        types:
+        - Integer
+        required: false
+      license_count_hard_limit:
+        types:
+        - Boolean
+        required: false
+      license_rules:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+  get_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+  list_associations_for_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_license_configurations:
+    parameters:
+      license_configuration_arns:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_license_specifications_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_resource_inventory:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::InventoryFilter>
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_usage_for_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+      license_configuration_status:
+        types:
+        - String
+        required: false
+      license_rules:
+        types:
+        - Array<String>
+        required: false
+      license_count:
+        types:
+        - Integer
+        required: false
+      license_count_hard_limit:
+        types:
+        - Boolean
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  update_license_specifications_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      add_license_specifications:
+        types:
+        - Array<Types::LicenseSpecification>
+        required: false
+      remove_license_specifications:
+        types:
+        - Array<Types::LicenseSpecification>
+        required: false
+  update_service_settings:
+    parameters:
+      s3_bucket_arn:
+        types:
+        - String
+        required: false
+      sns_topic_arn:
+        types:
+        - String
+        required: false
+      organization_configuration:
+        types:
+        - Types::OrganizationConfiguration
+        required: false
+      enable_cross_accounts_discovery:
+        types:
+        - Boolean
+        required: false

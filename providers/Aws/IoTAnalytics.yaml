@@ -1,0 +1,385 @@
+---
+class: Aws::IoTAnalytics::Client
+methods:
+  batch_put_message:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      messages:
+        types:
+        - Array<Types::Message>
+        required: true
+  cancel_pipeline_reprocessing:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      reprocessing_id:
+        types:
+        - String
+        required: true
+  create_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_dataset:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+      actions:
+        types:
+        - Array<Types::DatasetAction>
+        required: true
+      triggers:
+        types:
+        - Array<Types::DatasetTrigger>
+        required: false
+      content_delivery_rules:
+        types:
+        - Array<Types::DatasetContentDeliveryRule>
+        required: false
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_dataset_content:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+  create_datastore:
+    parameters:
+      datastore_name:
+        types:
+        - String
+        required: true
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_pipeline:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      pipeline_activities:
+        types:
+        - Array<Types::PipelineActivity>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+  delete_dataset:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+  delete_dataset_content:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: false
+  delete_datastore:
+    parameters:
+      datastore_name:
+        types:
+        - String
+        required: true
+  delete_pipeline:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+  describe_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      include_statistics:
+        types:
+        - Boolean
+        required: false
+  describe_dataset:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+  describe_datastore:
+    parameters:
+      datastore_name:
+        types:
+        - String
+        required: true
+      include_statistics:
+        types:
+        - Boolean
+        required: false
+  describe_pipeline:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+  get_dataset_content:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: false
+  list_channels:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dataset_contents:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      scheduled_on_or_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      scheduled_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_datasets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_datastores:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_pipelines:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_logging_options:
+    parameters:
+      logging_options:
+        types:
+        - Types::LoggingOptions
+        required: true
+  run_pipeline_activity:
+    parameters:
+      pipeline_activity:
+        types:
+        - Types::PipelineActivity
+        required: true
+      payloads:
+        types:
+        - Array<String, IO>
+        required: true
+  sample_channel_data:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      max_messages:
+        types:
+        - Integer
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  start_pipeline_reprocessing:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+  update_dataset:
+    parameters:
+      dataset_name:
+        types:
+        - String
+        required: true
+      actions:
+        types:
+        - Array<Types::DatasetAction>
+        required: true
+      triggers:
+        types:
+        - Array<Types::DatasetTrigger>
+        required: false
+      content_delivery_rules:
+        types:
+        - Array<Types::DatasetContentDeliveryRule>
+        required: false
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+  update_datastore:
+    parameters:
+      datastore_name:
+        types:
+        - String
+        required: true
+      retention_period:
+        types:
+        - Types::RetentionPeriod
+        required: false
+  update_pipeline:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      pipeline_activities:
+        types:
+        - Array<Types::PipelineActivity>
+        required: true

@@ -1,68 +1,22 @@
 ---
 class: Aws::AlexaForBusiness::Client
 methods:
-  initialize:
+  approve_skill:
     parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
+      skill_id:
         types:
         - String
         required: true
-      access_key_id:
+  associate_contact_with_address_book:
+    parameters:
+      contact_arn:
         types:
         - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
+        required: true
+      address_book_arn:
         types:
         - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
+        required: true
   associate_device_with_room:
     parameters:
       device_arn:
@@ -80,6 +34,118 @@ methods:
         - String
         required: false
       room_arn:
+        types:
+        - String
+        required: false
+  associate_skill_with_skill_group:
+    parameters:
+      skill_group_arn:
+        types:
+        - String
+        required: false
+      skill_id:
+        types:
+        - String
+        required: true
+  associate_skill_with_users:
+    parameters:
+      organization_arn:
+        types:
+        - String
+        required: false
+      skill_id:
+        types:
+        - String
+        required: true
+  create_address_book:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+  create_business_report_schedule:
+    parameters:
+      schedule_name:
+        types:
+        - String
+        required: false
+      s3_bucket_name:
+        types:
+        - String
+        required: false
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+      format:
+        types:
+        - String
+        required: true
+      content_range:
+        types:
+        - Types::BusinessReportContentRange
+        required: true
+      recurrence:
+        types:
+        - Types::BusinessReportRecurrence
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+  create_conference_provider:
+    parameters:
+      conference_provider_name:
+        types:
+        - String
+        required: true
+      conference_provider_type:
+        types:
+        - String
+        required: true
+      ip_dial_in:
+        types:
+        - Types::IPDialIn
+        required: false
+      pstn_dial_in:
+        types:
+        - Types::PSTNDialIn
+        required: false
+      meeting_setting:
+        types:
+        - Types::MeetingSetting
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  create_contact:
+    parameters:
+      display_name:
+        types:
+        - String
+        required: false
+      first_name:
+        types:
+        - String
+        required: true
+      last_name:
+        types:
+        - String
+        required: false
+      phone_number:
+        types:
+        - String
+        required: false
+      client_request_token:
         types:
         - String
         required: false
@@ -191,6 +257,36 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  delete_address_book:
+    parameters:
+      address_book_arn:
+        types:
+        - String
+        required: true
+  delete_business_report_schedule:
+    parameters:
+      schedule_arn:
+        types:
+        - String
+        required: true
+  delete_conference_provider:
+    parameters:
+      conference_provider_arn:
+        types:
+        - String
+        required: true
+  delete_contact:
+    parameters:
+      contact_arn:
+        types:
+        - String
+        required: true
+  delete_device:
+    parameters:
+      device_arn:
+        types:
+        - String
+        required: true
   delete_profile:
     parameters:
       profile_arn:
@@ -217,6 +313,16 @@ methods:
         types:
         - String
         required: true
+  delete_skill_authorization:
+    parameters:
+      skill_id:
+        types:
+        - String
+        required: true
+      room_arn:
+        types:
+        - String
+        required: false
   delete_skill_group:
     parameters:
       skill_group_arn:
@@ -233,12 +339,42 @@ methods:
         types:
         - String
         required: true
+  disassociate_contact_from_address_book:
+    parameters:
+      contact_arn:
+        types:
+        - String
+        required: true
+      address_book_arn:
+        types:
+        - String
+        required: true
   disassociate_device_from_room:
     parameters:
       device_arn:
         types:
         - String
         required: false
+  disassociate_skill_from_skill_group:
+    parameters:
+      skill_group_arn:
+        types:
+        - String
+        required: false
+      skill_id:
+        types:
+        - String
+        required: true
+  disassociate_skill_from_users:
+    parameters:
+      organization_arn:
+        types:
+        - String
+        required: false
+      skill_id:
+        types:
+        - String
+        required: true
   disassociate_skill_group_from_room:
     parameters:
       skill_group_arn:
@@ -249,6 +385,30 @@ methods:
         types:
         - String
         required: false
+  forget_smart_home_appliances:
+    parameters:
+      room_arn:
+        types:
+        - String
+        required: true
+  get_address_book:
+    parameters:
+      address_book_arn:
+        types:
+        - String
+        required: true
+  get_conference_provider:
+    parameters:
+      conference_provider_arn:
+        types:
+        - String
+        required: true
+  get_contact:
+    parameters:
+      contact_arn:
+        types:
+        - String
+        required: true
   get_device:
     parameters:
       device_arn:
@@ -287,9 +447,33 @@ methods:
         types:
         - String
         required: false
-  list_skills:
+  list_business_report_schedules:
     parameters:
-      skill_group_arn:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_conference_providers:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_device_events:
+    parameters:
+      device_arn:
+        types:
+        - String
+        required: true
+      event_type:
         types:
         - String
         required: false
@@ -300,6 +484,66 @@ methods:
       max_results:
         types:
         - Integer
+        required: false
+  list_skills:
+    parameters:
+      skill_group_arn:
+        types:
+        - String
+        required: false
+      enablement_type:
+        types:
+        - String
+        required: false
+      skill_type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_skills_store_categories:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_skills_store_skills_by_category:
+    parameters:
+      category_id:
+        types:
+        - Integer
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_smart_home_appliances:
+    parameters:
+      room_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
         required: false
   list_tags:
     parameters:
@@ -315,6 +559,12 @@ methods:
         types:
         - Integer
         required: false
+  put_conference_preference:
+    parameters:
+      conference_preference:
+        types:
+        - Types::ConferencePreference
+        required: true
   put_room_skill_parameter:
     parameters:
       room_arn:
@@ -328,6 +578,48 @@ methods:
       room_skill_parameter:
         types:
         - Types::RoomSkillParameter
+        required: true
+  put_skill_authorization:
+    parameters:
+      authorization_result:
+        types:
+        - Hash<String,String>
+        required: true
+      skill_id:
+        types:
+        - String
+        required: true
+      room_arn:
+        types:
+        - String
+        required: false
+  register_avs_device:
+    parameters:
+      client_id:
+        types:
+        - String
+        required: true
+      user_code:
+        types:
+        - String
+        required: true
+      product_id:
+        types:
+        - String
+        required: true
+      device_serial_number:
+        types:
+        - String
+        required: true
+      amazon_id:
+        types:
+        - String
+        required: true
+  reject_skill:
+    parameters:
+      skill_id:
+        types:
+        - String
         required: true
   resolve_room:
     parameters:
@@ -348,6 +640,42 @@ methods:
       enrollment_id:
         types:
         - String
+        required: false
+  search_address_books:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      sort_criteria:
+        types:
+        - Array<Types::Sort>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  search_contacts:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      sort_criteria:
+        types:
+        - Array<Types::Sort>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   search_devices:
     parameters:
@@ -459,6 +787,12 @@ methods:
         types:
         - Array<String>
         required: true
+  start_smart_home_appliance_discovery:
+    parameters:
+      room_arn:
+        types:
+        - String
+        required: true
   tag_resource:
     parameters:
       arn:
@@ -479,6 +813,90 @@ methods:
         types:
         - Array<String>
         required: true
+  update_address_book:
+    parameters:
+      address_book_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  update_business_report_schedule:
+    parameters:
+      schedule_arn:
+        types:
+        - String
+        required: true
+      s3_bucket_name:
+        types:
+        - String
+        required: false
+      s3_key_prefix:
+        types:
+        - String
+        required: false
+      format:
+        types:
+        - String
+        required: false
+      schedule_name:
+        types:
+        - String
+        required: false
+      recurrence:
+        types:
+        - Types::BusinessReportRecurrence
+        required: false
+  update_conference_provider:
+    parameters:
+      conference_provider_arn:
+        types:
+        - String
+        required: true
+      conference_provider_type:
+        types:
+        - String
+        required: true
+      ip_dial_in:
+        types:
+        - Types::IPDialIn
+        required: false
+      pstn_dial_in:
+        types:
+        - Types::PSTNDialIn
+        required: false
+      meeting_setting:
+        types:
+        - Types::MeetingSetting
+        required: true
+  update_contact:
+    parameters:
+      contact_arn:
+        types:
+        - String
+        required: true
+      display_name:
+        types:
+        - String
+        required: false
+      first_name:
+        types:
+        - String
+        required: false
+      last_name:
+        types:
+        - String
+        required: false
+      phone_number:
+        types:
+        - String
+        required: false
   update_device:
     parameters:
       device_arn:
@@ -498,6 +916,10 @@ methods:
       profile_name:
         types:
         - String
+        required: false
+      is_default:
+        types:
+        - Boolean
         required: false
       timezone:
         types:

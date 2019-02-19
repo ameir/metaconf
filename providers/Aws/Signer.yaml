@@ -1,0 +1,143 @@
+---
+class: Aws::Signer::Client
+methods:
+  cancel_signing_profile:
+    parameters:
+      profile_name:
+        types:
+        - String
+        required: true
+  describe_signing_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  get_signing_platform:
+    parameters:
+      platform_id:
+        types:
+        - String
+        required: true
+  get_signing_profile:
+    parameters:
+      profile_name:
+        types:
+        - String
+        required: true
+  list_signing_jobs:
+    parameters:
+      status:
+        types:
+        - String
+        required: false
+      platform_id:
+        types:
+        - String
+        required: false
+      requested_by:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_signing_platforms:
+    parameters:
+      category:
+        types:
+        - String
+        required: false
+      partner:
+        types:
+        - String
+        required: false
+      target:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_signing_profiles:
+    parameters:
+      include_canceled:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_signing_profile:
+    parameters:
+      profile_name:
+        types:
+        - String
+        required: true
+      signing_material:
+        types:
+        - Types::SigningMaterial
+        required: true
+      platform_id:
+        types:
+        - String
+        required: true
+      overrides:
+        types:
+        - Types::SigningPlatformOverrides
+        required: false
+      signing_parameters:
+        types:
+        - Hash<String,String>
+        required: false
+  start_signing_job:
+    parameters:
+      source:
+        types:
+        - Types::Source
+        required: true
+      destination:
+        types:
+        - Types::Destination
+        required: true
+      profile_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: true
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

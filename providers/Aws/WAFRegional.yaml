@@ -1,68 +1,6 @@
 ---
 class: Aws::WAFRegional::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   associate_web_acl:
     parameters:
       web_acl_id:
@@ -251,6 +189,12 @@ methods:
         types:
         - String
         required: true
+  delete_logging_configuration:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   delete_permission_policy:
     parameters:
       resource_arn:
@@ -374,6 +318,12 @@ methods:
   get_ip_set:
     parameters:
       ip_set_id:
+        types:
+        - String
+        required: true
+  get_logging_configuration:
+    parameters:
+      resource_arn:
         types:
         - String
         required: true
@@ -515,6 +465,16 @@ methods:
         types:
         - Integer
         required: false
+  list_logging_configurations:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
   list_rate_based_rules:
     parameters:
       next_marker:
@@ -551,6 +511,10 @@ methods:
         types:
         - String
         required: true
+      resource_type:
+        types:
+        - String
+        required: false
   list_rule_groups:
     parameters:
       next_marker:
@@ -621,6 +585,12 @@ methods:
         types:
         - Integer
         required: false
+  put_logging_configuration:
+    parameters:
+      logging_configuration:
+        types:
+        - Types::LoggingConfiguration
+        required: true
   put_permission_policy:
     parameters:
       resource_arn:

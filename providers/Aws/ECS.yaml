@@ -1,73 +1,15 @@
 ---
 class: Aws::ECS::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   create_cluster:
     parameters:
       cluster_name:
         types:
         - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_service:
     parameters:
@@ -87,10 +29,14 @@ methods:
         types:
         - Array<Types::LoadBalancer>
         required: false
+      service_registries:
+        types:
+        - Array<Types::ServiceRegistry>
+        required: false
       desired_count:
         types:
         - Integer
-        required: true
+        required: false
       client_token:
         types:
         - String
@@ -127,6 +73,36 @@ methods:
         types:
         - Integer
         required: false
+      scheduling_strategy:
+        types:
+        - String
+        required: false
+      deployment_controller:
+        types:
+        - Types::DeploymentController
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      enable_ecs_managed_tags:
+        types:
+        - Boolean
+        required: false
+      propagate_tags:
+        types:
+        - String
+        required: false
+  delete_account_setting:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      principal_arn:
+        types:
+        - String
+        required: false
   delete_attributes:
     parameters:
       cluster:
@@ -153,6 +129,10 @@ methods:
         types:
         - String
         required: true
+      force:
+        types:
+        - Boolean
+        required: false
   deregister_container_instance:
     parameters:
       cluster:
@@ -193,6 +173,10 @@ methods:
         types:
         - Array<String>
         required: true
+      include:
+        types:
+        - Array<String>
+        required: false
   describe_services:
     parameters:
       cluster:
@@ -203,12 +187,20 @@ methods:
         types:
         - Array<String>
         required: true
+      include:
+        types:
+        - Array<String>
+        required: false
   describe_task_definition:
     parameters:
       task_definition:
         types:
         - String
         required: true
+      include:
+        types:
+        - Array<String>
+        required: false
   describe_tasks:
     parameters:
       cluster:
@@ -219,6 +211,10 @@ methods:
         types:
         - Array<String>
         required: true
+      include:
+        types:
+        - Array<String>
+        required: false
   discover_poll_endpoint:
     parameters:
       container_instance:
@@ -228,6 +224,32 @@ methods:
       cluster:
         types:
         - String
+        required: false
+  list_account_settings:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      value:
+        types:
+        - String
+        required: false
+      principal_arn:
+        types:
+        - String
+        required: false
+      effective_settings:
+        types:
+        - Boolean
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   list_attributes:
     parameters:
@@ -305,6 +327,16 @@ methods:
         types:
         - String
         required: false
+      scheduling_strategy:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_task_definition_families:
     parameters:
       family_prefix:
@@ -383,6 +415,30 @@ methods:
         types:
         - String
         required: false
+  put_account_setting:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      value:
+        types:
+        - String
+        required: true
+      principal_arn:
+        types:
+        - String
+        required: false
+  put_account_setting_default:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      value:
+        types:
+        - String
+        required: true
   put_attributes:
     parameters:
       cluster:
@@ -423,6 +479,14 @@ methods:
         types:
         - Array<Types::Attribute>
         required: false
+      platform_devices:
+        types:
+        - Array<Types::PlatformDevice>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   register_task_definition:
     parameters:
       family:
@@ -462,6 +526,18 @@ methods:
         - String
         required: false
       memory:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      pid_mode:
+        types:
+        - String
+        required: false
+      ipc_mode:
         types:
         - String
         required: false
@@ -511,6 +587,18 @@ methods:
         types:
         - Types::NetworkConfiguration
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      enable_ecs_managed_tags:
+        types:
+        - Boolean
+        required: false
+      propagate_tags:
+        types:
+        - String
+        required: false
   start_task:
     parameters:
       cluster:
@@ -540,6 +628,18 @@ methods:
       network_configuration:
         types:
         - Types::NetworkConfiguration
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      enable_ecs_managed_tags:
+        types:
+        - Boolean
+        required: false
+      propagate_tags:
+        types:
+        - String
         required: false
   stop_task:
     parameters:
@@ -635,6 +735,26 @@ methods:
         - Integer
         - String
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_container_agent:
     parameters:
       cluster:

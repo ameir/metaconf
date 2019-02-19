@@ -1,64 +1,6 @@
 ---
 class: Aws::WorkDocs::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   abort_document_version_upload:
     parameters:
       authentication_token:
@@ -381,9 +323,21 @@ methods:
         types:
         - String
         required: false
+      activity_types:
+        types:
+        - String
+        required: false
+      resource_id:
+        types:
+        - String
+        required: false
       user_id:
         types:
         - String
+        required: false
+      include_indirect_activities:
+        types:
+        - Boolean
         required: false
       limit:
         types:
@@ -684,6 +638,28 @@ methods:
       fields:
         types:
         - String
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  get_resources:
+    parameters:
+      authentication_token:
+        types:
+        - String
+        required: false
+      user_id:
+        types:
+        - String
+        required: false
+      collection_type:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
         required: false
       marker:
         types:

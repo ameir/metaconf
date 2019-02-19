@@ -1,88 +1,6 @@
 ---
 class: Aws::S3::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      compute_checksums:
-        types:
-        - Boolean
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      follow_redirects:
-        types:
-        - Boolean
-        required: false
-      force_path_style:
-        types:
-        - Boolean
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      require_https_for_sse_cpk:
-        types:
-        - Boolean
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      use_accelerate_endpoint:
-        types:
-        - Boolean
-        required: false
-      use_dualstack_endpoint:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   abort_multipart_upload:
     parameters:
       bucket:
@@ -269,6 +187,22 @@ methods:
         types:
         - String
         required: false
+      object_lock_mode:
+        types:
+        - String
+        required: false
+      object_lock_retain_until_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      object_lock_legal_hold_status:
+        types:
+        - String
+        required: false
   create_bucket:
     parameters:
       acl:
@@ -302,6 +236,10 @@ methods:
       grant_write_acp:
         types:
         - String
+        required: false
+      object_lock_enabled_for_bucket:
+        types:
+        - Boolean
         required: false
   create_multipart_upload:
     parameters:
@@ -398,6 +336,22 @@ methods:
         - String
         required: false
       tagging:
+        types:
+        - String
+        required: false
+      object_lock_mode:
+        types:
+        - String
+        required: false
+      object_lock_retain_until_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      object_lock_legal_hold_status:
         types:
         - String
         required: false
@@ -501,6 +455,10 @@ methods:
         types:
         - String
         required: false
+      bypass_governance_retention:
+        types:
+        - Boolean
+        required: false
   delete_object_tagging:
     parameters:
       bucket:
@@ -533,6 +491,16 @@ methods:
         types:
         - String
         required: false
+      bypass_governance_retention:
+        types:
+        - Boolean
+        required: false
+  delete_public_access_block:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
   get_bucket_accelerate_configuration:
     parameters:
       bucket:
@@ -624,6 +592,12 @@ methods:
         - String
         required: true
   get_bucket_policy:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+  get_bucket_policy_status:
     parameters:
       bucket:
         types:
@@ -772,6 +746,48 @@ methods:
         types:
         - String
         required: false
+  get_object_legal_hold:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      key:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: false
+      request_payer:
+        types:
+        - String
+        required: false
+  get_object_lock_configuration:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+  get_object_retention:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      key:
+        types:
+        - String
+        required: true
+      version_id:
+        types:
+        - String
+        required: false
+      request_payer:
+        types:
+        - String
+        required: false
   get_object_tagging:
     parameters:
       bucket:
@@ -805,6 +821,12 @@ methods:
         types:
         - String
         required: false
+  get_public_access_block:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
   head_bucket:
     parameters:
       bucket:
@@ -1440,6 +1462,22 @@ methods:
         types:
         - String
         required: false
+      object_lock_mode:
+        types:
+        - String
+        required: false
+      object_lock_retain_until_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      object_lock_legal_hold_status:
+        types:
+        - String
+        required: false
   put_object_acl:
     parameters:
       acl:
@@ -1490,6 +1528,84 @@ methods:
         types:
         - String
         required: false
+  put_object_legal_hold:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      key:
+        types:
+        - String
+        required: true
+      legal_hold:
+        types:
+        - Types::ObjectLockLegalHold
+        required: false
+      request_payer:
+        types:
+        - String
+        required: false
+      version_id:
+        types:
+        - String
+        required: false
+      content_md5:
+        types:
+        - String
+        required: false
+  put_object_lock_configuration:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      object_lock_configuration:
+        types:
+        - Types::ObjectLockConfiguration
+        required: false
+      request_payer:
+        types:
+        - String
+        required: false
+      token:
+        types:
+        - String
+        required: false
+      content_md5:
+        types:
+        - String
+        required: false
+  put_object_retention:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      key:
+        types:
+        - String
+        required: true
+      retention:
+        types:
+        - Types::ObjectLockRetention
+        required: false
+      request_payer:
+        types:
+        - String
+        required: false
+      version_id:
+        types:
+        - String
+        required: false
+      bypass_governance_retention:
+        types:
+        - Boolean
+        required: false
+      content_md5:
+        types:
+        - String
+        required: false
   put_object_tagging:
     parameters:
       bucket:
@@ -1511,6 +1627,20 @@ methods:
       tagging:
         types:
         - Types::Tagging
+        required: true
+  put_public_access_block:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      content_md5:
+        types:
+        - String
+        required: false
+      public_access_block_configuration:
+        types:
+        - Types::PublicAccessBlockConfiguration
         required: true
   restore_object:
     parameters:
@@ -1534,6 +1664,48 @@ methods:
         types:
         - String
         required: false
+  select_object_content:
+    parameters:
+      bucket:
+        types:
+        - String
+        required: true
+      key:
+        types:
+        - String
+        required: true
+      sse_customer_algorithm:
+        types:
+        - String
+        required: false
+      sse_customer_key:
+        types:
+        - String
+        required: false
+      sse_customer_key_md5:
+        types:
+        - String
+        required: false
+      expression:
+        types:
+        - String
+        required: true
+      expression_type:
+        types:
+        - String
+        required: true
+      request_progress:
+        types:
+        - Types::RequestProgress
+        required: false
+      input_serialization:
+        types:
+        - Types::InputSerialization
+        required: true
+      output_serialization:
+        types:
+        - Types::OutputSerialization
+        required: true
   upload_part:
     parameters:
       body:

@@ -1,0 +1,103 @@
+---
+class: Aws::EKS::Client
+methods:
+  create_cluster:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      resources_vpc_config:
+        types:
+        - Types::VpcConfigRequest
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  delete_cluster:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  describe_cluster:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  describe_update:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      update_id:
+        types:
+        - String
+        required: true
+  list_clusters:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_updates:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_cluster_version:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

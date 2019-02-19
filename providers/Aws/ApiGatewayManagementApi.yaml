@@ -1,0 +1,14 @@
+---
+class: Aws::ApiGatewayManagementApi::Client
+methods:
+  post_to_connection:
+    parameters:
+      data:
+        types:
+        - String
+        - IO
+        required: true
+      connection_id:
+        types:
+        - String
+        required: true

@@ -1,0 +1,851 @@
+---
+class: Aws::DocDB::Client
+methods:
+  add_tags_to_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  apply_pending_maintenance_action:
+    parameters:
+      resource_identifier:
+        types:
+        - String
+        required: true
+      apply_action:
+        types:
+        - String
+        required: true
+      opt_in_type:
+        types:
+        - String
+        required: true
+  copy_db_cluster_parameter_group:
+    parameters:
+      source_db_cluster_parameter_group_identifier:
+        types:
+        - String
+        required: true
+      target_db_cluster_parameter_group_identifier:
+        types:
+        - String
+        required: true
+      target_db_cluster_parameter_group_description:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  copy_db_cluster_snapshot:
+    parameters:
+      source_db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+      target_db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+      kms_key_id:
+        types:
+        - String
+        required: false
+      pre_signed_url:
+        types:
+        - String
+        required: false
+      copy_tags:
+        types:
+        - Boolean
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_db_cluster:
+    parameters:
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+      backup_retention_period:
+        types:
+        - Integer
+        required: false
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      db_subnet_group_name:
+        types:
+        - String
+        required: false
+      engine:
+        types:
+        - String
+        required: true
+      engine_version:
+        types:
+        - String
+        required: false
+      port:
+        types:
+        - Integer
+        required: false
+      master_username:
+        types:
+        - String
+        required: false
+      master_user_password:
+        types:
+        - String
+        required: false
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      storage_encrypted:
+        types:
+        - Boolean
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      enable_cloudwatch_logs_exports:
+        types:
+        - Array<String>
+        required: false
+  create_db_cluster_parameter_group:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: true
+      db_parameter_group_family:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_db_cluster_snapshot:
+    parameters:
+      db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_db_instance:
+    parameters:
+      db_instance_identifier:
+        types:
+        - String
+        required: true
+      db_instance_class:
+        types:
+        - String
+        required: true
+      engine:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      auto_minor_version_upgrade:
+        types:
+        - Boolean
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      promotion_tier:
+        types:
+        - Integer
+        required: false
+  create_db_subnet_group:
+    parameters:
+      db_subnet_group_name:
+        types:
+        - String
+        required: true
+      db_subnet_group_description:
+        types:
+        - String
+        required: true
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_db_cluster:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      skip_final_snapshot:
+        types:
+        - Boolean
+        required: false
+      final_db_snapshot_identifier:
+        types:
+        - String
+        required: false
+  delete_db_cluster_parameter_group:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: true
+  delete_db_cluster_snapshot:
+    parameters:
+      db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+  delete_db_instance:
+    parameters:
+      db_instance_identifier:
+        types:
+        - String
+        required: true
+  delete_db_subnet_group:
+    parameters:
+      db_subnet_group_name:
+        types:
+        - String
+        required: true
+  describe_db_cluster_parameter_groups:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_db_cluster_parameters:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: true
+      source:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_db_cluster_snapshot_attributes:
+    parameters:
+      db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+  describe_db_cluster_snapshots:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: false
+      db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: false
+      snapshot_type:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      include_shared:
+        types:
+        - Boolean
+        required: false
+      include_public:
+        types:
+        - Boolean
+        required: false
+  describe_db_clusters:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_db_engine_versions:
+    parameters:
+      engine:
+        types:
+        - String
+        required: false
+      engine_version:
+        types:
+        - String
+        required: false
+      db_parameter_group_family:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      default_only:
+        types:
+        - Boolean
+        required: false
+      list_supported_character_sets:
+        types:
+        - Boolean
+        required: false
+      list_supported_timezones:
+        types:
+        - Boolean
+        required: false
+  describe_db_instances:
+    parameters:
+      db_instance_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_db_subnet_groups:
+    parameters:
+      db_subnet_group_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_engine_default_cluster_parameters:
+    parameters:
+      db_parameter_group_family:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_event_categories:
+    parameters:
+      source_type:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  describe_events:
+    parameters:
+      source_identifier:
+        types:
+        - String
+        required: false
+      source_type:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      duration:
+        types:
+        - Integer
+        required: false
+      event_categories:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_orderable_db_instance_options:
+    parameters:
+      engine:
+        types:
+        - String
+        required: true
+      engine_version:
+        types:
+        - String
+        required: false
+      db_instance_class:
+        types:
+        - String
+        required: false
+      license_model:
+        types:
+        - String
+        required: false
+      vpc:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_pending_maintenance_actions:
+    parameters:
+      resource_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+  failover_db_cluster:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: false
+      target_db_instance_identifier:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  modify_db_cluster:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      new_db_cluster_identifier:
+        types:
+        - String
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
+        required: false
+      backup_retention_period:
+        types:
+        - Integer
+        required: false
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: false
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      port:
+        types:
+        - Integer
+        required: false
+      master_user_password:
+        types:
+        - String
+        required: false
+      preferred_backup_window:
+        types:
+        - String
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      cloudwatch_logs_export_configuration:
+        types:
+        - Types::CloudwatchLogsExportConfiguration
+        required: false
+      engine_version:
+        types:
+        - String
+        required: false
+  modify_db_cluster_parameter_group:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: true
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: true
+  modify_db_cluster_snapshot_attribute:
+    parameters:
+      db_cluster_snapshot_identifier:
+        types:
+        - String
+        required: true
+      attribute_name:
+        types:
+        - String
+        required: true
+      values_to_add:
+        types:
+        - Array<String>
+        required: false
+      values_to_remove:
+        types:
+        - Array<String>
+        required: false
+  modify_db_instance:
+    parameters:
+      db_instance_identifier:
+        types:
+        - String
+        required: true
+      db_instance_class:
+        types:
+        - String
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
+        required: false
+      preferred_maintenance_window:
+        types:
+        - String
+        required: false
+      auto_minor_version_upgrade:
+        types:
+        - Boolean
+        required: false
+      new_db_instance_identifier:
+        types:
+        - String
+        required: false
+      promotion_tier:
+        types:
+        - Integer
+        required: false
+  modify_db_subnet_group:
+    parameters:
+      db_subnet_group_name:
+        types:
+        - String
+        required: true
+      db_subnet_group_description:
+        types:
+        - String
+        required: false
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+  reboot_db_instance:
+    parameters:
+      db_instance_identifier:
+        types:
+        - String
+        required: true
+      force_failover:
+        types:
+        - Boolean
+        required: false
+  remove_tags_from_resource:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  reset_db_cluster_parameter_group:
+    parameters:
+      db_cluster_parameter_group_name:
+        types:
+        - String
+        required: true
+      reset_all_parameters:
+        types:
+        - Boolean
+        required: false
+      parameters:
+        types:
+        - Array<Types::Parameter>
+        required: false
+  restore_db_cluster_from_snapshot:
+    parameters:
+      availability_zones:
+        types:
+        - Array<String>
+        required: false
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      snapshot_identifier:
+        types:
+        - String
+        required: true
+      engine:
+        types:
+        - String
+        required: true
+      engine_version:
+        types:
+        - String
+        required: false
+      port:
+        types:
+        - Integer
+        required: false
+      db_subnet_group_name:
+        types:
+        - String
+        required: false
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      enable_cloudwatch_logs_exports:
+        types:
+        - Array<String>
+        required: false
+  restore_db_cluster_to_point_in_time:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+      source_db_cluster_identifier:
+        types:
+        - String
+        required: true
+      restore_to_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      use_latest_restorable_time:
+        types:
+        - Boolean
+        required: false
+      port:
+        types:
+        - Integer
+        required: false
+      db_subnet_group_name:
+        types:
+        - String
+        required: false
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      enable_cloudwatch_logs_exports:
+        types:
+        - Array<String>
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

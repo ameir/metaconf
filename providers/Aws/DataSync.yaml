@@ -1,0 +1,269 @@
+---
+class: Aws::DataSync::Client
+methods:
+  cancel_task_execution:
+    parameters:
+      task_execution_arn:
+        types:
+        - String
+        required: true
+  create_agent:
+    parameters:
+      activation_key:
+        types:
+        - String
+        required: true
+      agent_name:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  create_location_efs:
+    parameters:
+      subdirectory:
+        types:
+        - String
+        required: true
+      efs_filesystem_arn:
+        types:
+        - String
+        required: true
+      ec2_config:
+        types:
+        - Types::Ec2Config
+        required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  create_location_nfs:
+    parameters:
+      subdirectory:
+        types:
+        - String
+        required: true
+      server_hostname:
+        types:
+        - String
+        required: true
+      on_prem_config:
+        types:
+        - Types::OnPremConfig
+        required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  create_location_s3:
+    parameters:
+      subdirectory:
+        types:
+        - String
+        required: true
+      s3_bucket_arn:
+        types:
+        - String
+        required: true
+      s3_config:
+        types:
+        - Types::S3Config
+        required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  create_task:
+    parameters:
+      source_location_arn:
+        types:
+        - String
+        required: true
+      destination_location_arn:
+        types:
+        - String
+        required: true
+      cloud_watch_log_group_arn:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      options:
+        types:
+        - Types::Options
+        required: false
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  delete_agent:
+    parameters:
+      agent_arn:
+        types:
+        - String
+        required: true
+  delete_location:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
+  delete_task:
+    parameters:
+      task_arn:
+        types:
+        - String
+        required: true
+  describe_agent:
+    parameters:
+      agent_arn:
+        types:
+        - String
+        required: true
+  describe_location_efs:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
+  describe_location_nfs:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
+  describe_location_s3:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
+  describe_task:
+    parameters:
+      task_arn:
+        types:
+        - String
+        required: true
+  describe_task_execution:
+    parameters:
+      task_execution_arn:
+        types:
+        - String
+        required: true
+  list_agents:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_locations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_task_executions:
+    parameters:
+      task_arn:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tasks:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  start_task_execution:
+    parameters:
+      task_arn:
+        types:
+        - String
+        required: true
+      override_options:
+        types:
+        - Types::Options
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      keys:
+        types:
+        - Array<String>
+        required: true
+  update_agent:
+    parameters:
+      agent_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_task:
+    parameters:
+      task_arn:
+        types:
+        - String
+        required: true
+      options:
+        types:
+        - Types::Options
+        required: false
+      name:
+        types:
+        - String
+        required: false

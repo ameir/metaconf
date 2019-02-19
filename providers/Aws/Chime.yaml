@@ -1,0 +1,167 @@
+---
+class: Aws::Chime::Client
+methods:
+  batch_suspend_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id_list:
+        types:
+        - Array<String>
+        required: true
+  batch_unsuspend_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id_list:
+        types:
+        - Array<String>
+        required: true
+  batch_update_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      update_user_request_items:
+        types:
+        - Array<Types::UpdateUserRequestItem>
+        required: true
+  create_account:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  get_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  get_account_settings:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  get_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  invite_users:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_email_list:
+        types:
+        - Array<String>
+        required: true
+  list_accounts:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      user_email:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_users:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_email:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  logout_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  reset_personal_pin:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  update_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_account_settings:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      account_settings:
+        types:
+        - Types::AccountSettings
+        required: true
+  update_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      license_type:
+        types:
+        - String
+        required: false

@@ -1,0 +1,107 @@
+---
+class: Aws::IoT1ClickDevicesService::Client
+methods:
+  claim_devices_by_claim_code:
+    parameters:
+      claim_code:
+        types:
+        - String
+        required: true
+  describe_device:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+  finalize_device_claim:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+  get_device_methods:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+  initiate_device_claim:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+  invoke_device_method:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+      device_method:
+        types:
+        - Types::DeviceMethod
+        required: false
+      device_method_parameters:
+        types:
+        - String
+        required: false
+  list_device_events:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+      from_time_stamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      to_time_stamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  list_devices:
+    parameters:
+      device_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  unclaim_device:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+  update_device_state:
+    parameters:
+      device_id:
+        types:
+        - String
+        required: true
+      enabled:
+        types:
+        - Boolean
+        required: false

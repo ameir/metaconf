@@ -1,64 +1,6 @@
 ---
 class: Aws::EFS::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   create_file_system:
     parameters:
       creation_token:
@@ -76,6 +18,14 @@ methods:
       kms_key_id:
         types:
         - String
+        required: false
+      throughput_mode:
+        types:
+        - String
+        required: false
+      provisioned_throughput_in_mibps:
+        types:
+        - Float
         required: false
   create_mount_target:
     parameters:
@@ -145,6 +95,12 @@ methods:
         types:
         - String
         required: false
+  describe_lifecycle_configuration:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
   describe_mount_target_security_groups:
     parameters:
       mount_target_id:
@@ -192,4 +148,28 @@ methods:
       security_groups:
         types:
         - Array<String>
+        required: false
+  put_lifecycle_configuration:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      lifecycle_policies:
+        types:
+        - Array<Types::LifecyclePolicy>
+        required: true
+  update_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      throughput_mode:
+        types:
+        - String
+        required: false
+      provisioned_throughput_in_mibps:
+        types:
+        - Float
         required: false

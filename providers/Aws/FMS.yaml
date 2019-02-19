@@ -1,0 +1,85 @@
+---
+class: Aws::FMS::Client
+methods:
+  associate_admin_account:
+    parameters:
+      admin_account:
+        types:
+        - String
+        required: true
+  delete_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      delete_all_policy_resources:
+        types:
+        - Boolean
+        required: false
+  get_compliance_detail:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      member_account:
+        types:
+        - String
+        required: true
+  get_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+  list_compliance_status:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_member_accounts:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_policies:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_notification_channel:
+    parameters:
+      sns_topic_arn:
+        types:
+        - String
+        required: true
+      sns_role_name:
+        types:
+        - String
+        required: true
+  put_policy:
+    parameters:
+      policy:
+        types:
+        - Types::Policy
+        required: true

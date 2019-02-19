@@ -1,0 +1,189 @@
+---
+class: Aws::FSx::Client
+methods:
+  create_backup:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_file_system:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: false
+      file_system_type:
+        types:
+        - String
+        required: true
+      storage_capacity:
+        types:
+        - Integer
+        required: true
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
+      windows_configuration:
+        types:
+        - Types::CreateFileSystemWindowsConfiguration
+        required: false
+      lustre_configuration:
+        types:
+        - Types::CreateFileSystemLustreConfiguration
+        required: false
+  create_file_system_from_backup:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      subnet_ids:
+        types:
+        - Array<String>
+        required: true
+      security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      windows_configuration:
+        types:
+        - Types::CreateFileSystemWindowsConfiguration
+        required: false
+  delete_backup:
+    parameters:
+      backup_id:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  delete_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      windows_configuration:
+        types:
+        - Types::DeleteFileSystemWindowsConfiguration
+        required: false
+  describe_backups:
+    parameters:
+      backup_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_file_systems:
+    parameters:
+      file_system_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      windows_configuration:
+        types:
+        - Types::UpdateFileSystemWindowsConfiguration
+        required: false
+      lustre_configuration:
+        types:
+        - Types::UpdateFileSystemLustreConfiguration
+        required: false

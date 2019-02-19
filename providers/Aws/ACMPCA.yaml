@@ -1,0 +1,222 @@
+---
+class: Aws::ACMPCA::Client
+methods:
+  create_certificate_authority:
+    parameters:
+      certificate_authority_configuration:
+        types:
+        - Types::CertificateAuthorityConfiguration
+        required: true
+      revocation_configuration:
+        types:
+        - Types::RevocationConfiguration
+        required: false
+      certificate_authority_type:
+        types:
+        - String
+        required: true
+      idempotency_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_certificate_authority_audit_report:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      s3_bucket_name:
+        types:
+        - String
+        required: true
+      audit_report_response_format:
+        types:
+        - String
+        required: true
+  delete_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      permanent_deletion_time_in_days:
+        types:
+        - Integer
+        required: false
+  describe_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+  describe_certificate_authority_audit_report:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      audit_report_id:
+        types:
+        - String
+        required: true
+  get_certificate:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      certificate_arn:
+        types:
+        - String
+        required: true
+  get_certificate_authority_certificate:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+  get_certificate_authority_csr:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+  import_certificate_authority_certificate:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      certificate:
+        types:
+        - String
+        - IO
+        required: true
+      certificate_chain:
+        types:
+        - String
+        - IO
+        required: true
+  issue_certificate:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      csr:
+        types:
+        - String
+        - IO
+        required: true
+      signing_algorithm:
+        types:
+        - String
+        required: true
+      validity:
+        types:
+        - Types::Validity
+        required: true
+      idempotency_token:
+        types:
+        - String
+        required: false
+  list_certificate_authorities:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  restore_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+  revoke_certificate:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      certificate_serial:
+        types:
+        - String
+        required: true
+      revocation_reason:
+        types:
+        - String
+        required: true
+  tag_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  update_certificate_authority:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      revocation_configuration:
+        types:
+        - Types::RevocationConfiguration
+        required: false
+      status:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

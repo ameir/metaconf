@@ -1,0 +1,25 @@
+---
+class: Aws::S3Control::Client
+methods:
+  delete_public_access_block:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  get_public_access_block:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+  put_public_access_block:
+    parameters:
+      public_access_block_configuration:
+        types:
+        - Types::PublicAccessBlockConfiguration
+        required: true
+      account_id:
+        types:
+        - String
+        required: true

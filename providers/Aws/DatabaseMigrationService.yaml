@@ -1,68 +1,6 @@
 ---
 class: Aws::DatabaseMigrationService::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   add_tags_to_resource:
     parameters:
       resource_arn:
@@ -127,6 +65,14 @@ methods:
         types:
         - String
         required: false
+      service_access_role_arn:
+        types:
+        - String
+        required: false
+      external_table_definition:
+        types:
+        - String
+        required: false
       dynamo_db_settings:
         types:
         - Types::DynamoDbSettings
@@ -135,9 +81,21 @@ methods:
         types:
         - Types::S3Settings
         required: false
+      dms_transfer_settings:
+        types:
+        - Types::DmsTransferSettings
+        required: false
       mongo_db_settings:
         types:
         - Types::MongoDbSettings
+        required: false
+      kinesis_settings:
+        types:
+        - Types::KinesisSettings
+        required: false
+      elasticsearch_settings:
+        types:
+        - Types::ElasticsearchSettings
         required: false
   create_event_subscription:
     parameters:
@@ -223,6 +181,10 @@ methods:
         types:
         - Boolean
         required: false
+      dns_name_servers:
+        types:
+        - String
+        required: false
   create_replication_subnet_group:
     parameters:
       replication_subnet_group_identifier:
@@ -277,6 +239,14 @@ methods:
         - DateTime
         - Date
         - Integer
+        - String
+        required: false
+      cdc_start_position:
+        types:
+        - String
+        required: false
+      cdc_stop_position:
+        types:
         - String
         required: false
       tags:
@@ -642,6 +612,14 @@ methods:
         types:
         - String
         required: false
+      service_access_role_arn:
+        types:
+        - String
+        required: false
+      external_table_definition:
+        types:
+        - String
+        required: false
       dynamo_db_settings:
         types:
         - Types::DynamoDbSettings
@@ -650,9 +628,21 @@ methods:
         types:
         - Types::S3Settings
         required: false
+      dms_transfer_settings:
+        types:
+        - Types::DmsTransferSettings
+        required: false
       mongo_db_settings:
         types:
         - Types::MongoDbSettings
+        required: false
+      kinesis_settings:
+        types:
+        - Types::KinesisSettings
+        required: false
+      elasticsearch_settings:
+        types:
+        - Types::ElasticsearchSettings
         required: false
   modify_event_subscription:
     parameters:
@@ -766,6 +756,14 @@ methods:
         - Integer
         - String
         required: false
+      cdc_start_position:
+        types:
+        - String
+        required: false
+      cdc_stop_position:
+        types:
+        - String
+        required: false
   reboot_replication_instance:
     parameters:
       replication_instance_arn:
@@ -796,6 +794,10 @@ methods:
         types:
         - Array<Types::TableToReload>
         required: true
+      reload_option:
+        types:
+        - String
+        required: false
   remove_tags_from_resource:
     parameters:
       resource_arn:
@@ -824,6 +826,14 @@ methods:
         - Integer
         - String
         required: false
+      cdc_start_position:
+        types:
+        - String
+        required: false
+      cdc_stop_position:
+        types:
+        - String
+        required: false
   start_replication_task_assessment:
     parameters:
       replication_task_arn:
@@ -846,3 +856,21 @@ methods:
         types:
         - String
         required: true
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

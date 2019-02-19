@@ -1,0 +1,265 @@
+---
+class: Aws::AppMesh::Client
+methods:
+  create_mesh:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+  create_route:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      route_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::RouteSpec
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  create_virtual_node:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::VirtualNodeSpec
+        required: true
+      virtual_node_name:
+        types:
+        - String
+        required: true
+  create_virtual_router:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::VirtualRouterSpec
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  delete_mesh:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+  delete_route:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      route_name:
+        types:
+        - String
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  delete_virtual_node:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      virtual_node_name:
+        types:
+        - String
+        required: true
+  delete_virtual_router:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  describe_mesh:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+  describe_route:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      route_name:
+        types:
+        - String
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  describe_virtual_node:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      virtual_node_name:
+        types:
+        - String
+        required: true
+  describe_virtual_router:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  list_meshes:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_routes:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  list_virtual_nodes:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_virtual_routers:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  update_route:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      route_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::RouteSpec
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true
+  update_virtual_node:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::VirtualNodeSpec
+        required: true
+      virtual_node_name:
+        types:
+        - String
+        required: true
+  update_virtual_router:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::VirtualRouterSpec
+        required: true
+      virtual_router_name:
+        types:
+        - String
+        required: true

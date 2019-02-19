@@ -1,0 +1,91 @@
+---
+class: Aws::PinpointSMSVoice::Client
+methods:
+  create_configuration_set:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: false
+  create_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination:
+        types:
+        - Types::EventDestinationDefinition
+        required: false
+      event_destination_name:
+        types:
+        - String
+        required: false
+  delete_configuration_set:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+  delete_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination_name:
+        types:
+        - String
+        required: true
+  get_configuration_set_event_destinations:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+  list_configuration_sets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+  send_voice_message:
+    parameters:
+      caller_id:
+        types:
+        - String
+        required: false
+      configuration_set_name:
+        types:
+        - String
+        required: false
+      content:
+        types:
+        - Types::VoiceMessageContent
+        required: false
+      destination_phone_number:
+        types:
+        - String
+        required: false
+      origination_phone_number:
+        types:
+        - String
+        required: false
+  update_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination:
+        types:
+        - Types::EventDestinationDefinition
+        required: false
+      event_destination_name:
+        types:
+        - String
+        required: true

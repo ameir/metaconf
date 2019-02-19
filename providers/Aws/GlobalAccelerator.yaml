@@ -1,0 +1,253 @@
+---
+class: Aws::GlobalAccelerator::Client
+methods:
+  create_accelerator:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      ip_address_type:
+        types:
+        - String
+        required: false
+      enabled:
+        types:
+        - Boolean
+        required: false
+      idempotency_token:
+        types:
+        - String
+        required: true
+  create_endpoint_group:
+    parameters:
+      listener_arn:
+        types:
+        - String
+        required: true
+      endpoint_group_region:
+        types:
+        - String
+        required: true
+      endpoint_configurations:
+        types:
+        - Array<Types::EndpointConfiguration>
+        required: false
+      traffic_dial_percentage:
+        types:
+        - Float
+        required: false
+      health_check_port:
+        types:
+        - Integer
+        required: false
+      health_check_protocol:
+        types:
+        - String
+        required: false
+      health_check_path:
+        types:
+        - String
+        required: false
+      health_check_interval_seconds:
+        types:
+        - Integer
+        required: false
+      threshold_count:
+        types:
+        - Integer
+        required: false
+      idempotency_token:
+        types:
+        - String
+        required: true
+  create_listener:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: true
+      port_ranges:
+        types:
+        - Array<Types::PortRange>
+        required: true
+      protocol:
+        types:
+        - String
+        required: true
+      client_affinity:
+        types:
+        - String
+        required: false
+      idempotency_token:
+        types:
+        - String
+        required: true
+  delete_accelerator:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: true
+  delete_endpoint_group:
+    parameters:
+      endpoint_group_arn:
+        types:
+        - String
+        required: true
+  delete_listener:
+    parameters:
+      listener_arn:
+        types:
+        - String
+        required: true
+  describe_accelerator:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: true
+  describe_accelerator_attributes:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: false
+  describe_endpoint_group:
+    parameters:
+      endpoint_group_arn:
+        types:
+        - String
+        required: true
+  describe_listener:
+    parameters:
+      listener_arn:
+        types:
+        - String
+        required: true
+  list_accelerators:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_endpoint_groups:
+    parameters:
+      listener_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_listeners:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  update_accelerator:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      ip_address_type:
+        types:
+        - String
+        required: false
+      enabled:
+        types:
+        - Boolean
+        required: false
+  update_accelerator_attributes:
+    parameters:
+      accelerator_arn:
+        types:
+        - String
+        required: false
+      flow_logs_enabled:
+        types:
+        - Boolean
+        required: false
+      flow_logs_s3_bucket:
+        types:
+        - String
+        required: false
+      flow_logs_s3_prefix:
+        types:
+        - String
+        required: false
+  update_endpoint_group:
+    parameters:
+      endpoint_group_arn:
+        types:
+        - String
+        required: true
+      endpoint_configurations:
+        types:
+        - Array<Types::EndpointConfiguration>
+        required: false
+      traffic_dial_percentage:
+        types:
+        - Float
+        required: false
+      health_check_port:
+        types:
+        - Integer
+        required: false
+      health_check_protocol:
+        types:
+        - String
+        required: false
+      health_check_path:
+        types:
+        - String
+        required: false
+      health_check_interval_seconds:
+        types:
+        - Integer
+        required: false
+      threshold_count:
+        types:
+        - Integer
+        required: false
+  update_listener:
+    parameters:
+      listener_arn:
+        types:
+        - String
+        required: true
+      port_ranges:
+        types:
+        - Array<Types::PortRange>
+        required: false
+      protocol:
+        types:
+        - String
+        required: false
+      client_affinity:
+        types:
+        - String
+        required: false

@@ -1,0 +1,77 @@
+---
+class: Aws::DLM::Client
+methods:
+  create_lifecycle_policy:
+    parameters:
+      execution_role_arn:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      state:
+        types:
+        - String
+        required: true
+      policy_details:
+        types:
+        - Types::PolicyDetails
+        required: true
+  delete_lifecycle_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+  get_lifecycle_policies:
+    parameters:
+      policy_ids:
+        types:
+        - Array<String>
+        required: false
+      state:
+        types:
+        - String
+        required: false
+      resource_types:
+        types:
+        - Array<String>
+        required: false
+      target_tags:
+        types:
+        - Array<String>
+        required: false
+      tags_to_add:
+        types:
+        - Array<String>
+        required: false
+  get_lifecycle_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+  update_lifecycle_policy:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      execution_role_arn:
+        types:
+        - String
+        required: false
+      state:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      policy_details:
+        types:
+        - Types::PolicyDetails
+        required: false

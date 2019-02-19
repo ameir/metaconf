@@ -1,0 +1,293 @@
+---
+class: Aws::QuickSight::Client
+methods:
+  create_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  create_group_membership:
+    parameters:
+      member_name:
+        types:
+        - String
+        required: true
+      group_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  delete_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  delete_group_membership:
+    parameters:
+      member_name:
+        types:
+        - String
+        required: true
+      group_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  delete_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  describe_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  describe_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  get_dashboard_embed_url:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      identity_type:
+        types:
+        - String
+        required: true
+      session_lifetime_in_minutes:
+        types:
+        - Integer
+        required: false
+      undo_redo_disabled:
+        types:
+        - Boolean
+        required: false
+      reset_disabled:
+        types:
+        - Boolean
+        required: false
+  list_group_memberships:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  list_groups:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace:
+        types:
+        - String
+        required: true
+  list_user_groups:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_users:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace:
+        types:
+        - String
+        required: true
+  register_user:
+    parameters:
+      identity_type:
+        types:
+        - String
+        required: true
+      email:
+        types:
+        - String
+        required: true
+      user_role:
+        types:
+        - String
+        required: true
+      iam_arn:
+        types:
+        - String
+        required: false
+      session_name:
+        types:
+        - String
+        required: false
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: false
+  update_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  update_user:
+    parameters:
+      user_name:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+      email:
+        types:
+        - String
+        required: true
+      role:
+        types:
+        - String
+        required: true

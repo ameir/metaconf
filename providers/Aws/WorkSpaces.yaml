@@ -1,67 +1,39 @@
 ---
 class: Aws::WorkSpaces::Client
 methods:
-  initialize:
+  associate_ip_groups:
     parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
+      directory_id:
         types:
         - String
         required: true
-      access_key_id:
+      group_ids:
+        types:
+        - Array<String>
+        required: true
+  authorize_ip_rules:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      user_rules:
+        types:
+        - Array<Types::IpRuleItem>
+        required: true
+  create_ip_group:
+    parameters:
+      group_name:
+        types:
+        - String
+        required: true
+      group_desc:
         types:
         - String
         required: false
-      convert_params:
+      user_rules:
         types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
+        - Array<Types::IpRuleItem>
         required: false
   create_tags:
     parameters:
@@ -79,6 +51,12 @@ methods:
         types:
         - Array<Types::WorkspaceRequest>
         required: true
+  delete_ip_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
   delete_tags:
     parameters:
       resource_id:
@@ -89,6 +67,38 @@ methods:
         types:
         - Array<String>
         required: true
+  delete_workspace_image:
+    parameters:
+      image_id:
+        types:
+        - String
+        required: true
+  describe_account_modifications:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+  describe_client_properties:
+    parameters:
+      resource_ids:
+        types:
+        - Array<String>
+        required: true
+  describe_ip_groups:
+    parameters:
+      group_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   describe_tags:
     parameters:
       resource_id:
@@ -118,6 +128,20 @@ methods:
       next_token:
         types:
         - String
+        required: false
+  describe_workspace_images:
+    parameters:
+      image_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   describe_workspaces:
     parameters:
@@ -155,6 +179,68 @@ methods:
         types:
         - String
         required: false
+  disassociate_ip_groups:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      group_ids:
+        types:
+        - Array<String>
+        required: true
+  import_workspace_image:
+    parameters:
+      ec2_image_id:
+        types:
+        - String
+        required: true
+      ingestion_process:
+        types:
+        - String
+        required: true
+      image_name:
+        types:
+        - String
+        required: true
+      image_description:
+        types:
+        - String
+        required: true
+  list_available_management_cidr_ranges:
+    parameters:
+      management_cidr_range_constraint:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  modify_account:
+    parameters:
+      dedicated_tenancy_support:
+        types:
+        - String
+        required: false
+      dedicated_tenancy_management_cidr_range:
+        types:
+        - String
+        required: false
+  modify_client_properties:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      client_properties:
+        types:
+        - Types::ClientProperties
+        required: true
   modify_workspace_properties:
     parameters:
       workspace_id:
@@ -164,6 +250,16 @@ methods:
       workspace_properties:
         types:
         - Types::WorkspaceProperties
+        required: true
+  modify_workspace_state:
+    parameters:
+      workspace_id:
+        types:
+        - String
+        required: true
+      workspace_state:
+        types:
+        - String
         required: true
   reboot_workspaces:
     parameters:
@@ -176,6 +272,16 @@ methods:
       rebuild_workspace_requests:
         types:
         - Array<Types::RebuildRequest>
+        required: true
+  revoke_ip_rules:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      user_rules:
+        types:
+        - Array<String>
         required: true
   start_workspaces:
     parameters:
@@ -194,4 +300,14 @@ methods:
       terminate_workspace_requests:
         types:
         - Array<Types::TerminateRequest>
+        required: true
+  update_rules_of_ip_group:
+    parameters:
+      group_id:
+        types:
+        - String
+        required: true
+      user_rules:
+        types:
+        - Array<Types::IpRuleItem>
         required: true

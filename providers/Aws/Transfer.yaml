@@ -1,0 +1,231 @@
+---
+class: Aws::Transfer::Client
+methods:
+  create_server:
+    parameters:
+      identity_provider_details:
+        types:
+        - Types::IdentityProviderDetails
+        required: false
+      identity_provider_type:
+        types:
+        - String
+        required: false
+      logging_role:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_user:
+    parameters:
+      home_directory:
+        types:
+        - String
+        required: false
+      policy:
+        types:
+        - String
+        required: false
+      role:
+        types:
+        - String
+        required: true
+      server_id:
+        types:
+        - String
+        required: true
+      ssh_public_key_body:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      user_name:
+        types:
+        - String
+        required: true
+  delete_server:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+  delete_ssh_public_key:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      ssh_public_key_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+  delete_user:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+  describe_server:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+  describe_user:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+  import_ssh_public_key:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      ssh_public_key_body:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+  list_servers:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_users:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      server_id:
+        types:
+        - String
+        required: true
+  start_server:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+  stop_server:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  test_identity_provider:
+    parameters:
+      server_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+      user_password:
+        types:
+        - String
+        required: false
+  untag_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_server:
+    parameters:
+      identity_provider_details:
+        types:
+        - Types::IdentityProviderDetails
+        required: false
+      logging_role:
+        types:
+        - String
+        required: false
+      server_id:
+        types:
+        - String
+        required: true
+  update_user:
+    parameters:
+      home_directory:
+        types:
+        - String
+        required: false
+      policy:
+        types:
+        - String
+        required: false
+      role:
+        types:
+        - String
+        required: false
+      server_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true

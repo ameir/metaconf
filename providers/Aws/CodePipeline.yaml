@@ -1,68 +1,6 @@
 ---
 class: Aws::CodePipeline::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   acknowledge_job:
     parameters:
       job_id:
@@ -143,6 +81,18 @@ methods:
         types:
         - String
         required: true
+  delete_webhook:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  deregister_webhook_with_third_party:
+    parameters:
+      webhook_name:
+        types:
+        - String
+        required: false
   disable_stage_transition:
     parameters:
       pipeline_name:
@@ -246,6 +196,16 @@ methods:
       next_token:
         types:
         - String
+        required: false
+  list_webhooks:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   poll_for_jobs:
     parameters:
@@ -375,6 +335,18 @@ methods:
         types:
         - Types::ExecutionDetails
         required: false
+  put_webhook:
+    parameters:
+      webhook:
+        types:
+        - Types::WebhookDefinition
+        required: true
+  register_webhook_with_third_party:
+    parameters:
+      webhook_name:
+        types:
+        - String
+        required: false
   retry_stage_execution:
     parameters:
       pipeline_name:
@@ -399,6 +371,10 @@ methods:
         types:
         - String
         required: true
+      client_request_token:
+        types:
+        - String
+        required: false
   update_pipeline:
     parameters:
       pipeline:

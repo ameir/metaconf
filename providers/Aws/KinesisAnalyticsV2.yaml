@@ -1,0 +1,309 @@
+---
+class: Aws::KinesisAnalyticsV2::Client
+methods:
+  add_application_cloud_watch_logging_option:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      cloud_watch_logging_option:
+        types:
+        - Types::CloudWatchLoggingOption
+        required: true
+  add_application_input:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      input:
+        types:
+        - Types::Input
+        required: true
+  add_application_input_processing_configuration:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      input_id:
+        types:
+        - String
+        required: true
+      input_processing_configuration:
+        types:
+        - Types::InputProcessingConfiguration
+        required: true
+  add_application_output:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      output:
+        types:
+        - Types::Output
+        required: true
+  add_application_reference_data_source:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      reference_data_source:
+        types:
+        - Types::ReferenceDataSource
+        required: true
+  create_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      application_description:
+        types:
+        - String
+        required: false
+      runtime_environment:
+        types:
+        - String
+        required: true
+      service_execution_role:
+        types:
+        - String
+        required: true
+      application_configuration:
+        types:
+        - Types::ApplicationConfiguration
+        required: false
+      cloud_watch_logging_options:
+        types:
+        - Array<Types::CloudWatchLoggingOption>
+        required: false
+  create_application_snapshot:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      snapshot_name:
+        types:
+        - String
+        required: true
+  delete_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      create_timestamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  delete_application_cloud_watch_logging_option:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      cloud_watch_logging_option_id:
+        types:
+        - String
+        required: true
+  delete_application_input_processing_configuration:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      input_id:
+        types:
+        - String
+        required: true
+  delete_application_output:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      output_id:
+        types:
+        - String
+        required: true
+  delete_application_reference_data_source:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      reference_id:
+        types:
+        - String
+        required: true
+  delete_application_snapshot:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      snapshot_name:
+        types:
+        - String
+        required: true
+      snapshot_creation_timestamp:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  describe_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      include_additional_details:
+        types:
+        - Boolean
+        required: false
+  describe_application_snapshot:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      snapshot_name:
+        types:
+        - String
+        required: true
+  discover_input_schema:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: false
+      service_execution_role:
+        types:
+        - String
+        required: true
+      input_starting_position_configuration:
+        types:
+        - Types::InputStartingPositionConfiguration
+        required: false
+      s3_configuration:
+        types:
+        - Types::S3Configuration
+        required: false
+      input_processing_configuration:
+        types:
+        - Types::InputProcessingConfiguration
+        required: false
+  list_application_snapshots:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_applications:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  start_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      run_configuration:
+        types:
+        - Types::RunConfiguration
+        required: true
+  stop_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+  update_application:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      application_configuration_update:
+        types:
+        - Types::ApplicationConfigurationUpdate
+        required: false
+      service_execution_role_update:
+        types:
+        - String
+        required: false
+      run_configuration_update:
+        types:
+        - Types::RunConfigurationUpdate
+        required: false
+      cloud_watch_logging_option_updates:
+        types:
+        - Array<Types::CloudWatchLoggingOptionUpdate>
+        required: false

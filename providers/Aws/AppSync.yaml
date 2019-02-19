@@ -1,64 +1,6 @@
 ---
 class: Aws::AppSync::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   create_api_key:
     parameters:
       api_id:
@@ -107,12 +49,54 @@ methods:
         types:
         - Types::ElasticsearchDataSourceConfig
         required: false
+      http_config:
+        types:
+        - Types::HttpDataSourceConfig
+        required: false
+      relational_database_config:
+        types:
+        - Types::RelationalDatabaseDataSourceConfig
+        required: false
+  create_function:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      data_source_name:
+        types:
+        - String
+        required: true
+      request_mapping_template:
+        types:
+        - String
+        required: true
+      response_mapping_template:
+        types:
+        - String
+        required: false
+      function_version:
+        types:
+        - String
+        required: true
   create_graphql_api:
     parameters:
       name:
         types:
         - String
         required: true
+      log_config:
+        types:
+        - Types::LogConfig
+        required: false
       authentication_type:
         types:
         - String
@@ -120,6 +104,10 @@ methods:
       user_pool_config:
         types:
         - Types::UserPoolConfig
+        required: false
+      open_id_connect_config:
+        types:
+        - Types::OpenIDConnectConfig
         required: false
   create_resolver:
     parameters:
@@ -138,7 +126,7 @@ methods:
       data_source_name:
         types:
         - String
-        required: true
+        required: false
       request_mapping_template:
         types:
         - String
@@ -146,6 +134,14 @@ methods:
       response_mapping_template:
         types:
         - String
+        required: false
+      kind:
+        types:
+        - String
+        required: false
+      pipeline_config:
+        types:
+        - Types::PipelineConfig
         required: false
   create_type:
     parameters:
@@ -178,6 +174,16 @@ methods:
         - String
         required: true
       name:
+        types:
+        - String
+        required: true
+  delete_function:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      function_id:
         types:
         - String
         required: true
@@ -218,6 +224,16 @@ methods:
         - String
         required: true
       name:
+        types:
+        - String
+        required: true
+  get_function:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      function_id:
         types:
         - String
         required: true
@@ -299,6 +315,20 @@ methods:
         types:
         - Integer
         required: false
+  list_functions:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_graphql_apis:
     parameters:
       next_token:
@@ -316,6 +346,24 @@ methods:
         - String
         required: true
       type_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resolvers_by_function:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      function_id:
         types:
         - String
         required: true
@@ -408,6 +456,48 @@ methods:
         types:
         - Types::ElasticsearchDataSourceConfig
         required: false
+      http_config:
+        types:
+        - Types::HttpDataSourceConfig
+        required: false
+      relational_database_config:
+        types:
+        - Types::RelationalDatabaseDataSourceConfig
+        required: false
+  update_function:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      function_id:
+        types:
+        - String
+        required: true
+      data_source_name:
+        types:
+        - String
+        required: true
+      request_mapping_template:
+        types:
+        - String
+        required: true
+      response_mapping_template:
+        types:
+        - String
+        required: false
+      function_version:
+        types:
+        - String
+        required: true
   update_graphql_api:
     parameters:
       api_id:
@@ -418,6 +508,10 @@ methods:
         types:
         - String
         required: true
+      log_config:
+        types:
+        - Types::LogConfig
+        required: false
       authentication_type:
         types:
         - String
@@ -425,6 +519,10 @@ methods:
       user_pool_config:
         types:
         - Types::UserPoolConfig
+        required: false
+      open_id_connect_config:
+        types:
+        - Types::OpenIDConnectConfig
         required: false
   update_resolver:
     parameters:
@@ -443,7 +541,7 @@ methods:
       data_source_name:
         types:
         - String
-        required: true
+        required: false
       request_mapping_template:
         types:
         - String
@@ -451,6 +549,14 @@ methods:
       response_mapping_template:
         types:
         - String
+        required: false
+      kind:
+        types:
+        - String
+        required: false
+      pipeline_config:
+        types:
+        - Types::PipelineConfig
         required: false
   update_type:
     parameters:

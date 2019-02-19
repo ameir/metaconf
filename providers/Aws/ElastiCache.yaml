@@ -1,64 +1,6 @@
 ---
 class: Aws::ElastiCache::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   add_tags_to_resource:
     parameters:
       resource_name:
@@ -356,6 +298,28 @@ methods:
       snapshot_name:
         types:
         - String
+        required: true
+  decrease_replica_count:
+    parameters:
+      replication_group_id:
+        types:
+        - String
+        required: true
+      new_replica_count:
+        types:
+        - Integer
+        required: false
+      replica_configuration:
+        types:
+        - Array<Types::ConfigureShard>
+        required: false
+      replicas_to_remove:
+        types:
+        - Array<String>
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
         required: true
   delete_cache_cluster:
     parameters:
@@ -673,6 +637,24 @@ methods:
         types:
         - Boolean
         required: false
+  increase_replica_count:
+    parameters:
+      replication_group_id:
+        types:
+        - String
+        required: true
+      new_replica_count:
+        types:
+        - Integer
+        required: false
+      replica_configuration:
+        types:
+        - Array<Types::ConfigureShard>
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
+        required: true
   list_allowed_node_type_modifications:
     parameters:
       cache_cluster_id:
@@ -876,6 +858,10 @@ methods:
         - Array<Types::ReshardingConfiguration>
         required: false
       node_groups_to_remove:
+        types:
+        - Array<String>
+        required: false
+      node_groups_to_retain:
         types:
         - Array<String>
         required: false

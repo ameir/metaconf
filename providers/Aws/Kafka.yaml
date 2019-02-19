@@ -1,0 +1,79 @@
+---
+class: Aws::Kafka::Client
+methods:
+  create_cluster:
+    parameters:
+      broker_node_group_info:
+        types:
+        - Types::BrokerNodeGroupInfo
+        required: true
+      cluster_name:
+        types:
+        - String
+        required: true
+      encryption_info:
+        types:
+        - Types::EncryptionInfo
+        required: false
+      enhanced_monitoring:
+        types:
+        - String
+        required: false
+      kafka_version:
+        types:
+        - String
+        required: true
+      number_of_broker_nodes:
+        types:
+        - Integer
+        required: true
+  delete_cluster:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: false
+  describe_cluster:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+  get_bootstrap_brokers:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+  list_clusters:
+    parameters:
+      cluster_name_filter:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_nodes:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false

@@ -1,0 +1,341 @@
+---
+class: Aws::Connect::Client
+methods:
+  create_user:
+    parameters:
+      username:
+        types:
+        - String
+        required: true
+      password:
+        types:
+        - String
+        required: false
+      identity_info:
+        types:
+        - Types::UserIdentityInfo
+        required: false
+      phone_config:
+        types:
+        - Types::UserPhoneConfig
+        required: true
+      directory_user_id:
+        types:
+        - String
+        required: false
+      security_profile_ids:
+        types:
+        - Array<String>
+        required: true
+      routing_profile_id:
+        types:
+        - String
+        required: true
+      hierarchy_group_id:
+        types:
+        - String
+        required: false
+      instance_id:
+        types:
+        - String
+        required: true
+  delete_user:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  describe_user:
+    parameters:
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  describe_user_hierarchy_group:
+    parameters:
+      hierarchy_group_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  describe_user_hierarchy_structure:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+  get_contact_attributes:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      initial_contact_id:
+        types:
+        - String
+        required: true
+  get_current_metric_data:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::Filters
+        required: true
+      groupings:
+        types:
+        - Array<String>
+        required: false
+      current_metrics:
+        types:
+        - Array<Types::CurrentMetric>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_federation_token:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+  get_metric_data:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      filters:
+        types:
+        - Types::Filters
+        required: true
+      groupings:
+        types:
+        - Array<String>
+        required: false
+      historical_metrics:
+        types:
+        - Array<Types::HistoricalMetric>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_routing_profiles:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_security_profiles:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_user_hierarchy_groups:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_users:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_outbound_voice_contact:
+    parameters:
+      destination_phone_number:
+        types:
+        - String
+        required: true
+      contact_flow_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      source_phone_number:
+        types:
+        - String
+        required: false
+      queue_id:
+        types:
+        - String
+        required: false
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+  stop_contact:
+    parameters:
+      contact_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  update_contact_attributes:
+    parameters:
+      initial_contact_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+      attributes:
+        types:
+        - Hash<String,String>
+        required: true
+  update_user_hierarchy:
+    parameters:
+      hierarchy_group_id:
+        types:
+        - String
+        required: false
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  update_user_identity_info:
+    parameters:
+      identity_info:
+        types:
+        - Types::UserIdentityInfo
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  update_user_phone_config:
+    parameters:
+      phone_config:
+        types:
+        - Types::UserPhoneConfig
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  update_user_routing_profile:
+    parameters:
+      routing_profile_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true
+  update_user_security_profiles:
+    parameters:
+      security_profile_ids:
+        types:
+        - Array<String>
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      instance_id:
+        types:
+        - String
+        required: true

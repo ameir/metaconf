@@ -1,0 +1,15 @@
+---
+class: Aws::ComprehendMedical::Client
+methods:
+  detect_entities:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+  detect_phi:
+    parameters:
+      text:
+        types:
+        - String
+        required: true

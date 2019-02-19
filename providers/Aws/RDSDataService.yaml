@@ -1,0 +1,25 @@
+---
+class: Aws::RDSDataService::Client
+methods:
+  execute_sql:
+    parameters:
+      aws_secret_store_arn:
+        types:
+        - String
+        required: true
+      database:
+        types:
+        - String
+        required: false
+      db_cluster_or_instance_arn:
+        types:
+        - String
+        required: true
+      schema:
+        types:
+        - String
+        required: false
+      sql_statements:
+        types:
+        - String
+        required: true

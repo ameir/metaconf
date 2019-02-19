@@ -1,0 +1,69 @@
+---
+class: Aws::Macie::Client
+methods:
+  associate_member_account:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: true
+  associate_s3_resources:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: false
+      s3_resources:
+        types:
+        - Array<Types::S3ResourceClassification>
+        required: true
+  disassociate_member_account:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: true
+  disassociate_s3_resources:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: false
+      associated_s3_resources:
+        types:
+        - Array<Types::S3Resource>
+        required: true
+  list_member_accounts:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_s3_resources:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_s3_resources:
+    parameters:
+      member_account_id:
+        types:
+        - String
+        required: false
+      s3_resources_update:
+        types:
+        - Array<Types::S3ResourceClassificationUpdate>
+        required: true

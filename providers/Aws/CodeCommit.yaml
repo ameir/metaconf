@@ -1,68 +1,6 @@
 ---
 class: Aws::CodeCommit::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   batch_get_repositories:
     parameters:
       repository_names:
@@ -127,6 +65,40 @@ methods:
         types:
         - String
         required: true
+  delete_file:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+      branch_name:
+        types:
+        - String
+        required: true
+      file_path:
+        types:
+        - String
+        required: true
+      parent_commit_id:
+        types:
+        - String
+        required: true
+      keep_empty_folders:
+        types:
+        - Boolean
+        required: false
+      commit_message:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      email:
+        types:
+        - String
+        required: false
   delete_repository:
     parameters:
       repository_name:
@@ -269,6 +241,34 @@ methods:
         types:
         - String
         required: false
+  get_file:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+      commit_specifier:
+        types:
+        - String
+        required: false
+      file_path:
+        types:
+        - String
+        required: true
+  get_folder:
+    parameters:
+      repository_name:
+        types:
+        - String
+        required: true
+      commit_specifier:
+        types:
+        - String
+        required: false
+      folder_path:
+        types:
+        - String
+        required: true
   get_merge_conflicts:
     parameters:
       repository_name:

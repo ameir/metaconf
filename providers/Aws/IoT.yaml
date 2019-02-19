@@ -1,64 +1,6 @@
 ---
 class: Aws::IoT::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   accept_certificate_transfer:
     parameters:
       certificate_id:
@@ -68,6 +10,24 @@ methods:
       set_as_active:
         types:
         - Boolean
+        required: false
+  add_thing_to_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: false
+      billing_group_arn:
+        types:
+        - String
+        required: false
+      thing_name:
+        types:
+        - String
+        required: false
+      thing_arn:
+        types:
+        - String
         required: false
   add_thing_to_thing_group:
     parameters:
@@ -86,6 +46,10 @@ methods:
       thing_arn:
         types:
         - String
+        required: false
+      override_dynamic_groups:
+        types:
+        - Boolean
         required: false
   associate_targets_with_job:
     parameters:
@@ -121,6 +85,16 @@ methods:
         types:
         - String
         required: true
+  attach_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      security_profile_target_arn:
+        types:
+        - String
+        required: true
   attach_thing_principal:
     parameters:
       thing_name:
@@ -128,6 +102,12 @@ methods:
         - String
         required: true
       principal:
+        types:
+        - String
+        required: true
+  cancel_audit_task:
+    parameters:
+      task_id:
         types:
         - String
         required: true
@@ -143,9 +123,39 @@ methods:
         types:
         - String
         required: true
+      reason_code:
+        types:
+        - String
+        required: false
       comment:
         types:
         - String
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
+  cancel_job_execution:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      thing_name:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+      expected_version:
+        types:
+        - Integer
+        required: false
+      status_details:
+        types:
+        - Hash<String,String>
         required: false
   create_authorizer:
     parameters:
@@ -169,6 +179,20 @@ methods:
         types:
         - String
         required: false
+  create_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: true
+      billing_group_properties:
+        types:
+        - Types::BillingGroupProperties
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_certificate_from_csr:
     parameters:
       certificate_signing_request:
@@ -178,6 +202,32 @@ methods:
       set_as_active:
         types:
         - Boolean
+        required: false
+  create_dynamic_thing_group:
+    parameters:
+      thing_group_name:
+        types:
+        - String
+        required: true
+      thing_group_properties:
+        types:
+        - Types::ThingGroupProperties
+        required: false
+      index_name:
+        types:
+        - String
+        required: false
+      query_string:
+        types:
+        - String
+        required: true
+      query_version:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_job:
     parameters:
@@ -213,9 +263,17 @@ methods:
         types:
         - Types::JobExecutionsRolloutConfig
         required: false
-      document_parameters:
+      abort_config:
         types:
-        - Hash<String,String>
+        - Types::AbortConfig
+        required: false
+      timeout_config:
+        types:
+        - Types::TimeoutConfig
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_keys_and_certificate:
     parameters:
@@ -240,6 +298,10 @@ methods:
       target_selection:
         types:
         - String
+        required: false
+      aws_job_executions_rollout_config:
+        types:
+        - Types::AwsJobExecutionsRolloutConfig
         required: false
       files:
         types:
@@ -291,6 +353,54 @@ methods:
         types:
         - Integer
         required: false
+  create_scheduled_audit:
+    parameters:
+      frequency:
+        types:
+        - String
+        required: true
+      day_of_month:
+        types:
+        - String
+        required: false
+      day_of_week:
+        types:
+        - String
+        required: false
+      target_check_names:
+        types:
+        - Array<String>
+        required: true
+      scheduled_audit_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      security_profile_description:
+        types:
+        - String
+        required: false
+      behaviors:
+        types:
+        - Array<Types::Behavior>
+        required: true
+      alert_targets:
+        types:
+        - Hash<String,Types::AlertTarget>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_stream:
     parameters:
       stream_id:
@@ -323,6 +433,10 @@ methods:
         types:
         - Types::AttributePayload
         required: false
+      billing_group_name:
+        types:
+        - String
+        required: false
   create_thing_group:
     parameters:
       thing_group_name:
@@ -337,6 +451,10 @@ methods:
         types:
         - Types::ThingGroupProperties
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_thing_type:
     parameters:
       thing_type_name:
@@ -346,6 +464,10 @@ methods:
       thing_type_properties:
         types:
         - Types::ThingTypeProperties
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_topic_rule:
     parameters:
@@ -357,12 +479,32 @@ methods:
         types:
         - Types::TopicRulePayload
         required: true
+      tags:
+        types:
+        - String
+        required: false
+  delete_account_audit_configuration:
+    parameters:
+      delete_scheduled_audits:
+        types:
+        - Boolean
+        required: false
   delete_authorizer:
     parameters:
       authorizer_name:
         types:
         - String
         required: true
+  delete_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: true
+      expected_version:
+        types:
+        - Integer
+        required: false
   delete_ca_certificate:
     parameters:
       certificate_id:
@@ -379,12 +521,58 @@ methods:
         types:
         - Boolean
         required: false
+  delete_dynamic_thing_group:
+    parameters:
+      thing_group_name:
+        types:
+        - String
+        required: true
+      expected_version:
+        types:
+        - Integer
+        required: false
+  delete_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
+  delete_job_execution:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      thing_name:
+        types:
+        - String
+        required: true
+      execution_number:
+        types:
+        - Integer
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
   delete_ota_update:
     parameters:
       ota_update_id:
         types:
         - String
         required: true
+      delete_stream:
+        types:
+        - Boolean
+        required: false
+      force_delete_aws_job:
+        types:
+        - Boolean
+        required: false
   delete_policy:
     parameters:
       policy_name:
@@ -407,6 +595,22 @@ methods:
         types:
         - String
         required: true
+  delete_scheduled_audit:
+    parameters:
+      scheduled_audit_name:
+        types:
+        - String
+        required: true
+  delete_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      expected_version:
+        types:
+        - Integer
+        required: false
   delete_stream:
     parameters:
       stream_id:
@@ -465,9 +669,21 @@ methods:
         types:
         - Boolean
         required: false
+  describe_audit_task:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: true
   describe_authorizer:
     parameters:
       authorizer_name:
+        types:
+        - String
+        required: true
+  describe_billing_group:
+    parameters:
+      billing_group_name:
         types:
         - String
         required: true
@@ -521,6 +737,18 @@ methods:
         types:
         - String
         required: true
+  describe_scheduled_audit:
+    parameters:
+      scheduled_audit_name:
+        types:
+        - String
+        required: true
+  describe_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
   describe_stream:
     parameters:
       stream_id:
@@ -568,6 +796,16 @@ methods:
         - String
         required: true
       principal:
+        types:
+        - String
+        required: true
+  detach_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      security_profile_target_arn:
         types:
         - String
         required: true
@@ -641,6 +879,24 @@ methods:
         types:
         - String
         required: true
+  list_active_violations:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: false
+      security_profile_name:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_attached_policies:
     parameters:
       target:
@@ -659,6 +915,78 @@ methods:
         types:
         - Integer
         required: false
+  list_audit_findings:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: false
+      check_name:
+        types:
+        - String
+        required: false
+      resource_identifier:
+        types:
+        - Types::ResourceIdentifier
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_audit_tasks:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      task_type:
+        types:
+        - String
+        required: false
+      task_status:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_authorizers:
     parameters:
       page_size:
@@ -674,6 +1002,20 @@ methods:
         - Boolean
         required: false
       status:
+        types:
+        - String
+        required: false
+  list_billing_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_prefix_filter:
         types:
         - String
         required: false
@@ -907,6 +1249,44 @@ methods:
         types:
         - Boolean
         required: false
+  list_scheduled_audits:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_security_profiles:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_security_profiles_for_target:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      recursive:
+        types:
+        - Boolean
+        required: false
+      security_profile_target_arn:
+        types:
+        - String
+        required: true
   list_streams:
     parameters:
       max_results:
@@ -921,6 +1301,16 @@ methods:
         types:
         - Boolean
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
   list_targets_for_policy:
     parameters:
       policy_name:
@@ -932,6 +1322,20 @@ methods:
         - String
         required: false
       page_size:
+        types:
+        - Integer
+        required: false
+  list_targets_for_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
         types:
         - Integer
         required: false
@@ -1045,6 +1449,20 @@ methods:
         types:
         - String
         required: false
+  list_things_in_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_things_in_thing_group:
     parameters:
       thing_group_name:
@@ -1084,6 +1502,40 @@ methods:
   list_v2_logging_levels:
     parameters:
       target_type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_violation_events:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      thing_name:
+        types:
+        - String
+        required: false
+      security_profile_name:
         types:
         - String
         required: false
@@ -1152,6 +1604,24 @@ methods:
         - String
         required: true
       reject_reason:
+        types:
+        - String
+        required: false
+  remove_thing_from_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: false
+      billing_group_arn:
+        types:
+        - String
+        required: false
+      thing_name:
+        types:
+        - String
+        required: false
+      thing_arn:
         types:
         - String
         required: false
@@ -1251,6 +1721,12 @@ methods:
         types:
         - Boolean
         required: false
+  start_on_demand_audit_task:
+    parameters:
+      target_check_names:
+        types:
+        - Array<String>
+        required: true
   start_thing_registration_task:
     parameters:
       template_body:
@@ -1274,6 +1750,16 @@ methods:
       task_id:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
         required: true
   test_authorization:
     parameters:
@@ -1329,6 +1815,30 @@ methods:
         types:
         - String
         required: false
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_account_audit_configuration:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: false
+      audit_notification_target_configurations:
+        types:
+        - Hash<String,Types::AuditNotificationTarget>
+        required: false
+      audit_check_configurations:
+        types:
+        - Hash<String,Types::AuditCheckConfiguration>
+        required: false
   update_authorizer:
     parameters:
       authorizer_name:
@@ -1350,6 +1860,20 @@ methods:
       status:
         types:
         - String
+        required: false
+  update_billing_group:
+    parameters:
+      billing_group_name:
+        types:
+        - String
+        required: true
+      billing_group_properties:
+        types:
+        - Types::BillingGroupProperties
+        required: true
+      expected_version:
+        types:
+        - Integer
         required: false
   update_ca_certificate:
     parameters:
@@ -1383,6 +1907,32 @@ methods:
         types:
         - String
         required: true
+  update_dynamic_thing_group:
+    parameters:
+      thing_group_name:
+        types:
+        - String
+        required: true
+      thing_group_properties:
+        types:
+        - Types::ThingGroupProperties
+        required: true
+      expected_version:
+        types:
+        - Integer
+        required: false
+      index_name:
+        types:
+        - String
+        required: false
+      query_string:
+        types:
+        - String
+        required: false
+      query_version:
+        types:
+        - String
+        required: false
   update_event_configurations:
     parameters:
       event_configurations:
@@ -1395,6 +1945,36 @@ methods:
         types:
         - Types::ThingIndexingConfiguration
         required: false
+      thing_group_indexing_configuration:
+        types:
+        - Types::ThingGroupIndexingConfiguration
+        required: false
+  update_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      presigned_url_config:
+        types:
+        - Types::PresignedUrlConfig
+        required: false
+      job_executions_rollout_config:
+        types:
+        - Types::JobExecutionsRolloutConfig
+        required: false
+      abort_config:
+        types:
+        - Types::AbortConfig
+        required: false
+      timeout_config:
+        types:
+        - Types::TimeoutConfig
+        required: false
   update_role_alias:
     parameters:
       role_alias:
@@ -1406,6 +1986,50 @@ methods:
         - String
         required: false
       credential_duration_seconds:
+        types:
+        - Integer
+        required: false
+  update_scheduled_audit:
+    parameters:
+      frequency:
+        types:
+        - String
+        required: false
+      day_of_month:
+        types:
+        - String
+        required: false
+      day_of_week:
+        types:
+        - String
+        required: false
+      target_check_names:
+        types:
+        - Array<String>
+        required: false
+      scheduled_audit_name:
+        types:
+        - String
+        required: true
+  update_security_profile:
+    parameters:
+      security_profile_name:
+        types:
+        - String
+        required: true
+      security_profile_description:
+        types:
+        - String
+        required: false
+      behaviors:
+        types:
+        - Array<Types::Behavior>
+        required: false
+      alert_targets:
+        types:
+        - Hash<String,Types::AlertTarget>
+        required: false
+      expected_version:
         types:
         - Integer
         required: false
@@ -1477,3 +2101,13 @@ methods:
         types:
         - Array<String>
         required: false
+      override_dynamic_groups:
+        types:
+        - Boolean
+        required: false
+  validate_security_profile_behaviors:
+    parameters:
+      behaviors:
+        types:
+        - Array<Types::Behavior>
+        required: true

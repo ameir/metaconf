@@ -1,68 +1,6 @@
 ---
 class: Aws::WorkMail::Client
 methods:
-  initialize:
-    parameters:
-      credentials:
-        types:
-        - Aws::CredentialProvider
-        required: true
-      region:
-        types:
-        - String
-        required: true
-      access_key_id:
-        types:
-        - String
-        required: false
-      convert_params:
-        types:
-        - Boolean
-        required: false
-      endpoint:
-        types:
-        - String
-        required: false
-      log_formatter:
-        types:
-        - Aws::Log::Formatter
-        required: false
-      log_level:
-        types:
-        - Symbol
-        required: false
-      logger:
-        types:
-        - Logger
-        required: false
-      profile:
-        types:
-        - String
-        required: false
-      retry_limit:
-        types:
-        - Integer
-        required: false
-      secret_access_key:
-        types:
-        - String
-        required: false
-      session_token:
-        types:
-        - String
-        required: false
-      simple_json:
-        types:
-        - Boolean
-        required: false
-      stub_responses:
-        types:
-        - Boolean
-        required: false
-      validate_params:
-        types:
-        - Boolean
-        required: false
   associate_delegate_to_resource:
     parameters:
       organization_id:
@@ -168,6 +106,20 @@ methods:
         - String
         required: true
       group_id:
+        types:
+        - String
+        required: true
+  delete_mailbox_permissions:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      entity_id:
+        types:
+        - String
+        required: true
+      grantee_id:
         types:
         - String
         required: true
@@ -315,6 +267,24 @@ methods:
         types:
         - Integer
         required: false
+  list_mailbox_permissions:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      entity_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_organizations:
     parameters:
       next_token:
@@ -371,6 +341,24 @@ methods:
         types:
         - Integer
         required: false
+  put_mailbox_permissions:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      entity_id:
+        types:
+        - String
+        required: true
+      grantee_id:
+        types:
+        - String
+        required: true
+      permission_values:
+        types:
+        - Array<String>
+        required: true
   register_to_work_mail:
     parameters:
       organization_id:

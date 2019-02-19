@@ -1,0 +1,85 @@
+---
+class: Aws::MediaTailor::Client
+methods:
+  delete_playback_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_playback_configuration:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  list_playback_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_playback_configuration:
+    parameters:
+      ad_decision_server_url:
+        types:
+        - String
+        required: false
+      cdn_configuration:
+        types:
+        - Types::CdnConfiguration
+        required: false
+      dash_configuration:
+        types:
+        - Types::DashConfigurationForPut
+        required: false
+      name:
+        types:
+        - String
+        required: false
+      slate_ad_url:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      transcode_profile_name:
+        types:
+        - String
+        required: false
+      video_content_source_url:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

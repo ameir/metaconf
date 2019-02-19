@@ -1,0 +1,259 @@
+---
+class: Aws::Route53Resolver::Client
+methods:
+  associate_resolver_endpoint_ip_address:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+      ip_address:
+        types:
+        - Types::IpAddressUpdate
+        required: true
+  associate_resolver_rule:
+    parameters:
+      resolver_rule_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      vpc_id:
+        types:
+        - String
+        required: true
+  create_resolver_endpoint:
+    parameters:
+      creator_request_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      security_group_ids:
+        types:
+        - Array<String>
+        required: true
+      direction:
+        types:
+        - String
+        required: true
+      ip_addresses:
+        types:
+        - Array<Types::IpAddressRequest>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_resolver_rule:
+    parameters:
+      creator_request_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      rule_type:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+      target_ips:
+        types:
+        - Array<Types::TargetAddress>
+        required: false
+      resolver_endpoint_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_resolver_endpoint:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+  delete_resolver_rule:
+    parameters:
+      resolver_rule_id:
+        types:
+        - String
+        required: true
+  disassociate_resolver_endpoint_ip_address:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+      ip_address:
+        types:
+        - Types::IpAddressUpdate
+        required: true
+  disassociate_resolver_rule:
+    parameters:
+      vpc_id:
+        types:
+        - String
+        required: true
+      resolver_rule_id:
+        types:
+        - String
+        required: true
+  get_resolver_endpoint:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+  get_resolver_rule:
+    parameters:
+      resolver_rule_id:
+        types:
+        - String
+        required: true
+  get_resolver_rule_association:
+    parameters:
+      resolver_rule_association_id:
+        types:
+        - String
+        required: true
+  get_resolver_rule_policy:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  list_resolver_endpoint_ip_addresses:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_resolver_endpoints:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_resolver_rule_associations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_resolver_rules:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_resolver_rule_policy:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      resolver_rule_policy:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_resolver_endpoint:
+    parameters:
+      resolver_endpoint_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_resolver_rule:
+    parameters:
+      resolver_rule_id:
+        types:
+        - String
+        required: true
+      config:
+        types:
+        - Types::ResolverRuleConfig
+        required: true

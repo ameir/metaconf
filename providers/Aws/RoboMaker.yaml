@@ -1,0 +1,441 @@
+---
+class: Aws::RoboMaker::Client
+methods:
+  batch_describe_simulation_job:
+    parameters:
+      jobs:
+        types:
+        - Array<String>
+        required: true
+  cancel_simulation_job:
+    parameters:
+      job:
+        types:
+        - String
+        required: true
+  create_deployment_job:
+    parameters:
+      deployment_config:
+        types:
+        - Types::DeploymentConfig
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: true
+      fleet:
+        types:
+        - String
+        required: true
+      deployment_application_configs:
+        types:
+        - Array<Types::DeploymentApplicationConfig>
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_fleet:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_robot:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      architecture:
+        types:
+        - String
+        required: true
+      greengrass_group_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_robot_application:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      sources:
+        types:
+        - Array<Types::SourceConfig>
+        required: true
+      robot_software_suite:
+        types:
+        - Types::RobotSoftwareSuite
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_robot_application_version:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      current_revision_id:
+        types:
+        - String
+        required: false
+  create_simulation_application:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      sources:
+        types:
+        - Array<Types::SourceConfig>
+        required: true
+      simulation_software_suite:
+        types:
+        - Types::SimulationSoftwareSuite
+        required: true
+      robot_software_suite:
+        types:
+        - Types::RobotSoftwareSuite
+        required: true
+      rendering_engine:
+        types:
+        - Types::RenderingEngine
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_simulation_application_version:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      current_revision_id:
+        types:
+        - String
+        required: false
+  create_simulation_job:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: false
+      output_location:
+        types:
+        - Types::OutputLocation
+        required: false
+      max_job_duration_in_seconds:
+        types:
+        - Integer
+        required: true
+      iam_role:
+        types:
+        - String
+        required: true
+      failure_behavior:
+        types:
+        - String
+        required: false
+      robot_applications:
+        types:
+        - Array<Types::RobotApplicationConfig>
+        required: false
+      simulation_applications:
+        types:
+        - Array<Types::SimulationApplicationConfig>
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      vpc_config:
+        types:
+        - Types::VPCConfig
+        required: false
+  delete_fleet:
+    parameters:
+      fleet:
+        types:
+        - String
+        required: true
+  delete_robot:
+    parameters:
+      robot:
+        types:
+        - String
+        required: true
+  delete_robot_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      application_version:
+        types:
+        - String
+        required: false
+  delete_simulation_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      application_version:
+        types:
+        - String
+        required: false
+  deregister_robot:
+    parameters:
+      fleet:
+        types:
+        - String
+        required: true
+      robot:
+        types:
+        - String
+        required: true
+  describe_deployment_job:
+    parameters:
+      job:
+        types:
+        - String
+        required: true
+  describe_fleet:
+    parameters:
+      fleet:
+        types:
+        - String
+        required: true
+  describe_robot:
+    parameters:
+      robot:
+        types:
+        - String
+        required: true
+  describe_robot_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      application_version:
+        types:
+        - String
+        required: false
+  describe_simulation_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      application_version:
+        types:
+        - String
+        required: false
+  describe_simulation_job:
+    parameters:
+      job:
+        types:
+        - String
+        required: true
+  list_deployment_jobs:
+    parameters:
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_fleets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_robot_applications:
+    parameters:
+      version_qualifier:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_robots:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_simulation_applications:
+    parameters:
+      version_qualifier:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_simulation_jobs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  register_robot:
+    parameters:
+      fleet:
+        types:
+        - String
+        required: true
+      robot:
+        types:
+        - String
+        required: true
+  restart_simulation_job:
+    parameters:
+      job:
+        types:
+        - String
+        required: true
+  sync_deployment_job:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      fleet:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_robot_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      sources:
+        types:
+        - Array<Types::SourceConfig>
+        required: true
+      robot_software_suite:
+        types:
+        - Types::RobotSoftwareSuite
+        required: true
+      current_revision_id:
+        types:
+        - String
+        required: false
+  update_simulation_application:
+    parameters:
+      application:
+        types:
+        - String
+        required: true
+      sources:
+        types:
+        - Array<Types::SourceConfig>
+        required: true
+      simulation_software_suite:
+        types:
+        - Types::SimulationSoftwareSuite
+        required: true
+      robot_software_suite:
+        types:
+        - Types::RobotSoftwareSuite
+        required: true
+      rendering_engine:
+        types:
+        - Types::RenderingEngine
+        required: true
+      current_revision_id:
+        types:
+        - String
+        required: false
