@@ -7,7 +7,7 @@ require 'pp'
 spec = Gem::Specification.find_by_name('aws-sdk')
 gem_root = File.expand_path('..', spec.gem_dir)
 
-files = Dir.glob("#{gem_root}/*/lib/*ec2/client.rb")
+files = Dir.glob("#{gem_root}/*/lib/*/client.rb")
 files.each do |file|
   puts "processing #{file}..."
   YARD::Registry.clear
