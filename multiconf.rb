@@ -3,7 +3,7 @@
 require 'yaml'
 require 'aws-sdk'
 require 'pp'
-# require 'active_support/hash_with_indifferent_access'
+require 'json'
 
 f = YAML.load_file('test.yaml')
 
@@ -12,13 +12,29 @@ puts f
 f.each do |resource_name, hash|
   puts "Creating #{resource_name}..."
 
-  # client = hash['client']['class'].send(region: 'us-east-1')
-  #  client = hash['client']['class'].send(*hash['client']['parameters'])
+  hash = JSON.parse(hash.to_json, symbolize_names: true) # to turn hash into symbols recursively
 
-  c = Object.const_get(hash['client']['class'])
-  client = c.new(**hash['client']['parameters'])
-  # client = c.new(region: 'us-east-1')
-  resp = client.send(hash['create']['method'], **hash['create']['parameters'])
+  r_type, r_name = resource_name.split('.')
+  provider, mod, *resource = r_type.split('_')
+  resource *= '_' # same as join!() if it existed
+  pp provider
+  pp mod
+  pp resource
+
+  # load methods and relations files
+  filename = Dir.glob("#{__dir__}/providers/#{provider}/#{mod}/#{mod}.yaml", File::FNM_CASEFOLD).first
+  mod_methods = YAML.load_file(filename)
+  filename = Dir.glob("#{__dir__}/providers/#{provider}/#{mod}/relations.yaml", File::FNM_CASEFOLD).first
+  mod_relations = YAML.load_file(filename)
+
+  # load the class and send off the call
+  c = Object.const_get(mod_methods['class'])
+  # client = c.new(**hash)
+  client = c.new(region: 'us-east-1')
+  pp "Passing following args to #{provider}/#{mod}/#{mod_relations[resource]['create']}"
+  pp **hash.transform_keys(&:to_sym)
+
+  resp = client.send(mod_relations[resource]['create'], **hash.transform_keys(&:to_sym))
   pp resp.to_h
-  File.write('salam.txt', resp.to_h)
+  File.write('log.txt', resp.to_h, mode: 'a')
 end

@@ -1,23 +1,10 @@
-s3_bucket:
-    client:
-        class: Aws::S3::Client
-        parameters:
-          :region: us-east-1
-    create:
-        method: create_bucket
-        parameters:
-          :bucket: 'ameir-test-salam'
-          :acl: "log-delivery-write"
-s3_bucket_enc:
-    client:
-        class: Aws::S3::Client
-        parameters:
-          :region: us-east-1
-    create:
-        method: put_bucket_encryption
-        parameters:
-          :bucket: 'ameir-test-salam'
-          :server_side_encryption_configuration:
-            :rules:
-              - :apply_server_side_encryption_by_default:
-                  :sse_algorithm: "AES256"
+aws_s3_bucket.test:
+    :bucket: 'ameir-test-salam-111'
+    :acl: "log-delivery-write"
+
+aws_s3_bucket_encryption.test:
+    bucket: 'ameir-test-salam-111'
+    server_side_encryption_configuration:
+        rules:
+        - apply_server_side_encryption_by_default:
+            sse_algorithm: "AES256"
