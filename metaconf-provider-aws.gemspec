@@ -9,5 +9,6 @@ Gem::Specification.new do |s|
   s.files       = Dir['lib/**/*.rb', 'lib/**/*.yaml']
   s.add_runtime_dependency 'aws-sdk', '~> 3'
   s.add_runtime_dependency 'yard'
+  s.add_runtime_dependency 'solve'
   s.license = 'MIT'
 end

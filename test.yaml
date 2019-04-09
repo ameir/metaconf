@@ -1,10 +1,19 @@
 aws_s3_bucket.test:
-    :bucket: 'ameir-test-salam-111'
-    :acl: "log-delivery-write"
+    bucket: 'ameir-test-salam-1113'
+    acl: "log-delivery-write"
 
 aws_s3_bucket_encryption.test:
-    bucket: 'ameir-test-salam-111'
+    bucket: ${aws_s3_bucket.test.bucket}
     server_side_encryption_configuration:
         rules:
         - apply_server_side_encryption_by_default:
             sse_algorithm: "AES256"
+
+aws_s3_bucket_tagging.test:
+    bucket: ${aws_s3_bucket.test.bucket}
+    tagging:
+      tag_set:
+        - key: BucketName
+          value: ${aws_s3_bucket.test.bucket}
+        - key: ObjectKey1
+          value: Value1

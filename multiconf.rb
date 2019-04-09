@@ -4,12 +4,9 @@ require 'yaml'
 require 'aws-sdk'
 require 'pp'
 require 'json'
+require 'solve'
 
-f = YAML.load_file('test.yaml')
-
-puts f
-
-f.each do |resource_name, hash|
+def execute(resource_name, hash)
   puts "Creating #{resource_name}..."
 
   hash = JSON.parse(hash.to_json, symbolize_names: true) # to turn hash into symbols recursively
@@ -29,12 +26,47 @@ f.each do |resource_name, hash|
 
   # load the class and send off the call
   c = Object.const_get(mod_methods['class'])
-  # client = c.new(**hash)
   client = c.new(region: 'us-east-1')
   pp "Passing following args to #{provider}/#{mod}/#{mod_relations[resource]['create']}"
-  pp **hash.transform_keys(&:to_sym)
+  pp hash
 
-  resp = client.send(mod_relations[resource]['create'], **hash.transform_keys(&:to_sym))
-  pp resp.to_h
-  File.write('log.txt', resp.to_h, mode: 'a')
+  resp = client.send(mod_relations[resource]['create'], hash)
+
+  # write state
+  Dir.exist?('states') || Dir.mkdir('states')
+  File.write("states/#{resource_name}.json", JSON.pretty_generate('params' => hash, 'response' => resp.to_h))
+  exit
+end
+
+f = YAML.load_file('test.yaml')
+
+resources = {}
+graph = Solve::Graph.new
+
+# populate graph
+f.each do |resource_name, hash|
+  puts "Graphing #{resource_name}..."
+
+  graph.artifact(resource_name, '1.0.0')
+  deps = hash.to_s.scan(/\$\{(.*?)\}/)
+  next if deps.empty?
+  puts 'depends on: ' + deps.uniq.to_s
+
+  deps.uniq.each do |dep|
+    graph.artifact(resource_name, '1.0.0').depends(dep[0].split('.')[0...-1].join('.'))
+  end
+end
+pp graph
+
+f.keys.each do |resource_name|
+  puts "Evaluating #{resource_name}..."
+
+  deptree = Solve.it!(graph, [[resource_name]], sorted: true)
+  deptree.each do |resource, _version|
+    puts resource
+    next if resources.key?(resource)
+    puts "Executing #{resource}..."
+    execute(resource, f[resource])
+    resources[resource] = true
+  end
 end
