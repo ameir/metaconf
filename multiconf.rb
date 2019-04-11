@@ -6,8 +6,18 @@ require 'pp'
 require 'json'
 require 'solve'
 
-def execute(resource_name, hash)
+def execute(resource_name, hash, dependencies)
   puts "Creating #{resource_name}..."
+
+  # check if resource already created
+  if File.exist?("states/#{resource_name}.json")
+    hash1 = JSON.parse(File.read("states/#{resource_name}.json"))['params']
+
+    if hash == hash1
+      puts 'Resource already exists.'
+      return
+    end
+  end
 
   hash = JSON.parse(hash.to_json, symbolize_names: true) # to turn hash into symbols recursively
 
@@ -34,7 +44,7 @@ def execute(resource_name, hash)
 
   # write state
   Dir.exist?('states') || Dir.mkdir('states')
-  File.write("states/#{resource_name}.json", JSON.pretty_generate('params' => hash, 'response' => resp.to_h))
+  File.write("states/#{resource_name}.json", JSON.pretty_generate('params' => hash, 'response' => resp.to_h, 'depends_on' => dependencies))
   exit
 end
 
@@ -66,7 +76,7 @@ f.keys.each do |resource_name|
     puts resource
     next if resources.key?(resource)
     puts "Executing #{resource}..."
-    execute(resource, f[resource])
+    execute(resource, f[resource], deptree.map { |col| col[0] }[0...-1])
     resources[resource] = true
   end
 end
