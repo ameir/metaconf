@@ -10,16 +10,6 @@ require 'erb'
 def execute(resource_name, hash, dependencies)
   puts "Creating #{resource_name}..."
 
-  # check if resource already created
-  if File.exist?("states/#{resource_name}.json")
-    hash1 = JSON.parse(File.read("states/#{resource_name}.json"))['params']
-
-    if hash == hash1
-      puts 'Resource already exists.'
-      return
-    end
-  end
-
   unless dependencies.empty?
 
     # massage for use in ERB template
@@ -32,6 +22,16 @@ def execute(resource_name, hash, dependencies)
 
     # new hash has resolved values
     hash = JSON.parse(ERB.new(erb_template).result(binding))
+  end
+
+  # check if resource already created
+  if File.exist?("states/#{resource_name}.json")
+    hash1 = JSON.parse(File.read("states/#{resource_name}.json"))['params']
+
+    if hash == hash1
+      puts 'Resource already exists.'
+      return
+    end
   end
 
   hash = JSON.parse(hash.to_json, symbolize_names: true) # to turn hash into symbols recursively
