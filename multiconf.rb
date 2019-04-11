@@ -5,6 +5,7 @@ require 'aws-sdk'
 require 'pp'
 require 'json'
 require 'solve'
+require 'erb'
 
 def execute(resource_name, hash, dependencies)
   puts "Creating #{resource_name}..."
@@ -17,6 +18,20 @@ def execute(resource_name, hash, dependencies)
       puts 'Resource already exists.'
       return
     end
+  end
+
+  unless dependencies.empty?
+
+    # massage for use in ERB template
+    erb_template = hash.to_json.gsub(/(\$\{)(\w+.\w+)(.+?)(\})/, '<%= deps[\'\2\']\3 %>')
+
+    deps = {}
+    dependencies.each do |d|
+      deps[d] = JSON.parse(File.read("states/#{d}.json"))
+    end
+
+    # new hash has resolved values
+    hash = JSON.parse(ERB.new(erb_template).result(binding))
   end
 
   hash = JSON.parse(hash.to_json, symbolize_names: true) # to turn hash into symbols recursively
@@ -45,7 +60,6 @@ def execute(resource_name, hash, dependencies)
   # write state
   Dir.exist?('states') || Dir.mkdir('states')
   File.write("states/#{resource_name}.json", JSON.pretty_generate('params' => hash, 'response' => resp.to_h, 'depends_on' => dependencies))
-  exit
 end
 
 f = YAML.load_file('test.yaml')
@@ -63,7 +77,7 @@ f.each do |resource_name, hash|
   puts 'depends on: ' + deps.uniq.to_s
 
   deps.uniq.each do |dep|
-    graph.artifact(resource_name, '1.0.0').depends(dep[0].split('.')[0...-1].join('.'))
+    graph.artifact(resource_name, '1.0.0').depends(dep[0].split('[')[0])
   end
 end
 pp graph
