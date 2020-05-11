@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # https://stackoverflow.com/questions/25703352/in-a-ruby-an-irb-how-can-i-use-the-yard-documentation-gem-to-interact-with-th/25748239#25748239
 require 'yard'
 require 'yaml'
@@ -33,10 +35,10 @@ files.each do |file|
   end
 
   actions = {
-    'create' => %w(put create),
+    'create' => %w(put create run),
     'read' => %w(get describe head),
     'update' => %w(modify),
-    'delete' => %w(delete),
+    'delete' => %w(delete terminate),
   }
 
   relations = Hash.new { |h, k| h[k] = Hash.new(&h.default_proc) }
