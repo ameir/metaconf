@@ -1,6 +1,20 @@
 ---
 class: Aws::TranscribeService::Client
 methods:
+  create_medical_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      vocabulary_file_uri:
+        types:
+        - String
+        required: true
   create_vocabulary:
     parameters:
       vocabulary_name:
@@ -14,6 +28,40 @@ methods:
       phrases:
         types:
         - Array<String>
+        required: false
+      vocabulary_file_uri:
+        types:
+        - String
+        required: false
+  create_vocabulary_filter:
+    parameters:
+      vocabulary_filter_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      words:
+        types:
+        - Array<String>
+        required: false
+      vocabulary_filter_file_uri:
+        types:
+        - String
+        required: false
+  delete_medical_transcription_job:
+    parameters:
+      medical_transcription_job_name:
+        types:
+        - String
+        required: true
+  delete_medical_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
         required: true
   delete_transcription_job:
     parameters:
@@ -22,6 +70,24 @@ methods:
         - String
         required: true
   delete_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+  delete_vocabulary_filter:
+    parameters:
+      vocabulary_filter_name:
+        types:
+        - String
+        required: true
+  get_medical_transcription_job:
+    parameters:
+      medical_transcription_job_name:
+        types:
+        - String
+        required: true
+  get_medical_vocabulary:
     parameters:
       vocabulary_name:
         types:
@@ -39,6 +105,48 @@ methods:
         types:
         - String
         required: true
+  get_vocabulary_filter:
+    parameters:
+      vocabulary_filter_name:
+        types:
+        - String
+        required: true
+  list_medical_transcription_jobs:
+    parameters:
+      status:
+        types:
+        - String
+        required: false
+      job_name_contains:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_medical_vocabularies:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      state_equals:
+        types:
+        - String
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
   list_transcription_jobs:
     parameters:
       status:
@@ -75,6 +183,62 @@ methods:
         types:
         - String
         required: false
+  list_vocabulary_filters:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      name_contains:
+        types:
+        - String
+        required: false
+  start_medical_transcription_job:
+    parameters:
+      medical_transcription_job_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      media_sample_rate_hertz:
+        types:
+        - Integer
+        required: false
+      media_format:
+        types:
+        - String
+        required: false
+      media:
+        types:
+        - Types::Media
+        required: true
+      output_bucket_name:
+        types:
+        - String
+        required: true
+      output_encryption_kms_key_id:
+        types:
+        - String
+        required: false
+      settings:
+        types:
+        - Types::MedicalTranscriptionSetting
+        required: false
+      specialty:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
   start_transcription_job:
     parameters:
       transcription_job_name:
@@ -92,7 +256,7 @@ methods:
       media_format:
         types:
         - String
-        required: true
+        required: false
       media:
         types:
         - Types::Media
@@ -101,9 +265,35 @@ methods:
         types:
         - String
         required: false
+      output_encryption_kms_key_id:
+        types:
+        - String
+        required: false
       settings:
         types:
         - Types::Settings
+        required: false
+      job_execution_settings:
+        types:
+        - Types::JobExecutionSettings
+        required: false
+      content_redaction:
+        types:
+        - Types::ContentRedaction
+        required: false
+  update_medical_vocabulary:
+    parameters:
+      vocabulary_name:
+        types:
+        - String
+        required: true
+      language_code:
+        types:
+        - String
+        required: true
+      vocabulary_file_uri:
+        types:
+        - String
         required: false
   update_vocabulary:
     parameters:
@@ -118,4 +308,22 @@ methods:
       phrases:
         types:
         - Array<String>
+        required: false
+      vocabulary_file_uri:
+        types:
+        - String
+        required: false
+  update_vocabulary_filter:
+    parameters:
+      vocabulary_filter_name:
+        types:
+        - String
         required: true
+      words:
+        types:
+        - Array<String>
+        required: false
+      vocabulary_filter_file_uri:
+        types:
+        - String
+        required: false

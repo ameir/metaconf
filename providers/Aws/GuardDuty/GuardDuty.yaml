@@ -7,11 +7,11 @@ methods:
         types:
         - String
         required: true
-      invitation_id:
+      master_id:
         types:
         - String
         required: true
-      master_id:
+      invitation_id:
         types:
         - String
         required: true
@@ -27,59 +27,63 @@ methods:
         required: true
   create_detector:
     parameters:
-      client_token:
-        types:
-        - String
-        required: false
       enable:
         types:
         - Boolean
         required: true
-      finding_publishing_frequency:
-        types:
-        - String
-        required: false
-  create_filter:
-    parameters:
-      action:
-        types:
-        - String
-        required: false
       client_token:
         types:
         - String
         required: false
-      description:
+      finding_publishing_frequency:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_filter:
+    parameters:
       detector_id:
         types:
         - String
-        required: true
-      finding_criteria:
-        types:
-        - Types::FindingCriteria
         required: true
       name:
         types:
         - String
         required: true
+      description:
+        types:
+        - String
+        required: false
+      action:
+        types:
+        - String
+        required: false
       rank:
         types:
         - Integer
         required: false
-  create_ip_set:
-    parameters:
-      activate:
+      finding_criteria:
         types:
-        - Boolean
+        - Types::FindingCriteria
         required: true
       client_token:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_ip_set:
+    parameters:
       detector_id:
+        types:
+        - String
+        required: true
+      name:
         types:
         - String
         required: true
@@ -91,20 +95,46 @@ methods:
         types:
         - String
         required: true
-      name:
+      activate:
+        types:
+        - Boolean
+        required: true
+      client_token:
         types:
         - String
-        required: true
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   create_members:
     parameters:
-      account_details:
-        types:
-        - Array<Types::AccountDetail>
-        required: true
       detector_id:
         types:
         - String
         required: true
+      account_details:
+        types:
+        - Array<Types::AccountDetail>
+        required: true
+  create_publishing_destination:
+    parameters:
+      detector_id:
+        types:
+        - String
+        required: true
+      destination_type:
+        types:
+        - String
+        required: true
+      destination_properties:
+        types:
+        - Types::DestinationProperties
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
   create_sample_findings:
     parameters:
       detector_id:
@@ -117,15 +147,11 @@ methods:
         required: false
   create_threat_intel_set:
     parameters:
-      activate:
-        types:
-        - Boolean
-        required: true
-      client_token:
+      detector_id:
         types:
         - String
-        required: false
-      detector_id:
+        required: true
+      name:
         types:
         - String
         required: true
@@ -137,10 +163,18 @@ methods:
         types:
         - String
         required: true
-      name:
+      activate:
+        types:
+        - Boolean
+        required: true
+      client_token:
         types:
         - String
-        required: true
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   decline_invitations:
     parameters:
       account_ids:
@@ -181,11 +215,21 @@ methods:
         required: true
   delete_members:
     parameters:
+      detector_id:
+        types:
+        - String
+        required: true
       account_ids:
         types:
         - Array<String>
         required: true
+  delete_publishing_destination:
+    parameters:
       detector_id:
+        types:
+        - String
+        required: true
+      destination_id:
         types:
         - String
         required: true
@@ -199,6 +243,28 @@ methods:
         types:
         - String
         required: true
+  describe_organization_configuration:
+    parameters:
+      detector_id:
+        types:
+        - String
+        required: true
+  describe_publishing_destination:
+    parameters:
+      detector_id:
+        types:
+        - String
+        required: true
+      destination_id:
+        types:
+        - String
+        required: true
+  disable_organization_admin_account:
+    parameters:
+      admin_account_id:
+        types:
+        - String
+        required: true
   disassociate_from_master_account:
     parameters:
       detector_id:
@@ -207,11 +273,17 @@ methods:
         required: true
   disassociate_members:
     parameters:
+      detector_id:
+        types:
+        - String
+        required: true
       account_ids:
         types:
         - Array<String>
         required: true
-      detector_id:
+  enable_organization_admin_account:
+    parameters:
+      admin_account_id:
         types:
         - String
         required: true
@@ -251,14 +323,14 @@ methods:
         types:
         - String
         required: true
-      finding_criteria:
-        types:
-        - Types::FindingCriteria
-        required: false
       finding_statistic_types:
         types:
         - Array<String>
         required: true
+      finding_criteria:
+        types:
+        - Types::FindingCriteria
+        required: false
   get_ip_set:
     parameters:
       detector_id:
@@ -277,13 +349,13 @@ methods:
         required: true
   get_members:
     parameters:
-      account_ids:
-        types:
-        - Array<String>
-        required: true
       detector_id:
         types:
         - String
+        required: true
+      account_ids:
+        types:
+        - Array<String>
         required: true
   get_threat_intel_set:
     parameters:
@@ -297,13 +369,13 @@ methods:
         required: true
   invite_members:
     parameters:
-      account_ids:
-        types:
-        - Array<String>
-        required: true
       detector_id:
         types:
         - String
+        required: true
+      account_ids:
+        types:
+        - Array<String>
         required: true
       disable_email_notification:
         types:
@@ -347,6 +419,10 @@ methods:
         types:
         - Types::FindingCriteria
         required: false
+      sort_criteria:
+        types:
+        - Types::SortCriteria
+        required: false
       max_results:
         types:
         - Integer
@@ -354,10 +430,6 @@ methods:
       next_token:
         types:
         - String
-        required: false
-      sort_criteria:
-        types:
-        - Types::SortCriteria
         required: false
   list_ip_sets:
     parameters:
@@ -401,6 +473,36 @@ methods:
         types:
         - String
         required: false
+  list_organization_admin_accounts:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_publishing_destinations:
+    parameters:
+      detector_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_threat_intel_sets:
     parameters:
       detector_id:
@@ -417,23 +519,33 @@ methods:
         required: false
   start_monitoring_members:
     parameters:
-      account_ids:
-        types:
-        - Array<String>
-        required: true
       detector_id:
         types:
         - String
+        required: true
+      account_ids:
+        types:
+        - Array<String>
         required: true
   stop_monitoring_members:
     parameters:
+      detector_id:
+        types:
+        - String
+        required: true
       account_ids:
         types:
         - Array<String>
         required: true
-      detector_id:
+  tag_resource:
+    parameters:
+      resource_arn:
         types:
         - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
         required: true
   unarchive_findings:
     parameters:
@@ -442,6 +554,16 @@ methods:
         - String
         required: true
       finding_ids:
+        types:
+        - Array<String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
         types:
         - Array<String>
         required: true
@@ -461,14 +583,6 @@ methods:
         required: false
   update_filter:
     parameters:
-      action:
-        types:
-        - String
-        required: false
-      description:
-        types:
-        - String
-        required: false
       detector_id:
         types:
         - String
@@ -477,25 +591,25 @@ methods:
         types:
         - String
         required: true
-      finding_criteria:
+      description:
         types:
-        - Types::FindingCriteria
+        - String
+        required: false
+      action:
+        types:
+        - String
         required: false
       rank:
         types:
         - Integer
         required: false
+      finding_criteria:
+        types:
+        - Types::FindingCriteria
+        required: false
   update_findings_feedback:
     parameters:
-      comments:
-        types:
-        - String
-        required: false
       detector_id:
-        types:
-        - String
-        required: true
-      feedback:
         types:
         - String
         required: true
@@ -503,12 +617,16 @@ methods:
         types:
         - Array<String>
         required: true
+      feedback:
+        types:
+        - String
+        required: true
+      comments:
+        types:
+        - String
+        required: false
   update_ip_set:
     parameters:
-      activate:
-        types:
-        - Boolean
-        required: false
       detector_id:
         types:
         - String
@@ -517,33 +635,61 @@ methods:
         types:
         - String
         required: true
-      location:
-        types:
-        - String
-        required: false
       name:
         types:
         - String
         required: false
-  update_threat_intel_set:
-    parameters:
+      location:
+        types:
+        - String
+        required: false
       activate:
         types:
         - Boolean
         required: false
+  update_organization_configuration:
+    parameters:
       detector_id:
         types:
         - String
         required: true
-      location:
+      auto_enable:
+        types:
+        - Boolean
+        required: true
+  update_publishing_destination:
+    parameters:
+      detector_id:
         types:
         - String
-        required: false
-      name:
+        required: true
+      destination_id:
         types:
         - String
+        required: true
+      destination_properties:
+        types:
+        - Types::DestinationProperties
         required: false
+  update_threat_intel_set:
+    parameters:
+      detector_id:
+        types:
+        - String
+        required: true
       threat_intel_set_id:
         types:
         - String
         required: true
+      name:
+        types:
+        - String
+        required: false
+      location:
+        types:
+        - String
+        required: false
+      activate:
+        types:
+        - Boolean
+        required: false

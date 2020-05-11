@@ -1,0 +1,6 @@
+---
+service_quota_increase_request_into_template:
+  create: put_service_quota_increase_request_into_template
+  read: 
+  update: 
+  delete: 

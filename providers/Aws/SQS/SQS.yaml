@@ -53,6 +53,10 @@ methods:
         types:
         - Hash<String,String>
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   delete_message:
     parameters:
       queue_url:
@@ -180,6 +184,10 @@ methods:
       message_attributes:
         types:
         - Hash<String,Types::MessageAttributeValue>
+        required: false
+      message_system_attributes:
+        types:
+        - Hash<String,Types::MessageSystemAttributeValue>
         required: false
       message_deduplication_id:
         types:

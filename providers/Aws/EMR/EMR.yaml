@@ -46,10 +46,14 @@ methods:
       cluster_id:
         types:
         - String
-        required: false
+        required: true
       step_ids:
         types:
         - Array<String>
+        required: true
+      step_cancellation_option:
+        types:
+        - String
         required: false
   create_security_configuration:
     parameters:
@@ -112,6 +116,12 @@ methods:
         - String
         required: true
       step_id:
+        types:
+        - String
+        required: true
+  get_managed_scaling_policy:
+    parameters:
+      cluster_id:
         types:
         - String
         required: true
@@ -225,6 +235,16 @@ methods:
         types:
         - String
         required: false
+  modify_cluster:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+      step_concurrency_level:
+        types:
+        - Integer
+        required: false
   modify_instance_fleet:
     parameters:
       cluster_id:
@@ -259,6 +279,22 @@ methods:
         types:
         - Types::AutoScalingPolicy
         required: true
+  put_block_public_access_configuration:
+    parameters:
+      block_public_access_configuration:
+        types:
+        - Types::BlockPublicAccessConfiguration
+        required: true
+  put_managed_scaling_policy:
+    parameters:
+      cluster_id:
+        types:
+        - String
+        required: true
+      managed_scaling_policy:
+        types:
+        - Types::ManagedScalingPolicy
+        required: true
   remove_auto_scaling_policy:
     parameters:
       cluster_id:
@@ -266,6 +302,12 @@ methods:
         - String
         required: true
       instance_group_id:
+        types:
+        - String
+        required: true
+  remove_managed_scaling_policy:
+    parameters:
+      cluster_id:
         types:
         - String
         required: true
@@ -372,6 +414,14 @@ methods:
       kerberos_attributes:
         types:
         - Types::KerberosAttributes
+        required: false
+      step_concurrency_level:
+        types:
+        - Integer
+        required: false
+      managed_scaling_policy:
+        types:
+        - Types::ManagedScalingPolicy
         required: false
   set_termination_protection:
     parameters:

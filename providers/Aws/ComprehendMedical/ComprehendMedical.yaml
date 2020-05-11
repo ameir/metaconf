@@ -1,7 +1,37 @@
 ---
 class: Aws::ComprehendMedical::Client
 methods:
+  describe_entities_detection_v2_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_icd10cm_inference_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_phi_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  describe_rx_norm_inference_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
   detect_entities:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+  detect_entities_v2:
     parameters:
       text:
         types:
@@ -10,6 +40,218 @@ methods:
   detect_phi:
     parameters:
       text:
+        types:
+        - String
+        required: true
+  infer_icd10cm:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+  infer_rx_norm:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+  list_entities_detection_v2_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::ComprehendMedicalAsyncJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_icd10cm_inference_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::ComprehendMedicalAsyncJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_phi_detection_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::ComprehendMedicalAsyncJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_rx_norm_inference_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::ComprehendMedicalAsyncJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_entities_detection_v2_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  start_icd10cm_inference_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  start_phi_detection_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  start_rx_norm_inference_job:
+    parameters:
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      job_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+      kms_key:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: true
+  stop_entities_detection_v2_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_icd10cm_inference_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_phi_detection_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  stop_rx_norm_inference_job:
+    parameters:
+      job_id:
         types:
         - String
         required: true

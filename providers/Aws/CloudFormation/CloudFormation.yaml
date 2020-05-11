@@ -91,6 +91,10 @@ methods:
         types:
         - String
         required: false
+      resources_to_import:
+        types:
+        - Array<Types::ResourceToImport>
+        required: false
   create_stack:
     parameters:
       stack_name:
@@ -170,7 +174,11 @@ methods:
       accounts:
         types:
         - Array<String>
-        required: true
+        required: false
+      deployment_targets:
+        types:
+        - Types::DeploymentTargets
+        required: false
       regions:
         types:
         - Array<String>
@@ -225,6 +233,14 @@ methods:
         types:
         - String
         required: false
+      permission_model:
+        types:
+        - String
+        required: false
+      auto_deployment:
+        types:
+        - Types::AutoDeployment
+        required: false
       client_request_token:
         types:
         - String
@@ -266,7 +282,11 @@ methods:
       accounts:
         types:
         - Array<String>
-        required: true
+        required: false
+      deployment_targets:
+        types:
+        - Types::DeploymentTargets
+        required: false
       regions:
         types:
         - Array<String>
@@ -289,6 +309,24 @@ methods:
         types:
         - String
         required: true
+  deregister_type:
+    parameters:
+      arn:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: false
+      version_id:
+        types:
+        - String
+        required: false
   describe_account_limits:
     parameters:
       next_token:
@@ -407,6 +445,30 @@ methods:
         types:
         - String
         required: false
+  describe_type:
+    parameters:
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: false
+      arn:
+        types:
+        - String
+        required: false
+      version_id:
+        types:
+        - String
+        required: false
+  describe_type_registration:
+    parameters:
+      registration_token:
+        types:
+        - String
+        required: true
   detect_stack_drift:
     parameters:
       stack_name:
@@ -427,6 +489,20 @@ methods:
         types:
         - String
         required: true
+  detect_stack_set_drift:
+    parameters:
+      stack_set_name:
+        types:
+        - String
+        required: true
+      operation_preferences:
+        types:
+        - Types::StackSetOperationPreferences
+        required: false
+      operation_id:
+        types:
+        - String
+        required: false
   estimate_template_cost:
     parameters:
       template_body:
@@ -607,6 +683,136 @@ methods:
         types:
         - Array<String>
         required: false
+  list_type_registrations:
+    parameters:
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: false
+      type_arn:
+        types:
+        - String
+        required: false
+      registration_status_filter:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_type_versions:
+    parameters:
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: false
+      arn:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      deprecated_status:
+        types:
+        - String
+        required: false
+  list_types:
+    parameters:
+      visibility:
+        types:
+        - String
+        required: false
+      provisioning_type:
+        types:
+        - String
+        required: false
+      deprecated_status:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  record_handler_progress:
+    parameters:
+      bearer_token:
+        types:
+        - String
+        required: true
+      operation_status:
+        types:
+        - String
+        required: true
+      current_operation_status:
+        types:
+        - String
+        required: false
+      status_message:
+        types:
+        - String
+        required: false
+      error_code:
+        types:
+        - String
+        required: false
+      resource_model:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
+  register_type:
+    parameters:
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: true
+      schema_handler_package:
+        types:
+        - String
+        required: true
+      logging_config:
+        types:
+        - Types::LoggingConfig
+        required: false
+      execution_role_arn:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false
   set_stack_policy:
     parameters:
       stack_name:
@@ -618,6 +824,24 @@ methods:
         - String
         required: false
       stack_policy_url:
+        types:
+        - String
+        required: false
+  set_type_default_version:
+    parameters:
+      arn:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      type_name:
+        types:
+        - String
+        required: false
+      version_id:
         types:
         - String
         required: false
@@ -724,7 +948,11 @@ methods:
       accounts:
         types:
         - Array<String>
-        required: true
+        required: false
+      deployment_targets:
+        types:
+        - Types::DeploymentTargets
+        required: false
       regions:
         types:
         - Array<String>
@@ -786,6 +1014,18 @@ methods:
       execution_role_name:
         types:
         - String
+        required: false
+      deployment_targets:
+        types:
+        - Types::DeploymentTargets
+        required: false
+      permission_model:
+        types:
+        - String
+        required: false
+      auto_deployment:
+        types:
+        - Types::AutoDeployment
         required: false
       operation_id:
         types:

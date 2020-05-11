@@ -1,1 +1,6 @@
---- {}
+---
+session:
+  create: put_session
+  read: get_session
+  update: 
+  delete: delete_session

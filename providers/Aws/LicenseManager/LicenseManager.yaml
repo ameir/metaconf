@@ -31,6 +31,10 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+      product_information_list:
+        types:
+        - Array<Types::ProductInformation>
+        required: false
   delete_license_configuration:
     parameters:
       license_configuration_arn:
@@ -44,6 +48,20 @@ methods:
         - String
         required: true
   list_associations_for_license_configuration:
+    parameters:
+      license_configuration_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_failures_for_license_configuration_operations:
     parameters:
       license_configuration_arn:
         types:
@@ -176,6 +194,10 @@ methods:
       description:
         types:
         - String
+        required: false
+      product_information_list:
+        types:
+        - Array<Types::ProductInformation>
         required: false
   update_license_specifications_for_resource:
     parameters:

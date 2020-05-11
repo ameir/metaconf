@@ -17,6 +17,16 @@ methods:
         types:
         - Types::WriteCampaignRequest
         required: true
+  create_email_template:
+    parameters:
+      email_template_request:
+        types:
+        - Types::EmailTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
   create_export_job:
     parameters:
       application_id:
@@ -37,6 +47,32 @@ methods:
         types:
         - Types::ImportJobRequest
         required: true
+  create_journey:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      write_journey_request:
+        types:
+        - Types::WriteJourneyRequest
+        required: true
+  create_push_template:
+    parameters:
+      push_notification_template_request:
+        types:
+        - Types::PushNotificationTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+  create_recommender_configuration:
+    parameters:
+      create_recommender_configuration:
+        types:
+        - Types::CreateRecommenderConfiguration
+        required: true
   create_segment:
     parameters:
       application_id:
@@ -46,6 +82,26 @@ methods:
       write_segment_request:
         types:
         - Types::WriteSegmentRequest
+        required: true
+  create_sms_template:
+    parameters:
+      sms_template_request:
+        types:
+        - Types::SMSTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+  create_voice_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      voice_template_request:
+        types:
+        - Types::VoiceTemplateRequest
         required: true
   delete_adm_channel:
     parameters:
@@ -105,6 +161,16 @@ methods:
         types:
         - String
         required: true
+  delete_email_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   delete_endpoint:
     parameters:
       application_id:
@@ -127,6 +193,32 @@ methods:
         types:
         - String
         required: true
+  delete_journey:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+  delete_push_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  delete_recommender_configuration:
+    parameters:
+      recommender_id:
+        types:
+        - String
+        required: true
   delete_segment:
     parameters:
       application_id:
@@ -143,6 +235,16 @@ methods:
         types:
         - String
         required: true
+  delete_sms_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   delete_user_endpoints:
     parameters:
       application_id:
@@ -159,6 +261,16 @@ methods:
         types:
         - String
         required: true
+  delete_voice_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   get_adm_channel:
     parameters:
       application_id:
@@ -195,6 +307,40 @@ methods:
         types:
         - String
         required: true
+  get_application_date_range_kpi:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      kpi_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
   get_application_settings:
     parameters:
       application_id:
@@ -243,6 +389,44 @@ methods:
         required: false
       token:
         types:
+        - String
+        required: false
+  get_campaign_date_range_kpi:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      campaign_id:
+        types:
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      kpi_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
         - String
         required: false
   get_campaign_version:
@@ -303,6 +487,16 @@ methods:
         types:
         - String
         required: true
+  get_email_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   get_endpoint:
     parameters:
       application_id:
@@ -365,6 +559,120 @@ methods:
         types:
         - String
         required: true
+      page_size:
+        types:
+        - String
+        required: false
+      token:
+        types:
+        - String
+        required: false
+  get_journey:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+  get_journey_date_range_kpi:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      journey_id:
+        types:
+        - String
+        required: true
+      kpi_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  get_journey_execution_activity_metrics:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_activity_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+  get_journey_execution_metrics:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+  get_push_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  get_recommender_configuration:
+    parameters:
+      recommender_id:
+        types:
+        - String
+        required: true
+  get_recommender_configurations:
+    parameters:
       page_size:
         types:
         - String
@@ -471,6 +779,16 @@ methods:
         types:
         - String
         required: true
+  get_sms_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   get_user_endpoints:
     parameters:
       application_id:
@@ -487,6 +805,72 @@ methods:
         types:
         - String
         required: true
+  get_voice_template:
+    parameters:
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  list_journeys:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      page_size:
+        types:
+        - String
+        required: false
+      token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_template_versions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+      template_name:
+        types:
+        - String
+        required: true
+      template_type:
+        types:
+        - String
+        required: true
+  list_templates:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - String
+        required: false
+      prefix:
+        types:
+        - String
+        required: false
+      template_type:
+        types:
+        - String
+        required: false
   phone_number_validate:
     parameters:
       number_validate_request:
@@ -546,6 +930,26 @@ methods:
       send_users_message_request:
         types:
         - Types::SendUsersMessageRequest
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags_model:
+        types:
+        - Types::TagsModel
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_adm_channel:
     parameters:
@@ -641,6 +1045,24 @@ methods:
         types:
         - Types::EmailChannelRequest
         required: true
+  update_email_template:
+    parameters:
+      create_new_version:
+        types:
+        - Boolean
+        required: false
+      email_template_request:
+        types:
+        - Types::EmailTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
   update_endpoint:
     parameters:
       application_id:
@@ -675,6 +1097,62 @@ methods:
         types:
         - Types::GCMChannelRequest
         required: true
+  update_journey:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+      write_journey_request:
+        types:
+        - Types::WriteJourneyRequest
+        required: true
+  update_journey_state:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      journey_id:
+        types:
+        - String
+        required: true
+      journey_state_request:
+        types:
+        - Types::JourneyStateRequest
+        required: true
+  update_push_template:
+    parameters:
+      create_new_version:
+        types:
+        - Boolean
+        required: false
+      push_notification_template_request:
+        types:
+        - Types::PushNotificationTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  update_recommender_configuration:
+    parameters:
+      recommender_id:
+        types:
+        - String
+        required: true
+      update_recommender_configuration:
+        types:
+        - Types::UpdateRecommenderConfiguration
+        required: true
   update_segment:
     parameters:
       application_id:
@@ -699,6 +1177,38 @@ methods:
         types:
         - Types::SMSChannelRequest
         required: true
+  update_sms_template:
+    parameters:
+      create_new_version:
+        types:
+        - Boolean
+        required: false
+      sms_template_request:
+        types:
+        - Types::SMSTemplateRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+  update_template_active_version:
+    parameters:
+      template_active_version_request:
+        types:
+        - Types::TemplateActiveVersionRequest
+        required: true
+      template_name:
+        types:
+        - String
+        required: true
+      template_type:
+        types:
+        - String
+        required: true
   update_voice_channel:
     parameters:
       application_id:
@@ -708,4 +1218,22 @@ methods:
       voice_channel_request:
         types:
         - Types::VoiceChannelRequest
+        required: true
+  update_voice_template:
+    parameters:
+      create_new_version:
+        types:
+        - Boolean
+        required: false
+      template_name:
+        types:
+        - String
+        required: true
+      version:
+        types:
+        - String
+        required: false
+      voice_template_request:
+        types:
+        - Types::VoiceTemplateRequest
         required: true

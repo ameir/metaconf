@@ -1,0 +1,185 @@
+---
+class: Aws::ServiceQuotas::Client
+methods:
+  delete_service_quota_increase_request_from_template:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+      aws_region:
+        types:
+        - String
+        required: true
+  get_aws_default_service_quota:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+  get_requested_service_quota_change:
+    parameters:
+      request_id:
+        types:
+        - String
+        required: true
+  get_service_quota:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+  get_service_quota_increase_request_from_template:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+      aws_region:
+        types:
+        - String
+        required: true
+  list_aws_default_service_quotas:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_requested_service_quota_change_history:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: false
+      status:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_requested_service_quota_change_history_by_quota:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+      status:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_service_quota_increase_requests_in_template:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: false
+      aws_region:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_service_quotas:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_services:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_service_quota_increase_request_into_template:
+    parameters:
+      quota_code:
+        types:
+        - String
+        required: true
+      service_code:
+        types:
+        - String
+        required: true
+      aws_region:
+        types:
+        - String
+        required: true
+      desired_value:
+        types:
+        - Float
+        required: true
+  request_service_quota_increase:
+    parameters:
+      service_code:
+        types:
+        - String
+        required: true
+      quota_code:
+        types:
+        - String
+        required: true
+      desired_value:
+        types:
+        - Float
+        required: true

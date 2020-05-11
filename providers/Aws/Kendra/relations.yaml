@@ -1,0 +1,16 @@
+---
+data_source:
+  create: create_data_source
+  read: describe_data_source
+  update: 
+  delete: delete_data_source
+faq:
+  create: create_faq
+  read: describe_faq
+  update: 
+  delete: delete_faq
+index:
+  create: create_index
+  read: describe_index
+  update: 
+  delete: delete_index

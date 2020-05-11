@@ -9,6 +9,11 @@ resource_policy:
   read: 
   update: 
   delete: delete_resource_policy
+workflow_run_properties:
+  create: put_workflow_run_properties
+  read: get_workflow_run_properties
+  update: 
+  delete: 
 classifier:
   create: create_classifier
   read: get_classifier
@@ -39,6 +44,11 @@ job:
   read: get_job
   update: 
   delete: delete_job
+ml_transform:
+  create: create_ml_transform
+  read: get_ml_transform
+  update: 
+  delete: delete_ml_transform
 partition:
   create: create_partition
   read: get_partition
@@ -69,3 +79,8 @@ user_defined_function:
   read: get_user_defined_function
   update: 
   delete: delete_user_defined_function
+workflow:
+  create: create_workflow
+  read: get_workflow
+  update: 
+  delete: delete_workflow

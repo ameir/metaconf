@@ -1,0 +1,57 @@
+---
+class: Aws::EBS::Client
+methods:
+  get_snapshot_block:
+    parameters:
+      snapshot_id:
+        types:
+        - String
+        required: true
+      block_index:
+        types:
+        - Integer
+        required: true
+      block_token:
+        types:
+        - String
+        required: true
+  list_changed_blocks:
+    parameters:
+      first_snapshot_id:
+        types:
+        - String
+        required: false
+      second_snapshot_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      starting_block_index:
+        types:
+        - Integer
+        required: false
+  list_snapshot_blocks:
+    parameters:
+      snapshot_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      starting_block_index:
+        types:
+        - Integer
+        required: false

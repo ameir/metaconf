@@ -29,6 +29,24 @@ methods:
         types:
         - String
         required: false
+  associate_resource_share_permission:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      permission_arn:
+        types:
+        - String
+        required: true
+      replace:
+        types:
+        - Boolean
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
   create_resource_share:
     parameters:
       name:
@@ -54,6 +72,10 @@ methods:
       client_token:
         types:
         - String
+        required: false
+      permission_arns:
+        types:
+        - Array<String>
         required: false
   delete_resource_share:
     parameters:
@@ -82,6 +104,30 @@ methods:
       client_token:
         types:
         - String
+        required: false
+  disassociate_resource_share_permission:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      permission_arn:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  get_permission:
+    parameters:
+      permission_arn:
+        types:
+        - String
+        required: true
+      permission_version:
+        types:
+        - Integer
         required: false
   get_resource_policies:
     parameters:
@@ -179,6 +225,34 @@ methods:
         types:
         - Integer
         required: false
+  list_pending_invitation_resources:
+    parameters:
+      resource_share_invitation_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_permissions:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_principals:
     parameters:
       resource_owner:
@@ -201,6 +275,30 @@ methods:
         types:
         - Array<String>
         required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resource_share_permissions:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resource_types:
+    parameters:
       next_token:
         types:
         - String
@@ -239,6 +337,12 @@ methods:
         types:
         - Integer
         required: false
+  promote_resource_share_created_from_policy:
+    parameters:
+      resource_share_arn:
+        types:
+        - String
+        required: true
   reject_resource_share_invitation:
     parameters:
       resource_share_invitation_arn:

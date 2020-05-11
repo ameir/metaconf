@@ -1,11 +1,43 @@
 ---
 class: Aws::FSx::Client
 methods:
+  cancel_data_repository_task:
+    parameters:
+      task_id:
+        types:
+        - String
+        required: true
   create_backup:
     parameters:
       file_system_id:
         types:
         - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_data_repository_task:
+    parameters:
+      type:
+        types:
+        - String
+        required: true
+      paths:
+        types:
+        - Array<String>
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: true
+      report:
+        types:
+        - Types::CompletionReport
         required: true
       client_request_token:
         types:
@@ -29,6 +61,10 @@ methods:
         types:
         - Integer
         required: true
+      storage_type:
+        types:
+        - String
+        required: false
       subnet_ids:
         types:
         - Array<String>
@@ -79,6 +115,10 @@ methods:
         types:
         - Types::CreateFileSystemWindowsConfiguration
         required: false
+      storage_type:
+        types:
+        - String
+        required: false
   delete_backup:
     parameters:
       backup_id:
@@ -112,6 +152,24 @@ methods:
       filters:
         types:
         - Array<Types::Filter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_data_repository_tasks:
+    parameters:
+      task_ids:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::DataRepositoryTaskFilter>
         required: false
       max_results:
         types:

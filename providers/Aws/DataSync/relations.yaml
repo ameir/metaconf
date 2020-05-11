@@ -9,6 +9,11 @@ location_efs:
   read: describe_location_efs
   update: 
   delete: 
+location_fsx_windows:
+  create: create_location_fsx_windows
+  read: describe_location_fsx_windows
+  update: 
+  delete: 
 location_nfs:
   create: create_location_nfs
   read: describe_location_nfs
@@ -17,6 +22,11 @@ location_nfs:
 location_s3:
   create: create_location_s3
   read: describe_location_s3
+  update: 
+  delete: 
+location_smb:
+  create: create_location_smb
+  read: describe_location_smb
   update: 
   delete: 
 task:

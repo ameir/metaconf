@@ -4,3 +4,8 @@ cluster:
   read: describe_cluster
   update: 
   delete: delete_cluster
+configuration:
+  create: create_configuration
+  read: describe_configuration
+  update: 
+  delete: 

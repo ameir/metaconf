@@ -27,9 +27,17 @@ methods:
         types:
         - String
         required: false
+      hop_destinations:
+        types:
+        - Array<Types::HopDestination>
+        required: false
       job_template:
         types:
         - String
+        required: false
+      priority:
+        types:
+        - Integer
         required: false
       queue:
         types:
@@ -43,6 +51,18 @@ methods:
         types:
         - Types::JobSettings
         required: true
+      simulate_reserved_queue:
+        types:
+        - String
+        required: false
+      status_update_interval:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
       user_metadata:
         types:
         - Hash<String,String>
@@ -61,10 +81,18 @@ methods:
         types:
         - String
         required: false
+      hop_destinations:
+        types:
+        - Array<Types::HopDestination>
+        required: false
       name:
         types:
         - String
         required: true
+      priority:
+        types:
+        - Integer
+        required: false
       queue:
         types:
         - String
@@ -73,6 +101,10 @@ methods:
         types:
         - Types::JobTemplateSettings
         required: true
+      status_update_interval:
+        types:
+        - String
+        required: false
       tags:
         types:
         - Hash<String,String>
@@ -116,6 +148,10 @@ methods:
       reservation_plan_settings:
         types:
         - Types::ReservationPlanSettings
+        required: false
+      status:
+        types:
+        - String
         required: false
       tags:
         types:
@@ -307,10 +343,18 @@ methods:
         types:
         - String
         required: false
+      hop_destinations:
+        types:
+        - Array<Types::HopDestination>
+        required: false
       name:
         types:
         - String
         required: true
+      priority:
+        types:
+        - Integer
+        required: false
       queue:
         types:
         - String
@@ -318,6 +362,10 @@ methods:
       settings:
         types:
         - Types::JobTemplateSettings
+        required: false
+      status_update_interval:
+        types:
+        - String
         required: false
   update_preset:
     parameters:

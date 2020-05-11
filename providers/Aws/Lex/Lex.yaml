@@ -1,6 +1,38 @@
 ---
 class: Aws::Lex::Client
 methods:
+  delete_session:
+    parameters:
+      bot_name:
+        types:
+        - String
+        required: true
+      bot_alias:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  get_session:
+    parameters:
+      bot_name:
+        types:
+        - String
+        required: true
+      bot_alias:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      checkpoint_label_filter:
+        types:
+        - String
+        required: false
   post_content:
     parameters:
       bot_name:
@@ -62,3 +94,33 @@ methods:
         types:
         - String
         required: true
+  put_session:
+    parameters:
+      bot_name:
+        types:
+        - String
+        required: true
+      bot_alias:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      session_attributes:
+        types:
+        - Hash<String,String>
+        required: false
+      dialog_action:
+        types:
+        - Types::DialogAction
+        required: false
+      recent_intent_summary_view:
+        types:
+        - Array<Types::IntentSummary>
+        required: false
+      accept:
+        types:
+        - String
+        required: false

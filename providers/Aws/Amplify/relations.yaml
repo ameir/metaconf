@@ -4,13 +4,28 @@ app:
   read: get_app
   update: 
   delete: delete_app
+backend_environment:
+  create: create_backend_environment
+  read: get_backend_environment
+  update: 
+  delete: delete_backend_environment
 branch:
   create: create_branch
   read: get_branch
   update: 
   delete: delete_branch
+deployment:
+  create: create_deployment
+  read: 
+  update: 
+  delete: 
 domain_association:
   create: create_domain_association
   read: get_domain_association
   update: 
   delete: delete_domain_association
+webhook:
+  create: create_webhook
+  read: get_webhook
+  update: 
+  delete: delete_webhook

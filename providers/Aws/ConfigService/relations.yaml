@@ -19,6 +19,11 @@ configuration_recorder:
   read: describe_configuration_recorders
   update: 
   delete: delete_configuration_recorder
+conformance_pack:
+  create: put_conformance_pack
+  read: describe_conformance_packs
+  update: 
+  delete: delete_conformance_pack
 delivery_channel:
   create: put_delivery_channel
   read: describe_delivery_channels
@@ -29,6 +34,31 @@ evaluations:
   read: 
   update: 
   delete: 
+organization_config_rule:
+  create: put_organization_config_rule
+  read: describe_organization_config_rules
+  update: 
+  delete: delete_organization_config_rule
+organization_conformance_pack:
+  create: put_organization_conformance_pack
+  read: describe_organization_conformance_packs
+  update: 
+  delete: delete_organization_conformance_pack
+remediation_configurations:
+  create: put_remediation_configurations
+  read: describe_remediation_configurations
+  update: 
+  delete: 
+remediation_exceptions:
+  create: put_remediation_exceptions
+  read: describe_remediation_exceptions
+  update: 
+  delete: delete_remediation_exceptions
+resource_config:
+  create: put_resource_config
+  read: 
+  update: 
+  delete: delete_resource_config
 retention_configuration:
   create: put_retention_configuration
   read: describe_retention_configurations

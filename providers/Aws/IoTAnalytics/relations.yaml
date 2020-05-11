@@ -29,3 +29,8 @@ pipeline:
   read: describe_pipeline
   update: 
   delete: delete_pipeline
+pipeline_activity:
+  create: run_pipeline_activity
+  read: 
+  update: 
+  delete: 

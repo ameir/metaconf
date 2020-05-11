@@ -1,6 +1,26 @@
 ---
+access_point_policy:
+  create: put_access_point_policy
+  read: get_access_point_policy
+  update: 
+  delete: delete_access_point_policy
+job_tagging:
+  create: put_job_tagging
+  read: get_job_tagging
+  update: 
+  delete: delete_job_tagging
 public_access_block:
   create: put_public_access_block
   read: get_public_access_block
   update: 
   delete: delete_public_access_block
+access_point:
+  create: create_access_point
+  read: get_access_point
+  update: 
+  delete: delete_access_point
+job:
+  create: create_job
+  read: describe_job
+  update: 
+  delete: 

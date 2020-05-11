@@ -1,12 +1,68 @@
 ---
 class: Aws::CostExplorer::Client
 methods:
+  create_cost_category_definition:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      rule_version:
+        types:
+        - String
+        required: true
+      rules:
+        types:
+        - Array<Types::CostCategoryRule>
+        required: true
+  delete_cost_category_definition:
+    parameters:
+      cost_category_arn:
+        types:
+        - String
+        required: true
+  describe_cost_category_definition:
+    parameters:
+      cost_category_arn:
+        types:
+        - String
+        required: true
+      effective_on:
+        types:
+        - String
+        required: false
   get_cost_and_usage:
     parameters:
       time_period:
         types:
         - Types::DateInterval
+        required: true
+      granularity:
+        types:
+        - String
         required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      metrics:
+        types:
+        - Array<String>
+        required: false
+      group_by:
+        types:
+        - Array<Types::GroupDefinition>
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_cost_and_usage_with_resources:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
       granularity:
         types:
         - String
@@ -157,6 +213,124 @@ methods:
         types:
         - String
         required: false
+  get_rightsizing_recommendation:
+    parameters:
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      configuration:
+        types:
+        - Types::RightsizingRecommendationConfiguration
+        required: false
+      service:
+        types:
+        - String
+        required: true
+      page_size:
+        types:
+        - Integer
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+  get_savings_plans_coverage:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      group_by:
+        types:
+        - Array<Types::GroupDefinition>
+        required: false
+      granularity:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      metrics:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_savings_plans_purchase_recommendation:
+    parameters:
+      savings_plans_type:
+        types:
+        - String
+        required: true
+      term_in_years:
+        types:
+        - String
+        required: true
+      payment_option:
+        types:
+        - String
+        required: true
+      account_scope:
+        types:
+        - String
+        required: false
+      next_page_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+      lookback_period_in_days:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - Types::Expression
+        required: false
+  get_savings_plans_utilization:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      granularity:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - Types::Expression
+        required: false
+  get_savings_plans_utilization_details:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   get_tags:
     parameters:
       search_string:
@@ -175,3 +349,53 @@ methods:
         types:
         - String
         required: false
+  get_usage_forecast:
+    parameters:
+      time_period:
+        types:
+        - Types::DateInterval
+        required: true
+      metric:
+        types:
+        - String
+        required: true
+      granularity:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - Types::Expression
+        required: false
+      prediction_interval_level:
+        types:
+        - Integer
+        required: false
+  list_cost_category_definitions:
+    parameters:
+      effective_on:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_cost_category_definition:
+    parameters:
+      cost_category_arn:
+        types:
+        - String
+        required: true
+      rule_version:
+        types:
+        - String
+        required: true
+      rules:
+        types:
+        - Array<Types::CostCategoryRule>
+        required: true

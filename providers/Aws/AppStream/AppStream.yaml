@@ -113,6 +113,14 @@ methods:
         types:
         - Hash<String,String>
         required: false
+      idle_disconnect_timeout_in_seconds:
+        types:
+        - Integer
+        required: false
+      iam_role_arn:
+        types:
+        - String
+        required: false
   create_image_builder:
     parameters:
       name:
@@ -143,6 +151,10 @@ methods:
         types:
         - Types::VpcConfig
         required: false
+      iam_role_arn:
+        types:
+        - String
+        required: false
       enable_default_internet_access:
         types:
         - Boolean
@@ -158,6 +170,10 @@ methods:
       tags:
         types:
         - Hash<String,String>
+        required: false
+      access_endpoints:
+        types:
+        - Array<Types::AccessEndpoint>
         required: false
   create_image_builder_streaming_url:
     parameters:
@@ -206,6 +222,14 @@ methods:
       tags:
         types:
         - Hash<String,String>
+        required: false
+      access_endpoints:
+        types:
+        - Array<Types::AccessEndpoint>
+        required: false
+      embed_host_domains:
+        types:
+        - Array<String>
         required: false
   create_streaming_url:
     parameters:
@@ -414,6 +438,16 @@ methods:
       names:
         types:
         - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_usage_report_subscriptions:
+    parameters:
+      max_results:
+        types:
+        - Integer
         required: false
       next_token:
         types:
@@ -633,9 +667,17 @@ methods:
         types:
         - Types::DomainJoinInfo
         required: false
+      idle_disconnect_timeout_in_seconds:
+        types:
+        - Integer
+        required: false
       attributes_to_delete:
         types:
         - Array<String>
+        required: false
+      iam_role_arn:
+        types:
+        - String
         required: false
   update_image_permissions:
     parameters:
@@ -692,6 +734,14 @@ methods:
       application_settings:
         types:
         - Types::ApplicationSettings
+        required: false
+      access_endpoints:
+        types:
+        - Array<Types::AccessEndpoint>
+        required: false
+      embed_host_domains:
+        types:
+        - Array<String>
         required: false
   wait_until:
     parameters:

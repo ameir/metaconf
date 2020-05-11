@@ -1,0 +1,16 @@
+---
+data_set:
+  create: create_data_set
+  read: get_data_set
+  update: 
+  delete: delete_data_set
+job:
+  create: create_job
+  read: get_job
+  update: 
+  delete: 
+revision:
+  create: create_revision
+  read: get_revision
+  update: 
+  delete: delete_revision

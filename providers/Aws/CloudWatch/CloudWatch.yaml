@@ -7,9 +7,33 @@ methods:
         types:
         - Array<String>
         required: true
+  delete_anomaly_detector:
+    parameters:
+      namespace:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      dimensions:
+        types:
+        - Array<Types::Dimension>
+        required: false
+      stat:
+        types:
+        - String
+        required: true
   delete_dashboards:
     parameters:
       dashboard_names:
+        types:
+        - Array<String>
+        required: true
+  delete_insight_rules:
+    parameters:
+      rule_names:
         types:
         - Array<String>
         required: true
@@ -18,6 +42,10 @@ methods:
       alarm_name:
         types:
         - String
+        required: false
+      alarm_types:
+        types:
+        - Array<String>
         required: false
       history_item_type:
         types:
@@ -47,6 +75,10 @@ methods:
         types:
         - String
         required: false
+      scan_by:
+        types:
+        - String
+        required: false
   describe_alarms:
     parameters:
       alarm_names:
@@ -54,6 +86,18 @@ methods:
         - Array<String>
         required: false
       alarm_name_prefix:
+        types:
+        - String
+        required: false
+      alarm_types:
+        types:
+        - Array<String>
+        required: false
+      children_of_alarm_name:
+        types:
+        - String
+        required: false
+      parents_of_alarm_name:
         types:
         - String
         required: false
@@ -103,9 +147,47 @@ methods:
         types:
         - String
         required: false
+  describe_anomaly_detectors:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace:
+        types:
+        - String
+        required: false
+      metric_name:
+        types:
+        - String
+        required: false
+      dimensions:
+        types:
+        - Array<Types::Dimension>
+        required: false
+  describe_insight_rules:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   disable_alarm_actions:
     parameters:
       alarm_names:
+        types:
+        - Array<String>
+        required: true
+  disable_insight_rules:
+    parameters:
+      rule_names:
         types:
         - Array<String>
         required: true
@@ -115,12 +197,56 @@ methods:
         types:
         - Array<String>
         required: true
+  enable_insight_rules:
+    parameters:
+      rule_names:
+        types:
+        - Array<String>
+        required: true
   get_dashboard:
     parameters:
       dashboard_name:
         types:
         - String
         required: true
+  get_insight_rule_report:
+    parameters:
+      rule_name:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      period:
+        types:
+        - Integer
+        required: true
+      max_contributor_count:
+        types:
+        - Integer
+        required: false
+      metrics:
+        types:
+        - Array<String>
+        required: false
+      order_by:
+        types:
+        - String
+        required: false
   get_metric_data:
     parameters:
       metric_data_queries:
@@ -239,6 +365,68 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_anomaly_detector:
+    parameters:
+      namespace:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      dimensions:
+        types:
+        - Array<Types::Dimension>
+        required: false
+      stat:
+        types:
+        - String
+        required: true
+      configuration:
+        types:
+        - Types::AnomalyDetectorConfiguration
+        required: false
+  put_composite_alarm:
+    parameters:
+      actions_enabled:
+        types:
+        - Boolean
+        required: false
+      alarm_actions:
+        types:
+        - Array<String>
+        required: false
+      alarm_description:
+        types:
+        - String
+        required: false
+      alarm_name:
+        types:
+        - String
+        required: true
+      alarm_rule:
+        types:
+        - String
+        required: true
+      insufficient_data_actions:
+        types:
+        - Array<String>
+        required: false
+      ok_actions:
+        types:
+        - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   put_dashboard:
     parameters:
       dashboard_name:
@@ -249,6 +437,24 @@ methods:
         types:
         - String
         required: true
+  put_insight_rule:
+    parameters:
+      rule_name:
+        types:
+        - String
+        required: true
+      rule_state:
+        types:
+        - String
+        required: false
+      rule_definition:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   put_metric_alarm:
     parameters:
       alarm_name:
@@ -314,7 +520,7 @@ methods:
       threshold:
         types:
         - Float
-        required: true
+        required: false
       comparison_operator:
         types:
         - String
@@ -330,6 +536,14 @@ methods:
       metrics:
         types:
         - Array<Types::MetricDataQuery>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      threshold_metric_id:
+        types:
+        - String
         required: false
   put_metric_data:
     parameters:
@@ -359,6 +573,26 @@ methods:
         types:
         - String
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   wait_until:
     parameters:
       max_attempts:

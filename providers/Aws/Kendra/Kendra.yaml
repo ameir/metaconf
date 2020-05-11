@@ -1,0 +1,391 @@
+---
+class: Aws::Kendra::Client
+methods:
+  batch_delete_document:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      document_id_list:
+        types:
+        - Array<String>
+        required: true
+      data_source_sync_job_metric_target:
+        types:
+        - Types::DataSourceSyncJobMetricTarget
+        required: false
+  batch_put_document:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: false
+      documents:
+        types:
+        - Array<Types::Document>
+        required: true
+  create_data_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      configuration:
+        types:
+        - Types::DataSourceConfiguration
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      schedule:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_faq:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      s3_path:
+        types:
+        - Types::S3Path
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_index:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      edition:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      server_side_encryption_configuration:
+        types:
+        - Types::ServerSideEncryptionConfiguration
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_data_source:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  delete_faq:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  delete_index:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_data_source:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  describe_faq:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  describe_index:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  list_data_source_sync_jobs:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      start_time_filter:
+        types:
+        - Types::TimeRange
+        required: false
+      status_filter:
+        types:
+        - String
+        required: false
+  list_data_sources:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_faqs:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_indices:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  query:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      query_text:
+        types:
+        - String
+        required: true
+      attribute_filter:
+        types:
+        - Types::AttributeFilter
+        required: false
+      facets:
+        types:
+        - Array<Types::Facet>
+        required: false
+      requested_document_attributes:
+        types:
+        - Array<String>
+        required: false
+      query_result_type_filter:
+        types:
+        - String
+        required: false
+      page_number:
+        types:
+        - Integer
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  start_data_source_sync_job:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  stop_data_source_sync_job:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      index_id:
+        types:
+        - String
+        required: true
+  submit_feedback:
+    parameters:
+      index_id:
+        types:
+        - String
+        required: true
+      query_id:
+        types:
+        - String
+        required: true
+      click_feedback_items:
+        types:
+        - Array<Types::ClickFeedback>
+        required: false
+      relevance_feedback_items:
+        types:
+        - Array<Types::RelevanceFeedback>
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_data_source:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      index_id:
+        types:
+        - String
+        required: true
+      configuration:
+        types:
+        - Types::DataSourceConfiguration
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      schedule:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+  update_index:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      document_metadata_configuration_updates:
+        types:
+        - Array<Types::DocumentMetadataConfiguration>
+        required: false
+      capacity_units:
+        types:
+        - Types::CapacityUnitsConfiguration
+        required: false

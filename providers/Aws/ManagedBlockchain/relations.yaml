@@ -1,0 +1,21 @@
+---
+member:
+  create: create_member
+  read: get_member
+  update: 
+  delete: delete_member
+network:
+  create: create_network
+  read: get_network
+  update: 
+  delete: 
+node:
+  create: create_node
+  read: get_node
+  update: 
+  delete: delete_node
+proposal:
+  create: create_proposal
+  read: get_proposal
+  update: 
+  delete: 

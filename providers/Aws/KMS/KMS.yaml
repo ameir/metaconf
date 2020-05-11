@@ -85,6 +85,10 @@ methods:
         types:
         - String
         required: false
+      customer_master_key_spec:
+        types:
+        - String
+        required: false
       origin:
         types:
         - String
@@ -115,6 +119,14 @@ methods:
       grant_tokens:
         types:
         - Array<String>
+        required: false
+      key_id:
+        types:
+        - String
+        required: false
+      encryption_algorithm:
+        types:
+        - String
         required: false
   delete_alias:
     parameters:
@@ -211,6 +223,10 @@ methods:
         types:
         - Array<String>
         required: false
+      encryption_algorithm:
+        types:
+        - String
+        required: false
   generate_data_key:
     parameters:
       key_id:
@@ -229,6 +245,42 @@ methods:
         types:
         - String
         required: false
+      grant_tokens:
+        types:
+        - Array<String>
+        required: false
+  generate_data_key_pair:
+    parameters:
+      encryption_context:
+        types:
+        - Hash<String,String>
+        required: false
+      key_id:
+        types:
+        - String
+        required: true
+      key_pair_spec:
+        types:
+        - String
+        required: true
+      grant_tokens:
+        types:
+        - Array<String>
+        required: false
+  generate_data_key_pair_without_plaintext:
+    parameters:
+      encryption_context:
+        types:
+        - Hash<String,String>
+        required: false
+      key_id:
+        types:
+        - String
+        required: true
+      key_pair_spec:
+        types:
+        - String
+        required: true
       grant_tokens:
         types:
         - Array<String>
@@ -295,6 +347,16 @@ methods:
         types:
         - String
         required: true
+  get_public_key:
+    parameters:
+      key_id:
+        types:
+        - String
+        required: true
+      grant_tokens:
+        types:
+        - Array<String>
+        required: false
   import_key_material:
     parameters:
       key_id:
@@ -432,6 +494,10 @@ methods:
         types:
         - Hash<String,String>
         required: false
+      source_key_id:
+        types:
+        - String
+        required: false
       destination_key_id:
         types:
         - String
@@ -439,6 +505,14 @@ methods:
       destination_encryption_context:
         types:
         - Hash<String,String>
+        required: false
+      source_encryption_algorithm:
+        types:
+        - String
+        required: false
+      destination_encryption_algorithm:
+        types:
+        - String
         required: false
       grant_tokens:
         types:
@@ -478,6 +552,29 @@ methods:
         types:
         - Integer
         required: false
+  sign:
+    parameters:
+      key_id:
+        types:
+        - String
+        required: true
+      message:
+        types:
+        - String
+        - IO
+        required: true
+      message_type:
+        types:
+        - String
+        required: false
+      grant_tokens:
+        types:
+        - Array<String>
+        required: false
+      signing_algorithm:
+        types:
+        - String
+        required: true
   tag_resource:
     parameters:
       key_id:
@@ -536,3 +633,31 @@ methods:
         types:
         - String
         required: true
+  verify:
+    parameters:
+      key_id:
+        types:
+        - String
+        required: true
+      message:
+        types:
+        - String
+        - IO
+        required: true
+      message_type:
+        types:
+        - String
+        required: false
+      signature:
+        types:
+        - String
+        - IO
+        required: true
+      signing_algorithm:
+        types:
+        - String
+        required: true
+      grant_tokens:
+        types:
+        - Array<String>
+        required: false

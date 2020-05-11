@@ -17,6 +17,10 @@ methods:
         required: false
   create_channel:
     parameters:
+      channel_class:
+        types:
+        - String
+        required: false
       destinations:
         types:
         - Array<Types::OutputDestination>
@@ -95,6 +99,10 @@ methods:
         types:
         - String
         required: false
+      vpc:
+        types:
+        - Types::InputVpcRequest
+        required: false
   create_input_security_group:
     parameters:
       tags:
@@ -105,6 +113,46 @@ methods:
         types:
         - Array<Types::InputWhitelistRuleCidr>
         required: false
+  create_multiplex:
+    parameters:
+      availability_zones:
+        types:
+        - Array<String>
+        required: true
+      multiplex_settings:
+        types:
+        - Types::MultiplexSettings
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      request_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_multiplex_program:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+      multiplex_program_settings:
+        types:
+        - Types::MultiplexProgramSettings
+        required: true
+      program_name:
+        types:
+        - String
+        required: true
+      request_id:
+        types:
+        - String
+        required: true
   create_tags:
     parameters:
       resource_arn:
@@ -133,9 +181,31 @@ methods:
         types:
         - String
         required: true
+  delete_multiplex:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+  delete_multiplex_program:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+      program_name:
+        types:
+        - String
+        required: true
   delete_reservation:
     parameters:
       reservation_id:
+        types:
+        - String
+        required: true
+  delete_schedule:
+    parameters:
+      channel_id:
         types:
         - String
         required: true
@@ -164,6 +234,22 @@ methods:
   describe_input_security_group:
     parameters:
       input_security_group_id:
+        types:
+        - String
+        required: true
+  describe_multiplex:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+  describe_multiplex_program:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+      program_name:
         types:
         - String
         required: true
@@ -223,13 +309,45 @@ methods:
         types:
         - String
         required: false
+  list_multiplex_programs:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      multiplex_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  list_multiplexes:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   list_offerings:
     parameters:
+      channel_class:
+        types:
+        - String
+        required: false
       channel_configuration:
         types:
         - String
         required: false
       codec:
+        types:
+        - String
+        required: false
+      duration:
         types:
         - String
         required: false
@@ -267,6 +385,10 @@ methods:
         required: false
   list_reservations:
     parameters:
+      channel_class:
+        types:
+        - String
+        required: false
       codec:
         types:
         - String
@@ -331,15 +453,31 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   start_channel:
     parameters:
       channel_id:
         types:
         - String
         required: true
+  start_multiplex:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
   stop_channel:
     parameters:
       channel_id:
+        types:
+        - String
+        required: true
+  stop_multiplex:
+    parameters:
+      multiplex_id:
         types:
         - String
         required: true
@@ -376,6 +514,20 @@ methods:
       role_arn:
         types:
         - String
+        required: false
+  update_channel_class:
+    parameters:
+      channel_class:
+        types:
+        - String
+        required: true
+      channel_id:
+        types:
+        - String
+        required: true
+      destinations:
+        types:
+        - Array<Types::OutputDestination>
         required: false
   update_input:
     parameters:
@@ -420,4 +572,60 @@ methods:
       whitelist_rules:
         types:
         - Array<Types::InputWhitelistRuleCidr>
+        required: false
+  update_multiplex:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+      multiplex_settings:
+        types:
+        - Types::MultiplexSettings
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  update_multiplex_program:
+    parameters:
+      multiplex_id:
+        types:
+        - String
+        required: true
+      multiplex_program_settings:
+        types:
+        - Types::MultiplexProgramSettings
+        required: false
+      program_name:
+        types:
+        - String
+        required: true
+  update_reservation:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      reservation_id:
+        types:
+        - String
+        required: true
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
         required: false

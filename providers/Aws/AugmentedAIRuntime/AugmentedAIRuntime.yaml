@@ -1,0 +1,73 @@
+---
+class: Aws::AugmentedAIRuntime::Client
+methods:
+  delete_human_loop:
+    parameters:
+      human_loop_name:
+        types:
+        - String
+        required: true
+  describe_human_loop:
+    parameters:
+      human_loop_name:
+        types:
+        - String
+        required: true
+  list_human_loops:
+    parameters:
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      flow_definition_arn:
+        types:
+        - String
+        required: true
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_human_loop:
+    parameters:
+      human_loop_name:
+        types:
+        - String
+        required: true
+      flow_definition_arn:
+        types:
+        - String
+        required: true
+      human_loop_input:
+        types:
+        - Types::HumanLoopInput
+        required: true
+      data_attributes:
+        types:
+        - Types::HumanLoopDataAttributes
+        required: false
+  stop_human_loop:
+    parameters:
+      human_loop_name:
+        types:
+        - String
+        required: true

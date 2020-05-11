@@ -1,40 +1,186 @@
 ---
 class: Aws::CloudWatchEvents::Client
 methods:
+  activate_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  create_event_bus:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      event_source_name:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_partner_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      account:
+        types:
+        - String
+        required: true
+  deactivate_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_event_bus:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  delete_partner_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      account:
+        types:
+        - String
+        required: true
   delete_rule:
     parameters:
       name:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
       force:
         types:
         - Boolean
         required: false
+  describe_event_bus:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+  describe_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  describe_partner_event_source:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
   describe_rule:
     parameters:
       name:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
   disable_rule:
     parameters:
       name:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
   enable_rule:
     parameters:
       name:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
+  list_event_buses:
+    parameters:
+      name_prefix:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_event_sources:
+    parameters:
+      name_prefix:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_partner_event_source_accounts:
+    parameters:
+      event_source_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_partner_event_sources:
+    parameters:
+      name_prefix:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
   list_rule_names_by_target:
     parameters:
       target_arn:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
@@ -49,6 +195,10 @@ methods:
         types:
         - String
         required: false
+      event_bus_name:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
@@ -57,12 +207,22 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_targets_by_rule:
     parameters:
       rule:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
@@ -77,8 +237,18 @@ methods:
         types:
         - Array<Types::PutEventsRequestEntry>
         required: true
+  put_partner_events:
+    parameters:
+      entries:
+        types:
+        - Array<Types::PutPartnerEventsRequestEntry>
+        required: true
   put_permission:
     parameters:
+      event_bus_name:
+        types:
+        - String
+        required: false
       action:
         types:
         - String
@@ -121,12 +291,24 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      event_bus_name:
+        types:
+        - String
+        required: false
   put_targets:
     parameters:
       rule:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
       targets:
         types:
         - Array<Types::Target>
@@ -137,12 +319,20 @@ methods:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
   remove_targets:
     parameters:
       rule:
         types:
         - String
         required: true
+      event_bus_name:
+        types:
+        - String
+        required: false
       ids:
         types:
         - Array<String>
@@ -151,6 +341,16 @@ methods:
         types:
         - Boolean
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
   test_event_pattern:
     parameters:
       event_pattern:
@@ -160,4 +360,14 @@ methods:
       event:
         types:
         - String
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

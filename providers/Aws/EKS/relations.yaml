@@ -4,3 +4,13 @@ cluster:
   read: describe_cluster
   update: 
   delete: delete_cluster
+fargate_profile:
+  create: create_fargate_profile
+  read: describe_fargate_profile
+  update: 
+  delete: delete_fargate_profile
+nodegroup:
+  create: create_nodegroup
+  read: describe_nodegroup
+  update: 
+  delete: delete_nodegroup

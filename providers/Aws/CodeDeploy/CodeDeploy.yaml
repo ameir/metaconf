@@ -89,6 +89,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_deployment:
     parameters:
       application_name:
@@ -214,6 +218,10 @@ methods:
       on_premises_tag_set:
         types:
         - Types::OnPremisesTagSet
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   delete_application:
     parameters:
@@ -439,6 +447,16 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
   put_lifecycle_event_hook_execution_status:
     parameters:
       deployment_id:
@@ -507,6 +525,26 @@ methods:
         types:
         - Boolean
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_application:
     parameters:
       application_name:

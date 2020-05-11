@@ -1,0 +1,16 @@
+---
+application:
+  create: create_application
+  read: describe_application
+  update: 
+  delete: delete_application
+component:
+  create: create_component
+  read: describe_component
+  update: 
+  delete: delete_component
+log_pattern:
+  create: create_log_pattern
+  read: describe_log_pattern
+  update: 
+  delete: delete_log_pattern

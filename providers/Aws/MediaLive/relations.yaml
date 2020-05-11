@@ -14,6 +14,16 @@ input_security_group:
   read: describe_input_security_group
   update: 
   delete: delete_input_security_group
+multiplex:
+  create: create_multiplex
+  read: describe_multiplex
+  update: 
+  delete: delete_multiplex
+multiplex_program:
+  create: create_multiplex_program
+  read: describe_multiplex_program
+  update: 
+  delete: delete_multiplex_program
 tags:
   create: create_tags
   read: 

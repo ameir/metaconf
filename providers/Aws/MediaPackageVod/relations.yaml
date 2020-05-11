@@ -1,0 +1,16 @@
+---
+asset:
+  create: create_asset
+  read: describe_asset
+  update: 
+  delete: delete_asset
+packaging_configuration:
+  create: create_packaging_configuration
+  read: describe_packaging_configuration
+  update: 
+  delete: delete_packaging_configuration
+packaging_group:
+  create: create_packaging_group
+  read: describe_packaging_group
+  update: 
+  delete: delete_packaging_group

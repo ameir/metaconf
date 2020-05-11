@@ -9,6 +9,10 @@ methods:
         required: true
   describe_voices:
     parameters:
+      engine:
+        types:
+        - String
+        required: false
       language_code:
         types:
         - String
@@ -65,6 +69,14 @@ methods:
         required: true
   start_speech_synthesis_task:
     parameters:
+      engine:
+        types:
+        - String
+        required: false
+      language_code:
+        types:
+        - String
+        required: false
       lexicon_names:
         types:
         - Array<String>
@@ -105,12 +117,16 @@ methods:
         types:
         - String
         required: true
+  synthesize_speech:
+    parameters:
+      engine:
+        types:
+        - String
+        required: false
       language_code:
         types:
         - String
         required: false
-  synthesize_speech:
-    parameters:
       lexicon_names:
         types:
         - Array<String>
@@ -139,7 +155,3 @@ methods:
         types:
         - String
         required: true
-      language_code:
-        types:
-        - String
-        required: false

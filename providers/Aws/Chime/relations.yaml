@@ -1,6 +1,91 @@
 ---
+events_configuration:
+  create: put_events_configuration
+  read: get_events_configuration
+  update: 
+  delete: delete_events_configuration
+voice_connector_logging_configuration:
+  create: put_voice_connector_logging_configuration
+  read: get_voice_connector_logging_configuration
+  update: 
+  delete: 
+voice_connector_origination:
+  create: put_voice_connector_origination
+  read: get_voice_connector_origination
+  update: 
+  delete: delete_voice_connector_origination
+voice_connector_proxy:
+  create: put_voice_connector_proxy
+  read: get_voice_connector_proxy
+  update: 
+  delete: delete_voice_connector_proxy
+voice_connector_streaming_configuration:
+  create: put_voice_connector_streaming_configuration
+  read: get_voice_connector_streaming_configuration
+  update: 
+  delete: delete_voice_connector_streaming_configuration
+voice_connector_termination:
+  create: put_voice_connector_termination
+  read: get_voice_connector_termination
+  update: 
+  delete: delete_voice_connector_termination
+voice_connector_termination_credentials:
+  create: put_voice_connector_termination_credentials
+  read: 
+  update: 
+  delete: delete_voice_connector_termination_credentials
 account:
   create: create_account
   read: get_account
   update: 
   delete: delete_account
+attendee:
+  create: create_attendee
+  read: get_attendee
+  update: 
+  delete: delete_attendee
+bot:
+  create: create_bot
+  read: get_bot
+  update: 
+  delete: 
+meeting:
+  create: create_meeting
+  read: get_meeting
+  update: 
+  delete: delete_meeting
+phone_number_order:
+  create: create_phone_number_order
+  read: get_phone_number_order
+  update: 
+  delete: 
+proxy_session:
+  create: create_proxy_session
+  read: get_proxy_session
+  update: 
+  delete: delete_proxy_session
+room:
+  create: create_room
+  read: get_room
+  update: 
+  delete: delete_room
+room_membership:
+  create: create_room_membership
+  read: 
+  update: 
+  delete: delete_room_membership
+user:
+  create: create_user
+  read: get_user
+  update: 
+  delete: 
+voice_connector:
+  create: create_voice_connector
+  read: get_voice_connector
+  update: 
+  delete: delete_voice_connector
+voice_connector_group:
+  create: create_voice_connector_group
+  read: get_voice_connector_group
+  update: 
+  delete: delete_voice_connector_group

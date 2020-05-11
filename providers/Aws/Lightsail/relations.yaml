@@ -1,4 +1,9 @@
 ---
+alarm:
+  create: put_alarm
+  read: get_alarms
+  update: 
+  delete: delete_alarm
 instance_public_ports:
   create: put_instance_public_ports
   read: 
@@ -9,6 +14,11 @@ cloud_formation_stack:
   read: 
   update: 
   delete: 
+contact_method:
+  create: create_contact_method
+  read: get_contact_methods
+  update: 
+  delete: delete_contact_method
 disk:
   create: create_disk
   read: get_disk

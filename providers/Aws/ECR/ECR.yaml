@@ -75,6 +75,14 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+      image_tag_mutability:
+        types:
+        - String
+        required: false
+      image_scanning_configuration:
+        types:
+        - Types::ImageScanningConfiguration
+        required: false
   delete_lifecycle_policy:
     parameters:
       registry_id:
@@ -109,6 +117,28 @@ methods:
         types:
         - String
         required: true
+  describe_image_scan_findings:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+      repository_name:
+        types:
+        - String
+        required: true
+      image_id:
+        types:
+        - Types::ImageIdentifier
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   describe_images:
     parameters:
       registry_id:
@@ -275,6 +305,34 @@ methods:
         types:
         - String
         required: false
+  put_image_scanning_configuration:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+      repository_name:
+        types:
+        - String
+        required: true
+      image_scanning_configuration:
+        types:
+        - Types::ImageScanningConfiguration
+        required: true
+  put_image_tag_mutability:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+      repository_name:
+        types:
+        - String
+        required: true
+      image_tag_mutability:
+        types:
+        - String
+        required: true
   put_lifecycle_policy:
     parameters:
       registry_id:
@@ -307,6 +365,20 @@ methods:
         types:
         - Boolean
         required: false
+  start_image_scan:
+    parameters:
+      registry_id:
+        types:
+        - String
+        required: false
+      repository_name:
+        types:
+        - String
+        required: true
+      image_id:
+        types:
+        - Types::ImageIdentifier
+        required: true
   start_lifecycle_policy_preview:
     parameters:
       registry_id:
@@ -368,3 +440,21 @@ methods:
         - String
         - IO
         required: true
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

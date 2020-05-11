@@ -1,4 +1,9 @@
 ---
+configuration_set_delivery_options:
+  create: put_configuration_set_delivery_options
+  read: 
+  update: 
+  delete: 
 identity_policy:
   create: put_identity_policy
   read: 

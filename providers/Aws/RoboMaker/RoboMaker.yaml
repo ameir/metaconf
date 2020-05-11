@@ -7,9 +7,21 @@ methods:
         types:
         - Array<String>
         required: true
+  cancel_deployment_job:
+    parameters:
+      job:
+        types:
+        - String
+        required: true
   cancel_simulation_job:
     parameters:
       job:
+        types:
+        - String
+        required: true
+  cancel_simulation_job_batch:
+    parameters:
+      batch:
         types:
         - String
         required: true
@@ -112,7 +124,7 @@ methods:
       rendering_engine:
         types:
         - Types::RenderingEngine
-        required: true
+        required: false
       tags:
         types:
         - Hash<String,String>
@@ -137,6 +149,10 @@ methods:
         types:
         - Types::OutputLocation
         required: false
+      logging_config:
+        types:
+        - Types::LoggingConfig
+        required: false
       max_job_duration_in_seconds:
         types:
         - Integer
@@ -157,6 +173,10 @@ methods:
         types:
         - Array<Types::SimulationApplicationConfig>
         required: false
+      data_sources:
+        types:
+        - Array<Types::DataSourceConfig>
+        required: false
       tags:
         types:
         - Hash<String,String>
@@ -164,6 +184,10 @@ methods:
       vpc_config:
         types:
         - Types::VPCConfig
+        required: false
+      compute:
+        types:
+        - Types::Compute
         required: false
   delete_fleet:
     parameters:
@@ -251,6 +275,12 @@ methods:
         types:
         - String
         required: true
+  describe_simulation_job_batch:
+    parameters:
+      batch:
+        types:
+        - String
+        required: true
   list_deployment_jobs:
     parameters:
       filters:
@@ -329,6 +359,20 @@ methods:
         types:
         - Array<Types::Filter>
         required: false
+  list_simulation_job_batches:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
   list_simulation_jobs:
     parameters:
       next_token:
@@ -365,6 +409,24 @@ methods:
         types:
         - String
         required: true
+  start_simulation_job_batch:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: false
+      batch_policy:
+        types:
+        - Types::BatchPolicy
+        required: false
+      create_simulation_job_requests:
+        types:
+        - Array<Types::SimulationJobRequest>
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   sync_deployment_job:
     parameters:
       client_request_token:
@@ -434,7 +496,7 @@ methods:
       rendering_engine:
         types:
         - Types::RenderingEngine
-        required: true
+        required: false
       current_revision_id:
         types:
         - String

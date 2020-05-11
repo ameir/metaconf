@@ -1,0 +1,177 @@
+---
+class: Aws::LakeFormation::Client
+methods:
+  batch_grant_permissions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      entries:
+        types:
+        - Array<Types::BatchPermissionsRequestEntry>
+        required: true
+  batch_revoke_permissions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      entries:
+        types:
+        - Array<Types::BatchPermissionsRequestEntry>
+        required: true
+  deregister_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  describe_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  get_data_lake_settings:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+  get_effective_permissions_for_path:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  grant_permissions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      principal:
+        types:
+        - Types::DataLakePrincipal
+        required: true
+      resource:
+        types:
+        - Types::Resource
+        required: true
+      permissions:
+        types:
+        - Array<String>
+        required: true
+      permissions_with_grant_option:
+        types:
+        - Array<String>
+        required: false
+  list_permissions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      principal:
+        types:
+        - Types::DataLakePrincipal
+        required: false
+      resource_type:
+        types:
+        - String
+        required: false
+      resource:
+        types:
+        - Types::Resource
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_resources:
+    parameters:
+      filter_condition_list:
+        types:
+        - Array<Types::FilterCondition>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_data_lake_settings:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      data_lake_settings:
+        types:
+        - Types::DataLakeSettings
+        required: true
+  register_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      use_service_linked_role:
+        types:
+        - Boolean
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+  revoke_permissions:
+    parameters:
+      catalog_id:
+        types:
+        - String
+        required: false
+      principal:
+        types:
+        - Types::DataLakePrincipal
+        required: true
+      resource:
+        types:
+        - Types::Resource
+        required: true
+      permissions:
+        types:
+        - Array<String>
+        required: true
+      permissions_with_grant_option:
+        types:
+        - Array<String>
+        required: false
+  update_resource:
+    parameters:
+      role_arn:
+        types:
+        - String
+        required: true
+      resource_arn:
+        types:
+        - String
+        required: true

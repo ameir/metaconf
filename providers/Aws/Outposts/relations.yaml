@@ -1,0 +1,6 @@
+---
+outpost:
+  create: create_outpost
+  read: get_outpost
+  update: 
+  delete: delete_outpost

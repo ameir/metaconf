@@ -1,0 +1,6 @@
+---
+canary:
+  create: create_canary
+  read: get_canary
+  update: 
+  delete: delete_canary

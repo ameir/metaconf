@@ -1,0 +1,177 @@
+---
+class: Aws::CodeStarNotifications::Client
+methods:
+  create_notification_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      event_type_ids:
+        types:
+        - Array<String>
+        required: true
+      resource:
+        types:
+        - String
+        required: true
+      targets:
+        types:
+        - Array<Types::Target>
+        required: true
+      detail_type:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      status:
+        types:
+        - String
+        required: false
+  delete_notification_rule:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_target:
+    parameters:
+      target_address:
+        types:
+        - String
+        required: true
+      force_unsubscribe_all:
+        types:
+        - Boolean
+        required: false
+  describe_notification_rule:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  list_event_types:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ListEventTypesFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_notification_rules:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ListNotificationRulesFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  list_targets:
+    parameters:
+      filters:
+        types:
+        - Array<Types::ListTargetsFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  subscribe:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      target:
+        types:
+        - Types::Target
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  unsubscribe:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      target_address:
+        types:
+        - String
+        required: true
+  untag_resource:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_notification_rule:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      status:
+        types:
+        - String
+        required: false
+      event_type_ids:
+        types:
+        - Array<String>
+        required: false
+      targets:
+        types:
+        - Array<Types::Target>
+        required: false
+      detail_type:
+        types:
+        - String
+        required: false

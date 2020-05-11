@@ -39,6 +39,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   delete_user:
     parameters:
       instance_id:
@@ -159,6 +163,78 @@ methods:
         types:
         - Integer
         required: false
+  list_contact_flows:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      contact_flow_types:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_hours_of_operations:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_phone_numbers:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      phone_number_types:
+        types:
+        - Array<String>
+        required: false
+      phone_number_country_codes:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_queues:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      queue_types:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_routing_profiles:
     parameters:
       instance_id:
@@ -187,6 +263,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_user_hierarchy_groups:
     parameters:
       instance_id:
@@ -214,6 +296,32 @@ methods:
       max_results:
         types:
         - Integer
+        required: false
+  start_chat_contact:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      contact_flow_id:
+        types:
+        - String
+        required: true
+      attributes:
+        types:
+        - Hash<String,String>
+        required: false
+      participant_details:
+        types:
+        - Types::ParticipantDetails
+        required: true
+      initial_message:
+        types:
+        - Types::ChatMessage
+        required: false
+      client_token:
+        types:
+        - String
         required: false
   start_outbound_voice_contact:
     parameters:
@@ -254,6 +362,26 @@ methods:
       instance_id:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_contact_attributes:
     parameters:

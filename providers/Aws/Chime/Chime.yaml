@@ -1,6 +1,88 @@
 ---
 class: Aws::Chime::Client
 methods:
+  associate_phone_number_with_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      e164_phone_number:
+        types:
+        - String
+        required: true
+  associate_phone_numbers_with_voice_connector:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      e164_phone_numbers:
+        types:
+        - Array<String>
+        required: false
+      force_associate:
+        types:
+        - Boolean
+        required: false
+  associate_phone_numbers_with_voice_connector_group:
+    parameters:
+      voice_connector_group_id:
+        types:
+        - String
+        required: true
+      e164_phone_numbers:
+        types:
+        - Array<String>
+        required: false
+      force_associate:
+        types:
+        - Boolean
+        required: false
+  associate_signin_delegate_groups_with_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      signin_delegate_groups:
+        types:
+        - Array<Types::SigninDelegateGroup>
+        required: true
+  batch_create_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendees:
+        types:
+        - Array<Types::CreateAttendeeRequestItem>
+        required: true
+  batch_create_room_membership:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      membership_item_list:
+        types:
+        - Array<Types::MembershipItem>
+        required: true
+  batch_delete_phone_number:
+    parameters:
+      phone_number_ids:
+        types:
+        - Array<String>
+        required: true
   batch_suspend_user:
     parameters:
       account_id:
@@ -21,6 +103,12 @@ methods:
         types:
         - Array<String>
         required: true
+  batch_update_phone_number:
+    parameters:
+      update_phone_number_request_items:
+        types:
+        - Array<Types::UpdatePhoneNumberRequestItem>
+        required: true
   batch_update_user:
     parameters:
       account_id:
@@ -37,11 +125,335 @@ methods:
         types:
         - String
         required: true
+  create_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      external_user_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_bot:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      display_name:
+        types:
+        - String
+        required: true
+      domain:
+        types:
+        - String
+        required: false
+  create_meeting:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      external_meeting_id:
+        types:
+        - String
+        required: false
+      meeting_host_id:
+        types:
+        - String
+        required: false
+      media_region:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      notifications_configuration:
+        types:
+        - Types::MeetingNotificationConfiguration
+        required: false
+  create_phone_number_order:
+    parameters:
+      product_type:
+        types:
+        - String
+        required: true
+      e164_phone_numbers:
+        types:
+        - Array<String>
+        required: true
+  create_proxy_session:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      participant_phone_numbers:
+        types:
+        - Array<String>
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      expiry_minutes:
+        types:
+        - Integer
+        required: false
+      capabilities:
+        types:
+        - Array<String>
+        required: true
+      number_selection_behavior:
+        types:
+        - String
+        required: false
+      geo_match_level:
+        types:
+        - String
+        required: false
+      geo_match_params:
+        types:
+        - Types::GeoMatchParams
+        required: false
+  create_room:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  create_room_membership:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      role:
+        types:
+        - String
+        required: false
+  create_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      username:
+        types:
+        - String
+        required: false
+      email:
+        types:
+        - String
+        required: false
+      user_type:
+        types:
+        - String
+        required: false
+  create_voice_connector:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      aws_region:
+        types:
+        - String
+        required: false
+      require_encryption:
+        types:
+        - Boolean
+        required: true
+  create_voice_connector_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      voice_connector_items:
+        types:
+        - Array<Types::VoiceConnectorItem>
+        required: false
   delete_account:
     parameters:
       account_id:
         types:
         - String
+        required: true
+  delete_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendee_id:
+        types:
+        - String
+        required: true
+  delete_events_configuration:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
+        types:
+        - String
+        required: true
+  delete_meeting:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+  delete_phone_number:
+    parameters:
+      phone_number_id:
+        types:
+        - String
+        required: true
+  delete_proxy_session:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      proxy_session_id:
+        types:
+        - String
+        required: true
+  delete_room:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+  delete_room_membership:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_group:
+    parameters:
+      voice_connector_group_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_origination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_proxy:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_streaming_configuration:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_termination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  delete_voice_connector_termination_credentials:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      usernames:
+        types:
+        - Array<String>
+        required: false
+  disassociate_phone_number_from_user:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  disassociate_phone_numbers_from_voice_connector:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      e164_phone_numbers:
+        types:
+        - Array<String>
+        required: false
+  disassociate_phone_numbers_from_voice_connector_group:
+    parameters:
+      voice_connector_group_id:
+        types:
+        - String
+        required: true
+      e164_phone_numbers:
+        types:
+        - Array<String>
+        required: false
+  disassociate_signin_delegate_groups_from_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      group_names:
+        types:
+        - Array<String>
         required: true
   get_account:
     parameters:
@@ -55,6 +467,74 @@ methods:
         types:
         - String
         required: true
+  get_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendee_id:
+        types:
+        - String
+        required: true
+  get_bot:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
+        types:
+        - String
+        required: true
+  get_events_configuration:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
+        types:
+        - String
+        required: true
+  get_meeting:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+  get_phone_number:
+    parameters:
+      phone_number_id:
+        types:
+        - String
+        required: true
+  get_phone_number_order:
+    parameters:
+      phone_number_order_id:
+        types:
+        - String
+        required: true
+  get_proxy_session:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      proxy_session_id:
+        types:
+        - String
+        required: true
+  get_room:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
   get_user:
     parameters:
       account_id:
@@ -62,6 +542,64 @@ methods:
         - String
         required: true
       user_id:
+        types:
+        - String
+        required: true
+  get_user_settings:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  get_voice_connector:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_group:
+    parameters:
+      voice_connector_group_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_logging_configuration:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_origination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_proxy:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_streaming_configuration:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_termination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  get_voice_connector_termination_health:
+    parameters:
+      voice_connector_id:
         types:
         - String
         required: true
@@ -75,6 +613,10 @@ methods:
         types:
         - Array<String>
         required: true
+      user_type:
+        types:
+        - String
+        required: false
   list_accounts:
     parameters:
       name:
@@ -93,13 +635,85 @@ methods:
         types:
         - Integer
         required: false
-  list_users:
+  list_attendee_tags:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendee_id:
+        types:
+        - String
+        required: true
+  list_attendees:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_bots:
     parameters:
       account_id:
         types:
         - String
         required: true
-      user_email:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_meeting_tags:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+  list_meetings:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_phone_number_orders:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_phone_numbers:
+    parameters:
+      status:
+        types:
+        - String
+        required: false
+      product_type:
+        types:
+        - String
+        required: false
+      filter_name:
+        types:
+        - String
+        required: false
+      filter_value:
         types:
         - String
         required: false
@@ -111,6 +725,114 @@ methods:
         types:
         - String
         required: false
+  list_proxy_sessions:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      status:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_room_memberships:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_rooms:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_users:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_email:
+        types:
+        - String
+        required: false
+      user_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_voice_connector_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_voice_connector_termination_credentials:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+  list_voice_connectors:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   logout_user:
     parameters:
       account_id:
@@ -118,6 +840,106 @@ methods:
         - String
         required: true
       user_id:
+        types:
+        - String
+        required: true
+  put_events_configuration:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
+        types:
+        - String
+        required: true
+      outbound_events_https_endpoint:
+        types:
+        - String
+        required: false
+      lambda_function_arn:
+        types:
+        - String
+        required: false
+  put_voice_connector_logging_configuration:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      logging_configuration:
+        types:
+        - Types::LoggingConfiguration
+        required: true
+  put_voice_connector_origination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      origination:
+        types:
+        - Types::Origination
+        required: true
+  put_voice_connector_proxy:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      default_session_expiry_minutes:
+        types:
+        - Integer
+        required: true
+      phone_number_pool_countries:
+        types:
+        - Array<String>
+        required: true
+      fall_back_phone_number:
+        types:
+        - String
+        required: false
+      disabled:
+        types:
+        - Boolean
+        required: false
+  put_voice_connector_streaming_configuration:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      streaming_configuration:
+        types:
+        - Types::StreamingConfiguration
+        required: true
+  put_voice_connector_termination:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      termination:
+        types:
+        - Types::Termination
+        required: true
+  put_voice_connector_termination_credentials:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      credentials:
+        types:
+        - Array<Types::Credential>
+        required: false
+  regenerate_security_token:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
         types:
         - String
         required: true
@@ -130,6 +952,110 @@ methods:
       user_id:
         types:
         - String
+        required: true
+  restore_phone_number:
+    parameters:
+      phone_number_id:
+        types:
+        - String
+        required: true
+  search_available_phone_numbers:
+    parameters:
+      area_code:
+        types:
+        - String
+        required: false
+      city:
+        types:
+        - String
+        required: false
+      country:
+        types:
+        - String
+        required: false
+      state:
+        types:
+        - String
+        required: false
+      toll_free_prefix:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  tag_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendee_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  tag_meeting:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_attendee:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      attendee_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  untag_meeting:
+    parameters:
+      meeting_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_account:
     parameters:
@@ -151,6 +1077,100 @@ methods:
         types:
         - Types::AccountSettings
         required: true
+  update_bot:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bot_id:
+        types:
+        - String
+        required: true
+      disabled:
+        types:
+        - Boolean
+        required: false
+  update_global_settings:
+    parameters:
+      business_calling:
+        types:
+        - Types::BusinessCallingSettings
+        required: true
+      voice_connector:
+        types:
+        - Types::VoiceConnectorSettings
+        required: true
+  update_phone_number:
+    parameters:
+      phone_number_id:
+        types:
+        - String
+        required: true
+      product_type:
+        types:
+        - String
+        required: false
+      calling_name:
+        types:
+        - String
+        required: false
+  update_phone_number_settings:
+    parameters:
+      calling_name:
+        types:
+        - String
+        required: true
+  update_proxy_session:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      proxy_session_id:
+        types:
+        - String
+        required: true
+      capabilities:
+        types:
+        - Array<String>
+        required: true
+      expiry_minutes:
+        types:
+        - Integer
+        required: false
+  update_room:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+  update_room_membership:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      room_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      role:
+        types:
+        - String
+        required: false
   update_user:
     parameters:
       account_id:
@@ -165,3 +1185,53 @@ methods:
         types:
         - String
         required: false
+      user_type:
+        types:
+        - String
+        required: false
+      alexa_for_business_metadata:
+        types:
+        - Types::AlexaForBusinessMetadata
+        required: false
+  update_user_settings:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      user_settings:
+        types:
+        - Types::UserSettings
+        required: true
+  update_voice_connector:
+    parameters:
+      voice_connector_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      require_encryption:
+        types:
+        - Boolean
+        required: true
+  update_voice_connector_group:
+    parameters:
+      voice_connector_group_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      voice_connector_items:
+        types:
+        - Array<Types::VoiceConnectorItem>
+        required: true

@@ -4,3 +4,8 @@ elasticsearch_domain:
   read: describe_elasticsearch_domain
   update: 
   delete: delete_elasticsearch_domain
+package:
+  create: create_package
+  read: describe_packages
+  update: 
+  delete: delete_package

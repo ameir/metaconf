@@ -1,6 +1,36 @@
 ---
 class: Aws::ResourceGroupsTaggingAPI::Client
 methods:
+  get_compliance_summary:
+    parameters:
+      target_id_filters:
+        types:
+        - Array<String>
+        required: false
+      region_filters:
+        types:
+        - Array<String>
+        required: false
+      resource_type_filters:
+        types:
+        - Array<String>
+        required: false
+      tag_key_filters:
+        types:
+        - Array<String>
+        required: false
+      group_by:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      pagination_token:
+        types:
+        - String
+        required: false
   get_resources:
     parameters:
       pagination_token:
@@ -23,6 +53,14 @@ methods:
         types:
         - Array<String>
         required: false
+      include_compliance_details:
+        types:
+        - Boolean
+        required: false
+      exclude_compliant_resources:
+        types:
+        - Boolean
+        required: false
   get_tag_keys:
     parameters:
       pagination_token:
@@ -36,6 +74,12 @@ methods:
         - String
         required: false
       key:
+        types:
+        - String
+        required: true
+  start_report_creation:
+    parameters:
+      s3_bucket:
         types:
         - String
         required: true

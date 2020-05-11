@@ -1,6 +1,32 @@
 ---
 class: Aws::AppSync::Client
 methods:
+  create_api_cache:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      ttl:
+        types:
+        - Integer
+        required: true
+      transit_encryption_enabled:
+        types:
+        - Boolean
+        required: false
+      at_rest_encryption_enabled:
+        types:
+        - Boolean
+        required: false
+      api_caching_behavior:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
   create_api_key:
     parameters:
       api_id:
@@ -109,6 +135,18 @@ methods:
         types:
         - Types::OpenIDConnectConfig
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      additional_authentication_providers:
+        types:
+        - Array<Types::AdditionalAuthenticationProvider>
+        required: false
+      xray_enabled:
+        types:
+        - Boolean
+        required: false
   create_resolver:
     parameters:
       api_id:
@@ -143,6 +181,14 @@ methods:
         types:
         - Types::PipelineConfig
         required: false
+      sync_config:
+        types:
+        - Types::SyncConfig
+        required: false
+      caching_config:
+        types:
+        - Types::CachingConfig
+        required: false
   create_type:
     parameters:
       api_id:
@@ -154,6 +200,12 @@ methods:
         - String
         required: true
       format:
+        types:
+        - String
+        required: true
+  delete_api_cache:
+    parameters:
+      api_id:
         types:
         - String
         required: true
@@ -217,6 +269,18 @@ methods:
         types:
         - String
         required: true
+  flush_api_cache:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+  get_api_cache:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
   get_data_source:
     parameters:
       api_id:
@@ -253,6 +317,10 @@ methods:
         types:
         - String
         required: true
+      include_directives:
+        types:
+        - Boolean
+        required: false
   get_resolver:
     parameters:
       api_id:
@@ -375,6 +443,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_types:
     parameters:
       api_id:
@@ -403,6 +477,44 @@ methods:
         types:
         - String
         - IO
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_api_cache:
+    parameters:
+      api_id:
+        types:
+        - String
+        required: true
+      ttl:
+        types:
+        - Integer
+        required: true
+      api_caching_behavior:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
         required: true
   update_api_key:
     parameters:
@@ -524,6 +636,14 @@ methods:
         types:
         - Types::OpenIDConnectConfig
         required: false
+      additional_authentication_providers:
+        types:
+        - Array<Types::AdditionalAuthenticationProvider>
+        required: false
+      xray_enabled:
+        types:
+        - Boolean
+        required: false
   update_resolver:
     parameters:
       api_id:
@@ -557,6 +677,14 @@ methods:
       pipeline_config:
         types:
         - Types::PipelineConfig
+        required: false
+      sync_config:
+        types:
+        - Types::SyncConfig
+        required: false
+      caching_config:
+        types:
+        - Types::CachingConfig
         required: false
   update_type:
     parameters:

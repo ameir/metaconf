@@ -11,6 +11,20 @@ methods:
         types:
         - Array<Types::Tag>
         required: true
+  apply_pending_maintenance_action:
+    parameters:
+      replication_instance_arn:
+        types:
+        - String
+        required: true
+      apply_action:
+        types:
+        - String
+        required: true
+      opt_in_type:
+        types:
+        - String
+        required: true
   create_endpoint:
     parameters:
       endpoint_identifier:
@@ -93,9 +107,21 @@ methods:
         types:
         - Types::KinesisSettings
         required: false
+      kafka_settings:
+        types:
+        - Types::KafkaSettings
+        required: false
       elasticsearch_settings:
         types:
         - Types::ElasticsearchSettings
+        required: false
+      neptune_settings:
+        types:
+        - Types::NeptuneSettings
+        required: false
+      redshift_settings:
+        types:
+        - Types::RedshiftSettings
         required: false
   create_event_subscription:
     parameters:
@@ -253,9 +279,23 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+      task_data:
+        types:
+        - String
+        required: false
   delete_certificate:
     parameters:
       certificate_arn:
+        types:
+        - String
+        required: true
+  delete_connection:
+    parameters:
+      endpoint_arn:
+        types:
+        - String
+        required: true
+      replication_instance_arn:
         types:
         - String
         required: true
@@ -429,6 +469,24 @@ methods:
         types:
         - String
         required: false
+  describe_pending_maintenance_actions:
+    parameters:
+      replication_instance_arn:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
   describe_refresh_schemas_status:
     parameters:
       endpoint_arn:
@@ -504,6 +562,10 @@ methods:
       marker:
         types:
         - String
+        required: false
+      without_settings:
+        types:
+        - Boolean
         required: false
   describe_schemas:
     parameters:
@@ -640,9 +702,21 @@ methods:
         types:
         - Types::KinesisSettings
         required: false
+      kafka_settings:
+        types:
+        - Types::KafkaSettings
+        required: false
       elasticsearch_settings:
         types:
         - Types::ElasticsearchSettings
+        required: false
+      neptune_settings:
+        types:
+        - Types::NeptuneSettings
+        required: false
+      redshift_settings:
+        types:
+        - Types::RedshiftSettings
         required: false
   modify_event_subscription:
     parameters:
@@ -761,6 +835,10 @@ methods:
         - String
         required: false
       cdc_stop_position:
+        types:
+        - String
+        required: false
+      task_data:
         types:
         - String
         required: false

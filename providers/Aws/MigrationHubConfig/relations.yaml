@@ -1,0 +1,6 @@
+---
+home_region_control:
+  create: create_home_region_control
+  read: describe_home_region_controls
+  update: 
+  delete: 

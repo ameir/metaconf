@@ -1,0 +1,21 @@
+---
+application:
+  create: create_application
+  read: get_application
+  update: 
+  delete: delete_application
+configuration_profile:
+  create: create_configuration_profile
+  read: get_configuration_profile
+  update: 
+  delete: delete_configuration_profile
+deployment_strategy:
+  create: create_deployment_strategy
+  read: get_deployment_strategy
+  update: 
+  delete: delete_deployment_strategy
+environment:
+  create: create_environment
+  read: get_environment
+  update: 
+  delete: delete_environment

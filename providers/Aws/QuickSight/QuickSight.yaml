@@ -1,6 +1,142 @@
 ---
 class: Aws::QuickSight::Client
 methods:
+  cancel_ingestion:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+      ingestion_id:
+        types:
+        - String
+        required: true
+  create_dashboard:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      parameters:
+        types:
+        - Types::Parameters
+        required: false
+      permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      source_entity:
+        types:
+        - Types::DashboardSourceEntity
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      version_description:
+        types:
+        - String
+        required: false
+      dashboard_publish_options:
+        types:
+        - Types::DashboardPublishOptions
+        required: false
+  create_data_set:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      physical_table_map:
+        types:
+        - Hash<String,Types::PhysicalTable>
+        required: true
+      logical_table_map:
+        types:
+        - Hash<String,Types::LogicalTable>
+        required: false
+      import_mode:
+        types:
+        - String
+        required: true
+      column_groups:
+        types:
+        - Array<Types::ColumnGroup>
+        required: false
+      permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      row_level_permission_data_set:
+        types:
+        - Types::RowLevelPermissionDataSet
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_data_source:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      data_source_parameters:
+        types:
+        - Types::DataSourceParameters
+        required: false
+      credentials:
+        types:
+        - Types::DataSourceCredentials
+        required: false
+      permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      vpc_connection_properties:
+        types:
+        - Types::VpcConnectionProperties
+        required: false
+      ssl_properties:
+        types:
+        - Types::SslProperties
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_group:
     parameters:
       group_name:
@@ -37,6 +173,128 @@ methods:
         types:
         - String
         required: true
+  create_iam_policy_assignment:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      assignment_name:
+        types:
+        - String
+        required: true
+      assignment_status:
+        types:
+        - String
+        required: true
+      policy_arn:
+        types:
+        - String
+        required: false
+      identities:
+        types:
+        - Hash<String,Array>
+        required: false
+      namespace:
+        types:
+        - String
+        required: true
+  create_ingestion:
+    parameters:
+      data_set_id:
+        types:
+        - String
+        required: true
+      ingestion_id:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+  create_template:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      source_entity:
+        types:
+        - Types::TemplateSourceEntity
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      version_description:
+        types:
+        - String
+        required: false
+  create_template_alias:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      alias_name:
+        types:
+        - String
+        required: true
+      template_version_number:
+        types:
+        - Integer
+        required: true
+  delete_dashboard:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      version_number:
+        types:
+        - Integer
+        required: false
+  delete_data_set:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+  delete_data_source:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
   delete_group:
     parameters:
       group_name:
@@ -69,6 +327,48 @@ methods:
         types:
         - String
         required: true
+  delete_iam_policy_assignment:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      assignment_name:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  delete_template:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      version_number:
+        types:
+        - Integer
+        required: false
+  delete_template_alias:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      alias_name:
+        types:
+        - String
+        required: true
   delete_user:
     parameters:
       user_name:
@@ -83,6 +383,88 @@ methods:
         types:
         - String
         required: true
+  delete_user_by_principal_id:
+    parameters:
+      principal_id:
+        types:
+        - String
+        required: true
+      aws_account_id:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  describe_dashboard:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      version_number:
+        types:
+        - Integer
+        required: false
+      alias_name:
+        types:
+        - String
+        required: false
+  describe_dashboard_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+  describe_data_set:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+  describe_data_set_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+  describe_data_source:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
+  describe_data_source_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
   describe_group:
     parameters:
       group_name:
@@ -94,6 +476,76 @@ methods:
         - String
         required: true
       namespace:
+        types:
+        - String
+        required: true
+  describe_iam_policy_assignment:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      assignment_name:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+  describe_ingestion:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+      ingestion_id:
+        types:
+        - String
+        required: true
+  describe_template:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      version_number:
+        types:
+        - Integer
+        required: false
+      alias_name:
+        types:
+        - String
+        required: false
+  describe_template_alias:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      alias_name:
+        types:
+        - String
+        required: true
+  describe_template_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
         types:
         - String
         required: true
@@ -137,6 +589,70 @@ methods:
         types:
         - Boolean
         required: false
+      user_arn:
+        types:
+        - String
+        required: false
+  list_dashboard_versions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dashboards:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_data_sets:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_data_sources:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_group_memberships:
     parameters:
       group_name:
@@ -177,6 +693,124 @@ methods:
         types:
         - String
         required: true
+  list_iam_policy_assignments:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      assignment_status:
+        types:
+        - String
+        required: false
+      namespace:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_iam_policy_assignments_for_user:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      user_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace:
+        types:
+        - String
+        required: true
+  list_ingestions:
+    parameters:
+      data_set_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      aws_account_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_template_aliases:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_template_versions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_templates:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_user_groups:
     parameters:
       user_name:
@@ -251,6 +885,206 @@ methods:
         types:
         - String
         required: false
+  search_dashboards:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::DashboardSearchFilter>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_dashboard:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      source_entity:
+        types:
+        - Types::DashboardSourceEntity
+        required: true
+      parameters:
+        types:
+        - Types::Parameters
+        required: false
+      version_description:
+        types:
+        - String
+        required: false
+      dashboard_publish_options:
+        types:
+        - Types::DashboardPublishOptions
+        required: false
+  update_dashboard_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      grant_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      revoke_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+  update_dashboard_published_version:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      dashboard_id:
+        types:
+        - String
+        required: true
+      version_number:
+        types:
+        - Integer
+        required: true
+  update_data_set:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      physical_table_map:
+        types:
+        - Hash<String,Types::PhysicalTable>
+        required: true
+      logical_table_map:
+        types:
+        - Hash<String,Types::LogicalTable>
+        required: false
+      import_mode:
+        types:
+        - String
+        required: true
+      column_groups:
+        types:
+        - Array<Types::ColumnGroup>
+        required: false
+      row_level_permission_data_set:
+        types:
+        - Types::RowLevelPermissionDataSet
+        required: false
+  update_data_set_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_set_id:
+        types:
+        - String
+        required: true
+      grant_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      revoke_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+  update_data_source:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      data_source_parameters:
+        types:
+        - Types::DataSourceParameters
+        required: false
+      credentials:
+        types:
+        - Types::DataSourceCredentials
+        required: false
+      vpc_connection_properties:
+        types:
+        - Types::VpcConnectionProperties
+        required: false
+      ssl_properties:
+        types:
+        - Types::SslProperties
+        required: false
+  update_data_source_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      data_source_id:
+        types:
+        - String
+        required: true
+      grant_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      revoke_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
   update_group:
     parameters:
       group_name:
@@ -269,6 +1103,90 @@ methods:
         types:
         - String
         required: true
+  update_iam_policy_assignment:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      assignment_name:
+        types:
+        - String
+        required: true
+      namespace:
+        types:
+        - String
+        required: true
+      assignment_status:
+        types:
+        - String
+        required: false
+      policy_arn:
+        types:
+        - String
+        required: false
+      identities:
+        types:
+        - Hash<String,Array>
+        required: false
+  update_template:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      source_entity:
+        types:
+        - Types::TemplateSourceEntity
+        required: true
+      version_description:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: false
+  update_template_alias:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      alias_name:
+        types:
+        - String
+        required: true
+      template_version_number:
+        types:
+        - Integer
+        required: true
+  update_template_permissions:
+    parameters:
+      aws_account_id:
+        types:
+        - String
+        required: true
+      template_id:
+        types:
+        - String
+        required: true
+      grant_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
+      revoke_permissions:
+        types:
+        - Array<Types::ResourcePermission>
+        required: false
   update_user:
     parameters:
       user_name:

@@ -123,6 +123,20 @@ methods:
         types:
         - Boolean
         required: false
+  list_application_states:
+    parameters:
+      application_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_created_artifacts:
     parameters:
       progress_update_stream:
@@ -193,6 +207,14 @@ methods:
         types:
         - String
         required: true
+      update_date_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
       dry_run:
         types:
         - Boolean

@@ -85,6 +85,16 @@ methods:
         types:
         - String
         required: true
+  delete_access_control_rule:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: false
+      name:
+        types:
+        - String
+        required: true
   delete_alias:
     parameters:
       organization_id:
@@ -217,6 +227,40 @@ methods:
         types:
         - String
         required: true
+  get_access_control_effect:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      ip_address:
+        types:
+        - String
+        required: true
+      action:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  get_mailbox_details:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+  list_access_control_rules:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
   list_aliases:
     parameters:
       organization_id:
@@ -327,6 +371,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_users:
     parameters:
       organization_id:
@@ -341,6 +391,48 @@ methods:
         types:
         - Integer
         required: false
+  put_access_control_rule:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      effect:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: true
+      ip_ranges:
+        types:
+        - Array<String>
+        required: false
+      not_ip_ranges:
+        types:
+        - Array<String>
+        required: false
+      actions:
+        types:
+        - Array<String>
+        required: false
+      not_actions:
+        types:
+        - Array<String>
+        required: false
+      user_ids:
+        types:
+        - Array<String>
+        required: false
+      not_user_ids:
+        types:
+        - Array<String>
+        required: false
+      organization_id:
+        types:
+        - String
+        required: true
   put_mailbox_permissions:
     parameters:
       organization_id:
@@ -386,6 +478,40 @@ methods:
       password:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_mailbox_quota:
+    parameters:
+      organization_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      mailbox_quota:
+        types:
+        - Integer
         required: true
   update_primary_email_address:
     parameters:

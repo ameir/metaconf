@@ -19,6 +19,11 @@ metric_filter:
   read: describe_metric_filters
   update: 
   delete: delete_metric_filter
+query_definition:
+  create: put_query_definition
+  read: describe_query_definitions
+  update: 
+  delete: delete_query_definition
 resource_policy:
   create: put_resource_policy
   read: 

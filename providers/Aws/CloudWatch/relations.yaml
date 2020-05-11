@@ -1,9 +1,24 @@
 ---
+anomaly_detector:
+  create: put_anomaly_detector
+  read: describe_anomaly_detectors
+  update: 
+  delete: delete_anomaly_detector
+composite_alarm:
+  create: put_composite_alarm
+  read: 
+  update: 
+  delete: 
 dashboard:
   create: put_dashboard
   read: get_dashboard
   update: 
   delete: delete_dashboards
+insight_rule:
+  create: put_insight_rule
+  read: describe_insight_rules
+  update: 
+  delete: delete_insight_rules
 metric_alarm:
   create: put_metric_alarm
   read: 

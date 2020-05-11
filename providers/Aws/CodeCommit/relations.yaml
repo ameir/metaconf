@@ -9,18 +9,38 @@ repository_triggers:
   read: get_repository_triggers
   update: 
   delete: 
+approval_rule_template:
+  create: create_approval_rule_template
+  read: get_approval_rule_template
+  update: 
+  delete: delete_approval_rule_template
 branch:
   create: create_branch
   read: get_branch
   update: 
   delete: delete_branch
+commit:
+  create: create_commit
+  read: get_commit
+  update: 
+  delete: 
 pull_request:
   create: create_pull_request
   read: get_pull_request
   update: 
   delete: 
+pull_request_approval_rule:
+  create: create_pull_request_approval_rule
+  read: 
+  update: 
+  delete: delete_pull_request_approval_rule
 repository:
   create: create_repository
   read: get_repository
   update: 
   delete: delete_repository
+unreferenced_merge_commit:
+  create: create_unreferenced_merge_commit
+  read: 
+  update: 
+  delete: 

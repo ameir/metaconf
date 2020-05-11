@@ -6,7 +6,7 @@ methods:
       configuration_set_name:
         types:
         - String
-        required: false
+        required: true
       tracking_options:
         types:
         - Types::TrackingOptions
@@ -22,6 +22,10 @@ methods:
       sending_options:
         types:
         - Types::SendingOptions
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_configuration_set_event_destination:
     parameters:
@@ -43,6 +47,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_deliverability_test_report:
     parameters:
       report_name:
@@ -57,12 +65,20 @@ methods:
         types:
         - Types::EmailContent
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_email_identity:
     parameters:
       email_identity:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_configuration_set:
     parameters:
       configuration_set_name:
@@ -135,6 +151,12 @@ methods:
         types:
         - String
         required: true
+  get_domain_deliverability_campaign:
+    parameters:
+      campaign_id:
+        types:
+        - String
+        required: true
   get_domain_statistics_report:
     parameters:
       domain:
@@ -193,6 +215,36 @@ methods:
         types:
         - Integer
         required: false
+  list_domain_deliverability_campaigns:
+    parameters:
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      subscribed_domain:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
   list_email_identities:
     parameters:
       next_token:
@@ -203,6 +255,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   put_account_dedicated_ip_warmup_attributes:
     parameters:
       auto_warmup_enabled:
@@ -221,6 +279,10 @@ methods:
         types:
         - String
         required: true
+      tls_policy:
+        types:
+        - String
+        required: false
       sending_pool_name:
         types:
         - String
@@ -281,6 +343,10 @@ methods:
         types:
         - Boolean
         required: true
+      subscribed_domains:
+        types:
+        - Array<Types::DomainDeliverabilityTrackingOption>
+        required: false
   put_email_identity_dkim_attributes:
     parameters:
       email_identity:
@@ -345,6 +411,26 @@ methods:
         types:
         - String
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_configuration_set_event_destination:
     parameters:
       configuration_set_name:

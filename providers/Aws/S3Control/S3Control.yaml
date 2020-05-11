@@ -1,9 +1,153 @@
 ---
 class: Aws::S3Control::Client
 methods:
+  create_access_point:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      bucket:
+        types:
+        - String
+        required: true
+      vpc_configuration:
+        types:
+        - Types::VpcConfiguration
+        required: false
+      public_access_block_configuration:
+        types:
+        - Types::PublicAccessBlockConfiguration
+        required: false
+  create_job:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      confirmation_required:
+        types:
+        - Boolean
+        required: false
+      operation:
+        types:
+        - Types::JobOperation
+        required: true
+      report:
+        types:
+        - Types::JobReport
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: true
+      manifest:
+        types:
+        - Types::JobManifest
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      priority:
+        types:
+        - Integer
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::S3Tag>
+        required: false
+  delete_access_point:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  delete_access_point_policy:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  delete_job_tagging:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
+        types:
+        - String
+        required: true
   delete_public_access_block:
     parameters:
       account_id:
+        types:
+        - String
+        required: true
+  describe_job:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
+        types:
+        - String
+        required: true
+  get_access_point:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  get_access_point_policy:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  get_access_point_policy_status:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+  get_job_tagging:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
         types:
         - String
         required: true
@@ -12,6 +156,70 @@ methods:
       account_id:
         types:
         - String
+        required: true
+  list_access_points:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      bucket:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_jobs:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_statuses:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_access_point_policy:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: true
+  put_job_tagging:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::S3Tag>
         required: true
   put_public_access_block:
     parameters:
@@ -23,3 +231,35 @@ methods:
         types:
         - String
         required: true
+  update_job_priority:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
+        types:
+        - String
+        required: true
+      priority:
+        types:
+        - Integer
+        required: true
+  update_job_status:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      job_id:
+        types:
+        - String
+        required: true
+      requested_job_status:
+        types:
+        - String
+        required: true
+      status_update_reason:
+        types:
+        - String
+        required: false

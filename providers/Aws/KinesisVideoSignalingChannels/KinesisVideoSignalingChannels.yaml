@@ -1,0 +1,35 @@
+---
+class: Aws::KinesisVideoSignalingChannels::Client
+methods:
+  get_ice_server_config:
+    parameters:
+      channel_arn:
+        types:
+        - String
+        required: true
+      client_id:
+        types:
+        - String
+        required: false
+      service:
+        types:
+        - String
+        required: false
+      username:
+        types:
+        - String
+        required: false
+  send_alexa_offer_to_master:
+    parameters:
+      channel_arn:
+        types:
+        - String
+        required: true
+      sender_client_id:
+        types:
+        - String
+        required: true
+      message_payload:
+        types:
+        - String
+        required: true

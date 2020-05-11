@@ -64,6 +64,11 @@ web_acl:
   read: get_web_acl
   update: 
   delete: delete_web_acl
+web_acl_migration_stack:
+  create: create_web_acl_migration_stack
+  read: 
+  update: 
+  delete: 
 xss_match_set:
   create: create_xss_match_set
   read: get_xss_match_set

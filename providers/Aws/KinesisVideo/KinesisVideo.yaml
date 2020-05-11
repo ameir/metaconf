@@ -1,6 +1,24 @@
 ---
 class: Aws::KinesisVideo::Client
 methods:
+  create_signaling_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: true
+      channel_type:
+        types:
+        - String
+        required: false
+      single_master_configuration:
+        types:
+        - Types::SingleMasterConfiguration
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_stream:
     parameters:
       device_name:
@@ -27,6 +45,16 @@ methods:
         types:
         - Hash<String,String>
         required: false
+  delete_signaling_channel:
+    parameters:
+      channel_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: false
   delete_stream:
     parameters:
       stream_arn:
@@ -34,6 +62,16 @@ methods:
         - String
         required: true
       current_version:
+        types:
+        - String
+        required: false
+  describe_signaling_channel:
+    parameters:
+      channel_name:
+        types:
+        - String
+        required: false
+      channel_arn:
         types:
         - String
         required: false
@@ -61,6 +99,30 @@ methods:
         types:
         - String
         required: true
+  get_signaling_channel_endpoint:
+    parameters:
+      channel_arn:
+        types:
+        - String
+        required: true
+      single_master_channel_endpoint_configuration:
+        types:
+        - Types::SingleMasterChannelEndpointConfiguration
+        required: false
+  list_signaling_channels:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      channel_name_condition:
+        types:
+        - Types::ChannelNameCondition
+        required: false
   list_streams:
     parameters:
       max_results:
@@ -75,6 +137,16 @@ methods:
         types:
         - Types::StreamNameCondition
         required: false
+  list_tags_for_resource:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
   list_tags_for_stream:
     parameters:
       next_token:
@@ -89,6 +161,16 @@ methods:
         types:
         - String
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
   tag_stream:
     parameters:
       stream_arn:
@@ -102,6 +184,16 @@ methods:
       tags:
         types:
         - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_key_list:
+        types:
+        - Array<String>
         required: true
   untag_stream:
     parameters:
@@ -139,6 +231,20 @@ methods:
         types:
         - Integer
         required: true
+  update_signaling_channel:
+    parameters:
+      channel_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: true
+      single_master_configuration:
+        types:
+        - Types::SingleMasterConfiguration
+        required: false
   update_stream:
     parameters:
       stream_name:

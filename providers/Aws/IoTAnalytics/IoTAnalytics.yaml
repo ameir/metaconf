@@ -27,6 +27,10 @@ methods:
         types:
         - String
         required: true
+      channel_storage:
+        types:
+        - Types::ChannelStorage
+        required: false
       retention_period:
         types:
         - Types::RetentionPeriod
@@ -57,6 +61,10 @@ methods:
         types:
         - Types::RetentionPeriod
         required: false
+      versioning_configuration:
+        types:
+        - Types::VersioningConfiguration
+        required: false
       tags:
         types:
         - Array<Types::Tag>
@@ -73,6 +81,10 @@ methods:
         types:
         - String
         required: true
+      datastore_storage:
+        types:
+        - Types::DatastoreStorage
+        required: false
       retention_period:
         types:
         - Types::RetentionPeriod
@@ -337,6 +349,10 @@ methods:
         types:
         - String
         required: true
+      channel_storage:
+        types:
+        - Types::ChannelStorage
+        required: false
       retention_period:
         types:
         - Types::RetentionPeriod
@@ -363,6 +379,10 @@ methods:
         types:
         - Types::RetentionPeriod
         required: false
+      versioning_configuration:
+        types:
+        - Types::VersioningConfiguration
+        required: false
   update_datastore:
     parameters:
       datastore_name:
@@ -372,6 +392,10 @@ methods:
       retention_period:
         types:
         - Types::RetentionPeriod
+        required: false
+      datastore_storage:
+        types:
+        - Types::DatastoreStorage
         required: false
   update_pipeline:
     parameters:

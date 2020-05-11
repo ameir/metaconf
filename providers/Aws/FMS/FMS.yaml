@@ -33,6 +33,40 @@ methods:
         types:
         - String
         required: true
+  get_protection_status:
+    parameters:
+      policy_id:
+        types:
+        - String
+        required: true
+      member_account_id:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_compliance_status:
     parameters:
       policy_id:
@@ -67,6 +101,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   put_notification_channel:
     parameters:
       sns_topic_arn:
@@ -82,4 +122,28 @@ methods:
       policy:
         types:
         - Types::Policy
+        required: true
+      tag_list:
+        types:
+        - Array<Types::Tag>
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_list:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

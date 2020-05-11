@@ -1,0 +1,46 @@
+---
+component_policy:
+  create: put_component_policy
+  read: get_component_policy
+  update: 
+  delete: 
+image_policy:
+  create: put_image_policy
+  read: get_image_policy
+  update: 
+  delete: 
+image_recipe_policy:
+  create: put_image_recipe_policy
+  read: get_image_recipe_policy
+  update: 
+  delete: 
+component:
+  create: create_component
+  read: get_component
+  update: 
+  delete: delete_component
+distribution_configuration:
+  create: create_distribution_configuration
+  read: get_distribution_configuration
+  update: 
+  delete: delete_distribution_configuration
+image:
+  create: create_image
+  read: get_image
+  update: 
+  delete: delete_image
+image_pipeline:
+  create: create_image_pipeline
+  read: get_image_pipeline
+  update: 
+  delete: delete_image_pipeline
+image_recipe:
+  create: create_image_recipe
+  read: get_image_recipe
+  update: 
+  delete: delete_image_recipe
+infrastructure_configuration:
+  create: create_infrastructure_configuration
+  read: get_infrastructure_configuration
+  update: 
+  delete: delete_infrastructure_configuration

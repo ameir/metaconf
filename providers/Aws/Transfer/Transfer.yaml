@@ -3,6 +3,22 @@ class: Aws::Transfer::Client
 methods:
   create_server:
     parameters:
+      certificate:
+        types:
+        - String
+        required: false
+      endpoint_details:
+        types:
+        - Types::EndpointDetails
+        required: false
+      endpoint_type:
+        types:
+        - String
+        required: false
+      host_key:
+        types:
+        - String
+        required: false
       identity_provider_details:
         types:
         - Types::IdentityProviderDetails
@@ -15,6 +31,10 @@ methods:
         types:
         - String
         required: false
+      protocols:
+        types:
+        - Array<String>
+        required: false
       tags:
         types:
         - Array<Types::Tag>
@@ -24,6 +44,14 @@ methods:
       home_directory:
         types:
         - String
+        required: false
+      home_directory_type:
+        types:
+        - String
+        required: false
+      home_directory_mappings:
+        types:
+        - Array<Types::HomeDirectoryMapEntry>
         required: false
       policy:
         types:
@@ -183,6 +211,10 @@ methods:
         types:
         - String
         required: false
+      server_protocol:
+        types:
+        - String
+        required: false
   untag_resource:
     parameters:
       arn:
@@ -195,6 +227,22 @@ methods:
         required: true
   update_server:
     parameters:
+      certificate:
+        types:
+        - String
+        required: false
+      endpoint_details:
+        types:
+        - Types::EndpointDetails
+        required: false
+      endpoint_type:
+        types:
+        - String
+        required: false
+      host_key:
+        types:
+        - String
+        required: false
       identity_provider_details:
         types:
         - Types::IdentityProviderDetails
@@ -202,6 +250,10 @@ methods:
       logging_role:
         types:
         - String
+        required: false
+      protocols:
+        types:
+        - Array<String>
         required: false
       server_id:
         types:
@@ -212,6 +264,14 @@ methods:
       home_directory:
         types:
         - String
+        required: false
+      home_directory_type:
+        types:
+        - String
+        required: false
+      home_directory_mappings:
+        types:
+        - Array<Types::HomeDirectoryMapEntry>
         required: false
       policy:
         types:

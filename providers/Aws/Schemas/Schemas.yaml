@@ -1,0 +1,401 @@
+---
+class: Aws::Schemas::Client
+methods:
+  create_discoverer:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      source_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_registry:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_schema:
+    parameters:
+      content:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      type:
+        types:
+        - String
+        required: true
+  delete_discoverer:
+    parameters:
+      discoverer_id:
+        types:
+        - String
+        required: true
+  delete_registry:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: true
+  delete_resource_policy:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: false
+  delete_schema:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+  delete_schema_version:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      schema_version:
+        types:
+        - String
+        required: true
+  describe_code_binding:
+    parameters:
+      language:
+        types:
+        - String
+        required: true
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      schema_version:
+        types:
+        - String
+        required: false
+  describe_discoverer:
+    parameters:
+      discoverer_id:
+        types:
+        - String
+        required: true
+  describe_registry:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: true
+  describe_schema:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      schema_version:
+        types:
+        - String
+        required: false
+  get_code_binding_source:
+    parameters:
+      language:
+        types:
+        - String
+        required: true
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      schema_version:
+        types:
+        - String
+        required: false
+  get_discovered_schema:
+    parameters:
+      events:
+        types:
+        - Array<String>
+        required: true
+      type:
+        types:
+        - String
+        required: true
+  get_resource_policy:
+    parameters:
+      registry_name:
+        types:
+        - String
+        required: false
+  list_discoverers:
+    parameters:
+      discoverer_id_prefix:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      source_arn_prefix:
+        types:
+        - String
+        required: false
+  list_registries:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      registry_name_prefix:
+        types:
+        - String
+        required: false
+      scope:
+        types:
+        - String
+        required: false
+  list_schema_versions:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+  list_schemas:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name_prefix:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_code_binding:
+    parameters:
+      language:
+        types:
+        - String
+        required: true
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      schema_version:
+        types:
+        - String
+        required: false
+  put_resource_policy:
+    parameters:
+      policy:
+        types:
+        - String
+        required: true
+      registry_name:
+        types:
+        - String
+        required: false
+      revision_id:
+        types:
+        - String
+        required: false
+  search_schemas:
+    parameters:
+      keywords:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+  start_discoverer:
+    parameters:
+      discoverer_id:
+        types:
+        - String
+        required: true
+  stop_discoverer:
+    parameters:
+      discoverer_id:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_discoverer:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      discoverer_id:
+        types:
+        - String
+        required: true
+  update_registry:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+  update_schema:
+    parameters:
+      client_token_id:
+        types:
+        - String
+        required: false
+      content:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      registry_name:
+        types:
+        - String
+        required: true
+      schema_name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

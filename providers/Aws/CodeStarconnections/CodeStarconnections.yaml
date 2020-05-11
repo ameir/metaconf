@@ -1,0 +1,69 @@
+---
+class: Aws::CodeStarconnections::Client
+methods:
+  create_connection:
+    parameters:
+      provider_type:
+        types:
+        - String
+        required: true
+      connection_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_connection:
+    parameters:
+      connection_arn:
+        types:
+        - String
+        required: true
+  get_connection:
+    parameters:
+      connection_arn:
+        types:
+        - String
+        required: true
+  list_connections:
+    parameters:
+      provider_type_filter:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

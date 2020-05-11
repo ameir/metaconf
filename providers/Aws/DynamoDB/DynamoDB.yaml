@@ -83,6 +83,10 @@ methods:
         types:
         - Types::SSESpecification
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_backup:
     parameters:
       backup_arn:
@@ -149,6 +153,16 @@ methods:
         types:
         - String
         required: true
+  describe_contributor_insights:
+    parameters:
+      table_name:
+        types:
+        - String
+        required: true
+      index_name:
+        types:
+        - String
+        required: false
   describe_global_table:
     parameters:
       global_table_name:
@@ -162,6 +176,12 @@ methods:
         - String
         required: true
   describe_table:
+    parameters:
+      table_name:
+        types:
+        - String
+        required: true
+  describe_table_replica_auto_scaling:
     parameters:
       table_name:
         types:
@@ -236,6 +256,20 @@ methods:
       backup_type:
         types:
         - String
+        required: false
+  list_contributor_insights:
+    parameters:
+      table_name:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   list_global_tables:
     parameters:
@@ -393,12 +427,36 @@ methods:
         types:
         - String
         required: true
+      billing_mode_override:
+        types:
+        - String
+        required: false
+      global_secondary_index_override:
+        types:
+        - Array<Types::GlobalSecondaryIndex>
+        required: false
+      local_secondary_index_override:
+        types:
+        - Array<Types::LocalSecondaryIndex>
+        required: false
+      provisioned_throughput_override:
+        types:
+        - Types::ProvisionedThroughput
+        required: false
+      sse_specification_override:
+        types:
+        - Types::SSESpecification
+        required: false
   restore_table_to_point_in_time:
     parameters:
+      source_table_arn:
+        types:
+        - String
+        required: false
       source_table_name:
         types:
         - String
-        required: true
+        required: false
       target_table_name:
         types:
         - String
@@ -414,6 +472,26 @@ methods:
         - Date
         - Integer
         - String
+        required: false
+      billing_mode_override:
+        types:
+        - String
+        required: false
+      global_secondary_index_override:
+        types:
+        - Array<Types::GlobalSecondaryIndex>
+        required: false
+      local_secondary_index_override:
+        types:
+        - Array<Types::LocalSecondaryIndex>
+        required: false
+      provisioned_throughput_override:
+        types:
+        - Types::ProvisionedThroughput
+        required: false
+      sse_specification_override:
+        types:
+        - Types::SSESpecification
         required: false
   scan:
     parameters:
@@ -539,6 +617,20 @@ methods:
         types:
         - Types::PointInTimeRecoverySpecification
         required: true
+  update_contributor_insights:
+    parameters:
+      table_name:
+        types:
+        - String
+        required: true
+      index_name:
+        types:
+        - String
+        required: false
+      contributor_insights_action:
+        types:
+        - String
+        required: true
   update_global_table:
     parameters:
       global_table_name:
@@ -654,6 +746,28 @@ methods:
       sse_specification:
         types:
         - Types::SSESpecification
+        required: false
+      replica_updates:
+        types:
+        - Array<Types::ReplicationGroupUpdate>
+        required: false
+  update_table_replica_auto_scaling:
+    parameters:
+      global_secondary_index_updates:
+        types:
+        - Array<Types::GlobalSecondaryIndexAutoScalingUpdate>
+        required: false
+      table_name:
+        types:
+        - String
+        required: true
+      provisioned_write_capacity_auto_scaling_update:
+        types:
+        - Types::AutoScalingSettingsUpdate
+        required: false
+      replica_updates:
+        types:
+        - Array<Types::ReplicaAutoScalingUpdate>
         required: false
   update_time_to_live:
     parameters:

@@ -14,6 +14,16 @@ certificate_from_csr:
   read: 
   update: 
   delete: 
+dimension:
+  create: create_dimension
+  read: describe_dimension
+  update: 
+  delete: delete_dimension
+domain_configuration:
+  create: create_domain_configuration
+  read: describe_domain_configuration
+  update: 
+  delete: delete_domain_configuration
 dynamic_thing_group:
   create: create_dynamic_thing_group
   read: 
@@ -29,6 +39,11 @@ keys_and_certificate:
   read: 
   update: 
   delete: 
+mitigation_action:
+  create: create_mitigation_action
+  read: describe_mitigation_action
+  update: 
+  delete: delete_mitigation_action
 ota_update:
   create: create_ota_update
   read: get_ota_update
@@ -44,6 +59,21 @@ policy_version:
   read: get_policy_version
   update: 
   delete: delete_policy_version
+provisioning_claim:
+  create: create_provisioning_claim
+  read: 
+  update: 
+  delete: 
+provisioning_template:
+  create: create_provisioning_template
+  read: describe_provisioning_template
+  update: 
+  delete: delete_provisioning_template
+provisioning_template_version:
+  create: create_provisioning_template_version
+  read: describe_provisioning_template_version
+  update: 
+  delete: delete_provisioning_template_version
 role_alias:
   create: create_role_alias
   read: describe_role_alias
@@ -84,3 +114,8 @@ topic_rule:
   read: get_topic_rule
   update: 
   delete: delete_topic_rule
+topic_rule_destination:
+  create: create_topic_rule_destination
+  read: get_topic_rule_destination
+  update: 
+  delete: delete_topic_rule_destination

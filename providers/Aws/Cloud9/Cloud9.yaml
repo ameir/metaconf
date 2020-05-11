@@ -31,6 +31,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_environment_membership:
     parameters:
       environment_id:
@@ -105,6 +109,32 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_environment:
     parameters:
       environment_id:

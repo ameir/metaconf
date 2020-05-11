@@ -1,0 +1,77 @@
+---
+class: Aws::IoTSecureTunneling::Client
+methods:
+  close_tunnel:
+    parameters:
+      tunnel_id:
+        types:
+        - String
+        required: true
+      delete:
+        types:
+        - Boolean
+        required: false
+  describe_tunnel:
+    parameters:
+      tunnel_id:
+        types:
+        - String
+        required: true
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_tunnels:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  open_tunnel:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      destination_config:
+        types:
+        - Types::DestinationConfig
+        required: false
+      timeout_config:
+        types:
+        - Types::TimeoutConfig
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

@@ -1,4 +1,9 @@
 ---
+action_target:
+  create: create_action_target
+  read: describe_action_targets
+  update: 
+  delete: delete_action_target
 insight:
   create: create_insight
   read: get_insights

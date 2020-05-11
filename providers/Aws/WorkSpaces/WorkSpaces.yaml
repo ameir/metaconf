@@ -21,6 +21,28 @@ methods:
         types:
         - Array<Types::IpRuleItem>
         required: true
+  copy_workspace_image:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      source_image_id:
+        types:
+        - String
+        required: true
+      source_region:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_ip_group:
     parameters:
       group_name:
@@ -34,6 +56,10 @@ methods:
       user_rules:
         types:
         - Array<Types::IpRuleItem>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_tags:
     parameters:
@@ -70,6 +96,12 @@ methods:
   delete_workspace_image:
     parameters:
       image_id:
+        types:
+        - String
+        required: true
+  deregister_workspace_directory:
+    parameters:
+      directory_id:
         types:
         - String
         required: true
@@ -125,6 +157,10 @@ methods:
         types:
         - Array<String>
         required: false
+      limit:
+        types:
+        - Integer
+        required: false
       next_token:
         types:
         - String
@@ -143,6 +179,12 @@ methods:
         types:
         - Integer
         required: false
+  describe_workspace_snapshots:
+    parameters:
+      workspace_id:
+        types:
+        - String
+        required: true
   describe_workspaces:
     parameters:
       workspace_ids:
@@ -207,6 +249,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   list_available_management_cidr_ranges:
     parameters:
       management_cidr_range_constraint:
@@ -221,6 +267,16 @@ methods:
         types:
         - String
         required: false
+  migrate_workspace:
+    parameters:
+      source_workspace_id:
+        types:
+        - String
+        required: true
+      bundle_id:
+        types:
+        - String
+        required: true
   modify_account:
     parameters:
       dedicated_tenancy_support:
@@ -240,6 +296,36 @@ methods:
       client_properties:
         types:
         - Types::ClientProperties
+        required: true
+  modify_selfservice_permissions:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      selfservice_permissions:
+        types:
+        - Types::SelfservicePermissions
+        required: true
+  modify_workspace_access_properties:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      workspace_access_properties:
+        types:
+        - Types::WorkspaceAccessProperties
+        required: true
+  modify_workspace_creation_properties:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      workspace_creation_properties:
+        types:
+        - Types::WorkspaceCreationProperties
         required: true
   modify_workspace_properties:
     parameters:
@@ -272,6 +358,38 @@ methods:
       rebuild_workspace_requests:
         types:
         - Array<Types::RebuildRequest>
+        required: true
+  register_workspace_directory:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      subnet_ids:
+        types:
+        - Array<String>
+        required: false
+      enable_work_docs:
+        types:
+        - Boolean
+        required: true
+      enable_self_service:
+        types:
+        - Boolean
+        required: false
+      tenancy:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  restore_workspace:
+    parameters:
+      workspace_id:
+        types:
+        - String
         required: true
   revoke_ip_rules:
     parameters:

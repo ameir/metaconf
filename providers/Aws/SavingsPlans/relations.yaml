@@ -1,0 +1,6 @@
+---
+savings_plan:
+  create: create_savings_plan
+  read: describe_savings_plans
+  update: 
+  delete: 

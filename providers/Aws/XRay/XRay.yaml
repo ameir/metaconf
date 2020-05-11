@@ -111,6 +111,44 @@ methods:
         types:
         - String
         required: false
+  get_time_series_service_statistics:
+    parameters:
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      group_name:
+        types:
+        - String
+        required: false
+      group_arn:
+        types:
+        - String
+        required: false
+      entity_selector_expression:
+        types:
+        - String
+        required: false
+      period:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   get_trace_graph:
     parameters:
       trace_ids:
@@ -139,9 +177,17 @@ methods:
         - Integer
         - String
         required: true
+      time_range_type:
+        types:
+        - String
+        required: false
       sampling:
         types:
         - Boolean
+        required: false
+      sampling_strategy:
+        types:
+        - Types::SamplingStrategy
         required: false
       filter_expression:
         types:

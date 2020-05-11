@@ -19,6 +19,11 @@ campaign:
   read: get_campaign
   update: 
   delete: delete_campaign
+email_template:
+  create: create_email_template
+  read: get_email_template
+  update: 
+  delete: delete_email_template
 export_job:
   create: create_export_job
   read: get_export_job
@@ -29,8 +34,33 @@ import_job:
   read: get_import_job
   update: 
   delete: 
+journey:
+  create: create_journey
+  read: get_journey
+  update: 
+  delete: delete_journey
+push_template:
+  create: create_push_template
+  read: get_push_template
+  update: 
+  delete: delete_push_template
+recommender_configuration:
+  create: create_recommender_configuration
+  read: get_recommender_configuration
+  update: 
+  delete: delete_recommender_configuration
 segment:
   create: create_segment
   read: get_segment
   update: 
   delete: delete_segment
+sms_template:
+  create: create_sms_template
+  read: get_sms_template
+  update: 
+  delete: delete_sms_template
+voice_template:
+  create: create_voice_template
+  read: get_voice_template
+  update: 
+  delete: delete_voice_template

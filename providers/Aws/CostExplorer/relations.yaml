@@ -1,1 +1,6 @@
---- {}
+---
+cost_category_definition:
+  create: create_cost_category_definition
+  read: describe_cost_category_definition
+  update: 
+  delete: delete_cost_category_definition

@@ -1,0 +1,43 @@
+---
+class: Aws::PersonalizeRuntime::Client
+methods:
+  get_personalized_ranking:
+    parameters:
+      campaign_arn:
+        types:
+        - String
+        required: true
+      input_list:
+        types:
+        - Array<String>
+        required: true
+      user_id:
+        types:
+        - String
+        required: true
+      context:
+        types:
+        - Hash<String,String>
+        required: false
+  get_recommendations:
+    parameters:
+      campaign_arn:
+        types:
+        - String
+        required: true
+      item_id:
+        types:
+        - String
+        required: false
+      user_id:
+        types:
+        - String
+        required: false
+      num_results:
+        types:
+        - Integer
+        required: false
+      context:
+        types:
+        - Hash<String,String>
+        required: false

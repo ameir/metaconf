@@ -2,5 +2,5 @@
 report_definition:
   create: put_report_definition
   read: describe_report_definitions
-  update: 
+  update: modify_report_definition
   delete: delete_report_definition

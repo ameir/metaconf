@@ -123,6 +123,16 @@ methods:
         types:
         - Boolean
         required: false
+  describe_domain_endpoint_options:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      deployed:
+        types:
+        - Boolean
+        required: false
   describe_domains:
     parameters:
       domain_names:
@@ -202,6 +212,16 @@ methods:
       multi_az:
         types:
         - Boolean
+        required: true
+  update_domain_endpoint_options:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      domain_endpoint_options:
+        types:
+        - Types::DomainEndpointOptions
         required: true
   update_scaling_parameters:
     parameters:

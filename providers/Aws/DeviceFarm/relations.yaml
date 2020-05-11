@@ -24,6 +24,16 @@ remote_access_session:
   read: get_remote_access_session
   update: 
   delete: delete_remote_access_session
+test_grid_project:
+  create: create_test_grid_project
+  read: get_test_grid_project
+  update: 
+  delete: delete_test_grid_project
+test_grid_url:
+  create: create_test_grid_url
+  read: 
+  update: 
+  delete: 
 upload:
   create: create_upload
   read: get_upload

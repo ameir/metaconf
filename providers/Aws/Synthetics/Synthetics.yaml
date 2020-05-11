@@ -1,0 +1,181 @@
+---
+class: Aws::Synthetics::Client
+methods:
+  create_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      code:
+        types:
+        - Types::CanaryCodeInput
+        required: true
+      artifact_s3_location:
+        types:
+        - String
+        required: true
+      execution_role_arn:
+        types:
+        - String
+        required: true
+      schedule:
+        types:
+        - Types::CanaryScheduleInput
+        required: true
+      run_config:
+        types:
+        - Types::CanaryRunConfigInput
+        required: false
+      success_retention_period_in_days:
+        types:
+        - Integer
+        required: false
+      failure_retention_period_in_days:
+        types:
+        - Integer
+        required: false
+      runtime_version:
+        types:
+        - String
+        required: true
+      vpc_config:
+        types:
+        - Types::VpcConfigInput
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  delete_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  describe_canaries:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_canaries_last_run:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_runtime_versions:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_canary_runs:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  start_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  stop_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_canary:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      code:
+        types:
+        - Types::CanaryCodeInput
+        required: false
+      execution_role_arn:
+        types:
+        - String
+        required: false
+      runtime_version:
+        types:
+        - String
+        required: false
+      schedule:
+        types:
+        - Types::CanaryScheduleInput
+        required: false
+      run_config:
+        types:
+        - Types::CanaryRunConfigInput
+        required: false
+      success_retention_period_in_days:
+        types:
+        - Integer
+        required: false
+      failure_retention_period_in_days:
+        types:
+        - Integer
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfigInput
+        required: false

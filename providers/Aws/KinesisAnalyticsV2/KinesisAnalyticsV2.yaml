@@ -75,6 +75,20 @@ methods:
         types:
         - Types::ReferenceDataSource
         required: true
+  add_application_vpc_configuration:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      vpc_configuration:
+        types:
+        - Types::VpcConfiguration
+        required: true
   create_application:
     parameters:
       application_name:
@@ -100,6 +114,10 @@ methods:
       cloud_watch_logging_options:
         types:
         - Array<Types::CloudWatchLoggingOption>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_application_snapshot:
     parameters:
@@ -199,6 +217,20 @@ methods:
         - Integer
         - String
         required: true
+  delete_application_vpc_configuration:
+    parameters:
+      application_name:
+        types:
+        - String
+        required: true
+      current_application_version_id:
+        types:
+        - Integer
+        required: true
+      vpc_configuration_id:
+        types:
+        - String
+        required: true
   describe_application:
     parameters:
       application_name:
@@ -265,6 +297,12 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   start_application:
     parameters:
       application_name:
@@ -280,6 +318,26 @@ methods:
       application_name:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_application:
     parameters:

@@ -4,6 +4,11 @@ conference_preference:
   read: 
   update: 
   delete: 
+invitation_configuration:
+  create: put_invitation_configuration
+  read: 
+  update: 
+  delete: 
 room_skill_parameter:
   create: put_room_skill_parameter
   read: get_room_skill_parameter
@@ -34,6 +39,16 @@ contact:
   read: get_contact
   update: 
   delete: delete_contact
+gateway_group:
+  create: create_gateway_group
+  read: get_gateway_group
+  update: 
+  delete: delete_gateway_group
+network_profile:
+  create: create_network_profile
+  read: get_network_profile
+  update: 
+  delete: delete_network_profile
 profile:
   create: create_profile
   read: get_profile

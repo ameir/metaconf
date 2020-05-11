@@ -7,6 +7,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_container:
     parameters:
       container_name:
@@ -26,6 +30,12 @@ methods:
         - String
         required: true
   delete_lifecycle_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  delete_metric_policy:
     parameters:
       container_name:
         types:
@@ -55,6 +65,12 @@ methods:
         types:
         - String
         required: true
+  get_metric_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
   list_containers:
     parameters:
       next_token:
@@ -65,6 +81,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
   put_container_policy:
     parameters:
       container_name:
@@ -94,4 +116,46 @@ methods:
       lifecycle_policy:
         types:
         - String
+        required: true
+  put_metric_policy:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+      metric_policy:
+        types:
+        - Types::MetricPolicy
+        required: true
+  start_access_logging:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  stop_access_logging:
+    parameters:
+      container_name:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

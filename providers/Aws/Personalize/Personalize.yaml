@@ -1,0 +1,413 @@
+---
+class: Aws::Personalize::Client
+methods:
+  create_batch_inference_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      solution_version_arn:
+        types:
+        - String
+        required: true
+      num_results:
+        types:
+        - Integer
+        required: false
+      job_input:
+        types:
+        - Types::BatchInferenceJobInput
+        required: true
+      job_output:
+        types:
+        - Types::BatchInferenceJobOutput
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+  create_campaign:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      solution_version_arn:
+        types:
+        - String
+        required: true
+      min_provisioned_tps:
+        types:
+        - Integer
+        required: true
+  create_dataset:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      schema_arn:
+        types:
+        - String
+        required: true
+      dataset_group_arn:
+        types:
+        - String
+        required: true
+      dataset_type:
+        types:
+        - String
+        required: true
+  create_dataset_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      role_arn:
+        types:
+        - String
+        required: false
+      kms_key_arn:
+        types:
+        - String
+        required: false
+  create_dataset_import_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: true
+      dataset_arn:
+        types:
+        - String
+        required: true
+      data_source:
+        types:
+        - Types::DataSource
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+  create_event_tracker:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      dataset_group_arn:
+        types:
+        - String
+        required: true
+  create_schema:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      schema:
+        types:
+        - String
+        required: true
+  create_solution:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      perform_hpo:
+        types:
+        - Boolean
+        required: false
+      perform_auto_ml:
+        types:
+        - Boolean
+        required: false
+      recipe_arn:
+        types:
+        - String
+        required: false
+      dataset_group_arn:
+        types:
+        - String
+        required: true
+      event_type:
+        types:
+        - String
+        required: false
+      solution_config:
+        types:
+        - Types::SolutionConfig
+        required: false
+  create_solution_version:
+    parameters:
+      solution_arn:
+        types:
+        - String
+        required: true
+      training_mode:
+        types:
+        - String
+        required: false
+  delete_campaign:
+    parameters:
+      campaign_arn:
+        types:
+        - String
+        required: true
+  delete_dataset:
+    parameters:
+      dataset_arn:
+        types:
+        - String
+        required: true
+  delete_dataset_group:
+    parameters:
+      dataset_group_arn:
+        types:
+        - String
+        required: true
+  delete_event_tracker:
+    parameters:
+      event_tracker_arn:
+        types:
+        - String
+        required: true
+  delete_schema:
+    parameters:
+      schema_arn:
+        types:
+        - String
+        required: true
+  delete_solution:
+    parameters:
+      solution_arn:
+        types:
+        - String
+        required: true
+  describe_algorithm:
+    parameters:
+      algorithm_arn:
+        types:
+        - String
+        required: true
+  describe_batch_inference_job:
+    parameters:
+      batch_inference_job_arn:
+        types:
+        - String
+        required: true
+  describe_campaign:
+    parameters:
+      campaign_arn:
+        types:
+        - String
+        required: true
+  describe_dataset:
+    parameters:
+      dataset_arn:
+        types:
+        - String
+        required: true
+  describe_dataset_group:
+    parameters:
+      dataset_group_arn:
+        types:
+        - String
+        required: true
+  describe_dataset_import_job:
+    parameters:
+      dataset_import_job_arn:
+        types:
+        - String
+        required: true
+  describe_event_tracker:
+    parameters:
+      event_tracker_arn:
+        types:
+        - String
+        required: true
+  describe_feature_transformation:
+    parameters:
+      feature_transformation_arn:
+        types:
+        - String
+        required: true
+  describe_recipe:
+    parameters:
+      recipe_arn:
+        types:
+        - String
+        required: true
+  describe_schema:
+    parameters:
+      schema_arn:
+        types:
+        - String
+        required: true
+  describe_solution:
+    parameters:
+      solution_arn:
+        types:
+        - String
+        required: true
+  describe_solution_version:
+    parameters:
+      solution_version_arn:
+        types:
+        - String
+        required: true
+  get_solution_metrics:
+    parameters:
+      solution_version_arn:
+        types:
+        - String
+        required: true
+  list_batch_inference_jobs:
+    parameters:
+      solution_version_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_campaigns:
+    parameters:
+      solution_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dataset_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dataset_import_jobs:
+    parameters:
+      dataset_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_datasets:
+    parameters:
+      dataset_group_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_event_trackers:
+    parameters:
+      dataset_group_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_recipes:
+    parameters:
+      recipe_provider:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_schemas:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_solution_versions:
+    parameters:
+      solution_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_solutions:
+    parameters:
+      dataset_group_arn:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_campaign:
+    parameters:
+      campaign_arn:
+        types:
+        - String
+        required: true
+      solution_version_arn:
+        types:
+        - String
+        required: false
+      min_provisioned_tps:
+        types:
+        - Integer
+        required: false

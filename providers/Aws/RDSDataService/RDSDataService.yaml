@@ -1,6 +1,68 @@
 ---
 class: Aws::RDSDataService::Client
 methods:
+  batch_execute_statement:
+    parameters:
+      database:
+        types:
+        - String
+        required: false
+      parameter_sets:
+        types:
+        - Array<Array>
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+      schema:
+        types:
+        - String
+        required: false
+      secret_arn:
+        types:
+        - String
+        required: true
+      sql:
+        types:
+        - String
+        required: true
+      transaction_id:
+        types:
+        - String
+        required: false
+  begin_transaction:
+    parameters:
+      database:
+        types:
+        - String
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+      schema:
+        types:
+        - String
+        required: false
+      secret_arn:
+        types:
+        - String
+        required: true
+  commit_transaction:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      secret_arn:
+        types:
+        - String
+        required: true
+      transaction_id:
+        types:
+        - String
+        required: true
   execute_sql:
     parameters:
       aws_secret_store_arn:
@@ -20,6 +82,62 @@ methods:
         - String
         required: false
       sql_statements:
+        types:
+        - String
+        required: true
+  execute_statement:
+    parameters:
+      continue_after_timeout:
+        types:
+        - Boolean
+        required: false
+      database:
+        types:
+        - String
+        required: false
+      include_result_metadata:
+        types:
+        - Boolean
+        required: false
+      parameters:
+        types:
+        - Array<Types::SqlParameter>
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+      result_set_options:
+        types:
+        - Types::ResultSetOptions
+        required: false
+      schema:
+        types:
+        - String
+        required: false
+      secret_arn:
+        types:
+        - String
+        required: true
+      sql:
+        types:
+        - String
+        required: true
+      transaction_id:
+        types:
+        - String
+        required: false
+  rollback_transaction:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      secret_arn:
+        types:
+        - String
+        required: true
+      transaction_id:
         types:
         - String
         required: true

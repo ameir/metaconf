@@ -245,3 +245,7 @@ methods:
         types:
         - String
         required: false
+      suspended_state:
+        types:
+        - Types::SuspendedState
+        required: false

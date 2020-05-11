@@ -53,6 +53,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_regex_match_set:
     parameters:
       name:
@@ -87,6 +91,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_rule_group:
     parameters:
       name:
@@ -101,6 +109,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_size_constraint_set:
     parameters:
       name:
@@ -138,6 +150,24 @@ methods:
       change_token:
         types:
         - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_web_acl_migration_stack:
+    parameters:
+      web_acl_id:
+        types:
+        - String
+        required: true
+      s3_bucket_name:
+        types:
+        - String
+        required: true
+      ignore_unsupported_type:
+        types:
+        - Boolean
         required: true
   create_xss_match_set:
     parameters:
@@ -533,6 +563,20 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
   list_web_acls:
     parameters:
       next_marker:
@@ -568,6 +612,26 @@ methods:
       policy:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_byte_match_set:
     parameters:

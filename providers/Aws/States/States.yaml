@@ -7,6 +7,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_state_machine:
     parameters:
       name:
@@ -21,6 +25,18 @@ methods:
         types:
         - String
         required: true
+      type:
+        types:
+        - String
+        required: false
+      logging_configuration:
+        types:
+        - Types::LoggingConfiguration
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_activity:
     parameters:
       activity_arn:
@@ -220,4 +236,8 @@ methods:
       role_arn:
         types:
         - String
+        required: false
+      logging_configuration:
+        types:
+        - Types::LoggingConfiguration
         required: false

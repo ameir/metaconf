@@ -32,11 +32,11 @@ methods:
       usage_quantity:
         types:
         - Integer
-        required: true
+        required: false
       dry_run:
         types:
         - Boolean
-        required: true
+        required: false
   register_usage:
     parameters:
       product_code:

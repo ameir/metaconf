@@ -1,6 +1,20 @@
 ---
 class: Aws::ECS::Client
 methods:
+  create_capacity_provider:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      auto_scaling_group_provider:
+        types:
+        - Types::AutoScalingGroupProvider
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_cluster:
     parameters:
       cluster_name:
@@ -10,6 +24,18 @@ methods:
       tags:
         types:
         - Array<Types::Tag>
+        required: false
+      settings:
+        types:
+        - Array<Types::ClusterSetting>
+        required: false
+      capacity_providers:
+        types:
+        - Array<String>
+        required: false
+      default_capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
         required: false
   create_service:
     parameters:
@@ -24,7 +50,7 @@ methods:
       task_definition:
         types:
         - String
-        required: true
+        required: false
       load_balancers:
         types:
         - Array<Types::LoadBalancer>
@@ -44,6 +70,10 @@ methods:
       launch_type:
         types:
         - String
+        required: false
+      capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
         required: false
       platform_version:
         types:
@@ -93,6 +123,60 @@ methods:
         types:
         - String
         required: false
+  create_task_set:
+    parameters:
+      service:
+        types:
+        - String
+        required: true
+      cluster:
+        types:
+        - String
+        required: true
+      external_id:
+        types:
+        - String
+        required: false
+      task_definition:
+        types:
+        - String
+        required: true
+      network_configuration:
+        types:
+        - Types::NetworkConfiguration
+        required: false
+      load_balancers:
+        types:
+        - Array<Types::LoadBalancer>
+        required: false
+      service_registries:
+        types:
+        - Array<Types::ServiceRegistry>
+        required: false
+      launch_type:
+        types:
+        - String
+        required: false
+      capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
+        required: false
+      platform_version:
+        types:
+        - String
+        required: false
+      scale:
+        types:
+        - Types::Scale
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_account_setting:
     parameters:
       name:
@@ -133,6 +217,24 @@ methods:
         types:
         - Boolean
         required: false
+  delete_task_set:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      service:
+        types:
+        - String
+        required: true
+      task_set:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
   deregister_container_instance:
     parameters:
       cluster:
@@ -153,6 +255,24 @@ methods:
         types:
         - String
         required: true
+  describe_capacity_providers:
+    parameters:
+      capacity_providers:
+        types:
+        - Array<String>
+        required: false
+      include:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_clusters:
     parameters:
       clusters:
@@ -197,6 +317,24 @@ methods:
         types:
         - String
         required: true
+      include:
+        types:
+        - Array<String>
+        required: false
+  describe_task_sets:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      service:
+        types:
+        - String
+        required: true
+      task_sets:
+        types:
+        - Array<String>
+        required: false
       include:
         types:
         - Array<String>
@@ -449,6 +587,20 @@ methods:
         types:
         - Array<Types::Attribute>
         required: true
+  put_cluster_capacity_providers:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      capacity_providers:
+        types:
+        - Array<String>
+        required: true
+      default_capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
+        required: true
   register_container_instance:
     parameters:
       cluster:
@@ -541,31 +693,47 @@ methods:
         types:
         - String
         required: false
+      proxy_configuration:
+        types:
+        - Types::ProxyConfiguration
+        required: false
+      inference_accelerators:
+        types:
+        - Array<Types::InferenceAccelerator>
+        required: false
   run_task:
     parameters:
+      capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
+        required: false
       cluster:
         types:
         - String
-        required: false
-      task_definition:
-        types:
-        - String
-        required: true
-      overrides:
-        types:
-        - Types::TaskOverride
         required: false
       count:
         types:
         - Integer
         required: false
-      started_by:
+      enable_ecs_managed_tags:
         types:
-        - String
+        - Boolean
         required: false
       group:
         types:
         - String
+        required: false
+      launch_type:
+        types:
+        - String
+        required: false
+      network_configuration:
+        types:
+        - Types::NetworkConfiguration
+        required: false
+      overrides:
+        types:
+        - Types::TaskOverride
         required: false
       placement_constraints:
         types:
@@ -575,51 +743,43 @@ methods:
         types:
         - Array<Types::PlacementStrategy>
         required: false
-      launch_type:
-        types:
-        - String
-        required: false
       platform_version:
         types:
         - String
-        required: false
-      network_configuration:
-        types:
-        - Types::NetworkConfiguration
-        required: false
-      tags:
-        types:
-        - Array<Types::Tag>
-        required: false
-      enable_ecs_managed_tags:
-        types:
-        - Boolean
         required: false
       propagate_tags:
         types:
         - String
         required: false
+      reference_id:
+        types:
+        - String
+        required: false
+      started_by:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      task_definition:
+        types:
+        - String
+        required: true
   start_task:
     parameters:
       cluster:
         types:
         - String
         required: false
-      task_definition:
-        types:
-        - String
-        required: true
-      overrides:
-        types:
-        - Types::TaskOverride
-        required: false
       container_instances:
         types:
         - Array<String>
         required: true
-      started_by:
+      enable_ecs_managed_tags:
         types:
-        - String
+        - Boolean
         required: false
       group:
         types:
@@ -629,18 +789,30 @@ methods:
         types:
         - Types::NetworkConfiguration
         required: false
-      tags:
+      overrides:
         types:
-        - Array<Types::Tag>
-        required: false
-      enable_ecs_managed_tags:
-        types:
-        - Boolean
+        - Types::TaskOverride
         required: false
       propagate_tags:
         types:
         - String
         required: false
+      reference_id:
+        types:
+        - String
+        required: false
+      started_by:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      task_definition:
+        types:
+        - String
+        required: true
   stop_task:
     parameters:
       cluster:
@@ -655,6 +827,16 @@ methods:
         types:
         - String
         required: false
+  submit_attachment_state_changes:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: false
+      attachments:
+        types:
+        - Array<Types::AttachmentStateChange>
+        required: true
   submit_container_state_change:
     parameters:
       cluster:
@@ -666,6 +848,10 @@ methods:
         - String
         required: false
       container_name:
+        types:
+        - String
+        required: false
+      runtime_id:
         types:
         - String
         required: false
@@ -755,6 +941,16 @@ methods:
         types:
         - Array<String>
         required: true
+  update_cluster_settings:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      settings:
+        types:
+        - Array<Types::ClusterSetting>
+        required: true
   update_container_agent:
     parameters:
       cluster:
@@ -797,6 +993,10 @@ methods:
         types:
         - String
         required: false
+      capacity_provider_strategy:
+        types:
+        - Array<Types::CapacityProviderStrategyItem>
+        required: false
       deployment_configuration:
         types:
         - Types::DeploymentConfiguration
@@ -804,6 +1004,14 @@ methods:
       network_configuration:
         types:
         - Types::NetworkConfiguration
+        required: false
+      placement_constraints:
+        types:
+        - Array<Types::PlacementConstraint>
+        required: false
+      placement_strategy:
+        types:
+        - Array<Types::PlacementStrategy>
         required: false
       platform_version:
         types:
@@ -817,6 +1025,38 @@ methods:
         types:
         - Integer
         required: false
+  update_service_primary_task_set:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      service:
+        types:
+        - String
+        required: true
+      primary_task_set:
+        types:
+        - String
+        required: true
+  update_task_set:
+    parameters:
+      cluster:
+        types:
+        - String
+        required: true
+      service:
+        types:
+        - String
+        required: true
+      task_set:
+        types:
+        - String
+        required: true
+      scale:
+        types:
+        - Types::Scale
+        required: true
   wait_until:
     parameters:
       max_attempts:

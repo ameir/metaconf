@@ -1,6 +1,18 @@
 ---
 class: Aws::ApiGatewayManagementApi::Client
 methods:
+  delete_connection:
+    parameters:
+      connection_id:
+        types:
+        - String
+        required: true
+  get_connection:
+    parameters:
+      connection_id:
+        types:
+        - String
+        required: true
   post_to_connection:
     parameters:
       data:

@@ -1,0 +1,6 @@
+---
+members:
+  create: create_members
+  read: get_members
+  update: 
+  delete: delete_members

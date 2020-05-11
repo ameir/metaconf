@@ -1,0 +1,191 @@
+---
+class: Aws::SavingsPlans::Client
+methods:
+  create_savings_plan:
+    parameters:
+      savings_plan_offering_id:
+        types:
+        - String
+        required: true
+      commitment:
+        types:
+        - String
+        required: true
+      upfront_payment_amount:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  describe_savings_plan_rates:
+    parameters:
+      savings_plan_id:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Array<Types::SavingsPlanRateFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_savings_plans:
+    parameters:
+      savings_plan_arns:
+        types:
+        - Array<String>
+        required: false
+      savings_plan_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      states:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::SavingsPlanFilter>
+        required: false
+  describe_savings_plans_offering_rates:
+    parameters:
+      savings_plan_offering_ids:
+        types:
+        - Array<String>
+        required: false
+      savings_plan_payment_options:
+        types:
+        - Array<String>
+        required: false
+      savings_plan_types:
+        types:
+        - Array<String>
+        required: false
+      products:
+        types:
+        - Array<String>
+        required: false
+      service_codes:
+        types:
+        - Array<String>
+        required: false
+      usage_types:
+        types:
+        - Array<String>
+        required: false
+      operations:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::SavingsPlanOfferingRateFilterElement>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_savings_plans_offerings:
+    parameters:
+      offering_ids:
+        types:
+        - Array<String>
+        required: false
+      payment_options:
+        types:
+        - Array<String>
+        required: false
+      product_type:
+        types:
+        - String
+        required: false
+      plan_types:
+        types:
+        - Array<String>
+        required: false
+      durations:
+        types:
+        - Array<Integer>
+        required: false
+      currencies:
+        types:
+        - Array<String>
+        required: false
+      descriptions:
+        types:
+        - Array<String>
+        required: false
+      service_codes:
+        types:
+        - Array<String>
+        required: false
+      usage_types:
+        types:
+        - Array<String>
+        required: false
+      operations:
+        types:
+        - Array<String>
+        required: false
+      filters:
+        types:
+        - Array<Types::SavingsPlanOfferingFilterElement>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

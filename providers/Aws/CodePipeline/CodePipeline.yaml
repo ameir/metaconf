@@ -55,12 +55,20 @@ methods:
         types:
         - Types::ArtifactDetails
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_pipeline:
     parameters:
       pipeline:
         types:
         - Types::PipelineDeclaration
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_custom_action_type:
     parameters:
       category:
@@ -167,6 +175,24 @@ methods:
         types:
         - String
         required: true
+  list_action_executions:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      filter:
+        types:
+        - Types::ActionExecutionFilter
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   list_action_types:
     parameters:
       action_owner_filter:
@@ -196,6 +222,20 @@ methods:
       next_token:
         types:
         - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
         required: false
   list_webhooks:
     parameters:
@@ -299,6 +339,10 @@ methods:
         types:
         - Types::ExecutionDetails
         required: false
+      output_variables:
+        types:
+        - Hash<String,String>
+        required: false
   put_third_party_job_failure_result:
     parameters:
       job_id:
@@ -341,6 +385,10 @@ methods:
         types:
         - Types::WebhookDefinition
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   register_webhook_with_third_party:
     parameters:
       webhook_name:
@@ -375,6 +423,44 @@ methods:
         types:
         - String
         required: false
+  stop_pipeline_execution:
+    parameters:
+      pipeline_name:
+        types:
+        - String
+        required: true
+      pipeline_execution_id:
+        types:
+        - String
+        required: true
+      abandon:
+        types:
+        - Boolean
+        required: false
+      reason:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_pipeline:
     parameters:
       pipeline:

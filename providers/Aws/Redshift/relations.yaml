@@ -39,6 +39,11 @@ hsm_configuration:
   read: describe_hsm_configurations
   update: 
   delete: delete_hsm_configuration
+scheduled_action:
+  create: create_scheduled_action
+  read: describe_scheduled_actions
+  update: modify_scheduled_action
+  delete: delete_scheduled_action
 snapshot_copy_grant:
   create: create_snapshot_copy_grant
   read: describe_snapshot_copy_grants
@@ -54,3 +59,8 @@ tags:
   read: describe_tags
   update: 
   delete: delete_tags
+usage_limit:
+  create: create_usage_limit
+  read: describe_usage_limits
+  update: modify_usage_limit
+  delete: delete_usage_limit

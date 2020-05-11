@@ -43,6 +43,10 @@ methods:
         types:
         - String
         required: false
+      source_code_archive_url:
+        types:
+        - String
+        required: false
       source_code_url:
         types:
         - String
@@ -69,6 +73,10 @@ methods:
         types:
         - String
         required: true
+      source_code_archive_url:
+        types:
+        - String
+        required: false
       source_code_url:
         types:
         - String
@@ -228,6 +236,16 @@ methods:
       statements:
         types:
         - Array<Types::ApplicationPolicyStatement>
+        required: true
+  unshare_application:
+    parameters:
+      application_id:
+        types:
+        - String
+        required: true
+      organization_id:
+        types:
+        - String
         required: true
   update_application:
     parameters:

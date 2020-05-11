@@ -1,9 +1,19 @@
 ---
+resource_policy:
+  create: put_resource_policy
+  read: get_resource_policy
+  update: 
+  delete: delete_resource_policy
 project:
   create: create_project
   read: 
   update: 
   delete: delete_project
+report_group:
+  create: create_report_group
+  read: 
+  update: 
+  delete: delete_report_group
 webhook:
   create: create_webhook
   read: 

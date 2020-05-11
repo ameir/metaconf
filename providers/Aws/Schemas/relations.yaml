@@ -1,0 +1,26 @@
+---
+code_binding:
+  create: put_code_binding
+  read: describe_code_binding
+  update: 
+  delete: 
+resource_policy:
+  create: put_resource_policy
+  read: get_resource_policy
+  update: 
+  delete: delete_resource_policy
+discoverer:
+  create: create_discoverer
+  read: describe_discoverer
+  update: 
+  delete: delete_discoverer
+registry:
+  create: create_registry
+  read: describe_registry
+  update: 
+  delete: delete_registry
+schema:
+  create: create_schema
+  read: describe_schema
+  update: 
+  delete: delete_schema

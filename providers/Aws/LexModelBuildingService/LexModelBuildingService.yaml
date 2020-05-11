@@ -371,6 +371,12 @@ methods:
         types:
         - String
         required: true
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   put_bot:
     parameters:
       name:
@@ -417,9 +423,17 @@ methods:
         types:
         - Boolean
         required: true
+      detect_sentiment:
+        types:
+        - Boolean
+        required: false
       create_version:
         types:
         - Boolean
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   put_bot_alias:
     parameters:
@@ -442,6 +456,14 @@ methods:
       checksum:
         types:
         - String
+        required: false
+      conversation_logs:
+        types:
+        - Types::ConversationLogsRequest
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   put_intent:
     parameters:
@@ -523,6 +545,14 @@ methods:
         types:
         - Boolean
         required: false
+      parent_slot_type_signature:
+        types:
+        - String
+        required: false
+      slot_type_configurations:
+        types:
+        - Array<Types::SlotTypeConfiguration>
+        required: false
   start_import:
     parameters:
       payload:
@@ -537,4 +567,28 @@ methods:
       merge_strategy:
         types:
         - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

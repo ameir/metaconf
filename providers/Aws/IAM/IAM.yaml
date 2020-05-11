@@ -477,6 +477,16 @@ methods:
         types:
         - String
         required: true
+  generate_organizations_access_report:
+    parameters:
+      entity_path:
+        types:
+        - String
+        required: true
+      organizations_policy_id:
+        types:
+        - String
+        required: false
   generate_service_last_accessed_details:
     parameters:
       arn:
@@ -561,6 +571,24 @@ methods:
         types:
         - String
         required: true
+  get_organizations_access_report:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      max_items:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      sort_key:
+        types:
+        - String
+        required: false
   get_policy:
     parameters:
       policy_arn:
@@ -1195,12 +1223,22 @@ methods:
         types:
         - String
         required: true
+  set_security_token_service_preferences:
+    parameters:
+      global_endpoint_token_version:
+        types:
+        - String
+        required: true
   simulate_custom_policy:
     parameters:
       policy_input_list:
         types:
         - Array<String>
         required: true
+      permissions_boundary_policy_input_list:
+        types:
+        - Array<String>
+        required: false
       action_names:
         types:
         - Array<String>
@@ -1244,6 +1282,10 @@ methods:
         - String
         required: true
       policy_input_list:
+        types:
+        - Array<String>
+        required: false
+      permissions_boundary_policy_input_list:
         types:
         - Array<String>
         required: false

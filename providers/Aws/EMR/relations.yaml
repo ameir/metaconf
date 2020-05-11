@@ -4,8 +4,23 @@ auto_scaling_policy:
   read: 
   update: 
   delete: 
+block_public_access_configuration:
+  create: put_block_public_access_configuration
+  read: 
+  update: 
+  delete: 
+managed_scaling_policy:
+  create: put_managed_scaling_policy
+  read: get_managed_scaling_policy
+  update: 
+  delete: 
 security_configuration:
   create: create_security_configuration
   read: describe_security_configuration
   update: 
   delete: delete_security_configuration
+job_flow:
+  create: run_job_flow
+  read: describe_job_flows
+  update: 
+  delete: terminate_job_flows

@@ -1,0 +1,11 @@
+---
+permission:
+  create: put_permission
+  read: 
+  update: 
+  delete: 
+profiling_group:
+  create: create_profiling_group
+  read: describe_profiling_group
+  update: 
+  delete: delete_profiling_group

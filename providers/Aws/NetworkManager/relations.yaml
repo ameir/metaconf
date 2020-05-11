@@ -1,0 +1,21 @@
+---
+device:
+  create: create_device
+  read: get_devices
+  update: 
+  delete: delete_device
+global_network:
+  create: create_global_network
+  read: describe_global_networks
+  update: 
+  delete: delete_global_network
+link:
+  create: create_link
+  read: get_links
+  update: 
+  delete: delete_link
+site:
+  create: create_site
+  read: get_sites
+  update: 
+  delete: delete_site

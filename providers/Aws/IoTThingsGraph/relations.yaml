@@ -1,0 +1,16 @@
+---
+flow_template:
+  create: create_flow_template
+  read: get_flow_template
+  update: 
+  delete: delete_flow_template
+system_instance:
+  create: create_system_instance
+  read: get_system_instance
+  update: 
+  delete: delete_system_instance
+system_template:
+  create: create_system_template
+  read: get_system_template
+  update: 
+  delete: delete_system_template

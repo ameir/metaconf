@@ -15,11 +15,43 @@ methods:
         types:
         - Float
         required: false
+      quality_filter:
+        types:
+        - String
+        required: false
   create_collection:
     parameters:
       collection_id:
         types:
         - String
+        required: true
+  create_project:
+    parameters:
+      project_name:
+        types:
+        - String
+        required: true
+  create_project_version:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      version_name:
+        types:
+        - String
+        required: true
+      output_config:
+        types:
+        - Types::OutputConfig
+        required: true
+      training_data:
+        types:
+        - Types::TrainingData
+        required: true
+      testing_data:
+        types:
+        - Types::TestingData
         required: true
   create_stream_processor:
     parameters:
@@ -59,6 +91,18 @@ methods:
         types:
         - Array<String>
         required: true
+  delete_project:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+  delete_project_version:
+    parameters:
+      project_version_arn:
+        types:
+        - String
+        required: true
   delete_stream_processor:
     parameters:
       name:
@@ -71,12 +115,58 @@ methods:
         types:
         - String
         required: true
+  describe_project_versions:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      version_names:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_projects:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   describe_stream_processor:
     parameters:
       name:
         types:
         - String
         required: true
+  detect_custom_labels:
+    parameters:
+      project_version_arn:
+        types:
+        - String
+        required: true
+      image:
+        types:
+        - Types::Image
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      min_confidence:
+        types:
+        - Float
+        required: false
   detect_faces:
     parameters:
       image:
@@ -111,12 +201,20 @@ methods:
         types:
         - Float
         required: false
+      human_loop_config:
+        types:
+        - Types::HumanLoopConfig
+        required: false
   detect_text:
     parameters:
       image:
         types:
         - Types::Image
         required: true
+      filters:
+        types:
+        - Types::DetectTextFilters
+        required: false
   get_celebrity_info:
     parameters:
       id:
@@ -227,6 +325,20 @@ methods:
         types:
         - String
         required: false
+  get_text_detection:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   index_faces:
     parameters:
       collection_id:
@@ -328,6 +440,10 @@ methods:
       face_match_threshold:
         types:
         - Float
+        required: false
+      quality_filter:
+        types:
+        - String
         required: false
   start_celebrity_recognition:
     parameters:
@@ -457,9 +573,47 @@ methods:
         types:
         - String
         required: false
+  start_project_version:
+    parameters:
+      project_version_arn:
+        types:
+        - String
+        required: true
+      min_inference_units:
+        types:
+        - Integer
+        required: true
   start_stream_processor:
     parameters:
       name:
+        types:
+        - String
+        required: true
+  start_text_detection:
+    parameters:
+      video:
+        types:
+        - Types::Video
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      notification_channel:
+        types:
+        - Types::NotificationChannel
+        required: false
+      job_tag:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Types::StartTextDetectionFilters
+        required: false
+  stop_project_version:
+    parameters:
+      project_version_arn:
         types:
         - String
         required: true
@@ -469,3 +623,21 @@ methods:
         types:
         - String
         required: true
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

@@ -14,6 +14,16 @@ attributes:
   read: 
   update: 
   delete: delete_attributes
+cluster_capacity_providers:
+  create: put_cluster_capacity_providers
+  read: 
+  update: 
+  delete: 
+capacity_provider:
+  create: create_capacity_provider
+  read: describe_capacity_providers
+  update: 
+  delete: 
 cluster:
   create: create_cluster
   read: describe_clusters
@@ -24,3 +34,13 @@ service:
   read: describe_services
   update: 
   delete: delete_service
+task_set:
+  create: create_task_set
+  read: describe_task_sets
+  update: 
+  delete: delete_task_set
+task:
+  create: run_task
+  read: describe_tasks
+  update: 
+  delete: 

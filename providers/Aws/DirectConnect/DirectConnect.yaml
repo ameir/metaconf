@@ -1,6 +1,24 @@
 ---
 class: Aws::DirectConnect::Client
 methods:
+  accept_direct_connect_gateway_association_proposal:
+    parameters:
+      direct_connect_gateway_id:
+        types:
+        - String
+        required: true
+      proposal_id:
+        types:
+        - String
+        required: true
+      associated_gateway_owner_account:
+        types:
+        - String
+        required: true
+      override_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
   allocate_connection_on_interconnect:
     parameters:
       bandwidth:
@@ -45,6 +63,10 @@ methods:
         types:
         - Integer
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   allocate_private_virtual_interface:
     parameters:
       connection_id:
@@ -72,6 +94,20 @@ methods:
       new_public_virtual_interface_allocation:
         types:
         - Types::NewPublicVirtualInterfaceAllocation
+        required: true
+  allocate_transit_virtual_interface:
+    parameters:
+      connection_id:
+        types:
+        - String
+        required: true
+      owner_account:
+        types:
+        - String
+        required: true
+      new_transit_virtual_interface_allocation:
+        types:
+        - Types::NewTransitVirtualInterfaceAllocation
         required: true
   associate_connection_with_lag:
     parameters:
@@ -129,6 +165,16 @@ methods:
         types:
         - String
         required: true
+  confirm_transit_virtual_interface:
+    parameters:
+      virtual_interface_id:
+        types:
+        - String
+        required: true
+      direct_connect_gateway_id:
+        types:
+        - String
+        required: true
   create_bgp_peer:
     parameters:
       virtual_interface_id:
@@ -157,6 +203,14 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      provider_name:
+        types:
+        - String
+        required: false
   create_direct_connect_gateway:
     parameters:
       direct_connect_gateway_name:
@@ -173,10 +227,40 @@ methods:
         types:
         - String
         required: true
+      gateway_id:
+        types:
+        - String
+        required: false
+      add_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
       virtual_gateway_id:
         types:
         - String
+        required: false
+  create_direct_connect_gateway_association_proposal:
+    parameters:
+      direct_connect_gateway_id:
+        types:
+        - String
         required: true
+      direct_connect_gateway_owner_account:
+        types:
+        - String
+        required: true
+      gateway_id:
+        types:
+        - String
+        required: true
+      add_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
+      remove_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
   create_interconnect:
     parameters:
       interconnect_name:
@@ -192,6 +276,14 @@ methods:
         - String
         required: true
       lag_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      provider_name:
         types:
         - String
         required: false
@@ -217,6 +309,18 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      child_connection_tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      provider_name:
+        types:
+        - String
+        required: false
   create_private_virtual_interface:
     parameters:
       connection_id:
@@ -236,6 +340,16 @@ methods:
       new_public_virtual_interface:
         types:
         - Types::NewPublicVirtualInterface
+        required: true
+  create_transit_virtual_interface:
+    parameters:
+      connection_id:
+        types:
+        - String
+        required: true
+      new_transit_virtual_interface:
+        types:
+        - Types::NewTransitVirtualInterface
         required: true
   delete_bgp_peer:
     parameters:
@@ -269,11 +383,21 @@ methods:
         required: true
   delete_direct_connect_gateway_association:
     parameters:
+      association_id:
+        types:
+        - String
+        required: false
       direct_connect_gateway_id:
         types:
         - String
-        required: true
+        required: false
       virtual_gateway_id:
+        types:
+        - String
+        required: false
+  delete_direct_connect_gateway_association_proposal:
+    parameters:
+      proposal_id:
         types:
         - String
         required: true
@@ -321,13 +445,17 @@ methods:
         types:
         - String
         required: true
-  describe_direct_connect_gateway_associations:
+  describe_direct_connect_gateway_association_proposals:
     parameters:
       direct_connect_gateway_id:
         types:
         - String
         required: false
-      virtual_gateway_id:
+      proposal_id:
+        types:
+        - String
+        required: false
+      associated_gateway_id:
         types:
         - String
         required: false
@@ -336,6 +464,32 @@ methods:
         - Integer
         required: false
       next_token:
+        types:
+        - String
+        required: false
+  describe_direct_connect_gateway_associations:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: false
+      associated_gateway_id:
+        types:
+        - String
+        required: false
+      direct_connect_gateway_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      virtual_gateway_id:
         types:
         - String
         required: false
@@ -463,6 +617,20 @@ methods:
         types:
         - Array<String>
         required: true
+  update_direct_connect_gateway_association:
+    parameters:
+      association_id:
+        types:
+        - String
+        required: false
+      add_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
+      remove_allowed_prefixes_to_direct_connect_gateway:
+        types:
+        - Array<Types::RouteFilterPrefix>
+        required: false
   update_lag:
     parameters:
       lag_id:

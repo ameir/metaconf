@@ -1,0 +1,39 @@
+---
+class: Aws::MigrationHubConfig::Client
+methods:
+  create_home_region_control:
+    parameters:
+      home_region:
+        types:
+        - String
+        required: true
+      target:
+        types:
+        - Types::Target
+        required: true
+      dry_run:
+        types:
+        - Boolean
+        required: false
+  describe_home_region_controls:
+    parameters:
+      control_id:
+        types:
+        - String
+        required: false
+      home_region:
+        types:
+        - String
+        required: false
+      target:
+        types:
+        - Types::Target
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false

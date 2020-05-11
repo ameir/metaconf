@@ -1,0 +1,106 @@
+---
+account_dedicated_ip_warmup_attributes:
+  create: put_account_dedicated_ip_warmup_attributes
+  read: 
+  update: 
+  delete: 
+account_sending_attributes:
+  create: put_account_sending_attributes
+  read: 
+  update: 
+  delete: 
+account_suppression_attributes:
+  create: put_account_suppression_attributes
+  read: 
+  update: 
+  delete: 
+configuration_set_delivery_options:
+  create: put_configuration_set_delivery_options
+  read: 
+  update: 
+  delete: 
+configuration_set_reputation_options:
+  create: put_configuration_set_reputation_options
+  read: 
+  update: 
+  delete: 
+configuration_set_sending_options:
+  create: put_configuration_set_sending_options
+  read: 
+  update: 
+  delete: 
+configuration_set_suppression_options:
+  create: put_configuration_set_suppression_options
+  read: 
+  update: 
+  delete: 
+configuration_set_tracking_options:
+  create: put_configuration_set_tracking_options
+  read: 
+  update: 
+  delete: 
+dedicated_ip_in_pool:
+  create: put_dedicated_ip_in_pool
+  read: 
+  update: 
+  delete: 
+dedicated_ip_warmup_attributes:
+  create: put_dedicated_ip_warmup_attributes
+  read: 
+  update: 
+  delete: 
+deliverability_dashboard_option:
+  create: put_deliverability_dashboard_option
+  read: 
+  update: 
+  delete: 
+email_identity_dkim_attributes:
+  create: put_email_identity_dkim_attributes
+  read: 
+  update: 
+  delete: 
+email_identity_dkim_signing_attributes:
+  create: put_email_identity_dkim_signing_attributes
+  read: 
+  update: 
+  delete: 
+email_identity_feedback_attributes:
+  create: put_email_identity_feedback_attributes
+  read: 
+  update: 
+  delete: 
+email_identity_mail_from_attributes:
+  create: put_email_identity_mail_from_attributes
+  read: 
+  update: 
+  delete: 
+suppressed_destination:
+  create: put_suppressed_destination
+  read: get_suppressed_destination
+  update: 
+  delete: delete_suppressed_destination
+configuration_set:
+  create: create_configuration_set
+  read: get_configuration_set
+  update: 
+  delete: delete_configuration_set
+configuration_set_event_destination:
+  create: create_configuration_set_event_destination
+  read: get_configuration_set_event_destinations
+  update: 
+  delete: delete_configuration_set_event_destination
+dedicated_ip_pool:
+  create: create_dedicated_ip_pool
+  read: 
+  update: 
+  delete: delete_dedicated_ip_pool
+deliverability_test_report:
+  create: create_deliverability_test_report
+  read: get_deliverability_test_report
+  update: 
+  delete: 
+email_identity:
+  create: create_email_identity
+  read: get_email_identity
+  update: 
+  delete: delete_email_identity

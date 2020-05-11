@@ -57,6 +57,10 @@ methods:
         types:
         - Boolean
         required: false
+      tags_list:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_trail:
     parameters:
       name:
@@ -76,6 +80,18 @@ methods:
   get_event_selectors:
     parameters:
       trail_name:
+        types:
+        - String
+        required: true
+  get_insight_selectors:
+    parameters:
+      trail_name:
+        types:
+        - String
+        required: true
+  get_trail:
+    parameters:
+      name:
         types:
         - String
         required: true
@@ -117,6 +133,12 @@ methods:
         types:
         - String
         required: false
+  list_trails:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
   lookup_events:
     parameters:
       lookup_attributes:
@@ -139,6 +161,10 @@ methods:
         - Integer
         - String
         required: false
+      event_category:
+        types:
+        - String
+        required: false
       max_results:
         types:
         - Integer
@@ -156,6 +182,16 @@ methods:
       event_selectors:
         types:
         - Array<Types::EventSelector>
+        required: true
+  put_insight_selectors:
+    parameters:
+      trail_name:
+        types:
+        - String
+        required: true
+      insight_selectors:
+        types:
+        - Array<Types::InsightSelector>
         required: true
   remove_tags:
     parameters:

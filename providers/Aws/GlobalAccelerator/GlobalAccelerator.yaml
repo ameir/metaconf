@@ -1,6 +1,12 @@
 ---
 class: Aws::GlobalAccelerator::Client
 methods:
+  advertise_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
   create_accelerator:
     parameters:
       name:
@@ -11,6 +17,10 @@ methods:
         types:
         - String
         required: false
+      ip_addresses:
+        types:
+        - Array<String>
+        required: false
       enabled:
         types:
         - Boolean
@@ -19,6 +29,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_endpoint_group:
     parameters:
       listener_arn:
@@ -101,6 +115,12 @@ methods:
         types:
         - String
         required: true
+  deprovision_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
   describe_accelerator:
     parameters:
       accelerator_arn:
@@ -112,7 +132,7 @@ methods:
       accelerator_arn:
         types:
         - String
-        required: false
+        required: true
   describe_endpoint_group:
     parameters:
       endpoint_group_arn:
@@ -126,6 +146,16 @@ methods:
         - String
         required: true
   list_accelerators:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_byoip_cidrs:
     parameters:
       max_results:
         types:
@@ -163,6 +193,42 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  provision_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true
+      cidr_authorization_context:
+        types:
+        - Types::CidrAuthorizationContext
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_accelerator:
     parameters:
       accelerator_arn:
@@ -186,7 +252,7 @@ methods:
       accelerator_arn:
         types:
         - String
-        required: false
+        required: true
       flow_logs_enabled:
         types:
         - Boolean
@@ -251,3 +317,9 @@ methods:
         types:
         - String
         required: false
+  withdraw_byoip_cidr:
+    parameters:
+      cidr:
+        types:
+        - String
+        required: true

@@ -1,0 +1,41 @@
+---
+detector:
+  create: put_detector
+  read: describe_detector
+  update: 
+  delete: delete_detector
+external_model:
+  create: put_external_model
+  read: get_external_models
+  update: 
+  delete: 
+model:
+  create: put_model
+  read: get_models
+  update: 
+  delete: 
+outcome:
+  create: put_outcome
+  read: get_outcomes
+  update: 
+  delete: 
+detector_version:
+  create: create_detector_version
+  read: get_detector_version
+  update: 
+  delete: delete_detector_version
+model_version:
+  create: create_model_version
+  read: describe_model_versions
+  update: 
+  delete: 
+rule:
+  create: create_rule
+  read: get_rules
+  update: 
+  delete: 
+variable:
+  create: create_variable
+  read: get_variables
+  update: 
+  delete: 

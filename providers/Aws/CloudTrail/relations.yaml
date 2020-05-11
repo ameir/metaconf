@@ -4,6 +4,11 @@ event_selectors:
   read: get_event_selectors
   update: 
   delete: 
+insight_selectors:
+  create: put_insight_selectors
+  read: get_insight_selectors
+  update: 
+  delete: 
 trail:
   create: create_trail
   read: describe_trails

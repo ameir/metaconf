@@ -14,6 +14,11 @@ lifecycle_policy:
   read: get_lifecycle_policy
   update: 
   delete: delete_lifecycle_policy
+metric_policy:
+  create: put_metric_policy
+  read: get_metric_policy
+  update: 
+  delete: delete_metric_policy
 container:
   create: create_container
   read: describe_container

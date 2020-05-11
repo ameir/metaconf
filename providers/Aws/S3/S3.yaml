@@ -167,6 +167,10 @@ methods:
         types:
         - String
         required: false
+      ssekms_encryption_context:
+        types:
+        - String
+        required: false
       copy_source_sse_customer_algorithm:
         types:
         - String
@@ -328,6 +332,10 @@ methods:
         - String
         required: false
       ssekms_key_id:
+        types:
+        - String
+        required: false
+      ssekms_encryption_context:
         types:
         - String
         required: false
@@ -1291,6 +1299,10 @@ methods:
         types:
         - Types::ReplicationConfiguration
         required: true
+      token:
+        types:
+        - String
+        required: false
   put_bucket_request_payment:
     parameters:
       bucket:
@@ -1451,6 +1463,10 @@ methods:
         - String
         required: false
       ssekms_key_id:
+        types:
+        - String
+        required: false
+      ssekms_encryption_context:
         types:
         - String
         required: false
@@ -1706,6 +1722,10 @@ methods:
         types:
         - Types::OutputSerialization
         required: true
+      scan_range:
+        types:
+        - Types::ScanRange
+        required: false
   upload_part:
     parameters:
       body:

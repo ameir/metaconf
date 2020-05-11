@@ -11,6 +11,10 @@ methods:
         types:
         - String
         required: true
+      feature_name:
+        types:
+        - String
+        required: false
   add_role_to_db_instance:
     parameters:
       db_instance_identifier:
@@ -103,6 +107,12 @@ methods:
         types:
         - Boolean
         required: false
+  cancel_export_task:
+    parameters:
+      export_task_identifier:
+        types:
+        - String
+        required: true
   copy_db_cluster_parameter_group:
     parameters:
       source_db_cluster_parameter_group_identifier:
@@ -221,6 +231,24 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  create_custom_availability_zone:
+    parameters:
+      custom_availability_zone_name:
+        types:
+        - String
+        required: true
+      existing_vpn_id:
+        types:
+        - String
+        required: false
+      new_vpn_tunnel_name:
+        types:
+        - String
+        required: false
+      vpn_tunnel_originator_ip:
+        types:
+        - String
+        required: false
   create_db_cluster:
     parameters:
       availability_zones:
@@ -335,6 +363,22 @@ methods:
         types:
         - String
         required: false
+      enable_http_endpoint:
+        types:
+        - Boolean
+        required: false
+      copy_tags_to_snapshot:
+        types:
+        - Boolean
+        required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
+        required: false
       source_region:
         types:
         - String
@@ -360,6 +404,10 @@ methods:
       excluded_members:
         types:
         - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_db_cluster_parameter_group:
     parameters:
@@ -575,6 +623,10 @@ methods:
         types:
         - Boolean
         required: false
+      max_allocated_storage:
+        types:
+        - Integer
+        required: false
   create_db_instance_read_replica:
     parameters:
       db_instance_identifier:
@@ -610,6 +662,10 @@ methods:
         - Integer
         required: false
       option_group_name:
+        types:
+        - String
+        required: false
+      db_parameter_group_name:
         types:
         - String
         required: false
@@ -685,6 +741,14 @@ methods:
         types:
         - Boolean
         required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
+        required: false
       source_region:
         types:
         - String
@@ -703,6 +767,48 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_db_proxy:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      engine_family:
+        types:
+        - String
+        required: true
+      auth:
+        types:
+        - Array<Types::UserAuthConfig>
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+      vpc_subnet_ids:
+        types:
+        - Array<String>
+        required: true
+      vpc_security_group_ids:
+        types:
+        - Array<String>
+        required: false
+      require_tls:
+        types:
+        - Boolean
+        required: false
+      idle_client_timeout:
+        types:
+        - Integer
+        required: false
+      debug_logging:
+        types:
+        - Boolean
+        required: false
       tags:
         types:
         - Array<Types::Tag>
@@ -835,6 +941,12 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  delete_custom_availability_zone:
+    parameters:
+      custom_availability_zone_id:
+        types:
+        - String
+        required: true
   delete_db_cluster:
     parameters:
       db_cluster_identifier:
@@ -897,6 +1009,12 @@ methods:
         types:
         - String
         required: true
+  delete_db_proxy:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
   delete_db_security_group:
     parameters:
       db_security_group_name:
@@ -927,15 +1045,57 @@ methods:
         types:
         - String
         required: true
+  delete_installation_media:
+    parameters:
+      installation_media_id:
+        types:
+        - String
+        required: true
   delete_option_group:
     parameters:
       option_group_name:
         types:
         - String
         required: true
+  deregister_db_proxy_targets:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      target_group_name:
+        types:
+        - String
+        required: false
+      db_instance_identifiers:
+        types:
+        - Array<String>
+        required: false
+      db_cluster_identifiers:
+        types:
+        - Array<String>
+        required: false
   describe_certificates:
     parameters:
       certificate_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_custom_availability_zones:
+    parameters:
+      custom_availability_zone_id:
         types:
         - String
         required: false
@@ -1093,6 +1253,10 @@ methods:
         types:
         - String
         required: false
+      include_shared:
+        types:
+        - Boolean
+        required: false
   describe_db_engine_versions:
     parameters:
       engine:
@@ -1128,6 +1292,10 @@ methods:
         - Boolean
         required: false
       list_supported_timezones:
+        types:
+        - Boolean
+        required: false
+      include_all:
         types:
         - Boolean
         required: false
@@ -1240,6 +1408,68 @@ methods:
       marker:
         types:
         - String
+        required: false
+  describe_db_proxies:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+  describe_db_proxy_target_groups:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      target_group_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+  describe_db_proxy_targets:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      target_group_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
         required: false
   describe_db_security_groups:
     parameters:
@@ -1431,9 +1661,49 @@ methods:
         types:
         - String
         required: false
+  describe_export_tasks:
+    parameters:
+      export_task_identifier:
+        types:
+        - String
+        required: false
+      source_arn:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
   describe_global_clusters:
     parameters:
       global_cluster_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  describe_installation_media:
+    parameters:
+      installation_media_id:
         types:
         - String
         required: false
@@ -1515,6 +1785,10 @@ methods:
         types:
         - String
         required: false
+      availability_zone_group:
+        types:
+        - String
+        required: false
       vpc:
         types:
         - Boolean
@@ -1578,6 +1852,10 @@ methods:
       multi_az:
         types:
         - Boolean
+        required: false
+      lease_id:
+        types:
+        - String
         required: false
       filters:
         types:
@@ -1681,6 +1959,28 @@ methods:
         types:
         - String
         required: false
+  import_installation_media:
+    parameters:
+      custom_availability_zone_id:
+        types:
+        - String
+        required: true
+      engine:
+        types:
+        - String
+        required: true
+      engine_version:
+        types:
+        - String
+        required: true
+      engine_installation_media_path:
+        types:
+        - String
+        required: true
+      os_installation_media_path:
+        types:
+        - String
+        required: true
   list_tags_for_resource:
     parameters:
       resource_name:
@@ -1690,6 +1990,16 @@ methods:
       filters:
         types:
         - Array<Types::Filter>
+        required: false
+  modify_certificates:
+    parameters:
+      certificate_identifier:
+        types:
+        - String
+        required: false
+      remove_customer_override:
+        types:
+        - Boolean
         required: false
   modify_current_db_cluster_capacity:
     parameters:
@@ -1771,6 +2081,22 @@ methods:
         types:
         - String
         required: false
+      allow_major_version_upgrade:
+        types:
+        - Boolean
+        required: false
+      db_instance_parameter_group_name:
+        types:
+        - String
+        required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
+        required: false
       scaling_configuration:
         types:
         - Types::ScalingConfiguration
@@ -1780,6 +2106,10 @@ methods:
         - Boolean
         required: false
       enable_http_endpoint:
+        types:
+        - Boolean
+        required: false
+      copy_tags_to_snapshot:
         types:
         - Boolean
         required: false
@@ -1991,6 +2321,14 @@ methods:
         types:
         - Boolean
         required: false
+      max_allocated_storage:
+        types:
+        - Integer
+        required: false
+      certificate_rotation_restart:
+        types:
+        - Boolean
+        required: false
   modify_db_parameter_group:
     parameters:
       db_parameter_group_name:
@@ -2001,6 +2339,58 @@ methods:
         types:
         - Array<Types::Parameter>
         required: true
+  modify_db_proxy:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      new_db_proxy_name:
+        types:
+        - String
+        required: false
+      auth:
+        types:
+        - Array<Types::UserAuthConfig>
+        required: false
+      require_tls:
+        types:
+        - Boolean
+        required: false
+      idle_client_timeout:
+        types:
+        - Integer
+        required: false
+      debug_logging:
+        types:
+        - Boolean
+        required: false
+      role_arn:
+        types:
+        - String
+        required: false
+      security_groups:
+        types:
+        - Array<String>
+        required: false
+  modify_db_proxy_target_group:
+    parameters:
+      target_group_name:
+        types:
+        - String
+        required: true
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      connection_pool_config:
+        types:
+        - Types::ConnectionPoolConfiguration
+        required: false
+      new_name:
+        types:
+        - String
+        required: false
   modify_db_snapshot:
     parameters:
       db_snapshot_identifier:
@@ -2149,6 +2539,24 @@ methods:
         types:
         - Boolean
         required: false
+  register_db_proxy_targets:
+    parameters:
+      db_proxy_name:
+        types:
+        - String
+        required: true
+      target_group_name:
+        types:
+        - String
+        required: false
+      db_instance_identifiers:
+        types:
+        - Array<String>
+        required: false
+      db_cluster_identifiers:
+        types:
+        - Array<String>
+        required: false
   remove_from_global_cluster:
     parameters:
       global_cluster_identifier:
@@ -2169,6 +2577,10 @@ methods:
         types:
         - String
         required: true
+      feature_name:
+        types:
+        - String
+        required: false
   remove_role_from_db_instance:
     parameters:
       db_instance_identifier:
@@ -2345,6 +2757,18 @@ methods:
         types:
         - Boolean
         required: false
+      copy_tags_to_snapshot:
+        types:
+        - Boolean
+        required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
+        required: false
   restore_db_cluster_from_snapshot:
     parameters:
       availability_zones:
@@ -2423,6 +2847,18 @@ methods:
         types:
         - Boolean
         required: false
+      copy_tags_to_snapshot:
+        types:
+        - Boolean
+        required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
+        required: false
   restore_db_cluster_to_point_in_time:
     parameters:
       db_cluster_identifier:
@@ -2492,6 +2928,18 @@ methods:
       deletion_protection:
         types:
         - Boolean
+        required: false
+      copy_tags_to_snapshot:
+        types:
+        - Boolean
+        required: false
+      domain:
+        types:
+        - String
+        required: false
+      domain_iam_role_name:
+        types:
+        - String
         required: false
   restore_db_instance_from_db_snapshot:
     parameters:
@@ -2933,6 +3381,24 @@ methods:
         types:
         - String
         required: false
+  start_activity_stream:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      mode:
+        types:
+        - String
+        required: true
+      kms_key_id:
+        types:
+        - String
+        required: true
+      apply_immediately:
+        types:
+        - Boolean
+        required: false
   start_db_cluster:
     parameters:
       db_cluster_identifier:
@@ -2945,6 +3411,46 @@ methods:
         types:
         - String
         required: true
+  start_export_task:
+    parameters:
+      export_task_identifier:
+        types:
+        - String
+        required: true
+      source_arn:
+        types:
+        - String
+        required: true
+      s3_bucket_name:
+        types:
+        - String
+        required: true
+      iam_role_arn:
+        types:
+        - String
+        required: true
+      kms_key_id:
+        types:
+        - String
+        required: true
+      s3_prefix:
+        types:
+        - String
+        required: false
+      export_only:
+        types:
+        - Array<String>
+        required: false
+  stop_activity_stream:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      apply_immediately:
+        types:
+        - Boolean
+        required: false
   stop_db_cluster:
     parameters:
       db_cluster_identifier:

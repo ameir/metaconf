@@ -1,0 +1,401 @@
+---
+class: Aws::IoTThingsGraph::Client
+methods:
+  associate_entity_to_thing:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+      entity_id:
+        types:
+        - String
+        required: true
+      namespace_version:
+        types:
+        - Integer
+        required: false
+  create_flow_template:
+    parameters:
+      definition:
+        types:
+        - Types::DefinitionDocument
+        required: true
+      compatible_namespace_version:
+        types:
+        - Integer
+        required: false
+  create_system_instance:
+    parameters:
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      definition:
+        types:
+        - Types::DefinitionDocument
+        required: true
+      target:
+        types:
+        - String
+        required: true
+      greengrass_group_name:
+        types:
+        - String
+        required: false
+      s3_bucket_name:
+        types:
+        - String
+        required: false
+      metrics_configuration:
+        types:
+        - Types::MetricsConfiguration
+        required: false
+      flow_actions_role_arn:
+        types:
+        - String
+        required: false
+  create_system_template:
+    parameters:
+      definition:
+        types:
+        - Types::DefinitionDocument
+        required: true
+      compatible_namespace_version:
+        types:
+        - Integer
+        required: false
+  delete_flow_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  delete_system_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: false
+  delete_system_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  deploy_system_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: false
+  deprecate_flow_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  deprecate_system_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_namespace:
+    parameters:
+      namespace_name:
+        types:
+        - String
+        required: false
+  dissociate_entity_from_thing:
+    parameters:
+      thing_name:
+        types:
+        - String
+        required: true
+      entity_type:
+        types:
+        - String
+        required: true
+  get_entities:
+    parameters:
+      ids:
+        types:
+        - Array<String>
+        required: true
+      namespace_version:
+        types:
+        - Integer
+        required: false
+  get_flow_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      revision_number:
+        types:
+        - Integer
+        required: false
+  get_flow_template_revisions:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_system_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  get_system_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      revision_number:
+        types:
+        - Integer
+        required: false
+  get_system_template_revisions:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_upload_status:
+    parameters:
+      upload_id:
+        types:
+        - String
+        required: true
+  list_flow_execution_messages:
+    parameters:
+      flow_execution_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+  search_entities:
+    parameters:
+      entity_types:
+        types:
+        - Array<String>
+        required: true
+      filters:
+        types:
+        - Array<Types::EntityFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace_version:
+        types:
+        - Integer
+        required: false
+  search_flow_executions:
+    parameters:
+      system_instance_id:
+        types:
+        - String
+        required: true
+      flow_execution_id:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  search_flow_templates:
+    parameters:
+      filters:
+        types:
+        - Array<Types::FlowTemplateFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  search_system_instances:
+    parameters:
+      filters:
+        types:
+        - Array<Types::SystemInstanceFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  search_system_templates:
+    parameters:
+      filters:
+        types:
+        - Array<Types::SystemTemplateFilter>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  search_things:
+    parameters:
+      entity_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      namespace_version:
+        types:
+        - Integer
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  undeploy_system_instance:
+    parameters:
+      id:
+        types:
+        - String
+        required: false
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_flow_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      definition:
+        types:
+        - Types::DefinitionDocument
+        required: true
+      compatible_namespace_version:
+        types:
+        - Integer
+        required: false
+  update_system_template:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      definition:
+        types:
+        - Types::DefinitionDocument
+        required: true
+      compatible_namespace_version:
+        types:
+        - Integer
+        required: false
+  upload_entity_definitions:
+    parameters:
+      document:
+        types:
+        - Types::DefinitionDocument
+        required: false
+      sync_with_public_namespace:
+        types:
+        - Boolean
+        required: false
+      deprecate_existing_entities:
+        types:
+        - Boolean
+        required: false

@@ -1,0 +1,6 @@
+---
+token:
+  create: create_token
+  read: 
+  update: 
+  delete: 

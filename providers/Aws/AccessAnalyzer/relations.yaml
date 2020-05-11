@@ -1,0 +1,11 @@
+---
+analyzer:
+  create: create_analyzer
+  read: get_analyzer
+  update: 
+  delete: delete_analyzer
+archive_rule:
+  create: create_archive_rule
+  read: get_archive_rule
+  update: 
+  delete: delete_archive_rule

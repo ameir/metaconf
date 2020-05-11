@@ -19,6 +19,11 @@ direct_connect_gateway_association:
   read: describe_direct_connect_gateway_associations
   update: 
   delete: delete_direct_connect_gateway_association
+direct_connect_gateway_association_proposal:
+  create: create_direct_connect_gateway_association_proposal
+  read: describe_direct_connect_gateway_association_proposals
+  update: 
+  delete: delete_direct_connect_gateway_association_proposal
 interconnect:
   create: create_interconnect
   read: describe_interconnects
@@ -36,6 +41,11 @@ private_virtual_interface:
   delete: 
 public_virtual_interface:
   create: create_public_virtual_interface
+  read: 
+  update: 
+  delete: 
+transit_virtual_interface:
+  create: create_transit_virtual_interface
   read: 
   update: 
   delete: 

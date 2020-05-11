@@ -21,12 +21,24 @@ methods:
         types:
         - Array<Types::TagListEntry>
         required: false
+      vpc_endpoint_id:
+        types:
+        - String
+        required: false
+      subnet_arns:
+        types:
+        - Array<String>
+        required: false
+      security_group_arns:
+        types:
+        - Array<String>
+        required: false
   create_location_efs:
     parameters:
       subdirectory:
         types:
         - String
-        required: true
+        required: false
       efs_filesystem_arn:
         types:
         - String
@@ -39,6 +51,36 @@ methods:
         types:
         - Array<Types::TagListEntry>
         required: false
+  create_location_fsx_windows:
+    parameters:
+      subdirectory:
+        types:
+        - String
+        required: false
+      fsx_filesystem_arn:
+        types:
+        - String
+        required: true
+      security_group_arns:
+        types:
+        - Array<String>
+        required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+      user:
+        types:
+        - String
+        required: true
+      domain:
+        types:
+        - String
+        required: false
+      password:
+        types:
+        - String
+        required: true
   create_location_nfs:
     parameters:
       subdirectory:
@@ -53,6 +95,10 @@ methods:
         types:
         - Types::OnPremConfig
         required: true
+      mount_options:
+        types:
+        - Types::NfsMountOptions
+        required: false
       tags:
         types:
         - Array<Types::TagListEntry>
@@ -62,15 +108,53 @@ methods:
       subdirectory:
         types:
         - String
-        required: true
+        required: false
       s3_bucket_arn:
         types:
         - String
         required: true
+      s3_storage_class:
+        types:
+        - String
+        required: false
       s3_config:
         types:
         - Types::S3Config
         required: true
+      tags:
+        types:
+        - Array<Types::TagListEntry>
+        required: false
+  create_location_smb:
+    parameters:
+      subdirectory:
+        types:
+        - String
+        required: true
+      server_hostname:
+        types:
+        - String
+        required: true
+      user:
+        types:
+        - String
+        required: true
+      domain:
+        types:
+        - String
+        required: false
+      password:
+        types:
+        - String
+        required: true
+      agent_arns:
+        types:
+        - Array<String>
+        required: true
+      mount_options:
+        types:
+        - Types::SmbMountOptions
+        required: false
       tags:
         types:
         - Array<Types::TagListEntry>
@@ -96,6 +180,14 @@ methods:
       options:
         types:
         - Types::Options
+        required: false
+      excludes:
+        types:
+        - Array<Types::FilterRule>
+        required: false
+      schedule:
+        types:
+        - Types::TaskSchedule
         required: false
       tags:
         types:
@@ -131,6 +223,12 @@ methods:
         types:
         - String
         required: true
+  describe_location_fsx_windows:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
   describe_location_nfs:
     parameters:
       location_arn:
@@ -138,6 +236,12 @@ methods:
         - String
         required: true
   describe_location_s3:
+    parameters:
+      location_arn:
+        types:
+        - String
+        required: true
+  describe_location_smb:
     parameters:
       location_arn:
         types:
@@ -223,6 +327,10 @@ methods:
         types:
         - Types::Options
         required: false
+      includes:
+        types:
+        - Array<Types::FilterRule>
+        required: false
   tag_resource:
     parameters:
       resource_arn:
@@ -263,7 +371,19 @@ methods:
         types:
         - Types::Options
         required: false
+      excludes:
+        types:
+        - Array<Types::FilterRule>
+        required: false
+      schedule:
+        types:
+        - Types::TaskSchedule
+        required: false
       name:
+        types:
+        - String
+        required: false
+      cloud_watch_log_group_arn:
         types:
         - String
         required: false

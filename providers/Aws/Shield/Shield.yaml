@@ -13,6 +13,16 @@ methods:
         types:
         - String
         required: true
+  associate_health_check:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: true
+      health_check_arn:
+        types:
+        - String
+        required: true
   create_protection:
     parameters:
       name:
@@ -48,6 +58,16 @@ methods:
   disassociate_drt_log_bucket:
     parameters:
       log_bucket:
+        types:
+        - String
+        required: true
+  disassociate_health_check:
+    parameters:
+      protection_id:
+        types:
+        - String
+        required: true
+      health_check_arn:
         types:
         - String
         required: true

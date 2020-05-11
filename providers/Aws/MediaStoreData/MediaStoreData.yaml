@@ -60,3 +60,7 @@ methods:
         types:
         - String
         required: false
+      upload_availability:
+        types:
+        - String
+        required: false

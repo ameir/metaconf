@@ -101,6 +101,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_application:
     parameters:
       application_name:
@@ -209,6 +213,12 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   start_application:
     parameters:
       application_name:
@@ -224,6 +234,26 @@ methods:
       application_name:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_application:
     parameters:

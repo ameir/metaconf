@@ -17,6 +17,16 @@ methods:
         types:
         - String
         required: false
+  modify_report_definition:
+    parameters:
+      report_name:
+        types:
+        - String
+        required: true
+      report_definition:
+        types:
+        - Types::ReportDefinition
+        required: true
   put_report_definition:
     parameters:
       report_definition:

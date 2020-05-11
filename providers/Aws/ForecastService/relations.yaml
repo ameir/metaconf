@@ -1,0 +1,31 @@
+---
+dataset:
+  create: create_dataset
+  read: describe_dataset
+  update: 
+  delete: delete_dataset
+dataset_group:
+  create: create_dataset_group
+  read: describe_dataset_group
+  update: 
+  delete: delete_dataset_group
+dataset_import_job:
+  create: create_dataset_import_job
+  read: describe_dataset_import_job
+  update: 
+  delete: delete_dataset_import_job
+forecast:
+  create: create_forecast
+  read: describe_forecast
+  update: 
+  delete: delete_forecast
+forecast_export_job:
+  create: create_forecast_export_job
+  read: describe_forecast_export_job
+  update: 
+  delete: delete_forecast_export_job
+predictor:
+  create: create_predictor
+  read: describe_predictor
+  update: 
+  delete: delete_predictor

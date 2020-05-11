@@ -15,6 +15,16 @@ methods:
         types:
         - String
         required: false
+  associate_budget_with_resource:
+    parameters:
+      budget_name:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
   associate_principal_with_portfolio:
     parameters:
       accept_language:
@@ -603,9 +613,33 @@ methods:
         types:
         - String
         required: false
+  describe_service_action_execution_parameters:
+    parameters:
+      provisioned_product_id:
+        types:
+        - String
+        required: true
+      service_action_id:
+        types:
+        - String
+        required: true
+      accept_language:
+        types:
+        - String
+        required: false
   describe_tag_option:
     parameters:
       id:
+        types:
+        - String
+        required: true
+  disassociate_budget_from_resource:
+    parameters:
+      budget_name:
+        types:
+        - String
+        required: true
+      resource_id:
         types:
         - String
         required: true
@@ -697,6 +731,10 @@ methods:
         types:
         - String
         required: false
+      parameters:
+        types:
+        - Hash<String,Array>
+        required: false
   list_accepted_portfolio_shares:
     parameters:
       accept_language:
@@ -712,6 +750,24 @@ methods:
         - Integer
         required: false
       portfolio_share_type:
+        types:
+        - String
+        required: false
+  list_budgets_for_resource:
+    parameters:
+      accept_language:
+        types:
+        - String
+        required: false
+      resource_id:
+        types:
+        - String
+        required: true
+      page_size:
+        types:
+        - Integer
+        required: false
+      page_token:
         types:
         - String
         required: false
@@ -787,6 +843,18 @@ methods:
         types:
         - String
         required: true
+      organization_parent_id:
+        types:
+        - String
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
   list_portfolios:
     parameters:
       accept_language:
@@ -962,6 +1030,24 @@ methods:
       accept_language:
         types:
         - String
+        required: false
+  list_stack_instances_for_provisioned_product:
+    parameters:
+      accept_language:
+        types:
+        - String
+        required: false
+      provisioned_product_id:
+        types:
+        - String
+        required: true
+      page_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
         required: false
   list_tag_options:
     parameters:
@@ -1177,6 +1263,10 @@ methods:
         types:
         - String
         required: false
+      parameters:
+        types:
+        - String
+        required: false
   update_portfolio:
     parameters:
       accept_language:
@@ -1287,7 +1377,29 @@ methods:
         types:
         - Types::UpdateProvisioningPreferences
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
       update_token:
+        types:
+        - String
+        required: true
+  update_provisioned_product_properties:
+    parameters:
+      accept_language:
+        types:
+        - String
+        required: false
+      provisioned_product_id:
+        types:
+        - String
+        required: true
+      provisioned_product_properties:
+        types:
+        - Hash<String,String>
+        required: true
+      idempotency_token:
         types:
         - String
         required: true
@@ -1316,6 +1428,10 @@ methods:
       active:
         types:
         - Boolean
+        required: false
+      guidance:
+        types:
+        - String
         required: false
   update_service_action:
     parameters:

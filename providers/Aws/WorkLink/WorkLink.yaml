@@ -1,6 +1,38 @@
 ---
 class: Aws::WorkLink::Client
 methods:
+  associate_domain:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+      display_name:
+        types:
+        - String
+        required: false
+      acm_certificate_arn:
+        types:
+        - String
+        required: true
+  associate_website_authorization_provider:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      authorization_provider_type:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: false
   associate_website_certificate_authority:
     parameters:
       fleet_arn:
@@ -63,6 +95,16 @@ methods:
         types:
         - String
         required: true
+  describe_domain:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
   describe_fleet_metadata:
     parameters:
       fleet_arn:
@@ -82,6 +124,26 @@ methods:
         - String
         required: true
       website_ca_id:
+        types:
+        - String
+        required: true
+  disassociate_domain:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+  disassociate_website_authorization_provider:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      authorization_provider_id:
         types:
         - String
         required: true
@@ -109,8 +171,36 @@ methods:
         types:
         - Integer
         required: false
+  list_domains:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_fleets:
     parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_website_authorization_providers:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
       next_token:
         types:
         - String
@@ -133,6 +223,26 @@ methods:
         types:
         - String
         required: false
+  restore_domain_access:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+  revoke_domain_access:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
   sign_out_user:
     parameters:
       fleet_arn:
@@ -178,6 +288,20 @@ methods:
         - String
         required: true
       device_ca_certificate:
+        types:
+        - String
+        required: false
+  update_domain_metadata:
+    parameters:
+      fleet_arn:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
+      display_name:
         types:
         - String
         required: false

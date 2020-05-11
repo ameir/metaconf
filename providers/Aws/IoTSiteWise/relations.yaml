@@ -1,0 +1,41 @@
+---
+logging_options:
+  create: put_logging_options
+  read: 
+  update: 
+  delete: 
+access_policy:
+  create: create_access_policy
+  read: describe_access_policy
+  update: 
+  delete: delete_access_policy
+asset:
+  create: create_asset
+  read: describe_asset
+  update: 
+  delete: delete_asset
+asset_model:
+  create: create_asset_model
+  read: describe_asset_model
+  update: 
+  delete: delete_asset_model
+dashboard:
+  create: create_dashboard
+  read: describe_dashboard
+  update: 
+  delete: delete_dashboard
+gateway:
+  create: create_gateway
+  read: describe_gateway
+  update: 
+  delete: delete_gateway
+portal:
+  create: create_portal
+  read: describe_portal
+  update: 
+  delete: delete_portal
+project:
+  create: create_project
+  read: describe_project
+  update: 
+  delete: delete_project

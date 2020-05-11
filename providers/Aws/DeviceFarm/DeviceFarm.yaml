@@ -155,6 +155,26 @@ methods:
         types:
         - Boolean
         required: false
+  create_test_grid_project:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+  create_test_grid_url:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      expires_in_seconds:
+        types:
+        - Integer
+        required: true
   create_upload:
     parameters:
       project_arn:
@@ -224,6 +244,12 @@ methods:
   delete_run:
     parameters:
       arn:
+        types:
+        - String
+        required: true
+  delete_test_grid_project:
+    parameters:
+      project_arn:
         types:
         - String
         required: true
@@ -333,6 +359,26 @@ methods:
         types:
         - String
         required: true
+  get_test_grid_project:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+  get_test_grid_session:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: false
+      session_id:
+        types:
+        - String
+        required: false
+      session_arn:
+        types:
+        - String
+        required: false
   get_upload:
     parameters:
       arn:
@@ -509,6 +555,104 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_test_grid_projects:
+    parameters:
+      max_result:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_test_grid_session_actions:
+    parameters:
+      session_arn:
+        types:
+        - String
+        required: true
+      max_result:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_test_grid_session_artifacts:
+    parameters:
+      session_arn:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+      max_result:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_test_grid_sessions:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      status:
+        types:
+        - String
+        required: false
+      creation_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      creation_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time_after:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time_before:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_result:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   list_tests:
     parameters:
       arn:
@@ -628,6 +772,26 @@ methods:
       arn:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_device_instance:
     parameters:
@@ -758,6 +922,20 @@ methods:
       default_job_timeout_minutes:
         types:
         - Integer
+        required: false
+  update_test_grid_project:
+    parameters:
+      project_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
         required: false
   update_upload:
     parameters:

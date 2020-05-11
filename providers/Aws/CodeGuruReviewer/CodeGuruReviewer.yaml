@@ -1,0 +1,147 @@
+---
+class: Aws::CodeGuruReviewer::Client
+methods:
+  associate_repository:
+    parameters:
+      repository:
+        types:
+        - Types::Repository
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+  describe_code_review:
+    parameters:
+      code_review_arn:
+        types:
+        - String
+        required: true
+  describe_recommendation_feedback:
+    parameters:
+      code_review_arn:
+        types:
+        - String
+        required: true
+      recommendation_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: false
+  describe_repository_association:
+    parameters:
+      association_arn:
+        types:
+        - String
+        required: true
+  disassociate_repository:
+    parameters:
+      association_arn:
+        types:
+        - String
+        required: true
+  list_code_reviews:
+    parameters:
+      provider_types:
+        types:
+        - Array<String>
+        required: false
+      states:
+        types:
+        - Array<String>
+        required: false
+      repository_names:
+        types:
+        - Array<String>
+        required: false
+      type:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_recommendation_feedback:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      code_review_arn:
+        types:
+        - String
+        required: true
+      user_ids:
+        types:
+        - Array<String>
+        required: false
+      recommendation_ids:
+        types:
+        - Array<String>
+        required: false
+  list_recommendations:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      code_review_arn:
+        types:
+        - String
+        required: true
+  list_repository_associations:
+    parameters:
+      provider_types:
+        types:
+        - Array<String>
+        required: false
+      states:
+        types:
+        - Array<String>
+        required: false
+      names:
+        types:
+        - Array<String>
+        required: false
+      owners:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  put_recommendation_feedback:
+    parameters:
+      code_review_arn:
+        types:
+        - String
+        required: true
+      recommendation_id:
+        types:
+        - String
+        required: true
+      reactions:
+        types:
+        - Array<String>
+        required: true

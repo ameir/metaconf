@@ -47,6 +47,16 @@ methods:
         types:
         - String
         required: true
+  classify_document:
+    parameters:
+      text:
+        types:
+        - String
+        required: true
+      endpoint_arn:
+        types:
+        - String
+        required: true
   create_document_classifier:
     parameters:
       document_classifier_name:
@@ -57,10 +67,18 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
       input_data_config:
         types:
         - Types::DocumentClassifierInputDataConfig
         required: true
+      output_data_config:
+        types:
+        - Types::DocumentClassifierOutputDataConfig
+        required: false
       client_request_token:
         types:
         - String
@@ -69,6 +87,40 @@ methods:
         types:
         - String
         required: true
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
+      mode:
+        types:
+        - String
+        required: false
+  create_endpoint:
+    parameters:
+      endpoint_name:
+        types:
+        - String
+        required: true
+      model_arn:
+        types:
+        - String
+        required: true
+      desired_inference_units:
+        types:
+        - Integer
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_entity_recognizer:
     parameters:
       recognizer_name:
@@ -79,6 +131,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
       input_data_config:
         types:
         - Types::EntityRecognizerInputDataConfig
@@ -91,9 +147,23 @@ methods:
         types:
         - String
         required: true
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
   delete_document_classifier:
     parameters:
       document_classifier_arn:
+        types:
+        - String
+        required: true
+  delete_endpoint:
+    parameters:
+      endpoint_arn:
         types:
         - String
         required: true
@@ -118,6 +188,12 @@ methods:
   describe_dominant_language_detection_job:
     parameters:
       job_id:
+        types:
+        - String
+        required: true
+  describe_endpoint:
+    parameters:
+      endpoint_arn:
         types:
         - String
         required: true
@@ -239,6 +315,20 @@ methods:
         types:
         - Integer
         required: false
+  list_endpoints:
+    parameters:
+      filter:
+        types:
+        - Types::EndpointFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_entities_detection_jobs:
     parameters:
       filter:
@@ -295,6 +385,12 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_topics_detection_jobs:
     parameters:
       filter:
@@ -335,6 +431,14 @@ methods:
         types:
         - String
         required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
   start_dominant_language_detection_job:
     parameters:
       input_data_config:
@@ -356,6 +460,14 @@ methods:
       client_request_token:
         types:
         - String
+        required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
         required: false
   start_entities_detection_job:
     parameters:
@@ -387,6 +499,14 @@ methods:
         types:
         - String
         required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
   start_key_phrases_detection_job:
     parameters:
       input_data_config:
@@ -412,6 +532,14 @@ methods:
       client_request_token:
         types:
         - String
+        required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
         required: false
   start_sentiment_detection_job:
     parameters:
@@ -439,6 +567,14 @@ methods:
         types:
         - String
         required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
+        required: false
   start_topics_detection_job:
     parameters:
       input_data_config:
@@ -464,6 +600,14 @@ methods:
       client_request_token:
         types:
         - String
+        required: false
+      volume_kms_key_id:
+        types:
+        - String
+        required: false
+      vpc_config:
+        types:
+        - Types::VpcConfig
         required: false
   stop_dominant_language_detection_job:
     parameters:
@@ -500,4 +644,34 @@ methods:
       entity_recognizer_arn:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_endpoint:
+    parameters:
+      endpoint_arn:
+        types:
+        - String
+        required: true
+      desired_inference_units:
+        types:
+        - Integer
         required: true

@@ -35,6 +35,10 @@ methods:
         types:
         - String
         required: true
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   admin_create_user:
     parameters:
       user_pool_id:
@@ -68,6 +72,10 @@ methods:
       desired_delivery_mediums:
         types:
         - Array<String>
+        required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
         required: false
   admin_delete_user:
     parameters:
@@ -283,6 +291,10 @@ methods:
         types:
         - String
         required: true
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   admin_respond_to_auth_challenge:
     parameters:
       user_pool_id:
@@ -313,6 +325,10 @@ methods:
         types:
         - Types::ContextDataType
         required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   admin_set_user_mfa_preference:
     parameters:
       sms_mfa_settings:
@@ -331,6 +347,24 @@ methods:
         types:
         - String
         required: true
+  admin_set_user_password:
+    parameters:
+      user_pool_id:
+        types:
+        - String
+        required: true
+      username:
+        types:
+        - String
+        required: true
+      password:
+        types:
+        - String
+        required: true
+      permanent:
+        types:
+        - Boolean
+        required: false
   admin_set_user_settings:
     parameters:
       user_pool_id:
@@ -395,6 +429,10 @@ methods:
         types:
         - Array<Types::AttributeType>
         required: true
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   admin_user_global_sign_out:
     parameters:
       user_pool_id:
@@ -477,6 +515,10 @@ methods:
         types:
         - Types::UserContextDataType
         required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   confirm_sign_up:
     parameters:
       client_id:
@@ -506,6 +548,10 @@ methods:
       user_context_data:
         types:
         - Types::UserContextDataType
+        required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
         required: false
   create_group:
     parameters:
@@ -665,6 +711,14 @@ methods:
         types:
         - Types::UserPoolAddOnsType
         required: false
+      username_configuration:
+        types:
+        - Types::UsernameConfigurationType
+        required: false
+      account_recovery_setting:
+        types:
+        - Types::AccountRecoverySettingType
+        required: false
   create_user_pool_client:
     parameters:
       user_pool_id:
@@ -726,6 +780,10 @@ methods:
       analytics_configuration:
         types:
         - Types::AnalyticsConfigurationType
+        required: false
+      prevent_user_existence_errors:
+        types:
+        - String
         required: false
   create_user_pool_domain:
     parameters:
@@ -907,6 +965,10 @@ methods:
         types:
         - Types::AnalyticsMetadataType
         required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   get_csv_header:
     parameters:
       user_pool_id:
@@ -975,6 +1037,10 @@ methods:
         types:
         - String
         required: true
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   get_user_pool_mfa_config:
     parameters:
       user_pool_id:
@@ -1069,6 +1135,12 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_user_import_jobs:
     parameters:
       user_pool_id:
@@ -1169,6 +1241,10 @@ methods:
         types:
         - Types::AnalyticsMetadataType
         required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   respond_to_auth_challenge:
     parameters:
       client_id:
@@ -1194,6 +1270,10 @@ methods:
       user_context_data:
         types:
         - Types::UserContextDataType
+        required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
         required: false
   set_risk_configuration:
     parameters:
@@ -1312,6 +1392,10 @@ methods:
         types:
         - Types::UserContextDataType
         required: false
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   start_user_import_job:
     parameters:
       user_pool_id:
@@ -1331,6 +1415,26 @@ methods:
       job_id:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_auth_event_feedback:
     parameters:
@@ -1440,6 +1544,10 @@ methods:
         types:
         - String
         required: true
+      client_metadata:
+        types:
+        - Hash<String,String>
+        required: false
   update_user_pool:
     parameters:
       user_pool_id:
@@ -1506,6 +1614,10 @@ methods:
         types:
         - Types::UserPoolAddOnsType
         required: false
+      account_recovery_setting:
+        types:
+        - Types::AccountRecoverySettingType
+        required: false
   update_user_pool_client:
     parameters:
       user_pool_id:
@@ -1567,6 +1679,10 @@ methods:
       analytics_configuration:
         types:
         - Types::AnalyticsConfigurationType
+        required: false
+      prevent_user_existence_errors:
+        types:
+        - String
         required: false
   update_user_pool_domain:
     parameters:

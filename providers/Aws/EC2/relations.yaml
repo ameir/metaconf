@@ -84,6 +84,16 @@ launch_template_version:
   read: describe_launch_template_versions
   update: 
   delete: delete_launch_template_versions
+local_gateway_route:
+  create: create_local_gateway_route
+  read: 
+  update: 
+  delete: delete_local_gateway_route
+local_gateway_route_table_vpc_association:
+  create: create_local_gateway_route_table_vpc_association
+  read: describe_local_gateway_route_table_vpc_associations
+  update: 
+  delete: delete_local_gateway_route_table_vpc_association
 nat_gateway:
   create: create_nat_gateway
   read: describe_nat_gateways
@@ -139,6 +149,11 @@ snapshot:
   read: describe_snapshots
   update: 
   delete: delete_snapshot
+snapshots:
+  create: create_snapshots
+  read: describe_snapshots
+  update: 
+  delete: 
 spot_datafeed_subscription:
   create: create_spot_datafeed_subscription
   read: describe_spot_datafeed_subscription
@@ -154,11 +169,41 @@ tags:
   read: describe_tags
   update: 
   delete: delete_tags
+traffic_mirror_filter:
+  create: create_traffic_mirror_filter
+  read: describe_traffic_mirror_filters
+  update: 
+  delete: delete_traffic_mirror_filter
+traffic_mirror_filter_rule:
+  create: create_traffic_mirror_filter_rule
+  read: 
+  update: modify_traffic_mirror_filter_rule
+  delete: delete_traffic_mirror_filter_rule
+traffic_mirror_session:
+  create: create_traffic_mirror_session
+  read: describe_traffic_mirror_sessions
+  update: modify_traffic_mirror_session
+  delete: delete_traffic_mirror_session
+traffic_mirror_target:
+  create: create_traffic_mirror_target
+  read: describe_traffic_mirror_targets
+  update: 
+  delete: delete_traffic_mirror_target
 transit_gateway:
   create: create_transit_gateway
   read: describe_transit_gateways
   update: 
   delete: delete_transit_gateway
+transit_gateway_multicast_domain:
+  create: create_transit_gateway_multicast_domain
+  read: describe_transit_gateway_multicast_domains
+  update: 
+  delete: delete_transit_gateway_multicast_domain
+transit_gateway_peering_attachment:
+  create: create_transit_gateway_peering_attachment
+  read: describe_transit_gateway_peering_attachments
+  update: 
+  delete: delete_transit_gateway_peering_attachment
 transit_gateway_route:
   create: create_transit_gateway_route
   read: 
@@ -207,7 +252,7 @@ vpc_peering_connection:
 vpn_connection:
   create: create_vpn_connection
   read: describe_vpn_connections
-  update: 
+  update: modify_vpn_connection
   delete: delete_vpn_connection
 vpn_connection_route:
   create: create_vpn_connection_route
@@ -219,3 +264,13 @@ vpn_gateway:
   read: describe_vpn_gateways
   update: 
   delete: delete_vpn_gateway
+instances:
+  create: run_instances
+  read: describe_instances
+  update: 
+  delete: terminate_instances
+scheduled_instances:
+  create: run_scheduled_instances
+  read: describe_scheduled_instances
+  update: 
+  delete: 

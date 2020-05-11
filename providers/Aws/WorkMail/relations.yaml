@@ -1,4 +1,9 @@
 ---
+access_control_rule:
+  create: put_access_control_rule
+  read: 
+  update: 
+  delete: delete_access_control_rule
 mailbox_permissions:
   create: put_mailbox_permissions
   read: 

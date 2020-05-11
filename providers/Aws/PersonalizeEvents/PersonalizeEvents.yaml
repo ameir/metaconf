@@ -1,0 +1,21 @@
+---
+class: Aws::PersonalizeEvents::Client
+methods:
+  put_events:
+    parameters:
+      tracking_id:
+        types:
+        - String
+        required: true
+      user_id:
+        types:
+        - String
+        required: false
+      session_id:
+        types:
+        - String
+        required: true
+      event_list:
+        types:
+        - Array<Types::Event>
+        required: true

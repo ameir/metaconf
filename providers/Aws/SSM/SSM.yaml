@@ -111,6 +111,10 @@ methods:
         types:
         - String
         required: false
+      sync_compliance:
+        types:
+        - String
+        required: false
   create_association_batch:
     parameters:
       entries:
@@ -123,6 +127,10 @@ methods:
         types:
         - String
         required: true
+      requires:
+        types:
+        - Array<Types::DocumentRequires>
+        required: false
       attachments:
         types:
         - Array<Types::AttachmentsSource>
@@ -197,6 +205,48 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  create_ops_item:
+    parameters:
+      description:
+        types:
+        - String
+        required: true
+      operational_data:
+        types:
+        - Hash<String,Types::OpsItemDataValue>
+        required: false
+      notifications:
+        types:
+        - Array<Types::OpsItemNotification>
+        required: false
+      priority:
+        types:
+        - Integer
+        required: false
+      related_ops_items:
+        types:
+        - Array<Types::RelatedOpsItem>
+        required: false
+      source:
+        types:
+        - String
+        required: true
+      title:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      category:
+        types:
+        - String
+        required: false
+      severity:
+        types:
+        - String
+        required: false
   create_patch_baseline:
     parameters:
       operating_system:
@@ -260,7 +310,15 @@ methods:
       s3_destination:
         types:
         - Types::ResourceDataSyncS3Destination
-        required: true
+        required: false
+      sync_type:
+        types:
+        - String
+        required: false
+      sync_source:
+        types:
+        - Types::ResourceDataSyncSource
+        required: false
   delete_activation:
     parameters:
       activation_id:
@@ -287,6 +345,18 @@ methods:
         types:
         - String
         required: true
+      document_version:
+        types:
+        - String
+        required: false
+      version_name:
+        types:
+        - String
+        required: false
+      force:
+        types:
+        - Boolean
+        required: false
   delete_inventory:
     parameters:
       type_name:
@@ -335,6 +405,10 @@ methods:
         types:
         - String
         required: true
+      sync_type:
+        types:
+        - String
+        required: false
   deregister_managed_instance:
     parameters:
       instance_id:
@@ -797,6 +871,20 @@ methods:
         types:
         - String
         required: false
+  describe_ops_items:
+    parameters:
+      ops_item_filters:
+        types:
+        - Array<Types::OpsItemFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_parameters:
     parameters:
       filters:
@@ -849,6 +937,28 @@ methods:
         types:
         - String
         required: false
+  describe_patch_properties:
+    parameters:
+      operating_system:
+        types:
+        - String
+        required: true
+      property:
+        types:
+        - String
+        required: true
+      patch_set:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_sessions:
     parameters:
       state:
@@ -873,6 +983,16 @@ methods:
         types:
         - String
         required: true
+  get_calendar_state:
+    parameters:
+      calendar_names:
+        types:
+        - Array<String>
+        required: true
+      at_time:
+        types:
+        - String
+        required: false
   get_command_invocation:
     parameters:
       command_id:
@@ -1017,6 +1137,38 @@ methods:
         types:
         - String
         required: true
+  get_ops_item:
+    parameters:
+      ops_item_id:
+        types:
+        - String
+        required: true
+  get_ops_summary:
+    parameters:
+      sync_name:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::OpsFilter>
+        required: false
+      aggregators:
+        types:
+        - Array<Types::OpsAggregator>
+        required: false
+      result_attributes:
+        types:
+        - Array<Types::OpsResultAttribute>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   get_parameter:
     parameters:
       name:
@@ -1097,6 +1249,12 @@ methods:
         types:
         - String
         required: false
+  get_service_setting:
+    parameters:
+      setting_id:
+        types:
+        - String
+        required: true
   label_parameter_version:
     parameters:
       name:
@@ -1293,6 +1451,10 @@ methods:
         required: false
   list_resource_data_sync:
     parameters:
+      sync_type:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
@@ -1329,6 +1491,10 @@ methods:
         types:
         - Array<String>
         required: false
+      shared_document_version:
+        types:
+        - String
+        required: false
   put_compliance_items:
     parameters:
       resource_id:
@@ -1352,6 +1518,10 @@ methods:
         - Array<Types::ComplianceItemEntry>
         required: true
       item_content_hash:
+        types:
+        - String
+        required: false
+      upload_type:
         types:
         - String
         required: false
@@ -1382,7 +1552,7 @@ methods:
       type:
         types:
         - String
-        required: true
+        required: false
       key_id:
         types:
         - String
@@ -1398,6 +1568,18 @@ methods:
       tags:
         types:
         - Array<Types::Tag>
+        required: false
+      tier:
+        types:
+        - String
+        required: false
+      policies:
+        types:
+        - String
+        required: false
+      data_type:
+        types:
+        - String
         required: false
   register_default_patch_baseline:
     parameters:
@@ -1516,6 +1698,12 @@ methods:
       tag_keys:
         types:
         - Array<String>
+        required: true
+  reset_service_setting:
+    parameters:
+      setting_id:
+        types:
+        - String
         required: true
   resume_session:
     parameters:
@@ -1659,6 +1847,10 @@ methods:
         types:
         - Array<Types::TargetLocation>
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   start_session:
     parameters:
       target:
@@ -1740,6 +1932,10 @@ methods:
         - String
         required: false
       compliance_severity:
+        types:
+        - String
+        required: false
+      sync_compliance:
         types:
         - String
         required: false
@@ -1945,6 +2141,52 @@ methods:
         types:
         - String
         required: true
+  update_ops_item:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      operational_data:
+        types:
+        - Hash<String,Types::OpsItemDataValue>
+        required: false
+      operational_data_to_delete:
+        types:
+        - Array<String>
+        required: false
+      notifications:
+        types:
+        - Array<Types::OpsItemNotification>
+        required: false
+      priority:
+        types:
+        - Integer
+        required: false
+      related_ops_items:
+        types:
+        - Array<Types::RelatedOpsItem>
+        required: false
+      status:
+        types:
+        - String
+        required: false
+      ops_item_id:
+        types:
+        - String
+        required: true
+      title:
+        types:
+        - String
+        required: false
+      category:
+        types:
+        - String
+        required: false
+      severity:
+        types:
+        - String
+        required: false
   update_patch_baseline:
     parameters:
       baseline_id:
@@ -1995,3 +2237,27 @@ methods:
         types:
         - Boolean
         required: false
+  update_resource_data_sync:
+    parameters:
+      sync_name:
+        types:
+        - String
+        required: true
+      sync_type:
+        types:
+        - String
+        required: true
+      sync_source:
+        types:
+        - Types::ResourceDataSyncSource
+        required: true
+  update_service_setting:
+    parameters:
+      setting_id:
+        types:
+        - String
+        required: true
+      setting_value:
+        types:
+        - String
+        required: true

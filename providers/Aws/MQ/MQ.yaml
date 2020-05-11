@@ -23,6 +23,10 @@ methods:
         types:
         - String
         required: false
+      encryption_options:
+        types:
+        - Types::EncryptionOptions
+        required: false
       engine_type:
         types:
         - String
@@ -50,6 +54,10 @@ methods:
       security_groups:
         types:
         - Array<String>
+        required: false
+      storage_type:
+        types:
+        - String
         required: false
       subnet_ids:
         types:
@@ -145,6 +153,42 @@ methods:
         types:
         - String
         required: true
+  describe_broker_engine_types:
+    parameters:
+      engine_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_broker_instance_options:
+    parameters:
+      engine_type:
+        types:
+        - String
+        required: false
+      host_instance_type:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      storage_type:
+        types:
+        - String
+        required: false
   describe_configuration:
     parameters:
       configuration_id:
@@ -249,9 +293,17 @@ methods:
         types:
         - String
         required: false
+      host_instance_type:
+        types:
+        - String
+        required: false
       logs:
         types:
         - Types::Logs
+        required: false
+      security_groups:
+        types:
+        - Array<String>
         required: false
   update_configuration:
     parameters:

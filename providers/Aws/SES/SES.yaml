@@ -301,6 +301,16 @@ methods:
         types:
         - Integer
         required: false
+  put_configuration_set_delivery_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      delivery_options:
+        types:
+        - Types::DeliveryOptions
+        required: false
   put_identity_policy:
     parameters:
       identity:

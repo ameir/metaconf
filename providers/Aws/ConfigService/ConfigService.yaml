@@ -45,6 +45,12 @@ methods:
         types:
         - String
         required: true
+  delete_conformance_pack:
+    parameters:
+      conformance_pack_name:
+        types:
+        - String
+        required: true
   delete_delivery_channel:
     parameters:
       delivery_channel_name:
@@ -57,6 +63,18 @@ methods:
         types:
         - String
         required: true
+  delete_organization_config_rule:
+    parameters:
+      organization_config_rule_name:
+        types:
+        - String
+        required: true
+  delete_organization_conformance_pack:
+    parameters:
+      organization_conformance_pack_name:
+        types:
+        - String
+        required: true
   delete_pending_aggregation_request:
     parameters:
       requester_account_id:
@@ -64,6 +82,36 @@ methods:
         - String
         required: true
       requester_aws_region:
+        types:
+        - String
+        required: true
+  delete_remediation_configuration:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_type:
+        types:
+        - String
+        required: false
+  delete_remediation_exceptions:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_keys:
+        types:
+        - Array<Types::RemediationExceptionResourceKey>
+        required: true
+  delete_resource_config:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      resource_id:
         types:
         - String
         required: true
@@ -211,6 +259,52 @@ methods:
         types:
         - Array<String>
         required: false
+  describe_conformance_pack_compliance:
+    parameters:
+      conformance_pack_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ConformancePackComplianceFilters
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_conformance_pack_status:
+    parameters:
+      conformance_pack_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_conformance_packs:
+    parameters:
+      conformance_pack_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_delivery_channel_status:
     parameters:
       delivery_channel_names:
@@ -223,8 +317,106 @@ methods:
         types:
         - Array<String>
         required: false
+  describe_organization_config_rule_statuses:
+    parameters:
+      organization_config_rule_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_organization_config_rules:
+    parameters:
+      organization_config_rule_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_organization_conformance_pack_statuses:
+    parameters:
+      organization_conformance_pack_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_organization_conformance_packs:
+    parameters:
+      organization_conformance_pack_names:
+        types:
+        - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_pending_aggregation_requests:
     parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_remediation_configurations:
+    parameters:
+      config_rule_names:
+        types:
+        - Array<String>
+        required: true
+  describe_remediation_exceptions:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_keys:
+        types:
+        - Array<Types::RemediationExceptionResourceKey>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_remediation_execution_status:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_keys:
+        types:
+        - Array<Types::ResourceKey>
+        required: false
       limit:
         types:
         - Integer
@@ -369,11 +561,79 @@ methods:
         types:
         - Array<String>
         required: false
+  get_conformance_pack_compliance_details:
+    parameters:
+      conformance_pack_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::ConformancePackEvaluationFilters
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_conformance_pack_compliance_summary:
+    parameters:
+      conformance_pack_names:
+        types:
+        - Array<String>
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   get_discovered_resource_counts:
     parameters:
       resource_types:
         types:
         - Array<String>
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_organization_config_rule_detailed_status:
+    parameters:
+      organization_config_rule_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::StatusDetailFilters
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_organization_conformance_pack_detailed_status:
+    parameters:
+      organization_conformance_pack_name:
+        types:
+        - String
+        required: true
+      filters:
+        types:
+        - Types::OrganizationResourceDetailedStatusFilters
         required: false
       limit:
         types:
@@ -469,6 +729,20 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   put_aggregation_authorization:
     parameters:
       authorized_account_id:
@@ -479,12 +753,20 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   put_config_rule:
     parameters:
       config_rule:
         types:
         - Types::ConfigRule
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   put_configuration_aggregator:
     parameters:
       configuration_aggregator_name:
@@ -499,12 +781,42 @@ methods:
         types:
         - Types::OrganizationAggregationSource
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   put_configuration_recorder:
     parameters:
       configuration_recorder:
         types:
         - Types::ConfigurationRecorder
         required: true
+  put_conformance_pack:
+    parameters:
+      conformance_pack_name:
+        types:
+        - String
+        required: true
+      template_s3_uri:
+        types:
+        - String
+        required: false
+      template_body:
+        types:
+        - String
+        required: false
+      delivery_s3_bucket:
+        types:
+        - String
+        required: true
+      delivery_s3_key_prefix:
+        types:
+        - String
+        required: false
+      conformance_pack_input_parameters:
+        types:
+        - Array<Types::ConformancePackInputParameter>
+        required: false
   put_delivery_channel:
     parameters:
       delivery_channel:
@@ -525,12 +837,150 @@ methods:
         types:
         - Boolean
         required: false
+  put_organization_config_rule:
+    parameters:
+      organization_config_rule_name:
+        types:
+        - String
+        required: true
+      organization_managed_rule_metadata:
+        types:
+        - Types::OrganizationManagedRuleMetadata
+        required: false
+      organization_custom_rule_metadata:
+        types:
+        - Types::OrganizationCustomRuleMetadata
+        required: false
+      excluded_accounts:
+        types:
+        - Array<String>
+        required: false
+  put_organization_conformance_pack:
+    parameters:
+      organization_conformance_pack_name:
+        types:
+        - String
+        required: true
+      template_s3_uri:
+        types:
+        - String
+        required: false
+      template_body:
+        types:
+        - String
+        required: false
+      delivery_s3_bucket:
+        types:
+        - String
+        required: true
+      delivery_s3_key_prefix:
+        types:
+        - String
+        required: false
+      conformance_pack_input_parameters:
+        types:
+        - Array<Types::ConformancePackInputParameter>
+        required: false
+      excluded_accounts:
+        types:
+        - Array<String>
+        required: false
+  put_remediation_configurations:
+    parameters:
+      remediation_configurations:
+        types:
+        - Array<Types::RemediationConfiguration>
+        required: true
+  put_remediation_exceptions:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_keys:
+        types:
+        - Array<Types::RemediationExceptionResourceKey>
+        required: true
+      message:
+        types:
+        - String
+        required: false
+      expiration_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  put_resource_config:
+    parameters:
+      resource_type:
+        types:
+        - String
+        required: true
+      schema_version_id:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: true
+      resource_name:
+        types:
+        - String
+        required: false
+      configuration:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   put_retention_configuration:
     parameters:
       retention_period_in_days:
         types:
         - Integer
         required: true
+  select_aggregate_resource_config:
+    parameters:
+      expression:
+        types:
+        - String
+        required: true
+      configuration_aggregator_name:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  select_resource_config:
+    parameters:
+      expression:
+        types:
+        - String
+        required: true
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   start_config_rules_evaluation:
     parameters:
       config_rule_names:
@@ -543,9 +993,39 @@ methods:
         types:
         - String
         required: true
+  start_remediation_execution:
+    parameters:
+      config_rule_name:
+        types:
+        - String
+        required: true
+      resource_keys:
+        types:
+        - Array<Types::ResourceKey>
+        required: true
   stop_configuration_recorder:
     parameters:
       configuration_recorder_name:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

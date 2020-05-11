@@ -1,0 +1,37 @@
+---
+class: Aws::QLDBSession::Client
+methods:
+  send_command:
+    parameters:
+      session_token:
+        types:
+        - String
+        required: false
+      start_session:
+        types:
+        - Types::StartSessionRequest
+        required: false
+      start_transaction:
+        types:
+        - Types::StartTransactionRequest
+        required: false
+      end_session:
+        types:
+        - Types::EndSessionRequest
+        required: false
+      commit_transaction:
+        types:
+        - Types::CommitTransactionRequest
+        required: false
+      abort_transaction:
+        types:
+        - Types::AbortTransactionRequest
+        required: false
+      execute_statement:
+        types:
+        - Types::ExecuteStatementRequest
+        required: false
+      fetch_page:
+        types:
+        - Types::FetchPageRequest
+        required: false

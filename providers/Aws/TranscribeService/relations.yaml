@@ -1,6 +1,16 @@
 ---
+medical_vocabulary:
+  create: create_medical_vocabulary
+  read: get_medical_vocabulary
+  update: 
+  delete: delete_medical_vocabulary
 vocabulary:
   create: create_vocabulary
   read: get_vocabulary
   update: 
   delete: delete_vocabulary
+vocabulary_filter:
+  create: create_vocabulary_filter
+  read: get_vocabulary_filter
+  update: 
+  delete: delete_vocabulary_filter

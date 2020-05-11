@@ -109,6 +109,14 @@ methods:
         types:
         - Integer
         required: false
+      maximum_batching_window_in_seconds:
+        types:
+        - Integer
+        required: false
+      parallelization_factor:
+        types:
+        - Integer
+        required: false
       starting_position:
         types:
         - String
@@ -120,6 +128,22 @@ methods:
         - Date
         - Integer
         - String
+        required: false
+      destination_config:
+        types:
+        - Types::DestinationConfig
+        required: false
+      maximum_record_age_in_seconds:
+        types:
+        - Integer
+        required: false
+      bisect_batch_on_function_error:
+        types:
+        - Boolean
+        required: false
+      maximum_retry_attempts:
+        types:
+        - Integer
         required: false
   create_function:
     parameters:
@@ -219,6 +243,16 @@ methods:
         types:
         - String
         required: true
+  delete_function_event_invoke_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: false
   delete_layer_version:
     parameters:
       layer_name:
@@ -228,6 +262,16 @@ methods:
       version_number:
         types:
         - Integer
+        required: true
+  delete_provisioned_concurrency_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
         required: true
   get_alias:
     parameters:
@@ -255,7 +299,23 @@ methods:
         types:
         - String
         required: false
+  get_function_concurrency:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
   get_function_configuration:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: false
+  get_function_event_invoke_config:
     parameters:
       function_name:
         types:
@@ -274,6 +334,12 @@ methods:
       version_number:
         types:
         - Integer
+        required: true
+  get_layer_version_by_arn:
+    parameters:
+      arn:
+        types:
+        - String
         required: true
   get_layer_version_policy:
     parameters:
@@ -295,6 +361,16 @@ methods:
         types:
         - String
         required: false
+  get_provisioned_concurrency_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: true
   invoke:
     parameters:
       function_name:
@@ -369,6 +445,20 @@ methods:
         types:
         - Integer
         required: false
+  list_function_event_invoke_configs:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
   list_functions:
     parameters:
       master_region:
@@ -411,6 +501,20 @@ methods:
         types:
         - String
         required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_items:
+        types:
+        - Integer
+        required: false
+  list_provisioned_concurrency_configs:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
       marker:
         types:
         - String
@@ -486,6 +590,42 @@ methods:
         - String
         required: true
       reserved_concurrent_executions:
+        types:
+        - Integer
+        required: true
+  put_function_event_invoke_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: false
+      maximum_retry_attempts:
+        types:
+        - Integer
+        required: false
+      maximum_event_age_in_seconds:
+        types:
+        - Integer
+        required: false
+      destination_config:
+        types:
+        - Types::DestinationConfig
+        required: false
+  put_provisioned_concurrency_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: true
+      provisioned_concurrent_executions:
         types:
         - Integer
         required: true
@@ -589,6 +729,30 @@ methods:
         types:
         - Integer
         required: false
+      maximum_batching_window_in_seconds:
+        types:
+        - Integer
+        required: false
+      destination_config:
+        types:
+        - Types::DestinationConfig
+        required: false
+      maximum_record_age_in_seconds:
+        types:
+        - Integer
+        required: false
+      bisect_batch_on_function_error:
+        types:
+        - Boolean
+        required: false
+      maximum_retry_attempts:
+        types:
+        - Integer
+        required: false
+      parallelization_factor:
+        types:
+        - Integer
+        required: false
   update_function_code:
     parameters:
       function_name:
@@ -681,4 +845,44 @@ methods:
       layers:
         types:
         - Array<String>
+        required: false
+  update_function_event_invoke_config:
+    parameters:
+      function_name:
+        types:
+        - String
+        required: true
+      qualifier:
+        types:
+        - String
+        required: false
+      maximum_retry_attempts:
+        types:
+        - Integer
+        required: false
+      maximum_event_age_in_seconds:
+        types:
+        - Integer
+        required: false
+      destination_config:
+        types:
+        - Types::DestinationConfig
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
         required: false

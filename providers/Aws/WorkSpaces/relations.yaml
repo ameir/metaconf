@@ -13,4 +13,4 @@ workspaces:
   create: create_workspaces
   read: describe_workspaces
   update: 
-  delete: 
+  delete: terminate_workspaces

@@ -1,0 +1,16 @@
+---
+config:
+  create: create_config
+  read: get_config
+  update: 
+  delete: delete_config
+dataflow_endpoint_group:
+  create: create_dataflow_endpoint_group
+  read: get_dataflow_endpoint_group
+  update: 
+  delete: delete_dataflow_endpoint_group
+mission_profile:
+  create: create_mission_profile
+  read: get_mission_profile
+  update: 
+  delete: delete_mission_profile

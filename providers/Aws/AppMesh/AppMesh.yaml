@@ -11,6 +11,14 @@ methods:
         types:
         - String
         required: true
+      spec:
+        types:
+        - Types::MeshSpec
+        required: false
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: false
   create_route:
     parameters:
       client_token:
@@ -21,6 +29,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       route_name:
         types:
         - String
@@ -29,6 +41,10 @@ methods:
         types:
         - Types::RouteSpec
         required: true
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: false
       virtual_router_name:
         types:
         - String
@@ -43,10 +59,18 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       spec:
         types:
         - Types::VirtualNodeSpec
         required: true
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: false
       virtual_node_name:
         types:
         - String
@@ -61,11 +85,45 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       spec:
         types:
         - Types::VirtualRouterSpec
         required: true
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: false
       virtual_router_name:
+        types:
+        - String
+        required: true
+  create_virtual_service:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
+      spec:
+        types:
+        - Types::VirtualServiceSpec
+        required: true
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: false
+      virtual_service_name:
         types:
         - String
         required: true
@@ -81,6 +139,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       route_name:
         types:
         - String
@@ -95,6 +157,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       virtual_node_name:
         types:
         - String
@@ -105,7 +171,25 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       virtual_router_name:
+        types:
+        - String
+        required: true
+  delete_virtual_service:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
+      virtual_service_name:
         types:
         - String
         required: true
@@ -115,12 +199,20 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
   describe_route:
     parameters:
       mesh_name:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       route_name:
         types:
         - String
@@ -135,6 +227,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       virtual_node_name:
         types:
         - String
@@ -145,7 +241,25 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       virtual_router_name:
+        types:
+        - String
+        required: true
+  describe_virtual_service:
+    parameters:
+      mesh_name:
+        types:
+        - String
+        required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
+      virtual_service_name:
         types:
         - String
         required: true
@@ -169,11 +283,29 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
         required: false
       virtual_router_name:
+        types:
+        - String
+        required: true
+  list_tags_for_resource:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      resource_arn:
         types:
         - String
         required: true
@@ -187,6 +319,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
@@ -201,9 +337,65 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       next_token:
         types:
         - String
+        required: false
+  list_virtual_services:
+    parameters:
+      limit:
+        types:
+        - Integer
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::TagRef>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_mesh:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      spec:
+        types:
+        - Types::MeshSpec
         required: false
   update_route:
     parameters:
@@ -215,6 +407,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       route_name:
         types:
         - String
@@ -237,6 +433,10 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       spec:
         types:
         - Types::VirtualNodeSpec
@@ -255,11 +455,37 @@ methods:
         types:
         - String
         required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
       spec:
         types:
         - Types::VirtualRouterSpec
         required: true
       virtual_router_name:
+        types:
+        - String
+        required: true
+  update_virtual_service:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: false
+      mesh_name:
+        types:
+        - String
+        required: true
+      mesh_owner:
+        types:
+        - String
+        required: false
+      spec:
+        types:
+        - Types::VirtualServiceSpec
+        required: true
+      virtual_service_name:
         types:
         - String
         required: true

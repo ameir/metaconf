@@ -110,11 +110,11 @@ methods:
       master_username:
         types:
         - String
-        required: false
+        required: true
       master_user_password:
         types:
         - String
-        required: false
+        required: true
       preferred_backup_window:
         types:
         - String
@@ -138,6 +138,10 @@ methods:
       enable_cloudwatch_logs_exports:
         types:
         - Array<String>
+        required: false
+      deletion_protection:
+        types:
+        - Boolean
         required: false
   create_db_cluster_parameter_group:
     parameters:
@@ -265,6 +269,24 @@ methods:
         types:
         - String
         required: true
+  describe_certificates:
+    parameters:
+      certificate_identifier:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
   describe_db_cluster_parameter_groups:
     parameters:
       db_cluster_parameter_group_name:
@@ -633,6 +655,10 @@ methods:
         types:
         - String
         required: false
+      deletion_protection:
+        types:
+        - Boolean
+        required: false
   modify_db_cluster_parameter_group:
     parameters:
       db_cluster_parameter_group_name:
@@ -684,6 +710,10 @@ methods:
         - Boolean
         required: false
       new_db_instance_identifier:
+        types:
+        - String
+        required: false
+      ca_certificate_identifier:
         types:
         - String
         required: false
@@ -785,6 +815,10 @@ methods:
         types:
         - Array<String>
         required: false
+      deletion_protection:
+        types:
+        - Boolean
+        required: false
   restore_db_cluster_to_point_in_time:
     parameters:
       db_cluster_identifier:
@@ -831,6 +865,22 @@ methods:
         types:
         - Array<String>
         required: false
+      deletion_protection:
+        types:
+        - Boolean
+        required: false
+  start_db_cluster:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
+  stop_db_cluster:
+    parameters:
+      db_cluster_identifier:
+        types:
+        - String
+        required: true
   wait_until:
     parameters:
       max_attempts:

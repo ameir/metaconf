@@ -1,0 +1,65 @@
+---
+class: Aws::SSOOIDC::Client
+methods:
+  create_token:
+    parameters:
+      client_id:
+        types:
+        - String
+        required: true
+      client_secret:
+        types:
+        - String
+        required: true
+      grant_type:
+        types:
+        - String
+        required: true
+      device_code:
+        types:
+        - String
+        required: true
+      code:
+        types:
+        - String
+        required: false
+      refresh_token:
+        types:
+        - String
+        required: false
+      scope:
+        types:
+        - Array<String>
+        required: false
+      redirect_uri:
+        types:
+        - String
+        required: false
+  register_client:
+    parameters:
+      client_name:
+        types:
+        - String
+        required: true
+      client_type:
+        types:
+        - String
+        required: true
+      scopes:
+        types:
+        - Array<String>
+        required: false
+  start_device_authorization:
+    parameters:
+      client_id:
+        types:
+        - String
+        required: true
+      client_secret:
+        types:
+        - String
+        required: true
+      start_url:
+        types:
+        - String
+        required: true

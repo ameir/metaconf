@@ -1,0 +1,6 @@
+---
+notification_rule:
+  create: create_notification_rule
+  read: describe_notification_rule
+  update: 
+  delete: delete_notification_rule

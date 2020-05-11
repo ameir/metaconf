@@ -19,6 +19,11 @@ members:
   read: get_members
   update: 
   delete: delete_members
+publishing_destination:
+  create: create_publishing_destination
+  read: describe_publishing_destination
+  update: 
+  delete: delete_publishing_destination
 sample_findings:
   create: create_sample_findings
   read: 

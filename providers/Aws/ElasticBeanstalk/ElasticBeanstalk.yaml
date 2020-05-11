@@ -59,6 +59,10 @@ methods:
         types:
         - Types::ApplicationResourceLifecycleConfig
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_application_version:
     parameters:
       application_name:
@@ -93,6 +97,10 @@ methods:
         types:
         - Boolean
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_configuration_template:
     parameters:
       application_name:
@@ -126,6 +134,10 @@ methods:
       option_settings:
         types:
         - Array<Types::ConfigurationOptionSetting>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_environment:
     parameters:
@@ -202,6 +214,10 @@ methods:
       option_settings:
         types:
         - Array<Types::ConfigurationOptionSetting>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   delete_application:
     parameters:
@@ -490,6 +506,20 @@ methods:
   describe_platform_version:
     parameters:
       platform_arn:
+        types:
+        - String
+        required: false
+  list_platform_branches:
+    parameters:
+      filters:
+        types:
+        - Array<Types::SearchFilter>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      next_token:
         types:
         - String
         required: false

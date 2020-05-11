@@ -19,6 +19,11 @@ fleet:
   read: 
   update: 
   delete: delete_fleet
+game_server_group:
+  create: create_game_server_group
+  read: describe_game_server_group
+  update: 
+  delete: delete_game_server_group
 game_session:
   create: create_game_session
   read: describe_game_sessions
@@ -49,6 +54,11 @@ player_sessions:
   read: describe_player_sessions
   update: 
   delete: 
+script:
+  create: create_script
+  read: describe_script
+  update: 
+  delete: delete_script
 vpc_peering_authorization:
   create: create_vpc_peering_authorization
   read: 

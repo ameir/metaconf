@@ -81,6 +81,10 @@ methods:
         types:
         - Hash<String,String>
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_endpoint:
     parameters:
       endpoint_arn:
@@ -167,6 +171,12 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_topics:
     parameters:
       next_token:
@@ -295,9 +305,29 @@ methods:
         types:
         - Boolean
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
   unsubscribe:
     parameters:
       subscription_arn:
         types:
         - String
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true

@@ -15,6 +15,10 @@ methods:
         types:
         - Types::KinesisStreamSourceConfiguration
         required: false
+      delivery_stream_encryption_configuration_input:
+        types:
+        - Types::DeliveryStreamEncryptionConfigurationInput
+        required: false
       s3_destination_configuration:
         types:
         - Types::S3DestinationConfiguration
@@ -45,6 +49,10 @@ methods:
         types:
         - String
         required: true
+      allow_force_delete:
+        types:
+        - Boolean
+        required: false
   describe_delivery_stream:
     parameters:
       delivery_stream_name:
@@ -113,6 +121,10 @@ methods:
         types:
         - String
         required: true
+      delivery_stream_encryption_configuration_input:
+        types:
+        - Types::DeliveryStreamEncryptionConfigurationInput
+        required: false
   stop_delivery_stream_encryption:
     parameters:
       delivery_stream_name:

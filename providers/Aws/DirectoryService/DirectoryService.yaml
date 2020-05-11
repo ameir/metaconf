@@ -265,6 +265,16 @@ methods:
         types:
         - Boolean
         required: false
+  deregister_certificate:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      certificate_id:
+        types:
+        - String
+        required: true
   deregister_event_topic:
     parameters:
       directory_id:
@@ -272,6 +282,16 @@ methods:
         - String
         required: true
       topic_name:
+        types:
+        - String
+        required: true
+  describe_certificate:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      certificate_id:
         types:
         - String
         required: true
@@ -327,6 +347,24 @@ methods:
         types:
         - Array<String>
         required: false
+  describe_ldaps_settings:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
   describe_shared_directories:
     parameters:
       owner_directory_id:
@@ -381,6 +419,16 @@ methods:
         types:
         - Integer
         required: false
+  disable_ldaps:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
   disable_radius:
     parameters:
       directory_id:
@@ -401,6 +449,16 @@ methods:
         types:
         - String
         required: false
+  enable_ldaps:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
   enable_radius:
     parameters:
       directory_id:
@@ -431,6 +489,20 @@ methods:
         types:
         - String
         required: true
+  list_certificates:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
   list_ip_routes:
     parameters:
       directory_id:
@@ -487,6 +559,16 @@ methods:
         types:
         - Integer
         required: false
+  register_certificate:
+    parameters:
+      directory_id:
+        types:
+        - String
+        required: true
+      certificate_data:
+        types:
+        - String
+        required: true
   register_event_topic:
     parameters:
       directory_id:

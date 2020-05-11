@@ -11,6 +11,16 @@ methods:
         types:
         - Array<Types::Tag>
         required: true
+  associate_package:
+    parameters:
+      package_id:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
   cancel_elasticsearch_service_software_update:
     parameters:
       domain_name:
@@ -67,9 +77,41 @@ methods:
         types:
         - Hash<String,Types::LogPublishingOption>
         required: false
+      domain_endpoint_options:
+        types:
+        - Types::DomainEndpointOptions
+        required: false
+      advanced_security_options:
+        types:
+        - Types::AdvancedSecurityOptionsInput
+        required: false
+  create_package:
+    parameters:
+      package_name:
+        types:
+        - String
+        required: true
+      package_type:
+        types:
+        - String
+        required: true
+      package_description:
+        types:
+        - String
+        required: false
+      package_source:
+        types:
+        - Types::PackageSource
+        required: true
   delete_elasticsearch_domain:
     parameters:
       domain_name:
+        types:
+        - String
+        required: true
+  delete_package:
+    parameters:
+      package_id:
         types:
         - String
         required: true
@@ -105,6 +147,20 @@ methods:
         types:
         - String
         required: true
+  describe_packages:
+    parameters:
+      filters:
+        types:
+        - Array<Types::DescribePackagesFilter>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   describe_reserved_elasticsearch_instance_offerings:
     parameters:
       reserved_elasticsearch_instance_offering_id:
@@ -133,6 +189,16 @@ methods:
         types:
         - String
         required: false
+  dissociate_package:
+    parameters:
+      package_id:
+        types:
+        - String
+        required: true
+      domain_name:
+        types:
+        - String
+        required: true
   get_compatible_elasticsearch_versions:
     parameters:
       domain_name:
@@ -159,6 +225,20 @@ methods:
         types:
         - String
         required: true
+  list_domains_for_package:
+    parameters:
+      package_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   list_elasticsearch_instance_types:
     parameters:
       elasticsearch_version:
@@ -179,6 +259,20 @@ methods:
         required: false
   list_elasticsearch_versions:
     parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_packages_for_domain:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
       max_results:
         types:
         - Integer
@@ -260,6 +354,14 @@ methods:
       log_publishing_options:
         types:
         - Hash<String,Types::LogPublishingOption>
+        required: false
+      domain_endpoint_options:
+        types:
+        - Types::DomainEndpointOptions
+        required: false
+      advanced_security_options:
+        types:
+        - Types::AdvancedSecurityOptionsInput
         required: false
   upgrade_elasticsearch_domain:
     parameters:

@@ -103,6 +103,12 @@ methods:
         types:
         - String
         required: true
+  delete_query_definition:
+    parameters:
+      query_definition_id:
+        types:
+        - String
+        required: true
   delete_resource_policy:
     parameters:
       policy_name:
@@ -230,6 +236,20 @@ methods:
         - String
         required: false
       status:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  describe_query_definitions:
+    parameters:
+      query_definition_name_prefix:
         types:
         - String
         required: false
@@ -431,6 +451,24 @@ methods:
         types:
         - Array<Types::MetricTransformation>
         required: true
+  put_query_definition:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      query_definition_id:
+        types:
+        - String
+        required: false
+      log_group_names:
+        types:
+        - Array<String>
+        required: false
+      query_string:
+        types:
+        - String
+        required: true
   put_resource_policy:
     parameters:
       policy_name:
@@ -482,7 +520,11 @@ methods:
       log_group_name:
         types:
         - String
-        required: true
+        required: false
+      log_group_names:
+        types:
+        - Array<String>
+        required: false
       start_time:
         types:
         - Integer

@@ -1,0 +1,91 @@
+---
+class: Aws::Textract::Client
+methods:
+  analyze_document:
+    parameters:
+      document:
+        types:
+        - Types::Document
+        required: true
+      feature_types:
+        types:
+        - Array<String>
+        required: true
+      human_loop_config:
+        types:
+        - Types::HumanLoopConfig
+        required: false
+  detect_document_text:
+    parameters:
+      document:
+        types:
+        - Types::Document
+        required: true
+  get_document_analysis:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_document_text_detection:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  start_document_analysis:
+    parameters:
+      document_location:
+        types:
+        - Types::DocumentLocation
+        required: true
+      feature_types:
+        types:
+        - Array<String>
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      job_tag:
+        types:
+        - String
+        required: false
+      notification_channel:
+        types:
+        - Types::NotificationChannel
+        required: false
+  start_document_text_detection:
+    parameters:
+      document_location:
+        types:
+        - Types::DocumentLocation
+        required: true
+      client_request_token:
+        types:
+        - String
+        required: false
+      job_tag:
+        types:
+        - String
+        required: false
+      notification_channel:
+        types:
+        - Types::NotificationChannel
+        required: false

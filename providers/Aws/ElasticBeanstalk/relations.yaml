@@ -18,7 +18,7 @@ environment:
   create: create_environment
   read: describe_environments
   update: 
-  delete: 
+  delete: terminate_environment
 platform_version:
   create: create_platform_version
   read: describe_platform_version

@@ -351,6 +351,48 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  create_scheduled_action:
+    parameters:
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+      target_action:
+        types:
+        - Types::ScheduledActionType
+        required: true
+      schedule:
+        types:
+        - String
+        required: true
+      iam_role:
+        types:
+        - String
+        required: true
+      scheduled_action_description:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      enable:
+        types:
+        - Boolean
+        required: false
   create_snapshot_copy_grant:
     parameters:
       snapshot_copy_grant_name:
@@ -401,6 +443,36 @@ methods:
         types:
         - Array<Types::Tag>
         required: true
+  create_usage_limit:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
+        required: true
+      feature_type:
+        types:
+        - String
+        required: true
+      limit_type:
+        types:
+        - String
+        required: true
+      amount:
+        types:
+        - Integer
+        required: true
+      period:
+        types:
+        - String
+        required: false
+      breach_action:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   delete_cluster:
     parameters:
       cluster_identifier:
@@ -465,6 +537,12 @@ methods:
         types:
         - String
         required: true
+  delete_scheduled_action:
+    parameters:
+      scheduled_action_name:
+        types:
+        - String
+        required: true
   delete_snapshot_copy_grant:
     parameters:
       snapshot_copy_grant_name:
@@ -486,6 +564,12 @@ methods:
       tag_keys:
         types:
         - Array<String>
+        required: true
+  delete_usage_limit:
+    parameters:
+      usage_limit_id:
+        types:
+        - String
         required: true
   describe_account_attributes:
     parameters:
@@ -833,6 +917,36 @@ methods:
         types:
         - String
         required: true
+  describe_node_configuration_options:
+    parameters:
+      action_type:
+        types:
+        - String
+        required: true
+      cluster_identifier:
+        types:
+        - String
+        required: false
+      snapshot_identifier:
+        types:
+        - String
+        required: false
+      owner_account:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Array<Types::NodeConfigurationOptionsFilter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
   describe_orderable_cluster_options:
     parameters:
       cluster_version:
@@ -885,6 +999,48 @@ methods:
         types:
         - String
         required: true
+  describe_scheduled_actions:
+    parameters:
+      scheduled_action_name:
+        types:
+        - String
+        required: false
+      target_action_type:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      active:
+        types:
+        - Boolean
+        required: false
+      filters:
+        types:
+        - Array<Types::ScheduledActionFilter>
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
   describe_snapshot_copy_grants:
     parameters:
       snapshot_copy_grant_name:
@@ -958,6 +1114,36 @@ methods:
         - String
         required: false
       resource_type:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      tag_keys:
+        types:
+        - Array<String>
+        required: false
+      tag_values:
+        types:
+        - Array<String>
+        required: false
+  describe_usage_limits:
+    parameters:
+      usage_limit_id:
+        types:
+        - String
+        required: false
+      cluster_identifier:
+        types:
+        - String
+        required: false
+      feature_type:
         types:
         - String
         required: false
@@ -1295,6 +1481,48 @@ methods:
         types:
         - Boolean
         required: false
+  modify_scheduled_action:
+    parameters:
+      scheduled_action_name:
+        types:
+        - String
+        required: true
+      target_action:
+        types:
+        - Types::ScheduledActionType
+        required: false
+      schedule:
+        types:
+        - String
+        required: false
+      iam_role:
+        types:
+        - String
+        required: false
+      scheduled_action_description:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      enable:
+        types:
+        - Boolean
+        required: false
   modify_snapshot_copy_retention_period:
     parameters:
       cluster_identifier:
@@ -1318,6 +1546,26 @@ methods:
       schedule_definitions:
         types:
         - Array<String>
+        required: true
+  modify_usage_limit:
+    parameters:
+      usage_limit_id:
+        types:
+        - String
+        required: true
+      amount:
+        types:
+        - Integer
+        required: false
+      breach_action:
+        types:
+        - String
+        required: false
+  pause_cluster:
+    parameters:
+      cluster_identifier:
+        types:
+        - String
         required: true
   purchase_reserved_node_offering:
     parameters:
@@ -1366,7 +1614,7 @@ methods:
       number_of_nodes:
         types:
         - Integer
-        required: true
+        required: false
       classic:
         types:
         - Boolean
@@ -1473,6 +1721,10 @@ methods:
         types:
         - String
         required: false
+      number_of_nodes:
+        types:
+        - Integer
+        required: false
   restore_table_from_cluster_snapshot:
     parameters:
       cluster_identifier:
@@ -1504,6 +1756,12 @@ methods:
         - String
         required: false
       new_table_name:
+        types:
+        - String
+        required: true
+  resume_cluster:
+    parameters:
+      cluster_identifier:
         types:
         - String
         required: true

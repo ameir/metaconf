@@ -1,9 +1,19 @@
 ---
 function_concurrency:
   create: put_function_concurrency
-  read: 
+  read: get_function_concurrency
   update: 
   delete: delete_function_concurrency
+function_event_invoke_config:
+  create: put_function_event_invoke_config
+  read: get_function_event_invoke_config
+  update: 
+  delete: delete_function_event_invoke_config
+provisioned_concurrency_config:
+  create: put_provisioned_concurrency_config
+  read: get_provisioned_concurrency_config
+  update: 
+  delete: delete_provisioned_concurrency_config
 alias:
   create: create_alias
   read: get_alias

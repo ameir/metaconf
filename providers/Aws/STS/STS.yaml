@@ -11,6 +11,10 @@ methods:
         types:
         - String
         required: true
+      policy_arns:
+        types:
+        - Array<Types::PolicyDescriptorType>
+        required: false
       policy:
         types:
         - String
@@ -18,6 +22,14 @@ methods:
       duration_seconds:
         types:
         - Integer
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      transitive_tag_keys:
+        types:
+        - Array<String>
         required: false
       external_id:
         types:
@@ -45,6 +57,10 @@ methods:
         types:
         - String
         required: true
+      policy_arns:
+        types:
+        - Array<Types::PolicyDescriptorType>
+        required: false
       policy:
         types:
         - String
@@ -71,6 +87,10 @@ methods:
         types:
         - String
         required: false
+      policy_arns:
+        types:
+        - Array<Types::PolicyDescriptorType>
+        required: false
       policy:
         types:
         - String
@@ -85,6 +105,12 @@ methods:
         types:
         - String
         required: true
+  get_access_key_info:
+    parameters:
+      access_key_id:
+        types:
+        - String
+        required: true
   get_federation_token:
     parameters:
       name:
@@ -95,9 +121,17 @@ methods:
         types:
         - String
         required: false
+      policy_arns:
+        types:
+        - Array<Types::PolicyDescriptorType>
+        required: false
       duration_seconds:
         types:
         - Integer
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   get_session_token:
     parameters:

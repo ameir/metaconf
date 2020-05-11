@@ -1,0 +1,327 @@
+---
+class: Aws::ManagedBlockchain::Client
+methods:
+  create_member:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      invitation_id:
+        types:
+        - String
+        required: true
+      network_id:
+        types:
+        - String
+        required: true
+      member_configuration:
+        types:
+        - Types::MemberConfiguration
+        required: true
+  create_network:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      framework:
+        types:
+        - String
+        required: true
+      framework_version:
+        types:
+        - String
+        required: true
+      framework_configuration:
+        types:
+        - Types::NetworkFrameworkConfiguration
+        required: false
+      voting_policy:
+        types:
+        - Types::VotingPolicy
+        required: true
+      member_configuration:
+        types:
+        - Types::MemberConfiguration
+        required: true
+  create_node:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      node_configuration:
+        types:
+        - Types::NodeConfiguration
+        required: true
+  create_proposal:
+    parameters:
+      client_request_token:
+        types:
+        - String
+        required: true
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      actions:
+        types:
+        - Types::ProposalActions
+        required: true
+      description:
+        types:
+        - String
+        required: false
+  delete_member:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+  delete_node:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      node_id:
+        types:
+        - String
+        required: true
+  get_member:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+  get_network:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+  get_node:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      node_id:
+        types:
+        - String
+        required: true
+  get_proposal:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      proposal_id:
+        types:
+        - String
+        required: true
+  list_invitations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_members:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      status:
+        types:
+        - String
+        required: false
+      is_owned:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_networks:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      framework:
+        types:
+        - String
+        required: false
+      status:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_nodes:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      status:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_proposal_votes:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      proposal_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_proposals:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  reject_invitation:
+    parameters:
+      invitation_id:
+        types:
+        - String
+        required: true
+  update_member:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      log_publishing_configuration:
+        types:
+        - Types::MemberLogPublishingConfiguration
+        required: false
+  update_node:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      member_id:
+        types:
+        - String
+        required: true
+      node_id:
+        types:
+        - String
+        required: true
+      log_publishing_configuration:
+        types:
+        - Types::NodeLogPublishingConfiguration
+        required: false
+  vote_on_proposal:
+    parameters:
+      network_id:
+        types:
+        - String
+        required: true
+      proposal_id:
+        types:
+        - String
+        required: true
+      voter_member_id:
+        types:
+        - String
+        required: true
+      vote:
+        types:
+        - String
+        required: true

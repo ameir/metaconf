@@ -7,10 +7,18 @@ methods:
         types:
         - Types::BrokerNodeGroupInfo
         required: true
+      client_authentication:
+        types:
+        - Types::ClientAuthentication
+        required: false
       cluster_name:
         types:
         - String
         required: true
+      configuration_info:
+        types:
+        - Types::ConfigurationInfo
+        required: false
       encryption_info:
         types:
         - Types::EncryptionInfo
@@ -23,9 +31,40 @@ methods:
         types:
         - String
         required: true
+      logging_info:
+        types:
+        - Types::LoggingInfo
+        required: false
       number_of_broker_nodes:
         types:
         - Integer
+        required: true
+      open_monitoring:
+        types:
+        - Types::OpenMonitoringInfo
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_configuration:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      kafka_versions:
+        types:
+        - Array<String>
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      server_properties:
+        types:
+        - String
+        - IO
         required: true
   delete_cluster:
     parameters:
@@ -43,18 +82,88 @@ methods:
         types:
         - String
         required: true
+  describe_cluster_operation:
+    parameters:
+      cluster_operation_arn:
+        types:
+        - String
+        required: true
+  describe_configuration:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  describe_configuration_revision:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      revision:
+        types:
+        - Integer
+        required: true
   get_bootstrap_brokers:
     parameters:
       cluster_arn:
         types:
         - String
         required: true
+  list_cluster_operations:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   list_clusters:
     parameters:
       cluster_name_filter:
         types:
         - String
         required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_configuration_revisions:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_kafka_versions:
+    parameters:
       max_results:
         types:
         - Integer
@@ -76,4 +185,94 @@ methods:
       next_token:
         types:
         - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_broker_count:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: true
+      target_number_of_broker_nodes:
+        types:
+        - Integer
+        required: true
+  update_broker_storage:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: true
+      target_broker_ebs_volume_info:
+        types:
+        - Array<Types::BrokerEBSVolumeInfo>
+        required: true
+  update_cluster_configuration:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      configuration_info:
+        types:
+        - Types::ConfigurationInfo
+        required: true
+      current_version:
+        types:
+        - String
+        required: true
+  update_monitoring:
+    parameters:
+      cluster_arn:
+        types:
+        - String
+        required: true
+      current_version:
+        types:
+        - String
+        required: true
+      enhanced_monitoring:
+        types:
+        - String
+        required: false
+      open_monitoring:
+        types:
+        - Types::OpenMonitoringInfo
+        required: false
+      logging_info:
+        types:
+        - Types::LoggingInfo
         required: false

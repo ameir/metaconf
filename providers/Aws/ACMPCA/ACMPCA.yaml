@@ -37,6 +37,24 @@ methods:
         types:
         - String
         required: true
+  create_permission:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      principal:
+        types:
+        - String
+        required: true
+      source_account:
+        types:
+        - String
+        required: false
+      actions:
+        types:
+        - Array<String>
+        required: true
   delete_certificate_authority:
     parameters:
       certificate_authority_arn:
@@ -46,6 +64,20 @@ methods:
       permanent_deletion_time_in_days:
         types:
         - Integer
+        required: false
+  delete_permission:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
+      principal:
+        types:
+        - String
+        required: true
+      source_account:
+        types:
+        - String
         required: false
   describe_certificate_authority:
     parameters:
@@ -100,7 +132,7 @@ methods:
         types:
         - String
         - IO
-        required: true
+        required: false
   issue_certificate:
     parameters:
       certificate_authority_arn:
@@ -116,6 +148,10 @@ methods:
         types:
         - String
         required: true
+      template_arn:
+        types:
+        - String
+        required: false
       validity:
         types:
         - Types::Validity
@@ -126,6 +162,20 @@ methods:
         required: false
   list_certificate_authorities:
     parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_permissions:
+    parameters:
+      certificate_authority_arn:
+        types:
+        - String
+        required: true
       next_token:
         types:
         - String

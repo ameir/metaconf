@@ -66,7 +66,19 @@ methods:
       source_snapshot_name:
         types:
         - String
-        required: true
+        required: false
+      source_resource_name:
+        types:
+        - String
+        required: false
+      restore_date:
+        types:
+        - String
+        required: false
+      use_latest_restorable_auto_snapshot:
+        types:
+        - Boolean
+        required: false
       target_snapshot_name:
         types:
         - String
@@ -80,6 +92,16 @@ methods:
       instances:
         types:
         - Array<Types::InstanceEntry>
+        required: true
+  create_contact_method:
+    parameters:
+      protocol:
+        types:
+        - String
+        required: true
+      contact_endpoint:
+        types:
+        - String
         required: true
   create_disk:
     parameters:
@@ -99,6 +121,10 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+      add_ons:
+        types:
+        - Array<Types::AddOnRequest>
+        required: false
   create_disk_from_snapshot:
     parameters:
       disk_name:
@@ -108,7 +134,7 @@ methods:
       disk_snapshot_name:
         types:
         - String
-        required: true
+        required: false
       availability_zone:
         types:
         - String
@@ -120,6 +146,22 @@ methods:
       tags:
         types:
         - Array<Types::Tag>
+        required: false
+      add_ons:
+        types:
+        - Array<Types::AddOnRequest>
+        required: false
+      source_disk_name:
+        types:
+        - String
+        required: false
+      restore_date:
+        types:
+        - String
+        required: false
+      use_latest_restorable_auto_snapshot:
+        types:
+        - Boolean
         required: false
   create_disk_snapshot:
     parameters:
@@ -207,6 +249,10 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+      add_ons:
+        types:
+        - Array<Types::AddOnRequest>
+        required: false
   create_instances_from_snapshot:
     parameters:
       instance_names:
@@ -224,7 +270,7 @@ methods:
       instance_snapshot_name:
         types:
         - String
-        required: true
+        required: false
       bundle_id:
         types:
         - String
@@ -240,6 +286,22 @@ methods:
       tags:
         types:
         - Array<Types::Tag>
+        required: false
+      add_ons:
+        types:
+        - Array<Types::AddOnRequest>
+        required: false
+      source_instance_name:
+        types:
+        - String
+        required: false
+      restore_date:
+        types:
+        - String
+        required: false
+      use_latest_restorable_auto_snapshot:
+        types:
+        - Boolean
         required: false
   create_key_pair:
     parameters:
@@ -405,12 +467,38 @@ methods:
         types:
         - Array<Types::Tag>
         required: false
+  delete_alarm:
+    parameters:
+      alarm_name:
+        types:
+        - String
+        required: true
+  delete_auto_snapshot:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      date:
+        types:
+        - String
+        required: true
+  delete_contact_method:
+    parameters:
+      protocol:
+        types:
+        - String
+        required: true
   delete_disk:
     parameters:
       disk_name:
         types:
         - String
         required: true
+      force_delete_add_ons:
+        types:
+        - Boolean
+        required: false
   delete_disk_snapshot:
     parameters:
       disk_snapshot_name:
@@ -439,6 +527,10 @@ methods:
         types:
         - String
         required: true
+      force_delete_add_ons:
+        types:
+        - Boolean
+        required: false
   delete_instance_snapshot:
     parameters:
       instance_snapshot_name:
@@ -448,6 +540,12 @@ methods:
   delete_key_pair:
     parameters:
       key_pair_name:
+        types:
+        - String
+        required: true
+  delete_known_host_keys:
+    parameters:
+      instance_name:
         types:
         - String
         required: true
@@ -513,6 +611,26 @@ methods:
         types:
         - String
         required: true
+  disable_add_on:
+    parameters:
+      add_on_type:
+        types:
+        - String
+        required: true
+      resource_name:
+        types:
+        - String
+        required: true
+  enable_add_on:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
+      add_on_request:
+        types:
+        - Types::AddOnRequest
+        required: true
   export_snapshot:
     parameters:
       source_snapshot_name:
@@ -525,6 +643,26 @@ methods:
         types:
         - String
         required: false
+  get_alarms:
+    parameters:
+      alarm_name:
+        types:
+        - String
+        required: false
+      page_token:
+        types:
+        - String
+        required: false
+      monitored_resource_name:
+        types:
+        - String
+        required: false
+  get_auto_snapshots:
+    parameters:
+      resource_name:
+        types:
+        - String
+        required: true
   get_blueprints:
     parameters:
       include_inactive:
@@ -550,6 +688,12 @@ methods:
       page_token:
         types:
         - String
+        required: false
+  get_contact_methods:
+    parameters:
+      protocols:
+        types:
+        - Array<String>
         required: false
   get_disk:
     parameters:
@@ -957,6 +1101,52 @@ methods:
         types:
         - String
         required: true
+  put_alarm:
+    parameters:
+      alarm_name:
+        types:
+        - String
+        required: true
+      metric_name:
+        types:
+        - String
+        required: true
+      monitored_resource_name:
+        types:
+        - String
+        required: true
+      comparison_operator:
+        types:
+        - String
+        required: true
+      threshold:
+        types:
+        - Float
+        required: true
+      evaluation_periods:
+        types:
+        - Integer
+        required: true
+      datapoints_to_alarm:
+        types:
+        - Integer
+        required: false
+      treat_missing_data:
+        types:
+        - String
+        required: false
+      contact_protocols:
+        types:
+        - Array<String>
+        required: false
+      notification_triggers:
+        types:
+        - Array<String>
+        required: false
+      notification_enabled:
+        types:
+        - Boolean
+        required: false
   put_instance_public_ports:
     parameters:
       port_infos:
@@ -982,6 +1172,12 @@ methods:
   release_static_ip:
     parameters:
       static_ip_name:
+        types:
+        - String
+        required: true
+  send_contact_method_verification:
+    parameters:
+      protocol:
         types:
         - String
         required: true
@@ -1023,9 +1219,23 @@ methods:
         types:
         - String
         required: true
+      resource_arn:
+        types:
+        - String
+        required: false
       tags:
         types:
         - Array<Types::Tag>
+        required: true
+  test_alarm:
+    parameters:
+      alarm_name:
+        types:
+        - String
+        required: true
+      state:
+        types:
+        - String
         required: true
   untag_resource:
     parameters:
@@ -1033,6 +1243,10 @@ methods:
         types:
         - String
         required: true
+      resource_arn:
+        types:
+        - String
+        required: false
       tag_keys:
         types:
         - Array<String>
@@ -1098,6 +1312,10 @@ methods:
       apply_immediately:
         types:
         - Boolean
+        required: false
+      ca_certificate_identifier:
+        types:
+        - String
         required: false
   update_relational_database_parameters:
     parameters:

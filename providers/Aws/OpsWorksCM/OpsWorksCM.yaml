@@ -25,11 +25,27 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_server:
     parameters:
       associate_public_ip_address:
         types:
         - Boolean
+        required: false
+      custom_domain:
+        types:
+        - String
+        required: false
+      custom_certificate:
+        types:
+        - String
+        required: false
+      custom_private_key:
+        types:
+        - String
         required: false
       disable_automated_backup:
         types:
@@ -90,6 +106,10 @@ methods:
       subnet_ids:
         types:
         - Array<String>
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
       backup_id:
         types:
@@ -191,6 +211,20 @@ methods:
         types:
         - Array<Types::EngineAttribute>
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   restore_server:
     parameters:
       backup_id:
@@ -219,6 +253,26 @@ methods:
         types:
         - Array<Types::EngineAttribute>
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
   update_server:
     parameters:
       disable_automated_backup:

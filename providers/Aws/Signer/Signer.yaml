@@ -83,6 +83,12 @@ methods:
         types:
         - String
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   put_signing_profile:
     parameters:
       profile_name:
@@ -105,6 +111,10 @@ methods:
         types:
         - Hash<String,String>
         required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   start_signing_job:
     parameters:
       source:
@@ -122,6 +132,26 @@ methods:
       client_request_token:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   wait_until:
     parameters:

@@ -1,0 +1,181 @@
+---
+class: Aws::IoTEvents::Client
+methods:
+  create_detector_model:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      detector_model_definition:
+        types:
+        - Types::DetectorModelDefinition
+        required: true
+      detector_model_description:
+        types:
+        - String
+        required: false
+      key:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      evaluation_method:
+        types:
+        - String
+        required: false
+  create_input:
+    parameters:
+      input_name:
+        types:
+        - String
+        required: true
+      input_description:
+        types:
+        - String
+        required: false
+      input_definition:
+        types:
+        - Types::InputDefinition
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_detector_model:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+  delete_input:
+    parameters:
+      input_name:
+        types:
+        - String
+        required: true
+  describe_detector_model:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      detector_model_version:
+        types:
+        - String
+        required: false
+  describe_input:
+    parameters:
+      input_name:
+        types:
+        - String
+        required: true
+  list_detector_model_versions:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_detector_models:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_inputs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_logging_options:
+    parameters:
+      logging_options:
+        types:
+        - Types::LoggingOptions
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_detector_model:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      detector_model_definition:
+        types:
+        - Types::DetectorModelDefinition
+        required: true
+      detector_model_description:
+        types:
+        - String
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      evaluation_method:
+        types:
+        - String
+        required: false
+  update_input:
+    parameters:
+      input_name:
+        types:
+        - String
+        required: true
+      input_description:
+        types:
+        - String
+        required: false
+      input_definition:
+        types:
+        - Types::InputDefinition
+        required: true

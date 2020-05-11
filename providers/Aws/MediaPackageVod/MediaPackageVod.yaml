@@ -1,0 +1,169 @@
+---
+class: Aws::MediaPackageVod::Client
+methods:
+  create_asset:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      packaging_group_id:
+        types:
+        - String
+        required: true
+      resource_id:
+        types:
+        - String
+        required: false
+      source_arn:
+        types:
+        - String
+        required: true
+      source_role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_packaging_configuration:
+    parameters:
+      cmaf_package:
+        types:
+        - Types::CmafPackage
+        required: false
+      dash_package:
+        types:
+        - Types::DashPackage
+        required: false
+      hls_package:
+        types:
+        - Types::HlsPackage
+        required: false
+      id:
+        types:
+        - String
+        required: true
+      mss_package:
+        types:
+        - Types::MssPackage
+        required: false
+      packaging_group_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_packaging_group:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  delete_asset:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  delete_packaging_configuration:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  delete_packaging_group:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_asset:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_packaging_configuration:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  describe_packaging_group:
+    parameters:
+      id:
+        types:
+        - String
+        required: true
+  list_assets:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      packaging_group_id:
+        types:
+        - String
+        required: false
+  list_packaging_configurations:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      packaging_group_id:
+        types:
+        - String
+        required: false
+  list_packaging_groups:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

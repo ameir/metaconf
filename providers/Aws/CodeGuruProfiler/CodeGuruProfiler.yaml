@@ -1,0 +1,192 @@
+---
+class: Aws::CodeGuruProfiler::Client
+methods:
+  configure_agent:
+    parameters:
+      fleet_instance_id:
+        types:
+        - String
+        required: false
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  create_profiling_group:
+    parameters:
+      agent_orchestration_config:
+        types:
+        - Types::AgentOrchestrationConfig
+        required: false
+      client_token:
+        types:
+        - String
+        required: true
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  delete_profiling_group:
+    parameters:
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  describe_profiling_group:
+    parameters:
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  get_policy:
+    parameters:
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  get_profile:
+    parameters:
+      accept:
+        types:
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_depth:
+        types:
+        - Integer
+        required: false
+      period:
+        types:
+        - String
+        required: false
+      profiling_group_name:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+  list_profile_times:
+    parameters:
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      order_by:
+        types:
+        - String
+        required: false
+      period:
+        types:
+        - String
+        required: true
+      profiling_group_name:
+        types:
+        - String
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  list_profiling_groups:
+    parameters:
+      include_description:
+        types:
+        - Boolean
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  post_agent_profile:
+    parameters:
+      agent_profile:
+        types:
+        - String
+        - IO
+        required: true
+      content_type:
+        types:
+        - String
+        required: true
+      profile_token:
+        types:
+        - String
+        required: false
+      profiling_group_name:
+        types:
+        - String
+        required: true
+  put_permission:
+    parameters:
+      action_group:
+        types:
+        - String
+        required: true
+      principals:
+        types:
+        - Array<String>
+        required: true
+      profiling_group_name:
+        types:
+        - String
+        required: true
+      revision_id:
+        types:
+        - String
+        required: false
+  remove_permission:
+    parameters:
+      action_group:
+        types:
+        - String
+        required: true
+      profiling_group_name:
+        types:
+        - String
+        required: true
+      revision_id:
+        types:
+        - String
+        required: true
+  update_profiling_group:
+    parameters:
+      agent_orchestration_config:
+        types:
+        - Types::AgentOrchestrationConfig
+        required: true
+      profiling_group_name:
+        types:
+        - String
+        required: true

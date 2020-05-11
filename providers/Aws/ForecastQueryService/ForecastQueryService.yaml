@@ -1,0 +1,25 @@
+---
+class: Aws::ForecastQueryService::Client
+methods:
+  query_forecast:
+    parameters:
+      forecast_arn:
+        types:
+        - String
+        required: true
+      start_date:
+        types:
+        - String
+        required: false
+      end_date:
+        types:
+        - String
+        required: false
+      filters:
+        types:
+        - Hash<String,String>
+        required: true
+      next_token:
+        types:
+        - String
+        required: false

@@ -1,4 +1,9 @@
 ---
+signaling_channel:
+  create: create_signaling_channel
+  read: describe_signaling_channel
+  update: 
+  delete: delete_signaling_channel
 stream:
   create: create_stream
   read: describe_stream

@@ -1,0 +1,835 @@
+---
+class: Aws::IoTSiteWise::Client
+methods:
+  associate_assets:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      hierarchy_id:
+        types:
+        - String
+        required: true
+      child_asset_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  batch_associate_project_assets:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      asset_ids:
+        types:
+        - Array<String>
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  batch_disassociate_project_assets:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      asset_ids:
+        types:
+        - Array<String>
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  batch_put_asset_property_value:
+    parameters:
+      entries:
+        types:
+        - Array<Types::PutAssetPropertyValueEntry>
+        required: true
+  create_access_policy:
+    parameters:
+      access_policy_identity:
+        types:
+        - Types::Identity
+        required: true
+      access_policy_resource:
+        types:
+        - Types::Resource
+        required: true
+      access_policy_permission:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_asset:
+    parameters:
+      asset_name:
+        types:
+        - String
+        required: true
+      asset_model_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_asset_model:
+    parameters:
+      asset_model_name:
+        types:
+        - String
+        required: true
+      asset_model_description:
+        types:
+        - String
+        required: false
+      asset_model_properties:
+        types:
+        - Array<Types::AssetModelPropertyDefinition>
+        required: false
+      asset_model_hierarchies:
+        types:
+        - Array<Types::AssetModelHierarchyDefinition>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_dashboard:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      dashboard_name:
+        types:
+        - String
+        required: true
+      dashboard_description:
+        types:
+        - String
+        required: false
+      dashboard_definition:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_gateway:
+    parameters:
+      gateway_name:
+        types:
+        - String
+        required: true
+      gateway_platform:
+        types:
+        - Types::GatewayPlatform
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_portal:
+    parameters:
+      portal_name:
+        types:
+        - String
+        required: true
+      portal_description:
+        types:
+        - String
+        required: false
+      portal_contact_email:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+      portal_logo_image_file:
+        types:
+        - Types::ImageFile
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  create_project:
+    parameters:
+      portal_id:
+        types:
+        - String
+        required: true
+      project_name:
+        types:
+        - String
+        required: true
+      project_description:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+  delete_access_policy:
+    parameters:
+      access_policy_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  delete_asset:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  delete_asset_model:
+    parameters:
+      asset_model_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  delete_dashboard:
+    parameters:
+      dashboard_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  delete_gateway:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+  delete_portal:
+    parameters:
+      portal_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  delete_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  describe_access_policy:
+    parameters:
+      access_policy_id:
+        types:
+        - String
+        required: true
+  describe_asset:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+  describe_asset_model:
+    parameters:
+      asset_model_id:
+        types:
+        - String
+        required: true
+  describe_asset_property:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      property_id:
+        types:
+        - String
+        required: true
+  describe_dashboard:
+    parameters:
+      dashboard_id:
+        types:
+        - String
+        required: true
+  describe_gateway:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+  describe_gateway_capability_configuration:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+      capability_namespace:
+        types:
+        - String
+        required: true
+  describe_portal:
+    parameters:
+      portal_id:
+        types:
+        - String
+        required: true
+  describe_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+  disassociate_assets:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      hierarchy_id:
+        types:
+        - String
+        required: true
+      child_asset_id:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  get_asset_property_aggregates:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: false
+      property_id:
+        types:
+        - String
+        required: false
+      property_alias:
+        types:
+        - String
+        required: false
+      aggregate_types:
+        types:
+        - Array<String>
+        required: true
+      resolution:
+        types:
+        - String
+        required: true
+      qualities:
+        types:
+        - Array<String>
+        required: false
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      time_ordering:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  get_asset_property_value:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: false
+      property_id:
+        types:
+        - String
+        required: false
+      property_alias:
+        types:
+        - String
+        required: false
+  get_asset_property_value_history:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: false
+      property_id:
+        types:
+        - String
+        required: false
+      property_alias:
+        types:
+        - String
+        required: false
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      qualities:
+        types:
+        - Array<String>
+        required: false
+      time_ordering:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_access_policies:
+    parameters:
+      identity_type:
+        types:
+        - String
+        required: false
+      identity_id:
+        types:
+        - String
+        required: false
+      resource_type:
+        types:
+        - String
+        required: false
+      resource_id:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_asset_models:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_assets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      asset_model_id:
+        types:
+        - String
+        required: false
+      filter:
+        types:
+        - String
+        required: false
+  list_associated_assets:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      hierarchy_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_dashboards:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_gateways:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_portals:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_project_assets:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_projects:
+    parameters:
+      portal_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_logging_options:
+    parameters:
+      logging_options:
+        types:
+        - Types::LoggingOptions
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_access_policy:
+    parameters:
+      access_policy_id:
+        types:
+        - String
+        required: true
+      access_policy_identity:
+        types:
+        - Types::Identity
+        required: true
+      access_policy_resource:
+        types:
+        - Types::Resource
+        required: true
+      access_policy_permission:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  update_asset:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      asset_name:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  update_asset_model:
+    parameters:
+      asset_model_id:
+        types:
+        - String
+        required: true
+      asset_model_name:
+        types:
+        - String
+        required: true
+      asset_model_description:
+        types:
+        - String
+        required: false
+      asset_model_properties:
+        types:
+        - Array<Types::AssetModelProperty>
+        required: false
+      asset_model_hierarchies:
+        types:
+        - Array<Types::AssetModelHierarchy>
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  update_asset_property:
+    parameters:
+      asset_id:
+        types:
+        - String
+        required: true
+      property_id:
+        types:
+        - String
+        required: true
+      property_alias:
+        types:
+        - String
+        required: false
+      property_notification_state:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  update_dashboard:
+    parameters:
+      dashboard_id:
+        types:
+        - String
+        required: true
+      dashboard_name:
+        types:
+        - String
+        required: true
+      dashboard_description:
+        types:
+        - String
+        required: false
+      dashboard_definition:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  update_gateway:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+      gateway_name:
+        types:
+        - String
+        required: true
+  update_gateway_capability_configuration:
+    parameters:
+      gateway_id:
+        types:
+        - String
+        required: true
+      capability_namespace:
+        types:
+        - String
+        required: true
+      capability_configuration:
+        types:
+        - String
+        required: true
+  update_portal:
+    parameters:
+      portal_id:
+        types:
+        - String
+        required: true
+      portal_name:
+        types:
+        - String
+        required: true
+      portal_description:
+        types:
+        - String
+        required: false
+      portal_contact_email:
+        types:
+        - String
+        required: true
+      portal_logo_image_file:
+        types:
+        - Types::ImageFile
+        required: false
+      role_arn:
+        types:
+        - String
+        required: true
+      client_token:
+        types:
+        - String
+        required: false
+  update_project:
+    parameters:
+      project_id:
+        types:
+        - String
+        required: true
+      project_name:
+        types:
+        - String
+        required: true
+      project_description:
+        types:
+        - String
+        required: false
+      client_token:
+        types:
+        - String
+        required: false
+  wait_until:
+    parameters:
+      max_attempts:
+        types:
+        - Integer
+        required: false
+      delay:
+        types:
+        - Integer
+        required: false
+      before_attempt:
+        types:
+        - Proc
+        required: false
+      before_wait:
+        types:
+        - Proc
+        required: false

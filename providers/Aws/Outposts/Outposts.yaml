@@ -1,0 +1,77 @@
+---
+class: Aws::Outposts::Client
+methods:
+  create_outpost:
+    parameters:
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      site_id:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: false
+      availability_zone_id:
+        types:
+        - String
+        required: false
+  delete_outpost:
+    parameters:
+      outpost_id:
+        types:
+        - String
+        required: true
+  delete_site:
+    parameters:
+      site_id:
+        types:
+        - String
+        required: true
+  get_outpost:
+    parameters:
+      outpost_id:
+        types:
+        - String
+        required: true
+  get_outpost_instance_types:
+    parameters:
+      outpost_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_outposts:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_sites:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false

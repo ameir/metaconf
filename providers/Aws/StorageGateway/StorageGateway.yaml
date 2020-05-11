@@ -31,6 +31,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   add_cache:
     parameters:
       gateway_arn:
@@ -70,6 +74,16 @@ methods:
       disk_ids:
         types:
         - Array<String>
+        required: true
+  assign_tape_pool:
+    parameters:
+      tape_arn:
+        types:
+        - String
+        required: true
+      pool_id:
+        types:
+        - String
         required: true
   attach_volume:
     parameters:
@@ -151,6 +165,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_nfs_file_share:
     parameters:
       client_token:
@@ -209,6 +227,10 @@ methods:
         types:
         - Boolean
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_smb_file_share:
     parameters:
       client_token:
@@ -255,6 +277,14 @@ methods:
         types:
         - Boolean
         required: false
+      smbacl_enabled:
+        types:
+        - Boolean
+        required: false
+      admin_user_list:
+        types:
+        - Array<String>
+        required: false
       valid_user_list:
         types:
         - Array<String>
@@ -263,9 +293,17 @@ methods:
         types:
         - Array<String>
         required: false
+      audit_destination_arn:
+        types:
+        - String
+        required: false
       authentication:
         types:
         - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_snapshot:
     parameters:
@@ -277,6 +315,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_snapshot_from_volume_recovery_point:
     parameters:
       volume_arn:
@@ -287,6 +329,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_stored_iscsi_volume:
     parameters:
       gateway_arn:
@@ -321,6 +367,10 @@ methods:
         types:
         - String
         required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_tape_with_barcode:
     parameters:
       gateway_arn:
@@ -342,6 +392,14 @@ methods:
       kms_key:
         types:
         - String
+        required: false
+      pool_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   create_tapes:
     parameters:
@@ -373,6 +431,20 @@ methods:
         types:
         - String
         required: false
+      pool_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_automatic_tape_creation_policy:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
   delete_bandwidth_rate_limit:
     parameters:
       gateway_arn:
@@ -434,6 +506,12 @@ methods:
   delete_volume:
     parameters:
       volume_arn:
+        types:
+        - String
+        required: true
+  describe_availability_monitor_test:
+    parameters:
+      gateway_arn:
         types:
         - String
         required: true
@@ -613,6 +691,10 @@ methods:
         types:
         - Array<String>
         required: false
+      timeout_in_seconds:
+        types:
+        - Integer
+        required: false
       user_name:
         types:
         - String
@@ -621,6 +703,12 @@ methods:
         types:
         - String
         required: true
+  list_automatic_tape_creation_policies:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: false
   list_file_shares:
     parameters:
       gateway_arn:
@@ -787,8 +875,24 @@ methods:
         types:
         - String
         required: true
+  start_availability_monitor_test:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
   start_gateway:
     parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  update_automatic_tape_creation_policy:
+    parameters:
+      automatic_tape_creation_rules:
+        types:
+        - Array<Types::AutomaticTapeCreationRule>
+        required: true
       gateway_arn:
         types:
         - String
@@ -839,6 +943,10 @@ methods:
         types:
         - String
         required: false
+      cloud_watch_log_group_arn:
+        types:
+        - String
+        required: false
   update_gateway_software_now:
     parameters:
       gateway_arn:
@@ -862,7 +970,11 @@ methods:
       day_of_week:
         types:
         - Integer
-        required: true
+        required: false
+      day_of_month:
+        types:
+        - Integer
+        required: false
   update_nfs_file_share:
     parameters:
       file_share_arn:
@@ -943,6 +1055,14 @@ methods:
         types:
         - Boolean
         required: false
+      smbacl_enabled:
+        types:
+        - Boolean
+        required: false
+      admin_user_list:
+        types:
+        - Array<String>
+        required: false
       valid_user_list:
         types:
         - Array<String>
@@ -951,6 +1071,20 @@ methods:
         types:
         - Array<String>
         required: false
+      audit_destination_arn:
+        types:
+        - String
+        required: false
+  update_smb_security_strategy:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      smb_security_strategy:
+        types:
+        - String
+        required: true
   update_snapshot_schedule:
     parameters:
       volume_arn:
@@ -968,6 +1102,10 @@ methods:
       description:
         types:
         - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
         required: false
   update_vtl_device_type:
     parameters:

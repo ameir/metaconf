@@ -1,4 +1,9 @@
 ---
+api_cache:
+  create: create_api_cache
+  read: get_api_cache
+  update: 
+  delete: delete_api_cache
 api_key:
   create: create_api_key
   read: 

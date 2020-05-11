@@ -61,6 +61,10 @@ methods:
         types:
         - String
         required: false
+      tax_documents:
+        types:
+        - Types::TaxDocuments
+        required: false
   create_job:
     parameters:
       job_type:
@@ -111,6 +115,10 @@ methods:
         types:
         - String
         required: false
+      tax_documents:
+        types:
+        - Types::TaxDocuments
+        required: false
   describe_address:
     parameters:
       address_id:
@@ -146,6 +154,12 @@ methods:
         - String
         required: true
   get_job_unlock_code:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
+  get_software_updates:
     parameters:
       job_id:
         types:

@@ -11,6 +11,26 @@ methods:
         types:
         - Array<Types::AddOutputRequest>
         required: true
+  add_flow_sources:
+    parameters:
+      flow_arn:
+        types:
+        - String
+        required: true
+      sources:
+        types:
+        - Array<Types::SetSourceRequest>
+        required: true
+  add_flow_vpc_interfaces:
+    parameters:
+      flow_arn:
+        types:
+        - String
+        required: true
+      vpc_interfaces:
+        types:
+        - Array<Types::VpcInterfaceRequest>
+        required: true
   create_flow:
     parameters:
       availability_zone:
@@ -32,7 +52,19 @@ methods:
       source:
         types:
         - Types::SetSourceRequest
-        required: true
+        required: false
+      source_failover_config:
+        types:
+        - Types::FailoverConfig
+        required: false
+      sources:
+        types:
+        - Array<Types::SetSourceRequest>
+        required: false
+      vpc_interfaces:
+        types:
+        - Array<Types::VpcInterfaceRequest>
+        required: false
   delete_flow:
     parameters:
       flow_arn:
@@ -91,6 +123,26 @@ methods:
         types:
         - String
         required: true
+  remove_flow_source:
+    parameters:
+      flow_arn:
+        types:
+        - String
+        required: true
+      source_arn:
+        types:
+        - String
+        required: true
+  remove_flow_vpc_interface:
+    parameters:
+      flow_arn:
+        types:
+        - String
+        required: true
+      vpc_interface_name:
+        types:
+        - String
+        required: true
   revoke_flow_entitlement:
     parameters:
       entitlement_arn:
@@ -133,6 +185,16 @@ methods:
         types:
         - Array<String>
         required: true
+  update_flow:
+    parameters:
+      flow_arn:
+        types:
+        - String
+        required: true
+      source_failover_config:
+        types:
+        - Types::UpdateFailoverConfig
+        required: false
   update_flow_entitlement:
     parameters:
       description:
@@ -157,6 +219,10 @@ methods:
         required: false
   update_flow_output:
     parameters:
+      cidr_allow_list:
+        types:
+        - Array<String>
+        required: false
       description:
         types:
         - String
@@ -189,6 +255,10 @@ methods:
         types:
         - String
         required: false
+      remote_id:
+        types:
+        - String
+        required: false
       smoothing_latency:
         types:
         - Integer
@@ -196,6 +266,10 @@ methods:
       stream_id:
         types:
         - String
+        required: false
+      vpc_interface_attachment:
+        types:
+        - Types::VpcInterfaceAttachment
         required: false
   update_flow_source:
     parameters:
@@ -236,6 +310,10 @@ methods:
         - String
         required: true
       stream_id:
+        types:
+        - String
+        required: false
+      vpc_interface_name:
         types:
         - String
         required: false

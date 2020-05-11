@@ -1,0 +1,9 @@
+---
+class: Aws::WorkMailMessageFlow::Client
+methods:
+  get_raw_message_content:
+    parameters:
+      message_id:
+        types:
+        - String
+        required: true

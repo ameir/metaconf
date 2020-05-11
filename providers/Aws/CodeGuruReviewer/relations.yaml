@@ -1,0 +1,6 @@
+---
+recommendation_feedback:
+  create: put_recommendation_feedback
+  read: describe_recommendation_feedback
+  update: 
+  delete: 

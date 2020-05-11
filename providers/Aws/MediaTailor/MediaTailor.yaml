@@ -35,13 +35,25 @@ methods:
         types:
         - String
         required: false
+      avail_suppression:
+        types:
+        - Types::AvailSuppression
+        required: false
       cdn_configuration:
         types:
         - Types::CdnConfiguration
         required: false
+      personalization_threshold_seconds:
+        types:
+        - Integer
+        required: false
       dash_configuration:
         types:
         - Types::DashConfigurationForPut
+        required: false
+      live_pre_roll_configuration:
+        types:
+        - Types::LivePreRollConfiguration
         required: false
       name:
         types:

@@ -159,6 +159,10 @@ methods:
         types:
         - String
         required: false
+      max_instance_lifetime:
+        types:
+        - Integer
+        required: false
   create_launch_configuration:
     parameters:
       launch_configuration_name:
@@ -685,6 +689,10 @@ methods:
         types:
         - Types::TargetTrackingConfiguration
         required: false
+      enabled:
+        types:
+        - Boolean
+        required: false
   put_scheduled_update_group_action:
     parameters:
       auto_scaling_group_name:
@@ -890,6 +898,10 @@ methods:
       service_linked_role_arn:
         types:
         - String
+        required: false
+      max_instance_lifetime:
+        types:
+        - Integer
         required: false
   wait_until:
     parameters:

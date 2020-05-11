@@ -41,6 +41,24 @@ methods:
         types:
         - String
         required: false
+  create_gov_cloud_account:
+    parameters:
+      email:
+        types:
+        - String
+        required: true
+      account_name:
+        types:
+        - String
+        required: true
+      role_name:
+        types:
+        - String
+        required: false
+      iam_user_access_to_billing:
+        types:
+        - String
+        required: false
   create_organization:
     parameters:
       feature_set:
@@ -93,6 +111,16 @@ methods:
         types:
         - String
         required: true
+  deregister_delegated_administrator:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      service_principal:
+        types:
+        - String
+        required: true
   describe_account:
     parameters:
       account_id:
@@ -105,6 +133,16 @@ methods:
         types:
         - String
         required: true
+  describe_effective_policy:
+    parameters:
+      policy_type:
+        types:
+        - String
+        required: true
+      target_id:
+        types:
+        - String
+        required: false
   describe_handshake:
     parameters:
       handshake_id:
@@ -241,6 +279,34 @@ methods:
         types:
         - Integer
         required: false
+  list_delegated_administrators:
+    parameters:
+      service_principal:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_delegated_services_for_account:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   list_handshakes_for_account:
     parameters:
       filter:
@@ -339,6 +405,16 @@ methods:
         types:
         - Integer
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
   list_targets_for_policy:
     parameters:
       policy_id:
@@ -367,11 +443,41 @@ methods:
         types:
         - String
         required: true
+  register_delegated_administrator:
+    parameters:
+      account_id:
+        types:
+        - String
+        required: true
+      service_principal:
+        types:
+        - String
+        required: true
   remove_account_from_organization:
     parameters:
       account_id:
         types:
         - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_organizational_unit:
     parameters:

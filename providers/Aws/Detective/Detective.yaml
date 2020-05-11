@@ -1,0 +1,105 @@
+---
+class: Aws::Detective::Client
+methods:
+  accept_invitation:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+  create_members:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+      message:
+        types:
+        - String
+        required: false
+      accounts:
+        types:
+        - Array<Types::Account>
+        required: true
+  delete_graph:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+  delete_members:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+      account_ids:
+        types:
+        - Array<String>
+        required: true
+  disassociate_membership:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+  get_members:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+      account_ids:
+        types:
+        - Array<String>
+        required: true
+  list_graphs:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_invitations:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_members:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  reject_invitation:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+  start_monitoring_member:
+    parameters:
+      graph_arn:
+        types:
+        - String
+        required: true
+      account_id:
+        types:
+        - String
+        required: true

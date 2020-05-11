@@ -1,0 +1,537 @@
+---
+class: Aws::SESV2::Client
+methods:
+  create_configuration_set:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      tracking_options:
+        types:
+        - Types::TrackingOptions
+        required: false
+      delivery_options:
+        types:
+        - Types::DeliveryOptions
+        required: false
+      reputation_options:
+        types:
+        - Types::ReputationOptions
+        required: false
+      sending_options:
+        types:
+        - Types::SendingOptions
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      suppression_options:
+        types:
+        - Types::SuppressionOptions
+        required: false
+  create_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination_name:
+        types:
+        - String
+        required: true
+      event_destination:
+        types:
+        - Types::EventDestinationDefinition
+        required: true
+  create_dedicated_ip_pool:
+    parameters:
+      pool_name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_deliverability_test_report:
+    parameters:
+      report_name:
+        types:
+        - String
+        required: false
+      from_email_address:
+        types:
+        - String
+        required: true
+      content:
+        types:
+        - Types::EmailContent
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_email_identity:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      dkim_signing_attributes:
+        types:
+        - Types::DkimSigningAttributes
+        required: false
+  delete_configuration_set:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+  delete_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination_name:
+        types:
+        - String
+        required: true
+  delete_dedicated_ip_pool:
+    parameters:
+      pool_name:
+        types:
+        - String
+        required: true
+  delete_email_identity:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+  delete_suppressed_destination:
+    parameters:
+      email_address:
+        types:
+        - String
+        required: true
+  get_blacklist_reports:
+    parameters:
+      blacklist_item_names:
+        types:
+        - Array<String>
+        required: true
+  get_configuration_set:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+  get_configuration_set_event_destinations:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+  get_dedicated_ip:
+    parameters:
+      ip:
+        types:
+        - String
+        required: true
+  get_dedicated_ips:
+    parameters:
+      pool_name:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  get_deliverability_test_report:
+    parameters:
+      report_id:
+        types:
+        - String
+        required: true
+  get_domain_deliverability_campaign:
+    parameters:
+      campaign_id:
+        types:
+        - String
+        required: true
+  get_domain_statistics_report:
+    parameters:
+      domain:
+        types:
+        - String
+        required: true
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  get_email_identity:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+  get_suppressed_destination:
+    parameters:
+      email_address:
+        types:
+        - String
+        required: true
+  list_configuration_sets:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_dedicated_ip_pools:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_deliverability_test_reports:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_domain_deliverability_campaigns:
+    parameters:
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      subscribed_domain:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_email_identities:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_suppressed_destinations:
+    parameters:
+      reasons:
+        types:
+        - Array<String>
+        required: false
+      start_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_date:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      page_size:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  put_account_dedicated_ip_warmup_attributes:
+    parameters:
+      auto_warmup_enabled:
+        types:
+        - Boolean
+        required: false
+  put_account_sending_attributes:
+    parameters:
+      sending_enabled:
+        types:
+        - Boolean
+        required: false
+  put_account_suppression_attributes:
+    parameters:
+      suppressed_reasons:
+        types:
+        - Array<String>
+        required: false
+  put_configuration_set_delivery_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      tls_policy:
+        types:
+        - String
+        required: false
+      sending_pool_name:
+        types:
+        - String
+        required: false
+  put_configuration_set_reputation_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      reputation_metrics_enabled:
+        types:
+        - Boolean
+        required: false
+  put_configuration_set_sending_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      sending_enabled:
+        types:
+        - Boolean
+        required: false
+  put_configuration_set_suppression_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      suppressed_reasons:
+        types:
+        - Array<String>
+        required: false
+  put_configuration_set_tracking_options:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      custom_redirect_domain:
+        types:
+        - String
+        required: false
+  put_dedicated_ip_in_pool:
+    parameters:
+      ip:
+        types:
+        - String
+        required: true
+      destination_pool_name:
+        types:
+        - String
+        required: true
+  put_dedicated_ip_warmup_attributes:
+    parameters:
+      ip:
+        types:
+        - String
+        required: true
+      warmup_percentage:
+        types:
+        - Integer
+        required: true
+  put_deliverability_dashboard_option:
+    parameters:
+      dashboard_enabled:
+        types:
+        - Boolean
+        required: true
+      subscribed_domains:
+        types:
+        - Array<Types::DomainDeliverabilityTrackingOption>
+        required: false
+  put_email_identity_dkim_attributes:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+      signing_enabled:
+        types:
+        - Boolean
+        required: false
+  put_email_identity_dkim_signing_attributes:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+      signing_attributes_origin:
+        types:
+        - String
+        required: true
+      signing_attributes:
+        types:
+        - Types::DkimSigningAttributes
+        required: false
+  put_email_identity_feedback_attributes:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+      email_forwarding_enabled:
+        types:
+        - Boolean
+        required: false
+  put_email_identity_mail_from_attributes:
+    parameters:
+      email_identity:
+        types:
+        - String
+        required: true
+      mail_from_domain:
+        types:
+        - String
+        required: false
+      behavior_on_mx_failure:
+        types:
+        - String
+        required: false
+  put_suppressed_destination:
+    parameters:
+      email_address:
+        types:
+        - String
+        required: true
+      reason:
+        types:
+        - String
+        required: true
+  send_email:
+    parameters:
+      from_email_address:
+        types:
+        - String
+        required: false
+      destination:
+        types:
+        - Types::Destination
+        required: true
+      reply_to_addresses:
+        types:
+        - Array<String>
+        required: false
+      feedback_forwarding_email_address:
+        types:
+        - String
+        required: false
+      content:
+        types:
+        - Types::EmailContent
+        required: true
+      email_tags:
+        types:
+        - Array<Types::MessageTag>
+        required: false
+      configuration_set_name:
+        types:
+        - String
+        required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_configuration_set_event_destination:
+    parameters:
+      configuration_set_name:
+        types:
+        - String
+        required: true
+      event_destination_name:
+        types:
+        - String
+        required: true
+      event_destination:
+        types:
+        - Types::EventDestinationDefinition
+        required: true

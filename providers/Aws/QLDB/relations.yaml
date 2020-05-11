@@ -1,0 +1,6 @@
+---
+ledger:
+  create: create_ledger
+  read: describe_ledger
+  update: 
+  delete: delete_ledger

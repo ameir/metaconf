@@ -1,9 +1,19 @@
 ---
+file_system_policy:
+  create: put_file_system_policy
+  read: describe_file_system_policy
+  update: 
+  delete: delete_file_system_policy
 lifecycle_configuration:
   create: put_lifecycle_configuration
   read: describe_lifecycle_configuration
   update: 
   delete: 
+access_point:
+  create: create_access_point
+  read: describe_access_points
+  update: 
+  delete: delete_access_point
 file_system:
   create: create_file_system
   read: describe_file_systems

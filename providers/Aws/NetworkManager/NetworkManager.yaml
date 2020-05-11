@@ -1,0 +1,471 @@
+---
+class: Aws::NetworkManager::Client
+methods:
+  associate_customer_gateway:
+    parameters:
+      customer_gateway_arn:
+        types:
+        - String
+        required: true
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+      link_id:
+        types:
+        - String
+        required: false
+  associate_link:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+      link_id:
+        types:
+        - String
+        required: true
+  create_device:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      vendor:
+        types:
+        - String
+        required: false
+      model:
+        types:
+        - String
+        required: false
+      serial_number:
+        types:
+        - String
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false
+      site_id:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_global_network:
+    parameters:
+      description:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_link:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      bandwidth:
+        types:
+        - Types::Bandwidth
+        required: true
+      provider:
+        types:
+        - String
+        required: false
+      site_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_site:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_device:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+  delete_global_network:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+  delete_link:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      link_id:
+        types:
+        - String
+        required: true
+  delete_site:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      site_id:
+        types:
+        - String
+        required: true
+  deregister_transit_gateway:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      transit_gateway_arn:
+        types:
+        - String
+        required: true
+  describe_global_networks:
+    parameters:
+      global_network_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  disassociate_customer_gateway:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      customer_gateway_arn:
+        types:
+        - String
+        required: true
+  disassociate_link:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+      link_id:
+        types:
+        - String
+        required: true
+  get_customer_gateway_associations:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      customer_gateway_arns:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_devices:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_ids:
+        types:
+        - Array<String>
+        required: false
+      site_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_link_associations:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: false
+      link_id:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_links:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      link_ids:
+        types:
+        - Array<String>
+        required: false
+      site_id:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      provider:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_sites:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      site_ids:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  get_transit_gateway_registrations:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      transit_gateway_arns:
+        types:
+        - Array<String>
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  register_transit_gateway:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      transit_gateway_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_device:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      device_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      vendor:
+        types:
+        - String
+        required: false
+      model:
+        types:
+        - String
+        required: false
+      serial_number:
+        types:
+        - String
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false
+      site_id:
+        types:
+        - String
+        required: false
+  update_global_network:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+  update_link:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      link_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      type:
+        types:
+        - String
+        required: false
+      bandwidth:
+        types:
+        - Types::Bandwidth
+        required: false
+      provider:
+        types:
+        - String
+        required: false
+  update_site:
+    parameters:
+      global_network_id:
+        types:
+        - String
+        required: true
+      site_id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      location:
+        types:
+        - Types::Location
+        required: false

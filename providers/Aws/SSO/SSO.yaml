@@ -1,0 +1,55 @@
+---
+class: Aws::SSO::Client
+methods:
+  get_role_credentials:
+    parameters:
+      role_name:
+        types:
+        - String
+        required: true
+      account_id:
+        types:
+        - String
+        required: true
+      access_token:
+        types:
+        - String
+        required: true
+  list_account_roles:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      access_token:
+        types:
+        - String
+        required: true
+      account_id:
+        types:
+        - String
+        required: true
+  list_accounts:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      access_token:
+        types:
+        - String
+        required: true
+  logout:
+    parameters:
+      access_token:
+        types:
+        - String
+        required: true

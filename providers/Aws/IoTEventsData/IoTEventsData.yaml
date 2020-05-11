@@ -1,0 +1,43 @@
+---
+class: Aws::IoTEventsData::Client
+methods:
+  batch_put_message:
+    parameters:
+      messages:
+        types:
+        - Array<Types::Message>
+        required: true
+  batch_update_detector:
+    parameters:
+      detectors:
+        types:
+        - Array<Types::UpdateDetectorRequest>
+        required: true
+  describe_detector:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      key_value:
+        types:
+        - String
+        required: false
+  list_detectors:
+    parameters:
+      detector_model_name:
+        types:
+        - String
+        required: true
+      state_name:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false

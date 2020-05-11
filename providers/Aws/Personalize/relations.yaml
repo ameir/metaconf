@@ -1,0 +1,46 @@
+---
+batch_inference_job:
+  create: create_batch_inference_job
+  read: describe_batch_inference_job
+  update: 
+  delete: 
+campaign:
+  create: create_campaign
+  read: describe_campaign
+  update: 
+  delete: delete_campaign
+dataset:
+  create: create_dataset
+  read: describe_dataset
+  update: 
+  delete: delete_dataset
+dataset_group:
+  create: create_dataset_group
+  read: describe_dataset_group
+  update: 
+  delete: delete_dataset_group
+dataset_import_job:
+  create: create_dataset_import_job
+  read: describe_dataset_import_job
+  update: 
+  delete: 
+event_tracker:
+  create: create_event_tracker
+  read: describe_event_tracker
+  update: 
+  delete: delete_event_tracker
+schema:
+  create: create_schema
+  read: describe_schema
+  update: 
+  delete: delete_schema
+solution:
+  create: create_solution
+  read: describe_solution
+  update: 
+  delete: delete_solution
+solution_version:
+  create: create_solution_version
+  read: describe_solution_version
+  update: 
+  delete: 

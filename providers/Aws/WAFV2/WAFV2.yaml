@@ -1,0 +1,619 @@
+---
+class: Aws::WAFV2::Client
+methods:
+  associate_web_acl:
+    parameters:
+      web_acl_arn:
+        types:
+        - String
+        required: true
+      resource_arn:
+        types:
+        - String
+        required: true
+  check_capacity:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: true
+  create_ip_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      ip_address_version:
+        types:
+        - String
+        required: true
+      addresses:
+        types:
+        - Array<String>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_regex_pattern_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      regular_expression_list:
+        types:
+        - Array<Types::Regex>
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_rule_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      capacity:
+        types:
+        - Integer
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: false
+      visibility_config:
+        types:
+        - Types::VisibilityConfig
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_web_acl:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      default_action:
+        types:
+        - Types::DefaultAction
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: false
+      visibility_config:
+        types:
+        - Types::VisibilityConfig
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  delete_firewall_manager_rule_groups:
+    parameters:
+      web_acl_arn:
+        types:
+        - String
+        required: true
+      web_acl_lock_token:
+        types:
+        - String
+        required: true
+  delete_ip_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  delete_logging_configuration:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  delete_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  delete_regex_pattern_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  delete_rule_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  delete_web_acl:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  describe_managed_rule_group:
+    parameters:
+      vendor_name:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+  disassociate_web_acl:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  get_ip_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+  get_logging_configuration:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  get_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  get_rate_based_statement_managed_keys:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      web_acl_name:
+        types:
+        - String
+        required: true
+      web_acl_id:
+        types:
+        - String
+        required: true
+      rule_name:
+        types:
+        - String
+        required: true
+  get_regex_pattern_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+  get_rule_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+  get_sampled_requests:
+    parameters:
+      web_acl_arn:
+        types:
+        - String
+        required: true
+      rule_metric_name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      time_window:
+        types:
+        - Types::TimeWindow
+        required: true
+      max_items:
+        types:
+        - Integer
+        required: true
+  get_web_acl:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+  get_web_acl_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_available_managed_rule_groups:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_ip_sets:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_logging_configurations:
+    parameters:
+      scope:
+        types:
+        - String
+        required: false
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_regex_pattern_sets:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_resources_for_web_acl:
+    parameters:
+      web_acl_arn:
+        types:
+        - String
+        required: true
+      resource_type:
+        types:
+        - String
+        required: false
+  list_rule_groups:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  list_tags_for_resource:
+    parameters:
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+      resource_arn:
+        types:
+        - String
+        required: true
+  list_web_acls:
+    parameters:
+      scope:
+        types:
+        - String
+        required: true
+      next_marker:
+        types:
+        - String
+        required: false
+      limit:
+        types:
+        - Integer
+        required: false
+  put_logging_configuration:
+    parameters:
+      logging_configuration:
+        types:
+        - Types::LoggingConfiguration
+        required: true
+  put_permission_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_ip_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      addresses:
+        types:
+        - Array<String>
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  update_regex_pattern_set:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      regular_expression_list:
+        types:
+        - Array<Types::Regex>
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  update_rule_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: false
+      visibility_config:
+        types:
+        - Types::VisibilityConfig
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true
+  update_web_acl:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      scope:
+        types:
+        - String
+        required: true
+      id:
+        types:
+        - String
+        required: true
+      default_action:
+        types:
+        - Types::DefaultAction
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      rules:
+        types:
+        - Array<Types::Rule>
+        required: false
+      visibility_config:
+        types:
+        - Types::VisibilityConfig
+        required: true
+      lock_token:
+        types:
+        - String
+        required: true

@@ -19,6 +19,10 @@ methods:
         types:
         - Types::PolicyDetails
         required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
   delete_lifecycle_policy:
     parameters:
       policy_id:
@@ -52,6 +56,32 @@ methods:
       policy_id:
         types:
         - String
+        required: true
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_lifecycle_policy:
     parameters:

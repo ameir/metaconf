@@ -1,0 +1,6 @@
+---
+connection:
+  create: create_connection
+  read: get_connection
+  update: 
+  delete: delete_connection

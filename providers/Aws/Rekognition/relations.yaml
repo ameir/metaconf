@@ -4,6 +4,16 @@ collection:
   read: describe_collection
   update: 
   delete: delete_collection
+project:
+  create: create_project
+  read: describe_projects
+  update: 
+  delete: delete_project
+project_version:
+  create: create_project_version
+  read: describe_project_versions
+  update: 
+  delete: delete_project_version
 stream_processor:
   create: create_stream_processor
   read: describe_stream_processor

@@ -4,6 +4,11 @@ channel:
   read: describe_channel
   update: 
   delete: delete_channel
+harvest_job:
+  create: create_harvest_job
+  read: describe_harvest_job
+  update: 
+  delete: 
 origin_endpoint:
   create: create_origin_endpoint
   read: describe_origin_endpoint

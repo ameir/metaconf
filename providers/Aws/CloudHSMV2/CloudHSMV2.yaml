@@ -11,6 +11,10 @@ methods:
         types:
         - String
         required: true
+      tag_list:
+        types:
+        - Array<Types::Tag>
+        required: false
   create_cluster:
     parameters:
       subnet_ids:
@@ -24,6 +28,10 @@ methods:
       source_backup_id:
         types:
         - String
+        required: false
+      tag_list:
+        types:
+        - Array<Types::Tag>
         required: false
   create_hsm:
     parameters:

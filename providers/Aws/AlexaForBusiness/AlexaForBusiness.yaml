@@ -17,6 +17,16 @@ methods:
         types:
         - String
         required: true
+  associate_device_with_network_profile:
+    parameters:
+      device_arn:
+        types:
+        - String
+        required: true
+      network_profile_arn:
+        types:
+        - String
+        required: true
   associate_device_with_room:
     parameters:
       device_arn:
@@ -49,10 +59,6 @@ methods:
         required: true
   associate_skill_with_users:
     parameters:
-      organization_arn:
-        types:
-        - String
-        required: false
       skill_id:
         types:
         - String
@@ -145,10 +151,74 @@ methods:
         types:
         - String
         required: false
+      phone_numbers:
+        types:
+        - Array<Types::PhoneNumber>
+        required: false
+      sip_addresses:
+        types:
+        - Array<Types::SipAddress>
+        required: false
       client_request_token:
         types:
         - String
         required: false
+  create_gateway_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: true
+  create_network_profile:
+    parameters:
+      network_profile_name:
+        types:
+        - String
+        required: true
+      description:
+        types:
+        - String
+        required: false
+      ssid:
+        types:
+        - String
+        required: true
+      security_type:
+        types:
+        - String
+        required: true
+      eap_method:
+        types:
+        - String
+        required: false
+      current_password:
+        types:
+        - String
+        required: false
+      next_password:
+        types:
+        - String
+        required: false
+      certificate_authority_arn:
+        types:
+        - String
+        required: false
+      trust_anchors:
+        types:
+        - Array<String>
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: true
   create_profile:
     parameters:
       profile_name:
@@ -175,6 +245,10 @@ methods:
         types:
         - String
         required: true
+      locale:
+        types:
+        - String
+        required: false
       client_request_token:
         types:
         - String
@@ -190,6 +264,10 @@ methods:
       pstn_enabled:
         types:
         - Boolean
+        required: false
+      meeting_room_configuration:
+        types:
+        - Types::CreateMeetingRoomConfiguration
         required: false
   create_room:
     parameters:
@@ -287,6 +365,28 @@ methods:
         types:
         - String
         required: true
+  delete_device_usage_data:
+    parameters:
+      device_arn:
+        types:
+        - String
+        required: true
+      device_usage_type:
+        types:
+        - String
+        required: true
+  delete_gateway_group:
+    parameters:
+      gateway_group_arn:
+        types:
+        - String
+        required: true
+  delete_network_profile:
+    parameters:
+      network_profile_arn:
+        types:
+        - String
+        required: true
   delete_profile:
     parameters:
       profile_arn:
@@ -367,10 +467,6 @@ methods:
         required: true
   disassociate_skill_from_users:
     parameters:
-      organization_arn:
-        types:
-        - String
-        required: false
       skill_id:
         types:
         - String
@@ -415,6 +511,24 @@ methods:
         types:
         - String
         required: false
+  get_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+  get_gateway_group:
+    parameters:
+      gateway_group_arn:
+        types:
+        - String
+        required: true
+  get_network_profile:
+    parameters:
+      network_profile_arn:
+        types:
+        - String
+        required: true
   get_profile:
     parameters:
       profile_arn:
@@ -474,6 +588,30 @@ methods:
         - String
         required: true
       event_type:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_gateway_groups:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_gateways:
+    parameters:
+      gateway_group_arn:
         types:
         - String
         required: false
@@ -565,6 +703,20 @@ methods:
         types:
         - Types::ConferencePreference
         required: true
+  put_invitation_configuration:
+    parameters:
+      organization_name:
+        types:
+        - String
+        required: true
+      contact_email:
+        types:
+        - String
+        required: false
+      private_skill_ids:
+        types:
+        - Array<String>
+        required: false
   put_room_skill_parameter:
     parameters:
       room_arn:
@@ -695,6 +847,24 @@ methods:
         types:
         - Array<Types::Sort>
         required: false
+  search_network_profiles:
+    parameters:
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      sort_criteria:
+        types:
+        - Array<Types::Sort>
+        required: false
   search_profiles:
     parameters:
       next_token:
@@ -767,6 +937,24 @@ methods:
         types:
         - Array<Types::Sort>
         required: false
+  send_announcement:
+    parameters:
+      room_filters:
+        types:
+        - Array<Types::Filter>
+        required: true
+      content:
+        types:
+        - Types::Content
+        required: true
+      time_to_live_in_seconds:
+        types:
+        - Integer
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: true
   send_invitation:
     parameters:
       user_arn:
@@ -897,6 +1085,14 @@ methods:
         types:
         - String
         required: false
+      phone_numbers:
+        types:
+        - Array<Types::PhoneNumber>
+        required: false
+      sip_addresses:
+        types:
+        - Array<Types::SipAddress>
+        required: false
   update_device:
     parameters:
       device_arn:
@@ -906,6 +1102,68 @@ methods:
       device_name:
         types:
         - String
+        required: false
+  update_gateway:
+    parameters:
+      gateway_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      software_version:
+        types:
+        - String
+        required: false
+  update_gateway_group:
+    parameters:
+      gateway_group_arn:
+        types:
+        - String
+        required: true
+      name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+  update_network_profile:
+    parameters:
+      network_profile_arn:
+        types:
+        - String
+        required: true
+      network_profile_name:
+        types:
+        - String
+        required: false
+      description:
+        types:
+        - String
+        required: false
+      current_password:
+        types:
+        - String
+        required: false
+      next_password:
+        types:
+        - String
+        required: false
+      certificate_authority_arn:
+        types:
+        - String
+        required: false
+      trust_anchors:
+        types:
+        - Array<String>
         required: false
   update_profile:
     parameters:
@@ -941,6 +1199,10 @@ methods:
         types:
         - String
         required: false
+      locale:
+        types:
+        - String
+        required: false
       setup_mode_disabled:
         types:
         - Boolean
@@ -952,6 +1214,10 @@ methods:
       pstn_enabled:
         types:
         - Boolean
+        required: false
+      meeting_room_configuration:
+        types:
+        - Types::UpdateMeetingRoomConfiguration
         required: false
   update_room:
     parameters:

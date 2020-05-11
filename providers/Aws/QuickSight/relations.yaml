@@ -1,4 +1,19 @@
 ---
+dashboard:
+  create: create_dashboard
+  read: describe_dashboard
+  update: 
+  delete: delete_dashboard
+data_set:
+  create: create_data_set
+  read: describe_data_set
+  update: 
+  delete: delete_data_set
+data_source:
+  create: create_data_source
+  read: describe_data_source
+  update: 
+  delete: delete_data_source
 group:
   create: create_group
   read: describe_group
@@ -9,3 +24,23 @@ group_membership:
   read: 
   update: 
   delete: delete_group_membership
+iam_policy_assignment:
+  create: create_iam_policy_assignment
+  read: describe_iam_policy_assignment
+  update: 
+  delete: delete_iam_policy_assignment
+ingestion:
+  create: create_ingestion
+  read: describe_ingestion
+  update: 
+  delete: 
+template:
+  create: create_template
+  read: describe_template
+  update: 
+  delete: delete_template
+template_alias:
+  create: create_template_alias
+  read: describe_template_alias
+  update: 
+  delete: delete_template_alias

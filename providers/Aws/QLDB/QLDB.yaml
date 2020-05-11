@@ -1,0 +1,181 @@
+---
+class: Aws::QLDB::Client
+methods:
+  create_ledger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: false
+      permissions_mode:
+        types:
+        - String
+        required: true
+      deletion_protection:
+        types:
+        - Boolean
+        required: false
+  delete_ledger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  describe_journal_s3_export:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      export_id:
+        types:
+        - String
+        required: true
+  describe_ledger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  export_journal_to_s3:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      inclusive_start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      exclusive_end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      s3_export_configuration:
+        types:
+        - Types::S3ExportConfiguration
+        required: true
+      role_arn:
+        types:
+        - String
+        required: true
+  get_block:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      block_address:
+        types:
+        - Types::ValueHolder
+        required: true
+      digest_tip_address:
+        types:
+        - Types::ValueHolder
+        required: false
+  get_digest:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  get_revision:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      block_address:
+        types:
+        - Types::ValueHolder
+        required: true
+      document_id:
+        types:
+        - String
+        required: true
+      digest_tip_address:
+        types:
+        - Types::ValueHolder
+        required: false
+  list_journal_s3_exports:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_journal_s3_exports_for_ledger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_ledgers:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Hash<String,String>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_ledger:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      deletion_protection:
+        types:
+        - Boolean
+        required: false

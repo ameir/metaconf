@@ -1,0 +1,21 @@
+---
+class: Aws::EC2InstanceConnect::Client
+methods:
+  send_ssh_public_key:
+    parameters:
+      instance_id:
+        types:
+        - String
+        required: true
+      instance_os_user:
+        types:
+        - String
+        required: true
+      ssh_public_key:
+        types:
+        - String
+        required: true
+      availability_zone:
+        types:
+        - String
+        required: true

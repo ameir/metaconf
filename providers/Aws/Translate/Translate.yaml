@@ -7,6 +7,12 @@ methods:
         types:
         - String
         required: true
+  describe_text_translation_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
   get_terminology:
     parameters:
       name:
@@ -49,6 +55,60 @@ methods:
         types:
         - Integer
         required: false
+  list_text_translation_jobs:
+    parameters:
+      filter:
+        types:
+        - Types::TextTranslationJobFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_text_translation_job:
+    parameters:
+      job_name:
+        types:
+        - String
+        required: false
+      input_data_config:
+        types:
+        - Types::InputDataConfig
+        required: true
+      output_data_config:
+        types:
+        - Types::OutputDataConfig
+        required: true
+      data_access_role_arn:
+        types:
+        - String
+        required: true
+      source_language_code:
+        types:
+        - String
+        required: true
+      target_language_codes:
+        types:
+        - Array<String>
+        required: true
+      terminology_names:
+        types:
+        - Array<String>
+        required: false
+      client_token:
+        types:
+        - String
+        required: true
+  stop_text_translation_job:
+    parameters:
+      job_id:
+        types:
+        - String
+        required: true
   translate_text:
     parameters:
       text:

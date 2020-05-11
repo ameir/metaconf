@@ -1,6 +1,28 @@
 ---
 class: Aws::EFS::Client
 methods:
+  create_access_point:
+    parameters:
+      client_token:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: true
+      posix_user:
+        types:
+        - Types::PosixUser
+        required: false
+      root_directory:
+        types:
+        - Types::RootDirectory
+        required: false
   create_file_system:
     parameters:
       creation_token:
@@ -59,7 +81,19 @@ methods:
         types:
         - Array<Types::Tag>
         required: true
+  delete_access_point:
+    parameters:
+      access_point_id:
+        types:
+        - String
+        required: true
   delete_file_system:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+  delete_file_system_policy:
     parameters:
       file_system_id:
         types:
@@ -80,6 +114,30 @@ methods:
       tag_keys:
         types:
         - Array<String>
+        required: true
+  describe_access_points:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      access_point_id:
+        types:
+        - String
+        required: false
+      file_system_id:
+        types:
+        - String
+        required: false
+  describe_file_system_policy:
+    parameters:
+      file_system_id:
+        types:
+        - String
         required: true
   describe_file_systems:
     parameters:
@@ -129,6 +187,10 @@ methods:
         types:
         - String
         required: false
+      access_point_id:
+        types:
+        - String
+        required: false
   describe_tags:
     parameters:
       max_items:
@@ -143,6 +205,20 @@ methods:
         types:
         - String
         required: true
+  list_tags_for_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
   modify_mount_target_security_groups:
     parameters:
       mount_target_id:
@@ -153,6 +229,20 @@ methods:
         types:
         - Array<String>
         required: false
+  put_file_system_policy:
+    parameters:
+      file_system_id:
+        types:
+        - String
+        required: true
+      policy:
+        types:
+        - String
+        required: true
+      bypass_policy_lockout_safety_check:
+        types:
+        - Boolean
+        required: false
   put_lifecycle_configuration:
     parameters:
       file_system_id:
@@ -162,6 +252,26 @@ methods:
       lifecycle_policies:
         types:
         - Array<Types::LifecyclePolicy>
+        required: true
+  tag_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_id:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
         required: true
   update_file_system:
     parameters:

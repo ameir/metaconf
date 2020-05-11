@@ -1,0 +1,99 @@
+---
+class: Aws::MarketplaceCatalog::Client
+methods:
+  cancel_change_set:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      change_set_id:
+        types:
+        - String
+        required: true
+  describe_change_set:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      change_set_id:
+        types:
+        - String
+        required: true
+  describe_entity:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      entity_id:
+        types:
+        - String
+        required: true
+  list_change_sets:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      filter_list:
+        types:
+        - Array<Types::Filter>
+        required: false
+      sort:
+        types:
+        - Types::Sort
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_entities:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      entity_type:
+        types:
+        - String
+        required: true
+      filter_list:
+        types:
+        - Array<Types::Filter>
+        required: false
+      sort:
+        types:
+        - Types::Sort
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  start_change_set:
+    parameters:
+      catalog:
+        types:
+        - String
+        required: true
+      change_set:
+        types:
+        - Array<Types::Change>
+        required: true
+      change_set_name:
+        types:
+        - String
+        required: false
+      client_request_token:
+        types:
+        - String
+        required: false

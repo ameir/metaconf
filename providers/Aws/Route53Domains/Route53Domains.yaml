@@ -1,6 +1,22 @@
 ---
 class: Aws::Route53Domains::Client
 methods:
+  accept_domain_transfer_from_another_aws_account:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      password:
+        types:
+        - String
+        required: true
+  cancel_domain_transfer_to_another_aws_account:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
   check_domain_availability:
     parameters:
       domain_name:
@@ -163,6 +179,12 @@ methods:
         types:
         - Boolean
         required: false
+  reject_domain_transfer_from_another_aws_account:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
   renew_domain:
     parameters:
       domain_name:
@@ -239,6 +261,16 @@ methods:
         types:
         - Boolean
         required: false
+  transfer_domain_to_another_aws_account:
+    parameters:
+      domain_name:
+        types:
+        - String
+        required: true
+      account_id:
+        types:
+        - String
+        required: true
   update_domain_contact:
     parameters:
       domain_name:

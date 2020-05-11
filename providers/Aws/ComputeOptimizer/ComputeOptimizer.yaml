@@ -1,0 +1,101 @@
+---
+class: Aws::ComputeOptimizer::Client
+methods:
+  get_auto_scaling_group_recommendations:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+      auto_scaling_group_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+  get_ec2_instance_recommendations:
+    parameters:
+      instance_arns:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filters:
+        types:
+        - Array<Types::Filter>
+        required: false
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+  get_ec2_recommendation_projected_metrics:
+    parameters:
+      instance_arn:
+        types:
+        - String
+        required: true
+      stat:
+        types:
+        - String
+        required: true
+      period:
+        types:
+        - Integer
+        required: true
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: true
+  get_recommendation_summaries:
+    parameters:
+      account_ids:
+        types:
+        - Array<String>
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  update_enrollment_status:
+    parameters:
+      status:
+        types:
+        - String
+        required: true
+      include_member_accounts:
+        types:
+        - Boolean
+        required: false

@@ -19,3 +19,8 @@ virtual_router:
   read: describe_virtual_router
   update: 
   delete: delete_virtual_router
+virtual_service:
+  create: create_virtual_service
+  read: describe_virtual_service
+  update: 
+  delete: delete_virtual_service

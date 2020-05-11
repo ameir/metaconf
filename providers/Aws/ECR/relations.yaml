@@ -4,6 +4,16 @@ image:
   read: describe_images
   update: 
   delete: 
+image_scanning_configuration:
+  create: put_image_scanning_configuration
+  read: 
+  update: 
+  delete: 
+image_tag_mutability:
+  create: put_image_tag_mutability
+  read: 
+  update: 
+  delete: 
 lifecycle_policy:
   create: put_lifecycle_policy
   read: get_lifecycle_policy

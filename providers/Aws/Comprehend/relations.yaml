@@ -4,6 +4,11 @@ document_classifier:
   read: describe_document_classifier
   update: 
   delete: delete_document_classifier
+endpoint:
+  create: create_endpoint
+  read: describe_endpoint
+  update: 
+  delete: delete_endpoint
 entity_recognizer:
   create: create_entity_recognizer
   read: describe_entity_recognizer

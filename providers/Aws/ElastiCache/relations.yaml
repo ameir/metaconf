@@ -19,6 +19,11 @@ cache_subnet_group:
   read: describe_cache_subnet_groups
   update: modify_cache_subnet_group
   delete: delete_cache_subnet_group
+global_replication_group:
+  create: create_global_replication_group
+  read: describe_global_replication_groups
+  update: modify_global_replication_group
+  delete: delete_global_replication_group
 replication_group:
   create: create_replication_group
   read: describe_replication_groups

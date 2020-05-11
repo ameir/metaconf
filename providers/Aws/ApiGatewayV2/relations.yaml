@@ -54,3 +54,8 @@ stage:
   read: get_stage
   update: 
   delete: delete_stage
+vpc_link:
+  create: create_vpc_link
+  read: get_vpc_link
+  update: 
+  delete: delete_vpc_link

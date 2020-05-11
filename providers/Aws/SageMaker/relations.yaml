@@ -4,6 +4,16 @@ algorithm:
   read: describe_algorithm
   update: 
   delete: delete_algorithm
+app:
+  create: create_app
+  read: describe_app
+  update: 
+  delete: delete_app
+auto_ml_job:
+  create: create_auto_ml_job
+  read: describe_auto_ml_job
+  update: 
+  delete: 
 code_repository:
   create: create_code_repository
   read: describe_code_repository
@@ -14,6 +24,11 @@ compilation_job:
   read: describe_compilation_job
   update: 
   delete: 
+domain:
+  create: create_domain
+  read: describe_domain
+  update: 
+  delete: delete_domain
 endpoint:
   create: create_endpoint
   read: describe_endpoint
@@ -24,6 +39,21 @@ endpoint_config:
   read: describe_endpoint_config
   update: 
   delete: delete_endpoint_config
+experiment:
+  create: create_experiment
+  read: describe_experiment
+  update: 
+  delete: delete_experiment
+flow_definition:
+  create: create_flow_definition
+  read: describe_flow_definition
+  update: 
+  delete: delete_flow_definition
+human_task_ui:
+  create: create_human_task_ui
+  read: describe_human_task_ui
+  update: 
+  delete: 
 hyper_parameter_tuning_job:
   create: create_hyper_parameter_tuning_job
   read: describe_hyper_parameter_tuning_job
@@ -44,6 +74,11 @@ model_package:
   read: describe_model_package
   update: 
   delete: delete_model_package
+monitoring_schedule:
+  create: create_monitoring_schedule
+  read: describe_monitoring_schedule
+  update: 
+  delete: delete_monitoring_schedule
 notebook_instance:
   create: create_notebook_instance
   read: describe_notebook_instance
@@ -54,9 +89,19 @@ notebook_instance_lifecycle_config:
   read: describe_notebook_instance_lifecycle_config
   update: 
   delete: delete_notebook_instance_lifecycle_config
+presigned_domain_url:
+  create: create_presigned_domain_url
+  read: 
+  update: 
+  delete: 
 presigned_notebook_instance_url:
   create: create_presigned_notebook_instance_url
   read: 
+  update: 
+  delete: 
+processing_job:
+  create: create_processing_job
+  read: describe_processing_job
   update: 
   delete: 
 training_job:
@@ -69,6 +114,21 @@ transform_job:
   read: describe_transform_job
   update: 
   delete: 
+trial:
+  create: create_trial
+  read: describe_trial
+  update: 
+  delete: delete_trial
+trial_component:
+  create: create_trial_component
+  read: describe_trial_component
+  update: 
+  delete: delete_trial_component
+user_profile:
+  create: create_user_profile
+  read: describe_user_profile
+  update: 
+  delete: delete_user_profile
 workteam:
   create: create_workteam
   read: describe_workteam

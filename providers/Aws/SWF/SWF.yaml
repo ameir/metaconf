@@ -277,6 +277,12 @@ methods:
         types:
         - Types::WorkflowExecutionFilter
         required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   list_workflow_types:
     parameters:
       domain:
@@ -409,6 +415,10 @@ methods:
         types:
         - String
         required: true
+      tags:
+        types:
+        - Array<Types::ResourceTag>
+        required: false
   register_workflow_type:
     parameters:
       domain:
@@ -581,6 +591,16 @@ methods:
         types:
         - String
         required: false
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::ResourceTag>
+        required: true
   terminate_workflow_execution:
     parameters:
       domain:
@@ -607,3 +627,39 @@ methods:
         types:
         - String
         required: false
+  undeprecate_activity_type:
+    parameters:
+      domain:
+        types:
+        - String
+        required: true
+      activity_type:
+        types:
+        - Types::ActivityType
+        required: true
+  undeprecate_domain:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+  undeprecate_workflow_type:
+    parameters:
+      domain:
+        types:
+        - String
+        required: true
+      workflow_type:
+        types:
+        - Types::WorkflowType
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true

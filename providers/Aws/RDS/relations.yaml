@@ -1,4 +1,9 @@
 ---
+custom_availability_zone:
+  create: create_custom_availability_zone
+  read: describe_custom_availability_zones
+  update: 
+  delete: delete_custom_availability_zone
 db_cluster:
   create: create_db_cluster
   read: describe_db_clusters
@@ -34,6 +39,11 @@ db_parameter_group:
   read: describe_db_parameter_groups
   update: modify_db_parameter_group
   delete: delete_db_parameter_group
+db_proxy:
+  create: create_db_proxy
+  read: 
+  update: modify_db_proxy
+  delete: delete_db_proxy
 db_security_group:
   create: create_db_security_group
   read: describe_db_security_groups

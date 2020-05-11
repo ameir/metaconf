@@ -39,6 +39,11 @@ maintenance_window:
   read: describe_maintenance_windows
   update: 
   delete: delete_maintenance_window
+ops_item:
+  create: create_ops_item
+  read: describe_ops_items
+  update: 
+  delete: 
 patch_baseline:
   create: create_patch_baseline
   read: describe_patch_baselines

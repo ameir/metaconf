@@ -1,11 +1,43 @@
 ---
 class: Aws::Health::Client
 methods:
+  describe_affected_accounts_for_organization:
+    parameters:
+      event_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
   describe_affected_entities:
     parameters:
       filter:
         types:
         - Types::EntityFilter
+        required: true
+      locale:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  describe_affected_entities_for_organization:
+    parameters:
+      organization_entity_filters:
+        types:
+        - Array<Types::EventAccountFilter>
         required: true
       locale:
         types:
@@ -53,6 +85,16 @@ methods:
         types:
         - String
         required: false
+  describe_event_details_for_organization:
+    parameters:
+      organization_event_detail_filters:
+        types:
+        - Array<Types::EventAccountFilter>
+        required: true
+      locale:
+        types:
+        - String
+        required: false
   describe_event_types:
     parameters:
       filter:
@@ -76,6 +118,24 @@ methods:
       filter:
         types:
         - Types::EventFilter
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      locale:
+        types:
+        - String
+        required: false
+  describe_events_for_organization:
+    parameters:
+      filter:
+        types:
+        - Types::OrganizationEventFilter
         required: false
       next_token:
         types:

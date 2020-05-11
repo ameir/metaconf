@@ -25,6 +25,44 @@ methods:
         types:
         - String
         required: true
+  batch_apply_update_action:
+    parameters:
+      replication_group_ids:
+        types:
+        - Array<String>
+        required: false
+      cache_cluster_ids:
+        types:
+        - Array<String>
+        required: false
+      service_update_name:
+        types:
+        - String
+        required: true
+  batch_stop_update_action:
+    parameters:
+      replication_group_ids:
+        types:
+        - Array<String>
+        required: false
+      cache_cluster_ids:
+        types:
+        - Array<String>
+        required: false
+      service_update_name:
+        types:
+        - String
+        required: true
+  complete_migration:
+    parameters:
+      replication_group_id:
+        types:
+        - String
+        required: true
+      force:
+        types:
+        - Boolean
+        required: false
   copy_snapshot:
     parameters:
       source_snapshot_name:
@@ -36,6 +74,10 @@ methods:
         - String
         required: true
       target_bucket:
+        types:
+        - String
+        required: false
+      kms_key_id:
         types:
         - String
         required: false
@@ -171,6 +213,20 @@ methods:
         types:
         - Array<String>
         required: true
+  create_global_replication_group:
+    parameters:
+      global_replication_group_id_suffix:
+        types:
+        - String
+        required: true
+      global_replication_group_description:
+        types:
+        - String
+        required: false
+      primary_replication_group_id:
+        types:
+        - String
+        required: true
   create_replication_group:
     parameters:
       replication_group_id:
@@ -181,6 +237,10 @@ methods:
         types:
         - String
         required: true
+      global_replication_group_id:
+        types:
+        - String
+        required: false
       primary_cluster_id:
         types:
         - String
@@ -285,6 +345,10 @@ methods:
         types:
         - Boolean
         required: false
+      kms_key_id:
+        types:
+        - String
+        required: false
   create_snapshot:
     parameters:
       replication_group_id:
@@ -298,6 +362,32 @@ methods:
       snapshot_name:
         types:
         - String
+        required: true
+      kms_key_id:
+        types:
+        - String
+        required: false
+  decrease_node_groups_in_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      node_group_count:
+        types:
+        - Integer
+        required: true
+      global_node_groups_to_remove:
+        types:
+        - Array<String>
+        required: false
+      global_node_groups_to_retain:
+        types:
+        - Array<String>
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
         required: true
   decrease_replica_count:
     parameters:
@@ -348,6 +438,16 @@ methods:
       cache_subnet_group_name:
         types:
         - String
+        required: true
+  delete_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      retain_primary_replication_group:
+        types:
+        - Boolean
         required: true
   delete_replication_group:
     parameters:
@@ -529,6 +629,24 @@ methods:
         types:
         - String
         required: false
+  describe_global_replication_groups:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+      show_member_info:
+        types:
+        - Boolean
+        required: false
   describe_replication_groups:
     parameters:
       replication_group_id:
@@ -607,6 +725,24 @@ methods:
         types:
         - String
         required: false
+  describe_service_updates:
+    parameters:
+      service_update_name:
+        types:
+        - String
+        required: false
+      service_update_status:
+        types:
+        - Array<String>
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
   describe_snapshots:
     parameters:
       replication_group_id:
@@ -637,6 +773,94 @@ methods:
         types:
         - Boolean
         required: false
+  describe_update_actions:
+    parameters:
+      service_update_name:
+        types:
+        - String
+        required: false
+      replication_group_ids:
+        types:
+        - Array<String>
+        required: false
+      cache_cluster_ids:
+        types:
+        - Array<String>
+        required: false
+      engine:
+        types:
+        - String
+        required: false
+      service_update_status:
+        types:
+        - Array<String>
+        required: false
+      service_update_time_range:
+        types:
+        - Types::TimeRangeFilter
+        required: false
+      update_action_status:
+        types:
+        - Array<String>
+        required: false
+      show_node_level_update_status:
+        types:
+        - Boolean
+        required: false
+      max_records:
+        types:
+        - Integer
+        required: false
+      marker:
+        types:
+        - String
+        required: false
+  disassociate_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      replication_group_id:
+        types:
+        - String
+        required: true
+      replication_group_region:
+        types:
+        - String
+        required: true
+  failover_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      primary_region:
+        types:
+        - String
+        required: true
+      primary_replication_group_id:
+        types:
+        - String
+        required: true
+  increase_node_groups_in_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      node_group_count:
+        types:
+        - Integer
+        required: true
+      regional_configurations:
+        types:
+        - Array<Types::RegionalConfiguration>
+        required: false
+      apply_immediately:
+        types:
+        - Boolean
+        required: true
   increase_replica_count:
     parameters:
       replication_group_id:
@@ -741,6 +965,14 @@ methods:
         types:
         - String
         required: false
+      auth_token:
+        types:
+        - String
+        required: false
+      auth_token_update_strategy:
+        types:
+        - String
+        required: false
   modify_cache_parameter_group:
     parameters:
       cache_parameter_group_name:
@@ -765,6 +997,32 @@ methods:
         types:
         - Array<String>
         required: false
+  modify_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      apply_immediately:
+        types:
+        - Boolean
+        required: true
+      cache_node_type:
+        types:
+        - String
+        required: false
+      engine_version:
+        types:
+        - String
+        required: false
+      global_replication_group_description:
+        types:
+        - String
+        required: false
+      automatic_failover_enabled:
+        types:
+        - Boolean
+        required: false
   modify_replication_group:
     parameters:
       replication_group_id:
@@ -786,6 +1044,10 @@ methods:
       automatic_failover_enabled:
         types:
         - Boolean
+        required: false
+      node_group_id:
+        types:
+        - String
         required: false
       cache_security_group_names:
         types:
@@ -835,7 +1097,11 @@ methods:
         types:
         - String
         required: false
-      node_group_id:
+      auth_token:
+        types:
+        - String
+        required: false
+      auth_token_update_strategy:
         types:
         - String
         required: false
@@ -879,6 +1145,16 @@ methods:
         types:
         - Integer
         required: false
+  rebalance_slots_in_global_replication_group:
+    parameters:
+      global_replication_group_id:
+        types:
+        - String
+        required: true
+      apply_immediately:
+        types:
+        - Boolean
+        required: true
   reboot_cache_cluster:
     parameters:
       cache_cluster_id:
@@ -926,6 +1202,16 @@ methods:
       ec2_security_group_owner_id:
         types:
         - String
+        required: true
+  start_migration:
+    parameters:
+      replication_group_id:
+        types:
+        - String
+        required: true
+      customer_node_endpoint_list:
+        types:
+        - Array<Types::CustomerNodeEndpoint>
         required: true
   test_failover:
     parameters:

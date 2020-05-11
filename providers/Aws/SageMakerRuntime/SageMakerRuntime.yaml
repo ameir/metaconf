@@ -24,3 +24,7 @@ methods:
         types:
         - String
         required: false
+      target_model:
+        types:
+        - String
+        required: false

@@ -1,0 +1,16 @@
+---
+logging_options:
+  create: put_logging_options
+  read: 
+  update: 
+  delete: 
+detector_model:
+  create: create_detector_model
+  read: describe_detector_model
+  update: 
+  delete: delete_detector_model
+input:
+  create: create_input
+  read: describe_input
+  update: 
+  delete: delete_input

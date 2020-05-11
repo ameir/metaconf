@@ -19,6 +19,18 @@ methods:
         types:
         - Array<String>
         required: true
+  batch_get_report_groups:
+    parameters:
+      report_group_arns:
+        types:
+        - Array<String>
+        required: true
+  batch_get_reports:
+    parameters:
+      report_arns:
+        types:
+        - Array<String>
+        required: true
   create_project:
     parameters:
       name:
@@ -36,6 +48,14 @@ methods:
       secondary_sources:
         types:
         - Array<Types::ProjectSource>
+        required: false
+      source_version:
+        types:
+        - String
+        required: false
+      secondary_source_versions:
+        types:
+        - Array<Types::ProjectSourceVersion>
         required: false
       artifacts:
         types:
@@ -85,6 +105,24 @@ methods:
         types:
         - Types::LogsConfig
         required: false
+      file_system_locations:
+        types:
+        - Array<Types::ProjectFileSystemLocation>
+        required: false
+  create_report_group:
+    parameters:
+      name:
+        types:
+        - String
+        required: true
+      type:
+        types:
+        - String
+        required: true
+      export_config:
+        types:
+        - Types::ReportExportConfig
+        required: true
   create_webhook:
     parameters:
       project_name:
@@ -105,6 +143,24 @@ methods:
         types:
         - String
         required: true
+  delete_report:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_report_group:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+  delete_resource_policy:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
   delete_source_credentials:
     parameters:
       arn:
@@ -114,6 +170,30 @@ methods:
   delete_webhook:
     parameters:
       project_name:
+        types:
+        - String
+        required: true
+  describe_test_cases:
+    parameters:
+      report_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filter:
+        types:
+        - Types::TestCaseFilter
+        required: false
+  get_resource_policy:
+    parameters:
+      resource_arn:
         types:
         - String
         required: true
@@ -135,6 +215,10 @@ methods:
         types:
         - String
         required: true
+      should_overwrite:
+        types:
+        - Boolean
+        required: false
   invalidate_project_cache:
     parameters:
       project_name:
@@ -179,6 +263,110 @@ methods:
         types:
         - String
         required: false
+  list_report_groups:
+    parameters:
+      sort_order:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  list_reports:
+    parameters:
+      sort_order:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filter:
+        types:
+        - Types::ReportFilter
+        required: false
+  list_reports_for_report_group:
+    parameters:
+      report_group_arn:
+        types:
+        - String
+        required: true
+      next_token:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      filter:
+        types:
+        - Types::ReportFilter
+        required: false
+  list_shared_projects:
+    parameters:
+      sort_by:
+        types:
+        - String
+        required: false
+      sort_order:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_shared_report_groups:
+    parameters:
+      sort_order:
+        types:
+        - String
+        required: false
+      sort_by:
+        types:
+        - String
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+  put_resource_policy:
+    parameters:
+      policy:
+        types:
+        - String
+        required: true
+      resource_arn:
+        types:
+        - String
+        required: true
   start_build:
     parameters:
       project_name:
@@ -224,6 +412,10 @@ methods:
       git_clone_depth_override:
         types:
         - Integer
+        required: false
+      git_submodules_config_override:
+        types:
+        - Types::GitSubmodulesConfig
         required: false
       buildspec_override:
         types:
@@ -273,6 +465,10 @@ methods:
         types:
         - Integer
         required: false
+      encryption_key_override:
+        types:
+        - String
+        required: false
       idempotency_token:
         types:
         - String
@@ -312,6 +508,14 @@ methods:
       secondary_sources:
         types:
         - Array<Types::ProjectSource>
+        required: false
+      source_version:
+        types:
+        - String
+        required: false
+      secondary_source_versions:
+        types:
+        - Array<Types::ProjectSourceVersion>
         required: false
       artifacts:
         types:
@@ -361,6 +565,20 @@ methods:
         types:
         - Types::LogsConfig
         required: false
+      file_system_locations:
+        types:
+        - Array<Types::ProjectFileSystemLocation>
+        required: false
+  update_report_group:
+    parameters:
+      arn:
+        types:
+        - String
+        required: true
+      export_config:
+        types:
+        - Types::ReportExportConfig
+        required: false
   update_webhook:
     parameters:
       project_name:
@@ -371,11 +589,11 @@ methods:
         types:
         - String
         required: false
-      filter_groups:
-        types:
-        - Array<Array>
-        required: false
       rotate_secret:
         types:
         - Boolean
+        required: false
+      filter_groups:
+        types:
+        - Array<Array>
         required: false

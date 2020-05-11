@@ -1,0 +1,393 @@
+---
+class: Aws::ApplicationInsights::Client
+methods:
+  create_application:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      ops_center_enabled:
+        types:
+        - Boolean
+        required: false
+      cwe_monitor_enabled:
+        types:
+        - Boolean
+        required: false
+      ops_item_sns_topic_arn:
+        types:
+        - String
+        required: false
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: false
+  create_component:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+      resource_list:
+        types:
+        - Array<String>
+        required: true
+  create_log_pattern:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      pattern_set_name:
+        types:
+        - String
+        required: true
+      pattern_name:
+        types:
+        - String
+        required: true
+      pattern:
+        types:
+        - String
+        required: true
+      rank:
+        types:
+        - Integer
+        required: true
+  delete_application:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+  delete_component:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+  delete_log_pattern:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      pattern_set_name:
+        types:
+        - String
+        required: true
+      pattern_name:
+        types:
+        - String
+        required: true
+  describe_application:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+  describe_component:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+  describe_component_configuration:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+  describe_component_configuration_recommendation:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+      tier:
+        types:
+        - String
+        required: true
+  describe_log_pattern:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      pattern_set_name:
+        types:
+        - String
+        required: true
+      pattern_name:
+        types:
+        - String
+        required: true
+  describe_observation:
+    parameters:
+      observation_id:
+        types:
+        - String
+        required: true
+  describe_problem:
+    parameters:
+      problem_id:
+        types:
+        - String
+        required: true
+  describe_problem_observations:
+    parameters:
+      problem_id:
+        types:
+        - String
+        required: true
+  list_applications:
+    parameters:
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_components:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_configuration_history:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      event_status:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_log_pattern_sets:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_log_patterns:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      pattern_set_name:
+        types:
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_problems:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: false
+      start_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      end_time:
+        types:
+        - Time
+        - DateTime
+        - Date
+        - Integer
+        - String
+        required: false
+      max_results:
+        types:
+        - Integer
+        required: false
+      next_token:
+        types:
+        - String
+        required: false
+  list_tags_for_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+  tag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tags:
+        types:
+        - Array<Types::Tag>
+        required: true
+  untag_resource:
+    parameters:
+      resource_arn:
+        types:
+        - String
+        required: true
+      tag_keys:
+        types:
+        - Array<String>
+        required: true
+  update_application:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      ops_center_enabled:
+        types:
+        - Boolean
+        required: false
+      cwe_monitor_enabled:
+        types:
+        - Boolean
+        required: false
+      ops_item_sns_topic_arn:
+        types:
+        - String
+        required: false
+      remove_sns_topic:
+        types:
+        - Boolean
+        required: false
+  update_component:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+      new_component_name:
+        types:
+        - String
+        required: false
+      resource_list:
+        types:
+        - Array<String>
+        required: false
+  update_component_configuration:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      component_name:
+        types:
+        - String
+        required: true
+      monitor:
+        types:
+        - Boolean
+        required: false
+      tier:
+        types:
+        - String
+        required: false
+      component_configuration:
+        types:
+        - String
+        required: false
+  update_log_pattern:
+    parameters:
+      resource_group_name:
+        types:
+        - String
+        required: true
+      pattern_set_name:
+        types:
+        - String
+        required: true
+      pattern_name:
+        types:
+        - String
+        required: true
+      pattern:
+        types:
+        - String
+        required: false
+      rank:
+        types:
+        - Integer
+        required: false

@@ -1,0 +1,6 @@
+---
+participant_connection:
+  create: create_participant_connection
+  read: 
+  update: 
+  delete: 
