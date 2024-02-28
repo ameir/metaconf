@@ -917,7 +917,7 @@ GEM
     solve (4.0.3)
       molinillo (~> 0.6)
       semverse (>= 1.1, < 4.0)
-    yard (0.9.25)
+    yard (0.9.35)
 
 PLATFORMS
   ruby
